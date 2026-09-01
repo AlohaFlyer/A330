@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Memory Items Drill</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<style>
+/* ------------------------------------------------------------------
+   PALETTE, Hawaiian Airlines tokens (VERIFIED values only).
+   Source: Alaska Air Group Auro Design System, Hawaiian theme
+   (aag-theme-ha) v9.3.3, corroborated by the live Hawaiian production
+   stylesheet. See palette/HAWAIIAN_PALETTE.md for provenance + contrast.
+   These are the SAME values as assets/palette.css, inlined so this file
+   works standalone from file:// with no external stylesheet. Keep the
+   two in step; no hex may appear anywhere in this page outside this block.
+
+   Contrast rules honoured here:
+   - coral #EE453D is 3.78:1 on white -> FAILS AA for text.
+     Used ONLY as a decorative rule/border/fill. Text on coral ground
+     uses --ink; coral-coloured text uses --bright-text #97322A (7.49:1).
+   - lagoon #00A5BA is out entirely. Not used anywhere in this page.
+   Swap the light block + the dark block to re-skin the page.
+   ------------------------------------------------------------------ */
+:root {
+  --surface:            #FFFFFF;
+  --surface-sunken:     #F1F3F3;
+  --surface-subtle:     #F5F7F7;
+  --pale:               #EAE5F4;
+  --pale-accent:        #FDF1F8;
+  --pale-bright:        #FFEEEA;
+
+  --ink:                #000000;
+  --ink-muted:          #3C3D3D;
+  --ink-inverse:        #FFFFFF;
+  --ink-on-brand:       #FFFFFF;  /* text on the purple header/footer ground, does NOT flip in dark mode */
+  --pale-on-brand:      #EAE5F4;  /* muted text on that ground, 7.39:1 on purple, does NOT flip */
+
+  --border:             #CED0D0;
+  --border-subtle:      #DBDDDD;
+
+  --primary:            #463C8F;  /* Hawaiian purple  */
+  --primary-bold:       #31295C;
+  --primary-subtle:     #8C7EB8;  /* decorative only  */
+  --header-bg:          #463C8F;
+
+  --accent:             #CE0C88;  /* Hawaiian fuchsia */
+  --accent-bold:        #831A57;
+  --on-accent:          #FFFFFF;  /* 5.21:1, passes  */
+
+  --bright:             #EE453D;  /* coral: rules/fills only, never text */
+  --bright-text:        #97322A;  /* AA-safe coral for text */
+
+  --good:               #447A1F;
+  --good-pale:          #D6EAC7;
+  --warn:               #FAC200;
+  --warn-pale:          #FFF6D2;
+  --bad:                #E01F26;
+  --bad-pale:           #FBC6C6;
+  --info:               #007DB1;
+  --info-pale:          #E8F2F8;
+
+  --focus:              #463C8F;
+  --gradient-brand:     linear-gradient(90deg, #463C8F 25.8%, #CE0C88);
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  color-scheme: light dark;
+  accent-color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:          #15131C;
+    --surface-sunken:   #1E1B29;
+    --surface-subtle:   #232032;
+    --pale:             #2A2440;
+    --pale-accent:      #38203A;
+    --pale-bright:      #3A211C;
+
+    --ink:              #F4F2F8;
+    --ink-muted:        #C3BED0;
+    --ink-inverse:      #15131C;
+    --ink-on-brand:     #FFFFFF;  /* 13.11:1 on the dark header #31295C */
+    --pale-on-brand:    #EAE5F4;
+
+    --border:           #453F58;
+    --border-subtle:    #332E44;
+
+    --primary:          #ACA1CC;  /* lifted purple for text on dark */
+    --primary-bold:     #8C7EB8;
+    --primary-subtle:   #8C7EB8;
+    --header-bg:        #31295C;
+
+    --accent:           #E26DB8;
+    --accent-bold:      #F0A3D3;
+    --on-accent:        #15131C;
+
+    --bright:           #EE453D;
+    --bright-text:      #FF9080;
+
+    --good:             #8EC891;
+    --good-pale:        #1D3320;
+    --warn:             #FAC200;
+    --warn-pale:        #3A3011;
+    --bad:              #FF8A8A;
+    --bad-pale:         #3D1A1C;
+    --info:             #A8D6DF;
+    --info-pale:        #16303A;
+
+    --focus:            #ACA1CC;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px/1.5 var(--sans);
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- non-dismissible warning banner ---------- */
+.banner {
+  background: var(--pale-bright);
+  border-bottom: 1px solid var(--border);
+  border-left: 8px solid var(--bright);   /* coral as a rule, not as text */
+  padding: 14px 16px;
+}
+.banner h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--bright-text);
+}
+.banner p { margin: 0 0 6px; font-size: 14px; }
+.banner p:last-child { margin-bottom: 0; }
+.banner strong { font-weight: 700; }
+.banner ul { margin: 0 0 6px; padding-left: 20px; font-size: 14px; }
+.banner li { margin-bottom: 4px; }
+
+/* ---------- header ---------- */
+.site-head {
+  background: var(--header-bg);
+  color: var(--ink-on-brand);  /* 9.12:1 on #463C8F, 13.11:1 on #31295C, does not flip */
+  padding: 18px 0 16px;
+  border-bottom: 4px solid transparent;
+  border-image: var(--gradient-brand) 1;
+}
+.site-head h1 { margin: 0; font-size: 22px; letter-spacing: .01em; }
+.site-head .sub { margin: 4px 0 0; font-size: 13px; color: var(--pale-on-brand); }
+.site-head a { color: var(--pale-on-brand); }
+
+/* ---------- scope notes ---------- */
+.gaps {
+  background: var(--warn-pale);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.gaps summary { cursor: pointer; font: 700 14px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+.gaps summary .cnt { font: 500 12px var(--sans); text-transform: none; letter-spacing: 0; color: var(--ink-muted); margin-left: 8px; }
+.gaps[open] summary { margin-bottom: 8px; }
+.gaps ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.gaps li { margin-bottom: 5px; }
+.gaps li:last-child { margin-bottom: 0; }
+.gaps .tag {
+  font: 600 11px/1 var(--mono);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+/* ---------- mode tabs ---------- */
+.modes { display: flex; gap: 6px; border-bottom: 2px solid var(--border); margin-top: 18px; }
+.modes button {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 9px 14px;
+  font: 600 15px var(--sans);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+.modes button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- controls ---------- */
+.panel {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.ctrl-row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.ctrl-row + .ctrl-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+.ctrl-label {
+  font: 700 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ink-muted);
+  margin-right: 2px;
+}
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); }
+.seg button:first-child { border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px); }
+.seg button:last-child { border-radius: 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0; }
+.seg button:focus-visible { position: relative; z-index: 1; }
+.seg button {
+  appearance: none; background: var(--surface); border: 0; cursor: pointer;
+  padding: 7px 12px; font: 500 14px var(--sans); color: var(--ink);
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--ink-inverse); }
+.seg button:disabled { color: var(--ink-muted); background: var(--surface-sunken); cursor: not-allowed; }  /* no opacity: stays AA */
+.seg-note { font-size: 12px; color: var(--ink-muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  appearance: none; cursor: pointer;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 10px; font: 500 13px var(--sans);
+}
+.chip[aria-pressed="true"] { background: var(--pale); border-color: var(--primary); color: var(--ink); font-weight: 600; }
+.chip .n { color: var(--ink-muted); font-size: 11px; margin-left: 4px; font-family: var(--mono); }
+
+.btn {
+  appearance: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
+  padding: 8px 14px; font: 600 14px var(--sans);
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-good { border-color: var(--good); color: var(--good); background: var(--surface); }
+.btn-bad  { border-color: var(--bad);  color: var(--bad);  background: var(--surface); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn .k {
+  font-family: var(--mono); font-size: 11px;
+  border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; margin-left: 7px;
+}
+
+/* ---------- status bar ---------- */
+.statusbar {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px;
+  font-size: 13px; color: var(--ink-muted);
+}
+.statusbar b { font-family: var(--mono); font-size: 15px; color: var(--ink); font-weight: 700; }
+.statusbar .miss b { color: var(--bad); }
+
+/* ---------- scoreboard ---------- */
+.board { margin: 0 0 16px; border: 1px solid var(--border-subtle); border-radius: var(--radius); overflow: hidden; }
+.board table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.board th {
+  text-align: left; padding: 7px 10px; background: var(--surface-subtle);
+  font: 700 11px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted);
+}
+.board td { padding: 6px 10px; border-top: 1px solid var(--border-subtle); vertical-align: middle; }
+.board td.num { font-family: var(--mono); text-align: right; width: 64px; }
+.board .st { font: 600 11px/1 var(--sans); letter-spacing: .04em; text-transform: uppercase; padding: 3px 7px; border-radius: 999px; border: 1px solid var(--border); white-space: nowrap; }
+.board .st-clean { border-color: var(--good); color: var(--good); }
+.board .st-missed { border-color: var(--bad); color: var(--bad); }
+.board .st-none { color: var(--ink-muted); }
+.board .st-off { color: var(--ink-muted); border-style: dashed; }
+.board summary { cursor: pointer; padding: 8px 10px; font: 600 13px var(--sans); background: var(--surface-subtle); }
+
+/* ---------- drill card ---------- */
+.card {
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px;
+}
+.card .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.pill {
+  font: 600 11px/1 var(--sans); letter-spacing: .05em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--pale); color: var(--ink);
+}
+.pill-book { background: var(--info-pale); border-color: var(--info); color: var(--ink); }
+.pill-warn { background: var(--warn-pale); border-color: var(--warn); color: var(--ink); }
+.note-box {
+  margin: 12px 0 0; padding: 10px 12px; border-radius: var(--radius);
+  background: var(--info-pale); border: 1px solid var(--info); font-size: 13px;
+}
+.note-box b { display: block; margin-bottom: 3px; }
+.ask {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 6px;
+}
+.prompt { margin: 0 0 4px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+.given { margin: 8px 0 0; font-size: 14px; color: var(--ink-muted); }
+.given em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+textarea.answer {
+  width: 100%; margin-top: 14px; padding: 10px;
+  font: 15px/1.4 var(--mono);
+  color: var(--ink); background: var(--surface-subtle);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  resize: vertical; min-height: 68px;
+}
+textarea.answer.one { min-height: 44px; }
+.hint { margin: 6px 0 0; font-size: 12px; color: var(--ink-muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+.reveal { margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--border); }
+.reveal .lab, .lab {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 4px;
+}
+.answer-value { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.35; color: var(--ink); }
+.answer-cond { margin: 10px 0 0; font-size: 15px; }
+.answer-cond .lab { display: block; }
+
+.cite { margin-top: 14px; font-size: 13px; color: var(--ink-muted); }
+.cite code { font-family: var(--mono); font-size: 12px; color: var(--ink); word-break: break-all; }
+.cite ul { margin: 6px 0 0; padding-left: 18px; }
+.cite li { margin-bottom: 4px; }
+.vbtn {
+  appearance: none; cursor: pointer; margin-top: 6px;
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  font: 600 11px var(--sans); padding: 2px 7px; color: var(--ink);
+}
+.grade-q { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
+.grade-q small { display: block; font-weight: 400; color: var(--ink-muted); }
+
+/* ---------- FCOM memory-item visual grammar ----------
+   Condition headers are printed unboxed. Action lines are printed inside a
+   box, bold, ITEM, dot leader, VALUE. This mirrors that so recall matches
+   the page in the sim. */
+.mem { margin: 12px 0 0; }
+.mhead { font: 600 15px/1.4 var(--sans); margin: 12px 0 4px; }
+.mhead:first-child { margin-top: 0; }
+.mhead.withheld { color: var(--ink-muted); font-style: italic; font-weight: 500; border-left: 3px solid var(--border); padding-left: 8px; }
+.mbox {
+  border: 2px solid var(--ink); border-radius: 2px;
+  padding: 8px 12px; margin: 4px 0 10px;
+  background: var(--surface);
+}
+.mbox.unboxed { border-color: transparent; padding-left: 0; padding-right: 0; }
+.mgap { height: 4px; }   /* box-break sentinel: the page prints separate boxes here */
+.mbox.skeleton {
+  border-style: dashed; border-color: var(--border);
+  color: var(--ink-muted); font-size: 13px; font-style: italic; padding: 10px 12px;
+}
+.mrow { display: grid; grid-template-columns: 78px 1fr; gap: 8px; align-items: start; padding: 3px 0; }
+.mrow.nogut { grid-template-columns: 1fr; }
+.mrow.cursor { background: var(--pale); margin: 0 -8px; padding: 3px 8px; border-radius: 4px; }
+.mrow.click { cursor: pointer; }
+.gut { display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.gmark {
+  font: 700 10px/1 var(--sans); letter-spacing: .05em; text-transform: uppercase;
+  padding: 3px 6px; border-radius: 3px; border: 1px solid var(--border); color: var(--ink-muted);
+  text-align: center;
+}
+.gmark.got { border-color: var(--good); color: var(--good); }
+.gmark.missed { border-color: var(--bad); color: var(--bad); }
+.gmark.now { border-color: var(--primary); color: var(--primary); }
+.tmark { font: 500 11px/1 var(--mono); color: var(--ink-muted); text-align: center; }
+.tmark.yes { color: var(--good); }
+.tmark.no { color: var(--bright-text); }
+.mline { display: flex; align-items: flex-end; gap: 6px; font: 700 15px/1.4 var(--sans); }
+.mline .it { flex: 0 1 auto; }
+.mline .dots { flex: 1 1 28px; min-width: 28px; border-bottom: 2px dotted var(--ink); margin-bottom: 6px; }
+.mline .val { flex: 0 1 auto; text-align: right; }
+.mline.plain { display: block; font-weight: 700; }
+.mline.hidden-line { color: var(--ink-muted); font-weight: 500; font-style: italic; }
+.mline.unboxed-note { font-weight: 400; font-size: 13px; color: var(--ink-muted); font-style: italic; }
+
+/* ---------- round / summary ---------- */
+.roundcard { border: 1px solid var(--border); border-top: 4px solid var(--bright); border-radius: var(--radius); padding: 20px; }
+.roundcard h2 { margin: 0 0 8px; font-size: 20px; }
+.roundcard p { margin: 0 0 10px; font-size: 15px; }
+.tally { display: flex; flex-wrap: wrap; gap: 18px; margin: 14px 0; }
+.tally div { min-width: 92px; }
+.tally .n { display: block; font: 700 26px var(--mono); }
+.tally .l { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+.tally .bad .n { color: var(--bad); }
+.tally .good .n { color: var(--good); }
+.misslist { margin: 12px 0 0; padding: 0; list-style: none; font-size: 14px; }
+.misslist li { padding: 8px 0; border-top: 1px solid var(--border-subtle); }
+.misslist code { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); word-break: break-all; }
+.procdone {
+  margin: 14px 0 0; padding: 10px 12px; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--surface-sunken); font-size: 14px;
+}
+.procdone.clean { border-color: var(--good); background: var(--good-pale); }
+.procdone.dirty { border-color: var(--bad); background: var(--bad-pale); }
+
+/* ---------- shortcuts ---------- */
+.shortcuts { margin: 18px 0 0; font-size: 13px; color: var(--ink-muted); }
+.shortcuts h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; margin: 0 0 6px; color: var(--ink-muted); }
+.shortcuts ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+kbd {
+  font: 600 12px var(--mono); background: var(--surface-sunken);
+  border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px;
+  padding: 1px 5px; color: var(--ink);
+}
+
+/* ---------- reference ---------- */
+.refcard { border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; margin: 0 0 14px; background: var(--surface); }
+.refcard h3 { margin: 0 0 6px; font-size: 18px; }
+.rowcount { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 40px; background: var(--header-bg); color: var(--ink-on-brand); padding: 20px 0 26px;
+}
+footer .wrap > div { margin-bottom: 6px; font-size: 13px; }
+footer .wrap > .id { font-family: var(--mono); font-size: 14px; font-weight: 700; }
+footer .muted { color: var(--pale-on-brand); }
+
+/* ---------- phone ---------- */
+@media (max-width: 640px) {
+  .prompt { font-size: 20px; }
+  .answer-value { font-size: 19px; }
+  .card { padding: 14px; }
+  .site-head h1 { font-size: 19px; }
+  .actions .btn { flex: 1 1 auto; }
+  .mrow { grid-template-columns: 62px 1fr; gap: 6px; }
+  .mline { font-size: 14px; flex-wrap: wrap; align-items: baseline; }
+  .mline .it { flex: 0 1 auto; max-width: 100%; }
+  .mline .dots { flex: 1 1 28px; }
+  .mline .val { flex: 1 1 auto; min-width: 40%; text-align: right; }
+  .board table { min-width: 0; }
+  .board thead { display: none; }
+  .board tr { display: grid; grid-template-columns: 1fr auto auto; gap: 2px 10px; padding: 6px 10px; border-top: 1px solid var(--border-subtle); }
+  .board td { display: block; padding: 0; border-top: 0; }
+  .board td:first-child { grid-column: 1 / -1; }
+  .board td.num { width: auto; text-align: left; font-size: 12px; }
+  .board td.num::before { content: attr(data-label) " "; font: 600 10px var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-muted); }
+  .board td:last-child { grid-column: 1 / -1; }
+  .board .st { white-space: normal; }
+  .board td.num { width: 48px; }
+  .board .hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="banner" role="alert" id="banner">
+  <div class="wrap">
+    <h2>FCOM-scoped study aid, not the training worksheet, not the manual</h2>
+    <p>This page drills the <strong>ten</strong> memory-item procedures the A330P FCOM itself marks with its own <strong>[MEM]</strong> convention, every one of them <strong>visually verified against the rendered FCOM or QRH page</strong>. It has <strong>NOT yet been cross-checked against the training-department memory-item worksheets</strong>, and those worksheets, not this page, define what is drilled and examined. A procedure missing here may still be required; a procedure here may be trained with a different cut.</p>
+    <p><strong>The FCOM and the QRH win every conflict with this page, every time. The manual is the authority.</strong> This page is uncontrolled and is not a source document.</p>
+    <p>Two facts to carry with you:</p>
+    <ul>
+      <li><strong>TCAS CAUTION (Traffic Advisory)</strong> has one line, and the FCOM prints it <strong>unboxed</strong>. It is drilled here exactly as printed, without a box.</li>
+      <li>The box on FCOM <strong>Smoke / Fumes</strong> (pdf page 3164) is an <strong>At-ANY-TIME block, not a memory item</strong>. Smoke / Fumes is therefore <strong>deliberately absent</strong> from this drill.</li>
+    </ul>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <h1>A330 Memory Items, Verbatim Recall Drill</h1>
+    <p class="sub" id="headSub"></p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <details class="gaps" id="gapsPanel">
+    <summary id="gapsHead">Read before you drill<span class="cnt" id="gapsCount"></span></summary>
+    <ul id="gapsList"></ul>
+  </details>
+
+  <nav class="modes" role="tablist" aria-label="Page mode">
+    <button id="tabDrill" role="tab" aria-selected="true" aria-controls="drillPane">Drill</button>
+    <button id="tabRef" role="tab" aria-selected="false" aria-controls="refPane">Reference</button>
+  </nav>
+
+  <!-- =================== DRILL =================== -->
+  <section id="drillPane" role="tabpanel" aria-labelledby="tabDrill">
+
+    <div class="panel">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Direction</span>
+        <div class="seg" role="group" aria-label="Drill direction">
+          <button id="dirP2A" aria-pressed="true">Procedure &rarr; actions</button>
+          <button id="dirA2P" aria-pressed="false">Actions &rarr; procedure</button>
+        </div>
+        <span class="ctrl-label">Mode</span>
+        <div class="seg" role="group" aria-label="Drill mode">
+          <button id="styWhole" aria-pressed="true">Whole procedure</button>
+          <button id="styLine" aria-pressed="false">Line by line</button>
+        </div>
+        <span class="seg-note" id="styNote"></span>
+        <button class="btn" id="restartBtn">Restart session<span class="k">R</span></button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-label">Procedures</span>
+        <button class="btn" id="allProc">All</button>
+        <button class="btn" id="noProc">None</button>
+      </div>
+      <div class="ctrl-row" style="border-top:0;padding-top:0">
+        <div class="chips" id="procChips"></div>
+      </div>
+    </div>
+
+    <div class="statusbar" id="statusbar" aria-live="polite"></div>
+
+    <div id="card" aria-live="polite"></div>
+
+    <details class="board" id="board" open>
+      <summary>Per-procedure record this session, which of the ten you have never missed</summary>
+      <table>
+        <thead><tr><th>Procedure</th><th class="num">Served</th><th class="num">Clean</th><th>Status</th></tr></thead>
+        <tbody id="boardBody"></tbody>
+      </table>
+    </details>
+
+    <div class="shortcuts">
+      <h2>Keyboard</h2>
+      <ul>
+        <li><kbd>Space</kbd> reveal, then next procedure once every line is graded</li>
+        <li><kbd>Enter</kbd> reveal from the answer box (whole procedure: <kbd>Enter</kbd> on an empty line, or <kbd>Ctrl</kbd>+<kbd>Enter</kbd>)</li>
+        <li><kbd>1</kbd> got it, this line</li>
+        <li><kbd>2</kbd> missed it, this line</li>
+        <li><kbd>&larr;</kbd> / <kbd>&rarr;</kbd> previous / next procedure</li>
+        <li><kbd>V</kbd> source: book, page, ident</li>
+        <li><kbd>R</kbd> restart</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =================== REFERENCE =================== -->
+  <section id="refPane" role="tabpanel" aria-labelledby="tabRef" hidden>
+    <p class="rowcount" id="refCount"></p>
+    <div id="refList"></div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="id" id="footManual"></div>
+    <div class="muted" id="footQrh"></div>
+    <div class="muted" id="footGen"></div>
+    <div class="muted">Study extract. Uncontrolled copy. The FCOM and QRH are the authority.</div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   INLINED DATA BLOCK, STANDALONE BUILD ONLY
+
+   Everything between the BEGIN/END markers below is a verbatim copy of
+   data/memory_items.json (the visually verified memory-item set, source
+   file data/memory_items_v2.json in the working tree), inlined so this
+   single file works offline when opened straight from disk (file://)
+   with no fetch() and no network.
+
+   The canonical copy is data/memory_items.json. The portal architecture
+   keeps this data in EXTERNAL JSON. In the GitHub Pages build, delete
+   this block and load data/memory_items.json instead; nothing else in
+   this file needs to change, the app reads the same array under the
+   same name.
+
+   Eleven entries cover ten procedures: mi-vis-01 (FCOM) and mi-vis-04
+   (QRH) are the same EMER DESCENT block and are merged at load time into
+   one drill item carrying both citations.
+
+   Line grammar in `actions`: a line ending in ":" or starting with a
+   quote character (and carrying no " ... ") is an unboxed condition
+   header; "" is a box-break sentinel (separate boxes on the page);
+   everything else is a boxed, graded line.
+
+   DO NOT HAND-EDIT. Regenerate from data/memory_items.json.
+   Generated 2026-09-01 · 11 entries · 10 procedures.
+   ================================================================== */
+/* BEGIN data/memory_items.json */
+const MEMORY_ITEMS =
+[
+ {
+  "id": "mi-vis-01",
+  "procedure": "[MEM] EMER DESCENT",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-MISC P1/26",
+  "pdf_page": 3065,
+  "actions": [
+   "CREW OXY MASKS ... USE",
+   "SIGNS ... ON",
+   "EMER DESCENT ... INITIATE",
+   "THR LEVERS ... IDLE",
+   "SPD BRK ... FULL"
+  ],
+  "boxes": [
+   {
+    "lines": [
+     "CREW OXY MASKS ... USE",
+     "SIGNS ... ON",
+     "EMER DESCENT ... INITIATE"
+    ]
+   },
+   {
+    "unboxed_condition": "If A/THR not active:",
+    "lines": [
+     "THR LEVERS ... IDLE"
+    ]
+   },
+   {
+    "lines": [
+     "SPD BRK ... FULL"
+    ]
+   }
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "evidence": "Title carries [MEM] prefix; no OEB or At ANY TIME label; all box text legible at 3x.",
+  "src": "manual",
+  "fleet": "pax",
+  "ref": "PRO-ABN-MISC-00012261.0001001"
+ },
+ {
+  "id": "mi-vis-02",
+  "procedure": "[MEM] STALL RECOVERY",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-MISC P2/26",
+  "pdf_page": 3066,
+  "actions": [
+   "NOSE DOWN PITCH CONTROL ... APPLY",
+   "BANK ... WINGS LEVEL",
+   "THRUST ... INCREASE SMOOTHLY AS NEEDED",
+   "SPEEDBRAKES ... CHECK RETRACTED",
+   "FLIGHT PATH ... RECOVER SMOOTHLY",
+   "FLAPS 1 ... SELECT"
+  ],
+  "boxes": [
+   {
+    "lines": [
+     "NOSE DOWN PITCH CONTROL ... APPLY"
+    ]
+   },
+   {
+    "lines": [
+     "BANK ... WINGS LEVEL"
+    ]
+   },
+   {
+    "unboxed_condition": "When out of stall (no longer stall indications) :",
+    "lines": [
+     "THRUST ... INCREASE SMOOTHLY AS NEEDED"
+    ]
+   },
+   {
+    "unboxed_condition": "When out of stall (no longer stall indications) :",
+    "lines": [
+     "SPEEDBRAKES ... CHECK RETRACTED",
+     "FLIGHT PATH ... RECOVER SMOOTHLY"
+    ]
+   },
+   {
+    "unboxed_condition": "If in clean configuration and below 20 000 ft :",
+    "lines": [
+     "FLAPS 1 ... SELECT"
+    ]
+   }
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "evidence": "Title carries [MEM] prefix; page text 'apply the immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
+  "src": "manual",
+  "fleet": "pax",
+  "ref": "PRO-ABN-MISC-00013664.0002001"
+ },
+ {
+  "id": "mi-vis-03",
+  "procedure": "[MEM] STALL WARNING AT LIFTOFF",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-MISC P3/26",
+  "pdf_page": 3067,
+  "actions": [
+   "THRUST ... TOGA",
+   "PITCH ATTITUDE ... 15 °",
+   "BANK ... WINGS LEVEL"
+  ],
+  "boxes": [
+   {
+    "lines": [
+     "THRUST ... TOGA"
+    ]
+   },
+   {
+    "unboxed_condition": "At the same time:",
+    "lines": [
+     "PITCH ATTITUDE ... 15 °",
+     "BANK ... WINGS LEVEL"
+    ]
+   }
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "evidence": "Title carries [MEM] prefix; page text 'apply the following immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
+  "src": "manual",
+  "fleet": "pax",
+  "ref": "PRO-ABN-MISC-00013665.0002001"
+ },
+ {
+  "id": "mi-vis-04",
+  "procedure": "EMER DESCENT",
+  "book": "QRH R35",
+  "page_label": "22.02A",
+  "pdf_page": 144,
+  "actions": [
+   "CREW OXY MASKS ... USE",
+   "SIGNS ... ON",
+   "EMER DESCENT ... INITIATE",
+   "THR LEVERS ... IDLE",
+   "SPD BRK ... FULL"
+  ],
+  "boxes": [
+   {
+    "lines": [
+     "CREW OXY MASKS ... USE",
+     "SIGNS ... ON",
+     "EMER DESCENT ... INITIATE"
+    ]
+   },
+   {
+    "unboxed_condition": "If A/THR not active:",
+    "lines": [
+     "THR LEVERS ... IDLE"
+    ]
+   },
+   {
+    "lines": [
+     "SPD BRK ... FULL"
+    ]
+   }
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "evidence": "No At ANY TIME or OEB label; boxed lines identical to FCOM [MEM] EMER DESCENT (pdf 3065); legible at 3x.",
+  "src": "manual",
+  "fleet": "pax",
+  "ref": "ABN-22-00010585.0001001"
+ },
+ {
+  "id": "mi-vis-05",
+  "procedure": "UNRELIABLE SPEED INDICATION",
+  "book": "QRH R35",
+  "page_label": "23.03A",
+  "pdf_page": 157,
+  "actions": [
+   "If the safe conduct of the flight is impacted",
+   "AP ... OFF",
+   "A/THR ... OFF",
+   "FD ... OFF",
+   "PITCH/THRUST",
+   "Below THRUST RED ALT ... 15° / TOGA",
+   "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
+   "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
+   "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
+   "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
+   "SPEEDBRAKES ... CHECK RETRACTED",
+   "L/G ... UP",
+   "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
+  ],
+  "boxes": [
+   {
+    "lines": [
+     "If the safe conduct of the flight is impacted",
+     "AP ... OFF",
+     "A/THR ... OFF",
+     "FD ... OFF",
+     "PITCH/THRUST",
+     "Below THRUST RED ALT ... 15° / TOGA",
+     "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
+     "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
+     "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
+     "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
+     "SPEEDBRAKES ... CHECK RETRACTED",
+     "L/G ... UP",
+     "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
+    ]
+   }
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "evidence": "Single inner box (border distinct from outer page frame, verified at 4x); no At ANY TIME or OEB label; FCOM TOC pdf 2411 lists '[MEM] Unreliable Speed Indication'; the following 'To level off' block is unboxed.",
+  "src": "manual",
+  "fleet": "pax",
+  "ref": "ABN-23-A-00017854.0001001"
+ },
+ {
+  "id": "mi-vis-06",
+  "procedure": "[MEM] LOSS OF BRAKING",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-BRAKES P 1/16",
+  "pdf_page": 2545,
+  "ref": "PRO-ABN-BRAKES-00010803.0001001",
+  "actions": [
+   "If no braking:",
+   "REV ... MAX",
+   "",
+   "BRAKE PEDALS ... RELEASE",
+   "",
+   "A/SKID OFF ... ORDER",
+   "",
+   "A/SKID & N/W STRG ... OFF",
+   "BRAKE PEDALS ... PRESS",
+   "MAX BRK PR ... 1000 PSI",
+   "If still no braking:",
+   "PARK BRAKE ... USE"
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
+  "audit": [
+   {
+    "pass": "PASS1 2026-09-01",
+    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+   }
+  ]
+ },
+ {
+  "id": "mi-vis-07",
+  "procedure": "[MEM] TAWS CAUTION",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-SURV P 1/8 to 2/8",
+  "pdf_page": 3209,
+  "ref": "PRO-ABN-SURV-AA-00026795.0001001",
+  "actions": [
+   "\"TERRAIN TERRAIN\" - \"TOO LOW TERRAIN\" - \"TERRAIN AHEAD\" - \"CAUTION TERRAIN\" - \"OBSTACLE AHEAD\" - \"CAUTION OBSTACLE\"",
+   "During night or IMC conditions:",
+   "Simultaneously:",
+   "AP ... OFF",
+   "PITCH ... PULL UP",
+   "",
+   "THRUST LEVERS ... TOGA",
+   "SPEED BRAKE LEVER ... CHECK RETRACTED",
+   "BANK ... WINGS LEVEL or ADJUST",
+   "",
+   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE.",
+   "During daylight and VMC conditions, with terrain and obstacles clearly in sight:",
+   "FLIGHT PATH ... ADJUST",
+   "\"SINK RATE\"",
+   "Above 1 000 ft AAL IMC or above 500 ft AAL VMC:",
+   "FLIGHT PATH ... ADJUST",
+   "Below 1 000 ft AAL IMC or below 500 ft AAL VMC:",
+   "GO-AROUND ... CONSIDER",
+   "\"DON’T SINK\"",
+   "FLIGHT PATH ... ADJUST",
+   "\"TOO LOW GEAR\" or \"TOO LOW FLAPS\"",
+   "GO-AROUND ... PERFORM",
+   "\"GLIDESLOPE\"",
+   "Above 1 000 ft AAL IMC or above 500 ft AAL VMC:",
+   "FLIGHT PATH ... ADJUST",
+   "When conditions require a deliberate approach below glideslope:",
+   "G/S MODE ... OFF",
+   "Below 1 000 ft AAL IMC or below 500 ft AAL VMC:",
+   "GO-AROUND ... CONSIDER"
+  ],
+  "sub_idents": [
+   "PRO-ABN-SURV-AA-00026796.0001001",
+   "PRO-ABN-SURV-AA-00026797.0001001",
+   "PRO-ABN-SURV-AA-00026798.0001001"
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
+  "audit": [
+   {
+    "pass": "PASS1 2026-09-01",
+    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+   }
+  ]
+ },
+ {
+  "id": "mi-vis-08",
+  "procedure": "[MEM] TAWS WARNING",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-SURV P 3/8",
+  "pdf_page": 3211,
+  "ref": "PRO-ABN-SURV-00026799.0001001",
+  "actions": [
+   "If the TAWS triggers one of the PULL UP alerts:",
+   "Simultaneously:",
+   "AP ... OFF",
+   "PITCH ... PULL UP",
+   "",
+   "THRUST LEVERS ... TOGA",
+   "SPEED BRAKE LEVER ... CHECK RETRACTED",
+   "BANK ... WINGS LEVEL or ADJUST",
+   "",
+   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE."
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
+  "audit": [
+   {
+    "pass": "PASS1 2026-09-01",
+    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+   }
+  ]
+ },
+ {
+  "id": "mi-vis-09",
+  "procedure": "[MEM] TCAS CAUTION - TRAFFIC ADVISORY",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-SURV P 3/8",
+  "pdf_page": 3211,
+  "ref": "PRO-ABN-SURV-00025042.0001001",
+  "actions": [
+   "Do not perform a maneuver based on a TA alone."
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "note": "Title carries the [MEM] prefix but the single line is printed as plain text, NOT boxed. It is a memory-item procedure with no boxed action line.",
+  "verified_by": "main session visual read 2026-09-01, 110 dpi render"
+ },
+ {
+  "id": "mi-vis-10",
+  "procedure": "[MEM] TCAS WARNING - RESOLUTION ADVISORY",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-SURV P 4/8 to 5/8",
+  "pdf_page": 3212,
+  "ref": "PRO-ABN-SURV-00011464.0005001",
+  "actions": [
+   "All RA, except any CLIMB RA during approach in CONF 3 or FULL:",
+   "AP (if engaged) ... OFF",
+   "BOTH FDs ... OFF",
+   "",
+   "VERTICAL SPEED ... ADJUST or MAINTAIN",
+   "Any CLIMB RA during approach in CONF 3 or FULL:",
+   "GO-AROUND ... PERFORM",
+   "",
+   "VERTICAL SPEED ... MONITOR",
+   "",
+   "ATC ... NOTIFY",
+   "When the “CLEAR OF CONFLICT” aural alert sounds:",
+   "ATC ... NOTIFY",
+   "LATERAL AND VERTICAL GUIDANCE ... ADJUST",
+   "",
+   "AP/FD ... AS RQRD"
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "note": "Unboxed guidance on the same page: always follow RA orders even if crossing intruder altitude; respect stall, GPWS, or windshear warnings.",
+  "verified_by": "main session visual read 2026-09-01, 110 and 150 dpi renders",
+  "audit": [
+   {
+    "pass": "PASS1 2026-09-01",
+    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+   }
+  ]
+ },
+ {
+  "id": "mi-vis-11",
+  "procedure": "[MEM] WINDSHEAR WARNING - REACTIVE WINDSHEAR",
+  "book": "FCOM R17",
+  "page_label": "PRO-ABN-SURV P 6/8 to 7/8",
+  "pdf_page": 3214,
+  "ref": "PRO-ABN-SURV-00012300.0001001",
+  "actions": [
+   "At Takeoff:",
+   "Before V1:",
+   "If there are significant variations in airspeed, and in airspeed trend below the indicated V1, reject the takeoff.",
+   "After V1:",
+   "THR LEVERS ... TOGA",
+   "REACHING VR ... ROTATE",
+   "SRS ORDERS ... FOLLOW",
+   "When airborne, during initial climb, or at landing:",
+   "THR LEVERS AT TOGA ... SET OR CONFIRM",
+   "AP (if engaged) ... KEEP ON",
+   "SRS ORDERS ... FOLLOW",
+   "",
+   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL OUT OF WINDSHEAR.",
+   "",
+   "CAREFULLY MONITOR FLIGHT PATH AND SPEED.",
+   "WHEN OUT OF WINDSHEAR, SMOOTHLY RECOVER NORMAL CLIMB."
+  ],
+  "classification": "MEMORY ITEMS",
+  "confidence": "HIGH",
+  "src": "manual",
+  "fleet": "pax",
+  "note": "Unboxed on page: during the takeoff roll the aural alert is inhibited, recognition is by crew observation; if FD bars not displayed, initial pitch 17.5 degrees; the autopilot disengages if AOA exceeds alpha prot.",
+  "verified_by": "main session visual read 2026-09-01, 110 and 150 dpi renders",
+  "audit": [
+   {
+    "pass": "PASS1 2026-09-01",
+    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+   }
+  ]
+ }
+];
+/* END data/memory_items.json */
+
+/* ------------------------------------------------------------------
+   PAGE METADATA, hand-authored, not extracted.
+   ------------------------------------------------------------------ */
+const META = {
+  fcom:       "A330P FCOM R17",
+  fcom_issue: "15 MAY 26",
+  qrh:        "A330P QRH R35",
+  qrh_issue:  "26 JUN 26",
+  fleet:      "A330 passenger fleet",
+  scope:      "Memory items only, the FCOM's own [MEM] convention",
+  generated:  "2026-09-01",
+  version:    "0.3",  /* (0.2: pass 1-4 fixes) (0.3: pass 5 polish) */
+  dataset:    "memory_items.json (v3: pass-1 re-read of the rendered pages, box breaks and quoted-alert headers encoded), ten procedures, all visually verified against rendered pages"
+};
+
+/* Rendering facts that are true of the printed page but not encoded in
+   the data schema. Keyed by entry id. Sourced from the visual pass notes
+   (data/memory_items_VISUAL_PASS.md) and the entry's own note field. */
+const RENDER_HINTS = {
+  "mi-vis-09": {
+    unboxed: true,
+    why: "The FCOM prints this single line as plain text, not boxed. It is drilled as printed."
+  }
+};
+
+/* The scope notes shown under the header. */
+const KNOWN_GAPS =
+[
+ {
+  "tag": "Scope",
+  "text": "Ten procedures, taken from the FCOM's own [MEM] title convention and confirmed on the rendered page, plus the QRH page where the QRH carries the block (EMER DESCENT is identical in both books and is drilled once with both citations; UNRELIABLE SPEED INDICATION is drilled from the QRH page, which the FCOM table of contents lists as [MEM])."
+ },
+ {
+  "tag": "Not cross-checked",
+  "text": "The training-department memory-item worksheets define drill scope for the check. This set has not been reconciled against them. Treat a difference between this page and a worksheet as a question for the training department, not as an error in the worksheet."
+ },
+ {
+  "tag": "Verbatim",
+  "text": "Every line in this page is the printed line, character for character, including the item, the value and the condition header above it. The grading question is whether you had the printed words in the printed order. A paraphrase that means the same thing is a miss."
+ },
+ {
+  "tag": "TCAS caution",
+  "text": "[MEM] TCAS CAUTION has one line and it is printed unboxed. It is drilled unboxed here. Do not invent a box for it in your head."
+ },
+ {
+  "tag": "Smoke / Fumes",
+  "text": "Absent on purpose. The box on FCOM Smoke / Fumes pdf page 3164 is an At-ANY-TIME block, not a memory item, so it does not belong in this drill."
+ },
+ {
+  "tag": "Not encoded",
+  "text": "Guidance printed outside the boxes (for example the TCAS RA rule to follow RA orders even when crossing the intruder's altitude, or the windshear note on initial pitch with no FD bars) is shown as a note after reveal and is not graded. Read the full page in the FCOM; this drill covers the boxes only."
+ }
+];
+</script>
+
+<script>
+"use strict";
+
+/* ================= helpers ================= */
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+function el(id) { return document.getElementById(id); }
+function shuffle(a) {
+  var arr = a.slice();
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+/* A line ending in ":" is a condition header, printed unboxed. So is a line
+   that starts with a quote character (straight or curly) and carries no
+   " ... " item/value pair: those are the quoted aural-alert names the TAWS
+   pages print as headings. Headers are never graded. */
+function isHeader(line) {
+  if (/:\s*$/.test(line)) return true;
+  return /^["“'‘]/.test(line) && line.indexOf(" ... ") === -1;
+}
+/* The empty string is the box-break sentinel: end the current box, start a
+   new one. It is rendered as a small unboxed gap and is never graded or counted. */
+function isBreak(line) { return line === ""; }
+/* "ITEM ... VALUE" splits at the first " ... "; anything else is a plain boxed line. */
+function splitItem(line) {
+  var k = line.indexOf(" ... ");
+  if (k === -1) return null;
+  return { item: line.slice(0, k), value: line.slice(k + 5) };
+}
+/* Comparison key for the typed-text check. Case and spacing are ignored, the
+   dot leader is ignored; the words and their order are not. This check is an
+   aid only; the self-grade is the authority. */
+function norm(s) {
+  return String(s || "").toUpperCase().replace(/\.{2,}/g, " ").replace(/\s+/g, " ").trim();
+}
+function stripMem(title) { return title.replace(/^\[MEM\]\s*/, ""); }
+
+/* ================= build the ten procedures from the eleven entries ================= */
+var DATA_WARNINGS = [];
+
+function layoutFromActions(entry) {
+  var out = [], box = null;
+  entry.actions.forEach(function (t, i) {
+    if (isBreak(t)) { box = null; out.push({ kind: "break" }); }
+    else if (isHeader(t)) { box = null; out.push({ kind: "header", text: t }); }
+    else {
+      if (!box) { box = { kind: "box", lines: [] }; out.push(box); }
+      box.lines.push({ text: t, idx: i });
+    }
+  });
+  return out;
+}
+/* Entries from the first visual pass carry a `boxes` array that records the
+   box grouping and the unboxed condition above each box. Use it when it is
+   consistent with `actions`; otherwise fall back to the actions-derived layout
+   and say so. */
+function layoutFromBoxes(entry) {
+  var ptr = 0, out = [], lastHeader = null;
+  for (var b = 0; b < entry.boxes.length; b++) {
+    var box = entry.boxes[b];
+    if (box.unboxed_condition && box.unboxed_condition !== lastHeader) {
+      out.push({ kind: "header", text: box.unboxed_condition });
+      lastHeader = box.unboxed_condition;
+    }
+    var lines = [];
+    for (var j = 0; j < box.lines.length; j++) {
+      if (entry.actions[ptr] !== box.lines[j]) return null;
+      lines.push({ text: box.lines[j], idx: ptr });
+      ptr++;
+    }
+    out.push({ kind: "box", lines: lines });
+  }
+  if (ptr !== entry.actions.length) return null;
+  return out;
+}
+function buildLayout(entry) {
+  var lay = null;
+  if (entry.boxes && entry.boxes.length) {
+    lay = layoutFromBoxes(entry);
+    if (!lay) DATA_WARNINGS.push(entry.id + ": boxes array disagrees with actions; layout derived from actions instead.");
+  }
+  if (!lay) lay = layoutFromActions(entry);
+  var hint = RENDER_HINTS[entry.id];
+  if (hint && hint.unboxed) lay.forEach(function (g) { if (g.kind === "box") g.unboxed = true; });
+  return lay;
+}
+
+var PROCS = [];
+(function () {
+  var byKey = {};
+  MEMORY_ITEMS.forEach(function (e) {
+    var key = e.actions.join("");
+    var p = byKey[key];
+    if (!p) {
+      p = {
+        pid: e.id,
+        title: e.procedure,
+        actions: e.actions,
+        layout: buildLayout(e),
+        sources: [],
+        notes: [],
+        hint: RENDER_HINTS[e.id] || null
+      };
+      byKey[key] = p;
+      PROCS.push(p);
+    } else if (/^\[MEM\]/.test(e.procedure) && !/^\[MEM\]/.test(p.title)) {
+      p.title = e.procedure;
+    }
+    p.sources.push(e);
+    if (e.note) p.notes.push({ book: e.book, text: e.note });
+  });
+  PROCS.forEach(function (p) {
+    p.name = stripMem(p.title);
+    p.gradable = [];
+    p.layout.forEach(function (g) { if (g.kind === "box") g.lines.forEach(function (l) { p.gradable.push(l.idx); }); });
+    p.headers = p.layout.filter(function (g) { return g.kind === "header"; }).map(function (g) { return g.text; });
+    p.books = [];
+    p.sources.forEach(function (s) { if (p.books.indexOf(s.book) === -1) p.books.push(s.book); });
+  });
+})();
+var BY_PID = {};
+PROCS.forEach(function (p) { BY_PID[p.pid] = p; });
+
+/* ================= state (in memory only, no storage of any kind) ================= */
+var S = {
+  mode: "drill",
+  direction: "p2a",            /* p2a: procedure -> actions, a2p: actions -> procedure */
+  style: "whole",              /* whole | line */
+  selected: {},                /* pid -> bool */
+  queue: [],
+  idx: 0,
+  round: 1,
+  revealed: false,
+  showSrc: false,
+  typed: {},                   /* key -> text, so navigating back keeps it */
+  grades: {},                  /* pid -> [ "got" | "missed" | undefined ] per slot */
+  line: 0,                     /* line-by-line: index into proc.gradable */
+  cursor: 0,                   /* whole: which slot the next 1/2 grades */
+  counted: {},                 /* queue idx -> {pid, got, missed, clean} once the procedure is scored */
+  counts: { got: 0, missed: 0 },
+  firstPass: { got: 0, missed: 0, total: 0, procsClean: 0, procsMissed: 0 },
+  procStats: {},               /* pid -> { served, clean, everMissed } */
+  missedThisRound: [],
+  missedEver: {},
+  cursorPicked: false,         /* whole: a graded line was clicked for re-grading */
+  phase: "drill",              /* drill | roundbreak | done | empty */
+  note: ""
+};
+PROCS.forEach(function (p) { S.selected[p.pid] = true; S.procStats[p.pid] = { served: 0, clean: 0, everMissed: false }; });
+
+function pool() { return PROCS.filter(function (p) { return S.selected[p.pid]; }); }
+function slotsOf(p) { return S.direction === "a2p" ? 1 : p.gradable.length; }
+function gradesOf(p) {
+  if (!S.grades[p.pid]) S.grades[p.pid] = [];
+  return S.grades[p.pid];
+}
+function allGraded(p) {
+  var g = gradesOf(p), n = slotsOf(p);
+  for (var i = 0; i < n; i++) if (!g[i]) return false;
+  return true;
+}
+function typedKey(p) {
+  return p.pid + "|" + S.direction + "|" + (S.direction === "p2a" && S.style === "line" ? "L" + S.line : "W");
+}
+
+function startSession(note) {
+  var p = pool();
+  S.queue = shuffle(p);
+  S.idx = 0;
+  S.round = 1;
+  S.revealed = false;
+  S.showSrc = false;
+  S.typed = {};
+  S.grades = {};
+  S.line = 0;
+  S.cursor = 0;
+  S.counted = {};
+  S.counts = { got: 0, missed: 0 };
+  S.firstPass = { got: 0, missed: 0, total: p.length, procsClean: 0, procsMissed: 0 };
+  S.missedThisRound = [];
+  S.missedEver = {};
+  PROCS.forEach(function (q) { S.procStats[q.pid] = { served: 0, clean: 0, everMissed: false }; });
+  S.phase = p.length ? "drill" : "empty";
+  S.note = note || "";
+  render();
+}
+
+/* ================= drill flow ================= */
+function current() { return S.queue[S.idx] || null; }
+
+function reveal() {
+  if (S.phase !== "drill" || !current() || S.revealed) return;
+  S.revealed = true;
+  if (S.direction === "p2a" && S.style === "whole") {
+    /* cursor on the first ungraded slot */
+    var g = gradesOf(current()), n = slotsOf(current());
+    S.cursor = 0;
+    for (var i = 0; i < n; i++) if (!g[i]) { S.cursor = i; break; }
+  }
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  render();
+}
+
+/* Grade the slot under the cursor (whole / a2p) or the current line (line). */
+function grade(kind) {
+  var p = current();
+  if (S.phase !== "drill" || !p || !S.revealed) return;
+  var lineMode = S.direction === "p2a" && S.style === "line";
+  var slot = lineMode ? S.line : S.cursor;
+  var g = gradesOf(p);
+  g[slot] = kind;
+  if (S.counted[S.idx]) uncount(S.idx);   /* re-grading after the score was booked: re-book below */
+
+  if (lineMode) {
+    S.line++;
+    S.revealed = false;
+    S.showSrc = false;
+    if (S.line >= p.gradable.length) { S.line = p.gradable.length; S.revealed = true; }
+  } else {
+    var n = slotsOf(p), nextSlot = -1;
+    for (var i = slot + 1; i < n; i++) if (!g[i]) { nextSlot = i; break; }
+    if (nextSlot === -1) for (var j = 0; j < n; j++) if (!g[j]) { nextSlot = j; break; }
+    S.cursor = nextSlot === -1 ? slot : nextSlot;
+  }
+  S.cursorPicked = false;
+  if (allGraded(p)) count(S.idx);
+  render();
+}
+
+/* Book a fully graded procedure into the running score. */
+function count(idx) {
+  var p = S.queue[idx];
+  if (!p || S.counted[idx]) return;
+  var g = gradesOf(p), n = slotsOf(p), got = 0, missed = 0;
+  for (var i = 0; i < n; i++) { if (g[i] === "got") got++; else if (g[i] === "missed") missed++; }
+  var clean = missed === 0;
+  S.counts.got += got;
+  S.counts.missed += missed;
+  var st = S.procStats[p.pid];
+  st.served++;
+  if (clean) st.clean++; else st.everMissed = true;
+  if (S.round === 1) {
+    S.firstPass.got += got; S.firstPass.missed += missed;
+    if (clean) S.firstPass.procsClean++; else S.firstPass.procsMissed++;
+  }
+  if (!clean) {
+    S.missedEver[p.pid] = true;
+    if (S.missedThisRound.indexOf(p.pid) === -1) S.missedThisRound.push(p.pid);
+  }
+  S.counted[idx] = { pid: p.pid, got: got, missed: missed, clean: clean, round: S.round };
+}
+function uncount(idx) {
+  var c = S.counted[idx];
+  if (!c) return;
+  S.counts.got -= c.got;
+  S.counts.missed -= c.missed;
+  var st = S.procStats[c.pid];
+  st.served--;
+  if (c.clean) st.clean--;
+  if (c.round === 1) {
+    S.firstPass.got -= c.got; S.firstPass.missed -= c.missed;
+    if (c.clean) S.firstPass.procsClean--; else S.firstPass.procsMissed--;
+  }
+  if (!c.clean) {
+    var k = S.missedThisRound.indexOf(c.pid);
+    if (k !== -1) S.missedThisRound.splice(k, 1);
+  }
+  delete S.counted[idx];
+}
+
+function resetProcView() {
+  S.cursorPicked = false;
+  S.revealed = false;
+  S.showSrc = false;
+  S.line = 0;
+  S.cursor = 0;
+}
+
+function next() {
+  if (S.phase !== "drill") return;
+  if (S.idx + 1 < S.queue.length) {
+    S.idx++;
+    resetProcView();
+    render();
+    return;
+  }
+  /* end of the pass */
+  S.phase = S.missedThisRound.length ? "roundbreak" : "done";
+  render();
+}
+
+function prev() {
+  if (S.phase !== "drill" || S.idx === 0) return;
+  S.idx--;
+  var p = current();
+  uncount(S.idx);
+  S.grades[p.pid] = [];
+  resetProcView();
+  render();
+}
+
+function startNextRound() {
+  var pids = S.missedThisRound.slice();
+  S.queue = shuffle(pids.map(function (id) { return BY_PID[id]; }));
+  S.missedThisRound = [];
+  S.idx = 0;
+  S.round++;
+  S.grades = {};
+  S.counted = {};
+  S.typed = {};                /* a re-served card must start with an empty answer box */
+  resetProcView();
+  S.phase = "drill";
+  render();
+}
+
+/* ================= rendering ================= */
+function renderHead() {
+  el("headSub").textContent =
+    META.fcom + ", issue " + META.fcom_issue + " · " + META.qrh + ", issue " + META.qrh_issue +
+    " · " + PROCS.length + " procedures from " + MEMORY_ITEMS.length + " verified entries · verbatim recall, self-graded, no multiple choice";
+  el("footManual").textContent =
+    META.fcom + ", issue " + META.fcom_issue + ", " + META.fleet + ", " + META.scope;
+  el("footQrh").textContent =
+    META.qrh + ", issue " + META.qrh_issue + ", cited where the QRH carries the block (EMER DESCENT, UNRELIABLE SPEED INDICATION).";
+  el("footGen").textContent =
+    "Generated " + META.generated + " · page version " + META.version +
+    " · " + PROCS.length + " procedures from " + META.dataset;
+  var gaps = KNOWN_GAPS.slice();
+  DATA_WARNINGS.forEach(function (w) { gaps.push({ tag: "Data", text: w }); });
+  el("gapsList").innerHTML = gaps.map(function (g) {
+    return '<li><span class="tag">' + esc(g.tag) + "</span>" + esc(g.text) + "</li>";
+  }).join("");
+  el("gapsCount").textContent = gaps.length + " notes";
+  var phone = window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+  el("gapsPanel").open = !phone;
+  el("styNote").textContent = S.direction === "a2p" ? "Actions to procedure is always the whole block." : "";
+}
+
+function renderChips() {
+  var host = el("procChips");
+  host.innerHTML = PROCS.map(function (p) {
+    var st = S.procStats[p.pid];
+    return '<button class="chip" data-pid="' + esc(p.pid) + '" aria-pressed="' + (S.selected[p.pid] ? "true" : "false") + '">' +
+      esc(p.name) + '<span class="n">' + p.gradable.length + "</span>" +
+      (st.served ? '<span class="n">' + st.clean + "/" + st.served + " clean</span>" : "") +
+      "</button>";
+  }).join("");
+  Array.prototype.forEach.call(host.querySelectorAll(".chip"), function (b) {
+    b.addEventListener("click", function () {
+      var pid = b.getAttribute("data-pid");
+      S.selected[pid] = !S.selected[pid];
+      startSession("Procedure filter changed, session restarted");
+    });
+  });
+}
+
+function renderStatus() {
+  var bits = [];
+  bits.push("Round <b>" + S.round + "</b>");
+  if (S.phase === "drill" && S.queue.length) {
+    bits.push("Procedure <b>" + (S.idx + 1) + "</b> of <b>" + S.queue.length + "</b>");
+  } else {
+    bits.push("Queue <b>" + S.queue.length + "</b>");
+  }
+  var unit = S.direction === "a2p" ? "Names" : "Lines";
+  bits.push(unit + " got <b>" + S.counts.got + "</b>");
+  bits.push('<span class="miss">' + unit + " missed <b>" + S.counts.missed + "</b></span>");
+  bits.push("Procedures owed <b>" + S.missedThisRound.length + "</b>");
+  var never = 0, served = 0;
+  PROCS.forEach(function (p) { var st = S.procStats[p.pid]; if (st.served) { served++; if (!st.everMissed) never++; } });
+  bits.push("Never missed <b>" + never + "</b> of " + served + " served");
+  bits.push("Pool <b>" + pool().length + "</b> of " + PROCS.length);
+  if (S.note) bits.push("<em>" + esc(S.note) + "</em>");
+  el("statusbar").innerHTML = bits.map(function (b) { return "<span>" + b + "</span>"; }).join("");
+}
+
+function renderBoard() {
+  el("boardBody").innerHTML = PROCS.map(function (p) {
+    var st = S.procStats[p.pid];
+    var cls, txt;
+    if (!S.selected[p.pid]) { cls = "st-off"; txt = "filtered out"; }
+    else if (!st.served) { cls = "st-none"; txt = "not yet served"; }
+    else if (st.everMissed) { cls = "st-missed"; txt = "missed at least once"; }
+    else { cls = "st-clean"; txt = "never missed"; }
+    return "<tr><td><strong>" + esc(p.name) + "</strong> <span class=\"hide-sm\" style=\"color:var(--ink-muted)\">" + p.gradable.length + (p.gradable.length === 1 ? " line" : " lines") + "</span></td>" +
+      '<td class="num" data-label="Served">' + st.served + '</td><td class="num" data-label="Clean">' + st.clean + "</td>" +
+      '<td><span class="st ' + cls + '">' + txt + "</span></td></tr>";
+  }).join("");
+}
+
+/* ---- FCOM visual grammar ----
+   opts: { hideHeaders, upto (gradable index limit, exclusive, for line-by-line),
+           current (gradable index being asked), gutter (bool), typedSet, clickable } */
+function lineHTML(l, p, opts) {
+  var s = splitItem(l.text);
+  var body;
+  if (s) {
+    body = '<div class="mline"><span class="it">' + esc(s.item) + '</span><span class="dots"></span><span class="val">' + esc(s.value) + "</span></div>";
+  } else {
+    body = '<div class="mline plain">' + esc(l.text) + "</div>";
+  }
+  if (!opts.gutter) return '<div class="mrow nogut">' + body + "</div>";
+  var slot = p.gradable.indexOf(l.idx);
+  var g = gradesOf(p)[slot];
+  var isCur = opts.current === slot;
+  var gut = "";
+  if (g) gut += '<span class="gmark ' + g + '">' + (g === "got" ? "got" : "missed") + "</span>";
+  else if (isCur) gut += '<span class="gmark now">grade</span>';
+  else gut += "";
+  if (opts.typedSet && (opts.typedSlot == null || opts.typedSlot === slot)) {
+    if (opts.typedSet.any) gut += '<span class="tmark ' + (opts.typedSet.set[norm(l.text)] ? "yes" : "no") + '">' +
+      (opts.typedSet.set[norm(l.text)] ? "typed: match" : "typed: no") + "</span>";
+  }
+  return '<div class="mrow' + (isCur ? " cursor" : "") + (opts.clickable ? " click" : "") + '" data-slot="' + slot + '">' +
+    '<div class="gut">' + gut + "</div>" + body + "</div>";
+}
+function memHTML(p, opts) {
+  opts = opts || {};
+  var h = '<div class="mem">';
+  var lim = typeof opts.upto === "number" ? opts.upto : Infinity;   /* show gradable slots < lim */
+  var askSlot = typeof opts.current === "number" ? opts.current : -1;
+  var pendingHeaders = [];
+  p.layout.forEach(function (g) {
+    if (g.kind === "break") { h += '<div class="mgap"></div>'; return; }
+    if (g.kind === "header") {
+      if (opts.hideHeaders) h += '<p class="mhead withheld">condition withheld, name it</p>';
+      else pendingHeaders.push(g.text);
+      return;
+    }
+    var visible = g.lines.filter(function (l) { return p.gradable.indexOf(l.idx) < lim; });
+    var asks = g.lines.filter(function (l) { return p.gradable.indexOf(l.idx) === askSlot && !opts.revealed; });
+    if (opts.skeleton) {
+      pendingHeaders.forEach(function (t) { h += '<p class="mhead">' + esc(t) + "</p>"; });
+      pendingHeaders = [];
+      h += '<div class="mbox skeleton' + (g.unboxed ? " unboxed" : "") + '">' + g.lines.length + (g.lines.length === 1 ? " line" : " lines") +
+        (g.unboxed ? ", printed unboxed" : "") + "</div>";
+      return;
+    }
+    if (!visible.length && !asks.length) return;
+    pendingHeaders.forEach(function (t) { h += '<p class="mhead">' + esc(t) + "</p>"; });
+    pendingHeaders = [];
+    h += '<div class="mbox' + (g.unboxed ? " unboxed" : "") + '">';
+    if (g.unboxed && !opts.plainOnly) h += '<div class="mline unboxed-note">Printed unboxed in the FCOM. No box on the page.</div>';
+    visible.forEach(function (l) { h += lineHTML(l, p, opts); });
+    asks.forEach(function () {
+      h += '<div class="mrow' + (opts.gutter ? "" : " nogut") + '">' + (opts.gutter ? '<div class="gut"><span class="gmark now">next</span></div>' : "") +
+        '<div class="mline plain hidden-line">next line, say it, then reveal</div></div>';
+    });
+    h += "</div>";
+  });
+  h += "</div>";
+  return h;
+}
+
+function sourceHTML(p) {
+  var h = '<div class="cite">';
+  h += '<button class="vbtn" id="vBtn">' + (S.showSrc ? "Hide" : "Show") + " source: book, page, ident (V)</button>";
+  if (S.showSrc) {
+    h += "<ul>";
+    p.sources.forEach(function (s) {
+      h += "<li><strong>" + esc(s.book) + "</strong>, page " + esc(s.page_label) + " (pdf " + esc(s.pdf_page) + "), ident <code>" + esc(s.ref) + "</code>";
+      if (s.sub_idents && s.sub_idents.length) h += ", sub-idents " + s.sub_idents.map(function (x) { return "<code>" + esc(x) + "</code>"; }).join(", ");
+      h += " · " + esc(s.classification) + " · " + esc(s.confidence) + " · " + esc(s.src) + " · " + esc(s.fleet) + " fleet";
+      if (s.verified_by) h += " · " + esc(s.verified_by);
+      if (s.evidence) h += " · " + esc(s.evidence);
+      h += "</li>";
+    });
+    h += "</ul>";
+  }
+  h += "</div>";
+  return h;
+}
+function notesHTML(p) {
+  var h = "";
+  if (p.hint) h += '<div class="note-box"><b>Printed unboxed</b>' + esc(p.hint.why) + "</div>";
+  p.notes.forEach(function (n) {
+    h += '<div class="note-box"><b>Note, ' + esc(n.book) + "</b>" + esc(n.text) + "</div>";
+  });
+  return h;
+}
+function typedSetFor(p) {
+  var raw = S.typed[typedKey(p)] || "";
+  var set = {}, any = false;
+  raw.split(/\n/).forEach(function (line) { var k = norm(line); if (k) { set[k] = true; any = true; } });
+  return { set: set, any: any };
+}
+function pillsHTML(p) {
+  var h = '<div class="meta">';
+  p.books.forEach(function (b) { h += '<span class="pill pill-book">' + esc(b) + "</span>"; });
+  h += '<span class="pill">' + p.gradable.length + (p.gradable.length === 1 ? " line" : " lines") + "</span>";
+  if (p.hint) h += '<span class="pill pill-warn">printed unboxed</span>';
+  if (S.procStats[p.pid].served) h += '<span class="pill">' + S.procStats[p.pid].clean + "/" + S.procStats[p.pid].served + " clean this session</span>";
+  h += "</div>";
+  return h;
+}
+function procDoneHTML(p) {
+  var g = gradesOf(p), n = slotsOf(p), missed = 0;
+  for (var i = 0; i < n; i++) if (g[i] === "missed") missed++;
+  var clean = missed === 0;
+  return '<div class="procdone ' + (clean ? "clean" : "dirty") + '"><strong>' +
+    (clean ? "Clean. Every line as printed." : missed + (missed === 1 ? " line missed." : " lines missed.") + " This procedure comes back at the end of the round.") +
+    "</strong> " + (S.direction === "a2p" ? "" : "Click a line to re-grade it. ") + "Next procedure with Space or the arrow.</div>";
+}
+
+function renderCard() {
+  var host = el("card");
+
+  if (S.phase === "empty") {
+    host.innerHTML = '<div class="roundcard"><h2>No procedures selected</h2>' +
+      "<p>Every procedure is filtered out. Turn one back on above.</p></div>";
+    return;
+  }
+
+  if (S.phase === "roundbreak") {
+    var n = S.missedThisRound.length;
+    host.innerHTML = '<div class="roundcard"><h2>Round ' + S.round + " closed, " + n +
+      " procedure" + (n === 1 ? "" : "s") + " still owed</h2>" +
+      "<p>These come back now, and they keep coming back until every line is clean. " +
+      "A memory item with one wrong line is a wrong memory item.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + S.counts.got + '</span><span class="l">Got</span></div>' +
+      '<div class="bad"><span class="n">' + S.counts.missed + '</span><span class="l">Missed</span></div>' +
+      '<div><span class="n">' + n + '</span><span class="l">Re-serving</span></div>' +
+      "</div>" +
+      '<ul class="misslist">' + S.missedThisRound.map(function (id) {
+        var p = BY_PID[id];
+        return "<li><strong>" + esc(p.title) + "</strong>, " + esc(p.books.join(" / ")) +
+          "<br><code>" + esc(p.sources.map(function (s) { return s.ref; }).join(" · ")) + "</code></li>";
+      }).join("") + "</ul>" +
+      '<div class="actions"><button class="btn btn-primary" id="nextRound">Start round ' + (S.round + 1) +
+      '<span class="k">Space</span></button>' +
+      '<button class="btn" id="restart2">Restart session<span class="k">R</span></button></div></div>';
+    el("nextRound").addEventListener("click", startNextRound);
+    el("restart2").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  if (S.phase === "done") {
+    var ever = Object.keys(S.missedEver);
+    var fp = S.firstPass;
+    var fpTotal = fp.got + fp.missed;
+    var acc = fpTotal ? Math.round((fp.got / fpTotal) * 100) : 0;
+    var never = PROCS.filter(function (p) { var st = S.procStats[p.pid]; return st.served && !st.everMissed; });
+    host.innerHTML = '<div class="roundcard"><h2>Session closed after ' + S.round + " round" +
+      (S.round === 1 ? "" : "s") + "</h2>" +
+      "<p>First-pass accuracy is the number that matters. A memory item you had to be shown twice is a memory item you do not have.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + fp.procsClean + "/" + (fp.procsClean + fp.procsMissed) + '</span><span class="l">Procedures clean, first pass</span></div>' +
+      '<div><span class="n">' + fp.got + "/" + fpTotal + '</span><span class="l">' + (S.direction === "a2p" ? "Names" : "Lines") + ', first pass</span></div>' +
+      '<div><span class="n">' + acc + '%</span><span class="l">First-pass accuracy</span></div>' +
+      '<div class="bad"><span class="n">' + ever.length + '</span><span class="l">Missed at least once</span></div>' +
+      '<div class="good"><span class="n">' + never.length + '</span><span class="l">Never missed</span></div>' +
+      "</div>" +
+      (never.length
+        ? "<p><strong>Never missed this session:</strong> " + esc(never.map(function (p) { return p.name; }).join(", ")) + "</p>"
+        : "") +
+      (ever.length
+        ? "<p><strong>Missed at least once this session, take these to the manual, not to the sim:</strong></p>" +
+          '<ul class="misslist">' + ever.map(function (id) {
+            var p = BY_PID[id];
+            return "<li><strong>" + esc(p.title) + "</strong>, " + esc(p.books.join(" / ")) +
+              "<br><code>" + esc(p.sources.map(function (s) { return s.ref; }).join(" · ")) + "</code></li>";
+          }).join("") + "</ul>"
+        : "<p>Nothing was missed in this pool. That covers this pool only, on this pass, against the FCOM's own [MEM] set, not the training worksheets.</p>") +
+      '<div class="actions"><button class="btn btn-primary" id="restart3">Run it again<span class="k">R</span></button></div></div>';
+    el("restart3").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  var p = current();
+  if (!p) { host.innerHTML = ""; return; }
+
+  var a2p = S.direction === "a2p";
+  var lineMode = !a2p && S.style === "line";
+  var done = allGraded(p);
+  var h = '<div class="card">';
+  h += pillsHTML(p);
+
+  if (a2p) {
+    /* ---------- actions -> procedure ---------- */
+    h += '<p class="ask">Name the procedure and its trigger, the condition printed above the box</p>';
+    h += memHTML(p, { hideHeaders: true, gutter: false });
+    h += '<textarea class="answer one" id="answerBox" placeholder="Procedure name and trigger. Typing is optional." spellcheck="false"></textarea>';
+    h += '<p class="hint">Typing is optional. Nothing is auto-checked in this direction; the self-grade is the whole grade.</p>';
+    if (!S.revealed) {
+      h += '<div class="actions"><button class="btn btn-primary" id="revealBtn">Reveal<span class="k">Space</span></button>';
+      h += '<button class="btn" id="skipBtn">Skip<span class="k">&rarr;</span></button></div>';
+    } else {
+      h += '<div class="reveal">';
+      h += '<p class="lab">Procedure</p><p class="answer-value">' + esc(p.title) + "</p>";
+      h += '<p class="answer-cond"><span class="lab">Trigger, as printed</span>' +
+        (p.headers.length
+          ? p.headers.map(function (t) { return esc(t); }).join("<br>")
+          : "<em>No condition header is printed above the first box. The procedure title is the trigger.</em>") + "</p>";
+      h += '<p class="lab" style="margin-top:12px">As printed, with the conditions</p>';
+      h += memHTML(p, { gutter: false });
+      h += notesHTML(p);
+      h += sourceHTML(p);
+      h += '<p class="grade-q">Did you have the procedure name and the printed trigger before you looked?<small>Naming the right procedure with a made-up trigger is a miss. Verbatim only.</small></p>';
+      if (!done) {
+        h += '<div class="actions">' +
+          '<button class="btn btn-good" id="gotBtn">Got it<span class="k">1</span></button>' +
+          '<button class="btn btn-bad" id="missBtn">Missed it<span class="k">2</span></button></div>';
+      } else {
+        h += procDoneHTML(p);
+        h += '<div class="actions"><button class="btn btn-primary" id="nextBtn">Next procedure<span class="k">Space</span></button></div>';
+      }
+      h += "</div>";
+    }
+  } else if (lineMode) {
+    /* ---------- procedure -> actions, one line at a time ---------- */
+    var finished = S.line >= p.gradable.length;
+    h += '<p class="ask">' + (finished ? "All lines graded" : "Line " + (S.line + 1) + " of " + p.gradable.length + ", in order. What is the next printed line?") + "</p>";
+    h += '<p class="prompt">' + esc(p.title) + "</p>";
+    var tsL = S.revealed && !finished ? typedSetFor(p) : null;
+    h += memHTML(p, {
+      upto: finished ? Infinity : (S.revealed ? S.line + 1 : S.line),
+      current: finished ? -1 : S.line, revealed: S.revealed, gutter: true, clickable: finished,
+      typedSet: tsL, typedSlot: S.line
+    });
+    if (!finished) {
+      h += '<textarea class="answer one" id="answerBox" placeholder="Type the next line as printed, or say it and reveal" spellcheck="false"></textarea>';
+      h += '<p class="hint">Typing is optional. If you type, the reveal compares your words to the printed line, ignoring case, spacing and the dot leader. Order and wording are on you.</p>';
+    }
+    if (finished) {
+      h += notesHTML(p);
+      h += sourceHTML(p);
+      h += procDoneHTML(p);
+      h += '<div class="actions"><button class="btn btn-primary" id="nextBtn">Next procedure<span class="k">Space</span></button></div>';
+    } else if (!S.revealed) {
+      h += '<div class="actions"><button class="btn btn-primary" id="revealBtn">Reveal this line<span class="k">Space</span></button>';
+      h += '<button class="btn" id="skipBtn">Skip procedure<span class="k">&rarr;</span></button></div>';
+    } else {
+      h += '<div class="reveal"><p class="lab">Printed line ' + (S.line + 1) + " is now shown above, in its box</p>";
+      h += sourceHTML(p);
+      h += '<p class="grade-q">Did you have this line word for word, in this position?<small>Paraphrase is a miss. Right item with the wrong value is a miss. Right line in the wrong order is a miss.</small></p>';
+      h += '<div class="actions">' +
+        '<button class="btn btn-good" id="gotBtn">Got it<span class="k">1</span></button>' +
+        '<button class="btn btn-bad" id="missBtn">Missed it<span class="k">2</span></button></div>';
+      h += "</div>";
+    }
+  } else {
+    /* ---------- procedure -> actions, whole procedure ---------- */
+    h += '<p class="ask">Recite every boxed line, in order, as printed</p>';
+    h += '<p class="prompt">' + esc(p.title) + "</p>";
+    if (!S.revealed) {
+      h += '<p class="given">Structure given, conditions as printed. The boxes are yours to fill.</p>';
+      h += memHTML(p, { skeleton: true });
+      h += '<textarea class="answer" id="answerBox" placeholder="One line per action, as printed. Typing is optional." spellcheck="false"></textarea>';
+      h += '<p class="hint">Typing is optional. If you type, the reveal marks each printed line your text matched, ignoring case, spacing and the dot leader. The self-grade is still the grade.</p>';
+      h += '<div class="actions"><button class="btn btn-primary" id="revealBtn">Reveal<span class="k">Space</span></button>';
+      h += '<button class="btn" id="skipBtn">Skip<span class="k">&rarr;</span></button></div>';
+    } else {
+      var ts2 = typedSetFor(p);
+      h += '<div class="reveal"><p class="lab">As printed</p>';
+      h += memHTML(p, { gutter: true, current: done ? -1 : S.cursor, revealed: true, typedSet: ts2, clickable: true });
+      h += notesHTML(p);
+      h += sourceHTML(p);
+      if (!done) {
+        h += '<p class="grade-q">Grade the highlighted line: did you have it word for word, in this position?<small>Paraphrase is a miss. Right item with the wrong value is a miss. Right line in the wrong order is a miss. Click any line to grade it out of sequence.</small></p>';
+        h += '<div class="actions">' +
+          '<button class="btn btn-good" id="gotBtn">Got it<span class="k">1</span></button>' +
+          '<button class="btn btn-bad" id="missBtn">Missed it<span class="k">2</span></button></div>';
+      } else {
+        h += procDoneHTML(p);
+        h += '<div class="actions"><button class="btn btn-primary" id="nextBtn">Next procedure<span class="k">Space</span></button></div>';
+      }
+      h += "</div>";
+    }
+  }
+  h += "</div>";
+  host.innerHTML = h;
+
+  /* wire up */
+  var box = el("answerBox");
+  if (box) {
+    var key = typedKey(p);
+    box.value = S.typed[key] || "";
+    box.addEventListener("input", function () { S.typed[key] = box.value; });
+    if (!S.revealed) box.focus({ preventScroll: true });
+  }
+  if (el("revealBtn")) el("revealBtn").addEventListener("click", reveal);
+  if (el("skipBtn")) el("skipBtn").addEventListener("click", next);
+  if (el("gotBtn")) el("gotBtn").addEventListener("click", function () { grade("got"); });
+  if (el("missBtn")) el("missBtn").addEventListener("click", function () { grade("missed"); });
+  if (el("nextBtn")) el("nextBtn").addEventListener("click", next);
+  if (el("vBtn")) el("vBtn").addEventListener("click", function () { S.showSrc = !S.showSrc; render(); });
+  Array.prototype.forEach.call(host.querySelectorAll(".mrow.click"), function (row) {
+    row.addEventListener("click", function () {
+      var slot = parseInt(row.getAttribute("data-slot"), 10);
+      if (isNaN(slot)) return;
+      if (lineMode) {
+        /* re-open a graded line: unbook, clear that grade, and put the cursor there */
+        uncount(S.idx);
+        var g = gradesOf(p);
+        for (var i = slot; i < g.length; i++) g[i] = undefined;
+        S.line = slot; S.revealed = false; S.showSrc = false;
+      } else {
+        S.cursor = slot;
+        S.cursorPicked = true;
+      }
+      render();
+    });
+  });
+}
+
+/* ================= reference ================= */
+function renderRef() {
+  el("refCount").textContent = PROCS.length + " procedures, " + MEMORY_ITEMS.length + " source entries, shown as printed with their citations. Boxes are boxed lines; headers above a box are printed unboxed.";
+  el("refList").innerHTML = PROCS.map(function (p) {
+    var h = '<div class="refcard"><h3>' + esc(p.title) + "</h3>" + pillsHTML(p);
+    h += memHTML(p, { gutter: false });
+    h += notesHTML(p);
+    h += '<div class="cite"><ul>' + p.sources.map(function (s) {
+      return "<li><strong>" + esc(s.book) + "</strong>, page " + esc(s.page_label) + " (pdf " + esc(s.pdf_page) + "), ident <code>" + esc(s.ref) + "</code>" +
+        ((s.sub_idents && s.sub_idents.length) ? ", sub-idents " + s.sub_idents.map(function (x) { return "<code>" + esc(x) + "</code>"; }).join(", ") : "") +
+        " · " + esc(s.confidence) + (s.verified_by ? " · " + esc(s.verified_by) : "") + (s.evidence ? " · " + esc(s.evidence) : "") + "</li>";
+    }).join("") + "</ul></div></div>";
+    return h;
+  }).join("");
+}
+
+/* ================= render + wiring ================= */
+function render() {
+  var drill = S.mode === "drill";
+  el("drillPane").hidden = !drill;
+  el("refPane").hidden = drill;
+  el("tabDrill").setAttribute("aria-selected", drill ? "true" : "false");
+  el("tabRef").setAttribute("aria-selected", drill ? "false" : "true");
+  el("dirP2A").setAttribute("aria-pressed", S.direction === "p2a" ? "true" : "false");
+  el("dirA2P").setAttribute("aria-pressed", S.direction === "a2p" ? "true" : "false");
+  /* the mode segment reflects the mode actually in force: in actions -> procedure neither applies */
+  var modeOn = S.direction !== "a2p";
+  el("styWhole").setAttribute("aria-pressed", modeOn && S.style === "whole" ? "true" : "false");
+  el("styLine").setAttribute("aria-pressed", modeOn && S.style === "line" ? "true" : "false");
+  el("styWhole").disabled = S.direction === "a2p";
+  el("styLine").disabled = S.direction === "a2p";
+  el("styNote").textContent = S.direction === "a2p" ? "Actions to procedure is always the whole block." : "";
+  renderChips();
+  if (drill) { renderStatus(); renderCard(); renderBoard(); } else { renderRef(); }
+}
+
+el("tabDrill").addEventListener("click", function () { S.mode = "drill"; render(); });
+el("tabRef").addEventListener("click", function () { S.mode = "ref"; render(); });
+el("dirP2A").addEventListener("click", function () {
+  if (S.direction === "p2a") return;
+  S.direction = "p2a"; startSession("Direction changed, session restarted");
+});
+el("dirA2P").addEventListener("click", function () {
+  if (S.direction === "a2p") return;
+  S.direction = "a2p"; startSession("Direction changed, session restarted");
+});
+el("styWhole").addEventListener("click", function () {
+  if (S.style === "whole") return;
+  S.style = "whole"; startSession("Whole-procedure mode, session restarted");
+});
+el("styLine").addEventListener("click", function () {
+  if (S.style === "line") return;
+  S.style = "line"; startSession("Line-by-line mode, session restarted");
+});
+el("restartBtn").addEventListener("click", function () { startSession(); });
+el("allProc").addEventListener("click", function () {
+  PROCS.forEach(function (p) { S.selected[p.pid] = true; });
+  startSession("All procedures, session restarted");
+});
+el("noProc").addEventListener("click", function () {
+  PROCS.forEach(function (p) { S.selected[p.pid] = false; });
+  startSession("No procedures selected");
+});
+
+function canGrade() {
+  if (S.phase !== "drill" || !S.revealed || !current()) return false;
+  if (S.direction === "p2a" && S.style === "line") return S.line < current().gradable.length;
+  return !allGraded(current()) || S.cursorPicked;
+}
+
+document.addEventListener("keydown", function (e) {
+  var t = e.target || {};
+  var tag = (t.tagName || "").toLowerCase();
+  var typing = tag === "textarea" || tag === "input";
+
+  /* Ctrl/Cmd+Enter reveals from anywhere, including a multi-line answer box. */
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter" && S.mode === "drill" && !S.revealed) {
+    e.preventDefault(); reveal(); return;
+  }
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (S.mode === "ref") return;
+
+  if (typing) {
+    /* the arrows advertised on Skip work from an empty answer box too */
+    if (tag === "textarea" && (e.key === "ArrowRight" || e.key === "ArrowLeft") && String(t.value || "").trim() === "" && S.phase === "drill") {
+      e.preventDefault();
+      if (e.key === "ArrowRight") next(); else prev();
+      return;
+    }
+    if (tag === "textarea" && e.key === "Enter" && !e.shiftKey && !S.revealed) {
+      var multi = S.direction === "p2a" && S.style === "whole";
+      if (!multi) { e.preventDefault(); reveal(); return; }
+      /* whole procedure: Enter on an empty line reveals, otherwise it is a new line */
+      var v = t.value, pos = t.selectionStart;
+      var lineStart = v.lastIndexOf("\n", pos - 1) + 1;
+      var lineEnd = v.indexOf("\n", pos); if (lineEnd === -1) lineEnd = v.length;
+      if (v.slice(lineStart, lineEnd).trim() === "") { e.preventDefault(); reveal(); }
+    }
+    return;
+  }
+
+  switch (e.key) {
+    case " ":
+      e.preventDefault();
+      if (S.phase === "roundbreak") startNextRound();
+      else if (S.phase === "done") startSession();
+      else if (!S.revealed) reveal();
+      else if (current() && allGraded(current())) next();
+      break;
+    case "1": if (canGrade()) { e.preventDefault(); grade("got"); } break;
+    case "2": if (canGrade()) { e.preventDefault(); grade("missed"); } break;
+    case "ArrowRight": if (S.phase === "drill") { e.preventDefault(); next(); } break;
+    case "ArrowLeft": if (S.phase === "drill") { e.preventDefault(); prev(); } break;
+    case "v": case "V":
+      if (S.revealed && S.phase === "drill") { e.preventDefault(); S.showSrc = !S.showSrc; render(); }
+      break;
+    case "r": case "R": e.preventDefault(); startSession(); break;
+  }
+});
+
+renderHead();
+startSession();
+</script>
+</body>
+</html>
