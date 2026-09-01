@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Limitations Drill</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<style>
+/* ------------------------------------------------------------------
+   PALETTE, Hawaiian Airlines tokens (VERIFIED values only).
+   Source: Alaska Air Group Auro Design System, Hawaiian theme
+   (aag-theme-ha) v9.3.3, corroborated by the live Hawaiian production
+   stylesheet. See palette/HAWAIIAN_PALETTE.md for provenance + contrast.
+
+   Contrast rules honoured here:
+   - coral #EE453D is 3.78:1 on white -> FAILS AA for text.
+     Used ONLY as a decorative rule/border/fill. Text on coral ground
+     uses --ink; coral-coloured text uses --bright-text #97322A (7.49:1).
+   - lagoon #00A5BA is 2.96:1 behind white -> fails even 3.0:1.
+     Not used anywhere in this page.
+   Swap the light block + the dark block to re-skin the page.
+   ------------------------------------------------------------------ */
+:root {
+  --surface:            #FFFFFF;
+  --surface-sunken:     #F1F3F3;
+  --surface-subtle:     #F5F7F7;
+  --pale:               #EAE5F4;
+  --pale-accent:        #FDF1F8;
+  --pale-bright:        #FFEEEA;
+
+  --ink:                #000000;
+  --ink-muted:          #3C3D3D;
+  --ink-inverse:        #FFFFFF;
+  --ink-on-brand:       #FFFFFF;  /* text on the purple header/footer ground, does NOT flip in dark mode */
+  --pale-on-brand:      #EAE5F4;  /* muted text on that ground, 7.39:1 on purple, does NOT flip */
+
+  --border:             #CED0D0;
+  --border-subtle:      #DBDDDD;
+
+  --primary:            #463C8F;  /* Hawaiian purple  */
+  --primary-bold:       #31295C;
+  --primary-subtle:     #8C7EB8;  /* decorative only  */
+  --header-bg:          #463C8F;
+
+  --accent:             #CE0C88;  /* Hawaiian fuchsia */
+  --accent-bold:        #831A57;
+  --on-accent:          #FFFFFF;  /* 5.21:1, passes  */
+
+  --bright:             #EE453D;  /* coral: rules/fills only, never text */
+  --bright-text:        #97322A;  /* AA-safe coral for text */
+
+  --good:               #447A1F;
+  --good-pale:          #D6EAC7;
+  --warn:               #FAC200;
+  --warn-pale:          #FFF6D2;
+  --bad:                #E01F26;
+  --bad-pale:           #FBC6C6;
+  --info:               #007DB1;
+  --info-pale:          #E8F2F8;
+
+  --focus:              #463C8F;
+  --gradient-brand:     linear-gradient(90deg, #463C8F 25.8%, #CE0C88);
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  color-scheme: light dark;
+  accent-color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:          #15131C;
+    --surface-sunken:   #1E1B29;
+    --surface-subtle:   #232032;
+    --pale:             #2A2440;
+    --pale-accent:      #38203A;
+    --pale-bright:      #3A211C;
+
+    --ink:              #F4F2F8;
+    --ink-muted:        #C3BED0;
+    --ink-inverse:      #15131C;
+    --ink-on-brand:     #FFFFFF;  /* 13.11:1 on the dark header #31295C */
+    --pale-on-brand:    #EAE5F4;
+
+    --border:           #453F58;
+    --border-subtle:    #332E44;
+
+    --primary:          #ACA1CC;  /* lifted purple for text on dark */
+    --primary-bold:     #8C7EB8;
+    --primary-subtle:   #8C7EB8;
+    --header-bg:        #31295C;
+
+    --accent:           #E26DB8;
+    --accent-bold:      #F0A3D3;
+    --on-accent:        #15131C;
+
+    --bright:           #EE453D;
+    --bright-text:      #FF9080;
+
+    --good:             #8EC891;
+    --good-pale:        #1D3320;
+    --warn:             #FAC200;
+    --warn-pale:        #3A3011;
+    --bad:              #FF8A8A;
+    --bad-pale:         #3D1A1C;
+    --info:             #A8D6DF;
+    --info-pale:        #16303A;
+
+    --focus:            #ACA1CC;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px/1.5 var(--sans);
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- non-dismissible warning banner ---------- */
+.banner {
+  background: var(--pale-bright);
+  border-bottom: 1px solid var(--border);
+  border-left: 8px solid var(--bright);   /* coral as a rule, not as text */
+  padding: 14px 16px;
+}
+.banner h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--bright-text);
+}
+.banner p { margin: 0 0 6px; font-size: 14px; }
+.banner p:last-child { margin-bottom: 0; }
+.banner strong { font-weight: 700; }
+
+/* ---------- header ---------- */
+.site-head {
+  background: var(--header-bg);
+  color: var(--ink-on-brand);  /* 9.12:1 on #463C8F, 13.11:1 on #31295C, does not flip */
+  padding: 18px 0 16px;
+  border-bottom: 4px solid transparent;
+  border-image: var(--gradient-brand) 1;
+}
+.site-head h1 { margin: 0; font-size: 22px; letter-spacing: .01em; }
+.site-head .sub { margin: 4px 0 0; font-size: 13px; color: var(--pale-on-brand); }
+
+/* ---------- known gaps ---------- */
+.gaps {
+  background: var(--warn-pale);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.gaps summary, .recovered summary { cursor: pointer; font: 700 14px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+.gaps summary .cnt, .recovered summary .cnt { font: 500 12px var(--sans); text-transform: none; letter-spacing: 0; color: var(--ink-muted); margin-left: 8px; }
+.gaps[open] summary, .recovered[open] summary { margin-bottom: 8px; }
+.gaps ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.gaps li { margin-bottom: 5px; }
+.gaps li:last-child { margin-bottom: 0; }
+.gaps .tag, .recovered .tag {
+  font: 600 11px/1 var(--mono);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+/* ---------- mode tabs ---------- */
+.modes { display: flex; gap: 6px; border-bottom: 2px solid var(--border); margin-top: 18px; }
+.modes button {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 9px 14px;
+  font: 600 15px var(--sans);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+.modes button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- controls ---------- */
+.panel {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.ctrl-row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.ctrl-row + .ctrl-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+.ctrl-label {
+  font: 700 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ink-muted);
+  margin-right: 2px;
+}
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); }
+.seg button:first-child { border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px); }
+.seg button:last-child { border-radius: 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0; }
+.seg button:focus-visible { position: relative; z-index: 1; }
+.seg button {
+  appearance: none; background: var(--surface); border: 0; cursor: pointer;
+  padding: 7px 12px; font: 500 14px var(--sans); color: var(--ink);
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--ink-inverse); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  appearance: none; cursor: pointer;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px 10px; font: 500 13px var(--sans);
+}
+.chip[aria-pressed="true"] { background: var(--pale); border-color: var(--primary); color: var(--ink); font-weight: 600; }
+.chip .n { color: var(--ink-muted); font-size: 11px; margin-left: 4px; font-family: var(--mono); }
+.chip[aria-pressed="true"] .n { color: var(--ink-muted); }
+
+.btn {
+  appearance: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
+  padding: 8px 14px; font: 600 14px var(--sans);
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-good { border-color: var(--good); color: var(--good); background: var(--surface); }
+.btn-bad  { border-color: var(--bad);  color: var(--bad);  background: var(--surface); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn .k {
+  font-family: var(--mono); font-size: 11px;
+  border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; margin-left: 7px;
+}
+/* inline-block, not inline-flex: a flex gap would split "(", the count and ")" into three items */
+label.check { display: inline-block; font-size: 14px; cursor: pointer; }
+label.check input { vertical-align: -2px; margin: 0 7px 0 0; }
+
+/* ---------- status bar ---------- */
+.statusbar {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px;
+  font-size: 13px; color: var(--ink-muted);
+}
+.statusbar b { font-family: var(--mono); font-size: 15px; color: var(--ink); font-weight: 700; }
+.statusbar .miss b { color: var(--bad); }
+
+/* ---------- drill card ---------- */
+.card {
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px;
+}
+.card .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.pill {
+  font: 600 11px/1 var(--sans); letter-spacing: .05em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--pale); color: var(--ink);
+}
+.pill-unclear { background: var(--warn-pale); border-color: var(--warn); color: var(--ink); }
+.pill-book { background: var(--info-pale); border-color: var(--info); color: var(--ink); }
+.note-box, .corrob {
+  margin: 12px 0 0; padding: 10px 12px; border-radius: var(--radius);
+  background: var(--info-pale); border: 1px solid var(--info); font-size: 13px;
+}
+.note-box b, .corrob b { display: block; margin-bottom: 3px; }
+.corrob { background: var(--surface-sunken); border-color: var(--border); }
+.recovered {
+  background: var(--good-pale); border: 1px solid var(--good);
+  border-radius: var(--radius); padding: 12px 14px; margin: 16px 0;
+}
+.recovered ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.recovered li { margin-bottom: 5px; }
+.recovered li:last-child { margin-bottom: 0; }
+.ask {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 6px;
+}
+.prompt { margin: 0 0 4px; font-size: 24px; font-weight: 700; line-height: 1.25; }
+.prompt.value { font-family: var(--mono); font-size: 22px; }
+.given { margin: 8px 0 0; font-size: 14px; color: var(--ink-muted); }
+.given em { color: var(--ink); font-style: normal; font-weight: 600; }
+
+.unclear-note {
+  margin: 12px 0 0; padding: 10px 12px;
+  background: var(--warn-pale); border: 1px solid var(--warn); border-radius: var(--radius);
+  font-size: 13px;
+}
+.unclear-note b { display: block; margin-bottom: 3px; }
+
+textarea.answer {
+  width: 100%; margin-top: 14px; padding: 10px;
+  font: 15px/1.4 var(--mono);
+  color: var(--ink); background: var(--surface-subtle);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  resize: vertical; min-height: 68px;
+}
+.hint { margin: 6px 0 0; font-size: 12px; color: var(--ink-muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+.reveal {
+  margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--border);
+}
+.reveal .lab {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 4px;
+}
+.answer-value {
+  margin: 0; font-family: var(--mono); font-size: 22px; font-weight: 700; line-height: 1.35;
+  color: var(--ink);
+}
+.answer-value.long { font-size: 17px; }
+.answer-cond { margin: 10px 0 0; font-size: 15px; }
+.answer-cond .lab { display: block; }
+.numcheck {
+  margin: 12px 0 0; padding: 8px 10px; border-radius: var(--radius);
+  font: 13px/1.4 var(--mono); border: 1px solid var(--border); background: var(--surface-sunken);
+}
+.numcheck.ok { border-color: var(--good); }
+.numcheck.no { border-color: var(--bad); }
+.numcheck .t { font-family: var(--sans); }
+
+.cite { margin-top: 14px; font-size: 13px; color: var(--ink-muted); }
+.cite code { font-family: var(--mono); font-size: 12px; color: var(--ink); word-break: break-all; }
+.verbatim {
+  margin: 10px 0 0; padding: 10px 12px;
+  background: var(--surface-sunken); border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--primary-subtle); border-radius: var(--radius);
+  font: 13px/1.5 var(--mono); white-space: pre-wrap; overflow-wrap: anywhere;
+  max-height: 320px; overflow: auto;
+}
+.grade-q { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
+
+/* ---------- round / summary ---------- */
+.roundcard { border: 1px solid var(--border); border-top: 4px solid var(--bright); border-radius: var(--radius); padding: 20px; }
+.roundcard h2 { margin: 0 0 8px; font-size: 20px; }
+.roundcard p { margin: 0 0 10px; font-size: 15px; }
+.tally { display: flex; flex-wrap: wrap; gap: 18px; margin: 14px 0; }
+.tally div { min-width: 92px; }
+.tally .n { display: block; font: 700 26px var(--mono); }
+.tally .l { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+.tally .bad .n { color: var(--bad); }
+.misslist { margin: 12px 0 0; padding: 0; list-style: none; font-size: 14px; }
+.misslist li { padding: 8px 0; border-top: 1px solid var(--border-subtle); }
+.misslist code { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); word-break: break-all; }
+
+/* ---------- shortcuts ---------- */
+.shortcuts { margin: 18px 0 0; font-size: 13px; color: var(--ink-muted); }
+.shortcuts h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; margin: 0 0 6px; color: var(--ink-muted); }
+.shortcuts ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+kbd {
+  font: 600 12px var(--mono); background: var(--surface-sunken);
+  border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px;
+  padding: 1px 5px; color: var(--ink);
+}
+
+/* ---------- reference table ---------- */
+.searchrow { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+input[type="search"], input[type="text"] {
+  flex: 1 1 240px; padding: 9px 10px; font: 15px var(--sans);
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; table-layout: fixed; }
+/* Ref column sized to the longest ident (34 mono chars at 11px) so idents never wrap mid-string;
+   the parameter/condition column takes whatever is left. */
+col.c-sys { width: 17%; } col.c-param { width: auto; } col.c-limit { width: 20%; } col.c-ref { width: 260px; }
+td.ref code { white-space: nowrap; }
+thead th {
+  position: sticky; top: 0; z-index: 2;
+  background: var(--primary); color: var(--ink-inverse);
+  text-align: left; padding: 0; font-size: 12px;
+  text-transform: uppercase; letter-spacing: .06em;
+}
+thead th button {
+  appearance: none; background: none; border: 0; cursor: pointer;
+  color: inherit; font: inherit; padding: 10px 12px; width: 100%; text-align: left;
+}
+thead th.plain { padding: 10px 12px; }
+tbody td { padding: 10px 12px; border-top: 1px solid var(--border-subtle); vertical-align: top; overflow-wrap: break-word; }
+tbody tr.srcrow td { border-top: 0; padding-top: 0; }
+tbody tr.srcrow .verbatim { margin-top: 0; }
+tbody tr:nth-child(4n+3) { background: var(--surface-subtle); }
+tbody tr.unclear-row { background: var(--warn-pale); }
+td.limit { font-family: var(--mono); font-weight: 600; }
+td.ref code { font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
+td.ref .conf { display: block; font: 600 11px/1.4 var(--sans); letter-spacing: .04em; text-transform: uppercase; margin-top: 4px; }
+td .cond { display: block; margin-top: 4px; font-size: 13px; color: var(--ink-muted); }
+.vbtn {
+  appearance: none; cursor: pointer; margin-top: 6px;
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  font: 600 11px var(--sans); padding: 2px 7px; color: var(--ink);
+}
+.rowcount { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; }
+.badge-unclear, .badge-book {
+  display: inline-block; font: 700 10px/1 var(--sans); letter-spacing: .06em;
+  border: 1px solid var(--warn); background: var(--warn-pale); color: var(--ink);
+  border-radius: 3px; padding: 3px 5px; margin-left: 6px; vertical-align: 1px;
+}
+.badge-book { border-color: var(--info); background: var(--info-pale); }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 40px; background: var(--header-bg); color: var(--ink-on-brand); padding: 20px 0 26px;
+}
+footer .wrap > div { margin-bottom: 6px; font-size: 13px; }
+footer .wrap > .id { font-family: var(--mono); font-size: 14px; font-weight: 700; }
+footer .muted { color: var(--pale-on-brand); }
+
+/* ---------- phone ---------- */
+@media (max-width: 640px) {
+  .prompt { font-size: 20px; }
+  .prompt.value { font-size: 18px; }
+  .answer-value { font-size: 19px; }
+  .card { padding: 14px; }
+  .site-head h1 { font-size: 19px; }
+  .actions .btn { flex: 1 1 auto; }
+  thead { display: none; }
+  .tablewrap { border: 0; overflow-x: auto; }
+  table { table-layout: auto; }
+  colgroup { display: none; }
+  tbody tr { display: block; border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 10px; }
+  tbody tr.srcrow { border-top: 0; border-radius: 0 0 var(--radius) var(--radius); margin-top: -11px; }
+  tbody tr:nth-child(4n+3) { background: var(--surface); }
+  tbody td { display: block; border-top: 0; padding: 6px 12px; }
+  tbody td:first-child { padding-top: 10px; }
+  tbody td:last-child { padding-bottom: 10px; }
+  tbody td::before {
+    content: attr(data-label); display: block;
+    font: 700 10px var(--sans); letter-spacing: .07em; text-transform: uppercase;
+    color: var(--ink-muted); margin-bottom: 2px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="banner" role="alert">
+  <div class="wrap">
+    <h2>Study aid only, not a source document</h2>
+    <p>This page was generated from a <strong>text extract</strong> of the A330P FCOM. It is not the manual, it is not controlled, and it is not complete. <strong>Where this page and the FCOM differ, the manual wins, every time.</strong></p>
+    <p>Specific known gaps are listed below. Read them before you use this to decide you are ready.</p>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <h1>A330 Limitations, Recall Drill</h1>
+    <p class="sub" id="headSub"></p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <details class="recovered" id="recPanel">
+    <summary id="recHead">Recovered from the AFM, no longer missing<span class="cnt" id="recCount"></span></summary>
+    <ul id="recList"></ul>
+  </details>
+
+  <details class="gaps" id="gapsPanel">
+    <summary id="gapsHead">Known gaps in this dataset<span class="cnt" id="gapsCount"></span></summary>
+    <ul id="gapsList"></ul>
+  </details>
+
+  <nav class="modes" role="tablist" aria-label="Page mode">
+    <button id="tabDrill" role="tab" aria-selected="true" aria-controls="drillPane">Drill</button>
+    <button id="tabRef" role="tab" aria-selected="false" aria-controls="refPane">Reference</button>
+  </nav>
+
+  <!-- =================== DRILL =================== -->
+  <section id="drillPane" role="tabpanel" aria-labelledby="tabDrill">
+
+    <div class="panel">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Direction</span>
+        <div class="seg" role="group" aria-label="Drill direction">
+          <button id="dirP2L" aria-pressed="true">Parameter &rarr; limit</button>
+          <button id="dirL2P" aria-pressed="false">Limit &rarr; parameter</button>
+        </div>
+        <label class="check">
+          <input type="checkbox" id="incUnclear" checked>
+          Include UNCLEAR items (<span id="unclearCount"></span>)
+        </label>
+        <button class="btn" id="restartBtn">Restart session<span class="k">R</span></button>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-label">Systems</span>
+        <button class="btn" id="allSys">All</button>
+        <button class="btn" id="noSys">None</button>
+      </div>
+      <div class="ctrl-row" style="border-top:0;padding-top:0">
+        <div class="chips" id="sysChips"></div>
+      </div>
+    </div>
+
+    <div class="statusbar" id="statusbar" aria-live="polite"></div>
+
+    <div id="card" aria-live="polite"></div>
+
+    <div class="shortcuts">
+      <h2>Keyboard</h2>
+      <ul>
+        <li><kbd>Space</kbd> reveal</li>
+        <li><kbd>Enter</kbd> reveal from the answer box</li>
+        <li><kbd>1</kbd> got it</li>
+        <li><kbd>2</kbd> missed it</li>
+        <li><kbd>&larr;</kbd> / <kbd>&rarr;</kbd> previous / next</li>
+        <li><kbd>V</kbd> source text</li>
+        <li><kbd>R</kbd> restart</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =================== REFERENCE =================== -->
+  <section id="refPane" role="tabpanel" aria-labelledby="tabRef" hidden>
+    <div class="panel">
+      <div class="searchrow">
+        <input type="search" id="search" placeholder="Search parameter, limit, condition, ref or source text&hellip;  ( / )" aria-label="Search limitations">
+        <label class="check"><input type="checkbox" id="refUnclear" checked> Show UNCLEAR</label>
+        <button class="btn" id="expandAll">Show all source text</button>
+      </div>
+      <div class="chips" id="refChips"></div>
+    </div>
+    <p class="rowcount" id="rowCount"></p>
+    <div class="tablewrap">
+      <table>
+        <colgroup><col class="c-sys"><col class="c-param"><col class="c-limit"><col class="c-ref"></colgroup>
+        <thead>
+          <tr>
+            <th><button data-sort="system">System</button></th>
+            <th><button data-sort="parameter">Parameter / condition</button></th>
+            <th><button data-sort="limit">Limit</button></th>
+            <th><button data-sort="confidence">Ref &amp; confidence</button></th>
+          </tr>
+        </thead>
+        <tbody id="refBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="id" id="footManual"></div>
+    <div class="muted" id="footAfm"></div>
+    <div class="muted" id="footGen"></div>
+    <div class="muted">Study extract. Uncontrolled copy. The FCOM is the authority.</div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   DATA SLOT. The engine page keeps its data EXTERNAL, in data/limitations.json,
+   and loads it on DOMContentLoaded (see the loader at the end of the
+   second script block). build_scripts/build_standalone.py inlines the
+   JSON between the two markers below to produce the offline dist/ build;
+   nothing else differs between the engine page and the dist page.
+   Canonical copy: data/limitations.json. DO NOT HAND-EDIT the dist build.
+   ================================================================== */
+/* @@DATA_START limitations */
+var LIMITATIONS = null;
+/* @@DATA_END */
+
+/* ------------------------------------------------------------------
+   PAGE METADATA, hand-authored, not extracted. Small enough to stay
+   inline in the portal build too (or move to manuals.json).
+   ------------------------------------------------------------------ */
+const MANUAL = {
+  title:    "A330P FCOM",
+  revision: "R17",
+  issue:    "15 MAY 26",
+  afm:      "A330 AFM, issue 2026-08-11 (certified limitations source)",
+  fleet:    "A330 passenger fleet",
+  scope:    "Limitations chapter only",
+  generated:"2026-09-01",
+  version:  "0.7",  /* (0.5: app icon wired) (0.6: pass 1-4 fixes) (0.7: pass 5 polish) */
+  dataset:  "limitations_v3.json, verified FCOM set merged with the AFM addendum and the pass-2 condition audit; 257 numeric tokens re-checked, 0 wrong or fabricated numbers, no limit value changed; 144 verified, 16 unclear"
+};
+
+/* Why each UNCLEAR item is unclear, keyed by FCOM ref.
+   Sourced from data/limitations_REPORT.md. */
+const UNCLEAR_REASONS =
+{
+ "LIM-AG-OPS-ARPT_WIND-00020759.0009001": "Wet / contaminated runway crosswind table. Runway state, takeoff crosswind, RWYCC, performance level and landing crosswind are interleaved across the extracted lines (e.g. 'Good 32 kt 5 GOOD 45 kt'), so which number belongs to which column is not provable from the text.",
+ "LIM-AG-SPD-00019939.0001001": "Maximum flaps/slats speed, CONF 1* only. The FCOM table prints no unit anywhere (the header reads only 'Max Speed'). CONF 1, 1+F, 2, 3 and FULL are now VERIFIED because the AFM VFE table (LIM-SPD-00005224.0001001) prints the same numbers in kt IAS; CONF 1* (205, the '2(1) APPROACH' row) has no AFM counterpart, so its unit stays inferred and this one row stays UNCLEAR.",
+ "LIM-AG-SPD-00019938.0032001": "VMCA / VMCG table. The header reads 'Altitude (ft) VMCG (kt IAS)' on one line and 'CONF 1 + F  CONF 2  CONF 3' on the next, while each data row is five bare numbers (e.g. '0 110 106 106 107'). Which of the four values is VMCG cannot be established.",
+ "LIM-AG-CG-90000422.9001002": "Centre of gravity envelope. The envelope is a graphic; only the MZFW footnote survived extraction. Listed so the gap is visible in the drill rather than silently absent, not because a usable value exists.",
+ "LIM-AFS-10-20-00020163.0002001": "RNP accuracy table. The column headers (AP ON / AP OFF + FD ON / AP OFF + FD OFF) sit on a separate line from the data, so the value-to-column pairing relies on column order having survived.",
+ "LIM-ENG-00020225.0004001": "Thrust setting / EGT table. '20 s 920 °C', 'Takeoff(1) and Go-around 5 min', '900 °C' and 'One engine inoperative 10 min' are split across lines, so the pairing of each time to each EGT is not provable from this text.",
+ "LIM-FUEL-00019837.0004001": "Fuel specification freezing points. The fuel names are on one line and the nine temperatures on the next; the pairing depends entirely on column order surviving.",
+ "LIM-FUEL-00019833.0001001": "Fuel imbalance table. The inner-tank and outer-tank columns are interleaved on the same lines (e.g. '17 000 kg 4 800 kg 2 400 kg 1 580 kg'), so tank quantity and maximum asymmetry cannot be reliably separated.",
+ "LIM-OXY-00020209.0004001": "Minimum flight crew oxygen bottle pressure. The REF-temperature header row (-10 to 50 °C) and the three crew-configuration rows are on separate lines, so mapping a given pressure to a given temperature is not provable from the text."
+};
+
+/* The gaps banner content, from data/limitations_REPORT.md and
+   data/limitations_VERIFY.md. */
+const KNOWN_GAPS =
+[
+ {
+  "tag": "No CG envelope",
+  "text": "The centre-of-gravity envelope is still missing. It is a graphic in every book checked (FCOM LIM-AG-CG-90000422.9001002); only the MZFW footnote survived extraction. The item is listed as UNCLEAR so the hole is visible, not because a usable value exists."
+ },
+ {
+  "tag": "No VA",
+  "text": "There is no design manoeuvring speed (VA) anywhere in this dataset. It was not in the FCOM extract and the AFM addendum did not carry it. Do not go looking for it here."
+ },
+ {
+  "tag": "No envelopes",
+  "text": "The environmental envelope (altitude vs OAT, LIM-AG-OPS-ENV-00021654.0013001) and the APU operational envelope (LIM-APU-20-00020222.0006001) are graphics-only in every book and did not survive extraction. Only Minimum TAT -53 °C survived the environmental envelope."
+ },
+ {
+  "tag": "16 unclear",
+  "text": "16 of the 160 items are marked UNCLEAR and flagged wherever they appear, with the reason. Fifteen are table column-to-row mappings or graphics-only blocks that are not provable from a text extract; one is the CONF 1* flap speed, whose unit has no AFM counterpart. The other five flaps/slats speeds (CONF 1, 1+F, 2, 3, FULL) are VERIFIED: the AFM VFE table corroborates kt IAS. Verify each UNCLEAR item against the manual before you trust it."
+ },
+ {
+  "tag": "Verified set",
+  "text": "This page uses the independently verified dataset merged with the AFM addendum and the pass-2 condition audit (11 condition or parameter wordings corrected, each carrying its evidence in an audit trail; no limit value changed). The numeric pass re-checked all 257 numeric tokens against the source and found zero wrong or fabricated numbers, but it verifies this page against a text extract, not against the aircraft, and it cannot recover what the extract never contained."
+ },
+ {
+  "tag": "Scope",
+  "text": "A330P FCOM R17 Limitations chapter, PAX book, plus four AFM-sourced items. No QRH, no MEL, no performance, no company limitations, and nothing in the source marks any item as memory-required. Eleven qualitative limitation blocks (NAV mode use, FLS, nav database validation, NWS angle) carry no number and produced no item. Absence from this page is not evidence that a limitation does not exist."
+ }
+];
+
+/* Gaps closed by the AFM addendum, was missing, now sourced. */
+const RECOVERED =
+[
+ {
+  "tag": "VMO/MMO",
+  "text": "VMO 330 kt IAS and MMO M 0.86 are now in the drill, sourced from the A330 AFM (LIM-SPD-00006064.0001001, 2026-08-11) and corroborated by the FCTM overspeed section. They were absent from the FCOM extract because the values were printed in a graphic. The old UNCLEAR placeholder (lim-spd-09) is superseded and has been removed so you never drill against it. Not to be confused with the landing-gear-down supplement values, 255 kt / M 0.6."
+ },
+ {
+  "tag": "Max altitude",
+  "text": "Maximum operating altitude 41 450 ft clean and 20 000 ft with slats and/or flaps extended, from AFM LIM-GEN-00005448.0002001. It is 41 450 ft and not 41 100 ft because modification 52536 is embodied fleet-wide. The 20 000 ft figure is carried on the existing FCOM item, which the AFM confirms, two books, one limit."
+ },
+ {
+  "tag": "Read this",
+  "text": "These four items came from a different book to everything else on this page and are marked as such wherever they appear. The AFM is the certified limitations source; that makes them better sourced than the rest of this page, not worse, but it also means this page now mixes books."
+ }
+];
+</script>
+
+<script>
+"use strict";
+
+/* ================= helpers ================= */
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+function el(id) { return document.getElementById(id); }
+
+/* Pull comparable numbers out of a string.
+   "4 000 ft" -> 4000 ; "-1 g to +2.5 g" -> 1, 2.5 ; "±2 %" -> 2
+   Thousands are written with a space in this manual, so digit-space-digit
+   groups are joined before matching. Sign is dropped: the drill grades the
+   magnitude, and the self-grade is still the authority. */
+function numbersIn(s) {
+  if (s == null) return [];
+  var t = String(s).replace(/(\d)[\s  ](?=\d{3}(\D|$))/g, "$1");
+  var m = t.match(/\d+(?:[.,]\d+)?/g) || [];
+  var out = [], seen = {};
+  for (var i = 0; i < m.length; i++) {
+    var n = m[i].replace(",", ".").replace(/\.0+$/, "");
+    if (!seen[n]) { seen[n] = 1; out.push(n); }
+  }
+  return out;
+}
+function shuffle(a) {
+  var arr = a.slice();
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+/* Most items come from the FCOM. A handful come from the AFM, and an item
+   sourced from a different book than the rest has to say so on its face. */
+function bookOf(it) { return it.source_book || (MANUAL.title + " " + MANUAL.revision); }
+function isOffBook(it) { return !!it.source_book; }
+
+function unclearReason(item) {
+  var r = UNCLEAR_REASONS[item.ref];
+  if (r) return r;
+  return item.condition || "Marked UNCLEAR during extraction: the value could not be tied to its column or row with certainty.";
+}
+
+/* Parameters that appear on more than one item need their condition shown
+   in the question, or the question is ambiguous. Everything else withholds
+   the condition, because stating the condition is part of the answer. */
+function sysCount(s) {
+  var n = 0, u = 0;
+  LIMITATIONS.forEach(function (i) { if (i.system === s) { n++; if (i.confidence === "UNCLEAR") u++; } });
+  return { n: n, u: u };
+}
+function paramIsAmbiguous(i) { return PARAM_COUNT[i.system + "||" + i.parameter] > 1; }
+
+var PARAM_COUNT, BY_ID, SYSTEMS, UNCLEAR_TOTAL, S;   /* filled by boot() once the data is loaded */
+function boot() {
+  PARAM_COUNT = {};
+  LIMITATIONS.forEach(function (i) {
+    var k = i.system + "||" + i.parameter;
+    PARAM_COUNT[k] = (PARAM_COUNT[k] || 0) + 1;
+  });
+  BY_ID = {};
+  LIMITATIONS.forEach(function (i) { BY_ID[i.id] = i; });
+  SYSTEMS = [];
+  (function () {
+    var seen = {};
+    LIMITATIONS.forEach(function (i) { if (!seen[i.system]) { seen[i.system] = 1; SYSTEMS.push(i.system); } });
+    SYSTEMS.sort();
+  })();
+  UNCLEAR_TOTAL = LIMITATIONS.filter(function (i) { return i.confidence === "UNCLEAR"; }).length;
+
+  /* ================= state (in memory only, no storage of any kind) ================= */
+  S = {
+    mode: "drill",
+    direction: "p2l",
+    includeUnclear: true,
+    systems: {},                 /* system -> bool */
+    queue: [],
+    idx: 0,
+    round: 1,
+    revealed: false,
+    showVerbatim: false,
+    typed: {},                   /* id -> text, so navigating back keeps it */
+    graded: {},                  /* id -> latest "got" | "missed" (drives the counters across rounds) */
+    gradedRound: {},             /* id -> grade given in the current round (drives the card pill) */
+    missedThisRound: [],
+    missedEver: {},
+    counts: { got: 0, missed: 0 },
+    firstPass: { got: 0, missed: 0, total: 0 },
+    phase: "drill",              /* drill | roundbreak | done */
+    ref: { search: "", sortKey: "system", sortDir: 1, unclear: true, systems: {}, open: {}, expandAll: false }
+  };
+  SYSTEMS.forEach(function (s) { S.systems[s] = true; S.ref.systems[s] = true; });
+  renderHead();
+  startSession();
+}
+
+
+function pool() {
+  return LIMITATIONS.filter(function (i) {
+    if (!S.systems[i.system]) return false;
+    if (!S.includeUnclear && i.confidence === "UNCLEAR") return false;
+    return true;
+  });
+}
+
+function startSession(note) {
+  var p = pool();
+  S.queue = shuffle(p);
+  S.idx = 0;
+  S.round = 1;
+  S.revealed = false;
+  S.showVerbatim = false;
+  S.typed = {};
+  S.graded = {};
+  S.gradedRound = {};
+  S.missedThisRound = [];
+  S.missedEver = {};
+  S.counts = { got: 0, missed: 0 };
+  S.firstPass = { got: 0, missed: 0, total: p.length };
+  S.phase = p.length ? "drill" : "empty";
+  S.note = note || "";
+  render();
+}
+
+/* ================= drill flow ================= */
+function current() { return S.queue[S.idx] || null; }
+
+function reveal() {
+  if (S.phase !== "drill" || !current() || S.revealed) return;
+  S.revealed = true;
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  render();
+}
+
+function grade(kind) {
+  var it = current();
+  if (S.phase !== "drill" || !it || !S.revealed) return;
+  var prev = S.graded[it.id];
+  if (prev !== kind) {
+    if (prev) S.counts[prev]--;
+    S.counts[kind]++;
+    S.graded[it.id] = kind;
+    if (S.round === 1) {
+      if (prev) S.firstPass[prev]--;
+      S.firstPass[kind]++;
+    }
+  }
+  S.gradedRound[it.id] = kind;
+  if (kind === "missed") {
+    S.missedEver[it.id] = true;
+    if (S.missedThisRound.indexOf(it.id) === -1) S.missedThisRound.push(it.id);
+  } else {
+    var k = S.missedThisRound.indexOf(it.id);
+    if (k !== -1) S.missedThisRound.splice(k, 1);
+  }
+  next();
+}
+
+function next() {
+  if (S.idx + 1 < S.queue.length) {
+    S.idx++;
+    S.revealed = false;
+    S.showVerbatim = false;
+    render();
+    return;
+  }
+  /* end of the pass */
+  if (S.missedThisRound.length) {
+    S.phase = "roundbreak";
+  } else {
+    S.phase = "done";
+  }
+  render();
+}
+
+function prev() {
+  if (S.phase !== "drill" || S.idx === 0) return;
+  S.idx--;
+  S.revealed = false;
+  S.showVerbatim = false;
+  render();
+}
+
+function startNextRound() {
+  var ids = S.missedThisRound.slice();
+  S.queue = shuffle(ids.map(function (id) { return BY_ID[id]; }));
+  S.missedThisRound = [];
+  S.typed = {};      /* a re-served card must start with an empty answer box */
+  S.gradedRound = {}; /* and without last round's grade pill; S.graded stays so a re-grade replaces the earlier count */
+  S.idx = 0;
+  S.round++;
+  S.revealed = false;
+  S.showVerbatim = false;
+  S.phase = "drill";
+  render();
+}
+
+/* ================= rendering ================= */
+function renderHead() {
+  el("headSub").textContent =
+    MANUAL.title + " " + MANUAL.revision + ", issue " + MANUAL.issue +
+    " · " + LIMITATIONS.length + " items (" + (LIMITATIONS.length - UNCLEAR_TOTAL) +
+    " verified, " + UNCLEAR_TOTAL + " unclear) · active recall, no multiple choice";
+  el("footManual").textContent =
+    MANUAL.title + " " + MANUAL.revision + ", issue " + MANUAL.issue + ", " + MANUAL.fleet + ", " + MANUAL.scope;
+  el("footAfm").textContent = "Four items sourced from " + MANUAL.afm + ", marked on their face.";
+  el("footGen").textContent =
+    "Generated " + MANUAL.generated + " · page version " + MANUAL.version +
+    " · " + LIMITATIONS.length + " items from " + MANUAL.dataset;
+  el("unclearCount").textContent = UNCLEAR_TOTAL;
+  el("gapsList").innerHTML = KNOWN_GAPS.map(function (g) {
+    return '<li><span class="tag">' + esc(g.tag) + "</span>" + esc(g.text) + "</li>";
+  }).join("");
+  el("recList").innerHTML = RECOVERED.map(function (g) {
+    return '<li><span class="tag">' + esc(g.tag) + "</span>" + esc(g.text) + "</li>";
+  }).join("");
+  el("gapsCount").textContent = KNOWN_GAPS.length + " notes";
+  el("recCount").textContent = RECOVERED.length + " notes";
+  /* collapsed on a phone so the drill is reachable, expanded on a desktop */
+  var phone = window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+  el("gapsPanel").open = !phone;
+  el("recPanel").open = !phone;
+}
+
+function renderChips(host, sel, onToggle) {
+  host.innerHTML = SYSTEMS.map(function (s) {
+    var c = sysCount(s);
+    return '<button class="chip" data-sys="' + esc(s) + '" aria-pressed="' + (sel[s] ? "true" : "false") + '">' +
+      esc(s) + '<span class="n">' + c.n + (c.u ? " / " + c.u + "?" : "") + "</span></button>";
+  }).join("");
+  Array.prototype.forEach.call(host.querySelectorAll(".chip"), function (b) {
+    b.addEventListener("click", function () { onToggle(b.getAttribute("data-sys")); });
+  });
+}
+
+function renderStatus() {
+  var p = pool();
+  var bits = [];
+  bits.push("Round <b>" + S.round + "</b>");
+  if (S.phase === "drill" && S.queue.length) {
+    bits.push("Item <b>" + (S.idx + 1) + "</b> of <b>" + S.queue.length + "</b>");
+  } else {
+    bits.push("Queue <b>" + S.queue.length + "</b>");
+  }
+  bits.push("Got <b>" + S.counts.got + "</b>");
+  bits.push('<span class="miss">Missed <b>' + S.counts.missed + "</b></span>");
+  bits.push("Still owed <b>" + S.missedThisRound.length + "</b>");
+  bits.push("Pool <b>" + p.length + "</b> of " + LIMITATIONS.length);
+  if (S.note) bits.push("<em>" + esc(S.note) + "</em>");
+  el("statusbar").innerHTML = bits.map(function (b) { return "<span>" + b + "</span>"; }).join("");
+}
+
+function citationHTML(it) {
+  return '<div class="cite">' + esc(bookOf(it)) + " ref <code>" + esc(it.ref) + "</code> &middot; " +
+    esc(it.src) + " &middot; " + esc(it.fleet) + " fleet &middot; " + esc(it.confidence) +
+    ' <button class="vbtn" id="vBtn">' + (S.showVerbatim ? "Hide" : "Show") + " source text (V)</button>" +
+    (S.showVerbatim ? '<pre class="verbatim" id="vPre"></pre>' : "") +
+    (it.corroboration ? '<div class="corrob"><b>Corroborated independently</b>' + esc(it.corroboration) + "</div>" : "") +
+    "</div>";
+}
+
+function renderCard() {
+  var host = el("card");
+
+  if (S.phase === "empty") {
+    host.innerHTML = '<div class="roundcard"><h2>No items selected</h2>' +
+      "<p>Every system is filtered out, or the only matches are UNCLEAR items you excluded. " +
+      "Turn a system back on above.</p></div>";
+    return;
+  }
+
+  if (S.phase === "roundbreak") {
+    var n = S.missedThisRound.length;
+    host.innerHTML = '<div class="roundcard"><h2>Round ' + S.round + " closed, " + n +
+      " item" + (n === 1 ? "" : "s") + " still owed</h2>" +
+      "<p>These come back now, and they keep coming back until you get them. " +
+      "The round is not finished because you reached the end of the list; it is finished when the list is empty.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + S.counts.got + '</span><span class="l">Got</span></div>' +
+      '<div class="bad"><span class="n">' + S.counts.missed + '</span><span class="l">Missed</span></div>' +
+      '<div><span class="n">' + n + '</span><span class="l">Re-serving</span></div>' +
+      "</div>" +
+      '<ul class="misslist">' + S.missedThisRound.map(function (id) {
+        var it = BY_ID[id];
+        return "<li><strong>" + esc(it.parameter) + "</strong>, " + esc(it.system) +
+          "<br><code>" + esc(it.ref) + "</code></li>";
+      }).join("") + "</ul>" +
+      '<div class="actions"><button class="btn btn-primary" id="nextRound">Start round ' + (S.round + 1) +
+      '<span class="k">Space</span></button>' +
+      '<button class="btn" id="restart2">Restart session<span class="k">R</span></button></div></div>';
+    el("nextRound").addEventListener("click", startNextRound);
+    el("restart2").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  if (S.phase === "done") {
+    var ever = Object.keys(S.missedEver);
+    var fp = S.firstPass;
+    var fpTotal = fp.got + fp.missed;
+    var acc = fpTotal ? Math.round((fp.got / fpTotal) * 100) : 0;
+    host.innerHTML = '<div class="roundcard"><h2>Session closed after ' + S.round + " round" +
+      (S.round === 1 ? "" : "s") + "</h2>" +
+      "<p>First-pass accuracy is the number that matters. A limitation you had to be shown twice is a limitation you do not have.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + fp.got + "/" + fpTotal + '</span><span class="l">First pass</span></div>' +
+      '<div><span class="n">' + acc + '%</span><span class="l">First-pass accuracy</span></div>' +
+      '<div class="bad"><span class="n">' + ever.length + '</span><span class="l">Missed at least once</span></div>' +
+      '<div><span class="n">' + S.counts.got + '</span><span class="l">Total got</span></div>' +
+      "</div>" +
+      (ever.length
+        ? "<p><strong>Missed at least once this session, take these to the manual, not to the sim:</strong></p>" +
+          '<ul class="misslist">' + ever.map(function (id) {
+            var it = BY_ID[id];
+            return "<li><strong>" + esc(it.parameter) + "</strong>, " + esc(it.limit) +
+              "<br><code>" + esc(it.ref) + "</code></li>";
+          }).join("") + "</ul>"
+        : "<p>Nothing was missed in this pool. That covers this pool only, on this pass, with the gaps listed at the top of the page still in place.</p>") +
+      '<div class="actions"><button class="btn btn-primary" id="restart3">Run it again<span class="k">R</span></button></div></div>';
+    el("restart3").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  var it = current();
+  if (!it) { host.innerHTML = ""; return; }
+
+  var isP2L = S.direction === "p2l";
+  var unclear = it.confidence === "UNCLEAR";
+  var h = "";
+
+  h += '<div class="card">';
+  h += '<div class="meta"><span class="pill">' + esc(it.system) + "</span>";
+  if (unclear) h += '<span class="pill pill-unclear">Unclear, mapping not provable</span>';
+  if (isOffBook(it)) h += '<span class="pill pill-book">Source: ' + esc(it.source_book) + "</span>";
+  if (S.gradedRound[it.id]) h += '<span class="pill">Graded: ' + (S.gradedRound[it.id] === "got" ? "got it" : "missed") + "</span>";
+  h += "</div>";
+
+  if (isP2L) {
+    h += '<p class="ask">State the limit, number, units and the condition it applies under</p>';
+    h += '<p class="prompt">' + esc(it.parameter) + "</p>";
+    if (paramIsAmbiguous(it) && it.condition) {
+      h += '<p class="given">Given, because this parameter has more than one limit: <em>' + esc(it.condition) + "</em></p>";
+    }
+  } else {
+    h += '<p class="ask">Name the limitation, what is this the limit for, and on what system?</p>';
+    h += '<p class="prompt value">' + esc(it.limit) + "</p>";
+  }
+
+  if (unclear && !S.revealed) {
+    h += '<div class="unclear-note"><b>UNCLEAR, do not commit this to memory as printed.</b>' +
+      "The reason is shown after reveal, because it names what you are being asked for.</div>";
+  }
+
+  h += '<textarea class="answer" id="answerBox" placeholder="' +
+    (isP2L ? "Type it out, or think it and go straight to reveal" : "Name the parameter and system") +
+    '" spellcheck="false"></textarea>';
+  h += '<p class="hint">Typing is optional. If you type, the reveal checks your numbers against the manual value, strictly. Phrasing is not checked at all.</p>';
+
+  if (!S.revealed) {
+    h += '<div class="actions"><button class="btn btn-primary" id="revealBtn">Reveal<span class="k">Space</span></button>';
+    h += '<button class="btn" id="skipBtn">Skip<span class="k">&rarr;</span></button></div>';
+  } else {
+    h += '<div class="reveal">';
+    if (isP2L) {
+      h += '<p class="lab">Limit</p><p class="answer-value' + (it.limit.length > 60 ? " long" : "") + '">' + esc(it.limit) + "</p>";
+      h += '<p class="answer-cond"><span class="lab">Condition</span>' +
+        (it.condition ? esc(it.condition) : "<em>None stated in the source for this item.</em>") + "</p>";
+    } else {
+      h += '<p class="lab">Limitation</p><p class="answer-value long">' + esc(it.parameter) + "</p>";
+      h += '<p class="answer-cond"><span class="lab">System</span>' + esc(it.system) + "</p>";
+      h += '<p class="answer-cond"><span class="lab">Condition</span>' +
+        (it.condition ? esc(it.condition) : "<em>None stated in the source for this item.</em>") + "</p>";
+    }
+    h += '<div id="numCheck"></div>';
+    if (unclear) {
+      h += '<div class="unclear-note"><b>Why this item is UNCLEAR</b>' + esc(unclearReason(it)) + "</div>";
+    }
+    if (isOffBook(it)) {
+      h += '<div class="note-box"><b>Different book to the rest of this page</b>This limit is from the ' +
+        esc(it.source_book) + ", not the " + esc(MANUAL.title + " " + MANUAL.revision) +
+        ". The AFM is the certified limitations source; it is not the book the other items on this page came from.</div>";
+    }
+    if (it.note) h += '<div class="note-box"><b>Note</b>' + esc(it.note) + "</div>";
+    h += citationHTML(it);
+    h += '<p class="grade-q">Did you have the number, the units and the condition, all three, before you looked?</p>';
+    h += '<div class="actions">' +
+      '<button class="btn btn-good" id="gotBtn">Got it<span class="k">1</span></button>' +
+      '<button class="btn btn-bad" id="missBtn">Missed it<span class="k">2</span></button>' +
+      "</div>";
+    h += "</div>";
+  }
+  h += "</div>";
+  host.innerHTML = h;
+
+  /* wire up */
+  var box = el("answerBox");
+  box.value = S.typed[it.id] || "";
+  box.addEventListener("input", function () { S.typed[it.id] = box.value; });
+  if (!S.revealed) {
+    el("revealBtn").addEventListener("click", reveal);
+    el("skipBtn").addEventListener("click", next);
+    box.focus({preventScroll:true});
+  } else {
+    el("gotBtn").addEventListener("click", function () { grade("got"); });
+    el("missBtn").addEventListener("click", function () { grade("missed"); });
+    el("vBtn").addEventListener("click", function () { S.showVerbatim = !S.showVerbatim; render(); });
+    if (S.showVerbatim) el("vPre").textContent = String(it.verbatim || "").replace(/^\s+|\s+$/g, "");
+    renderNumCheck(it);
+  }
+}
+
+function renderNumCheck(it) {
+  var host = el("numCheck");
+  if (!host) return;
+  var typed = (S.typed[it.id] || "").trim();
+  if (!typed) {
+    host.innerHTML = '<div class="numcheck"><span class="t">Nothing typed, no number check. Grade yourself honestly.</span></div>';
+    return;
+  }
+  var want = numbersIn(S.direction === "p2l" ? it.limit : it.parameter + " " + it.limit);
+  var got = numbersIn(typed);
+  if (!want.length) {
+    host.innerHTML = '<div class="numcheck"><span class="t">This item carries no number to check.</span></div>';
+    return;
+  }
+  var missing = want.filter(function (n) { return got.indexOf(n) === -1; });
+  var extra = got.filter(function (n) { return want.indexOf(n) === -1; });
+  var ok = missing.length === 0;
+  var msg = '<div class="numcheck ' + (ok ? "ok" : "no") + '">' +
+    '<span class="t">Numbers ' + (want.length - missing.length) + " of " + want.length + " present. </span>" +
+    (missing.length ? '<span class="t">Missing: </span>' + esc(missing.join(", ")) + ". " : "") +
+    (extra.length ? '<span class="t">Not in the manual value: </span>' + esc(extra.join(", ")) + ". " : "") +
+    '<span class="t">Units and condition are not checked here, that part is on you.</span></div>';
+  host.innerHTML = msg;
+}
+
+/* ================= reference mode ================= */
+function refRows() {
+  var q = S.ref.search.trim().toLowerCase();
+  var rows = LIMITATIONS.filter(function (i) {
+    if (!S.ref.systems[i.system]) return false;
+    if (!S.ref.unclear && i.confidence === "UNCLEAR") return false;
+    if (!q) return true;
+    var hay = (i.parameter + " " + i.limit + " " + (i.condition || "") + " " + i.ref + " " +
+      i.system + " " + i.verbatim + " " + i.id).toLowerCase();
+    return hay.indexOf(q) !== -1;
+  });
+  var k = S.ref.sortKey, d = S.ref.sortDir;
+  rows.sort(function (a, b) {
+    var av, bv;
+    if (k === "confidence") { av = a.confidence + a.system + a.parameter; bv = b.confidence + b.system + b.parameter; }
+    else if (k === "system") { av = a.system + "|" + a.parameter; bv = b.system + "|" + b.parameter; }
+    else { av = String(a[k] || ""); bv = String(b[k] || ""); }
+    return av.localeCompare(bv, "en", { numeric: true }) * d;
+  });
+  return rows;
+}
+
+function renderRef() {
+  var rows = refRows();
+  el("rowCount").textContent = rows.length + " of " + LIMITATIONS.length + " items shown · sorted by " +
+    S.ref.sortKey + (S.ref.sortDir === 1 ? " ascending" : " descending");
+  el("refBody").innerHTML = rows.map(function (i) {
+    var open = S.ref.expandAll || S.ref.open[i.id];
+    var uc = i.confidence === "UNCLEAR";
+    return '<tr class="' + (uc ? "unclear-row" : "") + '">' +
+      '<td data-label="System">' + esc(i.system) + "</td>" +
+      '<td data-label="Parameter"><strong>' + esc(i.parameter) + "</strong>" +
+        (uc ? '<span class="badge-unclear">UNCLEAR</span>' : "") +
+        (isOffBook(i) ? '<span class="badge-book">AFM</span>' : "") +
+        (i.condition ? '<span class="cond">' + esc(i.condition) + "</span>" : "") +
+        (uc ? '<span class="cond"><strong>Why unclear:</strong> ' + esc(unclearReason(i)) + "</span>" : "") +
+        (i.note ? '<span class="cond"><strong>Note:</strong> ' + esc(i.note) + "</span>" : "") +
+        (i.corroboration ? '<span class="cond"><strong>Corroborated:</strong> ' + esc(i.corroboration) + "</span>" : "") +
+      "</td>" +
+      '<td data-label="Limit" class="limit">' + esc(i.limit) + "</td>" +
+      '<td data-label="Ref" class="ref">' +
+        (isOffBook(i) ? '<span class="badge-book">' + esc(i.source_book) + "</span><br>" : "") +
+        "<code>" + esc(i.ref) + "</code>" +
+        '<span class="conf">' + esc(i.confidence) + "</span>" +
+        '<span class="cond">' + esc(bookOf(i)) + "</span>" +
+        '<button class="vbtn" data-vid="' + esc(i.id) + '">' + (open ? "Hide" : "Show") + " source text</button>" +
+      "</td></tr>" +
+      (open ? '<tr class="srcrow' + (uc ? " unclear-row" : "") + '"><td colspan="4" data-label="Source text"><pre class="verbatim" data-vpre="' + esc(i.id) + '"></pre></td></tr>' : "");
+  }).join("");
+  Array.prototype.forEach.call(el("refBody").querySelectorAll("[data-vpre]"), function (p) {
+    p.textContent = String(BY_ID[p.getAttribute("data-vpre")].verbatim || "").replace(/^\s+|\s+$/g, "");
+  });
+  renderExpandLabel();
+  Array.prototype.forEach.call(el("refBody").querySelectorAll("[data-vid]"), function (b) {
+    b.addEventListener("click", function () {
+      var id = b.getAttribute("data-vid");
+      if (S.ref.expandAll) {
+        S.ref.expandAll = false;
+        LIMITATIONS.forEach(function (i) { S.ref.open[i.id] = true; });
+      }
+      S.ref.open[id] = !S.ref.open[id];
+      renderRef();
+    });
+  });
+}
+/* The expand-all button describes the current state: if anything is open it
+   offers to hide everything, otherwise to show everything. */
+function anySourceOpen() {
+  if (S.ref.expandAll) return true;
+  for (var k in S.ref.open) if (S.ref.open[k]) return true;
+  return false;
+}
+function renderExpandLabel() {
+  el("expandAll").textContent = anySourceOpen() ? "Hide all source text" : "Show all source text";
+}
+
+/* ================= render + wiring ================= */
+function render() {
+  var drill = S.mode === "drill";
+  el("drillPane").hidden = !drill;
+  el("refPane").hidden = drill;
+  el("tabDrill").setAttribute("aria-selected", drill ? "true" : "false");
+  el("tabRef").setAttribute("aria-selected", drill ? "false" : "true");
+  el("dirP2L").setAttribute("aria-pressed", S.direction === "p2l" ? "true" : "false");
+  el("dirL2P").setAttribute("aria-pressed", S.direction === "l2p" ? "true" : "false");
+  el("incUnclear").checked = S.includeUnclear;
+  el("refUnclear").checked = S.ref.unclear;
+  renderChips(el("sysChips"), S.systems, function (s) {
+    S.systems[s] = !S.systems[s];
+    startSession("Filters changed, session restarted");
+  });
+  renderChips(el("refChips"), S.ref.systems, function (s) {
+    S.ref.systems[s] = !S.ref.systems[s];
+    render();
+  });
+  if (drill) { renderStatus(); renderCard(); } else { renderRef(); }
+}
+
+el("tabDrill").addEventListener("click", function () { S.mode = "drill"; render(); });
+el("tabRef").addEventListener("click", function () { S.mode = "ref"; render(); });
+el("dirP2L").addEventListener("click", function () {
+  if (S.direction === "p2l") return;
+  S.direction = "p2l"; startSession("Direction changed, session restarted");
+});
+el("dirL2P").addEventListener("click", function () {
+  if (S.direction === "l2p") return;
+  S.direction = "l2p"; startSession("Direction changed, session restarted");
+});
+el("incUnclear").addEventListener("change", function (e) {
+  S.includeUnclear = e.target.checked;
+  startSession(S.includeUnclear ? "UNCLEAR items included, session restarted" : "UNCLEAR items excluded, session restarted");
+});
+el("restartBtn").addEventListener("click", function () { startSession(); });
+el("allSys").addEventListener("click", function () {
+  SYSTEMS.forEach(function (s) { S.systems[s] = true; });
+  startSession("All systems, session restarted");
+});
+el("noSys").addEventListener("click", function () {
+  SYSTEMS.forEach(function (s) { S.systems[s] = false; });
+  startSession("No systems selected");
+});
+el("search").addEventListener("input", function (e) { S.ref.search = e.target.value; renderRef(); });
+el("refUnclear").addEventListener("change", function (e) { S.ref.unclear = e.target.checked; renderRef(); });
+el("expandAll").addEventListener("click", function () {
+  if (anySourceOpen()) { S.ref.expandAll = false; S.ref.open = {}; }
+  else { S.ref.expandAll = true; }
+  renderRef();
+});
+Array.prototype.forEach.call(document.querySelectorAll("thead [data-sort]"), function (b) {
+  b.addEventListener("click", function () {
+    var k = b.getAttribute("data-sort");
+    if (S.ref.sortKey === k) S.ref.sortDir *= -1; else { S.ref.sortKey = k; S.ref.sortDir = 1; }
+    renderRef();
+  });
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  var t = e.target || {};
+  var tag = (t.tagName || "").toLowerCase();
+  var typing = tag === "textarea" || tag === "input";
+
+  if (S.mode === "ref") {
+    if (!typing && e.key === "/") { e.preventDefault(); el("search").focus({preventScroll:true}); }
+    return;
+  }
+
+  if (typing) {
+    /* the arrows advertised on Skip work from an empty answer box too */
+    if (tag === "textarea" && (e.key === "ArrowRight" || e.key === "ArrowLeft") && String(t.value || "").trim() === "" && S.phase === "drill") {
+      e.preventDefault();
+      if (e.key === "ArrowRight") next(); else prev();
+      return;
+    }
+    if (tag === "textarea" && e.key === "Enter" && !e.shiftKey && !S.revealed) {
+      e.preventDefault();
+      reveal();
+    }
+    return;
+  }
+
+  switch (e.key) {
+    case " ":
+      e.preventDefault();
+      if (S.phase === "roundbreak") startNextRound();
+      else if (S.phase === "done") startSession();
+      else reveal();
+      break;
+    case "1": if (S.revealed) { e.preventDefault(); grade("got"); } break;
+    case "2": if (S.revealed) { e.preventDefault(); grade("missed"); } break;
+    case "ArrowRight": if (S.phase === "drill") { e.preventDefault(); next(); } break;
+    case "ArrowLeft": if (S.phase === "drill") { e.preventDefault(); prev(); } break;
+    case "v": case "V":
+      if (S.revealed) { e.preventDefault(); S.showVerbatim = !S.showVerbatim; render(); }
+      break;
+    case "r": case "R": e.preventDefault(); startSession(); break;
+  }
+});
+
+
+/* ================= data loader =================
+   Engine page: LIMITATIONS is null here and is fetched from data/limitations.json.
+   dist build: build_standalone.py has already inlined the array, so boot()
+   runs straight away. The message below is the only behaviour that differs
+   when the fetch cannot run (file:// in most browsers). */
+function dataFailed() {
+  el("card").innerHTML = '<div class="roundcard"><h2>Data not loaded</h2>' +
+    "<p>Open the standalone build (dist/) for offline use, or serve this folder over http.</p></div>";
+}
+function loadData() {
+  if (Array.isArray(LIMITATIONS)) { boot(); return; }
+  if (typeof fetch !== "function") { dataFailed(); return; }
+  fetch("data/limitations.json")
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (d) { LIMITATIONS = d; boot(); })
+    .catch(function () { dataFailed(); });
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", loadData); else loadData();
+</script>
+</body>
+</html>
