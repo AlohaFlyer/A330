@@ -557,460 +557,16 @@ footer .muted { color: var(--pale-on-brand); }
 
 <script>
 /* ==================================================================
-   INLINED DATA BLOCK, STANDALONE BUILD ONLY
-
-   Everything between the BEGIN/END markers below is a verbatim copy of
-   data/memory_items.json (the visually verified memory-item set, source
-   file data/memory_items_v2.json in the working tree), inlined so this
-   single file works offline when opened straight from disk (file://)
-   with no fetch() and no network.
-
-   The canonical copy is data/memory_items.json. The portal architecture
-   keeps this data in EXTERNAL JSON. In the GitHub Pages build, delete
-   this block and load data/memory_items.json instead; nothing else in
-   this file needs to change, the app reads the same array under the
-   same name.
-
-   Eleven entries cover ten procedures: mi-vis-01 (FCOM) and mi-vis-04
-   (QRH) are the same EMER DESCENT block and are merged at load time into
-   one drill item carrying both citations.
-
-   Line grammar in `actions`: a line ending in ":" or starting with a
-   quote character (and carrying no " ... ") is an unboxed condition
-   header; "" is a box-break sentinel (separate boxes on the page);
-   everything else is a boxed, graded line.
-
-   DO NOT HAND-EDIT. Regenerate from data/memory_items.json.
-   Generated 2026-09-01 · 11 entries · 10 procedures.
+   DATA SLOT. The engine page keeps its data EXTERNAL, in data/memory_items.json,
+   and loads it on DOMContentLoaded (see the loader at the end of the
+   second script block). build_scripts/build_standalone.py inlines the
+   JSON between the two markers below to produce the offline dist/ build;
+   nothing else differs between the engine page and the dist page.
+   Canonical copy: data/memory_items.json. DO NOT HAND-EDIT the dist build.
    ================================================================== */
-/* BEGIN data/memory_items.json */
-const MEMORY_ITEMS =
-[
- {
-  "id": "mi-vis-01",
-  "procedure": "[MEM] EMER DESCENT",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-MISC P1/26",
-  "pdf_page": 3065,
-  "actions": [
-   "CREW OXY MASKS ... USE",
-   "SIGNS ... ON",
-   "EMER DESCENT ... INITIATE",
-   "THR LEVERS ... IDLE",
-   "SPD BRK ... FULL"
-  ],
-  "boxes": [
-   {
-    "lines": [
-     "CREW OXY MASKS ... USE",
-     "SIGNS ... ON",
-     "EMER DESCENT ... INITIATE"
-    ]
-   },
-   {
-    "unboxed_condition": "If A/THR not active:",
-    "lines": [
-     "THR LEVERS ... IDLE"
-    ]
-   },
-   {
-    "lines": [
-     "SPD BRK ... FULL"
-    ]
-   }
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "evidence": "Title carries [MEM] prefix; no OEB or At ANY TIME label; all box text legible at 3x.",
-  "src": "manual",
-  "fleet": "pax",
-  "ref": "PRO-ABN-MISC-00012261.0001001"
- },
- {
-  "id": "mi-vis-02",
-  "procedure": "[MEM] STALL RECOVERY",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-MISC P2/26",
-  "pdf_page": 3066,
-  "actions": [
-   "NOSE DOWN PITCH CONTROL ... APPLY",
-   "BANK ... WINGS LEVEL",
-   "THRUST ... INCREASE SMOOTHLY AS NEEDED",
-   "SPEEDBRAKES ... CHECK RETRACTED",
-   "FLIGHT PATH ... RECOVER SMOOTHLY",
-   "FLAPS 1 ... SELECT"
-  ],
-  "boxes": [
-   {
-    "lines": [
-     "NOSE DOWN PITCH CONTROL ... APPLY"
-    ]
-   },
-   {
-    "lines": [
-     "BANK ... WINGS LEVEL"
-    ]
-   },
-   {
-    "unboxed_condition": "When out of stall (no longer stall indications) :",
-    "lines": [
-     "THRUST ... INCREASE SMOOTHLY AS NEEDED"
-    ]
-   },
-   {
-    "unboxed_condition": "When out of stall (no longer stall indications) :",
-    "lines": [
-     "SPEEDBRAKES ... CHECK RETRACTED",
-     "FLIGHT PATH ... RECOVER SMOOTHLY"
-    ]
-   },
-   {
-    "unboxed_condition": "If in clean configuration and below 20 000 ft :",
-    "lines": [
-     "FLAPS 1 ... SELECT"
-    ]
-   }
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "evidence": "Title carries [MEM] prefix; page text 'apply the immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
-  "src": "manual",
-  "fleet": "pax",
-  "ref": "PRO-ABN-MISC-00013664.0002001"
- },
- {
-  "id": "mi-vis-03",
-  "procedure": "[MEM] STALL WARNING AT LIFTOFF",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-MISC P3/26",
-  "pdf_page": 3067,
-  "actions": [
-   "THRUST ... TOGA",
-   "PITCH ATTITUDE ... 15 °",
-   "BANK ... WINGS LEVEL"
-  ],
-  "boxes": [
-   {
-    "lines": [
-     "THRUST ... TOGA"
-    ]
-   },
-   {
-    "unboxed_condition": "At the same time:",
-    "lines": [
-     "PITCH ATTITUDE ... 15 °",
-     "BANK ... WINGS LEVEL"
-    ]
-   }
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "evidence": "Title carries [MEM] prefix; page text 'apply the following immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
-  "src": "manual",
-  "fleet": "pax",
-  "ref": "PRO-ABN-MISC-00013665.0002001"
- },
- {
-  "id": "mi-vis-04",
-  "procedure": "EMER DESCENT",
-  "book": "QRH R35",
-  "page_label": "22.02A",
-  "pdf_page": 144,
-  "actions": [
-   "CREW OXY MASKS ... USE",
-   "SIGNS ... ON",
-   "EMER DESCENT ... INITIATE",
-   "THR LEVERS ... IDLE",
-   "SPD BRK ... FULL"
-  ],
-  "boxes": [
-   {
-    "lines": [
-     "CREW OXY MASKS ... USE",
-     "SIGNS ... ON",
-     "EMER DESCENT ... INITIATE"
-    ]
-   },
-   {
-    "unboxed_condition": "If A/THR not active:",
-    "lines": [
-     "THR LEVERS ... IDLE"
-    ]
-   },
-   {
-    "lines": [
-     "SPD BRK ... FULL"
-    ]
-   }
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "evidence": "No At ANY TIME or OEB label; boxed lines identical to FCOM [MEM] EMER DESCENT (pdf 3065); legible at 3x.",
-  "src": "manual",
-  "fleet": "pax",
-  "ref": "ABN-22-00010585.0001001"
- },
- {
-  "id": "mi-vis-05",
-  "procedure": "UNRELIABLE SPEED INDICATION",
-  "book": "QRH R35",
-  "page_label": "23.03A",
-  "pdf_page": 157,
-  "actions": [
-   "If the safe conduct of the flight is impacted",
-   "AP ... OFF",
-   "A/THR ... OFF",
-   "FD ... OFF",
-   "PITCH/THRUST",
-   "Below THRUST RED ALT ... 15° / TOGA",
-   "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
-   "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
-   "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
-   "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
-   "SPEEDBRAKES ... CHECK RETRACTED",
-   "L/G ... UP",
-   "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
-  ],
-  "boxes": [
-   {
-    "lines": [
-     "If the safe conduct of the flight is impacted",
-     "AP ... OFF",
-     "A/THR ... OFF",
-     "FD ... OFF",
-     "PITCH/THRUST",
-     "Below THRUST RED ALT ... 15° / TOGA",
-     "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
-     "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
-     "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
-     "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
-     "SPEEDBRAKES ... CHECK RETRACTED",
-     "L/G ... UP",
-     "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
-    ]
-   }
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "evidence": "Single inner box (border distinct from outer page frame, verified at 4x); no At ANY TIME or OEB label; FCOM TOC pdf 2411 lists '[MEM] Unreliable Speed Indication'; the following 'To level off' block is unboxed.",
-  "src": "manual",
-  "fleet": "pax",
-  "ref": "ABN-23-A-00017854.0001001"
- },
- {
-  "id": "mi-vis-06",
-  "procedure": "[MEM] LOSS OF BRAKING",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-BRAKES P 1/16",
-  "pdf_page": 2545,
-  "ref": "PRO-ABN-BRAKES-00010803.0001001",
-  "actions": [
-   "If no braking:",
-   "REV ... MAX",
-   "",
-   "BRAKE PEDALS ... RELEASE",
-   "",
-   "A/SKID OFF ... ORDER",
-   "",
-   "A/SKID & N/W STRG ... OFF",
-   "BRAKE PEDALS ... PRESS",
-   "MAX BRK PR ... 1000 PSI",
-   "If still no braking:",
-   "PARK BRAKE ... USE"
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
-  "audit": [
-   {
-    "pass": "PASS1 2026-09-01",
-    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
-   }
-  ]
- },
- {
-  "id": "mi-vis-07",
-  "procedure": "[MEM] TAWS CAUTION",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-SURV P 1/8 to 2/8",
-  "pdf_page": 3209,
-  "ref": "PRO-ABN-SURV-AA-00026795.0001001",
-  "actions": [
-   "\"TERRAIN TERRAIN\" - \"TOO LOW TERRAIN\" - \"TERRAIN AHEAD\" - \"CAUTION TERRAIN\" - \"OBSTACLE AHEAD\" - \"CAUTION OBSTACLE\"",
-   "During night or IMC conditions:",
-   "Simultaneously:",
-   "AP ... OFF",
-   "PITCH ... PULL UP",
-   "",
-   "THRUST LEVERS ... TOGA",
-   "SPEED BRAKE LEVER ... CHECK RETRACTED",
-   "BANK ... WINGS LEVEL or ADJUST",
-   "",
-   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE.",
-   "During daylight and VMC conditions, with terrain and obstacles clearly in sight:",
-   "FLIGHT PATH ... ADJUST",
-   "\"SINK RATE\"",
-   "Above 1 000 ft AAL IMC or above 500 ft AAL VMC:",
-   "FLIGHT PATH ... ADJUST",
-   "Below 1 000 ft AAL IMC or below 500 ft AAL VMC:",
-   "GO-AROUND ... CONSIDER",
-   "\"DON’T SINK\"",
-   "FLIGHT PATH ... ADJUST",
-   "\"TOO LOW GEAR\" or \"TOO LOW FLAPS\"",
-   "GO-AROUND ... PERFORM",
-   "\"GLIDESLOPE\"",
-   "Above 1 000 ft AAL IMC or above 500 ft AAL VMC:",
-   "FLIGHT PATH ... ADJUST",
-   "When conditions require a deliberate approach below glideslope:",
-   "G/S MODE ... OFF",
-   "Below 1 000 ft AAL IMC or below 500 ft AAL VMC:",
-   "GO-AROUND ... CONSIDER"
-  ],
-  "sub_idents": [
-   "PRO-ABN-SURV-AA-00026796.0001001",
-   "PRO-ABN-SURV-AA-00026797.0001001",
-   "PRO-ABN-SURV-AA-00026798.0001001"
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
-  "audit": [
-   {
-    "pass": "PASS1 2026-09-01",
-    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
-   }
-  ]
- },
- {
-  "id": "mi-vis-08",
-  "procedure": "[MEM] TAWS WARNING",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-SURV P 3/8",
-  "pdf_page": 3211,
-  "ref": "PRO-ABN-SURV-00026799.0001001",
-  "actions": [
-   "If the TAWS triggers one of the PULL UP alerts:",
-   "Simultaneously:",
-   "AP ... OFF",
-   "PITCH ... PULL UP",
-   "",
-   "THRUST LEVERS ... TOGA",
-   "SPEED BRAKE LEVER ... CHECK RETRACTED",
-   "BANK ... WINGS LEVEL or ADJUST",
-   "",
-   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE."
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "verified_by": "main session visual read 2026-09-01, 110 dpi render",
-  "audit": [
-   {
-    "pass": "PASS1 2026-09-01",
-    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
-   }
-  ]
- },
- {
-  "id": "mi-vis-09",
-  "procedure": "[MEM] TCAS CAUTION - TRAFFIC ADVISORY",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-SURV P 3/8",
-  "pdf_page": 3211,
-  "ref": "PRO-ABN-SURV-00025042.0001001",
-  "actions": [
-   "Do not perform a maneuver based on a TA alone."
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "note": "Title carries the [MEM] prefix but the single line is printed as plain text, NOT boxed. It is a memory-item procedure with no boxed action line.",
-  "verified_by": "main session visual read 2026-09-01, 110 dpi render"
- },
- {
-  "id": "mi-vis-10",
-  "procedure": "[MEM] TCAS WARNING - RESOLUTION ADVISORY",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-SURV P 4/8 to 5/8",
-  "pdf_page": 3212,
-  "ref": "PRO-ABN-SURV-00011464.0005001",
-  "actions": [
-   "All RA, except any CLIMB RA during approach in CONF 3 or FULL:",
-   "AP (if engaged) ... OFF",
-   "BOTH FDs ... OFF",
-   "",
-   "VERTICAL SPEED ... ADJUST or MAINTAIN",
-   "Any CLIMB RA during approach in CONF 3 or FULL:",
-   "GO-AROUND ... PERFORM",
-   "",
-   "VERTICAL SPEED ... MONITOR",
-   "",
-   "ATC ... NOTIFY",
-   "When the “CLEAR OF CONFLICT” aural alert sounds:",
-   "ATC ... NOTIFY",
-   "LATERAL AND VERTICAL GUIDANCE ... ADJUST",
-   "",
-   "AP/FD ... AS RQRD"
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "note": "Unboxed guidance on the same page: always follow RA orders even if crossing intruder altitude; respect stall, GPWS, or windshear warnings.",
-  "verified_by": "main session visual read 2026-09-01, 110 and 150 dpi renders",
-  "audit": [
-   {
-    "pass": "PASS1 2026-09-01",
-    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
-   }
-  ]
- },
- {
-  "id": "mi-vis-11",
-  "procedure": "[MEM] WINDSHEAR WARNING - REACTIVE WINDSHEAR",
-  "book": "FCOM R17",
-  "page_label": "PRO-ABN-SURV P 6/8 to 7/8",
-  "pdf_page": 3214,
-  "ref": "PRO-ABN-SURV-00012300.0001001",
-  "actions": [
-   "At Takeoff:",
-   "Before V1:",
-   "If there are significant variations in airspeed, and in airspeed trend below the indicated V1, reject the takeoff.",
-   "After V1:",
-   "THR LEVERS ... TOGA",
-   "REACHING VR ... ROTATE",
-   "SRS ORDERS ... FOLLOW",
-   "When airborne, during initial climb, or at landing:",
-   "THR LEVERS AT TOGA ... SET OR CONFIRM",
-   "AP (if engaged) ... KEEP ON",
-   "SRS ORDERS ... FOLLOW",
-   "",
-   "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL OUT OF WINDSHEAR.",
-   "",
-   "CAREFULLY MONITOR FLIGHT PATH AND SPEED.",
-   "WHEN OUT OF WINDSHEAR, SMOOTHLY RECOVER NORMAL CLIMB."
-  ],
-  "classification": "MEMORY ITEMS",
-  "confidence": "HIGH",
-  "src": "manual",
-  "fleet": "pax",
-  "note": "Unboxed on page: during the takeoff roll the aural alert is inhibited, recognition is by crew observation; if FD bars not displayed, initial pitch 17.5 degrees; the autopilot disengages if AOA exceeds alpha prot.",
-  "verified_by": "main session visual read 2026-09-01, 110 and 150 dpi renders",
-  "audit": [
-   {
-    "pass": "PASS1 2026-09-01",
-    "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
-   }
-  ]
- }
-];
-/* END data/memory_items.json */
+/* @@DATA_START memory-items */
+var MEMORY_ITEMS = null;
+/* @@DATA_END */
 
 /* ------------------------------------------------------------------
    PAGE METADATA, hand-authored, not extracted.
@@ -1160,68 +716,74 @@ function buildLayout(entry) {
   return lay;
 }
 
-var PROCS = [];
-(function () {
-  var byKey = {};
-  MEMORY_ITEMS.forEach(function (e) {
-    var key = e.actions.join("");
-    var p = byKey[key];
-    if (!p) {
-      p = {
-        pid: e.id,
-        title: e.procedure,
-        actions: e.actions,
-        layout: buildLayout(e),
-        sources: [],
-        notes: [],
-        hint: RENDER_HINTS[e.id] || null
-      };
-      byKey[key] = p;
-      PROCS.push(p);
-    } else if (/^\[MEM\]/.test(e.procedure) && !/^\[MEM\]/.test(p.title)) {
-      p.title = e.procedure;
-    }
-    p.sources.push(e);
-    if (e.note) p.notes.push({ book: e.book, text: e.note });
-  });
-  PROCS.forEach(function (p) {
-    p.name = stripMem(p.title);
-    p.gradable = [];
-    p.layout.forEach(function (g) { if (g.kind === "box") g.lines.forEach(function (l) { p.gradable.push(l.idx); }); });
-    p.headers = p.layout.filter(function (g) { return g.kind === "header"; }).map(function (g) { return g.text; });
-    p.books = [];
-    p.sources.forEach(function (s) { if (p.books.indexOf(s.book) === -1) p.books.push(s.book); });
-  });
-})();
-var BY_PID = {};
-PROCS.forEach(function (p) { BY_PID[p.pid] = p; });
+var PROCS, BY_PID, S;   /* filled by boot() once the data is loaded */
+function boot() {
+  PROCS = [];
+  (function () {
+    var byKey = {};
+    MEMORY_ITEMS.forEach(function (e) {
+      var key = e.actions.join(String.fromCharCode(31));
+      var p = byKey[key];
+      if (!p) {
+        p = {
+          pid: e.id,
+          title: e.procedure,
+          actions: e.actions,
+          layout: buildLayout(e),
+          sources: [],
+          notes: [],
+          hint: RENDER_HINTS[e.id] || null
+        };
+        byKey[key] = p;
+        PROCS.push(p);
+      } else if (/^\[MEM\]/.test(e.procedure) && !/^\[MEM\]/.test(p.title)) {
+        p.title = e.procedure;
+      }
+      p.sources.push(e);
+      if (e.note) p.notes.push({ book: e.book, text: e.note });
+    });
+    PROCS.forEach(function (p) {
+      p.name = stripMem(p.title);
+      p.gradable = [];
+      p.layout.forEach(function (g) { if (g.kind === "box") g.lines.forEach(function (l) { p.gradable.push(l.idx); }); });
+      p.headers = p.layout.filter(function (g) { return g.kind === "header"; }).map(function (g) { return g.text; });
+      p.books = [];
+      p.sources.forEach(function (s) { if (p.books.indexOf(s.book) === -1) p.books.push(s.book); });
+    });
+  })();
+  BY_PID = {};
+  PROCS.forEach(function (p) { BY_PID[p.pid] = p; });
 
-/* ================= state (in memory only, no storage of any kind) ================= */
-var S = {
-  mode: "drill",
-  direction: "p2a",            /* p2a: procedure -> actions, a2p: actions -> procedure */
-  style: "whole",              /* whole | line */
-  selected: {},                /* pid -> bool */
-  queue: [],
-  idx: 0,
-  round: 1,
-  revealed: false,
-  showSrc: false,
-  typed: {},                   /* key -> text, so navigating back keeps it */
-  grades: {},                  /* pid -> [ "got" | "missed" | undefined ] per slot */
-  line: 0,                     /* line-by-line: index into proc.gradable */
-  cursor: 0,                   /* whole: which slot the next 1/2 grades */
-  counted: {},                 /* queue idx -> {pid, got, missed, clean} once the procedure is scored */
-  counts: { got: 0, missed: 0 },
-  firstPass: { got: 0, missed: 0, total: 0, procsClean: 0, procsMissed: 0 },
-  procStats: {},               /* pid -> { served, clean, everMissed } */
-  missedThisRound: [],
-  missedEver: {},
-  cursorPicked: false,         /* whole: a graded line was clicked for re-grading */
-  phase: "drill",              /* drill | roundbreak | done | empty */
-  note: ""
-};
-PROCS.forEach(function (p) { S.selected[p.pid] = true; S.procStats[p.pid] = { served: 0, clean: 0, everMissed: false }; });
+  /* ================= state (in memory only, no storage of any kind) ================= */
+  S = {
+    mode: "drill",
+    direction: "p2a",            /* p2a: procedure -> actions, a2p: actions -> procedure */
+    style: "whole",              /* whole | line */
+    selected: {},                /* pid -> bool */
+    queue: [],
+    idx: 0,
+    round: 1,
+    revealed: false,
+    showSrc: false,
+    typed: {},                   /* key -> text, so navigating back keeps it */
+    grades: {},                  /* pid -> [ "got" | "missed" | undefined ] per slot */
+    line: 0,                     /* line-by-line: index into proc.gradable */
+    cursor: 0,                   /* whole: which slot the next 1/2 grades */
+    counted: {},                 /* queue idx -> {pid, got, missed, clean} once the procedure is scored */
+    counts: { got: 0, missed: 0 },
+    firstPass: { got: 0, missed: 0, total: 0, procsClean: 0, procsMissed: 0 },
+    procStats: {},               /* pid -> { served, clean, everMissed } */
+    missedThisRound: [],
+    missedEver: {},
+    cursorPicked: false,         /* whole: a graded line was clicked for re-grading */
+    phase: "drill",              /* drill | roundbreak | done | empty */
+    note: ""
+  };
+  PROCS.forEach(function (p) { S.selected[p.pid] = true; S.procStats[p.pid] = { served: 0, clean: 0, everMissed: false }; });
+  renderHead();
+  startSession();
+}
+
 
 function pool() { return PROCS.filter(function (p) { return S.selected[p.pid]; }); }
 function slotsOf(p) { return S.direction === "a2p" ? 1 : p.gradable.length; }
@@ -1899,8 +1461,25 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-renderHead();
-startSession();
+
+/* ================= data loader =================
+   Engine page: MEMORY_ITEMS is null here and is fetched from data/memory_items.json.
+   dist build: build_standalone.py has already inlined the array, so boot()
+   runs straight away. The message below is the only behaviour that differs
+   when the fetch cannot run (file:// in most browsers). */
+function dataFailed() {
+  el("card").innerHTML = '<div class="roundcard"><h2>Data not loaded</h2>' +
+    "<p>Open the standalone build (dist/) for offline use, or serve this folder over http.</p></div>";
+}
+function loadData() {
+  if (Array.isArray(MEMORY_ITEMS)) { boot(); return; }
+  if (typeof fetch !== "function") { dataFailed(); return; }
+  fetch("data/memory_items.json")
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (d) { MEMORY_ITEMS = d; boot(); })
+    .catch(function () { dataFailed(); });
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", loadData); else loadData();
 </script>
 </body>
 </html>
