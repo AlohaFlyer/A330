@@ -1,0 +1,262 @@
+/* =============================================================================
+   A330 Study Portal, design tokens. HAWAIIAN ONLY.
+
+   Every hex value in this file is a VERIFIED Hawaiian Airlines token, quoted
+   from Alaska Air Group's Auro Design System, Hawaiian theme (aag-theme-ha),
+   v9.3.3, and corroborated by the live Hawaiian production stylesheet. Nothing
+   here was sampled off a screenshot, a logo PNG, or an aggregator site.
+   Provenance and the per-pair contrast arithmetic are in
+   palette/HAWAIIAN_PALETTE.md (sections 2, 4 and 5).
+
+   Sources:
+     https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@9.3.3/dist/web/hawaiian.css
+     https://resource.alaskaair.net/assets/css/global/aag-style-global-hawaiian.prod.css
+     https://news.alaskaair.com/releases/hawaiian-airlines-unveils-new-brand-and-livery/
+
+   Decision (2026-09-01): Hawaiian only. Purple #463C8F, fuchsia #CE0C88, coral
+   #EE453D and their tints. No Alaska navy, no blend. Lagoon #00A5BA is OUT
+   entirely (2.96:1 behind white, fails even the 3.0:1 non-text threshold).
+
+   Contrast rules baked in below (WCAG 2.x, computed, not asserted):
+   - Coral #EE453D is 3.78:1 on white and FAILS AA for text. It is an accent
+     ONLY: rules, borders, fills, large display marks. Coral-coloured text uses
+     --color-brand-accent-text #97322A (7.49:1). Never put body text in coral.
+   - Purple-subtle #8C7EB8 is 3.63:1 on white, decorative only in light mode.
+   - Warning yellow #FAC200 is a fill/border, never a text colour; text on it
+     is --color-text-primary (12.78:1).
+   - Everything else clears AA for body text; the tightest core pair is white
+     on fuchsia at 5.21:1.
+
+   THE RULE: swapping this palette is a one-file change ONLY IF nothing
+   downstream hardcodes a colour. Stylesheets and pages reference these custom
+   properties, never a raw hex. If you find a `#` outside this file (or outside
+   a standalone page's inlined copy of this block, which must carry the SAME
+   values), that is the bug. Standalone pages (limitations.html,
+   memory-items.html) inline these values so they work from file:// with no
+   external stylesheet; keep them in step with this file.
+
+   Tokens are named for MEANING, not appearance. `--color-limit` not
+   `--color-red`, `--color-surface-raised` not `--color-light-grey`. A semantic
+   name survives a rebrand; a colour name has to be renamed or, worse, starts
+   lying. The B787 portal used appearance names and ended up with a token called
+   `--teal` rendering brown.
+
+   Dark theme: the Auro Hawaiian file ships inverse tokens but they were not
+   extracted or contrast-checked in the palette pass (HAWAIIAN_PALETTE.md,
+   section 6, item 6). The dark block below is the portal's own derived set,
+   the one limitations.html 0.4 already ships, built from the same three brand
+   ramps (lifted purple #ACA1CC = ha-orchid, fuchsia-subtle #E26DB8,
+   coral-subtle #FF9080, accent-green #8EC891, accent-lagoon-pale #A8D6DF as
+   the info tint). Dark surfaces and dark-mode ink are derived, not Auro
+   tokens; re-verify against the Auro inverse block when that is extracted.
+   ============================================================================= */
+
+:root {
+  color-scheme: light dark;
+
+  /* --- Brand ---------------------------------------------------------------
+     purple = ha-purple, fuchsia = ha-fuchsia, coral = ha-coral. */
+  --color-brand-primary:        #463C8F;  /* Hawaiian purple, headers, footer, focus */
+  --color-brand-primary-hover:  #31295C;  /* purple-bold, pressed / active */
+  --color-brand-primary-subtle: #8C7EB8;  /* purple-subtle, decorative only (3.63:1) */
+  --color-brand-primary-tint:   #ACA1CC;  /* ha-orchid, mid purple surface tint */
+  --color-brand-secondary:      #CE0C88;  /* Hawaiian fuchsia, primary CTA, links */
+  --color-brand-secondary-hover:#831A57;  /* fuchsia-bold, hover */
+  --color-brand-secondary-subtle:#E26DB8; /* fuchsia-subtle, decorative */
+  --color-brand-accent:         #EE453D;  /* Hawaiian coral. ACCENT ONLY, NEVER TEXT (3.78:1) */
+  --color-brand-accent-text:    #97322A;  /* coral-bold, the AA-safe coral for text and small UI (7.49:1) */
+  --color-brand-accent-subtle:  #FF9080;  /* coral-subtle, decorative */
+  --color-brand-on-primary:     #FFFFFF;  /* 9.12:1 on purple, 5.21:1 on fuchsia */
+  --color-brand-gradient:       linear-gradient(90deg, #463C8F 25.8%, #CE0C88);  /* verbatim Auro */
+
+  /* --- Surfaces ----------------------------------------------------------- */
+  --color-surface-base:         #FFFFFF;  /* page background, ha-surface */
+  --color-surface-raised:       #FFFFFF;  /* cards, panels */
+  --color-surface-sunken:       #F1F3F3;  /* wells, code blocks, ha-surface-neutral */
+  --color-surface-subtle:       #F5F7F7;  /* subtle panel, ha-surface-neutral-subtle */
+  --color-surface-overlay:      #FFFFFF;  /* modals, popovers */
+  --color-surface-inverse:      #463C8F;  /* inverse surface, purple */
+  --color-surface-pale:         #EAE5F4;  /* pale purple wash, ha-purple-muted */
+  --color-surface-pale-accent:  #FDF1F8;  /* pale fuchsia wash, ha-fuchsia-muted */
+  --color-surface-pale-bright:  #FFEEEA;  /* pale coral wash, ha-coral-muted */
+  --color-scrim:                rgba(0, 0, 0, 0.45);  /* ink at 45 %, not a brand token */
+
+  /* --- Text --------------------------------------------------------------- */
+  --color-text-primary:         #000000;  /* ha-ink, true black in the Hawaiian theme */
+  --color-text-secondary:       #3C3D3D;  /* ha-ink-muted, 10.90:1 */
+  --color-text-muted:           #3D3D3D;  /* ha-fineprint from the live site, footers, timestamps */
+  --color-text-inverse:         #FFFFFF;
+  --color-text-on-inverse-muted:#EAE5F4;  /* pale purple on the purple footer, 7.39:1 */
+  --color-text-link:            #CE0C88;  /* site-accurate fuchsia link, 5.21:1 */
+  --color-text-link-hover:      #831A57;  /* site-accurate hover, 9.33:1 */
+
+  /* --- Lines -------------------------------------------------------------- */
+  --color-border-subtle:        #DBDDDD;  /* ha-border-subtle */
+  --color-border-strong:        #CED0D0;  /* ha-border */
+  --color-border-brand:         #463C8F;  /* ha-border-brand */
+  --color-focus-ring:           #463C8F;  /* purple, site-accurate :focus-visible; 9.12:1 on white */
+
+  /* --- Study semantics ----------------------------------------------------
+     These carry meaning specific to this portal. Keep them distinct from the
+     status colours below: a limitation is not a warning, it is a category.
+     Text colours here are all AA on white and on their own surface. */
+  --color-limit:                #97322A;  /* hard limitations, AA-safe coral (6.65:1 on its surface) */
+  --color-limit-surface:        #FFEEEA;
+  --color-memory-item:          #CE0C88;  /* memorised immediate actions, fuchsia (4.74:1 on its surface) */
+  --color-memory-item-surface:  #FDF1F8;
+  --color-verbatim:             #463C8F;  /* quoted manual text, purple (7.39:1 on its surface) */
+  --color-verbatim-surface:     #EAE5F4;
+  --color-technique:            #3C3D3D;  /* personal method, not a manual fact: deliberately neutral */
+  --color-technique-surface:    #F1F3F3;
+
+  /* --- Provenance, mirrors the `src` field on every item ------------------- */
+  --color-src-manual:           #463C8F;  /* purple */
+  --color-src-sop:              #831A57;  /* deep fuchsia */
+  --color-src-technique:        #3C3D3D;  /* neutral */
+
+  /* --- Fleet, mirrors the `fleet` field ------------------------------------
+     PAX is the default view. Freighter is toggled, never deleted, and must read
+     as visibly different so the two are never confused at a glance:
+     PAX is purple, freighter is coral. */
+  --color-fleet-pax:            #463C8F;
+  --color-fleet-pax-surface:    #EAE5F4;
+  --color-fleet-frtr:           #97322A;
+  --color-fleet-frtr-surface:   #FFEEEA;
+  --color-fleet-both:           #3C3D3D;
+
+  /* --- Status, Auro status ramp for the Hawaiian theme -------------------- */
+  --color-status-correct:       #447A1F;  /* success, 5.19:1 on white */
+  --color-status-correct-surface:#D6EAC7;
+  --color-status-incorrect:     #E01F26;  /* error, 4.78:1 on white; on its surface use as border, text in ink */
+  --color-status-incorrect-surface:#FBC6C6;
+  --color-status-warning:       #FAC200;  /* FILL / BORDER ONLY, text on it is --color-text-primary */
+  --color-status-warning-surface:#FFF6D2;
+  --color-status-info:          #007DB1;  /* 4.60:1 on white */
+  --color-status-info-surface:  #E8F2F8;
+  --color-status-unvetted:      #3D3D3D;  /* content not re-verified since last revision: neutral, not alarming */
+
+  /* --- Categorical accents for chips / charts (verified Auro accents) -----
+     Fills only; none of these is a text colour. Lagoon is excluded. */
+  --color-cat-1:                #5DB060;  /* accent-green-bold */
+  --color-cat-2:                #E39131;  /* accent-sand-bold */
+  --color-cat-3:                #463C8F;  /* purple */
+  --color-cat-4:                #CCC5E0;  /* accent-lilac */
+
+  /* --- Typography --------------------------------------------------------- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-verbatim: var(--font-mono);   /* quoted manual text reads as quoted */
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+
+  --leading-tight:  1.25;
+  --leading-normal: 1.55;
+  --leading-loose:  1.75;
+
+  /* --- Space, radius, elevation ------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.09);
+
+  --max-width-prose: 68ch;
+}
+
+/* Dark theme. Redefines tokens only, never introduces a new one, so a token
+   missing here is a bug rather than a silent fallback to a light value.
+   Same values limitations.html 0.4 ships in its own dark block. Brand text
+   colours are lifted to the subtle/tint members of each Hawaiian ramp so they
+   clear AA on the dark ground (#ACA1CC 7.64:1, #E26DB8 6.23:1, #FF9080
+   8.37:1, all on #15131C). Coral #EE453D stays an accent only. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-brand-primary:        #ACA1CC;  /* ha-orchid, lifted purple for text on dark */
+    --color-brand-primary-hover:  #8C7EB8;
+    --color-brand-primary-subtle: #8C7EB8;
+    --color-brand-primary-tint:   #31295C;
+    --color-brand-secondary:      #E26DB8;  /* fuchsia-subtle */
+    --color-brand-secondary-hover:#F0A3D3;
+    --color-brand-secondary-subtle:#831A57;
+    --color-brand-accent:         #EE453D;  /* still accent only */
+    --color-brand-accent-text:    #FF9080;  /* coral-subtle, 8.37:1 on dark ground */
+    --color-brand-accent-subtle:  #97322A;
+    --color-brand-on-primary:     #15131C;
+
+    --color-surface-base:         #15131C;
+    --color-surface-raised:       #15131C;
+    --color-surface-sunken:       #1E1B29;
+    --color-surface-subtle:       #232032;
+    --color-surface-overlay:      #1E1B29;
+    --color-surface-inverse:      #31295C;
+    --color-surface-pale:         #2A2440;
+    --color-surface-pale-accent:  #38203A;
+    --color-surface-pale-bright:  #3A211C;
+    --color-scrim:                rgba(0, 0, 0, 0.65);
+
+    --color-text-primary:         #F4F2F8;
+    --color-text-secondary:       #C3BED0;
+    --color-text-muted:           #C3BED0;
+    --color-text-inverse:         #15131C;
+    --color-text-on-inverse-muted:#EAE5F4;
+    --color-text-link:            #E26DB8;
+    --color-text-link-hover:      #F0A3D3;
+
+    --color-border-subtle:        #332E44;
+    --color-border-strong:        #453F58;
+    --color-border-brand:         #ACA1CC;
+    --color-focus-ring:           #ACA1CC;
+
+    --color-limit:                #FF9080;
+    --color-limit-surface:        #3A211C;
+    --color-memory-item:          #E26DB8;
+    --color-memory-item-surface:  #38203A;
+    --color-verbatim:             #ACA1CC;
+    --color-verbatim-surface:     #2A2440;
+    --color-technique:            #C3BED0;
+    --color-technique-surface:    #1E1B29;
+
+    --color-src-manual:           #ACA1CC;
+    --color-src-sop:              #F0A3D3;
+    --color-src-technique:        #C3BED0;
+
+    --color-fleet-pax:            #ACA1CC;
+    --color-fleet-pax-surface:    #2A2440;
+    --color-fleet-frtr:           #FF9080;
+    --color-fleet-frtr-surface:   #3A211C;
+    --color-fleet-both:           #C3BED0;
+
+    --color-status-correct:       #8EC891;
+    --color-status-correct-surface:#1D3320;
+    --color-status-incorrect:     #FF8A8A;
+    --color-status-incorrect-surface:#3D1A1C;
+    --color-status-warning:       #FAC200;
+    --color-status-warning-surface:#3A3011;
+    --color-status-info:          #A8D6DF;
+    --color-status-info-surface:  #16303A;
+    --color-status-unvetted:      #C3BED0;
+
+    --color-cat-1:                #8EC891;
+    --color-cat-2:                #EDB97D;
+    --color-cat-3:                #ACA1CC;
+    --color-cat-4:                #CCC5E0;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+  }
+}

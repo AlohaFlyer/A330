@@ -1,0 +1,213 @@
+[
+  {
+    "id": "mi-vis-01",
+    "procedure": "[MEM] EMER DESCENT",
+    "book": "FCOM R17",
+    "page_label": "PRO-ABN-MISC P1/26",
+    "pdf_page": 3065,
+    "actions": [
+      "CREW OXY MASKS ... USE",
+      "SIGNS ... ON",
+      "EMER DESCENT ... INITIATE",
+      "THR LEVERS ... IDLE",
+      "SPD BRK ... FULL"
+    ],
+    "boxes": [
+      {
+        "lines": [
+          "CREW OXY MASKS ... USE",
+          "SIGNS ... ON",
+          "EMER DESCENT ... INITIATE"
+        ]
+      },
+      {
+        "unboxed_condition": "If A/THR not active:",
+        "lines": [
+          "THR LEVERS ... IDLE"
+        ]
+      },
+      {
+        "lines": [
+          "SPD BRK ... FULL"
+        ]
+      }
+    ],
+    "classification": "MEMORY ITEMS",
+    "confidence": "HIGH",
+    "evidence": "Title carries [MEM] prefix; no OEB or At ANY TIME label; all box text legible at 3x.",
+    "src": "manual",
+    "fleet": "pax",
+    "ref": "PRO-ABN-MISC-00012261.0001001"
+  },
+  {
+    "id": "mi-vis-02",
+    "procedure": "[MEM] STALL RECOVERY",
+    "book": "FCOM R17",
+    "page_label": "PRO-ABN-MISC P2/26",
+    "pdf_page": 3066,
+    "actions": [
+      "NOSE DOWN PITCH CONTROL ... APPLY",
+      "BANK ... WINGS LEVEL",
+      "THRUST ... INCREASE SMOOTHLY AS NEEDED",
+      "SPEEDBRAKES ... CHECK RETRACTED",
+      "FLIGHT PATH ... RECOVER SMOOTHLY",
+      "FLAPS 1 ... SELECT"
+    ],
+    "boxes": [
+      {
+        "lines": [
+          "NOSE DOWN PITCH CONTROL ... APPLY"
+        ]
+      },
+      {
+        "lines": [
+          "BANK ... WINGS LEVEL"
+        ]
+      },
+      {
+        "unboxed_condition": "When out of stall (no longer stall indications) :",
+        "lines": [
+          "THRUST ... INCREASE SMOOTHLY AS NEEDED"
+        ]
+      },
+      {
+        "unboxed_condition": "When out of stall (no longer stall indications) :",
+        "lines": [
+          "SPEEDBRAKES ... CHECK RETRACTED",
+          "FLIGHT PATH ... RECOVER SMOOTHLY"
+        ]
+      },
+      {
+        "unboxed_condition": "If in clean configuration and below 20 000 ft :",
+        "lines": [
+          "FLAPS 1 ... SELECT"
+        ]
+      }
+    ],
+    "classification": "MEMORY ITEMS",
+    "confidence": "HIGH",
+    "evidence": "Title carries [MEM] prefix; page text 'apply the immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
+    "src": "manual",
+    "fleet": "pax",
+    "ref": "PRO-ABN-MISC-00013664.0002001"
+  },
+  {
+    "id": "mi-vis-03",
+    "procedure": "[MEM] STALL WARNING AT LIFTOFF",
+    "book": "FCOM R17",
+    "page_label": "PRO-ABN-MISC P3/26",
+    "pdf_page": 3067,
+    "actions": [
+      "THRUST ... TOGA",
+      "PITCH ATTITUDE ... 15 °",
+      "BANK ... WINGS LEVEL"
+    ],
+    "boxes": [
+      {
+        "lines": [
+          "THRUST ... TOGA"
+        ]
+      },
+      {
+        "unboxed_condition": "At the same time:",
+        "lines": [
+          "PITCH ATTITUDE ... 15 °",
+          "BANK ... WINGS LEVEL"
+        ]
+      }
+    ],
+    "classification": "MEMORY ITEMS",
+    "confidence": "HIGH",
+    "evidence": "Title carries [MEM] prefix; page text 'apply the following immediate actions'; no OEB or At ANY TIME label; legible at 3x.",
+    "src": "manual",
+    "fleet": "pax",
+    "ref": "PRO-ABN-MISC-00013665.0002001"
+  },
+  {
+    "id": "mi-vis-04",
+    "procedure": "EMER DESCENT",
+    "book": "QRH R35",
+    "page_label": "22.02A",
+    "pdf_page": 144,
+    "actions": [
+      "CREW OXY MASKS ... USE",
+      "SIGNS ... ON",
+      "EMER DESCENT ... INITIATE",
+      "THR LEVERS ... IDLE",
+      "SPD BRK ... FULL"
+    ],
+    "boxes": [
+      {
+        "lines": [
+          "CREW OXY MASKS ... USE",
+          "SIGNS ... ON",
+          "EMER DESCENT ... INITIATE"
+        ]
+      },
+      {
+        "unboxed_condition": "If A/THR not active:",
+        "lines": [
+          "THR LEVERS ... IDLE"
+        ]
+      },
+      {
+        "lines": [
+          "SPD BRK ... FULL"
+        ]
+      }
+    ],
+    "classification": "MEMORY ITEMS",
+    "confidence": "HIGH",
+    "evidence": "No At ANY TIME or OEB label; boxed lines identical to FCOM [MEM] EMER DESCENT (pdf 3065); legible at 3x.",
+    "src": "manual",
+    "fleet": "pax",
+    "ref": "ABN-22-00010585.0001001"
+  },
+  {
+    "id": "mi-vis-05",
+    "procedure": "UNRELIABLE SPEED INDICATION",
+    "book": "QRH R35",
+    "page_label": "23.03A",
+    "pdf_page": 157,
+    "actions": [
+      "If the safe conduct of the flight is impacted",
+      "AP ... OFF",
+      "A/THR ... OFF",
+      "FD ... OFF",
+      "PITCH/THRUST",
+      "Below THRUST RED ALT ... 15° / TOGA",
+      "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
+      "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
+      "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
+      "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
+      "SPEEDBRAKES ... CHECK RETRACTED",
+      "L/G ... UP",
+      "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
+    ],
+    "boxes": [
+      {
+        "lines": [
+          "If the safe conduct of the flight is impacted",
+          "AP ... OFF",
+          "A/THR ... OFF",
+          "FD ... OFF",
+          "PITCH/THRUST",
+          "Below THRUST RED ALT ... 15° / TOGA",
+          "Above THRUST RED ALT and Below FL 100 ... 10° / CLB",
+          "Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
+          "FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF",
+          "FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN",
+          "SPEEDBRAKES ... CHECK RETRACTED",
+          "L/G ... UP",
+          "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
+        ]
+      }
+    ],
+    "classification": "MEMORY ITEMS",
+    "confidence": "HIGH",
+    "evidence": "Single inner box (border distinct from outer page frame, verified at 4x); no At ANY TIME or OEB label; FCOM TOC pdf 2411 lists '[MEM] Unreliable Speed Indication'; the following 'To level off' block is unboxed.",
+    "src": "manual",
+    "fleet": "pax",
+    "ref": "ABN-23-A-00017854.0001001"
+  }
+]
