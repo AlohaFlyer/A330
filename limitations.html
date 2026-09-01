@@ -675,7 +675,7 @@ function el(id) { return document.getElementById(id); }
    magnitude, and the self-grade is still the authority. */
 function numbersIn(s) {
   if (s == null) return [];
-  var t = String(s).replace(/(\d)[\s  ](?=\d{3}(\D|$))/g, "$1");
+  var t = String(s).replace(/(\d)\s(?=\d{3}(\D|$))/g, "$1");
   var m = t.match(/\d+(?:[.,]\d+)?/g) || [];
   var out = [], seen = {};
   for (var i = 0; i < m.length; i++) {
