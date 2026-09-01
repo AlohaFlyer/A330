@@ -698,3 +698,94 @@ FAIL memory-items.html C7-counters board TCAS CAUTION - TRAFFIC ADVISORY: shows 
 
 - The one remaining failure, `C7-counters board TCAS CAUTION ... shows 1 lines`, is the harness asserting the text equals "1 lines" verbatim, which item 7 of this round asked me to change. The page now says "1 line". Left as a known harness conflict.
 - `contrast_checks` clicks Got then Missed on whatever procedure the shuffle serves first; when that is TCAS CAUTION (one line) there is no second button and the run aborts on a 30 s timeout. Two of four runs hit it; the reported run is a clean pass of the rest. A deterministic first procedure or a length check in the harness would remove the flake.
+
+
+---
+
+# Engine / dist split (2026-09-01)
+
+Data/engine separation applied. `limitations.html` and `memory-items.html`
+are now engine pages: the data slot between `/* @@DATA_START <tag> */` and
+`/* @@DATA_END */` holds `var LIMITATIONS = null;` (resp. `MEMORY_ITEMS`),
+and a loader at the end of the second script fetches `data/limitations.json`
+(resp. `data/memory_items.json`) on DOMContentLoaded, assigns it and calls
+`boot()`. `boot()` is the previous top-level data-dependent initialisation
+(PARAM_COUNT, BY_ID, SYSTEMS, UNCLEAR_TOTAL, S / PROCS, BY_PID, S) plus
+`renderHead(); startSession();`; every function and the state object stay
+global so the harnesses' page.evaluate hooks still work. If the fetch cannot
+run (file:// in most browsers) the drill card shows "Open the standalone build
+(dist/) for offline use, or serve this folder over http." Nothing else changed
+(one-off transform kept as `build_scripts/make_engine_pages.py`).
+
+`build_scripts/build_standalone.py` inlines compact JSON (ensure_ascii=False)
+between the markers as `const <NAME> = <json>;` and writes `dist/`, copying
+the touch icon and manifest the pages link relatively so the folder is
+self-consistent. `dist/` is in `.gitignore` (generated, not committed).
+
+Verification scripts now default to `dist/` (pass3 harness honours
+`A330_PAGES_DIR`); `static_constraints.py` and `verify_engine_and_dist.py`
+are new.
+
+## Verification transcript
+
+```
+$ python3 build_scripts/build_standalone.py
+limitations.html: 160 entries from data/limitations.json -> dist/limitations.html (147826 bytes)
+memory-items.html: 11 entries from data/memory_items.json -> dist/memory-items.html (82469 bytes)
+copied assets/icons/icon-180.png -> dist/assets/icons/icon-180.png
+copied site.webmanifest -> dist/site.webmanifest
+EXIT=0
+$ python3 -m http.server 8765 --bind 127.0.0.1 &  (repo root)
+$ python3 build_scripts/verify/verify_engine_and_dist.py http://localhost:8765/
+[file:// dist limitations.html] data=160 (want 160) booted=True console errors=0 [] reveal+grade={'revealed': False, 'counts': {'got': 1, 'missed': 0}, 'idx': 1, 'phase': 'drill'} PASS
+[file:// dist memory-items.html] data=11 (want 11) booted=True console errors=0 [] reveal+grade={'revealed': True, 'counts': {'got': 7, 'missed': 0}, 'idx': 0, 'phase': 'drill'} PASS
+[http engine limitations.html] data=160 (want 160) booted=True console errors=0 [] reveal+grade={'revealed': False, 'counts': {'got': 1, 'missed': 0}, 'idx': 1, 'phase': 'drill'} PASS
+[http engine memory-items.html] data=11 (want 11) booted=True console errors=0 [] reveal+grade={'revealed': True, 'counts': {'got': 7, 'missed': 0}, 'idx': 0, 'phase': 'drill'} PASS
+[file:// engine limitations.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+[file:// engine memory-items.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+ENGINE/DIST CHECKS: ALL PASSED
+EXIT=0
+$ kill %http.server
+server killed: no response on :8765
+$ bash build_scripts/verify/node_check_scripts.sh
+memory-items.html: 2 script blocks extracted
+node --check memory-items.html.script1.js: OK
+node --check memory-items.html.script2.js: OK
+limitations.html: 2 script blocks extracted
+node --check limitations.html.script1.js: OK
+node --check limitations.html.script2.js: OK
+dist/memory-items.html: 2 script blocks extracted
+node --check dist_memory-items.html.script1.js: OK
+node --check dist_memory-items.html.script2.js: OK
+dist/limitations.html: 2 script blocks extracted
+node --check dist_limitations.html.script1.js: OK
+node --check dist_limitations.html.script2.js: OK
+EXIT=0
+$ python3 build_scripts/verify/static_constraints.py
+limitations.html: 63030 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+memory-items.html: 71932 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/limitations.html: 147826 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/memory-items.html: 82469 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+STATIC CONSTRAINTS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/check_embedded_data.py
+dist/memory-items.html: 11 entries embedded; every entry == memory_items_v3.json; repo data/memory_items.json == v3: True
+  v2 -> v3: actions changed on ['mi-vis-06', 'mi-vis-07', 'mi-vis-08', 'mi-vis-10', 'mi-vis-11']; 13 box-break sentinels
+  no embedded newlines remain in any action line
+dist/limitations.html: 160 items embedded; every item == limitations_v3.json; 144 VERIFIED / 16 UNCLEAR
+  refs with backslash-underscore: 0; items with corroboration: 9; with audit: 15
+EXIT=0
+$ pass3_runtime.py against dist/ (A330_PAGES_DIR default)
+**Checks recorded: 2038. Pass: 2038. Fail: 0. States scanned for text integrity and overflow: 2068.**
+$ wc -c limitations.html memory-items.html dist/limitations.html dist/memory-items.html
+ 63030 limitations.html
+ 71932 memory-items.html
+147826 dist/limitations.html
+ 82469 dist/memory-items.html
+365257 total
+$ git hash-object limitations.html memory-items.html data/limitations.json data/memory_items.json
+f8e82f840c30e4246aaff1060741d02c2ce32bf9  limitations.html
+e925cd0ceeb16e7dde8f61554676cb6a9f22bb03  memory-items.html
+88e39d0d2ce0ea73135bf18233ae23495a8eeeec  data/limitations.json
+7cdc78f8e0a4e4d47c98d9cb7b89954cd89c7855  data/memory_items.json
+```
