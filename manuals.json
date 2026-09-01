@@ -1,0 +1,108 @@
+{
+  "_comment": "Single source of truth for displayed manual revision info. Every page footer renders from this file. Nothing may hardcode a revision string in HTML. Where a manual publishes no revision number, revision is null and the date carries the identity. Never invent a revision number. last_vetted is the date a human confirmed portal content against that revision; null means never vetted.",
+  "A330P_FCOM": {
+    "title": "A330 Passenger FCOM",
+    "revision": "R17",
+    "date": "15 MAY 26",
+    "fleet": "pax",
+    "last_vetted": null
+  },
+  "A330F_FCOM": {
+    "title": "A330 Freighter FCOM",
+    "revision": "R10",
+    "date": "15 MAY 26",
+    "fleet": "frtr",
+    "last_vetted": null
+  },
+  "A330P_QRH": {
+    "title": "A330 Passenger QRH",
+    "revision": "R35",
+    "date": "26 JUN 26",
+    "fleet": "pax",
+    "last_vetted": null
+  },
+  "A330F_QRH": {
+    "title": "A330 Freighter QRH",
+    "revision": "R5",
+    "date": "26 JUN 26",
+    "fleet": "frtr",
+    "last_vetted": null
+  },
+  "A330_FCTM": {
+    "title": "A330 Flight Crew Training Manual",
+    "revision": "R5",
+    "date": "27 MAR 26",
+    "fleet": "both",
+    "last_vetted": null
+  },
+  "A330_MEL": {
+    "title": "A330 Minimum Equipment List",
+    "revision": "R59",
+    "date": "4/1/26",
+    "fleet": "both",
+    "last_vetted": null
+  },
+  "A330_AFM": {
+    "title": "A330 Airplane Flight Manual",
+    "revision": null,
+    "date": "11 AUG 26",
+    "fleet": "both",
+    "last_vetted": null
+  },
+  "A330_AFM-SUPP": {
+    "title": "A330 AFM Supplement",
+    "revision": null,
+    "date": "05 AUG 26",
+    "fleet": "both",
+    "last_vetted": null
+  },
+  "A330_PRC": {
+    "title": "A330 Pilot Reference Cards",
+    "revision": null,
+    "date": "3/9/26",
+    "fleet": "both",
+    "last_vetted": null
+  },
+  "A330P_NPC-CB": {
+    "title": "A330 Passenger Normal Procedures and Checklist Card Book",
+    "revision": null,
+    "date": "8/13/25",
+    "fleet": "pax",
+    "last_vetted": null
+  },
+  "A330F_NPC-CB": {
+    "title": "A330 Freighter Normal Procedures and Checklist Card Book",
+    "revision": null,
+    "date": "8/13/25",
+    "fleet": "frtr",
+    "last_vetted": null
+  },
+  "A330P_PERF": {
+    "title": "A330 Passenger Performance Manual",
+    "revision": "R26-10",
+    "date": "Aug 12 2026",
+    "fleet": "pax",
+    "last_vetted": null
+  },
+  "A330F_PERF": {
+    "title": "A330 Freighter Performance Manual",
+    "revision": "R26-10",
+    "date": "Aug 12 2026",
+    "fleet": "frtr",
+    "last_vetted": null
+  },
+  "FOM": {
+    "title": "Flight Operations Manual",
+    "revision": "125.1",
+    "date": "8/12/26",
+    "fleet": "shared",
+    "last_vetted": null
+  },
+  "FODM": {
+    "title": "Flight Operations Data Manual",
+    "revision": "R0",
+    "date": "5/20/26",
+    "fleet": "shared",
+    "last_vetted": null
+  }
+}

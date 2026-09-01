@@ -1,0 +1,50 @@
+# =============================================================================
+# NEVER COMMIT MANUAL PDFs OR THEIR EXTRACTS.
+#
+# The A330 FCOM, QRH, FCTM, MEL, AFM, PRC, NPC-CB, PERF, FOM and FODM are
+# proprietary company documents. They are licensed to the airline, not to us,
+# and this repo is published to the open web. Committing a manual PDF, or a
+# text extract of one, redistributes it. Do not do it, not even briefly, not
+# even in a branch: git history is forever and a force push does not undo a
+# fetch.
+#
+# The manuals live in Drive and in project knowledge. The portal cites them by
+# manual code and section. It never carries their text wholesale. Quoted
+# verbatim in a study item is a short excerpt for a single fact, which is a
+# different thing from shipping the document.
+# =============================================================================
+*.pdf
+extracts/
+*_extract.md
+*.extract.md
+
+# Audio lives in its own repo. Podcast and drill audio is large, binary, and
+# regenerated often; keeping it here bloats every clone.
+*.mp3
+*.m4a
+*.wav
+
+# OS cruft
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor and tooling
+.vscode/
+.idea/
+*.swp
+*~
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+
+# Local scratch
+*.local.json
+scratch/
