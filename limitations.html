@@ -590,8 +590,8 @@ const MANUAL = {
   fleet:    "A330 passenger fleet",
   scope:    "Limitations chapter only",
   generated:"2026-09-01",
-  version:  "0.8",  /* (0.5: app icon wired) (0.6: pass 1-4 fixes) (0.7: pass 5 polish) (0.8: three UNCLEAR upgraded via table screenshots) */
-  dataset:  "limitations_v3.json, verified FCOM set merged with the AFM addendum, the pass-2 condition audit and the training-document cross-check; 257 numeric tokens re-checked, 0 wrong or fabricated numbers, no limit value changed; 148 verified, 12 unclear"
+  version:  "0.9",  /* ... (0.8: three UNCLEAR upgraded via table screenshots) (0.9: envelope recovered, 5 additions, 165 items) */
+  dataset:  "limitations_v4.json, verified FCOM set merged with both AFM addenda, the pass-2 condition audit, the training-document cross-check and the visual envelope read; no limit value changed by any audit; 153 verified, 12 unclear"
 };
 
 /* Why each UNCLEAR item is unclear, keyed by FCOM ref.
@@ -612,19 +612,19 @@ const KNOWN_GAPS =
 [
  {
   "tag": "No CG envelope",
-  "text": "The centre-of-gravity envelope is still missing. It is a graphic in every book checked (FCOM LIM-AG-CG-90000422.9001002); only the MZFW footnote survived extraction. The item is listed as UNCLEAR so the hole is visible, not because a usable value exists."
+  "text": "Genuinely still missing (1 of 2): the centre-of-gravity envelope. It is a graphic in every book checked (FCOM LIM-AG-CG-90000422.9001002); only the MZFW footnote survived extraction. The item is listed as UNCLEAR so the hole is visible, not because a usable value exists."
  },
  {
   "tag": "No VA",
-  "text": "There is no design manoeuvring speed (VA) anywhere in this dataset. It was not in the FCOM extract and the AFM addendum did not carry it. Do not go looking for it here."
+  "text": "Genuinely still missing (2 of 2): there is no design manoeuvring speed (VA) anywhere in this dataset. It was not in the FCOM extract and the AFM addendum did not carry it. Do not go looking for it here."
  },
  {
-  "tag": "No envelopes",
-  "text": "The environmental envelope (altitude vs OAT, LIM-AG-OPS-ENV-00021654.0013001) and the APU operational envelope (LIM-APU-20-00020222.0006001) are graphics-only in every book and did not survive extraction. Only Minimum TAT -53 °C survived the environmental envelope."
+  "tag": "APU envelope",
+  "text": "The APU operational envelope (LIM-APU-20-00020222.0006001) is still graphics-only in every book and did not survive extraction. The environmental envelope itself has now been recovered visually; see the recovered panel above."
  },
  {
   "tag": "12 unclear",
-  "text": "12 of the 160 items are marked UNCLEAR and flagged wherever they appear, with the reason. Eleven are table column-to-row mappings or graphics-only blocks that are not provable from a text extract; one is the CONF 1* flap speed, whose unit has no AFM counterpart. The EGT time pairing, both fuel-imbalance tables and the crew-oxygen grid were upgraded to VERIFIED on 2026-09-02: the FCOM table screenshots in Ryan's Pages limitations sheet confirm the column pairings, and the values are unchanged in the R17 text. The five flaps/slats speeds CONF 1, 1+F, 2, 3, FULL are VERIFIED via the AFM VFE table. Verify each remaining UNCLEAR item against the manual before you trust it."
+  "text": "12 of the 165 items are marked UNCLEAR and flagged wherever they appear, with the reason. Eleven are table column-to-row mappings or graphics-only blocks that are not provable from a text extract; one is the CONF 1* flap speed, whose unit has no AFM counterpart. The EGT time pairing, both fuel-imbalance tables and the crew-oxygen grid were upgraded to VERIFIED on 2026-09-02: the FCOM table screenshots in Ryan's Pages limitations sheet confirm the column pairings, and the values are unchanged in the R17 text. The five flaps/slats speeds CONF 1, 1+F, 2, 3, FULL are VERIFIED via the AFM VFE table. Verify each remaining UNCLEAR item against the manual before you trust it."
  },
  {
   "tag": "Verified set",
@@ -632,13 +632,17 @@ const KNOWN_GAPS =
  },
  {
   "tag": "Scope",
-  "text": "A330P FCOM R17 Limitations chapter, PAX book, plus four AFM-sourced items. No QRH, no MEL, no performance, no company limitations, and nothing in the source marks any item as memory-required. Eleven qualitative limitation blocks (NAV mode use, FLS, nav database validation, NWS angle) carry no number and produced no item. Absence from this page is not evidence that a limitation does not exist."
+  "text": "A330P FCOM R17 Limitations chapter, PAX book, plus AFM-sourced items (the 2026-09-01 addendum and the 2026-09-02 addendum, the latter including two AFM procedure notes carried under Reference), one PRC-sourced RNP entry condition and the visually read envelope value. No QRH, no MEL, no performance, no company limitations, and nothing in the source marks any item as memory-required. Eleven qualitative limitation blocks (NAV mode use, FLS, nav database validation, NWS angle) carry no number and produced no item. Absence from this page is not evidence that a limitation does not exist."
  }
 ];
 
 /* Gaps closed by the AFM addendum, was missing, now sourced. */
 const RECOVERED =
 [
+ {
+  "tag": "Env envelope",
+  "text": "The environmental envelope, previously graphics-only, was read visually from the rendered FCOM R17 chart (LIM-AG-OPS-ENV-00021654.0013001, pdf p3762) on 2026-09-02: ceiling 41,450 ft between -78 and -32 °C, corners -68 °C at 25,000 ft, -54 °C at 6,000 ft and at -2,000 ft, 55 °C at -2,000 ft, kink 17 to 22 °C at 16,600 ft, Minimum TAT -53 °C, and maximum takeoff and landing altitude 12,500 ft (band floor -2,000 ft). The 12,500 ft value is now item lim-add-01, VERIFIED. With this, the only genuinely missing limitations are the CG envelope and VA."
+ },
  {
   "tag": "VMO/MMO",
   "text": "VMO 330 kt IAS and MMO M 0.86 are now in the drill, sourced from the A330 AFM (LIM-SPD-00006064.0001001, 2026-08-11) and corroborated by the FCTM overspeed section. They were absent from the FCOM extract because the values were printed in a graphic. The old UNCLEAR placeholder (lim-spd-09) is superseded and has been removed so you never drill against it. Not to be confused with the landing-gear-down supplement values, 255 kt / M 0.6."
@@ -862,7 +866,7 @@ function renderHead() {
     " verified, " + UNCLEAR_TOTAL + " unclear) · active recall, no multiple choice";
   el("footManual").textContent =
     MANUAL.title + " " + MANUAL.revision + ", issue " + MANUAL.issue + ", " + MANUAL.fleet + ", " + MANUAL.scope;
-  el("footAfm").textContent = "Four items sourced from " + MANUAL.afm + ", marked on their face.";
+  el("footAfm").textContent = "Items sourced from " + MANUAL.afm + " and the PRC are marked on their face; two AFM procedure notes are carried under Reference (AFM procedures).";
   el("footGen").textContent =
     "Generated " + MANUAL.generated + " · page version " + MANUAL.version +
     " · " + LIMITATIONS.length + " items from " + MANUAL.dataset;
