@@ -19,7 +19,15 @@ PAGES = [
     ("limitations.html", "limitations", "LIMITATIONS", "data/limitations.json"),
     ("memory-items.html", "memory-items", "MEMORY_ITEMS", "data/memory_items.json"),
     ("fom-delta.html", "fom-delta", "FOM_DELTA", "data/fom_delta.json"),
+    ("oral-prep.html", "oral-prep", "ORAL_SCOPE", "data/oral_scope.json"),
 ]
+
+def entry_count(data):
+    # A bank is either a flat list of items or an object whose "areas"
+    # (oral_scope.json) carry the items.
+    if isinstance(data, dict) and isinstance(data.get("areas"), list):
+        return len(data["areas"])
+    return len(data)
 
 def build(page, tag, const, json_rel):
     src = open(os.path.join(ROOT, page), encoding="utf-8").read()
@@ -31,12 +39,13 @@ def build(page, tag, const, json_rel):
     end = "/* @@DATA_END */"
     a = src.index(start) + len(start)
     b = src.index(end, a)
+    n = entry_count(data)
     out = (src[:a] + "\n/* inlined by build_scripts/build_standalone.py from %s, %d entries; canonical copy is that file */\n"
-           % (json_rel, len(data)) + "const %s = %s;\n" % (const, blob) + src[b:])
+           % (json_rel, n) + "const %s = %s;\n" % (const, blob) + src[b:])
     os.makedirs(os.path.join(ROOT, "dist"), exist_ok=True)
     dst = os.path.join(ROOT, "dist", page)
     open(dst, "w", encoding="utf-8").write(out)
-    print("%s: %d entries from %s -> dist/%s (%d bytes)" % (page, len(data), json_rel, page, len(out.encode("utf-8"))))
+    print("%s: %d entries from %s -> dist/%s (%d bytes)" % (page, n, json_rel, page, len(out.encode("utf-8"))))
 
 # The pages link assets/icons/icon-180.png and site.webmanifest relatively; copy
 # those two small files so a dist/ folder is self-consistent when moved.
