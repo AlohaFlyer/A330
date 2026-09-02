@@ -1024,3 +1024,113 @@ $ git hash-object fom-delta.html data/fom_delta.json
 1fe275120e4d20ac28b3c95b7957646d68e27eb4  fom-delta.html
 b88d87ec0752a98b001a381ad7c0ef07a267d597  data/fom_delta.json
 ```
+
+## 2026-09-02: index.html, the portal home page and access gate
+
+Single-file portal home served at the repo root by GitHub Pages. Carries the
+client-side email gate (honesty layer, not security): any address matching
+`^[^@\s]+@alaskaair\.com$` case-insensitively unlocks, one cookie
+(`a330portal=ok`, 180 days, path=/, SameSite=Lax) remembers the answer. No
+localStorage/sessionStorage anywhere. Unlocked view is the build-order card
+menu: three live cards (Limitations Drill, Memory Items Drill, FOM Delta
+Review) plus five greyed not-built cards (Flows, Systems Oral Bank with the
+"scope: LO Rev 7, 67 areas" subtitle, Triggers, Games, Podcast).
+
+Nothing volatile is hardcoded: card counts are fetched at runtime from
+data/limitations.json (165 items / VERIFIED count 153), data/memory_items.json
+(procedures counted by [MEM]-stripped title, same merge as the drill page, so
+the eleven entries render as 10 procedures), and data/fom_delta.json (52
+changes); the footer manual line renders from manuals.json (A330P FCOM,
+A330P QRH, FOM). A yellow notice replaces the counts when the fetches cannot
+run (file://). Header references assets/icons/icon-180.png with a quiet
+hidden-on-404 fallback. Palette is the same inlined Hawaiian token block as
+the siblings; coral stays decorative. Generated 2026-09-02, index version 1.0,
+20.6 KB.
+
+## Verification transcript
+
+- `node --check` on the page's single script block: clean.
+- Static sweep: no em dashes, no private-use characters, no backslash-u
+  escapes, no external src/href, no hardcoded revision strings (R17, R35,
+  FOM 125.1, manual dates all absent from the HTML).
+- Playwright (chromium) over a local http server, 26/26 PASS:
+  - Un-cookied visit shows the gate, menu hidden, email field focused with
+    no scroll.
+  - `ryan@hawaiianair.com` + Enter: blocked, plain error shown, menu stays
+    hidden. `test@AlaskaAir.com` + Enter: unlocks (case-insensitive).
+  - Cookie `a330portal=ok` set, expiry measured 180.0 days; storage empty.
+  - Reload lands on the menu directly (cookie persisted); "Lock this device
+    again" clears the cookie and returns to the gate.
+  - Fetched counts render: "165 items · 153 verified", "10 procedures,
+    FCOM [MEM] verified", "52 changes, 123.1 to 125.1". Footer from
+    manuals.json: "A330P FCOM R17 (15 MAY 26) · A330P QRH R35 (26 JUN 26) ·
+    FOM 125.1 (8/12/26)"; stamp "Generated 2026-09-02 · index version 1.0".
+  - All three live links present, five not-built cards, oral-bank subtitle.
+  - Zero console errors desktop-light and phone-dark (390x844); no
+    horizontal scroll on phone; dark body background applied.
+- Screenshots eyeballed: gate (desktop light) and full menu (phone dark)
+  both clean, icon tile renders in the header.
+
+## 2026-09-02: oral-prep.html, the oral-scope study page
+
+Engine page over data/oral_scope.json (67 areas / 278 objectives / 86 numeric
+claims from the HAL A330 Student Oral Exam Learning Objectives Rev 7,
+04/06/23). WALK mode renders the 67 areas in the file's own order, the exam's
+cockpit walk (verified against AREAS order at runtime), each expandable to its
+objectives with FCOM refs plus a per-area numeric-claims block; a session-only
+progress tick per area (in-memory, banner and status line both say it resets
+on reload by design; no storage of any kind). QUIZ mode is active recall over
+all 278 objectives: prompt is the area plus an "Explain:" stem with every
+number masked to blanks, reveal shows the full objective, its FCOM ref and any
+matching claim badges, self-graded, no multiple choice, missed items re-served
+by round until clean; pool selector honours the walk ticks (all / not yet
+ticked). Claim rendering: VERIFIED CURRENT (23) show their cross-check source;
+UNVERIFIED (63) carry "NOT YET VERIFIED against current manuals, treat the
+number as suspect"; the three cross-check conflicts (33,000 lb unusable vs QRH
+gravity-feed 4,400/inner, 800 psi oxygen gate vs QRH 600/300, 195-min ETOPS
+cargo fire pending FOM check) carry a CONFLICT badge with a one-line
+explanation, matched by area id + claim substring. Claim-to-objective
+attachment is number+unit bigram matching with a bare-number fallback for
+otherwise-orphaned claims (85/86 attach by bigram, the last by fallback).
+Banner: LO Rev 7 is a three-year-old training reference, FCOM/QRH/FOM win
+every conflict, values being verified progressively. Footer META: LO Rev 7
+(04/06/23) + FCOM R17 / QRH R35 identity, verified-count line computed from
+the data, generated 2026-09-02, page version 0.1. Same inlined Hawaiian
+palette, favicon, icon links, keyboard model and file:// fallback as the
+siblings. build_standalone.py extended with the oral-prep page and an
+entry_count() helper (oral_scope.json is an object with meta + areas, not a
+flat list); static_constraints.py now sweeps oral-prep.html and its dist.
+
+## Verification transcript (oral-prep)
+
+- `node --check` on both script blocks: clean.
+- Static sweep (static_constraints.py, now 8 files): all PASS; engine
+  47,854 bytes (< 100 KB), dist 111,477 bytes, no em dashes, no PUA, no
+  backslash-u, no storage, no external src/href, only the data/ fetch,
+  no hex outside the palette block.
+- Own harness `build_scripts/verify/oral_prep_checks.py`, 114/114 PASS
+  across http engine, file:// dist, http phone (375px, no horizontal
+  overflow), file:// dist dark (body ground rgb(21,19,28)), and the
+  file:// engine offline message. Covers: dataset schema (67/278/86,
+  23 verified / 63 unverified, the three conflict claims present), banner
+  and footer META text, walk order vs the file, expand/collapse, 278 li,
+  badge counts (23 ver / 63 unv / 3 CONFLICT with the 4,400 lb, 600/300
+  psi and FOM-check explanations visible), verified claims all show a
+  source, tick -> progress + done styling, quiz queue 278, masked prompt,
+  reveal shows the full objective + FCOM ref, keyboard reveal/grade, full
+  cycle with 2 seeded misses re-served to done (got 278 / missed 2 /
+  round 2), restart, unticked pool = 276 after one tick, zero console
+  errors on every run.
+- Screenshots eyeballed: walk light desktop (FUEL expanded: CONFLICT +
+  NOT YET VERIFIED + VERIFIED CURRENT rows all render), quiz phone dark
+  (prompt + reveal + footer) both clean.
+
+```
+$ wc -c oral-prep.html data/oral_scope.json dist/oral-prep.html
+ 47854 oral-prep.html
+ 75130 data/oral_scope.json
+111477 dist/oral-prep.html
+$ git hash-object oral-prep.html data/oral_scope.json
+9218ab5a872b0002b35a4e34c9b0bfd80a044733  oral-prep.html
+3dc49de017636fe207ea1088981283c67d0dba33  data/oral_scope.json
+```
