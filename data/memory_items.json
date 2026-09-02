@@ -240,8 +240,14 @@
       {
         "pass": "PASS1 2026-09-01",
         "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+      },
+      {
+        "pass": "CROSSCHECK 2026-09-02",
+        "note": "Substantive drift from the legacy study doc; see memory_items_CROSSCHECK.md section 4."
       }
-    ]
+    ],
+    "relearn": true,
+    "relearn_note": "Old notes taught PARK BRAKE as SHORT & SUCCESSIVE APPLICATIONS and merged anti-skid into one ANTI-SKID & NWS ... ORDER OFF line; FCOM R17 prints PARK BRAKE ... USE (the short-successive guidance is an unboxed note) and splits A/SKID OFF ... ORDER from A/SKID & N/W STRG ... OFF."
   },
   {
     "id": "mi-vis-07",
@@ -295,8 +301,14 @@
       {
         "pass": "PASS1 2026-09-01",
         "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+      },
+      {
+        "pass": "CROSSCHECK 2026-09-02",
+        "note": "Substantive drift from the legacy study doc; see memory_items_CROSSCHECK.md section 4."
       }
-    ]
+    ],
+    "relearn": true,
+    "relearn_note": "The whole caution structure is new against the old notes, which flew one pull-up for every EGPWS alert; the caution pull-up applies only during night or IMC, and daylight VMC, SINK RATE, DON'T SINK, TOO LOW GEAR/FLAPS and GLIDESLOPE each have their own printed response."
   },
   {
     "id": "mi-vis-08",
@@ -326,8 +338,14 @@
       {
         "pass": "PASS1 2026-09-01",
         "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+      },
+      {
+        "pass": "CROSSCHECK 2026-09-02",
+        "note": "Substantive drift from the legacy study doc; see memory_items_CROSSCHECK.md section 4."
       }
-    ]
+    ],
+    "relearn": true,
+    "relearn_note": "Old notes locked BANK ... WINGS LEVEL; the current line is BANK ... WINGS LEVEL or ADJUST, and the pull-up block applies only when the TAWS triggers a PULL UP alert."
   },
   {
     "id": "mi-vis-09",
@@ -381,8 +399,14 @@
       {
         "pass": "PASS1 2026-09-01",
         "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+      },
+      {
+        "pass": "CROSSCHECK 2026-09-02",
+        "note": "Substantive drift from the legacy study doc; see memory_items_CROSSCHECK.md section 4."
       }
-    ]
+    ],
+    "relearn": true,
+    "relearn_note": "Old notes stopped at BOTH FDs ... OFF; the current procedure adds the RA condition header, VERTICAL SPEED ... ADJUST or MAINTAIN, the CLIMB RA go-around branch, ATC ... NOTIFY, and the CLEAR OF CONFLICT block."
   },
   {
     "id": "mi-vis-11",
@@ -419,7 +443,13 @@
       {
         "pass": "PASS1 2026-09-01",
         "note": "actions re-read against the rendered page; quoted alert-name lines are unboxed headers; \"\" marks a box break"
+      },
+      {
+        "pass": "CROSSCHECK 2026-09-02",
+        "note": "Substantive drift from the legacy study doc; see memory_items_CROSSCHECK.md section 4."
       }
-    ]
+    ],
+    "relearn": true,
+    "relearn_note": "Old notes were missing the boxed configuration lock and both monitor/recover tail lines, and the airborne case is THR LEVERS AT TOGA ... SET OR CONFIRM, not a bare TOGA set."
   }
 ]
