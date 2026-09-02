@@ -789,3 +789,112 @@ e925cd0ceeb16e7dde8f61554676cb6a9f22bb03  memory-items.html
 88e39d0d2ce0ea73135bf18233ae23495a8eeeec  data/limitations.json
 7cdc78f8e0a4e4d47c98d9cb7b89954cd89c7855  data/memory_items.json
 ```
+
+
+---
+
+# Training-document cross-check integration (2026-09-02)
+
+Inputs: `data/memory_items_CROSSCHECK.md`, `data/limitations_CROSSCHECK.md`.
+limitations.html is 0.8, memory-items.html 0.4.
+
+## What changed
+
+- `build_scripts/apply_crosscheck_upgrades.py` (new, kept for the record):
+  upgraded lim-eng-01 (#73 EGT), lim-fuel-06/07 (#107/108 imbalance) and
+  lim-oxy-01 (#131 oxygen) from UNCLEAR to VERIFIED in limitations_v3.json,
+  each with the screenshot-corroboration text and an audit entry. The
+  cross-check calls them "three items" but the imbalance table is two dataset
+  rows, so four rows moved: now 148 VERIFIED / 12 UNCLEAR. Copied to
+  repo/data/limitations.json. Gaps panel updated to 12 unclear with the
+  upgrade note; the three now-moot UNCLEAR_REASONS keys pruned; head sub,
+  chips and filter counts derive from data and follow automatically
+  (verified: "Include UNCLEAR items (12)", Engines chip no longer flagged).
+- memory_items_v4.json: `relearn: true` + one-sentence `relearn_note` on
+  mi-vis-06/07/08/10/11 (LOSS OF BRAKING, TAWS CAUTION, TAWS WARNING,
+  TCAS WARNING, WINDSHEAR). EMER DESCENT not flagged: the cross-check's
+  finding there (SPD BRK unconditional) is a confirmation, not a relearn.
+  TCAS CAUTION - TA is absent from the legacy doc entirely, so it is carried
+  by the banner and the relearn list rather than a "CHANGED" pill, which
+  would misstate it. Copied to repo/data/memory_items.json.
+- memory-items renderer: "CHANGED since your old notes" pill on flagged
+  procedures (drill card and reference), relearn note shown on reveal only.
+- Banner rewritten: cross-checked 2026-09-01 against LO Rev 7 (04/06/23)
+  and the personal doc; ten [MEM] procedures stand as drill scope; the one
+  conflict (LOSS OF BRAKING park brake / anti-skid wording) resolved in the
+  FCOM's favor; "13 lines in the legacy study doc are now wrong; see
+  memory_items_CROSSCHECK.md in the project for the relearn list"; TCAS
+  CAUTION and Smoke/Fumes facts kept. The "Not cross-checked" gaps bullet
+  replaced with the reconciliation record, including the PF-callouts caveat.
+- dist/ rebuilt; verify scripts repointed at v4 / 12-unclear / 0.8 / 0.4.
+
+## Verification transcript
+
+```
+$ python3 build_scripts/apply_crosscheck_upgrades.py   (already applied; shown for the record)
+$ python3 build_scripts/build_standalone.py
+limitations.html: 160 entries from data/limitations.json -> dist/limitations.html (149729 bytes)
+memory-items.html: 11 entries from data/memory_items.json -> dist/memory-items.html (85807 bytes)
+copied assets/icons/icon-180.png -> dist/assets/icons/icon-180.png
+copied site.webmanifest -> dist/site.webmanifest
+EXIT=0
+$ python3 build_scripts/verify/check_embedded_data.py
+dist/memory-items.html: 11 entries embedded; every entry == memory_items_v4.json; repo data/memory_items.json == v4: True
+  v2 -> v4: actions changed on ['mi-vis-06', 'mi-vis-07', 'mi-vis-08', 'mi-vis-10', 'mi-vis-11']; 13 box-break sentinels; relearn flags on ['mi-vis-06', 'mi-vis-07', 'mi-vis-08', 'mi-vis-10', 'mi-vis-11']
+  no embedded newlines remain in any action line
+dist/limitations.html: 160 items embedded; every item == limitations_v3.json; 148 VERIFIED / 12 UNCLEAR
+  refs with backslash-underscore: 0; items with corroboration: 13; with audit: 19
+EXIT=0
+$ bash build_scripts/verify/node_check_scripts.sh  (tail)
+8
+EXIT=0
+$ python3 build_scripts/verify/static_constraints.py
+limitations.html: 62585 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+memory-items.html: 73365 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/limitations.html: 149729 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/memory-items.html: 85807 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+STATIC CONSTRAINTS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/pass5_polish_checks.py  (tail)
+mode segment after Whole procedure: ['true', 'false', 'whole'] PASS
+versions: 0.8 0.4 FAIL
+POLISH CHECKS: 1 FAILED (stale version expectation in the check itself; fixed and re-run below)
+EXIT=1
+$ python3 build_scripts/verify/pass4_visual_checks.py  (tail)
+[memory-items.html phone] gutter marks after reveal (only the cursor line carries one): ['grade'] PASS
+VISUAL CHECKS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/playwright_smoke.py  (tail)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+EXIT=1
+$ http server + verify_engine_and_dist.py
+[http engine memory-items.html] data=11 (want 11) booted=True console errors=0 [] reveal+grade={'revealed': True, 'counts': {'got': 9, 'missed': 0}, 'idx': 0, 'phase': 'drill'} PASS
+[file:// engine limitations.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+[file:// engine memory-items.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+ENGINE/DIST CHECKS: ALL PASSED
+EXIT=0 (server killed)
+$ python3 build_scripts/verify/pass3_runtime.py  (summary)
+EXIT=0
+**Checks recorded: 2057. Pass: 2057. Fail: 0. States scanned for text integrity and overflow: 2069.**
+$ wc -c limitations.html memory-items.html dist/*.html data/limitations.json data/memory_items.json
+ 62585 limitations.html
+ 73365 memory-items.html
+149729 dist/limitations.html
+ 85807 dist/memory-items.html
+ 94921 data/limitations.json
+ 15485 data/memory_items.json
+481892 total
+$ git hash-object ...
+d1fadb8b96aae873bb22c8694f8a3b24602c3812  limitations.html
+d02274c02ed28a84cb5a8a79690a9dfae84fb06e  memory-items.html
+b0efd1a1a3cd14fa4c235fcd781d6f7acaf14003  data/limitations.json
+b47c02ea5f1351970f9822b35f7e1724100ebd69  data/memory_items.json
+
+$ re-run after updating the two version expectations in the check scripts
+versions: 0.8 0.4 PASS
+POLISH CHECKS: ALL PASSED
+EXIT=0
+ALL PLAYWRIGHT CHECKS PASSED
+EXIT=0
+```
