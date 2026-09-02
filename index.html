@@ -282,11 +282,12 @@ footer .muted { color: var(--pale-on-brand); }
         <h3>Flows</h3>
         <p class="desc">Cockpit flow trainer.</p>
       </div></li>
-      <li><div class="card-soon">
-        <span class="pill">Not built yet</span>
-        <h3>Systems Oral Bank</h3>
-        <p class="desc">scope: LO Rev 7, 67 areas</p>
-      </div></li>
+      <li><a class="cardlink" href="oral-prep.html">
+        <span class="pill pill-live">Live</span>
+        <h3>Oral Prep</h3>
+        <p class="desc">The oral exam scope walked in cockpit order, plus recall over every objective. Unverified training numbers are badged.</p>
+        <p class="stat" id="statOral">loading counts</p>
+      </a></li>
       <li><div class="card-soon">
         <span class="pill">Not built yet</span>
         <h3>Triggers</h3>
@@ -418,6 +419,7 @@ function fetchFailed() {
   el("statLim").textContent = "counts unavailable";
   el("statMem").textContent = "counts unavailable";
   el("statFom").textContent = "counts unavailable";
+  el("statOral").textContent = "counts unavailable";
 }
 
 var countsLoaded = false;
@@ -445,6 +447,17 @@ function loadCounts() {
 
   getJSON("data/fom_delta.json").then(function (d) {
     el("statFom").textContent = d.length + " changes, 123.1 to 125.1";
+  }).catch(fetchFailed);
+
+  getJSON("data/oral_scope.json").then(function (d) {
+    /* The oral-prep page groups objectives under areas; count both the
+       same way it does so the numbers on the two pages always agree. */
+    var areas = Array.isArray(d) ? d : (d.areas || []);
+    var objectives = 0;
+    areas.forEach(function (a) {
+      objectives += ((a && a.objectives) || []).length;
+    });
+    el("statOral").textContent = areas.length + " areas, " + objectives + " objectives";
   }).catch(fetchFailed);
 }
 
