@@ -2096,5 +2096,100 @@
   "src": "manual",
   "fleet": "pax",
   "confidence": "VERIFIED"
+ },
+ {
+  "id": "lim-add-01",
+  "system": "Operating Limitations / Environmental Envelope",
+  "parameter": "Maximum runway (airport) altitude",
+  "limit": "12,500 ft",
+  "condition": "Takeoff and landing (environmental envelope)",
+  "verbatim": "[Chart, graphic only; no extractable text. Visual read of the rendered page (pdf p3762): TO & LDG band tops at 12,500 ft, floor -2,000 ft, -38 deg C at the 12,500 ft end. See law_pages_VISUAL.md.]",
+  "ref": "FCOM LIM-AG-OPS-ENV-00021654.0013001 / AFM LIM-OPS-00005456.0003001",
+  "src": "manual",
+  "fleet": "both",
+  "confidence": "VERIFIED",
+  "source_book": "FCOM R17 / AFM 2026-08-11",
+  "note": "Environmental envelope is a chart in both AFM (LIM-OPS-00005456.0003001) and FCOM (LIM-AG-OPS-ENV-00021654.0013001); the graphic did not survive text extraction and no 12,500 ft figure appears anywhere in AFM.md or FCOM_LIM.md text (only 'Minimum TAT: -53 °C' survives). A human must read the envelope chart on FCOM LIM-AG-OPS P 1/4 (15 MAY 26 print) or the AFM LIM-OPS envelope page to confirm the 12,500 ft maximum runway altitude. UPDATE 2026-09-02: that human read happened; the rendered chart (pdf p3762) shows the TO & LDG band topping at 12,500 ft. See law_pages_VISUAL.md.",
+  "corroboration": "Read visually from the rendered FCOM R17 LIM-AG-OPS-ENV envelope chart (pdf p3762): max TO & LDG altitude 12,500 ft, band floor -2,000 ft",
+  "audit": [
+   {
+    "pass": "VISUAL 2026-09-02",
+    "field": "confidence",
+    "was": "UNCLEAR",
+    "evidence": "Read visually from the rendered FCOM R17 LIM-AG-OPS-ENV envelope chart (pdf p3762): max TO & LDG altitude 12,500 ft, band floor -2,000 ft"
+   }
+  ]
+ },
+ {
+  "id": "lim-add-02",
+  "system": "Navigation / PBN (RNP 4 & RNP 10 oceanic)",
+  "parameter": "IRS-only navigation time limit (one GPS required beyond)",
+  "limit": "6.2 hr from IRS ground alignment / 5.7 hr from last FM position update",
+  "condition": "Flight time outside radio NAVAID coverage in RNP 10 airspace; after 5.7 hr with GPS PRIMARY LOST on both sides, nav accuracy must be considered LOW",
+  "verbatim": " NOTE: Advise ATC of any SATCOM DATA or VOICE issue, since it - 6.2 hr from the me of IRS ground alignment, or  \n may impact RNP separa on capability. This is because RCP - 5.7 hr from the me of the last FM posi on update.  ",
+  "ref": "PRC p.39 'Oceanic References, Required RNP 10 Equipment' (card cites FCOM PRO-SPO Performance Based Navigation (PBN))",
+  "src": "manual",
+  "fleet": "both",
+  "confidence": "VERIFIED",
+  "source_book": "PRC 2026-03-09",
+  "note": "Source text is a two-column PDF extract; the verbatim span interleaves an adjacent SATCOM note ('NOTE: Advise ATC...' / 'may impact RNP separa on capability. This is because RCP') with the limit list items. OCR drops ligatures ('time'->' me', 'position'->'posi on'). The card cites FCOM PRO-SPO PBN (PRO-SPO-51 per crosscheck doc; the literal string 'PRO-SPO-51' does not appear in PRC.md). Strictly an RNP-airspace minimum-equipment/entry condition rather than an aircraft limitation."
+ },
+ {
+  "id": "lim-add-03",
+  "system": "Reference (AFM procedures)",
+  "parameter": "Minimum RAT speed",
+  "limit": "140 kt",
+  "condition": "RAT deployed (EMER ELEC CONFIG; also G+B SYS LO PR procedure)",
+  "verbatim": "Minimum RAT speed : 140 kt",
+  "ref": "AFM EMER-24-00005218.0006001 (ELEC - EMER CONFIG); also AFM EMER-29-00005726.0006001 (HYD - G+B SYS LO PR): 'Minimum RAT speed: 140 kt.'",
+  "src": "manual",
+  "fleet": "both",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "note": "AFM procedure note, not a limitations-chapter item. Appears 8 times in AFM emergency/abnormal procedures, not in the LIM chapter; FCOM_LIM.md (R17 limitations slice) carries no RAT speed. Technically a procedure note carried as an operating limit.",
+  "audit": [
+   {
+    "pass": "ADDENDUM2 2026-09-02",
+    "field": "system",
+    "was": "Electrical / Hydraulic - Ram Air Turbine",
+    "evidence": "Reclassified: sourced from AFM procedure sections, not the LIM chapter."
+   }
+  ]
+ },
+ {
+  "id": "lim-add-04",
+  "system": "Reference (AFM procedures)",
+  "parameter": "APU battery start in flight (APU TR not available)",
+  "limit": "Below 25 000 ft",
+  "condition": "APU start in flight with APU TR not available",
+  "verbatim": "In the case of APU TR not available use APU battery below 25 000 ft.",
+  "ref": "AFM NORM-49-00005815.0002001 (Auxiliary Power Unit - Starting In Flight)",
+  "src": "manual",
+  "fleet": "both",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "note": "AFM procedure note, not a limitations-chapter item. From AFM NORMAL PROCEDURES NORM-49, not the LIM chapter - a procedure note. Distinct from the JET B/JP4 25,000 ft APU operating limit in FCOM_LIM (v3 #5). Same section: main electrical power start up to 41,450 ft; bleed extraction up to 22,500 ft.",
+  "audit": [
+   {
+    "pass": "ADDENDUM2 2026-09-02",
+    "field": "system",
+    "was": "APU",
+    "evidence": "Reclassified: sourced from AFM procedure sections, not the LIM chapter."
+   }
+  ]
+ },
+ {
+  "id": "lim-add-05",
+  "system": "Fire Protection / ETOPS",
+  "parameter": "Cargo fire suppression system time capability",
+  "limit": "260 min",
+  "condition": "ETOPS significant-system time capability (planning)",
+  "verbatim": "The time capability of the cargo fire suppression system is 260 min.",
+  "ref": "AFM APP-ETOPS-00005539.0002001 (ETOPS Supplement - LIMITATIONS)",
+  "src": "manual",
+  "fleet": "both",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "note": "From the AFM ETOPS supplement LIMITATIONS section. Companion sentence: 'The time capability of all the other ETOPS significant systems exceeds 222 min.' The study-doc '195 min ETOPS requirement' claim is NOT in local sources - needs FOM."
  }
 ]
