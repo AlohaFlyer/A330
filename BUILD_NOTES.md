@@ -898,3 +898,104 @@ EXIT=0
 ALL PLAYWRIGHT CHECKS PASSED
 EXIT=0
 ```
+
+
+---
+
+# Addendum 2 and envelope recovery (2026-09-02)
+
+Inputs: `data/limitations_ADDENDUM2.json` (5 items), its notes,
+`law_pages_VISUAL.md`, `ETOPS_quiz_FOM_CHECK.md`. limitations.html is 0.9.
+
+- `build_scripts/merge_addendum2.py` merged the 5 addendum items into
+  `data/limitations_v4.json` (165 items, 153 VERIFIED / 12 UNCLEAR), copied
+  to `repo/data/limitations.json`. Adjustments: lim-add-01 (max TO and LDG
+  altitude 12,500 ft) upgraded to VERIFIED on the visual read of the rendered
+  envelope chart (pdf p3762), corroboration + audit recorded, limit cleaned to
+  "12,500 ft"; its source-text slot carries a bracketed visual-read
+  transcription because the chart has no extractable text (verbatim null broke
+  the harness and rendered an empty source block). lim-add-03/04 (RAT 140 kt,
+  APU battery start 25,000 ft) reclassified system "Reference (AFM
+  procedures)" with the procedure-note caveat. The addendum's PRC ref carried
+  one em dash; stripped to a comma at merge (transport rule).
+- Gaps panel: environmental envelope moved to the recovered panel with the
+  full corner list; genuinely still missing are the CG envelope and VA only.
+  The APU operational envelope bullet stays (still graphics-only).
+  Scope bullet and AFM footer line updated for the new sources.
+- Provenance lint clean (181 items over 3 banks). Grounding flags 9 items,
+  byte-identical to the v3 run: 7 UNCLEAR table items by design plus
+  lim-air-02/08 ("Simultaneous use prohibited" paraphrase); all 5 addendum
+  items grounded. Nothing new introduced.
+- Harness counts (160, 139, 17 chips, x159 walks) now derive from the data.
+- memory-items untouched (0.4). ETOPS_quiz_FOM_CHECK.md required no page
+  change: it completes the crosscheck's NEEDS FOM CHECK rows and confirms the
+  one stale finding already recorded.
+
+## Verification transcript
+
+```
+$ python3 build_scripts/merge_addendum2.py
+limitations_v4.json: 165 items, 153 VERIFIED / 12 UNCLEAR; copied to repo/data/limitations.json
+EXIT=0
+$ python3 build_scripts/provenance_lint.py  (tail)
+provenance lint: 181 items across 3 files; 0 errors in 0 files.
+EXIT=0
+$ python3 build_scripts/verify_grounding.py data/limitations.json  (tail)
+grounding check: 165 items scanned, 165 with src='manual', 9 ungrounded (threshold 0.60).
+EXIT=1 (9 flagged, all pre-existing in v3: 7 UNCLEAR table items by design plus lim-air-02/08 paraphrase; all 5 addendum items grounded)
+$ python3 build_scripts/build_standalone.py
+limitations.html: 165 entries from data/limitations.json -> dist/limitations.html (155982 bytes)
+memory-items.html: 11 entries from data/memory_items.json -> dist/memory-items.html (85807 bytes)
+copied assets/icons/icon-180.png -> dist/assets/icons/icon-180.png
+copied site.webmanifest -> dist/site.webmanifest
+EXIT=0
+$ python3 build_scripts/verify/check_embedded_data.py
+dist/memory-items.html: 11 entries embedded; every entry == memory_items_v4.json; repo data/memory_items.json == v4: True
+  v2 -> v4: actions changed on ['mi-vis-06', 'mi-vis-07', 'mi-vis-08', 'mi-vis-10', 'mi-vis-11']; 13 box-break sentinels; relearn flags on ['mi-vis-06', 'mi-vis-07', 'mi-vis-08', 'mi-vis-10', 'mi-vis-11']
+  no embedded newlines remain in any action line
+dist/limitations.html: 165 items embedded; every item == limitations_v4.json; 153 VERIFIED / 12 UNCLEAR
+  refs with backslash-underscore: 0; items with corroboration: 14; with audit: 22
+EXIT=0
+$ bash build_scripts/verify/node_check_scripts.sh | grep -c OK
+8
+$ python3 build_scripts/verify/static_constraints.py
+limitations.html: 63435 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+memory-items.html: 73365 bytes (engine, must be < 100000: True); em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/limitations.html: 155982 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+dist/memory-items.html: 85807 bytes; em dash=0, &mdash;=0, localStorage/sessionStorage=0, private-use chars=0, backslash-u / backslash-x in JS=0, external src/href (http, https, protocol-relative)=0, fetch calls other than the relative data fetch=0, raw hex outside the palette block (comments ignored)=0 -> PASS
+STATIC CONSTRAINTS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/pass5_polish_checks.py  (tail)
+POLISH CHECKS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/pass4_visual_checks.py  (tail)
+VISUAL CHECKS: ALL PASSED
+EXIT=0
+$ python3 build_scripts/verify/playwright_smoke.py  (tail)
+ALL PLAYWRIGHT CHECKS PASSED
+EXIT=0
+$ http fetch check
+[file:// dist limitations.html] data=165 (want 165) booted=True console errors=0 [] reveal+grade={'revealed': False, 'counts': {'got': 1, 'missed': 0}, 'idx': 1, 'phase': 'drill'} PASS
+[file:// dist memory-items.html] data=11 (want 11) booted=True console errors=0 [] reveal+grade={'revealed': True, 'counts': {'got': 1, 'missed': 0}, 'idx': 0, 'phase': 'drill'} PASS
+[http engine limitations.html] data=165 (want 165) booted=True console errors=0 [] reveal+grade={'revealed': False, 'counts': {'got': 1, 'missed': 0}, 'idx': 1, 'phase': 'drill'} PASS
+[http engine memory-items.html] data=11 (want 11) booted=True console errors=0 [] reveal+grade={'revealed': True, 'counts': {'got': 7, 'missed': 0}, 'idx': 0, 'phase': 'drill'} PASS
+[file:// engine limitations.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+[file:// engine memory-items.html] card says: 'Data not loadedOpen the standalone build (dist/) for offline use, or serve this folder over http.'
+ENGINE/DIST CHECKS: ALL PASSED
+EXIT=0 (server killed)
+$ pass3_runtime.py  (summary; run above)
+**Checks recorded: 2037. Pass: 2037. Fail: 0. States scanned for text integrity and overflow: 2117.**
+$ header render check
+headSub: A330P FCOM R17, issue 15 MAY 26 · 165 items (153 verified, 12 unclear) · active recall, no multiple choice
+recovered panel mentions 12,500 ft and envelope: True
+gaps: still missing CG+VA only: True | 12 of the 165: True
+footer: Generated 2026-09-01 · page version 0.9 · 165 items from limitations_v4.json, verified FCOM set merged with both AFM addenda, the pass-2 condition audit, the training-document cross-check and the visual envelope read; no limit value changed by any audit; 153 verified, 12 unclear
+$ wc -c limitations.html data/limitations.json dist/limitations.html
+ 63435 limitations.html
+100705 data/limitations.json
+155982 dist/limitations.html
+320122 total
+$ git hash-object limitations.html data/limitations.json
+f6943e3e0ec14d6497be969997315b0c1c473f1b  limitations.html
+d0ba0492a6f7b91efa528dbbc37f84f0f59ab768  data/limitations.json
+```
