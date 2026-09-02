@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 FOM Delta, 123.1 to 125.1</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<style>
+/* ------------------------------------------------------------------
+   PALETTE, Hawaiian Airlines tokens (VERIFIED values only).
+   Source: Alaska Air Group Auro Design System, Hawaiian theme
+   (aag-theme-ha) v9.3.3, corroborated by the live Hawaiian production
+   stylesheet. See palette/HAWAIIAN_PALETTE.md for provenance + contrast.
+   These are the SAME values as assets/palette.css, inlined so this file
+   works standalone from file:// with no external stylesheet. Keep the
+   two in step; no hex may appear anywhere in this page outside this block.
+
+   Contrast rules honoured here:
+   - coral #EE453D is 3.78:1 on white -> FAILS AA for text.
+     Used ONLY as a decorative rule/border/fill. Text on coral ground
+     uses --ink; coral-coloured text uses --bright-text #97322A (7.49:1).
+   - lagoon #00A5BA is out entirely. Not used anywhere in this page.
+   Swap the light block + the dark block to re-skin the page.
+   ------------------------------------------------------------------ */
+:root {
+  --surface:            #FFFFFF;
+  --surface-sunken:     #F1F3F3;
+  --surface-subtle:     #F5F7F7;
+  --pale:               #EAE5F4;
+  --pale-accent:        #FDF1F8;
+  --pale-bright:        #FFEEEA;
+
+  --ink:                #000000;
+  --ink-muted:          #3C3D3D;
+  --ink-inverse:        #FFFFFF;
+  --ink-on-brand:       #FFFFFF;  /* text on the purple header/footer ground, does NOT flip in dark mode */
+  --pale-on-brand:      #EAE5F4;  /* muted text on that ground, 7.39:1 on purple, does NOT flip */
+
+  --border:             #CED0D0;
+  --border-subtle:      #DBDDDD;
+
+  --primary:            #463C8F;  /* Hawaiian purple  */
+  --primary-bold:       #31295C;
+  --primary-subtle:     #8C7EB8;  /* decorative only  */
+  --header-bg:          #463C8F;
+
+  --accent:             #CE0C88;  /* Hawaiian fuchsia */
+  --accent-bold:        #831A57;
+  --on-accent:          #FFFFFF;  /* 5.21:1, passes  */
+
+  --bright:             #EE453D;  /* coral: rules/fills only, never text */
+  --bright-text:        #97322A;  /* AA-safe coral for text */
+
+  --good:               #447A1F;
+  --good-pale:          #D6EAC7;
+  --warn:               #FAC200;
+  --warn-pale:          #FFF6D2;
+  --bad:                #E01F26;
+  --bad-pale:           #FBC6C6;
+  --info:               #007DB1;
+  --info-pale:          #E8F2F8;
+
+  --focus:              #463C8F;
+  --gradient-brand:     linear-gradient(90deg, #463C8F 25.8%, #CE0C88);
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  color-scheme: light dark;
+  accent-color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:          #15131C;
+    --surface-sunken:   #1E1B29;
+    --surface-subtle:   #232032;
+    --pale:             #2A2440;
+    --pale-accent:      #38203A;
+    --pale-bright:      #3A211C;
+
+    --ink:              #F4F2F8;
+    --ink-muted:        #C3BED0;
+    --ink-inverse:      #15131C;
+    --ink-on-brand:     #FFFFFF;  /* 13.11:1 on the dark header #31295C */
+    --pale-on-brand:    #EAE5F4;
+
+    --border:           #453F58;
+    --border-subtle:    #332E44;
+
+    --primary:          #ACA1CC;  /* lifted purple for text on dark */
+    --primary-bold:     #8C7EB8;
+    --primary-subtle:   #8C7EB8;
+    --header-bg:        #31295C;
+
+    --accent:           #E26DB8;
+    --accent-bold:      #F0A3D3;
+    --on-accent:        #15131C;
+
+    --bright:           #EE453D;
+    --bright-text:      #FF9080;
+
+    --good:             #8EC891;
+    --good-pale:        #1D3320;
+    --warn:             #FAC200;
+    --warn-pale:        #3A3011;
+    --bad:              #FF8A8A;
+    --bad-pale:         #3D1A1C;
+    --info:             #A8D6DF;
+    --info-pale:        #16303A;
+
+    --focus:            #ACA1CC;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px/1.5 var(--sans);
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- non-dismissible warning banner ---------- */
+.banner {
+  background: var(--pale-bright);
+  border-bottom: 1px solid var(--border);
+  border-left: 8px solid var(--bright);   /* coral as a rule, not as text */
+  padding: 14px 16px;
+}
+.banner h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--bright-text);
+}
+.banner p { margin: 0 0 6px; font-size: 14px; }
+.banner p:last-child { margin-bottom: 0; }
+.banner strong { font-weight: 700; }
+
+/* ---------- header ---------- */
+.site-head {
+  background: var(--header-bg);
+  color: var(--ink-on-brand);
+  padding: 18px 0 16px;
+  border-bottom: 4px solid transparent;
+  border-image: var(--gradient-brand) 1;
+}
+.site-head h1 { margin: 0; font-size: 22px; letter-spacing: .01em; }
+.site-head .sub { margin: 4px 0 0; font-size: 13px; color: var(--pale-on-brand); }
+
+/* ---------- scope notes ---------- */
+.gaps {
+  background: var(--warn-pale);
+  border: 1px solid var(--warn);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.gaps summary { cursor: pointer; font: 700 14px var(--sans); text-transform: uppercase; letter-spacing: .06em; }
+.gaps summary .cnt { font: 500 12px var(--sans); text-transform: none; letter-spacing: 0; color: var(--ink-muted); margin-left: 8px; }
+.gaps[open] summary { margin-bottom: 8px; }
+.gaps ul { margin: 0; padding-left: 20px; font-size: 14px; }
+.gaps li { margin-bottom: 5px; }
+.gaps li:last-child { margin-bottom: 0; }
+.gaps .tag {
+  font: 600 11px/1 var(--mono);
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-right: 6px;
+  white-space: nowrap;
+}
+
+/* ---------- mode tabs ---------- */
+.modes { display: flex; gap: 6px; border-bottom: 2px solid var(--border); margin-top: 18px; }
+.modes button {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  padding: 9px 14px;
+  font: 600 15px var(--sans);
+  color: var(--ink-muted);
+  cursor: pointer;
+}
+.modes button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- controls ---------- */
+.panel {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 16px 0;
+}
+.ctrl-row { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.ctrl-row + .ctrl-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border-subtle); }
+.ctrl-label {
+  font: 700 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--ink-muted);
+  margin-right: 2px;
+}
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); }
+.seg button:first-child { border-radius: calc(var(--radius) - 1px) 0 0 calc(var(--radius) - 1px); }
+.seg button:last-child { border-radius: 0 calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0; }
+.seg button:focus-visible { position: relative; z-index: 1; }
+.seg button {
+  appearance: none; background: var(--surface); border: 0; cursor: pointer;
+  padding: 7px 12px; font: 500 14px var(--sans); color: var(--ink);
+}
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--ink-inverse); }
+input.search {
+  flex: 1 1 220px; min-width: 160px;
+  padding: 8px 10px; font: 15px var(--sans);
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.btn {
+  appearance: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
+  padding: 8px 14px; font: 600 14px var(--sans);
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn-good { border-color: var(--good); color: var(--good); background: var(--surface); }
+.btn-bad  { border-color: var(--bad);  color: var(--bad);  background: var(--surface); }
+.btn .k {
+  font-family: var(--mono); font-size: 11px;
+  border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; margin-left: 7px;
+}
+
+/* ---------- status bar ---------- */
+.statusbar {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px;
+  font-size: 13px; color: var(--ink-muted);
+}
+.statusbar b { font-family: var(--mono); font-size: 15px; color: var(--ink); font-weight: 700; }
+.statusbar .miss b { color: var(--bad); }
+
+/* ---------- review list ---------- */
+.chapter-h {
+  margin: 26px 0 10px; font-size: 17px;
+  padding-bottom: 6px; border-bottom: 2px solid var(--border);
+}
+.chapter-h .n { color: var(--ink-muted); font-weight: 500; font-size: 13px; margin-left: 8px; }
+.chg {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 14px 16px;
+  margin: 0 0 14px;
+}
+.chg.common { border-left-color: var(--primary-subtle); }
+.chg h3 { margin: 0 0 8px; font-size: 16px; line-height: 1.35; }
+.chg h3 .sec { font-family: var(--mono); font-size: 14px; color: var(--bright-text); margin-right: 8px; }
+.pill {
+  font: 600 11px/1 var(--sans); letter-spacing: .05em; text-transform: uppercase;
+  padding: 4px 8px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--pale); color: var(--ink);
+}
+.pill-diff { background: var(--pale-accent); border-color: var(--accent); }
+.pill-scope { background: var(--info-pale); border-color: var(--info); }
+.pill-drill { background: var(--good-pale); border-color: var(--good); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 10px; }
+.chg .sum { margin: 0 0 10px; font-size: 14px; }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 10px; }
+.ba .q {
+  border: 1px solid var(--border-subtle); border-radius: var(--radius);
+  padding: 8px 10px; font-size: 13px; line-height: 1.5;
+  white-space: pre-line; overflow-wrap: break-word;
+}
+.ba .q .lab {
+  display: block; font: 700 10px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 6px; white-space: normal;
+}
+.ba .before { background: var(--surface-sunken); }
+.ba .after { background: var(--pale-accent); border-color: var(--accent); }
+.ba .q.ghost { font-style: italic; color: var(--ink-muted); }
+.why { margin: 0; font-size: 14px; padding: 8px 10px; border-radius: var(--radius); background: var(--info-pale); border: 1px solid var(--info); }
+.why b { display: block; font: 700 10px/1.6 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); }
+.refline { margin: 10px 0 0; font-size: 12px; color: var(--ink-muted); font-family: var(--mono); }
+.rowcount { font-size: 13px; color: var(--ink-muted); margin: 10px 0 0; }
+
+/* ---------- drill card ---------- */
+.card {
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px;
+}
+.ask {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 6px;
+}
+.prompt { margin: 0 0 4px; font-size: 22px; font-weight: 700; line-height: 1.3; }
+textarea.answer {
+  width: 100%; margin-top: 14px; padding: 10px;
+  font: 15px/1.4 var(--mono);
+  color: var(--ink); background: var(--surface-subtle);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  resize: vertical; min-height: 68px;
+}
+.hint { margin: 6px 0 0; font-size: 12px; color: var(--ink-muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.reveal { margin-top: 16px; padding-top: 14px; border-top: 2px dashed var(--border); }
+.lab {
+  font: 700 11px/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+  color: var(--ink-muted); margin: 0 0 4px;
+}
+.answer-value { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.5; color: var(--ink); }
+.cite { margin-top: 14px; font-size: 13px; color: var(--ink-muted); }
+.cite code { font-family: var(--mono); font-size: 12px; color: var(--ink); }
+.vbtn {
+  appearance: none; cursor: pointer; margin-top: 6px;
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  font: 600 11px var(--sans); padding: 2px 7px; color: var(--ink);
+}
+.grade-q { margin: 16px 0 0; font-size: 14px; font-weight: 600; }
+.grade-q small { display: block; font-weight: 400; color: var(--ink-muted); }
+.srcchg { margin-top: 12px; }
+
+/* ---------- round / summary ---------- */
+.roundcard { border: 1px solid var(--border); border-top: 4px solid var(--bright); border-radius: var(--radius); padding: 20px; }
+.roundcard h2 { margin: 0 0 8px; font-size: 20px; }
+.roundcard p { margin: 0 0 10px; font-size: 15px; }
+.tally { display: flex; flex-wrap: wrap; gap: 18px; margin: 14px 0; }
+.tally div { min-width: 92px; }
+.tally .n { display: block; font: 700 26px var(--mono); }
+.tally .l { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-muted); }
+.tally .bad .n { color: var(--bad); }
+.tally .good .n { color: var(--good); }
+.misslist { margin: 12px 0 0; padding: 0; list-style: none; font-size: 14px; }
+.misslist li { padding: 8px 0; border-top: 1px solid var(--border-subtle); }
+.misslist code { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); }
+
+/* ---------- shortcuts ---------- */
+.shortcuts { margin: 18px 0 0; font-size: 13px; color: var(--ink-muted); }
+.shortcuts h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; margin: 0 0 6px; color: var(--ink-muted); }
+.shortcuts ul { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; }
+kbd {
+  font: 600 12px var(--mono); background: var(--surface-sunken);
+  border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px;
+  padding: 1px 5px; color: var(--ink);
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 40px; background: var(--header-bg); color: var(--ink-on-brand); padding: 20px 0 26px;
+}
+footer .wrap > div { margin-bottom: 6px; font-size: 13px; }
+footer .wrap > .id { font-family: var(--mono); font-size: 14px; font-weight: 700; }
+footer .muted { color: var(--pale-on-brand); }
+
+/* ---------- phone ---------- */
+@media (max-width: 640px) {
+  .prompt { font-size: 19px; }
+  .card { padding: 14px; }
+  .site-head h1 { font-size: 19px; }
+  .actions .btn { flex: 1 1 auto; }
+  .ba { grid-template-columns: 1fr; }
+  .chg { padding: 12px; }
+}
+</style>
+</head>
+<body>
+
+<div class="banner" role="alert" id="banner">
+  <div class="wrap">
+    <h2>FOM 123.1 to 125.1 delta, built from a diff plus the Revision Highlights, not from the highlights alone</h2>
+    <p>This page reviews the substantive A330-relevant and fleet-common changes between <strong>FOM Rev 123.1 (4/27/26)</strong> and <strong>FOM Rev 125.1 (8/12/26)</strong>, built from a <strong>whitespace-normalized body diff of the two extracts plus the Revision Highlights</strong>. Five revisions landed in the window (124, 124.1, 124.2, 125, 125.1), but <strong>revisions 124 to 124.2 published NO Revision Highlights</strong>, so about 30 of the changes below exist only in the diff and are marked <strong>Diff only</strong>.</p>
+    <p><strong>The FOM itself is the authority, every conflict, every time.</strong> This page is an uncontrolled study extract built from text extracts of the two PDFs; tables and figures extract lossily (the 8.1.3 airport table columns especially). Read the current FOM for anything you will act on.</p>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <h1>A330 FOM Delta Review, Rev 123.1 to 125.1</h1>
+    <p class="sub" id="headSub"></p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <details class="gaps" id="gapsPanel">
+    <summary id="gapsHead">Read before you review<span class="cnt" id="gapsCount"></span></summary>
+    <ul id="gapsList"></ul>
+  </details>
+
+  <nav class="modes" role="tablist" aria-label="Page mode">
+    <button id="tabReview" role="tab" aria-selected="true" aria-controls="reviewPane">Review</button>
+    <button id="tabDrill" role="tab" aria-selected="false" aria-controls="drillPane">Drill</button>
+  </nav>
+
+  <!-- =================== REVIEW =================== -->
+  <section id="reviewPane" role="tabpanel" aria-labelledby="tabReview">
+    <div class="panel">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Search</span>
+        <input class="search" id="searchBox" type="search" placeholder="Section, topic, or any word in the change text" aria-label="Search changes">
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-label">Scope</span>
+        <div class="seg" role="group" aria-label="Scope filter">
+          <button data-scope="all" aria-pressed="true">All</button>
+          <button data-scope="A330" aria-pressed="false">A330</button>
+          <button data-scope="fleet-common" aria-pressed="false">Fleet-common</button>
+        </div>
+        <span class="ctrl-label">Source</span>
+        <div class="seg" role="group" aria-label="Source filter">
+          <button data-src="all" aria-pressed="true">All</button>
+          <button data-src="diff" aria-pressed="false">Diff only</button>
+          <button data-src="both" aria-pressed="false">Highlights + diff</button>
+        </div>
+      </div>
+    </div>
+    <p class="rowcount" id="revCount"></p>
+    <div id="revList"></div>
+  </section>
+
+  <!-- =================== DRILL =================== -->
+  <section id="drillPane" role="tabpanel" aria-labelledby="tabDrill" hidden>
+    <div class="panel">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Drill</span>
+        <span class="ctrl-label" style="text-transform:none;font-weight:500" id="drillDesc"></span>
+        <button class="btn" id="restartBtn">Restart session<span class="k">R</span></button>
+      </div>
+    </div>
+    <div class="statusbar" id="statusbar" aria-live="polite"></div>
+    <div id="card" aria-live="polite"></div>
+    <div class="shortcuts">
+      <h2>Keyboard</h2>
+      <ul>
+        <li><kbd>Space</kbd> reveal, then next question once graded</li>
+        <li><kbd>Enter</kbd> reveal from the answer box</li>
+        <li><kbd>1</kbd> got it</li>
+        <li><kbd>2</kbd> missed it</li>
+        <li><kbd>&larr;</kbd> / <kbd>&rarr;</kbd> previous / next question</li>
+        <li><kbd>V</kbd> show the underlying change, before and after</li>
+        <li><kbd>R</kbd> restart</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="id" id="footManual"></div>
+    <div class="muted" id="footOld"></div>
+    <div class="muted" id="footGen"></div>
+    <div class="muted">Study extract. Uncontrolled copy. The FOM is the authority.</div>
+  </div>
+</footer>
+
+<script>
+/* ==================================================================
+   DATA SLOT. The engine page keeps its data EXTERNAL, in data/fom_delta.json,
+   and loads it on DOMContentLoaded (see the loader at the end of the
+   second script block). build_scripts/build_standalone.py inlines the
+   JSON between the two markers below to produce the offline dist/ build;
+   nothing else differs between the engine page and the dist page.
+   Canonical copy: data/fom_delta.json. DO NOT HAND-EDIT the dist build.
+   ================================================================== */
+/* @@DATA_START fom-delta */
+var FOM_DELTA = null;
+/* @@DATA_END */
+
+/* ------------------------------------------------------------------
+   PAGE METADATA, hand-authored, not extracted.
+   ------------------------------------------------------------------ */
+const META = {
+  fom_new:   "FOM Rev 125.1",
+  fom_new_d: "8/12/26",
+  fom_old:   "FOM Rev 123.1",
+  fom_old_d: "4/27/26",
+  fleet:     "A330-relevant and fleet-common changes only",
+  generated: "2026-09-02",
+  version:   "0.1",
+  dataset:   "fom_delta.json, structured from the verified delta review (FOM_DELTA_123.1_to_125.1.md, prepared 2026-09-01)"
+};
+
+/* The scope notes shown under the header. */
+const KNOWN_GAPS =
+[
+ {
+  "tag": "Method",
+  "text": "Built from a whitespace-normalized unified diff of the 123.1 and 125.1 text extracts (28,293 lines) plus the Rev 125/125.1 Revision Highlights. Every before/after quote is the diff text, verbatim; line wraps are the extract's, not the manual's."
+ },
+ {
+  "tag": "No highlights for 124.x",
+  "text": "Revisions 124 (5/20/26), 124.1 (6/12/26) and 124.2 (6/18/26) published no Revision Highlights at all, and they carry most of the changes that bite an A330 pilot: the RTO 100-kt rule, the APU 10-minute rule, the EFB 80% rule, the wake turbulence rewrite. Items marked Diff only were never described by the manual's own highlights."
+ },
+ {
+  "tag": "Scope",
+  "text": "Substantive A330-relevant and fleet-common changes only, about 50 of them. Roughly 60 section-level editorial changes (renumbering, Marshaller spelling, Ops Spec reference cleanup) and about 35 787-only or other-fleet changes are excluded; see the full review doc for those."
+ },
+ {
+  "tag": "Tables are lossy",
+  "text": "The new 8.1.3 airport table's five fleet columns collapse in the text extract, so the A330 column could not be verified airport by airport. The tarmac-delay tables interleave columns; quotes from them are the pilot column as best reconstructed. Figures (the HA release sample, load closeout samples, polygon figures) could not be compared at all. Verify any specific value in the PDF."
+ },
+ {
+  "tag": "Rev attribution",
+  "text": "The revision tag on each Diff-only item comes from the List of Effective Sections date and is indicative, not certain, where a section was also renumbered."
+ },
+ {
+  "tag": "Drill",
+  "text": "The Drill tab serves the 18 recall questions the review attached to the highest-yield changes. Self-graded, missed questions come back until clean, nothing is stored."
+ }
+];
+</script>
+
+<script>
+"use strict";
+
+/* ================= helpers ================= */
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+function el(id) { return document.getElementById(id); }
+function shuffle(a) {
+  var arr = a.slice();
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+/* A before/after that is one fully bracketed description, not a quote,
+   renders muted. A quote that merely STARTS with a fleet banner like
+   "(737) The APU ..." is a real quote and must not match. */
+function isGhost(t) {
+  var s = String(t || "");
+  return /^\(/.test(s) && /\)\s*$/.test(s) && s.indexOf("•") === -1;
+}
+
+var CH_NAMES = {
+  "2": "Operating, General", "5": "Flight Operations", "6": "ETOPS",
+  "7": "Communications and Reports", "8": "Dispatch", "9": "Weather",
+  "11": "Emergency / Abnormal", "12": "Maintenance", "14": "HAZMAT",
+  "15": "Security", "18": "Areas of Operation, General",
+  "20": "Areas of Operation, Pacific / International",
+  "22": "Areas of Operation, North Atlantic"
+};
+function chapterOf(item) { return String(item.fom_section).split(".")[0]; }
+function chapterName(ch) { return CH_NAMES[ch] ? "Chapter " + ch + ": " + CH_NAMES[ch] : "Chapter " + ch; }
+function srcLabel(s) {
+  return s === "both" ? "Highlights + diff" : s === "diff" ? "Diff only" : "Highlights";
+}
+function scopeLabel(s) { return s === "A330" ? "A330" : "Fleet-common"; }
+
+var ITEMS, DRILLS, BY_ID, S;
+
+/* ================= boot ================= */
+function boot() {
+  ITEMS = FOM_DELTA;
+  BY_ID = {};
+  ITEMS.forEach(function (x) { BY_ID[x.id] = x; });
+  DRILLS = [];
+  ITEMS.forEach(function (x) {
+    var d = x.drill;
+    if (!d) return;
+    (Array.isArray(d) ? d : [d]).forEach(function (qa, i) {
+      DRILLS.push({ did: x.id + (i ? "-" + (i + 1) : ""), q: qa.q, a: qa.a, item: x });
+    });
+  });
+
+  S = {
+    mode: "review",
+    filterScope: "all",
+    filterSrc: "all",
+    query: "",
+    queue: [],
+    idx: 0,
+    round: 1,
+    revealed: false,
+    showChg: false,
+    typed: {},
+    counts: { got: 0, missed: 0 },
+    firstPass: { got: 0, missed: 0 },
+    missedThisRound: [],
+    missedEver: {},
+    phase: "drill",
+    note: ""
+  };
+  renderHead();
+  startSession();
+  render();
+}
+
+function startSession(note) {
+  S.queue = shuffle(DRILLS);
+  S.idx = 0;
+  S.round = 1;
+  S.revealed = false;
+  S.showChg = false;
+  S.typed = {};
+  S.counts = { got: 0, missed: 0 };
+  S.firstPass = { got: 0, missed: 0 };
+  S.missedThisRound = [];
+  S.missedEver = {};
+  S.phase = DRILLS.length ? "drill" : "empty";
+  S.note = note || "";
+  render();
+}
+
+/* ================= drill flow ================= */
+function current() { return S.queue[S.idx] || null; }
+
+function reveal() {
+  if (S.mode !== "drill" || S.phase !== "drill" || !current() || S.revealed) return;
+  S.revealed = true;
+  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  render();
+}
+
+function grade(kind) {
+  var d = current();
+  if (S.mode !== "drill" || S.phase !== "drill" || !d || !S.revealed) return;
+  S.counts[kind === "got" ? "got" : "missed"]++;
+  if (S.round === 1) S.firstPass[kind === "got" ? "got" : "missed"]++;
+  if (kind !== "got") {
+    S.missedEver[d.did] = true;
+    if (S.missedThisRound.indexOf(d.did) === -1) S.missedThisRound.push(d.did);
+  }
+  advance();
+}
+
+function advance() {
+  S.revealed = false;
+  S.showChg = false;
+  if (S.idx + 1 < S.queue.length) { S.idx++; render(); return; }
+  S.idx++;
+  S.phase = S.missedThisRound.length ? "roundbreak" : "done";
+  render();
+}
+
+function next() {
+  if (S.phase !== "drill" || !current()) return;
+  /* skip without grading: the question is owed and comes back */
+  var d = current();
+  if (S.missedThisRound.indexOf(d.did) === -1) S.missedThisRound.push(d.did);
+  S.missedEver[d.did] = true;
+  advance();
+}
+
+function prev() {
+  if (S.phase !== "drill" || S.idx === 0) return;
+  S.idx--;
+  S.revealed = false;
+  S.showChg = false;
+  render();
+}
+
+function startNextRound() {
+  var byDid = {};
+  DRILLS.forEach(function (d) { byDid[d.did] = d; });
+  S.queue = shuffle(S.missedThisRound.map(function (id) { return byDid[id]; }));
+  S.missedThisRound = [];
+  S.idx = 0;
+  S.round++;
+  S.typed = {};
+  S.revealed = false;
+  S.showChg = false;
+  S.phase = "drill";
+  render();
+}
+
+/* ================= shared render bits ================= */
+function renderHead() {
+  el("headSub").textContent =
+    META.fom_new + " (" + META.fom_new_d + ") vs " + META.fom_old + " (" + META.fom_old_d + ") · " +
+    ITEMS.length + " substantive changes · " + DRILLS.length + " drill questions · " + META.fleet;
+  el("footManual").textContent =
+    META.fom_new + " (" + META.fom_new_d + ") vs " + META.fom_old + " (" + META.fom_old_d + "), body diff plus Revision Highlights";
+  el("footOld").textContent =
+    ITEMS.length + " substantive changes, " + DRILLS.length + " drill questions. Revisions 124 to 124.2 published no highlights; Diff-only items were never listed by the manual.";
+  el("footGen").textContent =
+    "Generated " + META.generated + " · page version " + META.version + " · " + META.dataset;
+  el("gapsList").innerHTML = KNOWN_GAPS.map(function (g) {
+    return '<li><span class="tag">' + esc(g.tag) + "</span>" + esc(g.text) + "</li>";
+  }).join("");
+  el("gapsCount").textContent = KNOWN_GAPS.length + " notes";
+  var phone = window.matchMedia && window.matchMedia("(max-width: 640px)").matches;
+  el("gapsPanel").open = !phone;
+  el("drillDesc").textContent = DRILLS.length + " recall questions from the review's drill list, shuffled; missed ones come back until clean.";
+}
+
+function pillsHTML(x, withDrill) {
+  var h = '<div class="meta">';
+  h += '<span class="pill pill-scope">' + esc(scopeLabel(x.scope)) + "</span>";
+  h += '<span class="pill' + (x.source === "diff" ? " pill-diff" : "") + '">' + esc(srcLabel(x.source)) + "</span>";
+  h += '<span class="pill">' + esc(x.rev) + "</span>";
+  if (withDrill && x.drill) h += '<span class="pill pill-drill">In the drill</span>';
+  h += "</div>";
+  return h;
+}
+function baHTML(x) {
+  return '<div class="ba">' +
+    '<div class="q before' + (isGhost(x.before) ? " ghost" : "") + '"><span class="lab">123.1 said</span>' + esc(x.before) + "</div>" +
+    '<div class="q after' + (isGhost(x.after) ? " ghost" : "") + '"><span class="lab">125.1 says</span>' + esc(x.after) + "</div>" +
+    "</div>";
+}
+function chgHTML(x, withDrill) {
+  return '<article class="chg' + (x.scope === "fleet-common" ? " common" : "") + '" id="chg-' + esc(x.id) + '">' +
+    '<h3><span class="sec">' + esc(x.fom_section) + "</span>" + esc(x.topic) + "</h3>" +
+    pillsHTML(x, withDrill) +
+    '<p class="sum">' + esc(x.change_summary) + "</p>" +
+    baHTML(x) +
+    '<p class="why"><b>Why it matters</b>' + esc(x.why_it_matters) + "</p>" +
+    '<p class="refline">' + esc(x.ref) + " · " + esc(x.id) + "</p>" +
+    "</article>";
+}
+
+/* ================= review mode ================= */
+function filtered() {
+  var q = S.query.trim().toLowerCase();
+  return ITEMS.filter(function (x) {
+    if (S.filterScope !== "all" && x.scope !== S.filterScope) return false;
+    if (S.filterSrc === "diff" && x.source !== "diff") return false;
+    if (S.filterSrc === "both" && x.source === "diff") return false;
+    if (!q) return true;
+    var hay = [x.fom_section, x.topic, x.change_summary, x.before, x.after, x.why_it_matters, x.ref, x.rev].join(" ").toLowerCase();
+    return hay.indexOf(q) !== -1;
+  });
+}
+function renderReview() {
+  var list = filtered();
+  el("revCount").textContent = list.length + " of " + ITEMS.length + " changes shown" +
+    (S.query.trim() ? ", matching " + JSON.stringify(S.query.trim()) : "") + ". Grouped by FOM chapter, in section order.";
+  var h = "", lastCh = null;
+  list.forEach(function (x) {
+    var ch = chapterOf(x);
+    if (ch !== lastCh) {
+      var n = list.filter(function (y) { return chapterOf(y) === ch; }).length;
+      h += '<h2 class="chapter-h">' + esc(chapterName(ch)) + '<span class="n">' + n + (n === 1 ? " change" : " changes") + "</span></h2>";
+      lastCh = ch;
+    }
+    h += chgHTML(x, true);
+  });
+  if (!list.length) h = '<div class="roundcard"><h2>No matches</h2><p>No change matches the current search and filters.</p></div>';
+  el("revList").innerHTML = h;
+}
+
+/* ================= drill mode ================= */
+function renderStatus() {
+  var bits = [];
+  bits.push("Round <b>" + S.round + "</b>");
+  if (S.phase === "drill" && current()) bits.push("Question <b>" + (S.idx + 1) + "</b> of <b>" + S.queue.length + "</b>");
+  else bits.push("Queue <b>" + S.queue.length + "</b>");
+  bits.push("Got <b>" + S.counts.got + "</b>");
+  bits.push('<span class="miss">Missed <b>' + S.counts.missed + "</b></span>");
+  bits.push("Owed <b>" + S.missedThisRound.length + "</b>");
+  if (S.note) bits.push("<em>" + esc(S.note) + "</em>");
+  el("statusbar").innerHTML = bits.map(function (b) { return "<span>" + b + "</span>"; }).join("");
+}
+
+function renderCard() {
+  var host = el("card");
+
+  if (S.phase === "empty") {
+    host.innerHTML = '<div class="roundcard"><h2>No drill questions</h2><p>The dataset carries no drill items.</p></div>';
+    return;
+  }
+
+  if (S.phase === "roundbreak") {
+    var n = S.missedThisRound.length;
+    var byDid = {}; DRILLS.forEach(function (d) { byDid[d.did] = d; });
+    host.innerHTML = '<div class="roundcard"><h2>Round ' + S.round + " closed, " + n +
+      " question" + (n === 1 ? "" : "s") + " still owed</h2>" +
+      "<p>These come back now, and they keep coming back until every one is clean.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + S.counts.got + '</span><span class="l">Got</span></div>' +
+      '<div class="bad"><span class="n">' + S.counts.missed + '</span><span class="l">Missed</span></div>' +
+      '<div><span class="n">' + n + '</span><span class="l">Re-serving</span></div>' +
+      "</div>" +
+      '<ul class="misslist">' + S.missedThisRound.map(function (id) {
+        var d = byDid[id];
+        return "<li><strong>" + esc(d.q) + "</strong><br><code>" + esc(d.item.ref) + "</code></li>";
+      }).join("") + "</ul>" +
+      '<div class="actions"><button class="btn btn-primary" id="nextRound">Start round ' + (S.round + 1) +
+      '<span class="k">Space</span></button>' +
+      '<button class="btn" id="restart2">Restart session<span class="k">R</span></button></div></div>';
+    el("nextRound").addEventListener("click", startNextRound);
+    el("restart2").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  if (S.phase === "done") {
+    var ever = Object.keys(S.missedEver);
+    var fpTotal = S.firstPass.got + S.firstPass.missed;
+    var acc = fpTotal ? Math.round((S.firstPass.got / fpTotal) * 100) : 0;
+    var byDid2 = {}; DRILLS.forEach(function (d) { byDid2[d.did] = d; });
+    host.innerHTML = '<div class="roundcard"><h2>Session closed after ' + S.round + " round" +
+      (S.round === 1 ? "" : "s") + "</h2>" +
+      "<p>First-pass accuracy is the number that matters. A changed rule you had to be shown twice is a rule you are still flying the old way.</p>" +
+      '<div class="tally">' +
+      '<div><span class="n">' + S.firstPass.got + "/" + fpTotal + '</span><span class="l">First pass</span></div>' +
+      '<div><span class="n">' + acc + '%</span><span class="l">First-pass accuracy</span></div>' +
+      '<div class="bad"><span class="n">' + ever.length + '</span><span class="l">Missed at least once</span></div>' +
+      "</div>" +
+      (ever.length
+        ? "<p><strong>Missed at least once, read these sections in the FOM itself:</strong></p>" +
+          '<ul class="misslist">' + ever.map(function (id) {
+            var d = byDid2[id];
+            return "<li><strong>" + esc(d.q) + "</strong><br><code>" + esc(d.item.ref) + "</code></li>";
+          }).join("") + "</ul>"
+        : "<p>Nothing was missed. That covers the drill list only; read the Review tab end to end at least once.</p>") +
+      '<div class="actions"><button class="btn btn-primary" id="restart3">Run it again<span class="k">R</span></button></div></div>';
+    el("restart3").addEventListener("click", function () { startSession(); });
+    return;
+  }
+
+  var d = current();
+  if (!d) { host.innerHTML = ""; return; }
+  var x = d.item;
+  var h = '<div class="card">';
+  h += pillsHTML(x, false);
+  h += '<p class="ask">What changed while you were away, answer before you look</p>';
+  h += '<p class="prompt">' + esc(d.q) + "</p>";
+  if (!S.revealed) {
+    h += '<textarea class="answer" id="answerBox" placeholder="Say it or type it, then reveal. Typing is optional." spellcheck="false"></textarea>';
+    h += '<p class="hint">Nothing is auto-checked; the self-grade is the whole grade.</p>';
+    h += '<div class="actions"><button class="btn btn-primary" id="revealBtn">Reveal<span class="k">Space</span></button>';
+    h += '<button class="btn" id="skipBtn">Skip, counts as owed<span class="k">&rarr;</span></button></div>';
+  } else {
+    h += '<div class="reveal">';
+    h += '<p class="lab">Answer, per the review</p>';
+    h += '<p class="answer-value">' + esc(d.a) + "</p>";
+    h += '<div class="cite">Reference: <code>' + esc(x.ref) + "</code> · " + esc(x.rev) + " · " + esc(srcLabel(x.source)) +
+      '<br><button class="vbtn" id="vBtn">' + (S.showChg ? "Hide" : "Show") + " the underlying change, before and after (V)</button></div>";
+    if (S.showChg) h += '<div class="srcchg">' + chgHTML(x, false) + "</div>";
+    h += '<p class="grade-q">Did you have it before you looked?<small>The numbers and the triggers count, word-perfect recall of the prose does not. If you answered with the 123.1 rule, that is a miss.</small></p>';
+    h += '<div class="actions">' +
+      '<button class="btn btn-good" id="gotBtn">Got it<span class="k">1</span></button>' +
+      '<button class="btn btn-bad" id="missBtn">Missed it<span class="k">2</span></button></div>';
+    h += "</div>";
+  }
+  h += "</div>";
+  host.innerHTML = h;
+
+  var box = el("answerBox");
+  if (box) {
+    var key = d.did;
+    box.value = S.typed[key] || "";
+    box.addEventListener("input", function () { S.typed[key] = box.value; });
+    if (!S.revealed) box.focus({ preventScroll: true });
+  }
+  if (el("revealBtn")) el("revealBtn").addEventListener("click", reveal);
+  if (el("skipBtn")) el("skipBtn").addEventListener("click", next);
+  if (el("gotBtn")) el("gotBtn").addEventListener("click", function () { grade("got"); });
+  if (el("missBtn")) el("missBtn").addEventListener("click", function () { grade("missed"); });
+  if (el("vBtn")) el("vBtn").addEventListener("click", function () { S.showChg = !S.showChg; render(); });
+}
+
+/* ================= render + wiring ================= */
+function render() {
+  var review = S.mode === "review";
+  el("reviewPane").hidden = !review;
+  el("drillPane").hidden = review;
+  el("tabReview").setAttribute("aria-selected", review ? "true" : "false");
+  el("tabDrill").setAttribute("aria-selected", review ? "false" : "true");
+  if (review) renderReview();
+  else { renderStatus(); renderCard(); }
+}
+
+el("tabReview").addEventListener("click", function () { S.mode = "review"; render(); });
+el("tabDrill").addEventListener("click", function () { S.mode = "drill"; render(); });
+el("restartBtn").addEventListener("click", function () { startSession(); });
+el("searchBox").addEventListener("input", function () { S.query = el("searchBox").value; renderReview(); });
+Array.prototype.forEach.call(document.querySelectorAll("[data-scope]"), function (b) {
+  b.addEventListener("click", function () {
+    S.filterScope = b.getAttribute("data-scope");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-scope]"), function (o) {
+      o.setAttribute("aria-pressed", o === b ? "true" : "false");
+    });
+    renderReview();
+  });
+});
+Array.prototype.forEach.call(document.querySelectorAll("[data-src]"), function (b) {
+  b.addEventListener("click", function () {
+    S.filterSrc = b.getAttribute("data-src");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-src]"), function (o) {
+      o.setAttribute("aria-pressed", o === b ? "true" : "false");
+    });
+    renderReview();
+  });
+});
+
+document.addEventListener("keydown", function (e) {
+  var t = e.target || {};
+  var tag = (t.tagName || "").toLowerCase();
+  var typing = tag === "textarea" || tag === "input";
+
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter" && S.mode === "drill" && !S.revealed) {
+    e.preventDefault(); reveal(); return;
+  }
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  if (S.mode !== "drill") return;
+
+  if (typing) {
+    if (tag === "textarea" && (e.key === "ArrowRight" || e.key === "ArrowLeft") && String(t.value || "").trim() === "" && S.phase === "drill") {
+      e.preventDefault();
+      if (e.key === "ArrowRight") next(); else prev();
+      return;
+    }
+    if (tag === "textarea" && e.key === "Enter" && !e.shiftKey && !S.revealed) {
+      e.preventDefault(); reveal();
+    }
+    return;
+  }
+
+  switch (e.key) {
+    case " ":
+      e.preventDefault();
+      if (S.phase === "roundbreak") startNextRound();
+      else if (S.phase === "done") startSession();
+      else if (!S.revealed) reveal();
+      break;
+    case "1": if (S.revealed && S.phase === "drill") { e.preventDefault(); grade("got"); } break;
+    case "2": if (S.revealed && S.phase === "drill") { e.preventDefault(); grade("missed"); } break;
+    case "ArrowRight": if (S.phase === "drill") { e.preventDefault(); next(); } break;
+    case "ArrowLeft": if (S.phase === "drill") { e.preventDefault(); prev(); } break;
+    case "v": case "V":
+      if (S.revealed && S.phase === "drill") { e.preventDefault(); S.showChg = !S.showChg; render(); }
+      break;
+    case "r": case "R": e.preventDefault(); startSession(); break;
+  }
+});
+
+/* ================= data loader =================
+   Engine page: FOM_DELTA is null here and is fetched from data/fom_delta.json.
+   dist build: build_standalone.py has already inlined the array, so boot()
+   runs straight away. The message below is the only behaviour that differs
+   when the fetch cannot run (file:// in most browsers). */
+function dataFailed() {
+  el("revList").innerHTML = el("card").innerHTML = '<div class="roundcard"><h2>Data not loaded</h2>' +
+    "<p>Open the standalone build (dist/) for offline use, or serve this folder over http.</p></div>";
+}
+function loadData() {
+  if (Array.isArray(FOM_DELTA)) { boot(); return; }
+  if (typeof fetch !== "function") { dataFailed(); return; }
+  fetch("data/fom_delta.json")
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (d) { FOM_DELTA = d; boot(); })
+    .catch(function () { dataFailed(); });
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", loadData); else loadData();
+</script>
+</body>
+</html>
