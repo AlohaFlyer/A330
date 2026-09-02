@@ -292,6 +292,8 @@ body {
 }
 .pill-book { background: var(--info-pale); border-color: var(--info); color: var(--ink); }
 .pill-warn { background: var(--warn-pale); border-color: var(--warn); color: var(--ink); }
+.pill-changed { background: var(--pale-accent); border-color: var(--accent); color: var(--ink); }
+.note-box.relearn { background: var(--pale-accent); border-color: var(--accent); }
 .note-box {
   margin: 12px 0 0; padding: 10px 12px; border-radius: var(--radius);
   background: var(--info-pale); border: 1px solid var(--info); font-size: 13px;
@@ -454,8 +456,10 @@ footer .muted { color: var(--pale-on-brand); }
 
 <div class="banner" role="alert" id="banner">
   <div class="wrap">
-    <h2>FCOM-scoped study aid, not the training worksheet, not the manual</h2>
-    <p>This page drills the <strong>ten</strong> memory-item procedures the A330P FCOM itself marks with its own <strong>[MEM]</strong> convention, every one of them <strong>visually verified against the rendered FCOM or QRH page</strong>. It has <strong>NOT yet been cross-checked against the training-department memory-item worksheets</strong>, and those worksheets, not this page, define what is drilled and examined. A procedure missing here may still be required; a procedure here may be trained with a different cut.</p>
+    <h2>FCOM-scoped study aid, cross-checked against the training documents, not the manual</h2>
+    <p>This page drills the <strong>ten</strong> memory-item procedures the A330P FCOM itself marks with its own <strong>[MEM]</strong> convention, every one of them <strong>visually verified against the rendered FCOM or QRH page</strong>. <strong>Cross-checked 2026-09-01</strong> against the A330 Student Oral Exam Learning Objectives Rev 7 (04/06/23) and Ryan's own memory-items doc: <strong>the FCOM's ten [MEM] procedures stand as drill scope</strong>.</p>
+    <p><strong>One training-document conflict was found and resolved in the FCOM's favor:</strong> LO Rev 7 and the old personal doc teach LOSS OF BRAKING park brake as "SHORT &amp; SUCCESSIVE APPLICATIONS" and a merged "ANTI-SKID &amp; NWS ... ORDER OFF" line, while FCOM R17 prints <strong>"PARK BRAKE ... USE"</strong> with the short-successive-applications guidance as an unboxed note, and <strong>"A/SKID OFF ... ORDER"</strong> as its own boxed line. This page drills the current FCOM wording.</p>
+    <p>13 lines in the legacy study doc are now wrong; see memory_items_CROSSCHECK.md in the project for the relearn list.</p>
     <p><strong>The FCOM and the QRH win every conflict with this page, every time. The manual is the authority.</strong> This page is uncontrolled and is not a source document.</p>
     <p>Two facts to carry with you:</p>
     <ul>
@@ -579,8 +583,8 @@ const META = {
   fleet:      "A330 passenger fleet",
   scope:      "Memory items only, the FCOM's own [MEM] convention",
   generated:  "2026-09-01",
-  version:    "0.3",  /* (0.2: pass 1-4 fixes) (0.3: pass 5 polish) */
-  dataset:    "memory_items.json (v3: pass-1 re-read of the rendered pages, box breaks and quoted-alert headers encoded), ten procedures, all visually verified against rendered pages"
+  version:    "0.4",  /* (0.2: pass 1-4 fixes) (0.3: pass 5 polish) (0.4: worksheet cross-check integrated) */
+  dataset:    "memory_items.json (v4: pass-1 re-read of the rendered pages plus the 2026-09-01 training-document cross-check with relearn flags), ten procedures, all visually verified against rendered pages"
 };
 
 /* Rendering facts that are true of the printed page but not encoded in
@@ -601,8 +605,8 @@ const KNOWN_GAPS =
   "text": "Ten procedures, taken from the FCOM's own [MEM] title convention and confirmed on the rendered page, plus the QRH page where the QRH carries the block (EMER DESCENT is identical in both books and is drilled once with both citations; UNRELIABLE SPEED INDICATION is drilled from the QRH page, which the FCOM table of contents lists as [MEM])."
  },
  {
-  "tag": "Not cross-checked",
-  "text": "The training-department memory-item worksheets define drill scope for the check. This set has not been reconciled against them. Treat a difference between this page and a worksheet as a question for the training department, not as an error in the worksheet."
+  "tag": "Cross-checked",
+  "text": "Reconciled 2026-09-01 against the A330 Student Oral Exam Learning Objectives Rev 7 (04/06/23), the legacy personal memory-items doc and the 2023 upgrade gouge (memory_items_CROSSCHECK.md). The ten FCOM [MEM] procedures stand as drill scope. Procedures with substantive drift from the old notes carry a CHANGED pill and show what moved after reveal. PF callouts are an SOP overlay the FCOM boxes do not carry; verify them against current HAL SOPs, not here."
  },
  {
   "tag": "Verbatim",
@@ -732,6 +736,8 @@ function boot() {
           layout: buildLayout(e),
           sources: [],
           notes: [],
+          relearn: false,
+          relearnNotes: [],
           hint: RENDER_HINTS[e.id] || null
         };
         byKey[key] = p;
@@ -741,6 +747,7 @@ function boot() {
       }
       p.sources.push(e);
       if (e.note) p.notes.push({ book: e.book, text: e.note });
+      if (e.relearn) { p.relearn = true; if (e.relearn_note) p.relearnNotes.push(e.relearn_note); }
     });
     PROCS.forEach(function (p) {
       p.name = stripMem(p.title);
@@ -1109,6 +1116,9 @@ function sourceHTML(p) {
 }
 function notesHTML(p) {
   var h = "";
+  p.relearnNotes.forEach(function (t) {
+    h += '<div class="note-box relearn"><b>Changed since your old notes, relearn this one</b>' + esc(t) + "</div>";
+  });
   if (p.hint) h += '<div class="note-box"><b>Printed unboxed</b>' + esc(p.hint.why) + "</div>";
   p.notes.forEach(function (n) {
     h += '<div class="note-box"><b>Note, ' + esc(n.book) + "</b>" + esc(n.text) + "</div>";
@@ -1126,6 +1136,7 @@ function pillsHTML(p) {
   p.books.forEach(function (b) { h += '<span class="pill pill-book">' + esc(b) + "</span>"; });
   h += '<span class="pill">' + p.gradable.length + (p.gradable.length === 1 ? " line" : " lines") + "</span>";
   if (p.hint) h += '<span class="pill pill-warn">printed unboxed</span>';
+  if (p.relearn) h += '<span class="pill pill-changed">CHANGED since your old notes</span>';
   if (S.procStats[p.pid].served) h += '<span class="pill">' + S.procStats[p.pid].clean + "/" + S.procStats[p.pid].served + " clean this session</span>";
   h += "</div>";
   return h;
