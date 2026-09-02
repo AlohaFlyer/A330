@@ -1,0 +1,1347 @@
+{
+  "meta": {
+    "source": "A330 Student Oral Exam Learning Objectives Rev 7, 04/06/23",
+    "source_file": "/home/claude/a330/training/Student_Oral_Learning_Objectives_Rev_7.md",
+    "publisher": "Hawaiian Airlines training department (41 pages)",
+    "caveat": "2023 document; scope is authoritative, VALUES ARE NOT. Every numeric claim must be re-verified against current manuals before it becomes drill content.",
+    "structure_note": "Areas follow the document's own order, which follows the oral exam's cockpit walk starting at the left upper corner of the overhead panel. The FCOM, FCTM, QRH, and FOM are the primary study documents; this guide is the stated minimum knowledge level for completing ground school.",
+    "numeric_status_source": "/home/claude/a330/data/limitations_CROSSCHECK.md section 1B (2026-09-02); statuses VERIFIED-CURRENT only where that cross-check adjudicated the value against the current verified set or a current manual extract.",
+    "basic_parameters": [
+      "Know how to find systems answers on the iPad without using word search",
+      "Know all Limitations (charts: just know how to use them)",
+      "Know all Memory Items",
+      "Know the big picture concerning OEBs",
+      "Know the flight control laws"
+    ]
+  },
+  "areas": [
+    {
+      "id": "oral-01",
+      "panel": "Cockpit Door Overhead Control Panel",
+      "fcom_ref": "DSC-52-30-20",
+      "objectives": [
+        "There are 3 lights on the panel; each light represents a corresponding latch on the door.",
+        "If a light is on, the latch is faulty."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "3 lights on the panel, one per door latch",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-02",
+      "panel": "Reset Panels",
+      "fcom_ref": "PRO-ABN-ABN-RST, QRH 02.01A",
+      "objectives": [
+        "These are computer reset switches, not circuit breakers.",
+        "The first page of the reset sections (FCOM and QRH) explains the procedures.",
+        "When instructed by an ECAM or paper QRH procedure, accomplish a reset as directed.",
+        "In all other circumstances check the QRH table to see if a reset is allowed; maintenance must be consulted prior to resetting in that case.",
+        "Some system Pbs are also resets (noted by /R).",
+        "The MCDU and A/SKID & N/W STRG (BSCU) switches are resets.",
+        "There are only 5 circuit breakers in the cockpit: 3 on the cockpit door frame, 1 under each pilot seat on the pedestal."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Only 5 circuit breakers in the cockpit (3 on door frame, 1 under each pilot seat)",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-03",
+      "panel": "ADIRS",
+      "fcom_ref": "DSC-34-10-10",
+      "objectives": [
+        "Rotary switch: NAV for normal operations; ATT provides only attitude and heading (heading must be updated every 10 minutes through the MCDU); OFF shuts off the entire ADIRU (both IR and ADR).",
+        "The IR and ADR can also be turned off separately using their associated Pbs.",
+        "Two types of IR fault (DSC-34-10-10-20): flashing IR fault means attitude and heading may be recovered in ATT mode; solid IR fault means the IR has failed.",
+        "Two types of alignment (DSC-22-20-20-40, PRO-NOR-SUP-NAV): quick alignment only clears the groundspeed, 30 second duration, used when a full alignment is not required; full alignment clears groundspeed and drift, captures present position, 7-10 minute duration.",
+        "When leaving the aircraft the ADIRS are not turned off; they provide fuel system information to calculate fuel density during fueling. An alignment during preflight is normal procedure, even while fueling.",
+        "IRS-only navigation (no GPS) in RNP airspace: flight time outside radio navaid coverage must be less than 6.2 hours from IRS ground alignment, or 5.7 hours from the last FM position update (PRO-SPO-51, OpSpecs B036-1).",
+        "When turning the ADIRS on, the ON BAT light illuminates momentarily as an internal power check using the aircraft batteries.",
+        "If the ADIRS are on aircraft battery power, a horn sounds in the nose wheel well; it is the same horn as the APU fire horn.",
+        "GPIRS position (DSC-22-20-20-10): each FMGEC averages the 3 IRS positions (Mix IRS position, with a dramatically different IRS factored in less), compares Mix IRS with the GPIRS position, and constantly memorizes the difference (the bias). If radio or GPIRS data is lost, the system adjusts the Mix IRS position using the bias until data is restored."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "ATT mode heading must be updated every 10 minutes via MCDU",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Quick alignment: 30 second duration, clears groundspeed only",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Full alignment: 7-10 minute duration",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "IRS-only RNP: less than 6.2 hours from IRS ground alignment",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L1: verified verbatim in current PRO-SPO-51 extract (PRC)"
+        },
+        {
+          "claim": "IRS-only RNP: less than 5.7 hours from last FM position update",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L1: verified verbatim in current PRO-SPO-51 extract (PRC)"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-04",
+      "panel": "APU Fire Panel",
+      "fcom_ref": "DSC-26-20-20",
+      "objectives": [
+        "The ECB (Electronic Control Box) controls the automatic functions of the APU.",
+        "For an APU fire on the ground, shutdown and fire extinguishing occur automatically; airborne they do not.",
+        "There is 1 Halon bottle.",
+        "There are 2 gas filled loops; heated gas expands and sets off a sensor at a predetermined level.",
+        "A warning is issued when both loops detect a fire, one loop detects a fire and the other is inoperative, or both loops break within 5 seconds of each other.",
+        "If the fire goes out, the warnings stop.",
+        "APU FIRE Pb pushed: shuts down APU, silences CRC, arms squib, closes LP fuel valve and shuts off APU fuel pumps (FWD and AFT), deactivates the APU generator, closes the APU bleed valve and crossbleed valve.",
+        "APU fire test Pb pushed: APU FIRE Pb light, AGENT SQUIB and DISCH Pb lights, 2 Master Warning lights, CRC, E/WD APU FIRE warning message; total 4 red lights/messages, 1 amber light, 1 white light, plus CRC."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "1 Halon bottle for the APU",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "2 gas filled fire detection loops",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Warning if both loops break within 5 seconds of each other",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "APU fire test totals: 4 red lights/messages, 1 amber light, 1 white light, plus CRC",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-05",
+      "panel": "TURB DAMP",
+      "fcom_ref": "DSC-27-20-20-60",
+      "objectives": [
+        "Controlled by the PRIMs; dampens structural modes induced by atmospheric turbulence.",
+        "Can be turned off if it is considered not to be helping comfort.",
+        "Active parameters: in flight within the normal flight envelope, Normal Law active or A/P engaged, airspeed greater than 200 kts."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "TURB DAMP active only above 200 kts airspeed",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-06",
+      "panel": "Flight Control Computers",
+      "fcom_ref": "DSC-27-10-10",
+      "objectives": [
+        "3 PRIMs, used for Normal, Alternate, and Direct Laws.",
+        "2 SECs, used for Direct Law if no PRIMs are working.",
+        "All FCC Pbs are reset switches.",
+        "Only 1 computer of any type is needed to perform a safe landing."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "3 PRIMs and 2 SECs",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Only 1 flight control computer of any type needed for a safe landing",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-07",
+      "panel": "INR TANK SPLIT",
+      "fcom_ref": "DSC-28-10-20, DSC-28-20",
+      "objectives": [
+        "These pushbuttons close a normally-open valve in each inner tank, closing the connection between the 2 parts of the inner tank to protect a portion of the fuel in case of a fuel leak; all fuel remains accessible via the main and standby pumps.",
+        "Added after initial design, so they are not on the main fuel panel and are not monitored by ECAM.",
+        "Only used when directed by ECAM.",
+        "Switch lighting: amber ON while the valve is closing, blue SHUT when shut; once the tank is split, both ON and SHUT are illuminated."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-08",
+      "panel": "Fuel Jettison",
+      "fcom_ref": "DSC-28-10-120, QRH 19.02A",
+      "objectives": [
+        "The jettison rate is 2200 lbs/min plus fuel burn.",
+        "When the QRH procedures have been accomplished: all fuel pumps turn on, the crossfeed valve opens, the jettison valves open, fuel transfers from trim tank to center tank and outer tanks to inner tanks, and fuel is jettisoned from both the inner tanks and center tank simultaneously.",
+        "Jettison stops when: the crew stops it using the QRH procedure, the fuel level entered on the MCDU FUEL PRED page is reached, the combined inner tank quantity reaches 22,000 lbs, or both inner tank low level sensors on one side go dry."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Jettison rate 2200 lbs/min plus fuel burn",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L25: rate not found in QRH 19.02A or AFM text; DSC-28 not in local slice"
+        },
+        {
+          "claim": "Jettison auto-stops at 22,000 lbs combined inner tank fuel",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L26: not in local sources"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-09",
+      "panel": "EVAC",
+      "fcom_ref": "DSC-23-40-10",
+      "objectives": [
+        "Activates the Evacuation Alert Audio; not used per HAL procedure.",
+        "During preflight, verify the switch is in the CAPT position so the flight attendants cannot activate the alert audio; there is also a Pb on the forward CIDS panel."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-10",
+      "panel": "EMER GEN TEST",
+      "fcom_ref": "DSC-24-20",
+      "objectives": [
+        "This is a maintenance function only."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-11",
+      "panel": "EMER ELEC PWR",
+      "fcom_ref": "DSC-24-10-30-30",
+      "objectives": [
+        "The panel is labeled EMER ELEC PWR, referring to the Emergency Generator; a summary is in the QRH for EMER ELEC CONFIG (aircraft on the Emergency Generator with many electrical items shed).",
+        "The Emergency Generator is powered by the green hydraulic system two ways: Big Green (one or both engine driven pumps power the green system) or Little Green (RAT only; depending on airspeed the RAT hydraulic flow is between 15% and 45% of an engine driven pump's flow capability).",
+        "Automatic EMER ELEC CONFIG on loss of AC Bus 1 and AC Bus 2 (both engine generators trip offline): Big Green powers the Emergency Generator; 4 busses remain (AC ESS, AC ESS SHED, DC ESS, DC ESS SHED); displays remaining are Captain's PFD, Captain's ND, and E/WD.",
+        "Automatic EMER ELEC CONFIG on loss of both engines: Little Green powers the Emergency Generator; 2 busses remain (AC ESS, DC ESS); displays remaining are Captain's PFD and E/WD.",
+        "The Emergency Generator can be manually turned on; once on, it cannot be turned off.",
+        "If powered by the RAT, the Emergency Generator disconnects when the slats are extended; it can be reactivated with the MAN ON Pb after the slats are retracted.",
+        "Below 140 kts the RAT stops being effective; batteries are the only power from then on."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "RAT hydraulic flow is 15% to 45% of an engine driven pump's capability",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L31: DSC-29 not in local slice"
+        },
+        {
+          "claim": "RAT stops being effective below 140 kts",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L51: AFM minimum RAT speed 140 kt, verified"
+        },
+        {
+          "claim": "Big Green EMER ELEC CONFIG: 4 busses remain powered",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Little Green EMER ELEC CONFIG: 2 busses remain powered",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-12",
+      "panel": "LAND RECOVERY",
+      "fcom_ref": "DSC-24-20",
+      "objectives": [
+        "When the aircraft enters EMER ELEC CONFIG, the Land Recovery AC and DC busses shed; they contain systems required for landing but not cruise, and remain shed even if normal power is restored.",
+        "The Land Recovery Pb recovers those busses, restoring systems required for landing.",
+        "If Big Green powers the Emergency Generator, recovery restores: LGCIU 1, SFCC 1, BSCU CH 1, LH windshield heat, LH landing light.",
+        "If Little Green powers the Emergency Generator, recovery restores: LGCIU 1, SFCC 1 (slat channel only)."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-13",
+      "panel": "GPWS",
+      "fcom_ref": "DSC-34-20-40-10",
+      "objectives": [
+        "SYS Off inhibits basic GPWS modes 1-5; it does not affect the terrain function.",
+        "TERR uses database terrain information, operates independently of basic modes 1-5; select off to inhibit terrain data (NOTAM, or runway/airport not in database).",
+        "G/S Mode: turn off only due to a failure (glideslope signal unreliable).",
+        "Flap Mode: turn off only during failures requiring landing with Flaps 0-2; not needed single engine since FLAPS 3 can be selected on the MCDU.",
+        "On the forward panel, the PULL UP/GPWS Pb temporarily inhibits the glideslope Mode 5 alert."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-14",
+      "panel": "RCDR",
+      "fcom_ref": "DSC-31-60-10, DSC-21-10-40",
+      "objectives": [
+        "The recorders start automatically: on the ground for 5 minutes after power up, on the ground after first engine start, and in flight.",
+        "The RCDR GND CTL Pb energizes the recorders during the preflight flow."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Recorders run for 5 minutes after power up on the ground",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L43: DSC-31 not in local slice"
+        }
+      ],
+      "maps_to": "flows"
+    },
+    {
+      "id": "oral-15",
+      "panel": "Oxygen",
+      "fcom_ref": "DSC-35-20-20, QRH 22.02A",
+      "objectives": [
+        "During preflight there should be no half amber box around the CKPT OXY value on the DOOR/OXY page; if there is, check the limitation chart in LIM-OXY.",
+        "MASK MAN ON manually drops passenger O2 masks; part of the Emergency Descent checklist.",
+        "SYS ON light indicates the passenger O2 mask drop command was sent.",
+        "CREW SUPPLY controls the valve between the masks and the oxygen cylinder.",
+        "During the mask preflight check, if O2 pressure drops rapidly to below 800 psi, contact maintenance; the mechanical valve on the O2 tank may not be fully open (PRO-NOR-SOP-06)."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Rapid O2 pressure drop below 800 psi during mask check requires maintenance",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L42: PRO-NOR-SOP-06 not in local slice; note current QRH advisory gates differ (CKPT OXY pulses green below 600 psi, amber below 300 psi) - verify SOP-06 at next FCOM pass"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-16",
+      "panel": "CALLS",
+      "fcom_ref": "DSC-23-20-20, DSC 23-20-30",
+      "objectives": [
+        "ALL: CALL ALL CAPT appears on all FA panels.",
+        "MECH: horn in nose wheel well and light on the external power panel; the light remains illuminated until reset by ground crew on the panel.",
+        "CAB REST calls the Lower Crew Rest.",
+        "FWD/MID/EXIT/AFT call the associated FA station.",
+        "PURS makes a distinct chime throughout the cabin for only the first flight attendant to answer.",
+        "EMER: CALL PRIO CAPT appears on all FA panels with a red light and a triple high/low chime."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-17",
+      "panel": "RAIN RPLNT",
+      "fcom_ref": "DSC-30-60-20",
+      "objectives": [
+        "Each button push distributes a measured quantity of fluid to the associated side.",
+        "Do not use on a dry windshield."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-18",
+      "panel": "WIPERS",
+      "fcom_ref": "LIM-AG-SPD",
+      "objectives": [
+        "Maximum operating speed is 230 kts."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Wipers maximum operating speed 230 kts",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L12: matches limitations_v3 item 151"
+        }
+      ],
+      "maps_to": "limitations"
+    },
+    {
+      "id": "oral-19",
+      "panel": "LIGHTS",
+      "fcom_ref": "DSC-33-40-10",
+      "objectives": [
+        "Fasten Seat Belt AUTO position: on when either the gear is extended or the flaps/slats are not at 0.",
+        "No Smoking signs are hardwired always on; with the switch ON the EXIT signs are also on (if left ON after all power is shut off, the EXIT sign internal batteries would deplete); turned off in the Securing checklist.",
+        "The No Smoking switch is used to signal the flight attendants passing through 10,000 ft."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "No Smoking switch signals flight attendants passing 10,000 ft",
+          "status": "UNVERIFIED",
+          "note": "HAL procedural trigger; verify against current SOP"
+        }
+      ],
+      "maps_to": "flows"
+    },
+    {
+      "id": "oral-20",
+      "panel": "APU",
+      "fcom_ref": "DSC-49-20, LIM-APU",
+      "objectives": [
+        "If LOW OIL LEVEL is displayed on the APU SD page prior to APU start on the ground: advise maintenance; the APU can operate for 15 hours after this.",
+        "Starter limits: 3 starts then a 60 minute cooldown.",
+        "APU bleed is not permitted for wing anti-ice.",
+        "Operating envelope: start limit 41,450 ft; electrical use 41,450 ft; APU start using batteries 25,000 ft; electrical use plus APU bleed for 1 pack 22,500 ft; engine start using APU bleed 20,000 ft; electrical use plus APU bleed for 2 packs 17,500 ft.",
+        "Two locations to shut down the APU from outside the aircraft: refueling panel and external power panel.",
+        "The Electronic Control Box (ECB) controls all APU logic.",
+        "APU MASTER switch FAULT means an automatic shutdown occurred; the switch is a reset (resets the ECB). Selecting ON calls the APU page on the SD and opens the APU intake flap.",
+        "APU START switch engages the starter when the air intake is fully open with the MASTER switch ON; AVAIL means available for electric and/or air.",
+        "The APU is fed through the trim tank transfer line from 3 places depending on phase of flight: left inner collector tank, trim pipe, trim tank; fuel must be maintained in the trim tank transfer line for the APU to function.",
+        "Shutting down via MASTER switch off: the AVAIL light remains on during cooldown, which can take up to 2 minutes.",
+        "The ECB commands automatic shutdown: on the ground for multiple reasons; in the air only for overspeed and certain critical ECB failures."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "APU may operate 15 hours after LOW OIL LEVEL advisory",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L9: QRH 01.01A ECAM advisory, verified (if no oil leak)"
+        },
+        {
+          "claim": "APU starter: 3 starts then 60 minute cooldown",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L2: matches limitations_v3 item 0"
+        },
+        {
+          "claim": "APU start / electrical use limit 41,450 ft",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L3: matches limitations_v3 item 33 and AFM NORM-49"
+        },
+        {
+          "claim": "APU start using batteries 25,000 ft",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L4: AFM NORM-49 verified (distinct from the JET B/JP4 25,000 ft item)"
+        },
+        {
+          "claim": "Electrical use plus APU bleed for 1 pack 22,500 ft",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L5: matches limitations_v3 item 7"
+        },
+        {
+          "claim": "Engine start using APU bleed 20,000 ft",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L6: matches limitations_v3 item 6"
+        },
+        {
+          "claim": "Electrical use plus APU bleed for 2 packs 17,500 ft",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L7: matches limitations_v3 item 8"
+        },
+        {
+          "claim": "APU cooldown after MASTER off can take up to 2 minutes",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L39: DSC-49 not in local slice"
+        }
+      ],
+      "maps_to": "limitations"
+    },
+    {
+      "id": "oral-21",
+      "panel": "EMER EXIT LIGHTS",
+      "fcom_ref": "DSC-33-30-20, DSC-33-40-10",
+      "objectives": [
+        "When armed, the emergency exit lights come on when: normal aircraft electrical power fails; DC ESS Bus fails; AC BUS 1 fails (only the overhead emergency lights come on for minimum lighting); or excessive cabin altitude (over 9,550 ft), which turns on the EXIT signs."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Emergency exit lights/EXIT signs activate at cabin altitude over 9,550 ft",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L35: DSC-33 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-22",
+      "panel": "Cabin Pressurization",
+      "fcom_ref": "DSC-21-20-10, DSC-21-20-40",
+      "objectives": [
+        "Ditching Pb selected on (with Press Mode Selector in AUTO): Outflow valves close, Cargo isolation valves close, Ram air inlet closes, Avionics ventilation overboard valve closes, Pack flow control valves close (O-C-R-A-P).",
+        "The Ditching Pb has two normal uses: ditching, and deicing per FCOM procedure.",
+        "AUTO mode: normal operation; 2 CPCs (Cabin Pressure Controllers); 2 outflow valves each with 2 motors for the AUTO modes; uses FMGC-provided landing elevation for the entered destination.",
+        "SEMI-AUTOMATIC: used at an airport not in the database; set destination elevation with the LDG ELEV selector; uses the same CPCs and motors as AUTO.",
+        "MANUAL: set MODE SEL to Manual and use VALVE SEL and V/S CTL per ECAM procedure; target cabin altitudes are in the FCOM and on the STS page; each outflow valve has a third motor for manual use; each toggle of the V/S CTL equals about 150-200 fpm change."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "2 CPCs; 2 outflow valves with 2 motors each for AUTO, plus a third motor for MANUAL",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Each V/S CTL toggle equals about 150-200 fpm change",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L36: DSC-21 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-23",
+      "panel": "ANTI ICE",
+      "fcom_ref": "DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+      "objectives": [
+        "PROBE/WINDOW HEAT: normally AUTO; probes/windows automatically heated in flight and on the ground with at least one engine running (TAT probe not heated on the ground); ON activates the heat (except TAT probes on the ground); low heat on the ground, high heat in flight.",
+        "ENG ANTI ICE: used as an anti-ice system, selected on when expecting potential icing; valves fail open on electrical failure; no limitations on its use; when on, EPR limit is reduced and EPR idle increased; ignition does not automatically come on unless there was an EIU failure; in climb or cruise with SAT below -40 C, engine anti-ice is not required due to the cold temperature.",
+        "WING ANTI ICE: used as a deice system, only turned on when instructed by ECAM or with visible ice buildup; only the outer 4 slats are heated; because hot air can damage the wing composite without cooling airflow, the valves fail closed on electrical failure, and ground activation gives a 30 second test then the valves close until after liftoff; when on, EPR limit is reduced and EPR idle increased."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Engine anti-ice not required in climb/cruise when SAT is below -40 C",
+          "status": "UNVERIFIED",
+          "note": "Cross-check: DSC-30/SUP-ADVWXR not adjudicated locally"
+        },
+        {
+          "claim": "Only the outer 4 slats are heated by wing anti-ice",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Wing anti-ice on the ground runs a 30 second test, then valves close until liftoff",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-24",
+      "panel": "AIR",
+      "fcom_ref": "DSC-21-10-10, DSC-36-10-30",
+      "objectives": [
+        "Selecting the APU BLD Pb: APU bleed opens, crossbleed valve opens, engine bleed valves close.",
+        "APU bleed left on in climb automatically closes passing 25,000 ft and reopens after descending through 23,000 ft.",
+        "With crossbleed in AUTO, engines on and APU bleed off, the normal crossbleed valve position is closed; it only moves automatically when the APU bleed valve opens or closes; manual operation only when directed by ECAM.",
+        "Packs are controlled by pack controllers (DSC-21-10-30), 1 per pack; if a pack controller fails, pack outlet temperature is regulated between 48 F and 59 F.",
+        "The zone controller (one controller, two channels) regulates aircraft temperature; if it fails, temperature is regulated to 68 F.",
+        "Pack flow selector, original system (N381HA, 388HA): LOW for light loads (80% flow; under 60% of economy seats full, no more than 200 passengers all classes), NORM 100%, HIGH 120% for abnormally hot or humid conditions. Revised system (all other aircraft): LOW and HIGH the same, NORM replaced by AUTO (passenger count entered on MCDU INIT A page, airflow adjusted to entered load). Both versions go to 125% flow with APU bleed on or single pack operations.",
+        "HOT AIR system: air tapped upstream of the packs regulates cockpit, cabin, and FWD cargo temperatures via trim air valves; forward cargo is heated by Hot Air 1 and cooled by Pack 2; the cockpit is heated primarily by Hot Air 2.",
+        "All air conditioning valves are electrically controlled and pneumatically operated.",
+        "The flight attendant CIDS panel has a temperature control range of 5.4 F, centered on the cockpit Cabin temperature setting.",
+        "RAM AIR scoop on the lower left fuselage (DSC-21-10-50): can provide cabin air after dual pack failure; used for the QRH Smoke/Fumes Removal checklist; the RAM AIR Pb functions unless the Ditching Pb is selected; the RAM AIR system opens if delta-P is less than 1 psi."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "APU bleed auto-closes climbing through 25,000 ft, reopens descending through 23,000 ft",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L38: DSC-36 not in local slice"
+        },
+        {
+          "claim": "Pack controller failed: outlet temperature regulated between 48 F and 59 F",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        },
+        {
+          "claim": "Zone controller failed: temperature regulated to 68 F",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        },
+        {
+          "claim": "LOW pack flow 80%: under 60% economy seats full, max 200 passengers",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        },
+        {
+          "claim": "HIGH pack flow 120%; 125% flow with APU bleed on or single pack",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        },
+        {
+          "claim": "CIDS panel temperature control range 5.4 F",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        },
+        {
+          "claim": "RAM AIR opens if delta-P is less than 1 psi",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L37: DSC-21 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-25",
+      "panel": "ELECTRICAL",
+      "fcom_ref": "DSC-24-10-30-10",
+      "objectives": [
+        "Power hierarchy: AC BUS 1 is fed by Generator 1, APU generator, External B, External A, Generator 2 in that order; AC BUS 2 by Generator 2, External A, APU generator, External B, Generator 1.",
+        "External A AVAIL: the GND SRV bus is powered regardless of switch position; selecting the Pb ON connects external power to the rest of the system per the hierarchy.",
+        "External B AVAIL: selecting the Pb displays AUTO; External B connects provided the APU generator is not online, and connects/disconnects automatically based on APU generator status.",
+        "The AC ESS bus is normally powered by AC BUS 1; if AC BUS 1 is lost, AC BUS 2 powers the AC ESS bus via the ESS XFEED (ALTN on the ESS XFEED Pb selects AC BUS 2 as the source).",
+        "Battery minimum voltages: at initial power up battery voltage should be above 25.5 V (50% charge); if lower, charge off external power for 20 minutes and recheck. An APU battery below 23.5 V risks an aborted battery-only APU start.",
+        "Checking battery voltages: BAT 1, BAT 2, APU BAT Pbs off; read the voltage indicator window, switching between batteries with the selector (leave it in APU BAT when complete); then Pbs back on. If the main batteries were low before a battery-power APU start, APU fire protection may not be available.",
+        "Battery charge limiter preflight check: on the ELEC DC page, turn the three batteries off then on; the batteries should show a draw under 60 amps within 10 seconds, verifying the charge limiter works.",
+        "The aircraft can operate on batteries only for a minimum of 30 minutes.",
+        "GALLEY Pb AUTO (lights out) means it automatically sheds in case of failures; the COMMERCIAL Pb controls everything aft of the cockpit door (galley, IFE, cargo loading, etc.).",
+        "IDG: when disconnecting, do not hold for more than 3 seconds (disconnect mechanism could be damaged); the IDG cannot be reconnected in flight.",
+        "Items connected to the Hot Battery bus on the ground, powered at all times: clock, battery voltage indication window (DSC-31-55-10)."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Battery voltage above 25.5 V at power up equals 50% charge; if lower, charge 20 minutes off external power",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L33: PRO-NOR-SOP-04/DSC-24 not in local slice"
+        },
+        {
+          "claim": "APU battery below 23.5 V risks aborted battery-only APU start",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L33: not in local slice"
+        },
+        {
+          "claim": "Battery charge limiter check: draw under 60 amps within 10 seconds",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L33: not in local slice"
+        },
+        {
+          "claim": "Batteries-only operation: minimum 30 minutes",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L32: certification design value; DSC-24 not in local slice"
+        },
+        {
+          "claim": "IDG disconnect: do not hold more than 3 seconds",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L34: DSC-24 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-26",
+      "panel": "FUEL",
+      "fcom_ref": "DSC-28-10-30",
+      "objectives": [
+        "Controlled by 2 Fuel Control and Monitoring Computers (FCMC).",
+        "Approximate tank capacity (DSC-28-10-20): outer 6,500 each, inner 72,000 each, tail 11,000, center 72,000, total 240,000 (lbs).",
+        "Tank filling order (DSC-28-10-110): inners and outers first; around 80,500 fuel starts to go into trim; around 166,500 fuel starts to go into center.",
+        "Fuel feed: engines draw from the inner tank collector cells; the remaining tanks feed the inner tanks in order CENTER to INNER, TRIM to INNER, OUTER to INNER.",
+        "Trim tank transfers (DSC-28-10-90): the tail trim tank is used for CG control; in cruise CG moves aft for optimum performance (aft CG on takeoff reduces stability); in climb the FCMCs start an aft transfer passing FL 255; in cruise fuel transfers forward as needed to maintain inner tank levels and optimum CG; in descent the FCMCs begin a forward transfer of remaining fuel passing FL 245 or 35 minutes or less from destination.",
+        "TTANK MODE: selecting FWD manually transfers fuel from trim to center tank; it is the only transfer Pb with a direction.",
+        "TTANK Feed switch: AUTO transfers fuel automatically, with the final forward transfer stopped with a small amount left in the trim tank to keep the trim tank transfer line fueled for APU operation; OPEN gravity feeds to the center tank and drains the transfer line (the APU will not operate if drained); ISOL stops all transfers.",
+        "CTR TANK XFR performs a manual center-to-inner transfer; if the center tank pumps are inoperative, 33,000 lbs of fuel are unusable due to gravity and wing dihedral (PRO-ABN-FUEL).",
+        "OUTR TK XFR opens valves for a gravity transfer from outer to inner tanks.",
+        "The engines can suction feed fuel from the collector tanks.",
+        "For all manual transfers use ECAM/QRH procedures: overfill protections are lost, tanks could overfill and fuel could be lost overboard.",
+        "WING XFEED opens automatically during a fuel jettison and during EMER ELEC CONFIG.",
+        "Fuel balance limitations: start checking the limitations chart around a 3,200 lbs imbalance; an advisory comes on at 6,600 lbs; in exceptional conditions the aircraft can be flown and landed in any fuel imbalance scenario."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Tank capacities (lbs): outer 6,500 x2, inner 72,000 x2, tail 11,000, center 72,000, total 240,000",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L28: DSC-28-10-20 not in local slice"
+        },
+        {
+          "claim": "Filling: trim begins around 80,500 lbs total, center around 166,500 lbs",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L29: DSC-28-10-110 not in local slice"
+        },
+        {
+          "claim": "Trim transfer aft begins passing FL 255 in climb",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L30: DSC-28-10-90 not in local slice"
+        },
+        {
+          "claim": "Trim forward transfer begins passing FL 245 or 35 minutes from destination",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L30: DSC-28-10-90 not in local slice"
+        },
+        {
+          "claim": "Center tank pumps inoperative: 33,000 lbs unusable",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L27: not found locally; QRH gravity-feed summary shows a different figure (4,400 lbs unusable per inner tank) - flag for FCOM PRO-ABN-FUEL check"
+        },
+        {
+          "claim": "Start checking the imbalance chart around 3,200 lbs",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L17: rule of thumb keyed to the outer-tank full limit 1,480 kg (3,261 lb), consistent with limitations_v3 item 108"
+        },
+        {
+          "claim": "Fuel imbalance advisory at 6,600 lbs",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L16: QRH 01.01A advisory at 3,000 kg (6,614 lb); the doc's 6,600 is a rounding"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-27",
+      "panel": "HYDRAULICS",
+      "fcom_ref": "DSC-29-10-10",
+      "objectives": [
+        "1 Hydraulic System Monitoring Unit (HSMU) controls hydraulic system operation; a diagram of the architecture is in the QRH (OPS.08A).",
+        "3 independent systems: Green, Blue, Yellow; fluid cannot be transferred between systems.",
+        "Normal hydraulic pressure is 3000 psi; 2500 psi for the RAT.",
+        "Green is the main system: powered by 2 engine driven pumps plus the RAT; equipped with a priority valve that in low pressure cuts off high-draw items (emergency generator, nosewheel steering, landing gear) to prioritize flight controls.",
+        "On the SD HYD page the green reservoir has a white tick mark signifying fluid above 17 L / 4.5 USG; below that the tick becomes two amber bars.",
+        "Notable Blue system items: alternate brakes, parking brake, brake accumulator. The Yellow system has the cargo doors. All three systems have parts of the flight controls.",
+        "All systems have an engine driven pump and an electric pump (Green has 2 engine driven pumps). Electric pumps are for temporary use only and cannot replace engine driven pumps; each has two Pbs (top switches AUTO/STBY and ON; bottom turns the pump off, only when directed by ECAM/QRH).",
+        "Green electric pump comes on when either engine has failed, or the gear is selected up (runs 25 seconds to ensure retraction in the proper time).",
+        "Blue electric pump comes on when Engine 1 has failed and PRIM 1 or PRIM 3 is also inoperative, assisting rudder authority by keeping at least 2 actuators operating the rudder.",
+        "Yellow electric pump comes on when Engine 2 has failed and the flap lever is not at 0 (ensures flap retraction; yields to the green electric pump during gear retraction; runs until engine shutdown); it also runs during cargo door operation (Blue ON light illuminates automatically and the Yellow leak measurement valve turns on).",
+        "RAT (DSC-29-10-20): redundancy for the green system; backup hydraulic power to flight controls and/or the emergency generator; auto-deploys when Engines 1 and 2 fail, or Green and Blue fluid low level, or Green and Yellow fluid low level; can be manually deployed; only maintenance can stow it on the ground; minimum RAT speed is 140 kts."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Normal hydraulic pressure 3000 psi; RAT 2500 psi",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L31: DSC-29 not in local slice"
+        },
+        {
+          "claim": "Green reservoir white tick: fluid above 17 L / 4.5 USG",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L31: DSC-29 not in local slice"
+        },
+        {
+          "claim": "Green electric pump runs 25 seconds after gear selected up",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L31: DSC-29 not in local slice"
+        },
+        {
+          "claim": "Minimum RAT speed 140 kts",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L13: AFM verified, multiple occurrences"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-28",
+      "panel": "FIRE",
+      "fcom_ref": "DSC-26-20-10",
+      "objectives": [
+        "The engines use the same gas detection loops as the APU: 2 gas filled loops; a warning is issued when both loops detect a fire, one detects and the other is inoperative, or both loops break within 5 seconds of each other; if the fire goes out the warnings stop.",
+        "There are 2 Halon bottles per engine.",
+        "ENG FIRE Pb pushed (DSC-26-20-20): silences the CRC, removes power from the FADEC, arms the squibs, closes the hydraulic fire shutoff valve, closes the low-pressure fuel valve, deactivates the IDG, closes the pack flow control valve, closes the engine bleed valve.",
+        "Engine fire test (DSC-26-20-20): CRC sounds, Master Warning lights flash, engine fire Pbs light, SQUIB and DISCH lights, fire lights by the engine master switches, ENG 1 FIRE on the left of ECAM with checklist and ENG 2 FIRE on the right as title only; a total of 12 lights (including 2 ECAM messages) plus the CRC."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "2 Halon bottles per engine",
+          "status": "UNVERIFIED"
+        },
+        {
+          "claim": "Engine fire warning if both loops break within 5 seconds of each other",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L41: DSC-26 not in local slice"
+        },
+        {
+          "claim": "Engine fire test: total of 12 lights (including 2 ECAM messages) plus CRC",
+          "status": "UNVERIFIED"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-29",
+      "panel": "MAINTENANCE PANEL",
+      "fcom_ref": "DSC-70-20, DSC-29-20",
+      "objectives": [
+        "FADEC stands for Full Authority Digital Engine Control; 2 Pbs provide power to the FADECs on the ground.",
+        "Selecting IGN/START on the ENG START selector also powers the FADECs (pack valves close and reopen when back to NORM); that method is only used for engine start.",
+        "During preflight the FADECs are energized to check engine oil level: must have 15 qts, or 6 qts plus estimated consumption (0.7 qt/h), whichever is higher (PRO-LIM-OIL).",
+        "The FADECs have their own magnetic alternators and do not rely on aircraft power to continue operating.",
+        "Leak measurement valves isolate the flight controls from hydraulic pressure; the yellow valve operates automatically when the yellow hydraulic pump activates during cargo door operation."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Engine oil: 15 qts, or 6 qts plus estimated consumption (0.7 qt/h), whichever is higher",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L10: matches limitations_v3 item 82 and FCOM_LIM"
+        }
+      ],
+      "maps_to": "limitations"
+    },
+    {
+      "id": "oral-30",
+      "panel": "CVR Panel",
+      "fcom_ref": "DSC-23-10-40",
+      "objectives": [
+        "One or more green lights must illuminate during a test."
+      ],
+      "numeric_claims": [],
+      "maps_to": "flows"
+    },
+    {
+      "id": "oral-31",
+      "panel": "ACP 3",
+      "fcom_ref": "PRO-NOR-SOP-06, DSC-23-10-50",
+      "objectives": [
+        "During preflight, set the PA reception knob to the 12 o'clock position so the CVR records PA transmissions.",
+        "If ACP 1 or 2 fails, ACP 3 can replace it using the AUDIO SWITCHING knob on the switching panel."
+      ],
+      "numeric_claims": [],
+      "maps_to": "flows"
+    },
+    {
+      "id": "oral-32",
+      "panel": "CARGO AIR COND",
+      "fcom_ref": "DSC-21-40-20, PRO-NOR-SOP-04",
+      "objectives": [
+        "Air for the cargo compartments is circulated cabin air.",
+        "Panel layout (DSC-21-40-30): top row ventilation, middle row cooling, bottom row heating.",
+        "Selecting a compartment's isolation valve Pb off closes the inlet and outlet isolation valves and stops the extract fan.",
+        "With the isolation valve Pbs ON, they automatically close when cargo smoke is detected or the Ditching Pb is selected ON.",
+        "Forward cargo: cooled by Pack 2, heated by Hot Air 1 ('heated from the left, cooled from the right'); the temperature selector below the cargo cooling selector controls the trim air valve on the Hot Air 1 system.",
+        "The aft cargo compartment cannot be heated or cooled.",
+        "The bulk compartment is heated by an electric heater cycling on/off around the set level; if live animals are carried in bulk, set a comfortable temperature.",
+        "The FWD CARGO COOLING selector is OFF unless plants, livestock (pets go in bulk), or foods are carried."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-33",
+      "panel": "CARGO SMOKE",
+      "fcom_ref": "DSC-26-50-10",
+      "objectives": [
+        "The cargo smoke detectors are optical, so it is not possible to tell if the fire has been extinguished (remaining particulates and Halon in the compartment).",
+        "There are 2 Halon bottles: both discharge into the selected compartment; the first bottle discharges within 60 seconds; the second releases through a restrictor valve and fully discharges in 260 minutes, for ETOPS requirements (195 minutes); the DISCH light does not illuminate until the bottle is fully empty.",
+        "The aft and bulk compartments share one Pb (Aft); the bottles discharge into both compartments.",
+        "The test button is a maintenance function only."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "First cargo fire bottle discharges within 60 seconds",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L41: DSC-26 not in local slice"
+        },
+        {
+          "claim": "Second cargo fire bottle fully discharges in 260 minutes",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L14: AFM verified ('time capability of the cargo fire suppression system is 260 min')"
+        },
+        {
+          "claim": "ETOPS requirement 195 minutes for cargo fire suppression",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L15: not found in AFM/QRH/FCTM/PRC/FCOM_LIM/FOM delta; needs FOM check"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-34",
+      "panel": "VENTILATION",
+      "fcom_ref": "DSC 21-30-20, DSC-26-30-10",
+      "objectives": [
+        "Avionics are cooled by air circulated by the extract fan: on the ground it exhausts via the OVBD extract valve; at first engine start the OVBD extract valve closes and the underfloor extract valve opens, moving air under the forward cargo compartment and out the forward outflow valve.",
+        "EXTRACT Pb to OVRD: the underfloor extract valve closes and the OVBD extract valve opens partially (a separate small portion of the door); done when following ECAM procedures, most likely Vent Extract Fault or Vent OVBD Valve Fault.",
+        "Avionics smoke detection uses optical particle detectors."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-35",
+      "panel": "MAN START",
+      "fcom_ref": "DSC-70-80-30, PRO-NOR-SUP-ENG",
+      "objectives": [
+        "Provides an alternate method of engine start; follow the Supplementary Procedures.",
+        "There are no start fault protections in a manual start; the pilots must manually abort a start if there is an issue."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-36",
+      "panel": "N1 Mode",
+      "fcom_ref": "DSC 70-35-20",
+      "objectives": [
+        "When EPR cannot be computed by the FADEC, N1 Rated or N1 Degraded mode is triggered, depending on which FADEC inputs failed.",
+        "If only one engine is affected, the N1 Mode Pbs allow both engines to be selected to N1 mode to maintain similar thrust settings.",
+        "When N1 mode is active: engine control uses N1 not EPR; A/THR is lost but can be regained if only one engine is in degraded mode; Alpha Floor remains available unless both engines are in degraded mode; flex takeoffs are prohibited when dispatched in N1 mode.",
+        "N1 Rated Mode: FADEC displays N1 limits on the upper right of the E/WD; normal engine protections still provided.",
+        "N1 Degraded Mode: no limits on the E/WD; the FADEC computes an N1 red line representing the full forward thrust lever position, beyond the actual N1 limit and possibly beyond EGT limits.",
+        "If one engine is in degraded mode, selecting the other engine's N1 Mode Pb should put it in rated mode; the displayed rated limits can be used for both engines.",
+        "When operating in degraded mode, use the N1 Mode Thrust Control chart in the FCOM (PER-THR-N1)."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-37",
+      "panel": "FMA",
+      "fcom_ref": "DSC-22-30-100",
+      "objectives": [
+        "Takeoff FMA: MAN FLEX __ | SRS | RWY | | A/THR; RWY appears only if there is an ILS for the runway; A/THR is blue (armed).",
+        "RNAV climb: THR CLB | CLB | NAV | | A/THR.",
+        "Vectored descent: THR IDLE | OP DES | HDG | | A/THR.",
+        "NAV descent: THR IDLE or THR DES | DES | NAV | | A/THR.",
+        "ILS approach: SPEED | GS | LOC | CAT3/DUAL | 1AP2.",
+        "CAT 3 DUAL is the highest landing capability of the aircraft; CAT 3 SINGLE is the highest when single engine.",
+        "Flight directors: 1 FD 2 is normal (both FDs on); 1 FD means FD 2 is not selected on; 1 FD 1 means FD 2 has failed.",
+        "SRS (Speed Reference System) uses vertical guidance to deliver a speed: normal takeoff V2 + 10; go around the highest of Vapp or current speed at go around; single engine the highest of V2 or airspeed at failure."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "SRS normal takeoff target V2 + 10",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L50: FCTM/AFM corroborate V2+10 kt"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-38",
+      "panel": "MODE REVERSIONS",
+      "fcom_ref": "DSC-22-30-75",
+      "objectives": [
+        "Mode reversions occur when the pilot asks the FMGEC to perform a task it cannot do; it reverts to a simpler mode to ensure a safe flight path, with a triple click aural ('Look Look Look') - something on the FMA has changed that will affect the flight path.",
+        "Managed climb (CLB and NAV) with HDG selected: CLB reverts to OP CLB.",
+        "Managed descent (DES and NAV) with HDG selected: DES reverts to V/S.",
+        "Climbing or descending with ALT* engaged and a different altitude selected: ALT* reverts to V/S.",
+        "Altitude set opposite the direction of flight in the FCU: the vertical mode reverts to V/S.",
+        "Overflying a route discontinuity: NAV reverts to HDG.",
+        "FDs on in a climb, pilot does not follow them and tries to level off: aircraft accelerates until Vmax, both FDs disengage, A/THR reverts to SPEED and reduces thrust to recover the target.",
+        "FDs on in a descent, same scenario: aircraft decelerates until Vls, both FDs disengage, A/THR reverts to SPEED and increases thrust to recover the target."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-39",
+      "panel": "LS Button",
+      "fcom_ref": "DSC-31-50",
+      "objectives": [
+        "Displays the localizer and glideslope scales on the PFD.",
+        "Only used for approaches utilizing a localizer: ILS, LOC, LDA.",
+        "Must be off for approaches not utilizing a localizer: RNAV, VOR, NDB."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-40",
+      "panel": "CHRONO",
+      "fcom_ref": "PRO-NOR-SOP-12, LIM-ENG",
+      "objectives": [
+        "The CHRONO is started at the start of the takeoff roll to monitor engine thrust limitations: 900 degrees for 5 minutes in normal operations, 900 degrees for 10 minutes if an engine has failed."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "EGT 900 C for 5 minutes normal / 10 minutes engine failed",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L11: matches limitations_v3 item 73; pairing corroborated by his limitations sheet EGT table"
+        }
+      ],
+      "maps_to": "limitations"
+    },
+    {
+      "id": "oral-41",
+      "panel": "A/THR",
+      "fcom_ref": "DSC-22-30-90",
+      "objectives": [
+        "There is 1 autothrust computer with 2 channels, one per FMGEC; switching channels is accomplished by switching autopilots.",
+        "Turning off A/THR in flight, standard method ('Match and Mash'): move the thrust levers to match the TLA on the EPR gauges to current thrust, then press the instinctive disconnect Pb; pressing and holding the instinctive disconnect Pb for 15 seconds removes the autothrust for the remainder of the flight, with no Alpha Floor protection.",
+        "Other methods: retard the thrust levers to idle; or press the A/THR Pb on the FCU (non-standard; results in a thrust lock condition until the thrust levers are moved manually).",
+        "Activating A/THR: on takeoff, Flex or TOGA arms it; at THR RED altitude LVR CLB flashes on the FMA and moving the levers to CLB activates it. In flight, pressing the A/THR Pb activates it; LVR CLB flashes until the levers are in the climb detent."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Holding the instinctive disconnect Pb 15 seconds removes A/THR for the remainder of the flight",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L46: DSC-22 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-42",
+      "panel": "SIDE STICK PRIORITY LIGHTS",
+      "fcom_ref": "DSC-27-20-30",
+      "objectives": [
+        "Only one pilot should make sidestick inputs at a time; simultaneous inputs are summed, with a 'Dual Input' audio warning and green CAPT and FO lights in the SIDE STICK PRIORITY lights.",
+        "To take control: press and hold the red Pb on the sidestick; the last pilot to press and hold has priority; the red arrow illuminates for the pilot no longer in control, with audio 'Priority Left' or 'Priority Right'.",
+        "To lock the other stick out for the remainder of the flight (incapacitation, malfunction): hold the red Pb more than 40 seconds; the deactivated stick can be reactivated by pushing its red Pb."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Hold the sidestick red Pb more than 40 seconds to lock out the other stick",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L44: DSC-27 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-43",
+      "panel": "AUTOLAND LIGHTS",
+      "fcom_ref": "DSC-22-30-30",
+      "objectives": [
+        "The autoland lights become active below 200 ft RA in LAND mode.",
+        "If the autoland lights begin flashing, go around."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Autoland lights active below 200 ft RA",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L45: DSC-22 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-44",
+      "panel": "AUTOBRAKES",
+      "fcom_ref": "DSC-32-30-10, PRO-NOR-SOP-16",
+      "objectives": [
+        "Automatic braking is activated based on ground spoiler deployment; on an RTO below 72 kts the autobrakes will not engage because the ground spoilers do not deploy until 72 kts.",
+        "Braking sequence LOW: gear touchdown and thrust levers idle, ground spoilers deploy, autobrakes activate 1 second after spoiler deployment. MED: gear touchdown and thrust levers idle, ground spoilers deploy, autobrakes activate.",
+        "During taxi, do not arm MAX until after the flight control check; the rising spoilers during the check could activate the autobrakes.",
+        "The DECEL light only means the aircraft is slowing at the programmed rate; the brakes may not actually be slowing it.",
+        "LOW is the normal landing setting; MED for short or contaminated runways; MAX only for takeoff."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "No autobrake engagement on RTO below 72 kts (ground spoilers do not deploy)",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L18: FCTM verified"
+        },
+        {
+          "claim": "Autobrakes LOW activate 1 second after ground spoiler deployment",
+          "status": "UNVERIFIED",
+          "note": "DSC-32 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-45",
+      "panel": "A/SKID and N/W STRG",
+      "fcom_ref": "DSC-32-30-20",
+      "objectives": [
+        "The switch is ON for normal operations.",
+        "When OFF: the brake system switches from the Green to the Blue hydraulic system, antiskid is deactivated, nosewheel steering is lost, and braking pressure is displayed on the triple indicator.",
+        "This switch is also a computer reset; check the QRH reset table on 02.02E.",
+        "Four methods of braking: normal brakes (Green), alternate brakes with A/SKID (Blue), alternate brakes without A/SKID (Blue), parking brake (Blue plus accumulator).",
+        "Parked with engines off, the aircraft is held by accumulator pressure; Engine 1 is normally started first since the Blue hydraulic pump is on that engine, recharging the accumulator and pressurizing the parking brake."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-46",
+      "panel": "TRIPLE INDICATOR",
+      "fcom_ref": "DSC-32-30-20, PRO-NOR-SOP-04",
+      "objectives": [
+        "Top scale: accumulator pressure; the amber scale is the forbidden range (must recharge the accumulator using the blue hydraulic system); pressure must be in the green band during preflight to ensure the parking brake will hold the aircraft.",
+        "Bottom scale: Blue system pressure delivered to the brakes; the green band is the normal braking range."
+      ],
+      "numeric_claims": [],
+      "maps_to": "flows"
+    },
+    {
+      "id": "oral-47",
+      "panel": "MCDU",
+      "fcom_ref": "DSC-22-10-40-10",
+      "objectives": [
+        "If an MCDU goes blank or locks up, it can be reset using the QRH reset table (02.02D) and related procedures.",
+        "It can be turned off by pressing and holding the DIM key; this allows MCDU 3 to be used as a replacement."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-48",
+      "panel": "LANDING GEAR",
+      "fcom_ref": "DSC-32-10-10",
+      "objectives": [
+        "The gear is electrically controlled and hydraulically operated using the green hydraulic system.",
+        "In case of failure the gear can be extended by gravity (electrically controlled, mechanically operated); if green pressure is available afterwards it can be retracted normally after moving the gravity extension switch to RESET, then OFF.",
+        "The system is controlled by two LGCIUs.",
+        "Gear indications: the panel next to the gear handle is powered by LGCIU 1 (red UNLK means the gear is not in the selected position, green triangle means down and locked); on the SD WHEEL page two triangles per gear (left LGCIU 1, right LGCIU 2), only one needed to show down and locked.",
+        "The red arrow next to the gear handle comes on at 750 ft RA if the gear is not downlocked with Flaps 2, 3, or FULL (PRO-ABN-LG), with an associated ECAM warning."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Gear-not-down red arrow comes on at 750 ft RA (Flaps 2, 3, or FULL)",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L19: QRH/FCTM L/G NOT DOWN below 750 ft RA, verified"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-49",
+      "panel": "ECAM Priority",
+      "fcom_ref": "DSC-31-10",
+      "objectives": [
+        "Level 3 (Warning): immediate action items; CRC sounds, Master Warning lights flash, red text on the E/WD.",
+        "Level 2 (Caution): crew awareness, no immediate action; single chime, Master Caution lights, amber text.",
+        "Level 1 (Caution): crew monitoring items (loss of redundancy); no aural or Master Caution lights, amber text.",
+        "Advisory: no aurals or lights; the relevant SD page is called with the affected parameter pulsing green; may indicate impending failure; reference the QRH ECAM Advisory Conditions chart (01.01A)."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-50",
+      "panel": "PFD",
+      "fcom_ref": "DSC-22-30-90, DSC-31-40",
+      "objectives": [
+        "Groundspeed Mini protects the aircraft from windshear on approach by maintaining a minimum energy level in variable wind; managed speed must be engaged; autothrust is not required.",
+        "The amber double tick marks on the speed tape represent VFE Next."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-51",
+      "panel": "ND",
+      "fcom_ref": "DSC-31-45",
+      "objectives": [
+        "When a NAVAID is displayed, the tuning mode letter: blank means autotuned; M means manually tuned on the MCDU RADNAV page; R means physically tuned in the RMP.",
+        "Manually tuning a NAVAID does not affect the autotuning functions."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-52",
+      "panel": "E/WD",
+      "fcom_ref": "DSC-31-15, PRO-NOR-SOP-07",
+      "objectives": [
+        "During takeoff, some warnings and cautions are inhibited to avoid distraction: from takeoff thrust application until 1,500 ft or 2 minutes after liftoff, whichever comes first; above that the inhibit lifts and inhibited alerts are displayed.",
+        "The N/WS DISC message must be displayed on the E/WD for pushback; if not displayed but the ground crew says the pin is in, do not start the engine during pushback."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Takeoff alerts inhibited until 1,500 ft or 2 minutes after liftoff",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L20: FCTM verified; nuance - the manual states the inhibit begins at 80 kt, the LO doc says from takeoff thrust"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-53",
+      "panel": "SD",
+      "fcom_ref": "DSC-31-20",
+      "objectives": [
+        "GW and GW CG are computed by the FCMC using the input ZFW and the actual position of the fuel, displayed in green on the bottom right of the SD; if the FMGEC flight envelope function detects an out-of-limit CG, the GW CG displays in red.",
+        "On the STATUS page, white messages under the MAINTENANCE heading are Class 2 maintenance messages requiring no flight crew action."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-54",
+      "panel": "ECAM SWITCHING",
+      "fcom_ref": "DSC-31-05-40",
+      "objectives": [
+        "The ECAM SWITCHING DMC knob chooses which DMC supplies the E/WD and SD; in AUTO it automatically switches to DMC 1 if DMC 3 fails.",
+        "The ECAM/ND switch transfers the SD to either the Captain's or First Officer's ND; if both the E/WD and SD display units failed, this would transfer the E/WD to the ND."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-55",
+      "panel": "EFIS DMC SWITCHING",
+      "fcom_ref": "DSC-31-50",
+      "objectives": [
+        "Chooses which DMC supplies data to the respective PFD and ND."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-56",
+      "panel": "EFIS MODE SELECT SWITCH",
+      "fcom_ref": "DSC-31-50",
+      "objectives": [
+        "The Engine position allows the engine portion of the E/WD to be displayed on the ND."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-57",
+      "panel": "SCREEN FAILURES",
+      "fcom_ref": "DSC-31-05-60",
+      "objectives": [
+        "A failed display unit (DU) can look like: blank screen with 'Invalid Display Unit' in amber, blank screen with amber 'F', or a distorted display; the DU is not recoverable.",
+        "DMC 1 supplies the Captain's PFD and ND; DMC 2 the FO's PFD and ND; DMC 3 the E/WD and SD. A DMC failure shows 'Invalid Data' in amber on its DUs; recover by switching DMC.",
+        "If the E/WD DU fails, data automatically switches to the SD; if the SD DU fails there is no automatic switch - use the ECAM/ND XFR switch to show the SD on an ND, or press and hold system buttons on the ECAM control panel to temporarily display SD data over the E/WD.",
+        "If DMC 3 fails with ECAM SWITCHING in AUTO, it automatically switches to DMC 1; the switch can also manually select DMC 1 or 2 for the E/WD and SD."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-58",
+      "panel": "SWITCHING PANEL",
+      "fcom_ref": "DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+      "objectives": [
+        "ATT HDG switch: allows IR 3 to replace IR 1 or IR 2; an IR failure loses attitude and heading information and the map.",
+        "AIR DATA switch: allows ADR 3 to replace ADR 1 or ADR 2; an ADR failure loses airspeed and altitude data.",
+        "FM switch: allows switching to the healthy FM after an FM failure; if both FMs fail, continue in backup navigation (tune NAVAIDs with the RMP Nav function, radios still normal, the MCDU continuously memorizes the flight plan, only the corner keys DIR/PROG/FPLN function, NAV mode inoperative - use HDG/TRACK).",
+        "AUDIO switch: allows the Captain or FO to use ACP 3 after an ACP 1 or 2 failure."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-59",
+      "panel": "ECAM CONTROL PANEL",
+      "fcom_ref": "DSC-31-30",
+      "objectives": [
+        "The TO CONFIG Pb simulates takeoff power application to test takeoff configuration; it checks slats/flaps, pitch trim, rudder trim, speed brakes, brake temperatures, and doors; two monitored items are not checked by the test: parking brake and thrust not set.",
+        "EMER CANC Pb: for warnings, silences the aural for as long as the failure continues and extinguishes the Master Warning lights without affecting the ECAM message display; for cautions, cancels the current caution for the remainder of the flight and brings up the Status page showing 'Cancelled Caution' (restored by holding RCL more than 3 seconds).",
+        "EMER CANC uses: moving a MEL-related ECAM off the Status page; cancelling nuisance repeating on/off cautions.",
+        "If the ECAM control panel fails, these hardwired keys still function: CLR, STS, RCL, EMER CNCL, ALL."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Hold RCL more than 3 seconds to restore a cancelled caution",
+          "status": "UNVERIFIED",
+          "note": "DSC-31 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-60",
+      "panel": "THRUST LEVERS",
+      "fcom_ref": "DSC 70-35-30",
+      "objectives": [
+        "The active range of the autothrust in normal operations is from IDLE to CLIMB detents.",
+        "The active range in single engine operations is from IDLE to MCT detents."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-61",
+      "panel": "THS WHEEL",
+      "fcom_ref": "DSC-27-20-30, FCTM AS-CG",
+      "objectives": [
+        "The green band on the THS indicates the certified limits; trim set within the green band allows a safe takeoff.",
+        "The correct pitch trim setting provides a consistent rotation."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-62",
+      "panel": "ENGINE MASTER SWITCHES",
+      "fcom_ref": "DSC-70-90-20",
+      "objectives": [
+        "The engine master switch initiates the automatic start sequence when the ENG START selector is at IGN/START.",
+        "For a manual start, after the ENG START selector is at IGN/START and the ENG MAN START Pb is ON, the engine master switch initiates the manual start sequence."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-63",
+      "panel": "ENG START SWITCH",
+      "fcom_ref": "DSC-70-90-20",
+      "objectives": [
+        "Selecting IGN/START: brings up the engine page on the SD, powers the FADEC, closes the pack flow control valves.",
+        "The igniters automatically come on for: flameout; ENG anti-ice turned on with the EIU failed; inadvertent cycling of the engine master switch with N3 greater than 50%.",
+        "If the Severe Ice Detected ECAM appears, it instructs the crew to select the ENG START switch to IGN."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Igniters auto-on if the engine master switch is cycled with N3 greater than 50%",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L49: DSC-70 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-64",
+      "panel": "FLAPS",
+      "fcom_ref": "DSC-27-30-10",
+      "objectives": [
+        "The Automatic Retraction System (ARS) is for heavy weight operations when S speed is greater than or near the 1+F limit of 215 kts; it automatically retracts the flaps as speed increases through 200 kts.",
+        "The Flap Load Relief System automatically retracts the flaps to the next lever position on an overspeed: in Flaps 2, 3, or FULL, overspeeding by 2.5 kts retracts one position; RELIEF is displayed above the slat/flap indicator on the PFD; after slowing to 2.5 kts below VFE the flaps re-extend.",
+        "The Alpha/Speed Lock inhibits slat retraction from 1 to 0 if speed drops below 148 kts or Alpha exceeds 8.5 degrees; LOCK displays above the slat/flap indicator; when Alpha reduces below 8.2 degrees and speed exceeds 154 kts the slats retract to 0.",
+        "With flaps at 1 or greater the ailerons droop for additional lift: 5 degrees at 1+F, 10 degrees at 2 through FULL; no droop when Flaps 1 is selected airborne since no flaps are extended."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "ARS activates as speed increases through 200 kts; 1+F limit 215 kts",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L21: FCTM verified; 215 kt is VFE CONF 1+F (limitations_v3 item 140)"
+        },
+        {
+          "claim": "Flap load relief: retract at 2.5 kts over, re-extend 2.5 kts below VFE",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L22: FCTM describes FLRS without the figure; DSC-27 not in local slice"
+        },
+        {
+          "claim": "Alpha/speed lock: inhibit below 148 kts or Alpha above 8.5 deg; release below 8.2 deg and above 154 kts",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L23: DSC-27 not in local slice"
+        },
+        {
+          "claim": "Aileron droop 5 deg (1+F) / 10 deg (2 to FULL)",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L24: DSC-27 not in local slice"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-65",
+      "panel": "SPEEDBRAKES/GROUND SPOILERS",
+      "fcom_ref": "DSC-27-10-20",
+      "objectives": [
+        "Speedbrakes are displayed on the SD F/CTL page; all panels are used for speedbrakes and ground spoilers, only some for roll control.",
+        "Speedbrakes can be used with full flaps, and the aircraft can be landed with the speedbrakes extended.",
+        "On an RTO the ground spoilers extend when the thrust levers are retarded to idle and the speed is greater than 72 kts.",
+        "During landing the ground spoilers extend: when armed, at main gear compression with thrust levers at idle; when not armed, at main gear compression with at least 1 engine in reverse.",
+        "If only 1 main gear touches down and reverse is selected on at least 1 engine, the ground spoilers partially extend until the second main gear touches down, then extend normally; this allows a smoother touchdown in crosswinds."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Ground spoilers extend on RTO only above 72 kts",
+          "status": "VERIFIED-CURRENT",
+          "note": "Cross-check L18: FCTM verified"
+        }
+      ],
+      "maps_to": "systems_quiz"
+    },
+    {
+      "id": "oral-66",
+      "panel": "PARKING BRAKE",
+      "fcom_ref": "DSC-32-30-10, DSC-32-30-20",
+      "objectives": [
+        "The valve is either open or closed, there is no in between.",
+        "No pressure is required on the brake pedals to set the parking brake.",
+        "The accumulator can hold the parking brake for 12 hours.",
+        "During the LOSS OF BRAKING memory item procedure (short and successive applications to stop the aircraft): the accumulator provides at least 7 full brake applications; if possible delay braking to as low a speed as possible to avoid tire burst."
+      ],
+      "numeric_claims": [
+        {
+          "claim": "Accumulator holds the parking brake for 12 hours",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L47: DSC-32 not in local slice"
+        },
+        {
+          "claim": "Accumulator provides at least 7 full brake applications",
+          "status": "UNVERIFIED",
+          "note": "Cross-check L47: FCTM confirms the technique but gives no count; DSC-32 not in local slice"
+        }
+      ],
+      "maps_to": "memory_items"
+    },
+    {
+      "id": "oral-67",
+      "panel": "RUDDER TRIM",
+      "fcom_ref": "DSC-27-10-20",
+      "objectives": [
+        "The rudder trim can only be manually adjusted when the autopilot is off; the knob and reset button do not function with the autopilot on."
+      ],
+      "numeric_claims": [],
+      "maps_to": "systems_quiz"
+    }
+  ]
+}
