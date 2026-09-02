@@ -7,7 +7,7 @@ Build the offline standalone pages.
 Reads each engine page, inlines the corresponding JSON between the
 /* @@DATA_START <tag> */ and /* @@DATA_END */ markers as
 `const <NAME> = <json>;` (compact JSON, ensure_ascii=False), and writes
-dist/limitations.html and dist/memory-items.html. The dist files are the
+dist/limitations.html, dist/memory-items.html and dist/fom-delta.html. The dist files are the
 offline deliverables (they open from file://); the engine pages keep their
 data external and load it with fetch(). The touch icon and the manifest the
 pages link relatively are copied alongside. dist/ is generated, not committed.
@@ -18,6 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES = [
     ("limitations.html", "limitations", "LIMITATIONS", "data/limitations.json"),
     ("memory-items.html", "memory-items", "MEMORY_ITEMS", "data/memory_items.json"),
+    ("fom-delta.html", "fom-delta", "FOM_DELTA", "data/fom_delta.json"),
 ]
 
 def build(page, tag, const, json_rel):
