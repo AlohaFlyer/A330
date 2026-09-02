@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Study Portal</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+<link rel="manifest" href="site.webmanifest">
+<style>
+/* ------------------------------------------------------------------
+   PALETTE, Hawaiian Airlines tokens (VERIFIED values only).
+   Same values as assets/palette.css, inlined so this file works
+   standalone with no external stylesheet. Keep the two in step; no
+   hex may appear anywhere in this page outside this block.
+   Coral #EE453D fails AA for text and is used only as a rule/fill.
+   ------------------------------------------------------------------ */
+:root {
+  --surface:            #FFFFFF;
+  --surface-sunken:     #F1F3F3;
+  --surface-subtle:     #F5F7F7;
+  --pale:               #EAE5F4;
+  --pale-accent:        #FDF1F8;
+  --pale-bright:        #FFEEEA;
+
+  --ink:                #000000;
+  --ink-muted:          #3C3D3D;
+  --ink-inverse:        #FFFFFF;
+  --ink-on-brand:       #FFFFFF;
+  --pale-on-brand:      #EAE5F4;
+
+  --border:             #CED0D0;
+  --border-subtle:      #DBDDDD;
+
+  --primary:            #463C8F;
+  --primary-bold:       #31295C;
+  --primary-subtle:     #8C7EB8;
+  --header-bg:          #463C8F;
+
+  --accent:             #CE0C88;
+  --accent-bold:        #831A57;
+  --on-accent:          #FFFFFF;
+
+  --bright:             #EE453D;
+  --bright-text:        #97322A;
+
+  --good:               #447A1F;
+  --good-pale:          #D6EAC7;
+  --warn:               #FAC200;
+  --warn-pale:          #FFF6D2;
+  --bad:                #E01F26;
+  --bad-pale:           #FBC6C6;
+  --info:               #007DB1;
+  --info-pale:          #E8F2F8;
+
+  --focus:              #463C8F;
+  --gradient-brand:     linear-gradient(90deg, #463C8F 25.8%, #CE0C88);
+
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 6px;
+  color-scheme: light dark;
+  accent-color: var(--primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface:          #15131C;
+    --surface-sunken:   #1E1B29;
+    --surface-subtle:   #232032;
+    --pale:             #2A2440;
+    --pale-accent:      #38203A;
+    --pale-bright:      #3A211C;
+
+    --ink:              #F4F2F8;
+    --ink-muted:        #C3BED0;
+    --ink-inverse:      #15131C;
+    --ink-on-brand:     #FFFFFF;
+    --pale-on-brand:    #EAE5F4;
+
+    --border:           #453F58;
+    --border-subtle:    #332E44;
+
+    --primary:          #ACA1CC;
+    --primary-bold:     #8C7EB8;
+    --primary-subtle:   #8C7EB8;
+    --header-bg:        #31295C;
+
+    --accent:           #E26DB8;
+    --accent-bold:      #F0A3D3;
+    --on-accent:        #15131C;
+
+    --bright:           #EE453D;
+    --bright-text:      #FF9080;
+
+    --good:             #8EC891;
+    --good-pale:        #1D3320;
+    --warn:             #FAC200;
+    --warn-pale:        #3A3011;
+    --bad:              #FF8A8A;
+    --bad-pale:         #3D1A1C;
+    --info:             #A8D6DF;
+    --info-pale:        #16303A;
+
+    --focus:            #ACA1CC;
+  }
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 16px/1.5 var(--sans);
+  min-height: 100vh;
+}
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+
+/* ---------- header ---------- */
+.site-head {
+  background: var(--header-bg);
+  color: var(--ink-on-brand);
+  padding: 20px 0 18px;
+  border-bottom: 4px solid transparent;
+  border-image: var(--gradient-brand) 1;
+}
+.site-head .row { display: flex; align-items: center; gap: 14px; }
+.site-head img.mark { width: 44px; height: 44px; border-radius: 10px; flex: 0 0 auto; }
+.site-head h1 { margin: 0; font-size: 24px; letter-spacing: .01em; }
+.site-head .sub { margin: 3px 0 0; font-size: 13px; color: var(--pale-on-brand); }
+
+/* ---------- gate ---------- */
+.gate {
+  max-width: 460px;
+  margin: 48px auto 0;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 24px;
+}
+.gate h2 { margin: 0 0 6px; font-size: 19px; }
+.gate p { margin: 0 0 16px; font-size: 14px; color: var(--ink-muted); }
+.gate label { display: block; font: 700 11px/1 var(--sans); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+.gate input[type="email"] {
+  width: 100%;
+  padding: 10px 12px;
+  font: 16px var(--sans);
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+}
+.gate .actions { margin-top: 14px; }
+.btn {
+  appearance: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--ink);
+  padding: 10px 18px; font: 600 15px var(--sans);
+}
+.btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.gate-err {
+  margin: 12px 0 0; font-size: 14px; padding: 8px 10px;
+  border: 1px solid var(--bad); border-radius: var(--radius);
+  background: var(--bad-pale); color: var(--ink);
+}
+.gate-note { margin: 16px 0 0; font-size: 12px; color: var(--ink-muted); }
+
+/* ---------- menu ---------- */
+.menu-intro { margin: 24px 0 4px; font-size: 14px; color: var(--ink-muted); }
+.cards { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.cardlink {
+  display: block; height: 100%; text-decoration: none; color: inherit;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 16px;
+}
+.cardlink:hover, .cardlink:focus-visible { border-color: var(--accent); border-top-color: var(--accent); }
+.cardlink h3 { margin: 0 0 4px; font-size: 17px; color: var(--accent); }
+.cardlink .desc { margin: 0; font-size: 13px; color: var(--ink-muted); }
+.cardlink .stat { margin: 10px 0 0; font: 600 13px var(--mono); color: var(--ink); }
+.card-soon {
+  height: 100%;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-sunken);
+  padding: 16px;
+  color: var(--ink-muted);
+}
+.card-soon h3 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+.card-soon .desc { margin: 0; font-size: 13px; }
+.pill {
+  display: inline-block; font: 600 10px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--pale); color: var(--ink); margin-bottom: 8px;
+}
+.pill-live { background: var(--good-pale); border-color: var(--good); }
+.notice {
+  margin: 18px 0 0; font-size: 14px; padding: 10px 12px;
+  border: 1px solid var(--warn); border-radius: var(--radius);
+  background: var(--warn-pale);
+}
+.signout { margin: 22px 0 0; }
+.signout button {
+  appearance: none; cursor: pointer; background: none; border: 0; padding: 0;
+  font: 13px var(--sans); color: var(--ink-muted); text-decoration: underline;
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 48px; background: var(--header-bg); color: var(--ink-on-brand); padding: 20px 0 26px;
+}
+footer .wrap > div { margin-bottom: 6px; font-size: 13px; }
+footer .wrap > .id { font-family: var(--mono); font-size: 13px; font-weight: 700; }
+footer .muted { color: var(--pale-on-brand); }
+
+/* ---------- phone ---------- */
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+  .site-head h1 { font-size: 20px; }
+  .gate { margin-top: 24px; padding: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="row">
+      <img class="mark" src="assets/icons/icon-180.png" alt="" id="headIcon">
+      <div>
+        <h1>A330 Study Portal</h1>
+        <p class="sub">Personal requalification study aid · uncontrolled · the manuals are the authority</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- =================== GATE =================== -->
+  <section class="gate" id="gate" hidden>
+    <h2>Crew access</h2>
+    <p>Enter your company email address to open the study menu. This is an honesty gate on a personal study site, not a security control; nothing is sent anywhere.</p>
+    <form id="gateForm" novalidate>
+      <label for="gateEmail">Company email</label>
+      <input type="email" id="gateEmail" name="email" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@alaskaair.com">
+      <div class="gate-err" id="gateErr" role="alert" hidden></div>
+      <div class="actions"><button type="submit" class="btn btn-primary">Enter</button></div>
+    </form>
+    <p class="gate-note">Sets one cookie on this device for 180 days so you are not asked again. No other storage, no tracking.</p>
+  </section>
+
+  <!-- =================== MENU =================== -->
+  <section id="menu" hidden>
+    <p class="menu-intro" id="menuIntro">Pages in build order. Live pages link through; greyed pages are not built yet.</p>
+    <div class="notice" id="fetchNotice" hidden></div>
+    <ul class="cards">
+      <li><a class="cardlink" href="limitations.html">
+        <span class="pill pill-live">Live</span>
+        <h3>Limitations Drill</h3>
+        <p class="desc">Flashcard drill of the A330P FCOM limitations set, self-graded, missed cards return.</p>
+        <p class="stat" id="statLim">loading counts</p>
+      </a></li>
+      <li><a class="cardlink" href="memory-items.html">
+        <span class="pill pill-live">Live</span>
+        <h3>Memory Items Drill</h3>
+        <p class="desc">Verbatim recall of the FCOM's own [MEM] procedures, visually verified against rendered pages.</p>
+        <p class="stat" id="statMem">loading counts</p>
+      </a></li>
+      <li><a class="cardlink" href="fom-delta.html">
+        <span class="pill pill-live">Live</span>
+        <h3>FOM Delta Review</h3>
+        <p class="desc">What changed in the FOM while you were away, review plus recall drill.</p>
+        <p class="stat" id="statFom">loading counts</p>
+      </a></li>
+      <li><div class="card-soon">
+        <span class="pill">Not built yet</span>
+        <h3>Flows</h3>
+        <p class="desc">Cockpit flow trainer.</p>
+      </div></li>
+      <li><div class="card-soon">
+        <span class="pill">Not built yet</span>
+        <h3>Systems Oral Bank</h3>
+        <p class="desc">scope: LO Rev 7, 67 areas</p>
+      </div></li>
+      <li><div class="card-soon">
+        <span class="pill">Not built yet</span>
+        <h3>Triggers</h3>
+        <p class="desc">Condition-to-action trigger drill.</p>
+      </div></li>
+      <li><div class="card-soon">
+        <span class="pill">Not built yet</span>
+        <h3>Games</h3>
+        <p class="desc">Speed rounds and games on the same data.</p>
+      </div></li>
+      <li><div class="card-soon">
+        <span class="pill">Not built yet</span>
+        <h3>Podcast</h3>
+        <p class="desc">Audio reviews for the commute.</p>
+      </div></li>
+    </ul>
+    <p class="signout"><button type="button" id="lockBtn">Lock this device again</button></p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="id" id="footManuals">Manual revisions load from manuals.json</div>
+    <div class="muted" id="footGen"></div>
+    <div class="muted">Personal study aid. Uncontrolled. The manuals are the authority.</div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+/* ------------------------------------------------------------------
+   PAGE METADATA, hand-authored. Manual revisions are NEVER hardcoded
+   here; the footer line and card counts are fetched at runtime from
+   manuals.json and the data/*.json files.
+   ------------------------------------------------------------------ */
+var META = {
+  generated: "2026-09-02",
+  version: "1.0"
+};
+
+/* Cookie gate. Honesty layer, not security: any @alaskaair.com address
+   unlocks, the cookie only remembers that this device answered. */
+var COOKIE = "a330portal";
+var COOKIE_DAYS = 180;
+
+function el(id) { return document.getElementById(id); }
+
+function getCookie(name) {
+  var parts = document.cookie ? document.cookie.split(";") : [];
+  for (var i = 0; i < parts.length; i++) {
+    var kv = parts[i];
+    var eq = kv.indexOf("=");
+    if (eq === -1) continue;
+    if (kv.slice(0, eq).trim() === name) return kv.slice(eq + 1).trim();
+  }
+  return null;
+}
+function setCookie(name, value, days) {
+  var d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = name + "=" + value + "; expires=" + d.toUTCString() + "; path=/; SameSite=Lax";
+}
+function clearCookie(name) {
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax";
+}
+
+function validEmail(v) {
+  return /^[^@\s]+@alaskaair\.com$/i.test(String(v || "").trim());
+}
+
+function showGate() {
+  el("menu").hidden = true;
+  el("gate").hidden = false;
+  var box = el("gateEmail");
+  if (box && box.focus) box.focus({ preventScroll: true });
+}
+
+function showMenu() {
+  el("gate").hidden = true;
+  el("menu").hidden = false;
+  loadCounts();
+}
+
+el("gateForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var v = el("gateEmail").value;
+  var err = el("gateErr");
+  if (!validEmail(v)) {
+    err.textContent = "That is not an @alaskaair.com address. Enter your company email to continue.";
+    err.hidden = false;
+    el("gateEmail").focus({ preventScroll: true });
+    return;
+  }
+  err.hidden = true;
+  setCookie(COOKIE, "ok", COOKIE_DAYS);
+  if (getCookie(COOKIE) !== "ok") {
+    err.textContent = "This browser refused the cookie, so the unlock cannot persist. Opening the menu for this visit only.";
+    err.hidden = false;
+  }
+  showMenu();
+});
+
+el("lockBtn").addEventListener("click", function () {
+  clearCookie(COOKIE);
+  el("gateEmail").value = "";
+  showGate();
+});
+
+/* The header art may land later; hide it quietly if the PNG 404s. */
+el("headIcon").addEventListener("error", function () { el("headIcon").hidden = true; });
+
+/* ------------------------------------------------------------------
+   Runtime counts and revision identity. Nothing volatile is hardcoded:
+   counts come from the data JSONs, revisions from manuals.json.
+   ------------------------------------------------------------------ */
+function getJSON(url) {
+  return fetch(url).then(function (r) {
+    if (!r.ok) throw new Error("HTTP " + r.status + " for " + url);
+    return r.json();
+  });
+}
+
+function fetchFailed() {
+  var n = el("fetchNotice");
+  n.textContent = "Live counts and manual revisions could not be loaded. This page reads its numbers from the data files at runtime, which needs the folder served over http; opened from file:// the links below still work but the counts stay blank.";
+  n.hidden = false;
+  el("statLim").textContent = "counts unavailable";
+  el("statMem").textContent = "counts unavailable";
+  el("statFom").textContent = "counts unavailable";
+}
+
+var countsLoaded = false;
+function loadCounts() {
+  if (countsLoaded) return;
+  countsLoaded = true;
+  if (typeof fetch !== "function") { fetchFailed(); return; }
+
+  getJSON("data/limitations.json").then(function (d) {
+    var verified = d.filter(function (x) { return x.confidence === "VERIFIED"; }).length;
+    el("statLim").textContent = d.length + " items · " + verified + " verified";
+  }).catch(fetchFailed);
+
+  getJSON("data/memory_items.json").then(function (d) {
+    /* The drill page merges entries into procedures by [MEM]-stripped
+       title; count the same way so the two pages always agree. */
+    var seen = {};
+    var n = 0;
+    d.forEach(function (x) {
+      var name = String(x.procedure || "").replace(/^\[MEM\]\s*/, "");
+      if (!seen[name]) { seen[name] = true; n++; }
+    });
+    el("statMem").textContent = n + " procedures, FCOM [MEM] verified";
+  }).catch(fetchFailed);
+
+  getJSON("data/fom_delta.json").then(function (d) {
+    el("statFom").textContent = d.length + " changes, 123.1 to 125.1";
+  }).catch(fetchFailed);
+}
+
+function manualLine(m, key, label) {
+  var e = m[key];
+  if (!e) return null;
+  var rev = e.revision ? " " + e.revision : "";
+  return label + rev + " (" + e.date + ")";
+}
+
+function loadManuals() {
+  if (typeof fetch !== "function") return;
+  getJSON("manuals.json").then(function (m) {
+    var bits = [
+      manualLine(m, "A330P_FCOM", "A330P FCOM"),
+      manualLine(m, "A330P_QRH", "A330P QRH"),
+      manualLine(m, "FOM", "FOM")
+    ].filter(Boolean);
+    if (bits.length) el("footManuals").textContent = bits.join(" · ");
+  }).catch(function () {
+    el("footManuals").textContent = "Manual revisions unavailable (manuals.json did not load; serve over http).";
+  });
+}
+
+function boot() {
+  el("footGen").textContent = "Generated " + META.generated + " · index version " + META.version;
+  loadManuals();
+  if (getCookie(COOKIE) === "ok") showMenu(); else showGate();
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+</script>
+</body>
+</html>
