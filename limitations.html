@@ -590,8 +590,8 @@ const MANUAL = {
   fleet:    "A330 passenger fleet",
   scope:    "Limitations chapter only",
   generated:"2026-09-01",
-  version:  "0.7",  /* (0.5: app icon wired) (0.6: pass 1-4 fixes) (0.7: pass 5 polish) */
-  dataset:  "limitations_v3.json, verified FCOM set merged with the AFM addendum and the pass-2 condition audit; 257 numeric tokens re-checked, 0 wrong or fabricated numbers, no limit value changed; 144 verified, 16 unclear"
+  version:  "0.8",  /* (0.5: app icon wired) (0.6: pass 1-4 fixes) (0.7: pass 5 polish) (0.8: three UNCLEAR upgraded via table screenshots) */
+  dataset:  "limitations_v3.json, verified FCOM set merged with the AFM addendum, the pass-2 condition audit and the training-document cross-check; 257 numeric tokens re-checked, 0 wrong or fabricated numbers, no limit value changed; 148 verified, 12 unclear"
 };
 
 /* Why each UNCLEAR item is unclear, keyed by FCOM ref.
@@ -603,10 +603,7 @@ const UNCLEAR_REASONS =
  "LIM-AG-SPD-00019938.0032001": "VMCA / VMCG table. The header reads 'Altitude (ft) VMCG (kt IAS)' on one line and 'CONF 1 + F  CONF 2  CONF 3' on the next, while each data row is five bare numbers (e.g. '0 110 106 106 107'). Which of the four values is VMCG cannot be established.",
  "LIM-AG-CG-90000422.9001002": "Centre of gravity envelope. The envelope is a graphic; only the MZFW footnote survived extraction. Listed so the gap is visible in the drill rather than silently absent, not because a usable value exists.",
  "LIM-AFS-10-20-00020163.0002001": "RNP accuracy table. The column headers (AP ON / AP OFF + FD ON / AP OFF + FD OFF) sit on a separate line from the data, so the value-to-column pairing relies on column order having survived.",
- "LIM-ENG-00020225.0004001": "Thrust setting / EGT table. '20 s 920 °C', 'Takeoff(1) and Go-around 5 min', '900 °C' and 'One engine inoperative 10 min' are split across lines, so the pairing of each time to each EGT is not provable from this text.",
  "LIM-FUEL-00019837.0004001": "Fuel specification freezing points. The fuel names are on one line and the nine temperatures on the next; the pairing depends entirely on column order surviving.",
- "LIM-FUEL-00019833.0001001": "Fuel imbalance table. The inner-tank and outer-tank columns are interleaved on the same lines (e.g. '17 000 kg 4 800 kg 2 400 kg 1 580 kg'), so tank quantity and maximum asymmetry cannot be reliably separated.",
- "LIM-OXY-00020209.0004001": "Minimum flight crew oxygen bottle pressure. The REF-temperature header row (-10 to 50 °C) and the three crew-configuration rows are on separate lines, so mapping a given pressure to a given temperature is not provable from the text."
 };
 
 /* The gaps banner content, from data/limitations_REPORT.md and
@@ -626,8 +623,8 @@ const KNOWN_GAPS =
   "text": "The environmental envelope (altitude vs OAT, LIM-AG-OPS-ENV-00021654.0013001) and the APU operational envelope (LIM-APU-20-00020222.0006001) are graphics-only in every book and did not survive extraction. Only Minimum TAT -53 °C survived the environmental envelope."
  },
  {
-  "tag": "16 unclear",
-  "text": "16 of the 160 items are marked UNCLEAR and flagged wherever they appear, with the reason. Fifteen are table column-to-row mappings or graphics-only blocks that are not provable from a text extract; one is the CONF 1* flap speed, whose unit has no AFM counterpart. The other five flaps/slats speeds (CONF 1, 1+F, 2, 3, FULL) are VERIFIED: the AFM VFE table corroborates kt IAS. Verify each UNCLEAR item against the manual before you trust it."
+  "tag": "12 unclear",
+  "text": "12 of the 160 items are marked UNCLEAR and flagged wherever they appear, with the reason. Eleven are table column-to-row mappings or graphics-only blocks that are not provable from a text extract; one is the CONF 1* flap speed, whose unit has no AFM counterpart. The EGT time pairing, both fuel-imbalance tables and the crew-oxygen grid were upgraded to VERIFIED on 2026-09-02: the FCOM table screenshots in Ryan's Pages limitations sheet confirm the column pairings, and the values are unchanged in the R17 text. The five flaps/slats speeds CONF 1, 1+F, 2, 3, FULL are VERIFIED via the AFM VFE table. Verify each remaining UNCLEAR item against the manual before you trust it."
  },
  {
   "tag": "Verified set",
