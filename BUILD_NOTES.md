@@ -999,3 +999,28 @@ $ git hash-object limitations.html data/limitations.json
 f6943e3e0ec14d6497be969997315b0c1c473f1b  limitations.html
 d0ba0492a6f7b91efa528dbbc37f84f0f59ab768  data/limitations.json
 ```
+
+## 2026-09-02: fom-delta.html, the FOM 123.1 to 125.1 delta review page
+
+Third study page. Engine page fetches `data/fom_delta.json` (52 substantive A330-relevant / fleet-common
+changes structured from `FOM_DELTA_123.1_to_125.1.md` by `build_scripts/make_fom_delta_dataset.py`;
+quotes verbatim from the review, 28 items are Diff only because revisions 124 to 124.2 published no
+Revision Highlights). Two modes: Review (grouped by FOM chapter, before/after side by side, search,
+scope/source filters) and Drill (the review's 18 recall Q&As, same keys as the sibling pages; V shows
+the underlying change). Banner names the diff-plus-highlights method; footer META: FOM 125.1 (8/12/26)
+vs 123.1 (4/27/26), generated 2026-09-02, version 0.1. Added to `build_standalone.py` (marker pair
+`@@DATA_START fom-delta`), `static_constraints.py`, `node_check_scripts.sh`, `verify_engine_and_dist.py`
+(clicks into Drill first; page boots in Review). Own harness: `build_scripts/verify/fom_delta_checks.py`
+(dataset schema + grounding, http engine, dist file://, phone 375px, dark, full drill cycle with
+re-served misses, offline message on the file:// engine). All checks pass; quote fragments verified
+verbatim against the review doc.
+
+```
+$ wc -c fom-delta.html data/fom_delta.json dist/fom-delta.html
+ 45460 fom-delta.html
+ 69947 data/fom_delta.json
+112289 dist/fom-delta.html
+$ git hash-object fom-delta.html data/fom_delta.json
+1fe275120e4d20ac28b3c95b7957646d68e27eb4  fom-delta.html
+b88d87ec0752a98b001a381ad7c0ef07a267d597  data/fom_delta.json
+```
