@@ -1,0 +1,12 @@
+# A330 Study Portal, personal and uncontrolled.
+# This site carries verbatim extracts of proprietary Hawaiian Airlines
+# manuals. It is not for public search indexing or archiving.
+#
+# NOTE: this file is a request, not a control. Well-behaved crawlers
+# honor it. It stops nobody who fetches a URL directly, and the data
+# files under /data/ are plain JSON served with no gate in front of
+# them. Treat real exposure as a hosting question, not this file.
+
+User-agent: *
+Disallow: /
+Disallow: /data/
