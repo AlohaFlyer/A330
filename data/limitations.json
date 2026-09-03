@@ -859,6 +859,20 @@
   ]
  },
  {
+  "id": "lim-afm-06",
+  "system": "Automatic Flight",
+  "parameter": "Automatic landing and rollout with outdated MAGVAR",
+  "limit": "Not permitted when the airport magnetic variation and the ADIRU magnetic variation differ by more than 3 °",
+  "condition": "Automatic landing and rollout operations. The airport magnetic variation to use is the most recent value published by the local AIP. CARVE-OUT, stated by the AFM: 'CAT II approaches without AUTOLAND are still allowed.' AFM criteria is '(330-200 or 330-200F or 330-300 or 330-800 or 330-900)'; the PAX models are listed explicitly, so the presence of the 330-200F term does not make this freighter-only. Applies to all 35 MSN in this AFM's fleet list.",
+  "verbatim": " Automatic landing and rollout operations are not permitted when the difference between the magnetic  \n variation at a given airport, and the magnetic variation of the ADIRU installed on the aircraft is more  \n than 3 °.  \n Note: The magnetic variation to be taken into account for a given airport is the most recent value  \n provided by the local Aeronautical Information Publication (AIP).  \n CAT II approaches without AUTOLAND are still allowed.  ",
+  "ref": "LIM-22-FGS-00027205.0001001",
+  "src": "manual",
+  "fleet": "pax",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "note": "AFM LIM-22-FGS AUTO FLIGHT SYSTEM / FLIGHT GUIDANCE SYSTEM, section title 'AUTOMATIC LANDING AND ROLLOUT WITH OUTDATED MAGVAR', Ident.: LIM-22-FGS-00027205.0001001 / 23 SEP 25 APPROVED (AFM.md:9593 to 9602). Dated 23 SEP 25, the most recently issued limitation in the AFM limitations chapter, and it is the only autoland prohibition not already carried by the nine existing autoland records (lim-afs-26 through lim-afs-36). FLAG, NOT RESOLVED: no FCOM limitations-chapter counterpart. Searching FCOM_LIM.md for magnetic variation returns only line 1209 (an FMS MagVar versus charted MagVar note with no effect on lateral trajectory) and lines 2349 and 2355, which are the ADIRU magnetic variation TABLE rows behind lim-nav-05 and lim-nav-06, a different subject. Ident 00027205 appears nowhere in FCOM_LIM.md. This is FCOM silence on a 2025 AFM limitation, not a conflict."
+ },
+ {
   "id": "lim-cab-01",
   "system": "Cabin/IFE",
   "parameter": "Starlink Aviation System use",
@@ -899,7 +913,7 @@
   "system": "Engines",
   "parameter": "EGT limit, takeoff and go-around",
   "limit": "920 °C for 20 s / 900 °C for 5 min all engines operative, 10 min one engine inoperative",
-  "condition": "Takeoff (TOGA, FLEX, DERATE) and go-around; the time/EGT columns are interleaved by the PDF extraction so the pairing of 20 s to 920 °C and 5/10 min to 900 °C cannot be confirmed from this text alone",
+  "condition": "Takeoff (TOGA, FLEX, DERATE) and go-around; the time/EGT columns are interleaved by the PDF extraction, so the pairing of 20 s to 920 °C and 5/10 min to 900 °C is NOT provable from this text. The pairing stated here is screenshot-confirmed only: it was established by reading a rendered screenshot of the FCOM table, not by text extraction.",
   "verbatim": " Operating Conditions Time Limit EGT Limit \n 20 s 920 °C \n All engines operative \n Takeoff(1) and Go-around 5 min \n 900 °C \n One engine inoperative 10 min \n Maximum Continuous Thrust (MCT) Not limited 850 °C \n On ground 700 °C \n Starting \n In flight 850 °C \n(1) Includes TOGA, FLEX, and DERATE thrust modes. ",
   "ref": "LIM-ENG-00020225.0004001",
   "src": "manual",
@@ -1456,6 +1470,21 @@
   "confidence": "VERIFIED"
  },
  {
+  "id": "lim-afm-05",
+  "system": "Ice and Rain",
+  "parameter": "Engine anti-ice, operations in icing conditions",
+  "limit": "ON for all ground and flight operations when icing conditions exist or are anticipated, except during climb and cruise below -40 °C SAT; ON prior to and during descent in icing conditions, including below -40 °C SAT",
+  "condition": "Icing conditions exist or are anticipated. AFM criteria is 'A330' with no model, engine or freighter split, so it applies to all 35 MSN in this AFM's fleet list. FLAG, NOT RESOLVED: the FCOM limitations chapter (FCOM_LIM.md) is SILENT on engine anti-ice use. Its only anti-ice line is 'Use of APU bleed air for wing anti-ice is not permitted.' (FCOM_LIM.md:1515), which is lim-apu-10 and a different limitation. This is FCOM silence, not an FCOM versus AFM conflict, and the AFM is the certified limitations source.",
+  "verbatim": " The engine anti-ice must be ON during all ground and flight operations when icing conditions exist or  \n are anticipated, except during climb and cruise when the temperature is below -40 °C SAT.  \n The engine anti-ice must be ON prior to and during descent in icing conditions, including  \n temperatures below -40 °C SAT.  \n Note: Do not rely on airframe visual icing cues to turn engine anti-ice on. Use the temperature  \n and visual moisture criteria specified in the icing conditions definition (Refer to LIM-GEN  \n Icing Conditions Definition).  \n Delaying the use of engine anti-ice until buildup is visible from the cockpit may result in  \n severe engine damage and/or flameout.  ",
+  "ref": "LIM-70-00005469.0001001",
+  "src": "manual",
+  "fleet": "pax",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "corroboration": "AFM 2026-08-11, NORM-30-00005814.0001001 (OPERATIONS IN ICING CONDITIONS, Criteria: A330, AFM.md:19785 to 19792): 'When icing conditions are encountered: Turn on engine anti-ice. Set wing anti-ice as required.' FCTM R5, CLIMB/DESCENT (FCTM.md:13652): 'Whenever icing conditions are encountered or expected, the engine anti-ice should be turned on.' Both corroborate the ON requirement; neither carries the -40 °C SAT carve-out, which is stated only by the AFM limitation.",
+  "note": "AFM section title 'OPERATIONS IN ICING CONDITIONS', Ident.: LIM-70-00005469.0001001 / 26 NOV 09 APPROVED, Criteria: A330 (AFM.md:10885 to 10897). Filed under system 'Ice and Rain' so it sits with the five lim-ice-* icing records a pilot would search; the AFM itself prints it in its LIM-70 POWER PLANT chapter. The five lim-ice-* records are icing DEFINITIONS only (icing conditions temperature threshold, ground contamination, severe ice accretion, thin hoarfrost, rain repellent); none of them states when engine anti-ice must be selected ON, so this record fills that gap rather than duplicating them. The extent of the FCOM silence is bounded by the local extract: only the FCOM limitations slice is available here, so whether FCOM PRO-SUP-30 or PRO-NOR-SOP restates this is UNVERIFIED. Airframe visual cues are explicitly not the trigger; the icing conditions definition the AFM cross-refers to as LIM-GEN is carried in this dataset by lim-ice-01 and lim-ice-02, from FCOM LIM-ICE_RAIN-00020420.0001001."
+ },
+ {
   "id": "lim-lg-01",
   "system": "Landing Gear",
   "parameter": "Braking system holding capability",
@@ -1636,11 +1665,25 @@
   "confidence": "VERIFIED"
  },
  {
+  "id": "lim-afm-04",
+  "system": "Navigation",
+  "parameter": "Use of the First Officer side HUD",
+  "limit": "Must not be used for operations",
+  "condition": "Aircraft with modification 203890 embodied (HUD installed, deactivated on the F/O side). The AFM DU criteria is '(A330 and 203890)', and the AFM list of modifications gives mod 203890 as applicable to MSN 1863, 1865, 1874, 1902 only, which is 4 of the 35 MSN in this AFM's fleet list. This is NOT a fleet-wide limitation: on the other 31 MSN there is no F/O HUD restriction because there is no HUD.",
+  "verbatim": " The HUD installed on the First Officer side must not be used for operations.  ",
+  "ref": "LIM-34-00020731.0002001",
+  "src": "manual",
+  "fleet": "pax",
+  "confidence": "VERIFIED",
+  "source_book": "AFM 2026-08-11",
+  "note": "AFM LIM-34 NAVIGATION, section title 'RESTRICTION ON THE USE OF THE FIRST OFFICER HUD', Ident.: LIM-34-00020731.0002001 / 04 MAY 17 APPROVED, Criteria: (A330 and 203890) (AFM.md:10136 to 10140). The enabling modification is the AFM list-of-modifications entry '203890 26 JAN 23 NAVIGATION - HEAD UP DISPLAY (HUD) INSTALL DEACTIVATED HUD ON F/O SIDE', Applicable to: MSN 1863, 1865, 1874, 1902 (AFM.md:7279 to 7281). Right-seat significance: this directly qualifies lim-afs-20 (SA CAT II) and lim-afs-22 (OTS CAT II), whose 'With HUD' branch reads as an instruction to use a HUD that this limitation forbids the First Officer from using on those four aircraft. Whether the Captain must be PF for an SA CAT II or OTS CAT II approach on those airframes is an operator policy question, not an AFM one, and is NOT answered by any local extract; verify in the FOM or Ops Specs low-visibility section. The FCOM limitations chapter does not restate this restriction: the only HUD text in FCOM_LIM.md is inside LIM-AFS-20-00020172.0001001 and LIM-AFS-20-00020173.0001001 (lines 1273, 1276, 1285, 1288), and there is no HUD text at all in QRH.md, PRC.md or PERF.md, so the AFM is the sole source. MSN to registration: the FCTM Aircraft Allocation Table (FCTM.md:551 to 600) prints, for MSN 1863, 1865, 1874 and 1902, the identifiers N4649K, N4663K, N4787K and N4621K and model 330-343, but the table's 'FSN' and 'Registration Number' columns collapsed into a single column in the text extraction, so it cannot be determined from this extract which of the two those strings are. Do not treat them as confirmed tail numbers; verify against the HAL aircraft allocation table."
+ },
+ {
   "id": "lim-oxy-01",
   "system": "Oxygen",
   "parameter": "Minimum flight crew oxygen bottle pressure",
   "limit": "Tabulated by REF temperature -10 °C to 50 °C: 2 crew 520 to 640 PSI; 2 crew + 1 OBS 660 to 810 PSI; 2 crew + 2 OBS 810 to 1 000 PSI",
-  "condition": "REF Temperature on ground = (OAT + Cockpit TEMP)/2; in flight = CAB TEMP (°C) - 10 °C. Temperature header row and the data rows are separated by the PDF extraction, so column-to-temperature mapping cannot be confirmed from this text",
+  "condition": "REF Temperature on ground = (OAT + Cockpit TEMP)/2; in flight = CAB TEMP (°C) - 10 °C. The temperature header row and the data rows are separated by the PDF extraction, so the column-to-temperature mapping is NOT provable from this text. The mapping stated here is screenshot-confirmed only: it was established by reading a rendered screenshot of the FCOM table, not by text extraction.",
   "verbatim": " °C -10 0 10 20 30 40 50  \n REF Temperature (1)  \n °F 14 32 50 68 86 104 122  \n 2 Crewmembers 520 540 560 580 600 620 640  \n MIN Bottle  \n 2 Crewmembers + 1 OBS 660 690 710 740 760 790 810  \n Pressure (PSI) (2) 2 Crewmembers + 2 OBS 810 850 880 910 940 970 1 000  \n(1) REF Temperature:  \n ‐ On ground : REF Temperature = (OAT + Cockpit TEMP) / 2  \n ‐ In flight : REF Temperature = CAB TEMP (°C) - 10 °C, or  \n REF Temperature = CAB TEMP (°F) - 18 °F  ",
   "ref": "LIM-OXY-00020209.0004001",
   "src": "manual",

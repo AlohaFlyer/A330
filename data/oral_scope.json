@@ -38,7 +38,7 @@
       "objectives": [
         "These are computer reset switches, not circuit breakers.",
         "The first page of the reset sections (FCOM and QRH) explains the procedures.",
-        "When instructed by an ECAM or paper QRH procedure, accomplish a reset as directed.",
+        "When an ECAM, OEB, or QRH procedure requests a reset, accomplish the reset as directed (QRH 02.01A, ABN-02 SYSTEM RESET - GENERAL).",
         "In all other circumstances check the QRH table to see if a reset is allowed; maintenance must be consulted prior to resetting in that case.",
         "Some system Pbs are also resets (noted by /R).",
         "The MCDU and A/SKID & N/W STRG (BSCU) switches are resets.",
@@ -308,7 +308,7 @@
       "fcom_ref": "DSC-35-20-20, QRH 22.02A",
       "objectives": [
         "During preflight there should be no half amber box around the CKPT OXY value on the DOOR/OXY page; if there is, check the limitation chart in LIM-OXY.",
-        "MASK MAN ON manually drops passenger O2 masks; part of the Emergency Descent checklist.",
+        "MASK MAN ON manually drops passenger O2 masks; part of the EMER DESCENT procedure.",
         "SYS ON light indicates the passenger O2 mask drop command was sent.",
         "CREW SUPPLY controls the valve between the masks and the oxygen cylinder.",
         "During the mask preflight check, if O2 pressure drops rapidly to below 800 psi, contact maintenance; the mechanical valve on the O2 tank may not be fully open (PRO-NOR-SOP-06)."
@@ -317,7 +317,8 @@
         {
           "claim": "Rapid O2 pressure drop below 800 psi during mask check requires maintenance",
           "status": "UNVERIFIED",
-          "note": "Cross-check L42: PRO-NOR-SOP-06 not in local slice; note current QRH advisory gates differ (CKPT OXY pulses green below 600 psi, amber below 300 psi) - verify SOP-06 at next FCOM pass"
+          "note": "Cross-check L42: PRO-NOR-SOP-06 not in local slice; note current QRH advisory gates differ (CKPT OXY pulses green below 600 psi, amber below 300 psi) - verify SOP-06 at next FCOM pass",
+          "conflict": "Current QRH advisory gates are 600/300 psi; the 800 figure is a PRO-NOR-SOP-06 preflight criterion not yet sighted in a current manual. Trust the QRH gates."
         }
       ],
       "maps_to": "systems_quiz"
@@ -523,7 +524,7 @@
         "HOT AIR system: air tapped upstream of the packs regulates cockpit, cabin, and FWD cargo temperatures via trim air valves; forward cargo is heated by Hot Air 1 and cooled by Pack 2; the cockpit is heated primarily by Hot Air 2.",
         "All air conditioning valves are electrically controlled and pneumatically operated.",
         "The flight attendant CIDS panel has a temperature control range of 5.4 F, centered on the cockpit Cabin temperature setting.",
-        "RAM AIR scoop on the lower left fuselage (DSC-21-10-50): can provide cabin air after dual pack failure; used for the QRH Smoke/Fumes Removal checklist; the RAM AIR Pb functions unless the Ditching Pb is selected; the RAM AIR system opens if delta-P is less than 1 psi."
+        "RAM AIR scoop on the lower left fuselage (DSC-21-10-50): can provide cabin air after dual pack failure; used for the QRH Removal of Smoke / Fumes procedure (ABN-24, QRH 24.02A); the RAM AIR Pb functions unless the Ditching Pb is selected; the RAM AIR system opens if delta-P is less than 1 psi."
       ],
       "numeric_claims": [
         {
@@ -653,7 +654,8 @@
         {
           "claim": "Center tank pumps inoperative: 33,000 lbs unusable",
           "status": "UNVERIFIED",
-          "note": "Cross-check L27: not found locally; QRH gravity-feed summary shows a different figure (4,400 lbs unusable per inner tank) - flag for FCOM PRO-ABN-FUEL check"
+          "note": "Cross-check L27: not found locally; QRH gravity-feed summary shows a different figure (4,400 lbs unusable per inner tank) - flag for FCOM PRO-ABN-FUEL check",
+          "conflict": "The current QRH gravity-feed summary shows a different figure, 4,400 lb unusable per inner tank. Trust the QRH until the next FCOM pass resolves it."
         },
         {
           "claim": "Start checking the imbalance chart around 3,200 lbs",
@@ -818,7 +820,8 @@
         {
           "claim": "ETOPS requirement 195 minutes for cargo fire suppression",
           "status": "UNVERIFIED",
-          "note": "Cross-check L15: not found in AFM/QRH/FCTM/PRC/FCOM_LIM/FOM delta; needs FOM check"
+          "note": "Cross-check L15: not found in AFM/QRH/FCTM/PRC/FCOM_LIM/FOM delta; needs FOM check",
+          "conflict": "Not found in the current AFM, QRH, FCTM, PRC or FOM delta; needs a FOM check. The 260 min bottle-discharge time itself is AFM-verified."
         }
       ],
       "maps_to": "systems_quiz"
