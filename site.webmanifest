@@ -4,10 +4,10 @@
   "description": "A330 requalification study portal",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a5fb4",
+  "background_color": "#463C8F",
   "theme_color": "#463C8F",
   "icons": [
-    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ]
 }
