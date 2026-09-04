@@ -278,11 +278,12 @@ footer .muted { color: var(--pale-on-brand); }
         <p class="desc">What changed in the FOM while you were away, review plus recall drill.</p>
         <p class="stat" id="statFom">loading counts</p>
       </a></li>
-      <li><div class="card-soon">
-        <span class="pill">Not built yet</span>
-        <h3>Flows</h3>
-        <p class="desc">Cockpit flow trainer.</p>
-      </div></li>
+      <li><a class="cardlink" href="phase-flows.html">
+        <span class="pill pill-live">Live</span>
+        <h3>Phase Flows</h3>
+        <p class="desc">Gate to gate flows from the OEM quick reference, with the flow and checklist triggers, every step grounded against FCOM PRO-NOR. Works with no network.</p>
+        <p class="stat" id="statFlow">loading counts</p>
+      </a></li>
       <li><a class="cardlink" href="oral-prep.html">
         <span class="pill pill-live">Live</span>
         <h3>Oral Prep</h3>
@@ -435,7 +436,7 @@ function countFailed(id) {
   };
 }
 
-var STAT_IDS = ["statLim", "statMem", "statFom", "statOral"];
+var STAT_IDS = ["statLim", "statMem", "statFom", "statOral", "statFlow"];
 
 var countsLoaded = false;
 function loadCounts() {
@@ -480,6 +481,15 @@ function loadCounts() {
     });
     el("statOral").textContent = areas.length + " areas, " + objectives + " objectives";
   }).catch(countFailed("statOral"));
+
+  getJSON("data/flows.json").then(function (d) {
+    /* Count the same way phase-flows.html does: phases in the quick
+       reference's own gate-to-gate order, and every step inside them. */
+    var phases = (d && d.phases) || [];
+    var steps = 0;
+    phases.forEach(function (p) { steps += ((p && p.steps) || []).length; });
+    el("statFlow").textContent = phases.length + " flows, " + steps + " steps";
+  }).catch(countFailed("statFlow"));
 }
 
 function manualLine(m, key, label) {
