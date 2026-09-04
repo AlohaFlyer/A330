@@ -1,0 +1,3138 @@
+{
+  "meta": {
+    "title": "A330 Phase Flows",
+    "generated": "2026-09-04",
+    "fleet": "pax",
+    "quickref": "training/A330 OEM Quick Reference MyVersion1.pdf, 2 pages, transcribed visually",
+    "authority": "A330P FCOM PRO-NOR is the authority for step wording and switch state; the quick reference is the authority for order, triggers and role",
+    "fcom_source": "A330P FCOM R17 PRO-NOR (HAL A330 fleet, 15 MAY 26 revision), idents quoted as printed"
+  },
+  "phases": [
+    {
+      "id": "safety-exterior",
+      "label": "Safety Ext Insp",
+      "title": "Safety Exterior Inspection (CM2)",
+      "order": 1,
+      "columns": [
+        "CM2"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": null,
+          "who": "CM2",
+          "text": "General",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-03-A-00010458.0001001",
+            "line": null,
+            "who": null,
+            "note": "FCOM GENERAL is a paragraph, not a step line: check for, or be informed of, obstructions near the aircraft, engineering activity, refueling activity. No role suffix printed; the section is CM2-CM3 in PRO-NOR-TSK."
+          }
+        },
+        {
+          "n": null,
+          "who": "CM2",
+          "text": "Chocks",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-03-A-00010461.0001001",
+            "line": "WHEEL CHOCKS......CHECK",
+            "who": "CM2-CM3",
+            "note": "FCOM role is CM2-CM3 (CM3 when carried)."
+          }
+        },
+        {
+          "n": null,
+          "who": "CM2",
+          "text": "Gear doors",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-03-A-00010462.0001001",
+            "line": "LANDING GEAR DOORS......CHECK POSITION",
+            "who": "CM2-CM3",
+            "note": "FCOM role is CM2-CM3. Warning: if any gear door is open do not pressurize hydraulics until cleared by ground personnel."
+          }
+        },
+        {
+          "n": null,
+          "who": "CM2",
+          "text": "APU area",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-03-A-00010463.0001001",
+            "line": "APU AREA......CHECK",
+            "who": "CM2-CM3",
+            "note": "FCOM role is CM2-CM3. Observe that the APU inlet and outlet are clear."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 left"
+    },
+    {
+      "id": "prelim-cockpit-prep",
+      "label": "Prelim Prep",
+      "title": "Preliminary Cockpit Prep Flow (Pt 1)",
+      "order": 2,
+      "columns": [
+        "CM1",
+        "CM2"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": 1,
+          "who": "CM2",
+          "text": "Eng switches OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-A-00010897.0001001",
+            "line": "ENG 1, 2 MASTERS LEVERS......OFF",
+            "who": "CM2",
+            "note": "Same DU also has ENG START selector......NORM CM2, which the card does not list."
+          }
+        },
+        {
+          "n": 2,
+          "who": "CM2",
+          "text": "Radar OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-A-00011881.0009001",
+            "line": "* WXR/PWS sw......OFF",
+            "who": "CM2",
+            "note": "Same DU: CAPT DISPLAY mode selector OFF, F/O DISPLAY mode selector OFF, GAIN knob AUTO, TURB sw AUTO, all CM2."
+          }
+        },
+        {
+          "n": 3,
+          "who": "CM2",
+          "text": "L/G Down",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-A-00010898.0001001",
+            "line": "L/G lever......DOWN",
+            "who": "CM2",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "CM2",
+          "text": "Wipers OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-A-00010899.0001001",
+            "line": "Both WIPER selectors......OFF",
+            "who": "CM2",
+            "note": ""
+          }
+        },
+        {
+          "n": 5,
+          "who": "CM2",
+          "text": "ELEC, Bat ON",
+          "fcom": {
+            "status": "CONFLICT",
+            "ident": "PRO-NOR-SOP-04-00010900.0002001",
+            "line": "BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw......AUTO",
+            "who": "CM2",
+            "note": "Card says Bat ON; FCOM line is BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw......AUTO CM2 (the pb-sw positions are AUTO and OFF, there is no ON label). Wording-level conflict, same physical action. Same DU: EXT PWR pb......ON CM2 when the AVAIL light is on, and a battery voltage check above 25.5 V if the aircraft has been unpowered 6 h or more."
+          }
+        },
+        {
+          "n": 6,
+          "who": "CM2",
+          "text": "RMP 1",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-C-00025222.0001001",
+            "line": "RMP 1 and 2......CHECK ON",
+            "who": "CM2",
+            "note": "Card names RMP 1 only; FCOM checks RMP 1 and 2 ON, green NAV light OFF, and tunes COM frequencies (VHF 1 ATC, VHF 2 ATIS/company, VHF 3 ACARS)."
+          }
+        },
+        {
+          "n": 7,
+          "who": "CM2",
+          "text": "APU Fire Test",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-C-00010902.0001001",
+            "line": "APU FIRE TEST pb......PRESS and MAINTAIN",
+            "who": "CM2",
+            "note": "Same DU first checks APU FIRE pb-sw IN and GUARDED and APU AGENT light OFF."
+          }
+        },
+        {
+          "n": 8,
+          "who": "CM2",
+          "text": "APU start",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-C-00010903.0002001",
+            "line": "APU START pb-sw......ON",
+            "who": "CM2",
+            "note": "Preceded in the same DU by APU MASTER SW pb-sw......ON CM2."
+          }
+        },
+        {
+          "n": 9,
+          "who": "CM2",
+          "text": "AIR, Bleed ON",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-C-00010903.0002001",
+            "line": "APU BLEED pb-sw......ON",
+            "who": "CM2",
+            "note": "When the APU is AVAIL. Same DU: X-BLEED rotary selector AUTO, COCKPIT TEMP and CABIN TEMP AS RQRD, EXT PWR pb AS RQRD. Do not use APU BLEED if a ground air unit is connected."
+          }
+        },
+        {
+          "n": 10,
+          "who": "CM2",
+          "text": "ADIRS ON",
+          "fcom": {
+            "status": "CONFLICT",
+            "ident": "PRO-NOR-SOP-04-00011860.0004001",
+            "line": "* ALL IR MODE selector......NAV",
+            "who": "CM2",
+            "note": "Card says ADIRS ON; FCOM line is ALL IR MODE selector......NAV CM2 (selector positions are OFF, NAV, ATT). Wording-level conflict, same physical action."
+          }
+        },
+        {
+          "n": 1,
+          "who": "CM1",
+          "text": "Lights",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00010908.0001001",
+            "line": "* COCKPIT LIGHTS......AS RQRD",
+            "who": "CM1-CM2",
+            "note": "INT LT, FLOOD LT, INTEG LT including glareshield and FCU."
+          }
+        },
+        {
+          "n": 11,
+          "who": "CM2",
+          "text": "Lights",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00010908.0001001",
+            "line": "* COCKPIT LIGHTS......AS RQRD",
+            "who": "CM1-CM2",
+            "note": ""
+          }
+        },
+        {
+          "n": 2,
+          "who": "CM1",
+          "text": "MCDU Pre-Init",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-90000080.9000329",
+            "line": "MCDU......ON",
+            "who": "CM1",
+            "note": "FMGS PRE-INITIALIZATION - CHECK THE MCDU. Same DU continues with MCDU ANNUNCIATOR LIGHTS OFF, DATA page A/C STATUS CHECK, ACTIVE NAV DATABASE CYCLE, FMS DATABASE VALIDITY CHECK, NAVAID DESELECTION AS RQRD, INIT A page FLIGHT PLAN UPLINK REQUEST, all CM1."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "EFB Initialization (Flysmart)",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021766.0001001",
+            "line": "ALL EFB......START",
+            "who": "ALL",
+            "note": "FCOM role suffix is ALL (every flight crewmember). Same DU: EFB/eQRH VERSION CHECK ALL, EFB STATUS page INSERT/CHECK ALL."
+          }
+        },
+        {
+          "n": 3,
+          "who": "CM1",
+          "text": "RCL pb (3 sec)",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021759.0002001",
+            "line": "* RCL pb......PRESS 3 s",
+            "who": "CM1",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "CM1",
+          "text": "A/C Acceptance, Logbook, MEL",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021759.0002001",
+            "line": "* AIRCRAFT ACCEPTANCE......PERFORM",
+            "who": "CM1",
+            "note": "Same DU: LOGBOOK AND MEL/CDL ITEMS......CHECK ALL, AIRCRAFT CONFIGURATION SUMMARY......CHECK ALL, OEB......CHECK ALL. FCOM note: acceptance may be performed later but must be complete by the end of Cockpit Preparation."
+          }
+        },
+        {
+          "n": 12,
+          "who": "CM2",
+          "text": "A/C Acceptance",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021759.0002001",
+            "line": "* LOGBOOK AND MEL/CDL ITEMS......CHECK",
+            "who": "ALL",
+            "note": "The AIRCRAFT ACCEPTANCE......PERFORM line itself is CM1 only; CM2 takes part through the ALL items in the same DU (logbook and MEL/CDL, configuration summary, OEB)."
+          }
+        },
+        {
+          "n": 5,
+          "who": "CM1",
+          "text": "Jepp Charts",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021760.0001001",
+            "line": "* JEPPESEN CHARTS......PREPARE",
+            "who": "ALL",
+            "note": "Prepare charts; ensure flight plan routing and ETPs are in Jeppesen FD Pro."
+          }
+        },
+        {
+          "n": 13,
+          "who": "CM2",
+          "text": "ATIS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021760.0001001",
+            "line": "* ATIS......OBTAIN",
+            "who": "CM2-CM3",
+            "note": ""
+          }
+        },
+        {
+          "n": 14,
+          "who": "CM2",
+          "text": "Jepp Charts",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021760.0001001",
+            "line": "* JEPPESEN CHARTS......PREPARE",
+            "who": "ALL",
+            "note": ""
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "ACARS Initialize",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021760.0001001",
+            "line": "* ACARS......INITIALIZE",
+            "who": "PF",
+            "note": "Card shows this in a PF | PM sub-block under the CM1 | CM2 card. On the ACARS INIT page input/check departure, destination, flight number and date."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Prelim TPR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-00021760.0001001",
+            "line": "* PRELIMINARY TAKEOFF PERF DATA......OBTAIN",
+            "who": "PF",
+            "note": "From the AeroData TPR or TLR: runway, intersection, flap setting, anti-ice, packs, thrust option."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 left"
+    },
+    {
+      "id": "before-walkaround",
+      "label": "Before Walkaround",
+      "title": "Before Walkaround Flow (PCP pt 2)",
+      "order": 3,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "OXY, HYD, ENG Oil",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00021790.0002001",
+            "line": "* OXY......CHECK PRESSURE",
+            "who": "PM",
+            "note": "Same DU on the HYD SD page: RESERVOIR FLUID LEVEL......CHECK WITHIN NORMAL RANGE PM; on the ENG SD page: ENG OIL QUANTITY......CHECK PM. If OXY is half boxed amber, check MIN FLT CREW OXY CHART."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "Flaps Position UP",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010909.0001001",
+            "line": "FLAPS......CHECK POSITION",
+            "who": "PM",
+            "note": "FCOM says check the FLAPS position agrees with the handle position; it does not name UP. Warning: if surfaces disagree with handles, check with maintenance before applying hydraulic power."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Speed Brakes",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010909.0001001",
+            "line": "* SPEED BRAKE lever......CHECK RETRACTED and DISARMED",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "ACCU Press",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010910.0001001",
+            "line": "* ACCU PRESS indicator......CHECK",
+            "who": "PM",
+            "note": "Must be in the green band; recharge with the blue electric pump if required."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "Parking Brake",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010910.0001001",
+            "line": "* PARK BRK handle......ON",
+            "who": "PM",
+            "note": "Avoid applying if one brake is above 500 C (350 C with brake fans ON) unless operationally necessary."
+          }
+        },
+        {
+          "n": 6,
+          "who": "PM",
+          "text": "Brake Press",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010910.0001001",
+            "line": "* BRAKES PRESS indicator......CHECK",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 7,
+          "who": "PM",
+          "text": "ALTN Brake Ck",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010911.0001001",
+            "line": "CHOCKS......CHECK IN PLACE",
+            "who": "PM",
+            "note": "ALTERNATE BRAKING SYSTEM check, before the first flight of the day. Sequence in the DU: CHOCKS CHECK IN PLACE, PARK BRK handle OFF, BRAKE PEDALS PRESS, BRAKE PRESSURE CHECK (2 200 to 2 700 PSI at full deflection, symmetric), BRAKE PEDALS RELEASE, PARK BRK handle ON, all PM."
+          }
+        },
+        {
+          "n": 8,
+          "who": "PM",
+          "text": "Emer Eqpt Ck",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010919.0001001",
+            "line": "EMER EQPT......CHECK",
+            "who": "PM-CM3",
+            "note": ""
+          }
+        },
+        {
+          "n": 9,
+          "who": "PM",
+          "text": "Rain Repellent",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010920.0001001",
+            "line": "RAIN RPLNT indicators......CHECK PRESSURE and QUANTITY",
+            "who": "PM-CM3",
+            "note": ""
+          }
+        },
+        {
+          "n": 10,
+          "who": "PM",
+          "text": "Gear Pins (3)",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-04-D-00010921.0002001",
+            "line": "* GEAR PINS......CHECK ONBOARD and STOWED",
+            "who": "PM-CM3",
+            "note": "Check that the three gear pins are onboard and stowed."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 left"
+    },
+    {
+      "id": "cockpit-prep",
+      "label": "Cockpit Prep",
+      "title": "Cockpit Preparation Flow",
+      "order": 4,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Overhead Panels",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-A-00011857.0001001",
+            "line": "* ALL WHITE LIGHTS......OFF",
+            "who": "PF",
+            "note": "Card item is an umbrella for the whole OVERHEAD PANEL scan, DUs PRO-NOR-SOP-06-A-00011857 through 00011870: white lights, RCDR, EVAC, STARLINK, RESET, EXTERIOR LIGHTS, SIGNS, PROBE/WINDOW HEAT, CABIN PRESS, AIR COND, ELEC, FUEL, ENG FIRE test, MAINTENANCE PANEL, CARGO AIR COND, 3rd occupant PA, CVR test, DATA LOADER. All PF."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "(exterior walkaround)",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-05-A-00011096.0001001",
+            "line": null,
+            "who": null,
+            "note": "The walkaround DUs in PRO-NOR-SOP-05 carry no role suffix. Role comes from PRO-NOR-SOP-06-00011855.0001001 GENERAL: the PF prepares the overhead panel, the center instrument panel and the pedestal while the PM performs the external walkaround. With augmented crew the additional crew member does the walkaround unless CM1 assigns otherwise."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Front Instr Panels",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-B-00011875.0001001",
+            "line": "* ISIS......CHECK",
+            "who": "PF",
+            "note": "Umbrella for CTR INSTRUMENT PANEL, DUs 00011875 through 00011879: ISIS, NORTH REF, ECAM switching panel, CLOCK, LDG GEAR GRVTY EXTN OFF, A/SKID & N/W STRG ON. All PF."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Center Pedestal",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-C-00011889.0001001",
+            "line": "RMP 1 and 2......CHECK ON",
+            "who": "PF",
+            "note": "Umbrella for PEDESTAL, DUs 00011889 through 00011888: RMP, ACP, PARKING BRK, COCKPIT DOOR test, SWITCHING PANEL, ENGINES (thrust levers IDLE, reversers STOWED, masters OFF, ENG START NORM), ATC/TCAS STBY. All PF."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "A-DIFSRIPP",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-D-90000090.9000245",
+            "line": "TO/FROM......CHECK",
+            "who": "PF",
+            "note": "Hawaiian mnemonic, not an FCOM term. It spans FMGES PREPARATION DUs 90000090 (INIT A), 90000091 (F-PLN), 90000092 (SEC F-PLN), 90000093 (RAD NAV), 90000094 (INIT B), 90000095 (PERF), 90000096 (PROG), plus 00011904 RNP, 00020964 DERATED CLIMB, 00011905 PRESET SPEEDS. The A is not expanded on the card; ATC DATALINK COMMUNICATION (PRO-NOR-SOP-06-00013823.0001001, MSG ERASE and ADS CHECK ARMED, PF) precedes the FMGES section. Every line is PF."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "Check DIFSRIPP",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-D-00015238.0001001",
+            "line": "* FMS PREPARATION......CROSSCHECK",
+            "who": "PM",
+            "note": "After the PF prepares the FMS the PM checks all data entered: departure route waypoints and constraints, flight plan vs CFP, initial cruise altitude, total track miles, fuel at destination, performance data, TRANS ALT, SEC flight plan."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Glareshield",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-E-00020728.0001001",
+            "line": "* BAROMETRIC REFERENCE......SET/CROSSCHECK",
+            "who": "BOTH",
+            "note": "GLARESHIELD section: LOUDSPEAKER knob SET PF-PM (00011907), EFIS CP baro SET/CROSSCHECK BOTH, FD CHECK ON, LS, ND MODE and RANGE, ADF/VOR sw AS RQRD PF-PM (00020728), FCU SPD/MACH DASHED, HDG-V/S, ALT window INITIAL EXPECTED CLEARANCE ALTITUDE PF (00011909)."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Lateral Consoles",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00011910.0001001",
+            "line": "OXYGEN MASK TEST......PERFORM",
+            "who": "PF-PM",
+            "note": "Then on the ECAM DOOR/OXY SD page REGUL LO PR indication CHECK NOT DISPLAYED PF-PM. Warn the ground crew on intercom before the mask test."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "PFD & ND",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00011911.0002001",
+            "line": "* PFD......CHECK",
+            "who": "PF-PM",
+            "note": "INSTRUMENT PANELS: EFIS DMC selector CHECK NORM, PFD and ND brightness AS RQRD, PFD CHECK, ND CHECK, all PF-PM."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "PRESS, STS, FUEL",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00011885.0001001",
+            "line": "* PRESS pb......PRESS",
+            "who": "PF",
+            "note": "Same DU: STS pb......PRESS PF (INOP SYS compatible with MEL). FUEL is FUEL ON BOARD......CHECK PF-PM in PRO-NOR-SOP-06-00024946.0001001 (ECAM FOB vs CFP block fuel, balance and CG on FUEL SD page)."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "IRS Align Ck",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00011912.0001001",
+            "line": "* IRS ALIGN......CHECK",
+            "who": "PM",
+            "note": "POSITION MONITOR page: IRS in NAV, each IRS within 5 NM of FMS position; ND position consistent with airport, SID and navaids."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "RLS Ver/Fitness",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-90000100.9000254",
+            "line": "RELEASE VERSION #__/ FITNESS/ FOB/ PDSC......SENT",
+            "who": "PF",
+            "note": "Electronically accept latest release version, fitness for duty, FOB and PDSC time via OPS CTRL MSG page in ACARS."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "FUEL",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00024946.0001001",
+            "line": "* FUEL ON BOARD......CHECK",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "ATC Clearance",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-90000101.9000253",
+            "line": "ATC clearance......CONFIRM",
+            "who": "PM",
+            "note": "Via VHF, ACARS PDC or CPDLC DCL."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Legs Verification",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-90000102.9000255",
+            "line": "DEPARTURE LEGS VERIFICATION......PERFORM",
+            "who": "BOTH",
+            "note": "PF reads from the ND in PLAN mode with CSTR on; PM verifies against flight plan, Jeppesen charts and ATC clearance. Finish by confirming F-PLN DIST and destination EFOB against the release."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Departure Briefing",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-06-00011915.0001001",
+            "line": "* DEPARTURE BRIEFING......PERFORM",
+            "who": "BOTH",
+            "note": "Threat based departure briefing per FOM."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Departure Briefing complete",
+        "checklist": "Cockpit Preparation"
+      },
+      "notes": [],
+      "lights": {
+        "who": "PF",
+        "settings": [
+          "Strobes AUTO",
+          "Nav 1",
+          "All others OFF"
+        ]
+      },
+      "src": "quickref p1 left"
+    },
+    {
+      "id": "before-pushback",
+      "label": "Before Push",
+      "title": "Before Pushback/Start Clearance",
+      "order": 5,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": null,
+          "who": "PF",
+          "text": "*Load FMC",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021319.9000330",
+            "line": "ACARS PERF page......SELECT “*LOAD FMC”",
+            "who": "PF",
+            "note": "Select the prompt when it appears; the FMS uploads final weight data and takeoff performance."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "LCO Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021319.9000330",
+            "line": "LOAD CLOSEOUT (LCO)......CHECK",
+            "who": "PF-PM",
+            "note": "Both crew members check flight number/date, aircraft, crew count, TOF, TOW vs planned, TOB, jumpseats, ZFW/ZFWCG, NOTOC, AVI, FAM. Then ZFW/ZFWCG CHECK/REVISE PF and PM, and LOADCLOSEOUT (MACTOW) CG vs ECAM CG CHECK PF-PM."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "LCO x-check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021319.9000330",
+            "line": "LOAD CLOSEOUT (LCO)......CHECK",
+            "who": "PF-PM",
+            "note": "Same PF-PM line. FCOM also has LOAD CLOSEOUT VERBAL CROSS-CHECKS (passenger and jumpseat count announced by CM2 and verified by CM1 against the Flight Deck Report; flight and tail number announced by CM2 and verified by CM1 against the release; remarks announced by CM2) which the card does not show."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Min RLS Fuel Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00011914.0001001",
+            "line": "MIN RLS FUEL......CHECK",
+            "who": "PF-PM",
+            "note": "ECAM FOB above Minimum Release Fuel on the flight plan."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "*Insert PERF uplink",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021320.0001001",
+            "line": "TAKEOFF PERFORMANCE......UPLINK FLX or UPLINK TOGA",
+            "who": "PF",
+            "note": "If takeoff data will be uplinked. Then FLAPS/THS reminder......INSERT PF. Manual entry branch (T.O SHIFT, V1 VR V2, FLX TO TEMP, THR RED/ACC, ENG OUT ACC, all PF) is not on the card."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "TPR check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021320.0001001",
+            "line": "FINAL TAKEOFF DATA (TPR/TLR)......CHECK",
+            "who": "PF-PM",
+            "note": "Both check aircraft/flight/date, wind/OAT/QNH, FINAL TPR, remarks, runway/intersection, EO departure procedure, packs, V speeds, flap config/THS, FLEX/TOGA, GTOW vs MTOW. Then FMS TAKEOFF DATA CHECK/REVISE PF and PM."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "TPR x-check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00021320.0001001",
+            "line": "FINAL TAKEOFF DATA (TPR/TLR)......CHECK",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "MCDU pages set",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00011059.0001001",
+            "line": "FMS PERF TO page......SELECT",
+            "who": "PF",
+            "note": "Two lines in the DU: FMS PERF TO page......SELECT PF and FMS F-PLN page......SELECT PM. Card shows it as one coordinated item."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Set Seating Positions",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-A-00011058.0001001",
+            "line": "SEATS, SEAT BELTS, HARNESSES, RUDDER PEDALS, ARMRESTS......ADJUST",
+            "who": "PF-PM",
+            "note": "Eyes aligned with the red and white balls. The FCOM prints this line wrapped across three lines with the PF-PM suffix between the leader dots and ADJUST; collapsed here."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Circle Check",
+          "fcom": {
+            "status": "UNVERIFIED",
+            "ident": null,
+            "line": null,
+            "who": null,
+            "note": "No FCOM PRO-NOR step named Circle Check. Searched circle, circle check across PRO-NOR, FCTM and NPC-CB with no hit. The FCOM steps that sit in this position of the procedure are PITOT COVERS......REMOVED PF (PRO-NOR-SOP-07-A-90000430.9000392) and AIR CONDITIONING UNITS......CHECK DISCONNECTED PF, EXT PWR pb......CHECK AVAIL PF, EXT PWR DISCONNECTION......REQUEST PF (PRO-NOR-SOP-07-A-00011060.0001001), which are the likely referent but are not confirmed as such by any manual."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "Request Push Clearance",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011040.0004001",
+            "line": "PUSHBACK/START CLEARANCE......OBTAIN",
+            "who": "PM",
+            "note": "FCOM places this line at the head of AT PUSHBACK/START CLEARANCE (the Before Start flow section). Obtain ATC pushback/start clearance and ground crew clearance."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 right"
+    },
+    {
+      "id": "before-start",
+      "label": "Before Start",
+      "title": "Before Start Flow",
+      "order": 6,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": {
+        "text": "Push/Start Clearance Received"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "Beacon ON",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011064.0001001",
+            "line": "BEACON sw......ON",
+            "who": "PF",
+            "note": "When cleared for start or pushback."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "ATC",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00015355.0001001",
+            "line": "ATC......SET FOR OPERATION",
+            "who": "PM",
+            "note": "Set in accordance with airport requirements."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PF",
+          "text": "Windows",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011063.0002001",
+            "line": "WINDOWS and DOORS......CHECK CLOSED",
+            "who": "PF-PM",
+            "note": "Push the sliding window handle fully forward and confirm the red indicator is no longer visible."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "Windows",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011063.0002001",
+            "line": "WINDOWS and DOORS......CHECK CLOSED",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 3,
+          "who": "PF",
+          "text": "Doors/Slides",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011063.0002001",
+            "line": "SLIDES......CHECK ARMED",
+            "who": "PF-PM",
+            "note": "Doors closed on the ECAM lower display (same DU, WINDOWS and DOORS......CHECK CLOSED PF-PM), cockpit door closed and locked; slides armed on the ECAM lower display."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Doors/Slides",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011063.0002001",
+            "line": "SLIDES......CHECK ARMED",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PF",
+          "text": "Thrust Levers",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011065.0001001",
+            "line": "THRUST LEVERS......IDLE",
+            "who": "PF",
+            "note": "Caution: engines start regardless of thrust lever position."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PF",
+          "text": "Park BRK",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-07-B-00011066.0002001",
+            "line": "PARK BRK handle......ON",
+            "who": "PF",
+            "note": "If pushback is not required (00011066): PARK BRK ON, BRAKES PRESS CHECK, BEFORE START C/L. If pushback is required (PRO-NOR-SOP-07-B-00011062.0001001): PARK BRK ON, N/WS DISC MEMO CHECK DISPLAYED, BEFORE START C/L, then PARK BRK OFF on ground crew clearance. ACCU PRESS indicator......CHECK PF (00017116) precedes and is not on the card."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Before Start flow complete",
+        "checklist": "Before Start"
+      },
+      "notes": [
+        "CA becomes PF if both pilots not trained"
+      ],
+      "lights": {
+        "who": "PF",
+        "settings": [
+          "Beacon ON"
+        ]
+      },
+      "src": "quickref p1 right"
+    },
+    {
+      "id": "after-start",
+      "label": "After Start",
+      "title": "After Start Flow",
+      "order": 7,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": {
+        "text": "PF sets ENG Start to NORM"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "Eng Start Sel",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011043.0004001",
+            "line": "ENG START selector......NORM",
+            "who": "PF",
+            "note": "Permits normal pack operation and starts the After Start flow (PRO-NOR-SOP-09-A-00019960.0001001). Warm-up: idle or near idle 5 min cold, 3 min warm, taxi time counts."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "GND Splrs",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011048.0001001",
+            "line": "GND SPLRS......ARM",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 2,
+          "who": "PF",
+          "text": "APU Bleed",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011044.0001001",
+            "line": "APU BLEED pb-sw......OFF",
+            "who": "PF",
+            "note": "Avoids ingestion of engine exhaust gases. X BLEED selector......AS RQRD PF (PRO-NOR-SOP-09-A-C0000281.9001001, new this revision) sits between ENG START and APU BLEED and is not on the card."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "Rudder Trim",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011049.0001001",
+            "line": "RUD TRIM RESET pb......PRESS",
+            "who": "PM",
+            "note": "Then RUD TRIM......CHECK NEUTRAL PM; up to 0.6 deg residual is normal."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PF",
+          "text": "Anti-ice",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011045.0003001",
+            "line": "ENG 1 and 2 ANTI-ICE pb-sw......AS RQRD",
+            "who": "PF",
+            "note": "ON for all ground operations when icing conditions exist or are anticipated. WING ANTI-ICE pb-sw......AS RQRD PF is the next DU (00011046)."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Flaps",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011050.0001001",
+            "line": "FLAPS lever......SET FOR TAKEOFF",
+            "who": "PM",
+            "note": "Then FLAPS......CHECK POSITION PM on the ECAM upper display. Keep flaps retracted until the holding point when taxiing in icing conditions with rain, slush or snow."
+          }
+        },
+        {
+          "n": 4,
+          "who": "PF",
+          "text": "APU Master",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011047.0001001",
+            "line": "APU MASTER SW pb-sw......OFF",
+            "who": "PF",
+            "note": "If the APU is not required."
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "Pitch Trim",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011051.0003001",
+            "line": "PITCH TRIM wheel......CHECK",
+            "who": "PM",
+            "note": "Check the takeoff CG on the PITCH TRIM wheel using the ECAM CG indication."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PF",
+          "text": "ECAM STS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011054.0001001",
+            "line": "ECAM STATUS......CHECK",
+            "who": "BOTH",
+            "note": "FCOM role is BOTH: the PM checks and the PF crosschecks that there is no STS reminder on the E/WD."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "ECAM STS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011054.0001001",
+            "line": "ECAM STATUS......CHECK",
+            "who": "BOTH",
+            "note": ""
+          }
+        },
+        {
+          "n": 6,
+          "who": "PF",
+          "text": "NWS DISC",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00015237.0001001",
+            "line": "N/WS DISC MEMO......CHECK NOT DISPLAYED",
+            "who": "PF",
+            "note": ""
+          }
+        },
+        {
+          "n": 7,
+          "who": "PF",
+          "text": "NWS Fault Lt",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-09-A-00011052.0001001",
+            "line": "NWS TOWING FAULT LIGHT......CHECK OFF",
+            "who": "PF",
+            "note": "THRUST SETTING......CROSSCHECK PF (PRO-NOR-SOP-09-A-00027845.0001001, new this revision: FLEX temperature on the E/WD vs FMS PERF page) sits between NWS DISC and NWS Fault Lt and is not on the card."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Salute received - TAXI Lt",
+        "checklist": "After Start"
+      },
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 right"
+    },
+    {
+      "id": "during-taxi",
+      "label": "During Taxi",
+      "title": "During Taxi",
+      "order": 8,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Brake Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011946.0002001",
+            "line": "BRAKES......CHECK",
+            "who": "PF",
+            "note": "FCOM splits the item: BRAKE PEDALS......PRESS PF, BRAKES......CHECK PF, BRAKE FAN pb......AS RQRD PM, BRAKES PRESSURE......CHECK AT ZERO PM. Both pilots act, so the coordinated marker stands. Caution: first low-speed brake application is less effective after parking in wet conditions."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "Flight Control Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011948.0001001",
+            "line": "FLIGHT CONTROLS......CHECK",
+            "who": "BOTH",
+            "note": "At a convenient stage, before or during taxi."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "Confirm ATC Clearance",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011949.0001001",
+            "line": "ATC clearance......CONFIRM",
+            "who": "PM",
+            "note": "Review the ATC clearance before checking the AFS/Flight Instruments."
+          }
+        },
+        {
+          "n": null,
+          "who": "PM",
+          "text": "FMS/FCU Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00015138.0001001",
+            "line": "CLEARED ALTITUDE ON FCU......CHECK",
+            "who": "PM",
+            "note": "AFS/FLIGHT INSTRUMENTS: CLEARED ALTITUDE ON FCU CHECK PM, HDG ON FCU IF REQUIRED PRESET PM, BOTH FD CHECK ON PM."
+          }
+        },
+        {
+          "n": null,
+          "who": "BOTH",
+          "coordinated": true,
+          "text": "PFD/ND Check",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00015138.0001001",
+            "line": "PFD/ND......CHECK",
+            "who": "PF-PM",
+            "note": "Airspeeds, initial target altitude, heading, FMA modes on the PFD; SID on the ND."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": {
+        "who": "PF*",
+        "settings": [
+          "Nose TAXI",
+          "Rwy Turnoff ON"
+        ]
+      },
+      "src": "quickref p1 right"
+    },
+    {
+      "id": "taxi",
+      "label": "Taxi",
+      "title": "Taxi Flow",
+      "order": 9,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "ground",
+      "flow_trigger": {
+        "text": "AFS/Flight Instruments checked"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "TERR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011953.0001001",
+            "line": "TERR ON ND......AS RQRD",
+            "who": "PF-PM",
+            "note": "Consider radar on the PF side and TERR ON ND on the PM side only."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "A/BRK",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011954.0001001",
+            "line": "AUTO BRK MAX pb-sw......ON",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "TERR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011953.0001001",
+            "line": "TERR ON ND......AS RQRD",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Squawk",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011952.0001001",
+            "line": "ATC CODE/MODE......CONFIRM/SET FOR TAKEOFF",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "ENG Start Sel",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00012083.0002001",
+            "line": "ENG START selector......AS RQRD",
+            "who": "PM",
+            "note": "IGN/START if heavy rain, moderate turbulence, or severe turbulence expected after takeoff."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "Radar/PWS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00015141.0004001",
+            "line": "WXR/PWS sw......SYS 1(2)",
+            "who": "PM",
+            "note": "Then CAPT DISPLAY mode selector ALL PM and F/O DISPLAY mode selector ALL PM; 30 s to fill the 3D buffer."
+          }
+        },
+        {
+          "n": 6,
+          "who": "PM",
+          "text": "T.O. CONFIG pb",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011956.0001001",
+            "line": "T.O CONFIG pb......TEST",
+            "who": "PM",
+            "note": "Check the EWD displays T.O CONFIG NORMAL."
+          }
+        },
+        {
+          "n": 7,
+          "who": "PM",
+          "text": "T.O. Memo",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-10-A-00011956.0001001",
+            "line": "T.O MEMO......CHECK NO BLUE",
+            "who": "PM",
+            "note": "Same DU then has Cabin......NA/ADVISED PM (takeoff PA no less than two minutes before takeoff), which the card carries only in the checklist trigger."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "T.O. Config pb pressed & cabin advised",
+        "checklist": "Taxi"
+      },
+      "notes": [],
+      "lights": null,
+      "src": "quickref p1 right"
+    },
+    {
+      "id": "line-up",
+      "label": "Line-Up",
+      "title": "Line-Up Flow",
+      "order": 10,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "departure",
+      "flow_trigger": {
+        "text": "Line-Up Clearance Received"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "T/O Rwy",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012077.0001001",
+            "line": "TAKEOFF RUNWAY......CONFIRM",
+            "who": "BOTH",
+            "note": "Confirm the intended runway and intersection using markings, lights, ILS signal, ND runway symbol, RAAS."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "TCAS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012069.0001001",
+            "line": "TCAS Mode selector......TA or TA/RA",
+            "who": "PM",
+            "note": "TA/RA is the default; TA ONLY at specific airports and procedures per Jeppesen 10-7 pages."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PF",
+          "text": "Approach Path",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012070.0001001",
+            "line": "APPROACH PATH......CLEAR OF TRAFFIC",
+            "who": "PF-PM",
+            "note": "Visually and using the TCAS display on the ND."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "T/O Rwy",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012077.0001001",
+            "line": "TAKEOFF RUNWAY......CONFIRM",
+            "who": "BOTH",
+            "note": ""
+          }
+        },
+        {
+          "n": 3,
+          "who": "PF",
+          "text": "Strobes ON",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00021962.0001001",
+            "line": "STROBE sw......ON",
+            "who": "PF",
+            "note": "To cross or enter a runway. The PF can request the PM to set the exterior lights."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Approach Path",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012070.0001001",
+            "line": "APPROACH PATH......CLEAR OF TRAFFIC",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "Packs 1 & 2",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-11-A-00012073.0001001",
+            "line": "PACK 1 pb-sw and PACK 2 pb-sw......AS RQRD",
+            "who": "PM",
+            "note": "Packs OFF or APU bleed ON as directed by the TPR/TLR, set at least 20 s before takeoff thrust. APU bleed not permitted with wing anti-ice."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Line-up flow complete",
+        "checklist": "Line-Up"
+      },
+      "notes": [
+        "Resume normal tasksharing if both pilots not trained"
+      ],
+      "lights": {
+        "who": "PF*",
+        "settings": [
+          "Strobes ON"
+        ]
+      },
+      "src": "quickref p2 left"
+    },
+    {
+      "id": "acceleration",
+      "label": "Acceleration",
+      "title": "Acceleration Flow",
+      "order": 11,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "departure",
+      "flow_trigger": {
+        "text": "Selection of flaps 0"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "Flaps",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-12-A-00012091.0001001",
+            "line": "FLAPS 0......SELECT",
+            "who": "PM",
+            "note": "ABOVE ACCELERATION ALTITUDE (OR ONCE IN CLIMB PHASE), ACCELERATION FLOW PATTERN: at F speed FLAPS 1 ORDER PF / SELECT PM; at S speed FLAPS 0 ORDER PF / SELECT PM."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "Gnd Splrs",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-12-A-00012091.0001001",
+            "line": "GND SPLRS......DISARM",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "L/G",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-12-A-00012091.0001001",
+            "line": "L/G......CHECK UP",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "RW TO Lt OFF, Nose Lt OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-12-A-00012091.0001001",
+            "line": "RWY TURN OFF sw......OFF",
+            "who": "PM",
+            "note": "Same DU: NOSE sw......OFF PM. FCOM order is NOSE then RWY TURN OFF."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": {
+        "who": "PM",
+        "settings": [
+          "Nose OFF",
+          "Rwy Turnoff OFF"
+        ]
+      },
+      "src": "quickref p2 left"
+    },
+    {
+      "id": "climb-10000",
+      "label": "Climb 10,000'",
+      "title": "Climbing 10,000' Flow",
+      "order": 12,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "climb",
+      "flow_trigger": {
+        "text": "Climbing 10,000' AAL"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "EFIS: CSTR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "EFIS OPTIONS......AS RQRD",
+            "who": "PF-PM",
+            "note": "CSTR on one side for grid MORA, ARPT on the other. The flow pattern DU PRO-NOR-SOP-14-A-00019949.0001001 states: the PF will select CSTR, the PM will select ARPT. FCOM titles this AT 10 000 FT MSL; the card says AAL."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "LAND Lt OFF, WING Lt OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "LAND sw......OFF",
+            "who": "PM",
+            "note": "LAND sw OFF is verified. WING Lt OFF has no FCOM step at 10 000 ft; the FCOM WING sw OFF steps are in Cockpit Preparation (PRO-NOR-SOP-06-A-00011862.0001001), After Landing (PRO-NOR-SOP-21-A-00011013.0001001) and Parking (PRO-NOR-SOP-22-A-00012195.0003001). The Exterior Light Usage table on the card also lists only Land OFF here."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "No Smoking",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "NO SMOKING sw......ON, wait 3 s, AUTO",
+            "who": "PM",
+            "note": "Cycle to inform additional aircraft occupants of leaving sterile, if required."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "EFIS: ARPT",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "EFIS OPTIONS......AS RQRD",
+            "who": "PF-PM",
+            "note": "Flow pattern DU 00019949: the PM will select ARPT."
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "ECAM Memo",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "ECAM MEMO......REVIEW",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "RAD/SEC/PROG",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-14-A-00012135.0001001",
+            "line": "NAVAIDS......CLEAR",
+            "who": "PM",
+            "note": "Three lines in the DU: NAVAIDS......CLEAR PM (manually tuned VORs on RAD NAV), SEC F-PLN......AS RQRD PM (recopy active), OPT FL/REC MAX FL......CHECK PM (PROG page)."
+          }
+        }
+      ],
+      "cl_trigger": null,
+      "notes": [],
+      "lights": {
+        "who": "PM",
+        "settings": [
+          "Land OFF"
+        ]
+      },
+      "src": "quickref p2 left"
+    },
+    {
+      "id": "descent-10000",
+      "label": "Descent 10,000'",
+      "title": "Descending 10,000' Flow",
+      "order": 13,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "descent",
+      "flow_trigger": {
+        "text": "Descending 10,000' AAL"
+      },
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "EFIS: CSTR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "EFIS option pb......CSTR",
+            "who": "PF-PM",
+            "note": "Select CSTR on both sides."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "LAND Lt ON",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "LAND sw......ON",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 2,
+          "who": "PF",
+          "text": "LS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "LS pb......AS RQRD",
+            "who": "PF-PM",
+            "note": "Press LS for ILS, GLS, ILS G/S out, LOC only, LOC B/C, FLS or SLS approaches; check deviation scales and IDENT on the PFD."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "No Smoking: cycle",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "NO SMOKING sw......ON, wait 3 sec, AUTO",
+            "who": "PM",
+            "note": "SEAT BELTS sw......ON PM precedes it in the same DU and is not on the card (also required no later than 18 000 ft, PRO-NOR-SOP-17-A-90000464.9000393)."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PF",
+          "text": "NAVAIDS/Accur",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "NAVAIDS......AS RQRD/CHECK",
+            "who": "PF",
+            "note": "Appropriate navaids tuned and identified. Accur is NAVIGATION ACCURACY......MONITOR PF in PRO-NOR-SOP-17-A-00015240.0001001, conditional on GPS PRIMARY LOST."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "EFIS: CSTR",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "EFIS option pb......CSTR",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "LS",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00011974.0002001",
+            "line": "LS pb......AS RQRD",
+            "who": "PF-PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "ENG Start Sel",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-17-A-00015239.0001001",
+            "line": "ENG START selector......AS RQRD",
+            "who": "PM",
+            "note": "IGN if standing water on the runway, heavy rain or severe turbulence expected on approach or in the go-around area."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Below 10k & baro ref set",
+        "checklist": "Approach"
+      },
+      "notes": [
+        "At taxi speed CA becomes PF if both pilots not trained"
+      ],
+      "lights": {
+        "who": "PM",
+        "settings": [
+          "Land ON"
+        ]
+      },
+      "src": "quickref p2 left"
+    },
+    {
+      "id": "after-landing",
+      "label": "After Landing",
+      "title": "After Landing",
+      "order": 14,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "arrival",
+      "flow_trigger": {
+        "text": "PF disarms Gnd Splrs"
+      },
+      "steps": [
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Gnd Splrs OFF",
+          "fcom": {
+            "status": "CONFLICT",
+            "ident": "PRO-NOR-SOP-21-A-00011014.0001001",
+            "line": "GND SPLRS......DISARM",
+            "who": "PF",
+            "note": "Card says Gnd Splrs OFF; FCOM line is GND SPLRS......DISARM PF, when the runway is vacated. Same lever action (speed brake lever pushed down out of the ARM detent); the card's own flow trigger says PF disarms Gnd Splrs. Wording-level conflict."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "Radar",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00012821.0001001",
+            "line": "WXR/PWS sw......OFF",
+            "who": "PM",
+            "note": "Then CAPT DISPLAY mode selector OFF PM and F/O DISPLAY mode selector OFF PM, to avoid radiating persons at the gate."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Land Lt OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011013.0001001",
+            "line": "LAND LIGHT sw......OFF",
+            "who": "PF",
+            "note": "When leaving the runway. Same DU also has WING sw......OFF PF, which the card omits. During taxi the PF may request the PM to set the exterior lights."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "ENG Start SEL",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011020.0001001",
+            "line": "ENG START selector......NORM",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Strobes AUTO",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011013.0001001",
+            "line": "STROBE sw......AUTO",
+            "who": "PF",
+            "note": "When crossing a runway: STROBE sw ON and LAND LIGHT sw ON, same DU."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Flaps",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011021.0001001",
+            "line": "FLAPS......RETRACT",
+            "who": "PM",
+            "note": "Set lever to 0. Do not retract until after shutdown and ground crew check if the approach was in icing conditions or the runway was contaminated with slush or snow."
+          }
+        },
+        {
+          "n": null,
+          "who": "PF",
+          "text": "Nose Lt TAXI",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011013.0001001",
+            "line": "NOSE sw......TAXI",
+            "who": "PF",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "TCAS/ATC",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011022.0001001",
+            "line": "TCAS......STBY",
+            "who": "PM",
+            "note": "ATC......AS RQRD PM is the next DU, PRO-NOR-SOP-21-A-00011023.0001001, set per airport requirements."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "APU",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011027.0001001",
+            "line": "APU......AS RQRD",
+            "who": "PM",
+            "note": "If used: APU MASTER SW pb-sw ON PM, APU START pb ON PM. Start may be delayed until before engine shutdown; check AVAIL before shutdown."
+          }
+        },
+        {
+          "n": 6,
+          "who": "PM",
+          "text": "Anti-Ice",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-21-A-00011024.0004001",
+            "line": "ENG ANTI ICE......AS RQRD",
+            "who": "PM",
+            "note": "Ground idle is increased with engine anti-ice on; control taxi speed."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "After Landing flow complete",
+        "checklist": "After Landing"
+      },
+      "notes": [],
+      "lights": {
+        "who": "PF*",
+        "settings": [
+          "Land OFF",
+          "Strobes AUTO",
+          "Nose TAXI"
+        ]
+      },
+      "src": "quickref p2 left"
+    },
+    {
+      "id": "parking",
+      "label": "Parking",
+      "title": "Parking",
+      "order": 15,
+      "columns": [
+        "PF",
+        "PM"
+      ],
+      "group": "arrival",
+      "flow_trigger": null,
+      "steps": [
+        {
+          "n": 1,
+          "who": "PF",
+          "text": "Accu Press",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012189.0005001",
+            "line": "ACCU PRESS indicator......CHECK",
+            "who": "PF",
+            "note": "Green band; with low accumulator pressure chocks are required before engine shutdown."
+          }
+        },
+        {
+          "n": 1,
+          "who": "PM",
+          "text": "Anti-ice",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012190.0001001",
+            "line": "ANTI ICE......OFF",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 2,
+          "who": "PF",
+          "text": "Park Brk",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012189.0005001",
+            "line": "PARK BRK handle......ON",
+            "who": "PF",
+            "note": "Then BRAKES PRESS indicator......CHECK PF; keep pedals pressed until both needles are above the green area. Avoid applying if one brake is above 500 C (350 C with fans ON)."
+          }
+        },
+        {
+          "n": 2,
+          "who": "PM",
+          "text": "APU Bleed",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012191.0002001",
+            "line": "APU BLEED pb-sw......AS RQRD",
+            "who": "PM",
+            "note": "If the APU is used, set ON and wait for the APU BLEED memo, then shut down the engines immediately."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PF",
+          "text": "ENG Masters OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012192.0004001",
+            "line": "All ENG MASTER levers......OFF",
+            "who": "PF",
+            "note": "No less than 1 min after high thrust operations. Preceded by EXT A(B) pb CHECK AVAIL and ON (APU not used) or APU START pb CHECK AVAIL (APU used), PF; followed by ENGINE PARAMETERS......CHECK PF."
+          }
+        },
+        {
+          "n": 3,
+          "who": "PM",
+          "text": "Fuel Pumps OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012198.0001001",
+            "line": "FUEL PUMPS......OFF",
+            "who": "PM",
+            "note": ""
+          }
+        },
+        {
+          "n": 4,
+          "who": "PF",
+          "text": "Ext Lights OFF (Nav 1)",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012195.0003001",
+            "line": "BEACON sw......OFF",
+            "who": "PF",
+            "note": "EXTERIOR LIGHTS DU: WING sw OFF, BEACON sw OFF (when all engines spooled down), OTHER EXTERIOR LIGHTS AS RQRD: RWY TURN OFF sw OFF, LAND LIGHT sw OFF, NOSE sw OFF, STROBE sw OFF, NAV & LOGO sw 1. All PF."
+          }
+        },
+        {
+          "n": 4,
+          "who": "PM",
+          "text": "ATC OFF",
+          "fcom": {
+            "status": "CONFLICT",
+            "ident": "PRO-NOR-SOP-22-A-00012199.0001001",
+            "line": "ATC......STBY",
+            "who": "PM",
+            "note": "Card says ATC OFF; FCOM line is ATC......STBY PM. Different selector position."
+          }
+        },
+        {
+          "n": 5,
+          "who": "PF",
+          "text": "Seatbelts OFF",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012196.0001001",
+            "line": "SEAT BELTS sw......OFF",
+            "who": "PF",
+            "note": ""
+          }
+        },
+        {
+          "n": 5,
+          "who": "PM",
+          "text": "IRS Perf <5",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012200.0001001",
+            "line": "IRS PERFORMANCE......CHECK",
+            "who": "PM",
+            "note": "On the FMS POSITION/MONITOR page check the deviation does not exceed the FCOM table. The table is a figure not present in the text extraction, so the card's <5 threshold could not be confirmed against it."
+          }
+        },
+        {
+          "n": 6,
+          "who": "PF",
+          "text": "Slides",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012194.0001001",
+            "line": "SLIDES......CHECK DISARMED",
+            "who": "PF",
+            "note": "On the DOOR/OXY SD page; warn the cabin crew if any slide is not disarmed."
+          }
+        },
+        {
+          "n": 6,
+          "who": "PM",
+          "text": "Fuel Qty per Plan",
+          "fcom": {
+            "status": "VERIFIED",
+            "ident": "PRO-NOR-SOP-22-A-00012201.0001001",
+            "line": "FUEL QUANTITY......CHECK",
+            "who": "PM",
+            "note": "FOB plus fuel used consistent with FOB at departure; unusual discrepancy needs maintenance action."
+          }
+        }
+      ],
+      "cl_trigger": {
+        "text": "Parking Flow complete",
+        "checklist": "Parking"
+      },
+      "notes": [],
+      "lights": {
+        "who": "PF",
+        "settings": [
+          "All OFF except: Nav 1"
+        ]
+      },
+      "src": "quickref p2 left"
+    }
+  ],
+  "checklists": {
+    "Cockpit Preparation": {
+      "src": "A330P_NPC-CB 2025-08-13 COCKPIT PREPARATION card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024935.0001001",
+      "items": [
+        {
+          "challenge": "FUEL QUANTITY",
+          "response": "______ BALANCED",
+          "who": "PF"
+        },
+        {
+          "challenge": "SEAT BELTS",
+          "response": "ON",
+          "who": "PF"
+        },
+        {
+          "challenge": "BARO REF",
+          "response": "______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "OXY MASKS",
+          "response": "TESTED/100%",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "LOGBOOK",
+          "response": "ONBOARD",
+          "who": "PF"
+        }
+      ]
+    },
+    "Before Start": {
+      "src": "A330P_NPC-CB 2025-08-13 BEFORE START card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024936.0001001",
+      "items": [
+        {
+          "challenge": "PARKING BRAKE",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "T.O SPEEDS & THRUST",
+          "response": "______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "PITOT COVERS",
+          "response": "REMOVED",
+          "who": "PF"
+        },
+        {
+          "challenge": "WINDOWS",
+          "response": "CLOSED",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "NW/S MEMO",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "BEACON",
+          "response": "ON",
+          "who": "PF"
+        }
+      ]
+    },
+    "After Start": {
+      "src": "A330P_NPC-CB 2025-08-13 AFTER START card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024937.0001001",
+      "items": [
+        {
+          "challenge": "SALUTE",
+          "response": "RECEIVED",
+          "who": "PF"
+        },
+        {
+          "challenge": "ANTI ICE",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "ECAM STATUS",
+          "response": "CHECKED",
+          "who": "PF"
+        },
+        {
+          "challenge": "PITCH TRIM",
+          "response": "______%",
+          "who": "PF"
+        },
+        {
+          "challenge": "RUDDER TRIM",
+          "response": "NEUTRAL",
+          "who": "PF"
+        }
+      ]
+    },
+    "Taxi": {
+      "src": "A330P_NPC-CB 2025-08-13 TAXI card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024938.0005001",
+      "items": [
+        {
+          "challenge": "FLIGHT CONTROLS",
+          "response": "CHECKED",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "FLAPS SETTING",
+          "response": "CONF______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "RADAR & PRED W/S",
+          "response": "ON & AUTO",
+          "who": "PF"
+        },
+        {
+          "challenge": "ENG START SEL",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "ECAM MEMO",
+          "response": "T.O NO BLUE",
+          "who": "PF"
+        },
+        {
+          "challenge": "CABIN",
+          "response": "NA/ADVISED",
+          "who": "PF"
+        }
+      ]
+    },
+    "Line-Up": {
+      "src": "A330P_NPC-CB 2025-08-13 LINE-UP card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024939.0001001",
+      "items": [
+        {
+          "challenge": "T.O RWY",
+          "response": "______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "TCAS",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "PACKS 1 & 2",
+          "response": "______",
+          "who": "PF"
+        }
+      ]
+    },
+    "Departure Change": {
+      "src": "A330P_NPC-CB 2025-08-13 << DEPARTURE CHANGE >> card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024940.0001001",
+      "items": [
+        {
+          "challenge": "RWY & SID",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "FLAP SETTING",
+          "response": "CONF______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "T.O SPEEDS & THRUST",
+          "response": "______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "FCU ALT",
+          "response": "______",
+          "who": "PF"
+        }
+      ]
+    },
+    "Approach": {
+      "src": "A330P_NPC-CB 2025-08-13 APPROACH card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024941.0001001",
+      "items": [
+        {
+          "challenge": "BARO REF",
+          "response": "______",
+          "who": "BOTH"
+        },
+        {
+          "challenge": "SEAT BELTS",
+          "response": "ON",
+          "who": "PF"
+        },
+        {
+          "challenge": "MINIMUM",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "AUTO BRAKE",
+          "response": "______",
+          "who": "PF"
+        },
+        {
+          "challenge": "ENG START SEL",
+          "response": "______",
+          "who": "PF"
+        }
+      ]
+    },
+    "Landing": {
+      "src": "A330P_NPC-CB 2025-08-13 LANDING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024942.0002001",
+      "items": [
+        {
+          "challenge": "ECAM MEMO",
+          "response": "LDG NO BLUE",
+          "who": "PF"
+        },
+        {
+          "challenge": "- LDG GEAR",
+          "response": "DN",
+          "who": "PF"
+        },
+        {
+          "challenge": "- SEAT BELTS",
+          "response": "ON",
+          "who": "PF"
+        },
+        {
+          "challenge": "- SPLRS",
+          "response": "ARM",
+          "who": "PF"
+        },
+        {
+          "challenge": "- FLAPS",
+          "response": "LDG",
+          "who": "PF"
+        },
+        {
+          "challenge": "CABIN",
+          "response": "NA/ADVISED",
+          "who": "PF"
+        }
+      ]
+    },
+    "After Landing": {
+      "src": "A330P_NPC-CB 2025-08-13 AFTER LANDING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024943.0002001",
+      "items": [
+        {
+          "challenge": "RADAR & PRED W/S",
+          "response": "OFF",
+          "who": "PF"
+        }
+      ]
+    },
+    "Parking": {
+      "src": "A330P_NPC-CB 2025-08-13 PARKING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024944.0001001",
+      "items": [
+        {
+          "challenge": "PARKING BRAKE or CHOCKS",
+          "response": "______SET",
+          "who": "PF"
+        },
+        {
+          "challenge": "ENGINES",
+          "response": "OFF",
+          "who": "PF"
+        },
+        {
+          "challenge": "WING LIGHTS",
+          "response": "OFF",
+          "who": "PF"
+        },
+        {
+          "challenge": "FUEL PUMPS",
+          "response": "OFF",
+          "who": "PF"
+        }
+      ]
+    },
+    "Securing the Aircraft": {
+      "src": "A330P_NPC-CB 2025-08-13 SECURING THE AIRCRAFT card; performed by PM per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024945.0001001",
+      "items": [
+        {
+          "challenge": "REFER TO FCOM - SECURING THE AIRCRAFT",
+          "response": "[PRO-NOR-SUP]",
+          "who": "PM"
+        }
+      ]
+    }
+  },
+  "callouts": [
+    {
+      "phase": "all phases",
+      "trigger": "Any FMA change",
+      "pm": "CHECKED",
+      "pf": "Announce armed modes with colour (e.g. G/S blue, LOC blue) and active modes without colour (e.g. NAV, ALT)",
+      "src": "FCOM PRO-NOR-SCO-00011832.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Transfer of control, giving control",
+      "pm": "I HAVE CONTROL (the pilot accepting)",
+      "pf": "YOU HAVE CONTROL (the pilot giving)",
+      "src": "FCOM PRO-NOR-SCO-00011838.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Transfer of control, taking control",
+      "pm": "YOU HAVE CONTROL (the pilot handing over)",
+      "pf": "I HAVE CONTROL (the pilot taking)",
+      "src": "FCOM PRO-NOR-SCO-00011838.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Checklist complete",
+      "pm": "__ CHECKLIST COMPLETE",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-00011826.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Checklist must be interrupted",
+      "pm": "HOLD CHECKLIST AT ___, then RESUME CHECKLIST AT ___",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-00011826.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Parking brake moved",
+      "pm": "PARKING BRAKE SET or RELEASED, whichever pilot operates it",
+      "pf": "PARKING BRAKE SET or RELEASED, whichever pilot operates it",
+      "src": "FCOM PRO-NOR-SCO-90000106.9000259",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Flap selection",
+      "pm": "SPEED CHECKED, then FLAPS ONE after checking the blue number on the ECAM flaps indicator",
+      "pf": "FLAPS ONE",
+      "src": "FCOM PRO-NOR-SCO-B-00011834.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Gear selection",
+      "pm": "GEAR UP (DOWN) after checking the red lights on the LDG GEAR indicator",
+      "pf": "GEAR UP (DOWN)",
+      "src": "FCOM PRO-NOR-SCO-B-00011835.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Airspeed approaching 10 kt from target speed or approaching any limit speed, except approach",
+      "pm": "SPEED",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000107.9000261",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Bank angle approaching 30 deg, except landing",
+      "pm": "BANK ANGLE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000107.9000261",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Altitude deviation +/- 100 ft from target altitude, except approach",
+      "pm": "ALTITUDE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000107.9000261",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "all phases",
+      "trigger": "Descent pitch approaching -10 deg",
+      "pm": "PITCH",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000107.9000261",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Taxi clearance obtained",
+      "pm": "CLEAR RIGHT (LEFT)",
+      "pf": "CLEAR LEFT (RIGHT)",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Brake check",
+      "pm": "",
+      "pf": "BRAKE CHECK",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Flight control check, elevators",
+      "pm": "FULL UP, FULL DOWN, NEUTRAL",
+      "pf": "FLIGHT CONTROL CHECK",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Flight control check, ailerons and spoilers",
+      "pm": "FULL LEFT, FULL RIGHT, NEUTRAL",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Flight control check, rudder (PM follows pedal movement with their feet)",
+      "pm": "FULL LEFT, FULL RIGHT, NEUTRAL",
+      "pf": "RUDDER",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "taxi",
+      "trigger": "Takeoff PA",
+      "pm": "[FLIGHT ATTENDANTS SHOULD NOW] BE SEATED FOR TAKEOFF",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011845.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Setting thrust levers to initial stabilization value",
+      "pm": "",
+      "pf": "TAKEOFF",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Before passing 80 kt",
+      "pm": "THRUST SET",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "At 100 kt",
+      "pm": "ONE HUNDRED KNOTS",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "At V1",
+      "pm": "V1 (PM monitors the auto callout, or announces if it is inoperative)",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "At VR",
+      "pm": "ROTATE",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Gear retraction",
+      "pm": "POSITIVE RATE, then GEAR UP",
+      "pf": "GEAR UP",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "If AP is engaged by PM",
+      "pm": "",
+      "pf": "AP 1 ON",
+      "src": "FCOM PRO-NOR-SCO-D-00011846.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Excessive rotation rate or pitch occurs, tail strike risk",
+      "pm": "PITCH",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000108.9000260",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Takeoff climb pitch greater than 20 deg up or less than 10 deg up",
+      "pm": "PITCH",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000108.9000260",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "takeoff",
+      "trigger": "Takeoff bank angle approaching 7 deg below 100 ft",
+      "pm": "BANK ANGLE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-90000108.9000260",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "climb",
+      "trigger": "Approaching within 1 000 ft of the clearance altitude",
+      "pm": "CHECKED",
+      "pf": "[Altitude leaving] for [Clearance altitude], e.g. 23 for 24",
+      "src": "FCOM PRO-NOR-SCO-00011833.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "climb",
+      "trigger": "Barometric setting change and subsequent altimeter cross-check",
+      "pm": "STANDARD (QNH/QFE) CROSS-CHECKED, then PASSING FL __ (__ FT) NOW",
+      "pf": "SET STANDARD (SET QNH/QFE), then CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011848.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "descent-10000",
+      "trigger": "Cabin preparation PA, no later than 18 000 ft MSL, near T/D on short flights, or when Early Sit Procedures are used",
+      "pm": "[Flight Attendants], please prepare the cabin for arrival and be seated for landing.",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-C0000236.9001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Activation of approach phase",
+      "pm": "APPROACH PHASE ACTIVATED",
+      "pf": "ACTIVATE APPROACH PHASE",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "RA alive",
+      "pm": "RADIO ALTIMETER ALIVE",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "At F-G/S*, G/S*, FINAL APP or below the go-around altitude, if the PF requests the PM to set it",
+      "pm": "GA ALTITUDE_SET",
+      "pf": "SET GA ALTITUDE_FT",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "At F-G/S*, G/S*, FINAL APP or below the go-around altitude, if the PF sets it",
+      "pm": "CHECKED",
+      "pf": "GA ALTITUDE_SET",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "FAF",
+      "pm": "(Fix name)_____, (PFD altitude)_____, (altimeter setting)_____, CHECKED",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "FAF crossing criteria not met",
+      "pm": "UNSTABLE, GO AROUND",
+      "pf": "GO AROUND - FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "1 000 ft AFE stabilized gate, configuration criteria met",
+      "pm": "CHECKED",
+      "pf": "STABLE",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "1 000 ft AFE, speed or vertical speed parameters out of limits at the stabilized gate",
+      "pm": "CHECKED",
+      "pf": "CORRECTING SPEED / VERTICAL SPEED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "1 000 ft AFE, configuration criteria not met",
+      "pm": "UNSTABLE, GO AROUND, if the unstable approach is not identified by the PF",
+      "pf": "UNSTABLE, GO AROUND - FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "500 ft AFE go-around gate, criteria met",
+      "pm": "STABLE",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "500 ft AFE go-around gate, criteria not met",
+      "pm": "UNSTABLE, GO AROUND",
+      "pf": "GO AROUND - FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "100 ft above MDA/DH",
+      "pm": "ONE HUNDRED ABOVE (PM monitors the pin-programmed auto callout, or announces if inoperative)",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "MDA/DH visual reference (for a circling approach, at the latest at the MAP)",
+      "pm": "MINIMUM (PM monitors the pin-programmed auto callout, or announces if inoperative)",
+      "pf": "CONTINUE",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "100 ft RA",
+      "pm": "ONE HUNDRED (PM monitors the pin-programmed auto callout, or announces if inoperative)",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "50 ft RA",
+      "pm": "FIFTY (PM monitors the pin-programmed auto callout, or announces if inoperative)",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "CAT II or CAT III, LAND on FMA at 350 ft RA",
+      "pm": "CHECKED",
+      "pf": "LAND",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "CAT II, DA(H) + 100 ft",
+      "pm": "100 ABOVE",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "CAT II, DA(H)",
+      "pm": "MINIMUM",
+      "pf": "CONTINUE, or GO AROUND, FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "CAT III, 200 ft RA",
+      "pm": "ALERT",
+      "pf": "CONTINUE, or GO AROUND, FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Approach speed approaching +10 kt/-5 kt of target speed",
+      "pm": "SPEED",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Sink rate more than 1 000 ft/min below 1 000 ft AGL",
+      "pm": "SINK RATE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Altitude +/- 100 ft from published altitudes, or MDA +100 ft/-0 ft",
+      "pm": "ALTITUDE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Localizer or F-LOC 1/2 dot",
+      "pm": "LOC",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Glideslope or F-G/S 1/2 dot",
+      "pm": "GLIDESLOPE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "VOR 1/2 dot or 2.5 deg, ADF 5 deg",
+      "pm": "COURSE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "RNAV cross track deviation greater than 0.1 NM",
+      "pm": "TRACK",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Vertical deviation from non-precision glidepath 1/2 dot",
+      "pm": "V DEV",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "Lateral deviation from RNP AR course, L/DEV reaches 1/2 dot",
+      "pm": "LAT DEV",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "approach",
+      "trigger": "VASI or PAPI other than red over white, or two white two red",
+      "pm": "State the actual condition, e.g. PAPI ONE WHITE, THREE RED.",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011836.0004001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "CAT II or CAT III, 40 ft RA",
+      "pm": "FLARE or NO FLARE",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "At 20 ft in the flare on a manual landing, automatic RETARD callout as a reminder",
+      "pm": "",
+      "pf": "ALL THRUST LEVERS to IDLE",
+      "src": "FCOM PRO-NOR-SOP-19-A-00012003.0022001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "At 10 ft RA on an autoland, automatic RETARD callout",
+      "pm": "",
+      "pf": "ALL THRUST LEVERS to IDLE",
+      "src": "FCOM PRO-NOR-TSK-00024888.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Flare technique, the RETARD auto callout is a reminder rather than an order",
+      "pm": "",
+      "pf": "Retard all thrust levers rapidly, at the latest at the IDLE detent by touchdown to ensure ground spoiler extension",
+      "src": "FCTM PR-NP-SOP-250-00016470.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Landing bank angle approaching 7 deg below 100 ft",
+      "pm": "BANK ANGLE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00021402.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Landing pitch approaching the tail strike pitch limit indicator, or pitch reaches 7.5 deg",
+      "pm": "PITCH",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00021402.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Touchdown zone criteria not met",
+      "pm": "UNSTABLE, GO AROUND",
+      "pf": "GO AROUND-FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Ground spoilers extended (if not extended, call NO SPOILERS)",
+      "pm": "SPOILERS",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "REV green on EWD (if deployment is not as expected, call NO REVERSE ENGINE_ or NO REVERSE)",
+      "pm": "REVERSE GREEN",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Deceleration felt and confirmed by the speed trend on the PFD (if not positive, call NO DECEL)",
+      "pm": "DECEL",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "Autobrake disengagement",
+      "pm": "AUTOBRAKE OFF",
+      "pf": "MANUAL BRAKING",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "CAT II or CAT III, rollout",
+      "pm": "ROLLOUT",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "landing",
+      "trigger": "At 70 kt",
+      "pm": "SEVENTY KNOTS",
+      "pf": "CHECKED",
+      "src": "FCOM PRO-NOR-SCO-D-00011849.0005001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Go-around decision",
+      "pm": "",
+      "pf": "GO AROUND - FLAPS",
+      "src": "FCOM PRO-NOR-SCO-D-00011850.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Flaps retraction",
+      "pm": "FLAPS__",
+      "pf": "",
+      "src": "FCOM PRO-NOR-SCO-D-00011850.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Gear retraction",
+      "pm": "POSITIVE CLIMB, then GEAR UP",
+      "pf": "GEAR UP",
+      "src": "FCOM PRO-NOR-SCO-D-00011850.0001001",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Bank angle approaching 7 deg during go-around",
+      "pm": "BANK ANGLE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011837.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Pitch attitude greater than 20 deg up or less than 10 deg up during go-around",
+      "pm": "PITCH",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011837.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "No climb rate during go-around",
+      "pm": "SINK RATE",
+      "pf": "CORRECTING",
+      "src": "FCOM PRO-NOR-SCO-C-00011837.0001001",
+      "status": "UNVERIFIED"
+    },
+    {
+      "phase": "go-around",
+      "trigger": "Discontinued approach decision",
+      "pm": "",
+      "pf": "CANCEL APPROACH",
+      "src": "FCOM PRO-NOR-SCO-D-00015191.0001001",
+      "status": "VERIFIED"
+    }
+  ],
+  "lights_table": [
+    {
+      "phase_label": "Cockpit Prep Flow",
+      "who": "PF",
+      "settings": [
+        "Strobes AUTO",
+        "Nav 1",
+        "All others OFF"
+      ]
+    },
+    {
+      "phase_label": "Before Push",
+      "who": "PF",
+      "settings": [
+        "Beacon ON"
+      ]
+    },
+    {
+      "phase_label": "Taxi",
+      "who": "PF*",
+      "settings": [
+        "Nose TAXI",
+        "Rwy Turnoff ON"
+      ]
+    },
+    {
+      "phase_label": "Crossing a Runway",
+      "who": "PF*",
+      "settings": [
+        "Strobes ON",
+        "Land ON"
+      ]
+    },
+    {
+      "phase_label": "Line up and Wait",
+      "who": "PF*",
+      "settings": [
+        "Strobes ON"
+      ]
+    },
+    {
+      "phase_label": "Cleared for Takeoff",
+      "who": "PF*",
+      "settings": [
+        "Nose T.O.",
+        "Land ON"
+      ]
+    },
+    {
+      "phase_label": "After takeoff",
+      "who": "PM",
+      "settings": [
+        "Nose OFF",
+        "Rwy Turnoff OFF"
+      ]
+    },
+    {
+      "phase_label": "Climbing through 10,000' AAL",
+      "who": "PM",
+      "settings": [
+        "Land OFF"
+      ]
+    },
+    {
+      "phase_label": "Descending through 10,000' AAL",
+      "who": "PM",
+      "settings": [
+        "Land ON"
+      ]
+    },
+    {
+      "phase_label": "Cleared for approach",
+      "who": "PM",
+      "settings": [
+        "Nose TAXI",
+        "Rwy Turnoff ON"
+      ]
+    },
+    {
+      "phase_label": "Cleared to land",
+      "who": "PM",
+      "settings": [
+        "Nose T.O"
+      ]
+    },
+    {
+      "phase_label": "After Landing",
+      "who": "PF*",
+      "settings": [
+        "Land OFF",
+        "Strobes AUTO",
+        "Nose TAXI"
+      ]
+    },
+    {
+      "phase_label": "Parking",
+      "who": "PF",
+      "settings": [
+        "All OFF except: Nav 1"
+      ]
+    }
+  ],
+  "lights_footnote": "*or PM, at PF's request"
+}
