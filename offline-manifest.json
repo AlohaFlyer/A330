@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6007529,
+"coreBytes": 6237502,
 "audioBytes": 0,
 "core": [
 {
@@ -14,7 +14,7 @@
 },
 {
 "u": "/A330_OE_Workbook_Answered.pdf",
-"b": 317254
+"b": 318511
 },
 {
 "u": "/A330_QRH_Memory_Items.pdf",
@@ -22,11 +22,11 @@
 },
 {
 "u": "/A330_Weather_Requirements.pdf",
-"b": 10503
+"b": 11218
 },
 {
-"u": "/assets/A330_hero.svg",
-"b": 587
+"u": "/assets/A330_hero.jpg",
+"b": 92237
 },
 {
 "u": "/assets/a330_cockpit.jpg",
@@ -34,27 +34,27 @@
 },
 {
 "u": "/assets/icons/favicon.ico",
-"b": 3896
+"b": 7412
 },
 {
 "u": "/assets/icons/icon-16.png",
-"b": 928
+"b": 697
 },
 {
 "u": "/assets/icons/icon-180.png",
-"b": 52803
+"b": 53515
 },
 {
 "u": "/assets/icons/icon-192.png",
-"b": 59260
+"b": 59991
 },
 {
 "u": "/assets/icons/icon-32.png",
-"b": 2932
+"b": 2192
 },
 {
 "u": "/assets/icons/icon-512.png",
-"b": 333465
+"b": 372871
 },
 {
 "u": "/assets/pualani-2001.png",
@@ -62,43 +62,43 @@
 },
 {
 "u": "/assist.js",
-"b": 34343
+"b": 34531
 },
 {
 "u": "/corpus/flows.json",
-"b": 57352
+"b": 57453
 },
 {
 "u": "/corpus/fom.json",
-"b": 276446
+"b": 288109
 },
 {
 "u": "/corpus/ioe.json",
-"b": 228299
+"b": 229214
 },
 {
 "u": "/corpus/limitations.json",
-"b": 67850
+"b": 67940
 },
 {
 "u": "/corpus/mcdu.json",
-"b": 21803
+"b": 21888
 },
 {
 "u": "/corpus/memory.json",
-"b": 5613
+"b": 5683
 },
 {
 "u": "/corpus/systems.json",
-"b": 89
+"b": 151
 },
 {
 "u": "/corpus/triggers.json",
-"b": 18536
+"b": 18715
 },
 {
 "u": "/corpus/weather.json",
-"b": 22890
+"b": 25294
 },
 {
 "u": "/data/episodes.json",
@@ -110,15 +110,15 @@
 },
 {
 "u": "/data/flows_trainer.json",
-"b": 68964
+"b": 87968
 },
 {
 "u": "/data/fom_all.json",
-"b": 381934
+"b": 398340
 },
 {
 "u": "/data/fom_delta.json",
-"b": 69947
+"b": 89337
 },
 {
 "u": "/data/fom_questions.json",
@@ -166,7 +166,7 @@
 },
 {
 "u": "/data/oe.json",
-"b": 407583
+"b": 409015
 },
 {
 "u": "/data/oral_scope.json",
@@ -174,7 +174,7 @@
 },
 {
 "u": "/data/phase_flows.json",
-"b": 300768
+"b": 301276
 },
 {
 "u": "/data/systems.json",
@@ -190,15 +190,15 @@
 },
 {
 "u": "/data/triggers.json",
-"b": 35589
+"b": 35731
 },
 {
 "u": "/data/weather.json",
-"b": 24654
+"b": 27116
 },
 {
 "u": "/flows_quiz.html",
-"b": 39258
+"b": 39861
 },
 {
 "u": "/fom_q/ch01.json",
@@ -206,7 +206,7 @@
 },
 {
 "u": "/fom_q/ch02.json",
-"b": 20633
+"b": 23907
 },
 {
 "u": "/fom_q/ch03.json",
@@ -214,15 +214,15 @@
 },
 {
 "u": "/fom_q/ch04.json",
-"b": 17113
+"b": 17960
 },
 {
 "u": "/fom_q/ch05.json",
-"b": 39325
+"b": 43461
 },
 {
 "u": "/fom_q/ch06.json",
-"b": 27266
+"b": 28583
 },
 {
 "u": "/fom_q/ch07.json",
@@ -230,11 +230,11 @@
 },
 {
 "u": "/fom_q/ch08.json",
-"b": 27609
+"b": 29953
 },
 {
 "u": "/fom_q/ch09.json",
-"b": 21048
+"b": 22007
 },
 {
 "u": "/fom_q/ch10.json",
@@ -242,11 +242,11 @@
 },
 {
 "u": "/fom_q/ch11.json",
-"b": 21663
+"b": 23046
 },
 {
 "u": "/fom_q/ch12.json",
-"b": 21780
+"b": 22156
 },
 {
 "u": "/fom_q/ch13.json",
@@ -254,7 +254,7 @@
 },
 {
 "u": "/fom_q/ch14.json",
-"b": 19740
+"b": 19792
 },
 {
 "u": "/fom_q/ch15.json",
@@ -262,7 +262,7 @@
 },
 {
 "u": "/fom_q/ch16.json",
-"b": 16948
+"b": 18656
 },
 {
 "u": "/fom_q/ch18.json",
@@ -270,55 +270,55 @@
 },
 {
 "u": "/fom_q/ch19_24.json",
-"b": 29276
+"b": 29286
 },
 {
 "u": "/fom_quiz.html",
-"b": 20660
+"b": 20718
 },
 {
 "u": "/hot-seat.html",
-"b": 12240
+"b": 12196
 },
 {
 "u": "/index.html",
-"b": 11171
+"b": 11249
 },
 {
 "u": "/ioe.html",
-"b": 13314
+"b": 13469
 },
 {
 "u": "/jeopardy.html",
-"b": 30953
+"b": 30901
 },
 {
 "u": "/limit-or-bust.html",
-"b": 11641
+"b": 11590
 },
 {
 "u": "/limitations.html",
-"b": 13635
+"b": 13582
 },
 {
 "u": "/mcdu_preflight.html",
-"b": 20088
+"b": 20243
 },
 {
 "u": "/memory-items.html",
-"b": 13464
+"b": 13408
 },
 {
 "u": "/phase_flows.html",
-"b": 36355
+"b": 36523
 },
 {
 "u": "/podcast.html",
-"b": 15086
+"b": 15241
 },
 {
 "u": "/portal-settings.js",
-"b": 45069
+"b": 45310
 },
 {
 "u": "/pwa.html",
@@ -330,7 +330,7 @@
 },
 {
 "u": "/pwa_pdf.html",
-"b": 9601
+"b": 9756
 },
 {
 "u": "/pwa_prompt.json",
@@ -350,11 +350,11 @@
 },
 {
 "u": "/systems_quiz.html",
-"b": 20664
+"b": 20616
 },
 {
 "u": "/triggers.html",
-"b": 19093
+"b": 19041
 },
 {
 "u": "/versions.json",
@@ -362,15 +362,15 @@
 },
 {
 "u": "/view.html",
-"b": 3917
+"b": 4072
 },
 {
 "u": "/weather.html",
-"b": 13871
+"b": 13808
 },
 {
 "u": "/wx-alternate.html",
-"b": 11005
+"b": 10951
 }
 ],
 "audio": []

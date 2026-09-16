@@ -205,6 +205,9 @@ ol.cl-order li:last-child{border-bottom:none;}
 .ps-home svg{display:block;}
 @media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
 </style>
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#463C8F">
 </head>
 <body>
 <div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -219,8 +222,8 @@ ol.cl-order li:last-child{border-bottom:none;}
   <div class="ctrls">
     <button class="notesbtn" id="notesBtn" title="Quick Reference Notes">NOTES</button>
     <div class="toggle seat" id="seat">
-      <button data-s="C" class="on">CA</button>
-      <button data-s="F">FO</button>
+      <button data-s="C">CM1 (CA)</button>
+      <button data-s="F" class="on">CM2 (FO)</button>
     </div>
     <div class="toggle duty" id="duty">
       <button data-d="PF" class="on">PF</button>
@@ -279,7 +282,7 @@ const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref+']':''):'';
   } };
 const PHASES=PHASE_FLOWS.phases.map(p=>({id:p.id,label:p.label,kind:p.kind,title:p.title,src:p.src,
   sections:p.sections.map(s=>S(s.h,s.c,s.items.map(__mk),s.cite,s.appr))}));
-const VERSIONS="FCOM R17 · QRH R35 · FCTM R5 · FOM 125.1 · PRC 3/9/26";
+const VERSIONS="FCOM R17 · QRH R35 · FCTM R6 · FOM 125.3 · PRC 8/31/26";
 document.getElementById('srcsub').textContent=VERSIONS;
 const QUOTES=PHASE_FLOWS.quotes||{};
 const NOTES=PHASE_FLOWS.notes||[];

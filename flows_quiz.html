@@ -189,6 +189,9 @@
   body > div:first-of-type span{font-size:15px !important;letter-spacing:0 !important;white-space:normal !important;}
 }
 </style>
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#463C8F">
 </head>
 <body>
 <div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
@@ -203,8 +206,9 @@
     <button id="posterBtn" title="View clean full-resolution cockpit poster">Poster</button>
   </div>
   <div class="seat" id="seatGroup">
-    <button id="seatCA" class="active">CA</button>
-    <button id="seatFO">FO</button>
+    <button id="seatCA">CM1 (CA)</button>
+    <button id="seatFO" class="active">CM2 (FO)</button>
+    <button id="seatIRO">CM3 (IRO)</button>
   </div>
   <div class="seat" id="dutyGroup">
     <button id="dutyPF" class="active">PF</button>
@@ -255,7 +259,7 @@ function showXref(key){
   const box = document.createElement("div");
   box.id = "xrefBox";
   box.style.cssText = "margin-top:8px;padding:10px 12px;background:#fff8e7;border-left:4px solid #e6a817;border-radius:0 4px 4px 0;font-size:13px;white-space:pre-line;line-height:1.6;";
-  box.innerHTML = "<b style='font-size:11px;color:#888;'>" + x.title + "</b>\n" + x.body;
+  box.innerHTML = "<b style='font-size:11px;color:#888;'>" + x.title + "</b>\n" + x.body + (x.ref ? "\n<b style='font-size:11px;color:#888;'>" + x.ref + (x.page ? " &middot; PDF p. " + x.page : "") + "</b> <a class=\"xref\" href=\"/manuals/?s=" + encodeURIComponent(x.ref) + "\" target=\"_blank\" rel=\"noopener\">Open in Manuals</a>" : "");
   document.getElementById("detail").after(box);
 }
 
@@ -277,13 +281,13 @@ function linkRefs(t){
   t = t.replace(/\b(CAUTION)\b/g, '<b style="color:#e6a817;">$1</b>');
   t = t.replace(/\b(ADVISORY)\b/g, '&#8594; <b style="color:#c8880a;">$1</b>');
   t = t.replace(/\b(MEMO)\b/g, '<b style="color:#E26DB8;">$1</b>');
+  t = t.replace(/\b(FCTM PR-[A-Z0-9-]+|QRH [A-Z0-9.-]+|PRO-(?:NOR|ABN|SPO|SUP)-[A-Z0-9-]+|DSC-\d\d-\d\d(?:-\d\d)?|LIM-[A-Z0-9-]+|PER-[A-Z0-9-]+)\b/g, function(m){
+    if(XREFS[m]) return '<span class="xref" onclick="showXref(\''+m.replace(/ /g,'\\x20')+'\');">'+m+'</span>';
+    return m;
+  });
   t = t.replace(/([A-Z]{2,}(?:\s[A-Z0-9\/]{2,}){1,4})/g, function(m){
     if(/</.test(m)||m==='FCOM'||m==='FCTM'||m==='EICAS'||m==='AFDS'||m==='LNAV'||m==='VNAV'||m==='FLCH'||m==='BOTH') return m;
     return '<span style="color:#e6a817;font-weight:600;">'+m+'</span>';
-  });
-  t = t.replace(/\b(PRO-NOR-SUP-[A-Z]+)\b/g, function(m){
-    if(XREFS[m]) return '<span class="xref" onclick="showXref(\''+m+'\');">'+m+'</span>';
-    return m;
   });
   return t;
 }
@@ -300,7 +304,7 @@ function showChecklist(name){
   let rows = "";
   if(cl){ cl.forEach(r=>{ rows += "<tr><td>"+r[0]+"</td><td class='dots'></td><td class='resp'>"+r[1]+"</td><td class='who'>("+r[2]+")</td></tr>"; }); }
   else { rows = "<tr><td colspan='4'>Checklist not found - see FCTM Normal Checklists.</td></tr>"; }
-  ov.innerHTML = "<div class='clbox'><div class='clhead'><span>✅ "+name+"</span><button onclick=\"document.getElementById('clOverlay').style.display='none'\">×</button></div><table>"+rows+"</table><div class='clsrc'>FCTM R5 Normal Checklists (PR-NP-CL)</div></div>";
+  ov.innerHTML = "<div class='clbox'><div class='clhead'><span>✅ "+name+"</span><button onclick=\"document.getElementById('clOverlay').style.display='none'\">×</button></div><table>"+rows+"</table><div class='clsrc'>FCTM R6 Normal Checklists (PR-NP-CL)</div></div>";
   ov.style.display = "flex";
 }
 let flowIdx = 0;
@@ -315,9 +319,9 @@ function activeItems(f){
   return f.items.filter(it=>!isOff(it));
 }
 function isOff(it){
-  if(it.role==="IRO") return true; // observer items always greyed
+  if(it.role==="IRO") return seat!=="IRO"; // CM3 items show in the CM3 seat
   if(it.role==="BOTH") return false; // BOTH items always show
-  if(it.role==="CA" || it.role==="FO") return it.role!==seat;
+  if(it.role==="CA" || it.role==="FO") return seat==="IRO" ? true : it.role!==seat;
   if(it.role==="PF" || it.role==="PM") return it.role!==duty;
   return false;
 }
@@ -482,10 +486,10 @@ function render(){
   const f = FLOWS[flowIdx];
   const items = activeItems(f);
   document.getElementById("tag").textContent = (f.phase ? f.phase + "  ▸  " : "") + f.n + "  [" + f.ref + "]";
-  document.getElementById("who").innerHTML = (f.who + " · viewing: " + (seat==="BOTH"?"both seats":seat) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "");
+  document.getElementById("who").innerHTML = (f.who + " · viewing: " + (seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat)) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "");
   
   if(items.length===0){
-    document.getElementById("q").textContent = "No " + seat + " items in this flow. Switch seat or flow.";
+    document.getElementById("q").textContent = "No " + ({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat) + " items in this flow. Switch seat or flow.";
     document.getElementById("done").innerHTML = "";
     document.getElementById("a").textContent = "";
     drawMap(document.getElementById("cockpitMap"), f, 0, true);
@@ -618,6 +622,7 @@ function setSeat(s, btn){
 }
 document.getElementById("seatCA").onclick = e=>setSeat("CA", e.target);
 document.getElementById("seatFO").onclick = e=>setSeat("FO", e.target);
+document.getElementById("seatIRO").onclick = e=>setSeat("IRO", e.target);
 
 function setDuty(d, btn){
   duty = d; stepIdx = 0;
@@ -738,7 +743,7 @@ render();
 Object.assign(window,{activeItems, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
 }).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.svg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Flows%20Trainer" style="font-size:11px;color:#463C8F;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.1</div></footer>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.2</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

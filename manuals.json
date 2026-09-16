@@ -34,8 +34,8 @@
   },
   "A330_FCTM": {
     "title": "A330 Flight Crew Training Manual",
-    "revision": "R5",
-    "date": "27 MAR 26",
+    "revision": "R6",
+    "date": "14 SEP 26",
     "fleet": "both",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1X98gKkYagcYEmddo0RM2o9ipNPSg9jSE/view"
@@ -67,7 +67,7 @@
   "A330_PRC": {
     "title": "A330 Pilot Reference Cards",
     "revision": null,
-    "date": "3/9/26",
+    "date": "8/31/26",
     "fleet": "both",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"
@@ -90,8 +90,8 @@
   },
   "A330P_PERF": {
     "title": "A330 Passenger Performance Manual",
-    "revision": "R26-10",
-    "date": "Aug 12 2026",
+    "revision": "R26-12",
+    "date": "Sep 09 2026",
     "fleet": "pax",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"
@@ -106,8 +106,8 @@
   },
   "FOM": {
     "title": "Flight Operations Manual",
-    "revision": "125.1",
-    "date": "8/12/26",
+    "revision": "125.3",
+    "date": "9/15/26",
     "fleet": "shared",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"

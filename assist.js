@@ -486,7 +486,8 @@
       // Ask always uses the keyword engine. The literal modes are for finding a
       // known string, and starving the model of context to honour them is worse
       // than a wide read. The mode control governs Offline Search only.
-      var hits = search(q, 8);
+      var broad = /\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\b/i.test(q);
+      var hits = search(q, broad ? 30 : 8);
       var shownMode = MODE; MODE = 'keywords';
       render(hits);
       MODE = shownMode;
@@ -501,7 +502,7 @@
       var sys = 'Today is ' + today + '. You answer questions for a ' + who + '. ' +
         'When a provision depends on longevity or years of service, apply the years above and say which band you used. ' +
         'Never state a pay rate or a longevity step that is not in the excerpts. ' +
-        'You are scoped to ONE section of a study portal: ' + CORPUS.title + '. ' +
+        'You are scoped to ONE section of a study portal: ' + CORPUS.title + '. ' + (CORPUS.source ? 'Every excerpt is from ' + CORPUS.source + '. ' : '') +
         'Use ONLY the excerpts provided. Never use other aviation knowledge. Never invent a reference or a number. ' +
         'ANSWER IN TLDR FORMAT: line 1 is the bottom line in one sentence under 20 words, then 2 to 5 one-line bullets under 18 words each, ' +
         'each bullet ending with its reference in parentheses. No preamble, no closing summary, no em dashes, no run-on sentences. ' +

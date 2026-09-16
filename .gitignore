@@ -55,3 +55,8 @@ dist/
 
 # parity screenshots and smoke output, regenerated per build
 docs/parity/
+
+# manual text indexes stay out of the public repo until the hosting decision (see docs/A330_PORTAL_PLAN_v2.0.md)
+manuals/*.json
+!manuals/prompt.json
+!manuals/manifest.json
