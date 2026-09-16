@@ -55,6 +55,10 @@ main{flex:1;overflow:auto;padding:10px 12px 8px;display:flex;flex-direction:colu
 .phasehead{font-size:1.15em;font-weight:800;color:var(--ink);margin:0 2px 8px;display:flex;
 align-items:baseline;gap:10px;flex-wrap:wrap;flex:none;}
 .phasehead .src{font-size:.7em;font-weight:600;color:var(--muted);}
+.phasehead.tinted{color:var(--pc);border-left:6px solid var(--pc);padding-left:10px;}
+.gate.tinted{background:var(--pc);}
+nav button[data-pc],.rail button[data-pc]{color:var(--pc);border-color:var(--pc);}
+nav button[data-pc].on,.rail button[data-pc].on{background:var(--pc);color:#fff;border-color:var(--pc);}
 .grid{font-size:15px;column-gap:11px;flex:1;min-height:0;}
 .card{background:var(--card);border:1px solid var(--line);border-radius:9px;
 margin:0 0 11px;display:block;width:100%;box-shadow:0 1px 2px rgba(0,0,0,.05);
@@ -382,9 +386,11 @@ function render(){
     const inner=sectionInner(sec,cite,ctx,ph.id);
     CARDS.push(`<div class="card"><div class="ch" style="--ec:${sec.c}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
-  main.innerHTML=`<div class="phasehead">${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
+  const pc=phaseColor(ph.id);
+  main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
   const g=document.getElementById('gate'); const gn=gateFor(ph);
-  if(gn.length){ g.className='gate'; g.innerHTML=`<span class="lbl">GATE</span><span class="nm">&#10003; ${gn.join('  ·  ')}</span>`; }
+  if(pc) g.style.setProperty('--pc',pc); else g.style.removeProperty('--pc');
+  if(gn.length){ g.className='gate'+(pc?' tinted':''); g.innerHTML=`<span class="lbl">GATE</span><span class="nm">&#10003; ${gn.join('  ·  ')}</span>`; }
   else g.className='gate none';
   const showAppr=ph.id==='landing';
   document.getElementById('apprwrap').style.display=showAppr?'flex':'none';
@@ -488,11 +494,15 @@ window.addEventListener('orientationchange',()=>setTimeout(()=>{setHtop();fitCur
 if(window.visualViewport)window.visualViewport.addEventListener('resize',reflow);
 
 const NORMAL=PHASES.filter(p=>p.kind==='n'), ABN=PHASES.filter(p=>p.kind==='a');
+// Checklist colours, identical to the Flows Trainer phase bar, keyed by the checklist each phase sits under.
+const CL_COLORS={'Cockpit Prep':'#463C8F','Before Start':'#00568F','After Start':'#CE0C88','Taxi':'#2E90D0','Line-Up':'#E0A100','Climb':'#EAA52A','Cruise':'#D98A00','Descent':'#E2761A','Approach':'#D8650C','Landing':'#00805E','Go-Around':'#B85000','After Landing':'#2E9B7C','Parking':'#5CB89A'};
+const PHASE_CL={'preflight':'Cockpit Prep','cockpit-prep':'Cockpit Prep','before-push':'Before Start','before-start':'Before Start','after-start':'After Start','taxi':'Taxi','before-takeoff':'Line-Up','after-takeoff':'Climb','cruise':'Cruise','descent':'Descent','approach':'Approach','landing':'Landing','go-around':'Go-Around','after-landing':'After Landing','parking':'Parking'};
+function phaseColor(id){ const c=PHASE_CL[id]; return c ? CL_COLORS[c] : ''; }
 (function(){
   let html='<span class="navlabel">NORMAL</span>';
-  NORMAL.forEach(p=>{ html+=`<button data-p="${p.id}">${p.label}</button>`; });
+  NORMAL.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });
   html+='<div class="divider"></div><span class="navlabel">NON-NORMAL</span>';
-  ABN.forEach(p=>{ html+=`<button class="ab" data-p="${p.id}">${p.label}</button>`; });
+  ABN.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });
   document.getElementById('nav').innerHTML=html;
   document.getElementById('rail').innerHTML=html;
   document.querySelectorAll('#nav button[data-p], #rail button[data-p]').forEach(b=>b.addEventListener('click',()=>{
