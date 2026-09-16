@@ -106,7 +106,7 @@ for key, fn in B.FILES.items():
 
 # manifest completeness
 for f in sorted(os.listdir(OUT)):
-    if f.endswith('.json') and f not in ('manifest.json', 'prompt.json'):
+    if f.endswith('.json') and f not in ('manifest.json', 'prompt.json', 'r2_cors.json'):
         check(f in mf, 'manifest: %s not listed' % f)
         check(mf.get(f) == os.path.getsize(os.path.join(OUT, f)), 'manifest: size wrong for %s' % f)
 for f in mf:
@@ -131,7 +131,10 @@ page = open(os.path.join(OUT, 'index.html'), encoding='utf-8').read()
 check('—' not in page, 'index.html: em dash')
 check('src="/portal-settings.js"' in page and 'src="/assist.js"' in page, 'index.html: engine script paths')
 check("register('/sw.js')" in page, 'index.html: sw.js')
-check("fetch('/manuals/" in page and "fetch('/pwa_" not in page, 'index.html: fetch paths')
+check("fetch('/manuals/prompt.json')" in page and "fetch('/pwa_" not in page, 'index.html: prompt fetch path')
+check("var MANUALS_BASE = QS.base" in page and "'https://manuals.ha330pilot.app'" in page, 'index.html: MANUALS_BASE')
+check("fetch(url, { credentials: 'include', mode: 'cors' })" in page, 'index.html: credentialed index fetch')
+check("fetch('/manuals/" not in page.replace("fetch('/manuals/prompt.json')", ''), 'index.html: index fetched from the repo')
 
 print('docs total', total_docs, '| manifest files', len(mf), '| %.1f MB' % (manifest['totalBytes'] / 1e6))
 if fails:

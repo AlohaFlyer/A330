@@ -21,8 +21,9 @@ try:
         pg.on('requestfailed', lambda r: failed.append(r.url))
         pg.on('response', lambda r: failed.append('%d %s' % (r.status, r.url)) if r.status >= 400 else None)
         base = 'http://127.0.0.1:%d' % PORT
+        LB = 'base=' + base + '/manuals'
 
-        pg.goto(base + '/manuals/', wait_until='networkidle')
+        pg.goto(base + '/manuals/?' + LB, wait_until='networkidle')
         assert pg.title() == 'A330 Manuals', pg.title()
         assert pg.inner_text('.banner .t') == 'A330 MANUALS'
         assert 'FCOM R17' in pg.inner_text('#meta')
@@ -79,7 +80,7 @@ try:
         pg.screenshot(path=os.path.join(WORK, 'docs', 'parity', 'manuals_agent.png'), full_page=False)
 
         # ?s= deep link
-        pg.goto(base + '/manuals/?s=DSC-35-20-30', wait_until='networkidle')
+        pg.goto(base + '/manuals/?s=DSC-35-20-30&' + LB, wait_until='networkidle')
         pg.wait_for_selector('#ovl.on', timeout=60000)
         t2 = pg.inner_text('#ovlTitle')
         print('?s=DSC-35-20-30 ->', t2)
@@ -87,26 +88,26 @@ try:
         pg.keyboard.press('Escape')
 
         # ?s= with a FOM id
-        pg.goto(base + '/manuals/?s=5.4.2', wait_until='networkidle')
+        pg.goto(base + '/manuals/?s=5.4.2&' + LB, wait_until='networkidle')
         pg.wait_for_selector('#ovl.on', timeout=60000)
         print('?s=5.4.2 ->', pg.inner_text('#ovlTitle'))
         pg.keyboard.press('Escape')
 
         # ?q= prefill and run, with ?m=QRH
-        pg.goto(base + '/manuals/?m=QRH&q=tailwind', wait_until='networkidle')
+        pg.goto(base + '/manuals/?m=QRH&q=tailwind&' + LB, wait_until='networkidle')
         pg.wait_for_function("document.querySelectorAll('.res').length > 0 || document.getElementById('status').textContent.indexOf('No match') >= 0", timeout=60000)
         print('?m=QRH&q=tailwind ->', pg.locator('.res').count(), 'results |', pg.inner_text('#status'))
         assert pg.input_value('#q') == 'tailwind'
         assert pg.locator('#manSeg button[data-man="A330P_QRH"]').get_attribute('aria-pressed') == 'true'
 
-        pg.goto(base + '/manuals/?m=ALL&q=tailwind', wait_until='networkidle')
+        pg.goto(base + '/manuals/?m=ALL&q=tailwind&' + LB, wait_until='networkidle')
         pg.wait_for_function("document.querySelectorAll('.res').length > 0", timeout=180000)
         heads = pg.locator('.res .h').all_inner_texts()
         print('?q=tailwind (All) ->', len(heads), 'results')
         for h in heads[:5]: print('   ', h.replace('\n', ' | '))
 
         # Ask flow with a stubbed provider: router menu -> whole sections -> answer with cite links
-        pg.goto(base + '/manuals/?m=FCOM', wait_until='networkidle')
+        pg.goto(base + '/manuals/?m=FCOM&' + LB, wait_until='networkidle')
         pg.evaluate('''() => {
           window.__calls = [];
           window.PortalSettings = {
@@ -138,6 +139,20 @@ try:
         assert 'DSC-35-20-30' in pg.inner_text('#ovlTitle')
         pg.keyboard.press('Escape')
         pg.screenshot(path=os.path.join(WORK, 'docs', 'parity', 'manuals_agent_ask.png'))
+
+        # without ?base= the bucket is unreachable here: the sign-in prompt must appear
+        n_err, n_fail = len(errors), len(failed)
+        pg.goto(base + '/manuals/', wait_until='networkidle')
+        pg.wait_for_selector('#signIn', timeout=30000)
+        print('no base ->', pg.inner_text('#status').split('\n')[0], '|', pg.inner_text('#signIn'))
+        assert 'Company email sign-in required' in pg.inner_text('#status')
+        # the only expected noise is the unreachable bucket probe itself
+        print('probe noise:', errors[n_err:], failed[n_fail:])
+        del errors[n_err:]; del failed[n_fail:]
+        # login.html bounces to back=
+        pg.goto(base + '/manuals/login.html?back=' + base + '/manuals/%3Fm%3DQRH')
+        pg.wait_for_function("location.search.indexOf('m=QRH') >= 0", timeout=15000)
+        print('login.html ->', pg.url)
 
         # citation linking in the answer renderer
         html = pg.evaluate("""() => { const t = document.createElement('div');

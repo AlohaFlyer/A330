@@ -25,6 +25,13 @@ the two-stage Ask flow are kept):
   - URL params: ?q= prefills and runs a search, ?m=<key> preselects a manual,
     ?s=<section id> opens that section's modal.
   - icon links point at /assets/icons/ like gen_index.py does for the root pages.
+  - the index JSON is NOT served from the repo: every index fetch (manifest.json, <key>.json,
+    parts) goes to MANUALS_BASE = 'https://manuals.ha330pilot.app' (R2 bucket behind
+    Cloudflare Access, @alaskaair.com one-time code) with credentials included; prompt.json
+    stays local at /manuals/prompt.json. On load the page probes MANUALS_BASE/manifest.json and
+    on any failure shows a sign-in line and button (to MANUALS_BASE/login.html?back=...). The
+    query param ?base=<url> replaces MANUALS_BASE so the headless test can serve the JSON from
+    the local http.server (see docs/MANUALS_HOSTING.md).
 Deviations from the B787 engine (for the parity allowlist):
   - buildBM(docs) takes the doc list as a parameter instead of reading IDX.docs, so one
     BM25 table per manual can be built once and merged per selection.
@@ -121,7 +128,20 @@ t = sub(t, "  var IDX = null, BM = null, LOADING = null;\n",
         "  var STORE = {};        // key -> {meta, toc, docs, bm, parts:{name:1}}\n"
         "  var PENDING = {};      // key -> promise while a manual is loading\n"
         "  var SCOPE = 'ALL';     // manual key or ALL\n"
-        "  function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }\n")
+        "  function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }\n"
+        "  // URL params, parsed first because ?base= steers every index fetch.\n"
+        "  var QS = {};\n"
+        "  try {\n"
+        "    location.search.replace(/^\\?/, '').split('&').forEach(function (kv) {\n"
+        "      if (!kv) return;\n"
+        "      var i = kv.indexOf('='), k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));\n"
+        "      QS[k] = decodeURIComponent((i < 0 ? '' : kv.slice(i + 1)).replace(/\\+/g, ' '));\n"
+        "    });\n"
+        "  } catch (e) {}\n"
+        "  // The index JSON lives in an R2 bucket behind Cloudflare Access (company email sign-in),\n"
+        "  // not in this repo. ?base=<url> overrides it so the headless test can serve it locally.\n"
+        "  var MANUALS_BASE = QS.base ? String(QS.base).replace(/\\/+$/, '') : 'https://manuals.ha330pilot.app';\n"
+        "  var AUTH = { ok: false, failed: false };\n")
 
 SYN_NEW = '''  var SYN = {
     oxygen: ['oxy', 'mask', 'crew oxygen'], mask: ['oxygen', 'oxy', 'quick donning'],
@@ -184,8 +204,28 @@ t = sub(t, "  // Rate tables are walls of digits. Collapse them so the sentence 
 LOAD_NEW = '''  /* ---------- index loading ----------
      One JSON per manual under /manuals/. Big manuals are split into parts listed in
      their main file; every part fetched is remembered so All never re-downloads. */
-  function fetchJSON(url) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error(url.split('/').pop() + ' ' + r.status); return r.json(); });
+  function fetchJSON(path) {
+    var url = MANUALS_BASE + path;
+    return fetch(url, { credentials: 'include', mode: 'cors' }).then(function (r) {
+      if (!r.ok || r.redirected) throw new Error(path.split('/').pop() + ' ' + (r.redirected ? 'redirected' : r.status));
+      return r.json();
+    });
+  }
+  // Access answers an unauthenticated request with a redirect to its login page, which the
+  // browser reports as a CORS TypeError or a redirect. Either way: ask for the sign-in.
+  function showSignIn() {
+    AUTH.failed = true;
+    $('status').innerHTML = 'Company email sign-in required for the manuals. ' +
+      '<div class="seg" style="margin-top:8px"><button type="button" id="signIn">Sign in with @alaskaair.com</button></div>';
+    $('signIn').addEventListener('click', function () {
+      location.href = MANUALS_BASE + '/login.html?back=' + encodeURIComponent(location.href);
+    });
+  }
+  function probeAuth() {
+    return fetchJSON('/manifest.json').then(function (j) {
+      AUTH.ok = true; AUTH.failed = false;
+      return j;
+    }).catch(function () { showSignIn(); throw new Error('sign-in'); });
   }
   function adopt(key, docs) {
     docs.forEach(function (d) { d.m = key; });
@@ -196,7 +236,7 @@ LOAD_NEW = '''  /* ---------- index loading ----------
     if (PENDING[key]) return PENDING[key];
     var m = BYKEY[key];
     setStatus('Loading the ' + m.short + ' index...');
-    PENDING[key] = fetchJSON('/manuals/' + key + '.json').then(function (j) {
+    PENDING[key] = fetchJSON('/' + key + '.json').then(function (j) {
       var st = STORE[key] || (STORE[key] = { meta: j.meta, toc: j.toc, docs: [], parts: {}, done: false });
       st.meta = j.meta; st.toc = j.toc;
       if (!j.parts || !j.parts.length) {
@@ -206,7 +246,7 @@ LOAD_NEW = '''  /* ---------- index loading ----------
       var todo = j.parts.filter(function (p) { return !st.parts[p.part]; }), got = 0;
       return todo.reduce(function (chain, p) {
         return chain.then(function () {
-          return fetchJSON('/manuals/' + p.file).then(function (pj) {
+          return fetchJSON('/' + p.file).then(function (pj) {
             st.parts[p.part] = 1;
             st.docs = st.docs.concat(adopt(key, pj.docs || []));
             got++;
@@ -224,7 +264,8 @@ LOAD_NEW = '''  /* ---------- index loading ----------
       return st;
     }).catch(function (e) {
       delete PENDING[key];
-      setStatus('Could not load the ' + m.short + ' index: ' + e.message + '. If you are offline, tick Make Available Offline on the portal while you have signal.');
+      if (!navigator.onLine) setStatus('No connection. The manuals index is served from the company sign-in bucket, so this search needs signal.');
+      else showSignIn();
       throw e;
     });
     return PENDING[key];
@@ -631,15 +672,8 @@ t = sub(t, '  /* ---------- wire up ---------- */\n', WIRE_NEW)
 t = sub(t, '''  load().catch(function () {});
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});''',
         '''  // URL params: ?q=<text> prefills and runs a search, ?m=<key or short> preselects a manual,
-  // ?s=<section id> opens that section's page modal (cross-reference links from other pages).
-  var QS = {};
-  try {
-    location.search.replace(/^\\?/, '').split('&').forEach(function (kv) {
-      if (!kv) return;
-      var i = kv.indexOf('='), k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));
-      QS[k] = decodeURIComponent((i < 0 ? '' : kv.slice(i + 1)).replace(/\\+/g, ' '));
-    });
-  } catch (e) {}
+  // ?s=<section id> opens that section's page modal (cross-reference links from other pages),
+  // ?base=<url> points the index fetches at another host (local testing).
   var startScope = QS.m ? (BYKEY[QS.m] ? QS.m : (BYSHORT[QS.m.toUpperCase()] ? BYSHORT[QS.m.toUpperCase()].key : 'ALL'))
     : LS.get('manuals_scope', 'ALL');
   if (QS.s && !QS.m) {
@@ -665,10 +699,12 @@ t = sub(t, '''  load().catch(function () {});
       }).catch(tryNext);
     };
     setScope(startScope, false);
-    tryNext();
+    probeAuth().then(tryNext).catch(function () {});
   } else {
     setScope(startScope, false);
-    if (QS.q) { $('q').value = QS.q; doSearch(); }
+    if (QS.q) $('q').value = QS.q;
+    probeAuth().then(function () {
+    if (QS.q) doSearch();
     if (QS.s) {
       loadManual(SCOPE === 'ALL' ? 'A330P_FCOM' : SCOPE).then(function (st) {
         var hit = st.toc.filter(function (e) { return String(e.s).toUpperCase() === QS.s.toUpperCase(); })[0];
@@ -677,6 +713,7 @@ t = sub(t, '''  load().catch(function () {});
       }).catch(function () {});
     }
     if (!QS.q && !QS.s && SCOPE !== 'ALL') load().catch(function () {});
+    }).catch(function () {});
   }
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});''')
 
