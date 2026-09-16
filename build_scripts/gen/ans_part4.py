@@ -57,10 +57,10 @@ A[287] = dict(reuse=True, topic="ETOPS",
 
 A[288] = dict(reuse=True, topic="ETOPS",
   a=".82M/290 KIAS, the approved one-engine-inoperative cruise speed",
-  detail="FOM 6.4.5 ties the diversion speed to the approved One-Engine-Inoperative Cruise Speed in FOM 6.2.3, which for the A330 is .82M/290 KIAS at a 470 000 lb reference weight and FL350. The critical fuel scenario, the EEP and EXP distances and the MDD are all built on it. The PRC engine failure card repeats it: for ETOPS set 290 kt or M 0.82.",
-  ref="FOM 6.2.9 One-Engine-Inoperative Cruise Speed",
+  detail="FOM 6.4.5 ties the diversion speed to the approved One-Engine-Inoperative Cruise Speed in FOM 6.2.3, which for the A330 is .82M/290 KIAS at a 470 000 lb reference weight and FL350. The critical fuel scenario, the EEP and EXP distances and the MDD are all built on it. The PRC engine failure card (8/31/26) no longer repeats it: for ETOPS and standard strategy it now says set 300 kt or M 0.78; the FOM 125.3 table still reads .82M/290 KIAS.",
+  ref="FOM 6.2.8 One-Engine-Inoperative Cruise Speed",
   quote="A330 .82M/290 KIAS 470,000 350",
-  note="The Captain may deviate from the planned speed profile after assessing the emergency and fuel remaining. Standard strategy on the PRC card is 300 kt or M 0.82, obstacle strategy green dot.")
+  note="The Captain may deviate from the planned speed profile after assessing the emergency and fuel remaining. ETOPS and standard strategy on the PRC card (8/31/26) are 300 kt or M 0.78, obstacle strategy green dot; confirm which speed Dispatch planned with.")
 
 A[289] = dict(reuse=True, topic="HAZMAT",
   detail="Dangerous goods policy lives in FOM Chapter 14, HAZMAT, section 14.1 Dangerous Goods, starting with 14.1.1 Regulatory Compliance under Ops Spec A055, 49 CFR Parts 171 to 175 and the IATA DGR. Key HA subsections: 14.1.4 eNOTOC, 14.1.6 Captain Responsibilities, 14.1.8 acceptable NOTOC versions, 14.1.17 rejected shipments, 14.1.20 ICAO ERG drill codes and 14.1.26 damaged or leaking DG.")

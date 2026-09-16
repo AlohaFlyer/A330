@@ -10,7 +10,7 @@ import ans_part1, ans_part2, ans_part3, ans_part4, ans_extra
 
 WB = json.load(open(os.path.join(HERE, 'wb_items.json')))
 B787 = {r['id']: r for r in json.load(open(os.path.join(SCR, 'src', 'ioe_questions.json')))}
-FOM = norm(open(os.path.join(SCR, 'src', 'FOM_125.1.md'), encoding='utf-8').read())
+FOM = norm(open(os.path.join(SCR, 'src', 'FOM_125.3.md'), encoding='utf-8').read())
 
 COI_SECS = {'1.1.1', '1.1.2.4', '2.1.1', '3.1.1', '5.1.1.5', '5.1.2.6', '13.1.1.1.1', '8.1.1.5', '9.1.1',
             '1.2.1.2.5.3', '16.1.1.7', '12.3.5', '12.1.8', '12.1.3', '12.3.2', '12.1.7', '12.1.9'}

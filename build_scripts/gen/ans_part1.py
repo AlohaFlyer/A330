@@ -294,6 +294,6 @@ A[102] = dict(topic="Takeoff and Departure", q="Pitch target after an engine fai
 A[103] = dict(topic="Takeoff and Departure", q="What are the callouts during a rejected takeoff?",
   a="Captain calls STOP, or GO to continue; STOP also transfers control",
   detail="The decision and the stop action belong to the Captain and must come before V1, hand on the thrust levers until V1 whether PF or PM. For a malfunction before V1 the Captain calls GO to continue, or STOP to reject. STOP both confirms the rejection and states the Captain now has control; it is the only handover not accompanied by I have control. The PM rollout checks follow the FCTM RTO task-sharing figure.",
-  ref="FCTM PR-AEP-MISC P 27/40 Rejected Takeoff, Decision Callouts",
+  ref="FCTM PR-AEP-MISC P 25/38 Rejected Takeoff, Decision Callouts",
   quote="‐ If a decision is made to reject the takeoff, the Captain calls \"STOP\". This call both confirms the decision to reject the takeoff and also states that the Captain now has control.",
   note="Above 100 kt be go-minded: fire or severe damage, sudden thrust loss, unambiguous evidence the aircraft will not fly, or any ECAM alert. EGT red line or nose gear vibration are not reasons above 100 kt.", src="fctm")

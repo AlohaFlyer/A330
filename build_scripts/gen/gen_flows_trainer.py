@@ -3,15 +3,17 @@
 Trainer page, in the exact B787 flows_quiz.html shapes.
 
 Inputs: WORK/data/flows.json (verified phases), src/A330P_FCOM_R17_PRO-NOR.md (FCOM PRO-NOR slice),
-src/A330_FCTM_R5.md (normal checklists PR-NP-CL), img/layout.json (cockpit composite geometry).
+src/A330_FCTM_R6.md (normal checklists PR-NP-CL), img/layout.json (cockpit composite geometry).
 Every quoted line in `d`, every XREF body line and every checklist row is taken verbatim from the
 extract (whitespace and dot leaders normalized) so verify_flows_trainer.py can prove it.
 """
 import json, re, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-WORK = os.path.join(HERE, 'work'); SRC = os.environ.get('A330_SRC', os.path.join(WORK, '..', 'src'))  # manual extracts, never in the repo
+WORK = os.path.abspath(os.path.join(HERE, '..', '..'))  # repo root
+SRC = os.environ.get('A330_SRC', os.path.join(WORK, '..', 'src'))  # manual extracts, never in the repo
 FCOM = open(os.path.join(SRC, 'A330P_FCOM_R17_PRO-NOR.md'), encoding='utf-8').read()
-FCTM = open(os.path.join(SRC, 'A330_FCTM_R5.md'), encoding='utf-8').read()
+FCOM_FULL = open(os.path.join(SRC, 'A330P_FCOM_R17.md'), encoding='utf-8').read()   # cross-references outside PRO-NOR
+FCTM = open(os.path.join(SRC, 'A330_FCTM_R6.md'), encoding='utf-8').read()
 flows = json.load(open(os.path.join(WORK, 'data', 'flows.json')))
 LAY = json.load(open(os.path.join(HERE, 'img', 'layout.json')))
 
@@ -23,13 +25,14 @@ def norm(s):
 # ---------------------------------------------------------------- FCOM DU index
 # The extract is page-form-feed separated; each page = header block, content, footer block.
 HDR_END = re.compile(r'OPERATING MANUAL')
+HDR_END_FCTM = re.compile(r'TECHNIQUES MANUAL')
 FOOT = re.compile(r'^\s*HAL A330 FLEET\b')
 PAGE_BREAK = '\x00PAGE\x00'
-def page_body(p):
+def page_body(p, hdr_end=HDR_END):
     lines = p.split('\n')
     # drop header: everything up to and including the OPERATING MANUAL line (first 12 lines)
     for i, l in enumerate(lines[:14]):
-        if HDR_END.search(l):
+        if hdr_end.search(l):
             lines = lines[i+1:]; break
     # drop footer from the HAL A330 FLEET line on
     for i, l in enumerate(lines):
@@ -254,7 +257,7 @@ def fctm_checklists():
     return cls, trig, ident
 CLS, CLTRIG, CLIDENT = fctm_checklists()
 # Securing the Aircraft: single reference row, performed by the PM (FCTM PR-NP-CL-00024945.0001001)
-CLS['SECURING THE AIRCRAFT'] = [['Refer to /FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General', '', 'PM']]
+CLS['SECURING THE AIRCRAFT'] = [['Refer to FCOM/FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General', '', 'PM']]  # FCTM R6 prints the doubled FCOM/ prefix; quoted verbatim
 CLIDENT['SECURING THE AIRCRAFT'] = 'PR-NP-CL-00024945.0001001'
 NORMAL_CHECKLISTS = {k + ' CHECKLIST': v for k, v in CLS.items()}
 CL_KEY = {'Cockpit Preparation': 'COCKPIT PREPARATION CHECKLIST', 'Before Start': 'BEFORE START CHECKLIST',
@@ -284,6 +287,135 @@ def sup_body(key):
         return title, '\n'.join(lines)
     return None, None
 XREFS = {}
+
+# ---------------------------------------------------------------- manual section index (cross-reference popups)
+# Rule for locating a section in an extract (FCOM and FCTM print the same way):
+#   * the extract is form-feed paginated; form-feed chunk i is PDF page i+1 (chunk 0 is the cover);
+#   * every content page ends with the footer "HAL A330 FLEET <section id> P n/m" (sometimes indented),
+#     e.g. "HAL A330 FLEET   DSC-35-20-30 P 1/2"; that id names the section the page belongs to, so a
+#     section's text is the header/footer-stripped body of every page whose footer carries its id, in
+#     file order (the "P n/m" counter);
+#   * inside a section each DU is announced by an all-caps heading line followed by
+#     "Ident.: <section id>-<DU number>.<rev> / <date>" and "Applicable to: ..." (order varies); the
+#     ident prefix confirms the section; sub-headings are further indented all-caps lines;
+#   * the heading the manual prints for the section is its TOC line "<section id> <Heading>" (the
+#     chapter TOC prints it bare, the master TOC adds a right-aligned date).
+# A token in a quoted line ("Refer to DSC-35-20-30 How to Test the Mask") is resolved to the longest
+# footer id that prefixes it; the words after the token select the DU/sub-heading the body starts at
+# (exact heading match, then a heading containing the words), otherwise the section start.
+FOOTER = re.compile(r'^\s*HAL A330 FLEET\s+([A-Z][A-Z0-9_.-]*) P (\d+[A-Z]?)/(\d+)\s*$')
+# Reference tokens the page linkifies (page_flows_quiz.py carries the same alternation, longest first)
+TOKEN_RE = re.compile(r'\b(FCTM PR-[A-Z0-9-]+|QRH [A-Z0-9.-]+|PRO-(?:NOR|ABN|SPO|SUP)-[A-Z0-9-]+|DSC-\d\d-\d\d(?:-\d\d)?|LIM-[A-Z0-9-]+|PER-[A-Z0-9-]+)\b')
+HEADING = re.compile(r"^[A-Z0-9 /&().,'%-]+$")
+META = re.compile(r'^\s*(Ident\.:|Applicable to:|Criteria:)')
+def index_pages(text, hdr_end):
+    """section id -> ordered [(pdf page, cleaned items)]; items are (kind, text) with kind in
+    head | ident | step | text | blank."""
+    secs = {}
+    for i, p in enumerate(text.split('\f')):
+        sec = None
+        for l in p.split('\n'):
+            m = FOOTER.match(l)
+            if m: sec = m.group(1); break
+        if not sec: continue
+        items = []
+        for l in page_body(p, hdr_end):
+            s = l.strip()
+            mi = re.match(r'^Ident\.: (\S+)', s)
+            if mi: items.append(('ident', mi.group(1))); continue
+            if META.match(l) or JUNK.match(l):
+                items.append(('blank', '')); continue
+            if re.match(r'^\s*L\d\s+', l): items.append(('blank', ''))
+            s = re.sub(r'^\s*L\d\s+', '', l).strip()
+            if re.search(r'\.{4,}', s) and not s.startswith('‐'):
+                items.append(('step', norm(s)))
+            elif HEADING.match(s) and re.search('[A-Z]', s) and len(s) <= 70 and s not in ('WARNING', 'CAUTION') \
+                    and not s.endswith('.') and not TOKEN_RE.search(s):   # not a wrapped "Refer to FCOM/PRO-..." tail
+                items.append(('head', s))
+            else:
+                items.append(('text', s))
+        secs.setdefault(sec, []).append((i + 1, items))
+    return secs
+SECTIONS = {'FCOM': index_pages(FCOM_FULL, HDR_END), 'FCTM': index_pages(FCTM, HDR_END_FCTM)}
+MANUAL_TEXT = {'FCOM': FCOM_FULL, 'FCTM': FCTM}
+
+def section_heading(manual, sec):
+    """The heading as the manual's TOC prints it: '<sec> <Heading>' bare (chapter TOC) or followed by a
+    right-aligned date (master TOC)."""
+    hits = [re.sub(r'\s{2,}\d\d [A-Z]{3} \d\d$', '', m.group(1)).strip()
+            for m in re.finditer(r'^\s*' + re.escape(sec) + r'\s+([A-Za-z][^\n]*?)\s*$', MANUAL_TEXT[manual], re.M)]
+    hits = [h for h in hits if re.search('[a-z]', h)] or hits   # TOC headings are Title Case; LEP rows are not
+    return hits[0] if hits else ''
+
+def section_lines(manual, sec):
+    """[(pdf page, line, kind)] for the whole section: headings on their own line, step lines verbatim
+    (leaders normalized), prose joined into paragraphs per page and split at its ‐ / ▪ sub-items so every
+    line stays a substring of the extract after whitespace normalization."""
+    out = []
+    for page, items in SECTIONS[manual][sec]:
+        buf = []
+        def flush():
+            if buf:
+                para = norm(' '.join(buf)); buf.clear()
+                for piece in re.split(r'\s(?=[‐▪•] )', para):
+                    out.append((page, piece, 'text'))
+        for k, t in items:
+            if k == 'text': buf.append(t); continue
+            flush()
+            if k in ('head', 'step'): out.append((page, t, k))
+            elif k == 'ident': out.append((page, t, 'ident'))
+        flush()
+    return out
+
+def resolve_xref(token, words):
+    """Build an XREFS entry for a reference token ('DSC-35-20-30', 'FCTM PR-NP-CL-00024935').
+    Returns None when no section of the manual carries the id (a dangling cross-reference)."""
+    manual = 'FCOM'; ident = token
+    if token.startswith('FCTM '): manual, ident = 'FCTM', token[5:]
+    elif token.startswith('QRH '): return None   # the QRH extract is not paginated by section id
+    parts = ident.split('-'); sec = None
+    for n in range(len(parts), 0, -1):
+        cand = '-'.join(parts[:n])
+        if cand in SECTIONS[manual]: sec = cand; break
+    if not sec: return None
+    lines = section_lines(manual, sec)
+    start = 0
+    if ident != sec:   # DU-level ident: start at the heading that announces that DU
+        for i, (pg, t, k) in enumerate(lines):
+            if k == 'ident' and t.startswith(ident):
+                start = i
+                while start > 0 and lines[start-1][2] == 'head': start -= 1
+                break
+    elif words and norm(words).upper() != section_heading(manual, sec).upper():   # words naming the section itself: start at its top
+        w = norm(words).upper()
+        heads = [(i, t) for i, (pg, t, k) in enumerate(lines) if k == 'head']
+        hit = [i for i, t in heads if t == w] or [i for i, t in heads if re.search(r'\b' + re.escape(w) + r'\b', t)]
+        if hit: start = hit[0]
+    body = []; total = 0; cap = 1200; clipped = False
+    for pg, t, k in lines[start:]:
+        if k == 'ident': continue
+        if total + len(t) > cap and body:
+            room = cap - total
+            if k == 'text' and room > 200:
+                cut = t.rfind('. ', 0, room)
+                if cut > 80: body.append(t[:cut+1])
+            clipped = True; break
+        body.append(t); total += len(t) + 1
+    if not body: return None
+    if clipped: body[-1] += ' ...'
+    page = lines[start][0]
+    heading = section_heading(manual, sec)
+    title = f'{manual} {sec}' + (f' - {heading}' if heading else '')
+    return {'title': title, 'body': '\n'.join(body), 'ref': sec, 'page': page, 'manual': manual}
+
+def du_page(manual, ident_prefix):
+    for sec, pages in SECTIONS[manual].items():
+        if not ident_prefix.startswith(sec): continue
+        for page, items in pages:
+            for k, t in items:
+                if k == 'ident' and t.startswith(ident_prefix): return page
+    return None
+
 
 # ---------------------------------------------------------------- build FLOWS
 FLOWS = []
@@ -350,22 +482,45 @@ for ph in flows['phases']:
     if ph.get('flow_trigger'): flow['trig'] = ph['flow_trigger']['text']
     FLOWS.append(flow)
 
-# XREFS wherever a quoted line references a supplementary procedure
+# The Parking flow closes with Securing the Aircraft (PM, supplementary procedure)
+park = FLOWS[-1]['items'][-1]
+park['d'] += "\n[FCTM PR-NP-CL-00019512.0001001 · SECURING THE AIRCRAFT:]\nSecuring the Aircraft is performed by the PM and is a Supplementary Procedure. Refer to FCOM/PRO-NOR-SUP-SEC."
+
+# XREFS: the supplementary-procedure entries (hand-targeted DU quotes) ...
 for f in FLOWS:
     for it in f['items']:
         for k in XREF_RE.findall(it['d']):
             if k not in XREFS:
                 t, b = sup_body(k)
                 if t: XREFS[k] = {'title': t, 'body': b}
-# The Parking flow closes with Securing the Aircraft (PM, supplementary procedure)
-park = FLOWS[-1]['items'][-1]
-park['d'] += "\n[FCTM PR-NP-CL-00019512.0001001 · SECURING THE AIRCRAFT:]\nSecuring the Aircraft is performed by the PM and is a Supplementary Procedure. Refer to FCOM/PRO-NOR-SUP-SEC."
 if 'PRO-NOR-SUP-SEC' not in XREFS:
     t, b = sup_body('PRO-NOR-SUP-SEC'); XREFS['PRO-NOR-SUP-SEC'] = {'title': t, 'body': b}
+XREFS['PRO-NOR-SUP-ADVWXR'].update(ref='PRO-NOR-SUP-ADVWXR', page=du_page('FCOM', 'PRO-NOR-SUP-ADVWXR-00009179.0006001'), manual='FCOM')
+XREFS['PRO-NOR-SUP-SEC'].update(ref='PRO-NOR-SUP-SEC', page=du_page('FCOM', 'PRO-NOR-SUP-SEC-A-'), manual='FCOM')
+# ... then every other manual reference in a linkified line of `d`. Lines starting with "[" are the
+# engine's grey source labels (the quote below them is that DU already) and are not scanned.
+found = {}   # token -> words that follow its first mention
+for f in FLOWS:
+    for it in f['items']:
+        for line in it['d'].split('\n'):
+            if line.startswith('['): continue
+            for m in TOKEN_RE.finditer(line):
+                tok = m.group(1)
+                if tok in found: continue
+                words = re.split(r'[.)(:;,]|\s(?:for more information|\()', line[m.end():].strip())[0].strip()
+                found[tok] = words
+unresolved = []
+for tok, words in found.items():
+    if tok in XREFS: continue
+    x = resolve_xref(tok, words)
+    if x: XREFS[tok] = x
+    else: unresolved.append(tok)
 
 out = {'FLOWS': FLOWS, 'XREFS': XREFS, 'NORMAL_CHECKLISTS': NORMAL_CHECKLISTS}
 json.dump(out, open(os.path.join(WORK, 'data', 'flows_trainer.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 n_items = sum(len(f['items']) for f in FLOWS)
-print('flows', len(FLOWS), 'items', n_items, 'xrefs', list(XREFS), 'checklists', len(NORMAL_CHECKLISTS),
+print('flows', len(FLOWS), 'items', n_items, 'xrefs', len(XREFS), 'checklists', len(NORMAL_CHECKLISTS),
       'rows', sum(len(v) for v in NORMAL_CHECKLISTS.values()))
+print('xref tokens found', len(found), 'resolved', len([t for t in found if t in XREFS]), 'unresolved', unresolved)
+for k, x in XREFS.items(): print(f"  {k:32s} -> {x['title']} (PDF p. {x['page']}, {len(x['body'])} chars)")
 for g in gaps: print('GAP:', g)

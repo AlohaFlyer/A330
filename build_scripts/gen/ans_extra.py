@@ -16,9 +16,9 @@ X.append(dict(after=187, sec="5.1.2.6", secTitle="Know Contingency Plan (i.e., A
   a="Complete the ECAM or QRH, decide whether the failure requires diversion, weigh continuing against diverting, coordinate with SOCC",
   qOrig="Discuss Route Diversion scenario",
   detail="The PRC Diversion Guidance card: complete the non-normal procedure, then ask whether the failure requires diversion. Failures that do: anything requiring landing such as LAND ASAP, fire or an engine failure, insufficient fuel after a component failure raises consumption, or one generator remaining. Otherwise weigh whether the risks of continuing exceed the risks of diverting, and coordinate the divert with SOCC. Amber or green ECAM messages and any single failure other than an engine have no impact on ETOPS.",
-  ref="PRC p7 Diversion Guidance",
-  quote="Please reference FCOM-PRO-SPO-40: EXTENDED RANGE OPERATIONS Diversion Decision Making",
-  note="Then the mechanics: NEW DEST in the FMS, weather and landing performance, fuel prediction, Dispatch and MedLink if medical, and the NTSB brief to the cabin.", src="prc", status="verified"))
+  ref="FCOM PRO-SPO-40A P 5/8 Diversion Decision Making (PRC p2 Diversion Guidance)",
+  quote="Failure cases requiring a diversion to the nearest airport (cases leading to a LAND ASAP message on the ECAM and/or in the QRH) ‐ Failure cases resulting in increased fuel consumption, exceeding the available fuel reserves ‐ Electrical generation. Diversion is required in the case of: • Only one generator (either one IDG, APU GEN or EMER GEN) remaining available following a multiple failure",
+  note="Then the mechanics: NEW DEST in the FMS, weather and landing performance, fuel prediction, Dispatch and MedLink if medical, and the NTSB brief to the cabin.", src="fcom", status="verified"))
 
 X.append(dict(after=239, sec="9.1.4.1", secTitle="Know Procedures for CAT II/III ILS Autoland Landing", group="", coi=False,
   kind="walkthrough", topic="Descent and Approach", q="Know the CAT II and III autoland procedure",

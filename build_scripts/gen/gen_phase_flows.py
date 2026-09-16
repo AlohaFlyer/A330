@@ -767,13 +767,13 @@ PH[-1]['sections'][1]['items'][0].update({'quote': 'GO AROUND decision GO AROUND
 PH.append(P('diversion', 'Diversion', 'a', 'DIVERSION', 'PRC Diversion Guidance · FOM 6.4 / 11.2.7.1', [
   S('DIVERSION GUIDANCE (PRC)', PLUM, [
     box('1 · Complete the non-normal procedure (ECAM / QRH)', '', 'B', False,
-        'Failure that requires landing (LAND ASAP, FIRE, Engine Failure).', 'PRC p8 Diversion Guidance', 'PRC'),
+        'Failure cases requiring a diversion to the nearest airport (cases leading to a LAND ASAP message on the ECAM and/or in the QRH)', 'FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)', 'FCOM'),
     box('2 · Does the failure require diversion? YES: DIVERT (coordinate with SOCC)', 'failures requiring diversion: LAND ASAP, FIRE, engine failure · insufficient fuel after a component failure · one GEN remaining', 'B', True,
-        'Failure that requires landing (LAND ASAP, FIRE, Engine Failure).', 'PRC p8 Diversion Guidance', 'PRC'),
+        'Failure cases resulting in increased fuel consumption, exceeding the available fuel reserves ‐ Electrical generation. Diversion is required in the case of: • Only one generator (either one IDG, APU GEN or EMER GEN) remaining available following a multiple failure', 'FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)', 'FCOM'),
     box('3 · If not required: are the risks of continuing higher than the risks of diverting?', 'continue to destination, or DIVERT (coordinate with SOCC)', 'B', False,
-        'Please reference FCOM-PRO-SPO-40: EXTENDED RANGE OPERATIONS', 'PRC p8 Diversion Guidance', 'PRC'),
-    note('No impact on ETOPS operations for amber or green ECAM messages / memos or any single failure other than an engine failure (PRC p8).'),
-  ], 'PRC p8 Diversion Guidance'),
+        'The technical criteria governing a re-routing or diversion decision can be classified into five categories', 'FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)', 'FCOM'),
+    note('No impact on ETOPS operations for amber or green ECAM messages / memos or any single failure other than an engine failure (PRC p2).'),
+  ], 'PRC p2 Diversion Guidance · FCOM PRO-SPO-40A'),
   S('DIVERSION DECISION (FOM)', TEAL, [
     box('One engine inoperative · land at the NEAREST SUITABLE airport', '14 CFR 121.565 · Captain judgment after considering all relevant factors · assign PF/PM per TEM', 'C', False,
         '14 CFR 121.565 requires the Captain of a two-engine aircraft with one engine inoperative to land at the nearest suitable airport where, in the Captain’s judgment after considering all relevant factors, a safe landing can be made.', 'FOM 6.4.2', 'FOM'),
@@ -793,27 +793,27 @@ PH.append(P('diversion', 'Diversion', 'a', 'DIVERSION', 'PRC Diversion Guidance 
 ]))
 
 # ---------------------------------------------------------------- ETOPS DIVERT
-PH.append(P('etops', 'ETOPS Divert', 'a', 'ETOPS DIVERSION', 'FOM 6.3 / 6.4 · PRC p7', [
+PH.append(P('etops', 'ETOPS Divert', 'a', 'ETOPS DIVERSION', 'FOM 6.3 / 6.4 · PRC p1', [
   S('ENGINE FAILURE DURING CRUISE (PRC)', RED, [
     box('Simultaneously: SET MCT and DISCONNECT AUTOTHRUST', 'instinctive disconnect pb · do not delay the descent · do not decelerate below green dot', 'PF', False,
-        'At high flight levels, close to the weight limits, the aircraft speed quickly reduces. Thus, the flight crew should not delay descent. The crew must not decelerate below green dot.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'At high flight levels, close to the weight limits, the aircraft speed quickly reduces. Thus, the flight crew should not delay descent. The crew must not decelerate below green dot.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('PULL SPEED - GREEN DOT', 'initially green dot to minimize the rate of descent', 'PF', False,
-        'PULL SPEED - GREEN DOT', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'PULL SPEED - GREEN DOT', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('Oceanic: ESTABLISH 5 NM OFFSET', 'turn at least 30° L/R to a parallel same-direction track offset 5 NM · pull heading and/or 5 NM offset on the F-PLN · below FL290 (or when cleared) maneuver as required', 'PF', False,
-        'Leave the cleared route/track by turning at least 30º to the L/R to establish a parallel same direction track offset by 5NM. Pull heading and/or insert a 5NM L/R offset on MCDU FPLN page.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'Leave the cleared route/track by turning at least 30º to the L/R to establish a parallel same direction track offset by 5NM. Pull heading and/or insert a 5NM L/R offset on MCDU FPLN page.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('PULL FL 200 · START APU', 'FL200 until the final drift down altitude is determined', 'PF', False,
-        'Initially set FL200 until the final Drift Down Altitude is determined.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
-    box('Exterior lights ON · monitor TCAS · declare MAYDAY on VHF or 121.5 · CPDLC EMERG ADS-C ON', 'non-radar: keep transmitting position and intentions until clear of traffic', 'PM', True,
-        'Declare an Emergency (MAYDAY): Transmit position and intentions on current VHF ATC frequency or 121.5.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'Initially set FL200 until the final Drift Down Altitude is determined.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
+    box('Exterior lights ON · monitor TCAS · declare MAYDAY on VHF or 121.5 · CPDLC EMERG ADS-C ON', 'non-radar: keep transmitting position and intentions on 121.5 (backup 123.45) until clear of all traffic · consider squawking 7700', 'PM', True,
+        'Declare an Emergency (MAYDAY). Transmit position and intentions on current VHF ATC frequency or 121.5.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('ACCOMPLISH ECAM ACTIONS · ATC route clearance when workload permits', 'load the new route and MANAGE NAV', 'B', False,
-        'When ATC clearance is received, load the new route into FMS and MANAGE NAV.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'When ATC clearance is received, load the new route into FMS and MANAGE NAV.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('RESET DRIFT DOWN ALTITUDE IN FCU', 'REC MAX EO (PROG 1R) · V/S below 500 ft/min: select V/S -500 and A/THR ON', 'PF', False,
-        'When the V/S becomes less than 500 ft/min, select V/S -500 ft/min and A/THR ON.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
-    box('ADJUST SPEED · ETOPS: 290 kt / M 0.82', 'standard strategy 300 kt / M 0.82 · obstacle strategy green dot until clear', 'PF', False,
-        'For ETOPS: set 290 kts/ M 0.82', 'PRC p7 Engine Failure During Cruise', 'PRC'),
+        'When the V/S becomes less than 500 ft/min, select V/S -500 ft/min and A/THR ON.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
+    box('ADJUST SPEED · ETOPS and standard strategy: 300 kt / M 0.78', 'obstacle strategy green dot until clear of obstacles', 'PF', False,
+        'For ETOPS & Standard Strategy: set 300 kt / M0.78', 'PRC p1 Engine Failure During Cruise', 'PRC'),
     box('Contact company · position report every 80 min or 10° · monitor fuel predictions · landing weight and performance', 'amended release, landing performance, weather, special assistance · overweight: QRH Overweight Landing', 'B', False,
-        'Report position every 80 minutes or less / 10º or less, as required by ATC or company.', 'PRC p7 Engine Failure During Cruise', 'PRC'),
-  ], 'PRC p7'),
+        'Report position every 80 minutes or less / 10º or less, as required by ATC or company.', 'PRC p1 Engine Failure During Cruise', 'PRC'),
+  ], 'PRC p1'),
   S('ETOPS DIVERSION (FOM)', TEAL, [
     box('Diversion speed · approved One-Engine-Inoperative Cruise Speed', 'Captain may deviate after assessing the emergency and fuel remaining', 'C', False,
         'The Captain has the authority to deviate from this planned speed profile after assessing the emergency and considering fuel remaining.', 'FOM 6.4.5', 'FOM'),
@@ -835,7 +835,7 @@ PH.append(P('etops', 'ETOPS Divert', 'a', 'ETOPS DIVERSION', 'FOM 6.3 / 6.4 · P
 ]))
 
 # ---------------------------------------------------------------- OCEANIC CONTINGENCY
-PH.append(P('oceanic', 'Oceanic Contingency', 'a', 'OCEANIC IN-FLIGHT CONTINGENCY', 'FOM 5.7.4 · PRC p9', [
+PH.append(P('oceanic', 'Oceanic Contingency', 'a', 'OCEANIC IN-FLIGHT CONTINGENCY', 'FOM 5.7.4 · PRC p3', [
   S('NO ATC CLEARANCE · CONTINGENCY', NAVY, [
     box('Get a revised clearance first, whenever possible', '', 'B', False,
         'If an aircraft is unable to continue the flight in accordance with its ATC clearance, a revised clearance shall be obtained, whenever possible, prior to initiating any action.', 'FOM 5.7.4.2', 'FOM'),
@@ -907,15 +907,15 @@ PH.append(P('rto', 'Rejected T/O', 'a', 'REJECTED TAKEOFF', 'FCTM PR-AEP-MISC-C'
         '- If a malfunction occurs before V1, for which the Captain does not intend to reject the takeoff, the Captain will announce the intention by calling "GO".', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
     box('Captain: “STOP” · confirms the reject and that the Captain has control', 'the only hand-over of control without “I have control”', 'C', True,
         '- If a decision is made to reject the takeoff, the Captain calls "STOP". This call both confirms the decision to reject the takeoff and also states that the Captain now has control. It is the only time that hand-over of control is not accompanied by the phrase "I have control".', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
-    box('Below 100 kt · Captain discretion', 'seriously consider discontinuing for any ECAM warning/caution', 'C', False,
-        'The Captain should seriously consider discontinuing the takeoff, if any ECAM warning/caution is activated.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
-    box('Above 100 kt and below V1 · go-minded', '1 fire warning or severe damage · 2 sudden loss of engine thrust · 3 unambiguous indications the aircraft will not fly safely · 4 any ECAM alert', 'C', False,
-        '1. Fire warning, or severe damage 2. Sudden loss of engine thrust 3. Malfunctions or conditions that give unambiguous indications that the aircraft will not fly safely 4. Any ECAM alert.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
+    box('Below 100 kt · Captain discretion', 'seriously consider discontinuing for any ECAM alert', 'C', False,
+        'The Captain should seriously consider discontinuing the takeoff, if any ECAM alert is activated.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
+    box('Above 100 kt and below V1 · go-minded', '1 fire alert or severe damage · 2 sudden loss of engine thrust · 3 unambiguous indications the aircraft will not fly safely · 4 any ECAM alert', 'C', False,
+        '1. Fire alert, or severe damage 2. Sudden loss of engine thrust 3. Malfunctions or conditions that give unambiguous indications that the aircraft will not fly safely 4. Any ECAM alert.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
     box('Not a reject above 100 kt · EGT red line · nose gear vibration · tire failure V1 minus 20 kt to V1', 'the V1 call has precedence over any other call', 'C', False,
         'Exceeding the EGT red line or nose gear vibration should not result in the decision to reject takeoff above 100 kt.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
     box('Above V1 · takeoff must be continued', '', 'C', False,
         'Takeoff must be continued, because it may not be possible to stop the aircraft on the remaining runway.', 'FCTM PR-AEP-MISC-C-00020263.0002001', 'FCTM'),
-    note('ECAM inhibits non-essential warnings from 80 kt to 1 500 ft (or 2 min after lift-off); any warning in this period is significant (FCTM).'),
+    note('ECAM inhibits non-essential alerts from 80 kt to 1 500 ft (or 2 min after lift-off); any alert in this period is significant (FCTM).'),
   ], 'FCTM PR-AEP-MISC-C'),
   S('RTO TECHNIQUE', PLUM, [
     box('Autobrake MAX decelerating · Captain avoids pressing the pedals', 'inoperative autobrake or reject prior to 72 kt: reduce thrust and apply maximum pressure on both pedals, hold to the stop', 'C', False,
@@ -1132,7 +1132,7 @@ for ph in PH:
             it.setdefault('fleet', 'pax'); it.setdefault('src', 'manual' if it['k'] in ('box', 'fmc', 'cl') else 'sop'); it['provenance'] = it['src']
 OUT = {
   'meta': {'title': 'A330 Phase Flows', 'fleet': 'pax', 'generated': '2026-09-16',
-           'sources': 'A330P FCOM R17 PRO-NOR / PRO-ABN / PRO-NOR-SUP-SEC; QRH R35 22.02A; FCTM R5 PR-NP-CL, PR-AEP; FOM 125.1 5.5.15, 5.7.4, 6.3, 6.4, 11.2; PRC 3/9/26 p7, p8',
+           'sources': 'A330P FCOM R17 PRO-NOR / PRO-ABN / PRO-NOR-SUP-SEC; QRH R35 22.02A; FCTM R6 PR-NP-CL, PR-AEP; FOM 125.3 5.5.15, 5.7.4, 6.3, 6.4, 11.2; PRC 8/31/26 p1, p2; FCOM PRO-SPO-40A',
            'builders': 'box(t,s,r,call,q) fmc(t,s,r,q) sub(t,c) trig(t,r) cl(t,w,bold,cc) book(t,s) note(t) S(h,c,items,cite,appr); q = quote + [ref]',
            'roles': 'C=CM1 (CA seat) F=CM2 (FO seat) PF PM B=both; appr: all | ILS | ILScat (CAT II/III) | RNP | NPA',
            'normal_source': 'data/flows.json (quickref order and role) cross-checked to FCOM PRO-NOR idents; quotes are literal extract text'},

@@ -64,8 +64,8 @@ A[132] = dict(topic="Communications and PA", q="How do you call the cabin on the
   note="EMER, guarded, is the priority call: flashing pink lights, CALL PRIO CAPT on all panels and three chimes. A cabin call to you flashes ATT on the ACP with a buzzer.", src="fcom")
 
 A[134] = dict(status="desktop", kind="drill", topic="Cruise and Diversion", q="Where in Comply365 is the AIREP form?",
-  a="", detail="No FOM, FCOM or PRC text names an AIREP form or its Comply365 location. The PRC Oceanic References card carries the ten-item HF position report format, which includes the temperature, wind and significant weather elements of a meteorological report.",
-  ref="PRC p38 Oceanic References, Position Report", quote="10 - Any Significant WX (If none, report smooth)",
+  a="", detail="No FOM, FCOM or PRC text names an AIREP form or its Comply365 location. The PRC ORCN / ETOPS Reference Card carries the ten-item non-CPDLC position report format, which includes the temperature, wind and ride report elements of a meteorological report.",
+  ref="PRC p30 ORCN / ETOPS Reference Card, Position Report (non-CPDLC)", quote="8 - Temp: “Minus [SAT]”",
   note=DESK + ". Confirm the Comply365 path with the check airman.", src="prc")
 A[135] = dict(status="desktop", kind="drill", topic="Cruise and Diversion", q="Must you complete the AIREP form on every flight?",
   a="", detail="No FOM requirement for an AIREP form was located. The FOM does require meteorological reports with oceanic position reports and reports of adverse weather to Dispatch and ATC.",
@@ -81,28 +81,28 @@ A[137] = dict(reuse=True, topic="Cruise and Diversion")
 A[143] = dict(topic="Cruise and Diversion", q="Departing the lower 48: how early do you log on for a CPDLC departure clearance?",
   a="During preflight: ETD minus 30 minutes with DCL, minus 5 without, logon KUSA",
   detail="The PRC CPDLC card: in CONUS log on to KUSA during preflight, at ETD minus 30 minutes if the airport has Departure Clearance service, ETD minus 5 minutes if it does not. International logons are by FIR: climbing through 10 000 ft for most Pacific FIRs, 15 to 45 minutes prior to the oceanic FIR for KZAK and RJJJ.",
-  ref="PRC p33 Controller Pilot Data Link Communication (CPDLC)",
+  ref="PRC p38 Controller Pilot Data Link Communication (CPDLC)",
   quote="CONUS (lower 48) During Preflight KUSA i ETD—30’ if DCL i ETD—5’ if no DCL",
   note="Manual entry of the SID with its runway and enroute transition is required when loading the DCL. Load and review any route change in the SEC F-PLN before you accept.", src="prc")
 
 A[144] = dict(reuse=True, topic="Oceanic",
   a="Not the same for every FIR; KZAK and RJJJ want 15 to 45 minutes before the oceanic FIR",
   detail="The FOM sets the policy: log on during preflight or after takeoff above 10 000 ft, or as the FIR or OCA Pilot Reference Card requires. The PRC CPDLC card then gives the window by FIR: Hawaii, climbing through 10 000 ft and 15 to 45 minutes prior to the oceanic FIR, KZAK; Japan the same for RJJJ; Alaska, Australia, New Zealand and Tahiti climbing through 10 000 ft.",
-  ref="PRC p33 Controller Pilot Data Link Communication (CPDLC)",
+  ref="PRC p38 Controller Pilot Data Link Communication (CPDLC)",
   quote="Hawaii Climbing through 10k and 15’ KZAK to 45’ prior to Oceanic FIR",
   note="Use FD Pro ROUTE INFO for the specific FIR logon window and code. For the NAT HLA FIRs use the Europe Airway Manual ATC data.", src="prc")
 
 A[145] = dict(topic="Oceanic", q="How do you log on for a departure clearance, and enroute?",
   a="MCDU ATC COMM, ATC MENU, LSK 5L NOTIFICATION, verify flight number and ATC, then NOTIFY",
   detail="On the MCDU select ATC COMM, then ATC MENU, then LSK 5L to bring up the NOTIFICATION page. Verify the flight number and the ATC center code, KUSA for a domestic departure clearance, then select NOTIFY. Enroute the session is transferred automatically between US domestic airspace and the international FIR when CPDLC is in use in both; otherwise log on to the next FIR in its window.",
-  ref="PRC p33 Controller Pilot Data Link Communication (CPDLC), Logon Procedures",
+  ref="PRC p38 Controller Pilot Data Link Communication (CPDLC), Logon Procedures",
   quote="On the MCDU: select ATC COMM / ATC MENU / LSK 5L to bring up the NOTIFICATION page. i VERIFY correct Flight Number and ATC; select NOTIFY *",
   note="If ATC CTR shows KUSA and you get NO COMM, do not re-log on; wait for reconnection and use voice. If it does not show KUSA, attempt a re-logon.", src="prc")
 
 A[146] = dict(topic="Oceanic", q="What can you request through CPDLC?",
   a="Direct to a fix, altitudes, climb or descent, block altitude, voice contact, emergency messages",
   detail="Pilot-initiated CPDLC requests on the PRC card: REQUEST DIRECT TO a position that is on the current ATC assigned route, REQUEST an altitude, CLIMB TO, DESCENT TO, BLOCK altitude to altitude, VOICE CONTACT, and emergency messages. Do not send multiple requests in one message, do not repeat a request of the same type before the first is answered, and avoid free text except for MAYDAY or PAN PAN.",
-  ref="PRC p34 Pilot-Initiated REQUEST Messages Using CPDLC",
+  ref="PRC p39 Pilot-Initiated REQUEST Messages Using CPDLC",
   quote="Voice is always the backup to CPDLC and PRIMARY for emergencies.",
   note="Lateral offsets and weather deviations are also datalink requests in the ATC LAT REQ page. Voice is always the backup and primary for emergencies.", src="prc")
 
@@ -180,12 +180,12 @@ A[188] = dict(topic="Cruise and Diversion", q="Engine failure over the western U
   note="For the obstacle strategy the PRC says hold green dot until clear of obstacles. Depressurization escape routes are a separate product, the decompression polygons in FOM 11.2.9.", src="fom")
 
 A[189] = dict(reuse=True, topic="Oceanic",
-  note="Squawk 7700, exterior lights on, and broadcast identification, condition, position and intentions on 121.5. The PRC engine failure card adds the A330 speeds: 290 kt or M 0.82 for ETOPS, 300 kt or M 0.82 standard strategy, green dot for obstacles.")
+  note="Squawk 7700, exterior lights on, and broadcast identification, condition, position and intentions on 121.5. The PRC engine failure card (8/31/26) adds the A330 speeds: 300 kt or M 0.78 for ETOPS and standard strategy, green dot for obstacles.")
 
 A[190] = dict(kind="walkthrough", topic="Abnormals and QRH", q="Review the PRC immediate actions for an engine failure in cruise",
   a="MCT and A/THR off together, pull green dot, 5 NM offset oceanic, pull FL200, start APU, then ECAM",
   detail="As soon as the failure is recognized: simultaneously set MCT and disconnect autothrust with the instinctive disconnect button, pull speed to green dot, for oceanic operations turn at least 30 degrees to establish a 5 NM parallel offset, pull FL200 until the final driftdown altitude is known, start the APU. Exterior lights on, monitor TCAS, declare MAYDAY, then accomplish ECAM actions. Later reset REC MAX EO in the FCU and adjust speed for the strategy.",
-  ref="PRC p6 Engine Failure During Cruise Procedure",
+  ref="PRC p1 Engine Failure During Cruise Procedure",
   quote="SIMULTANEOUSLY, SET MCT AND DISCONNECT AUTOTHRUST Use the Instinctive Disconnect P/B. PULL SPEED - GREEN DOT",
   note="The crew must not decelerate below green dot; at high level close to the weight limit the speed decays fast, so do not delay the descent.", src="prc")
 
@@ -197,21 +197,21 @@ A[194] = dict(topic="Oceanic", q="What is ITP?",
   detail="An ITP is a flight level change through the level of one or two reference aircraft in trail, using qualified ADS-B data, TCAS and ADS-B combined. The PRC card lists the criteria: no more than two reference aircraft, altitude difference at or below 2000 ft, ITP distance at least 15 NM with a closing ground speed differential at or below 20 kt or 20 NM with 30 kt, climb or descent at 300 ft/min minimum, same direction, and the ITP aircraft able to hold its Mach.",
   ref="FCOM DSC-34-20-20-20 P 2/2 ATSA In Trail Procedure (ATSA ITP)",
   quote="The ITP enables aircraft in oceanic areas or areas that do not have radar coverage to change flight levels on a more frequent basis with a longitudinal separation that is temporarily reduced during the climb",
-  note="ATC remains responsible for separation. If anything goes wrong during the maneuver apply the regional contingency procedures from the AIP. The criteria list is on PRC p35.", src="fcom")
+  note="ATC remains responsible for separation. If anything goes wrong during the maneuver apply the regional contingency procedures from the AIP. The criteria list is on PRC p40.", src="fcom")
 
 A[195] = dict(topic="Oceanic", q="When would you use an ITP?",
   a="When a standard climb or descent is blocked by traffic in trail and the MCDU says ITP POSSIBLE",
   detail="Use it when you want a level change in procedural oceanic airspace and the only conflict is one or two same-direction aircraft ahead or behind at the intervening levels. First check REC MAX FL on the PROG page, then MCDU MENU, TRAF at 5R, IN TRAIL PROCEDURE, enter the desired flight level and check ITP POSSIBLE with its time limit and the reference aircraft in green.",
-  ref="PRC p35 CPDLC In-Trail Procedures, Procedure",
-  quote="MCDU PROG page…………………………………………….…SELECT REC MAX FL...………………………………………………...…..CHECK MCDU MENU page..………………………......................SELECT TRAF prompt (LSK 5R)...…………………......................SELECT IN TRAIL PROCEDURE prompt (LSK 5R)……………....SELECT DESIRED FL (LSK 1L)…………………………………………....ENTER ITP POSSIBLE or NOT………….……………………………....CHECK",
-  note="If ITP is no longer possible when the clearance arrives, send UNABLE. If still possible send WILCO and perform it without delay, holding current Mach and at least 300 ft/min.", src="prc")
+  ref="FCOM PRO-SPO-90-10 P 2/4 In-Trail Procedure, Procedure (PRC p40 CPDLC In-Trail Procedures)",
+  quote="Check if the ITP procedure is possible: ‐ Check that “ITP POSSIBLE” is displayed in green next to the LSK 1R, and the associated time limit for this ITP procedure (“ITP POSSIBLE UNTIL NN:NN Z”), ‐ Check that the reference aircraft are displayed in green in the ITP TRAFFIC list.",
+  note="If ITP is no longer possible when the clearance arrives, send UNABLE. If still possible send WILCO and perform it without delay, holding current Mach and at least 300 ft/min.", src="fcom")
 
 A[196] = dict(topic="Oceanic", q="How do you request an ITP climb or descent?",
   a="ATC VERT REQ page: CLB TO or DES TO the flight level, then FREE TEXT with ITP and the reference aircraft",
   detail="From the ATC VERT REQ page enter CLB TO or DES TO the desired level at 1L or 2L, then add the ITP information in the free text: line 1 ITP, line 2 the ITP distance NM AHEAD or BEHIND and the flight ID of the first reference aircraft, line 3 AND plus the second reference aircraft if there is one. The flight IDs must exactly match the ITP TRAFFIC LIST page.",
-  ref="PRC p36 CPDLC In-Trail Procedures cont'd",
-  quote="Request an ITP clearance to ATC by CPDLC in the ATC VERT REQ",
-  note="Write ITP, not In Trail, and do not add slashes or extra spaces; ATC's system parses the text.", src="prc")
+  ref="FCOM PRO-SPO-90-10 P 3/4 In-Trail Procedure, Procedure (PRC p41 CPDLC In-Trail Procedures cont'd)",
+  quote="Request an ITP clearance to ATC by CPDLC in the ATC VERT REQ page of the MCDU. Apply the ITP phraseology (Vertical request and FREE TEXT), as follows:",
+  note="Write ITP, not In Trail, and do not add slashes or extra spaces; ATC's system parses the text.", src="fcom")
 
 A[197] = dict(topic="Cruise and Diversion", q="How do you change to a new destination in the FMS?",
   a="LAT REV at a waypoint, type the new destination into NEW DEST, then INSERT",
