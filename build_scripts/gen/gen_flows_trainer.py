@@ -215,10 +215,10 @@ PLACE = {
              'pd_atc', 'oh_seat_belts', 'pd_mcdu2', 'mp_sd', 'mp_sd2'],
 }
 PHASE_OF = {  # A330 phase -> phase-bar label (the engine's PHASE_COLORS keys are phase-of-flight names)
- 'safety-exterior': 'Preflight', 'prelim-cockpit-prep': 'Preflight', 'before-walkaround': 'Preflight', 'cockpit-prep': 'Preflight',
- 'before-pushback': 'Before Start & Pushback', 'before-start': 'Before Start & Pushback', 'after-start': 'Engine Start',
- 'during-taxi': 'Taxi Out', 'taxi': 'Taxi Out', 'line-up': 'Takeoff', 'acceleration': 'Climb', 'climb-10000': 'Climb',
- 'descent-10000': 'Descent', 'after-landing': 'Taxi In', 'parking': 'Shutdown & Secure',
+ 'safety-exterior': 'Cockpit Prep', 'prelim-cockpit-prep': 'Cockpit Prep', 'before-walkaround': 'Cockpit Prep', 'cockpit-prep': 'Cockpit Prep',
+ 'before-pushback': 'Before Start', 'before-start': 'Before Start', 'after-start': 'After Start',
+ 'during-taxi': 'Taxi', 'taxi': 'Taxi', 'line-up': 'Line-Up', 'acceleration': 'Climb', 'climb-10000': 'Climb',
+ 'descent-10000': 'Approach', 'after-landing': 'After Landing', 'parking': 'Parking',
 }
 ROLE_MAP = {'CM1': 'CA', 'CM2': 'FO', 'PF': 'PF', 'PM': 'PM', 'BOTH': 'BOTH'}
 WHO_MAP = {'CM1': 'CA (CM1)', 'CM2': 'FO (CM2)', 'PF': 'PF', 'PM': 'PM'}
