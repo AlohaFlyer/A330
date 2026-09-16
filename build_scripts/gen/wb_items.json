@@ -1,0 +1,3120 @@
+[
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "",
+  "text": "What flight deck emergency items are required to be checked?",
+  "sub": false,
+  "b787": "ioe-001",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "",
+  "text": "Where is the aircraft Sanitation Certificate located? (inspected during Japanese JCAB Ramp Checks)",
+  "sub": false,
+  "b787": "ioe-002",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "",
+  "text": "Is HA allowed to perform the NADP 1 Departure Procedure? (Japanese JCAB Ramp Check question; they’ll want to see the OpSpec)",
+  "sub": false,
+  "b787": "ioe-003",
+  "b787sim": 0.88,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "",
+  "text": "Where is the Cockpit Jumpseat and/or Rest Facility Briefing Card located?",
+  "sub": false,
+  "b787": "ioe-004",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "",
+  "text": "How would you operate/escape through the 787 Flight Deck Overhead Door?",
+  "sub": false,
+  "b787": "ioe-005",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "Crew Rest Procedures/Door Operation",
+  "text": "Where can the Crew Rest procedures/requirements be found?",
+  "sub": false,
+  "b787": "ioe-006",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "Crew Rest Procedures/Door Operation",
+  "text": "787 - What is the OFCR/OFAR Door lock combination?",
+  "sub": false,
+  "b787": "ioe-007",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "Crew Rest Procedures/Door Operation",
+  "text": "Do you have a CREW REST APP? (for Long-Range flying w/more than 2 pilots)",
+  "sub": false
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "Crew Rest Procedures/Door Operation",
+  "text": "What is the Flight Deck Door entry code?",
+  "sub": false,
+  "b787": "ioe-009",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.3",
+  "secTitle": "Perform Interior/Exterior Inspection",
+  "group": "Cabin Emergency Equipment Locations (Megaphone, ELT, etc.)",
+  "text": "Where can the “Emergency Equipment Locations – Passenger Cabin” be found?",
+  "sub": false,
+  "b787": "ioe-010",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.1",
+  "secTitle": "Perform Preflight Preparation",
+  "group": "Flight Deck Door/Overhead Door Operation (787)",
+  "text": "Where can you find the Cockpit Door (330/321) and/or forward overhead door (787) description/operation/components/egress procedures?",
+  "sub": false,
+  "b787": "ioe-011",
+  "b787sim": 0.83
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "EFB IOS - Current/updated",
+  "sub": false,
+  "b787": "ioe-012",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "FD Pro: updates completed",
+  "sub": false,
+  "b787": "ioe-013",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "FD Pro: “Weather” (bottom/left of screen), “Weather Layers” pane/”I” (greyed-out “info” button/s, RT side of each Weather layer)/”AUTO UPDATE” selected ON; repeat for all WEATHER layers",
+  "sub": false
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "Select desired layer/s on “Weather Layers” pane",
+  "sub": false,
+  "b787": "ioe-015",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "“REFRESH” (bottom/right) on “Weather Layers” pane",
+  "sub": false,
+  "b787": "ioe-016",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "FD Pro: Verify correct “aircraft” on top/center of screen",
+  "sub": false,
+  "b787": "ioe-017",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "FD Pro Flight plan upload demo",
+  "sub": false,
+  "b787": "ioe-018",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "EFB Review",
+  "text": "FD Pro Flight plan transfer to another EFB demo",
+  "sub": false,
+  "b787": "ioe-019",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "FOM Preflight Planning and International Dispatch Release",
+  "sub": false,
+  "b787": "ioe-020",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "What is the difference between a named vs non-defined/unnamed waypoint?",
+  "sub": false,
+  "b787": "ioe-021",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "What documents are included in the Dispatch/Release package? (“Lucky 7”; in order or printing)",
+  "sub": false,
+  "b787": "ioe-022",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "What is the difference between a BO44 vs B043 flight plan?",
+  "sub": false,
+  "b787": "ioe-023",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "Discuss the differences between a standard dispatch release vs a Re-Dispatch/Re-Release",
+  "sub": false,
+  "b787": "ioe-024",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1",
+  "secTitle": "Perform Flight Planning",
+  "group": "Dispatch Release: Review all sections",
+  "text": "International Planning: Where can you find country-specific guidance?",
+  "sub": false,
+  "b787": "ioe-025",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Dispatch Weather Minimums",
+  "text": "Weather required to be at our destination/destination alternate (Flag) to depart?",
+  "sub": false,
+  "b787": "ioe-026",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Dispatch Weather Minimums",
+  "text": "Weather required for ETOPS alternate airport(s) prior to departure?",
+  "sub": false,
+  "b787": "ioe-027",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Enroute Weather Minimums",
+  "text": "Weather required for ETOPS alternate airport(s) in flight?",
+  "sub": false,
+  "b787": "ioe-028",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Enroute Weather Minimums",
+  "text": "Weather required at destination alternate airport in flight?",
+  "sub": false,
+  "b787": "ioe-029",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Takeoff Weather Minimums",
+  "text": "Weather required at departure airport for takeoff.",
+  "sub": false,
+  "b787": "ioe-030",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Takeoff Weather Minimums",
+  "text": "Any limitations on who can perform a low visibility takeoff?",
+  "sub": false,
+  "b787": "ioe-031",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Approach/Landing Weather Minimums",
+  "text": "If the visibility drops while on the approach, can we continue the approach?",
+  "sub": false,
+  "b787": "ioe-032",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.9",
+  "secTitle": "Know Weather Minima & Limitations for Dispatch, Takeoff, Approach, and Landing",
+  "group": "Approach/Landing Weather Minimums",
+  "text": "Are there different requirements at some international airports?",
+  "sub": false,
+  "b787": "ioe-033",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.4",
+  "secTitle": "Know Operational Control (Dispatch) Requirements",
+  "group": "",
+  "text": "Who has operational control of a flight?",
+  "sub": false,
+  "b787": "ioe-034",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.2.4",
+  "secTitle": "Know Operational Control (Dispatch) Requirements",
+  "group": "",
+  "text": "What items require Dispatch notification during a flight?",
+  "sub": false,
+  "b787": "ioe-035",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "",
+  "text": "Where are the FMS/ACARS/Uplink and Setup Procedures located?",
+  "sub": false,
+  "b787": "ioe-036",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "",
+  "text": "How can you tell if the Nav database is current?",
+  "sub": false,
+  "b787": "ioe-037",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "",
+  "text": "Can you change the Nav database? How?",
+  "sub": false,
+  "b787": "ioe-038",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "",
+  "text": "787 – How can you tell the AMM database is current?",
+  "sub": false,
+  "b787": "ioe-039",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "",
+  "text": "787 – How do you verify the correct ECL is loaded?",
+  "sub": false,
+  "b787": "ioe-040",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "Who reads the closeout data?",
+  "sub": false,
+  "b787": "ioe-041",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "Who verifies it? When?",
+  "sub": false,
+  "b787": "ioe-042",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "List several items that are required to be verified.",
+  "sub": false,
+  "b787": "ioe-043",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "How do you obtain takeoff performance if a TPR is unavailable?",
+  "sub": false,
+  "b787": "ioe-044",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "Can we use the TLR for takeoff information? When would we use it?",
+  "sub": false,
+  "b787": "ioe-045",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "Any concerns when using TLR for takeoff information? Temp and altimeter.",
+  "sub": false,
+  "b787": "ioe-046",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.2",
+  "secTitle": "Perform ACARS and FMS Initialization and Verification",
+  "group": "Load Closeout/TPR Update and review procedure",
+  "text": "Describe the Dangerous goods procedures if you have any on your flight",
+  "sub": false,
+  "b787": "ioe-047",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "What section of the FOM are the Standard Customer Service Announcements (PA’s) located?",
+  "sub": false,
+  "b787": "ioe-048",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "Which announcements are required to be made by the Flight Crew?",
+  "sub": false,
+  "b787": "ioe-049",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "When should you need to make a PA if you are pushing off the gate late? Minutes?",
+  "sub": false,
+  "b787": "ioe-050",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "Demonstrate a late pushback PA, a go around PA, and engine failure PA",
+  "sub": false,
+  "b787": "ioe-051",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "How do you make a PA using a headset (which button/transmit switches)?",
+  "sub": false,
+  "b787": "ioe-052",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "What’s the difference between PA PRIO and PA ALL selections?",
+  "sub": false,
+  "b787": "ioe-053",
+  "b787sim": 0.99
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "How do you make a PA using the flight deck handset?",
+  "sub": false,
+  "b787": "ioe-054",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "What selection should you use to make a PA throughout the cabin, but NOT to the crew rest facilities?",
+  "sub": false,
+  "b787": "ioe-055",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "12.1.3.16",
+  "secTitle": "Know FOM PA policies and Perform Effective Communication from the flight deck",
+  "group": "",
+  "text": "(787) Where can you find a list of Cabin Communication Codes?",
+  "sub": false,
+  "b787": "ioe-056",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.3.2",
+  "secTitle": "Perform FCOM Procedures Prior to Engine Start",
+  "group": "",
+  "text": "What “check” must be communicated to the Flt Deck prior to engine start?",
+  "sub": false,
+  "b787": "ioe-057",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.2",
+  "secTitle": "Perform FCOM Procedures Prior to Engine Start",
+  "group": "",
+  "text": "Review Engine failure procedure",
+  "sub": false,
+  "b787": "ioe-058",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.3.2",
+  "secTitle": "Perform FCOM Procedures Prior to Engine Start",
+  "group": "",
+  "text": "Where can you find the EFP for a specific runway? Anywhere else?",
+  "sub": false,
+  "b787": "ioe-059",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.3.2",
+  "secTitle": "Perform FCOM Procedures Prior to Engine Start",
+  "group": "",
+  "text": "Do we have any guidance regarding the Departure briefing? Where can it be found?",
+  "sub": false,
+  "b787": "ioe-060",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.3",
+  "secTitle": "Perform Aircraft Pushback Procedure",
+  "group": "",
+  "text": "How do communicate with your ground crew prior to push? (Cockpit/Ground Communications)",
+  "sub": false,
+  "b787": "ioe-061",
+  "b787sim": 0.95,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.3",
+  "secTitle": "Perform Aircraft Pushback Procedure",
+  "group": "",
+  "text": "How do you alert/call the ground crew?",
+  "sub": false,
+  "b787": "ioe-062",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.3",
+  "secTitle": "Perform Aircraft Pushback Procedure",
+  "group": "",
+  "text": "If pushing back without an interphone, what are the hand signals?",
+  "sub": false,
+  "b787": "ioe-063",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.3",
+  "secTitle": "Perform Aircraft Pushback Procedure",
+  "group": "",
+  "text": "Can you have the aircraft pulled forward with two engines running? (787/330 only)",
+  "sub": false,
+  "b787": "ioe-064",
+  "b787sim": 0.91,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.4.1",
+  "secTitle": "Complete Normal engine Start FCOM Procedure",
+  "group": "Non-Normal Start Operations",
+  "text": "Which Quick Action Items (787), or ECAM action items (330/321), may be required during ENG START e.g., Aborted Engine Start, Hot Start, Hung Start?",
+  "sub": false,
+  "b787": "ioe-065",
+  "b787sim": 0.88
+ },
+ {
+  "sec": "1.3.4.1",
+  "secTitle": "Complete Normal engine Start FCOM Procedure",
+  "group": "Non-Normal Start Operations",
+  "text": "Is there a QRH procedure for a TAILPIPE FIRE?",
+  "sub": false,
+  "b787": "ioe-066",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.3.4.1",
+  "secTitle": "Complete Normal engine Start FCOM Procedure",
+  "group": "Non-Normal Start Operations",
+  "text": "What is the hand signal for Tailpipe Fire?",
+  "sub": false,
+  "b787": "ioe-067",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.4.1",
+  "secTitle": "Complete Normal engine Start FCOM Procedure",
+  "group": "Non-Normal Start Operations",
+  "text": "Is there a QRH procedure for an ENG FIRE on the ground?",
+  "sub": false,
+  "b787": "ioe-068",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.3.5",
+  "secTitle": "Perform FCOM Procedures Following Engine Start/Before Taxi",
+  "group": "",
+  "text": "What items must be considered prior to pushback/taxi?",
+  "sub": false,
+  "b787": "ioe-069",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.1",
+  "secTitle": "Perform FOM Takeoff and Departure Briefing Including Identification of Operational Threats Threat Based Briefing/TPC",
+  "group": "",
+  "text": "Discuss the main concept of the TPC briefing",
+  "sub": false,
+  "b787": "ioe-070",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.1",
+  "secTitle": "Perform FOM Takeoff and Departure Briefing Including Identification of Operational Threats Threat Based Briefing/TPC",
+  "group": "",
+  "text": "Who starts the briefing?",
+  "sub": false,
+  "b787": "ioe-071",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.3.1",
+  "secTitle": "Perform FOM Takeoff and Departure Briefing Including Identification of Operational Threats Threat Based Briefing/TPC",
+  "group": "",
+  "text": "Do we have any guidance regarding this briefing? Where can it be found?",
+  "sub": false,
+  "b787": "ioe-072",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Where in the FOM can you find information on taxiing?",
+  "sub": false,
+  "b787": "ioe-073",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Do both crewmembers must have the FD Pro TAXI chart out and available during surface movements?",
+  "sub": false,
+  "b787": "ioe-074",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "(787) Can the Airport map displayed on the ND be used for navigation?",
+  "sub": false,
+  "b787": "ioe-075",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Thrust Use – Max breakaway thrust, N1?",
+  "sub": false,
+  "b787": "ioe-076",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Max Taxi Speed/s, and Braking technique?",
+  "sub": false,
+  "b787": "ioe-077",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Emphasize importance of keeping groundspeed in scan",
+  "sub": false,
+  "b787": "ioe-078",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Review recommended speed prior to entering a 90⁰ turn",
+  "sub": false,
+  "b787": "ioe-079",
+  "b787sim": 0.98,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Demonstrate use of differential braking if brake temperature on one side is significantly hotter than the other side",
+  "sub": false,
+  "b787": "ioe-080",
+  "b787sim": 0.95
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Location of gear/turning Radius",
+  "sub": false,
+  "b787": "ioe-081",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "Where can you find taxi guidance/technique regarding oversteering in turns?",
+  "sub": false,
+  "b787": "ioe-082",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "What is the normal 180 degree turning radius?",
+  "sub": false,
+  "b787": "ioe-083",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "What is the non-normal (pivot) 180 degree turning radius?",
+  "sub": false,
+  "b787": "ioe-084",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1",
+  "secTitle": "Perform Normal Taxi-Out (Taxi-In)",
+  "group": "Taxiing",
+  "text": "When do SMGCS procedures go into effect?",
+  "sub": false,
+  "b787": "ioe-085",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Airport Ops",
+  "text": "Can we depart at night from a runway where the edge lights are inoperative?",
+  "sub": false,
+  "b787": "ioe-086",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Airport Ops",
+  "text": "If given a change of departure runway during the taxi, how is this accomplished prior to takeoff and what items need to be accomplished/reviewed?",
+  "sub": false,
+  "b787": "ioe-087",
+  "b787sim": 0.84,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Passenger Ops",
+  "text": "Are we required to stop the aircraft during taxi if a guest stands up?",
+  "sub": false,
+  "b787": "ioe-088",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Cold Weather Ops",
+  "text": "While using SureWx app, if/when there is active precipitation or during contaminated surface operations, regardless of the holdover time, what check to we always do prior to departure?",
+  "sub": false
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Cold Weather Ops",
+  "text": "While using SureWx app and the holdover time has expired, what check is required prior to takeoff?",
+  "sub": false,
+  "b787": "ioe-090",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Cold Weather Ops",
+  "text": "In which manual is most of the cold weather/de-icing information found?",
+  "sub": false,
+  "b787": "ioe-091",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Cold Weather Ops",
+  "text": "What are your cold weather ops resources? (Manuals, cards etc.)",
+  "sub": false,
+  "b787": "ioe-092",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Contaminated Runway Ops",
+  "text": "What is the difference between a wet vs contaminated runway?",
+  "sub": false,
+  "b787": "ioe-093",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Contaminated Runway Ops",
+  "text": "What’s the difference between a braking action report vs RCAM?",
+  "sub": false,
+  "b787": "ioe-094",
+  "b787sim": 0.99,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Contaminated Runway Ops",
+  "text": "What is a FICON (Field Condition) NOTAM?",
+  "sub": false,
+  "b787": "ioe-095",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.3",
+  "secTitle": "Perform FCOM Pre-Takeoff Procedures",
+  "group": "Contaminated Runway Ops",
+  "text": "What is a runway CC (Runway Condition Code)?",
+  "sub": false,
+  "b787": "ioe-096",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Crosswind Control",
+  "text": "Max takeoff crosswind limitations?",
+  "sub": false,
+  "b787": "ioe-097",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Crosswind Control",
+  "text": "(787) TALPA; What is TALPA?",
+  "sub": false,
+  "b787": "ioe-098",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Crosswind Control",
+  "text": "(787) Max Crosswind for a HUD takeoff?",
+  "sub": false,
+  "b787": "ioe-099",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Gear/Flap Management",
+  "text": "Max altitude with flaps extended?",
+  "sub": false,
+  "b787": "ioe-100",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Rotation Rate",
+  "text": "Normal rotation rate? (degrees/sec)",
+  "sub": false,
+  "b787": "ioe-101",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Pitch Attitude",
+  "text": "What is the normal takeoff rotation target pitch?",
+  "sub": false,
+  "b787": "ioe-102",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Pitch Attitude",
+  "text": "What is the takeoff rotation target pitch attitude after an engine failure at/after V1 and prior to liftoff?",
+  "sub": false,
+  "b787": "ioe-103",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "3.1.1",
+  "secTitle": "Perform Takeoff",
+  "group": "Callouts",
+  "text": "What are the PM callouts during an RTO?",
+  "sub": false,
+  "b787": "ioe-104",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Noise Abatement Departure Procedures (NADP)",
+  "text": "What is NADP1? Describe associated procedures",
+  "sub": false,
+  "b787": "ioe-105",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Noise Abatement Departure Procedures (NADP)",
+  "text": "What is NADP2? Describe associated procedures",
+  "sub": false,
+  "b787": "ioe-106",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Climb Airspeed / Mach Control",
+  "text": "How do you determine max rate of climb speed?",
+  "sub": false,
+  "b787": "ioe-107",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Climb Airspeed / Mach Control",
+  "text": "What is severe turbulence penetration speed?",
+  "sub": false,
+  "b787": "ioe-108",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Climb Airspeed / Mach Control",
+  "text": "Where can you find max angle climb speed?",
+  "sub": false,
+  "b787": "ioe-109",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "Though the SID legs/restrictions get briefed from the plan view vs the CDU/FMS, what other items should be briefed from the SID plate?",
+  "sub": false,
+  "b787": "ioe-110",
+  "b787sim": 0.87,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "Is the SID for a specific runway(s) only?",
+  "sub": false,
+  "b787": "ioe-111",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "Obstruction climb gradient restrictions.",
+  "sub": false,
+  "b787": "ioe-112",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "Red Boxed notes e.g., speed restriction until further advised, etc.",
+  "sub": false,
+  "b787": "ioe-113",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "SID top altitude (if given “CLIMB VIA” from ATC)?",
+  "sub": false,
+  "b787": "ioe-114",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "While on the SID, if ATC issues a “Climb and Maintain XXX” clearance, does the flight crew still need to comply with altitude constraints on the SID?",
+  "sub": false,
+  "b787": "ioe-115",
+  "b787sim": 0.82,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "SID Departure",
+  "text": "Transition Altitude/LVL?",
+  "sub": false,
+  "b787": "ioe-116",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Manual Aircraft Control",
+  "text": "Minimum Altitude for autopilot engagement?",
+  "sub": false,
+  "b787": "ioe-117",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "4.1.1",
+  "secTitle": "Perform Departure and Climb",
+  "group": "Manual Aircraft Control",
+  "text": "Is the autopilot required for an RNAV SID?",
+  "sub": false,
+  "b787": "ioe-118",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "Where can the ETOPS verification flight procedures be found?",
+  "sub": false,
+  "b787": "ioe-119",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "Does the verification flight item request have to be in the maintenance logbook prior to departure?",
+  "sub": false,
+  "b787": "ioe-120",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "Is Maintenance required to communicate with the flight crew prior to departing on an ETOPS verification flight?",
+  "sub": false,
+  "b787": "ioe-121",
+  "b787sim": 0.97,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "Does the PIC have to communicate with dispatch after speaking with Maintenance?",
+  "sub": false,
+  "b787": "ioe-122",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "Is there a communication requirement to Dispatch between takeoff and prior to the EEP?",
+  "sub": false,
+  "b787": "ioe-123",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "How can/should you make that communication of system performance?",
+  "sub": false,
+  "b787": "ioe-124",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "If the component being verified fails prior to EEP can you continue?",
+  "sub": false,
+  "b787": "ioe-125",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS Verification Flight",
+  "text": "If the component being verified fails after EEP entry can you continue?",
+  "sub": false,
+  "b787": "ioe-126",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "What are the APU verification flight procedures?",
+  "sub": false,
+  "b787": "ioe-127",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "How do those procedures differ from an ETOPS Verification (single component) flight?",
+  "sub": false,
+  "b787": "ioe-128",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "How many start attempts?",
+  "sub": false,
+  "b787": "ioe-129",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "After APU start at altitude, is it required to shut the APU down before descent?",
+  "sub": false,
+  "b787": "ioe-130",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "If APU is shutdown prior to top of descent , then subsequently the APU fails to start after landing, how/does that affect the verification portion of the flight? Successful, with a separate write up, or does the verification fail?",
+  "sub": false
+ },
+ {
+  "sec": "16.1.1.7.6",
+  "secTitle": "ETOPS Verification Flight Procedure",
+  "group": "ETOPS APU Verification Flight",
+  "text": "What maintenance logbook entry (specific verbiage) must be entered after the verification flight?",
+  "sub": false,
+  "b787": "ioe-132",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "",
+  "text": "How do you make an interphone call to the cabin using the headset? Using the flight deck handset?",
+  "sub": false,
+  "b787": "ioe-133",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "",
+  "text": "Review PA usage (see 12.1.3.16 Know FOM PA policies and Perform Effective Communication from the flight deck)",
+  "sub": false,
+  "b787": "ioe-134",
+  "b787sim": 0.94,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "",
+  "text": "Where in Comply365 can the AIREP form be found?",
+  "sub": false,
+  "b787": "ioe-135",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "",
+  "text": "Do you need to complete the AIREP form for each flight?",
+  "sub": false,
+  "b787": "ioe-136",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "",
+  "text": "Do you need to save the AIREP form after each flight?",
+  "sub": false,
+  "b787": "ioe-137",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Company Reporting",
+  "text": "Are we required to make company position reports?",
+  "sub": false,
+  "b787": "ioe-138",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Company Reporting",
+  "text": "How can you report a discrepancy to Maintenance in advance, prior to landing?",
+  "sub": false,
+  "b787": "ioe-139",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "RVSM Requirements",
+  "text": "What altitudes define RVSM airspace?",
+  "sub": false,
+  "b787": "ioe-140",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "RVSM Requirements",
+  "text": "Are there aircraft equipment requirements to operate in RVSM airspace?",
+  "sub": false,
+  "b787": "ioe-141",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "RVSM Requirements",
+  "text": "What are you expected to do if you have a failure of required equipment while in RVSM airspace?",
+  "sub": false,
+  "b787": "ioe-142",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "RVSM Requirements",
+  "text": "When diverting to an alternate without a clearance, what altitude should you plan to be below when diverting re RVSM?",
+  "sub": false,
+  "b787": "ioe-143",
+  "b787sim": 0.92,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "CPDLC Logon Procedures",
+  "text": "When departing the 48 Contiguous states, to assist ATC, how many minutes prior to departure is an appropriate time to attain a departure clearance via CPDLC LOGON?",
+  "sub": false
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "CPDLC Logon Procedures",
+  "text": "Once airborne, what is the CPDLC logon time window prior to the FIR (“Flight Information Region”)? Is it the same for all FIRs?",
+  "sub": false,
+  "b787": "ioe-145",
+  "b787sim": 0.9,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "CPDLC Logon Procedures",
+  "text": "How, specifically in your aircraft, do you logon for a departure clearance? Enroute?",
+  "sub": false,
+  "b787": "ioe-146",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "CPDLC Menus",
+  "text": "What types of requests can be made through CPDLC?",
+  "sub": false,
+  "b787": "ioe-147",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "Approximately 2 minutes prior to reaching a waypoint, what crew actions are required?",
+  "sub": false,
+  "b787": "ioe-148",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "What items are required to be checked on the flight plan after waypoint transition?",
+  "sub": false,
+  "b787": "ioe-149",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "On which document is the fuel remaining (at waypoint transition) recorded?",
+  "sub": false,
+  "b787": "ioe-150",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "Approximately 10 minutes after waypoint transition, what crew actions are required?",
+  "sub": false,
+  "b787": "ioe-151",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "Why is keeping track of the actual fuel remaining vs planned fuel remaining (“FUEL SCORE”) important?",
+  "sub": false,
+  "b787": "ioe-152",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Waypoint Transition Procedure",
+  "text": "(787) Which fuel remaining is noted on the dispatch release, the EICAS fuel panel (tank total) or the PROG PG 2 “CALC” fuel quantity?",
+  "sub": false,
+  "b787": "ioe-153",
+  "b787sim": 0.89,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Cruise Altitude Considerations",
+  "text": "What is the difference between OPT/Max/Recommended altitudes?",
+  "sub": false,
+  "b787": "ioe-154",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Cruise Altitude Considerations",
+  "text": "Why is it important to consider the level of the tropopause regarding your cruise altitude?",
+  "sub": false,
+  "b787": "ioe-155",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Cruise Altitude Considerations",
+  "text": "Do we have a chart in our dispatch release package that shows the level(s) of the tropopause with reference to our flight plan?",
+  "sub": false,
+  "b787": "ioe-156",
+  "b787sim": 0.87,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "Cruise Altitude Considerations",
+  "text": "What can expect when cruising near, or crossing through, the tropopause?",
+  "sub": false,
+  "b787": "ioe-157",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Electronic Plotting Chart Procedure",
+  "text": "When and under what conditions are we required to do an electronic plot?",
+  "sub": false,
+  "b787": "ioe-158",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Electronic Plotting Chart Procedure",
+  "text": "How do you plot using the EFB?",
+  "sub": false,
+  "b787": "ioe-159",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Electronic Plotting Chart Procedure",
+  "text": "Are you required to save/submit your plots and route after every flight?",
+  "sub": false,
+  "b787": "ioe-160",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "FOM Electronic Plotting Chart Procedure",
+  "text": "When would it be prudent to save your plotted route (take screenshot postflight)?",
+  "sub": false,
+  "b787": "ioe-161",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "What circumstance precipitates a SATCOM call to Dispatch?",
+  "sub": false,
+  "b787": "ioe-162",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "When we make a SATCOM call for Maintenance or guest issue, who do we call?",
+  "sub": false,
+  "b787": "ioe-163",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "How do you make a SATCOM (specifically which buttons, and in what order, must be pressed in/on which components)?",
+  "sub": false,
+  "b787": "ioe-164",
+  "b787sim": 0.95
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "In the ACARS/TCP (787) where can you find a list of telephone numbers that are preprogrammed to call?",
+  "sub": false,
+  "b787": "ioe-165",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "If you have a total VHF/HF radio failure, is there another way to contact ATC?",
+  "sub": false,
+  "b787": "ioe-166",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "Where can you find the most current (pacific) HF FREQUENCIES in use for your flight?",
+  "sub": false,
+  "b787": "ioe-167",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "What is the rule of thumb with HF frequencies vs the Sun?",
+  "sub": false,
+  "b787": "ioe-168",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "5.1.1.5",
+  "secTitle": "Perform Communications/Administrative Functions During Cruise",
+  "group": "SATCOM / HF Procedures",
+  "text": "Where can you find a ‘template’ to make an HF Radio Position report?",
+  "sub": false,
+  "b787": "ioe-169",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "Where can you find the ICAO Weather Deviation procedures for Oceanic Controlled Airspace?",
+  "sub": false,
+  "b787": "ioe-170",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "How, specific to your aircraft, do can you make a weather deviation request?",
+  "sub": false,
+  "b787": "ioe-171",
+  "b787sim": 0.97,
+  "fomq": true
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "Once received, how (aircraft CDU/FMS specific) can you insert the offset distance?",
+  "sub": false,
+  "b787": "ioe-172",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "How far (in nm’s) should you avoid Severe CB’s if possible? Which direction? Vertically?",
+  "sub": false,
+  "b787": "ioe-173",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "If a weather deviation clearance cannot be attained, what is the procedure to deviate around weather?",
+  "sub": false,
+  "b787": "ioe-174",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.1.2.3.4",
+  "secTitle": "Analyze Weather Conditions Using Weather Radar System",
+  "group": "FOM and FCTM guidance on Weather avoidance",
+  "text": "What are the four items that are required to be reported to dispatch when deviating?",
+  "sub": false,
+  "b787": "ioe-175",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What items must you keep in mind when doing fuel planning (normal flight)?",
+  "sub": false,
+  "b787": "ioe-176",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What are the dispatch fuel requirements for domestic operations?",
+  "sub": false,
+  "b787": "ioe-177",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What are the dispatch fuel requirements for Flag operations?",
+  "sub": false,
+  "b787": "ioe-178",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What are the dispatch fuel requirements for Supplemental operations?",
+  "sub": false,
+  "b787": "ioe-179",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What are the special fuel requirements for a B043 flight plan?",
+  "sub": false,
+  "b787": "ioe-180",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "What is Final Reserve Fuel?",
+  "sub": false,
+  "b787": "ioe-181",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "When should you plan to “inquire” from ATC the current delay situation when unanticipated circumstances arise?",
+  "sub": false,
+  "b787": "ioe-182",
+  "b787sim": 0.9,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "When should you declare Minimum Fuel?",
+  "sub": false,
+  "b787": "ioe-183",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Analyze Fuel Factors for Diversion",
+  "text": "When should you declare “MAYDAY, MAYDAY, MAYDAY, FUEL”?",
+  "sub": false,
+  "b787": "ioe-184",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Assess Diversion and Alternate Airport Weather Conditions and Minima",
+  "text": "Once airborne, what does the weather have to be at your destination, destination alternate, ETOPS alternate(s)? To start an approach at those airports?",
+  "sub": false
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Assess Diversion and Alternate Airport Weather Conditions and Minima",
+  "text": "How can you get the most current METAR/TAF when in oceanic airspace?",
+  "sub": false,
+  "b787": "ioe-186",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Assess Diversion and Alternate Airport Weather Conditions and Minima",
+  "text": "How often should you be checking the weather at your destination and alternates?",
+  "sub": false,
+  "b787": "ioe-187",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "5.1.2.6",
+  "secTitle": "Know Contingency Plan (i.e., Alternates, WEATHER Monitoring, Fuel, etc.)",
+  "group": "Assess Diversion and Alternate Airport Weather Conditions and Minima",
+  "text": "How (aircraft specific) can you get updated enroute/descent winds?",
+  "sub": false,
+  "b787": "ioe-188",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "13.1.1.1.1",
+  "secTitle": "Know Engine Failure in Cruise Procedure",
+  "group": "",
+  "text": "What are the Engine Failure and diversion procedures while flying over the western part of the 48 contiguous states? Other terrain-critical regions in the world?",
+  "sub": false
+ },
+ {
+  "sec": "13.1.1.1.1",
+  "secTitle": "Know Engine Failure in Cruise Procedure",
+  "group": "Oceanic Contingency Procedures",
+  "text": "What are the engine failure and diversion procedures while in oceanic airspace?",
+  "sub": false,
+  "b787": "ioe-190",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "13.1.1.1.1",
+  "secTitle": "Know Engine Failure in Cruise Procedure",
+  "group": "Oceanic Contingency Procedures",
+  "text": "Review immediate action items (787 back of QRC, Airbus in PRC) for engine failure in cruise",
+  "sub": false
+ },
+ {
+  "sec": "13.1.1.1.1",
+  "secTitle": "Know Engine Failure in Cruise Procedure",
+  "group": "Oceanic Contingency Procedures",
+  "text": "When turning off the route during a drift-down, which direction will you turn? Why?",
+  "sub": false,
+  "b787": "ioe-192",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "SLOP",
+  "text": "What is the purpose of SLOP?",
+  "sub": false,
+  "b787": "ioe-193",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "SLOP",
+  "text": "Up to what distance/direction from the route is SLOP used/acceptable?",
+  "sub": false,
+  "b787": "ioe-194",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "In Trail Procedures (OpSpec A354)",
+  "text": "What is “ITP”?",
+  "sub": false,
+  "b787": "ioe-195",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "In Trail Procedures (OpSpec A354)",
+  "text": "When might you consider using the ITP?",
+  "sub": false,
+  "b787": "ioe-196",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "In Trail Procedures (OpSpec A354)",
+  "text": "How do you (specifically) request an ITP CLB/DES clearance?",
+  "sub": false,
+  "b787": "ioe-197",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "Diversion Procedures/Select New Destination",
+  "text": "How (aircraft specific) do you “Change” or “Select” a new destination?",
+  "sub": false,
+  "b787": "ioe-198",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "Alternate Navigation System",
+  "text": "What is Alternate Navigation?",
+  "sub": false,
+  "b787": "ioe-199",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.4.26",
+  "secTitle": "Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach",
+  "group": "Alternate Navigation System",
+  "text": "How do you perform Alternate Navigation to a point or destination?",
+  "sub": false,
+  "b787": "ioe-200",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Descent Preparation",
+  "text": "What items are included in preparing for descent?",
+  "sub": false,
+  "b787": "ioe-201",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "STAR/Airport/Arrival Review",
+  "text": "What items should be briefed on the STAR/Approach/Taxi charts?",
+  "sub": false,
+  "b787": "ioe-202",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Descent Plan Execution",
+  "text": "How do you get the aircraft to begin the descent?",
+  "sub": false,
+  "b787": "ioe-203",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Descent Plan Execution",
+  "text": "What is the difference between “Cleared XX arrival” vs “Cleared to descend via XX arrival”?",
+  "sub": false,
+  "b787": "ioe-204",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Weather Considerations",
+  "text": "What must the Weather be in order to begin an approach? Ceiling and visibility?",
+  "sub": false,
+  "b787": "ioe-205",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What is the lowest visibility for a CAT I approach?",
+  "sub": false,
+  "b787": "ioe-206",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "Are there restrictions for High Mins Captains?",
+  "sub": false,
+  "b787": "ioe-207",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What is FAA Exemption 5549?",
+  "sub": false,
+  "b787": "ioe-208",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What is the lowest visibility for a CAT II approach? (C060)",
+  "sub": false,
+  "b787": "ioe-209",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What is the lowest visibility for a CAT II SA approach? (C060)",
+  "sub": false,
+  "b787": "ioe-210",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What is the lowest visibility for a CAT III approach? (C060)",
+  "sub": false,
+  "b787": "ioe-211",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "Is there a table in the FOM categorizing CAT II/III Approach and Landing Limitations?",
+  "sub": false,
+  "b787": "ioe-212",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "Under what conditions can you perform an autoland?",
+  "sub": false,
+  "b787": "ioe-213",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "Under what conditions must you perform an autoland?",
+  "sub": false,
+  "b787": "ioe-214",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Analysis of Airport Conditions",
+  "text": "What are the requirements to log/report an autoland?",
+  "sub": false,
+  "b787": "ioe-215",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Diversion Considerations",
+  "text": "What factors may precipitate a diversion?",
+  "sub": false,
+  "b787": "ioe-216",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Diversion Considerations",
+  "text": "What factors should you consider when deciding when to start diverting to your alternate?",
+  "sub": false,
+  "b787": "ioe-217",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Diversion Considerations",
+  "text": "If you are not diverting to your listed alternate, what factors should you consider before selecting the diversion airport?",
+  "sub": false,
+  "b787": "ioe-218",
+  "b787sim": 0.92,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Fuel Management",
+  "text": "Where in the FOM is the fuel planning section?",
+  "sub": false,
+  "b787": "ioe-219",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Fuel Management",
+  "text": "What is the ETOPS Critical Fuel Scenario?",
+  "sub": false,
+  "b787": "ioe-220",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "LAHSO Policy",
+  "text": "What is LAHSO?",
+  "sub": false,
+  "b787": "ioe-221",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "LAHSO Policy",
+  "text": "What are the 4 different factors that must be considered prior to accepting a LAHSO clearance?",
+  "sub": false,
+  "b787": "ioe-222",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Complete Landing Performance Assessment",
+  "text": "What is a TLR?",
+  "sub": false,
+  "b787": "ioe-223",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Complete Landing Performance Assessment",
+  "text": "How can you request landing data performance?",
+  "sub": false,
+  "b787": "ioe-224",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Complete Landing Performance Assessment",
+  "text": "On the landing data analysis printout, what do the designator/s “HXX/TXX” and “LXX/RXX” represent?",
+  "sub": false,
+  "b787": "ioe-225",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1.4",
+  "secTitle": "Assess Operational and Environmental Factors for Descent and Arrival",
+  "group": "Cold Temperature Altimeter Correction/VNAV Temperature Limitation",
+  "text": "When/why do you make cold weather corrections while on approach?",
+  "sub": false,
+  "b787": "ioe-226",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Altimeter procedures",
+  "text": "When, in the descent, do you change your altimeter setting to QNH (local Altimeter)?",
+  "sub": false,
+  "b787": "ioe-227",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Altimeter procedures",
+  "text": "What is the difference between a transition level vs transition altitude?",
+  "sub": false,
+  "b787": "ioe-228",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Altimeter procedures",
+  "text": "What (altimeter setting) defines a “level”?",
+  "sub": false,
+  "b787": "ioe-229",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Altimeter procedures",
+  "text": "What (altimeter setting) defines an “altitude”?",
+  "sub": false,
+  "b787": "ioe-230",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Altimeter procedures",
+  "text": "What is QFE?",
+  "sub": false,
+  "b787": "ioe-231",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "6.1.1",
+  "secTitle": "Perform Descent and Terminal Arrival",
+  "group": "Manually Perform Descent and Arrival (optional)",
+  "text": "Is the autopilot required to be engaged on an RNAV1 STAR?",
+  "sub": false,
+  "b787": "ioe-232",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.2.1.5",
+  "secTitle": "Conduct Approach Briefing",
+  "group": "",
+  "text": "What items compose the Arrival and Approach TPC Briefing?",
+  "sub": false,
+  "b787": "ioe-233",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.1.1.5",
+  "secTitle": "Configure Airplane for Approach/Landing",
+  "group": "Flap and Gear Management",
+  "text": "What is the normal flap/gear approach configuration schedule?",
+  "sub": false,
+  "b787": "ioe-234",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.1.1.5",
+  "secTitle": "Configure Airplane for Approach/Landing",
+  "group": "Stabilized Approach Criteria",
+  "text": "Where is the Stabilized Approach Criteria parameters located?",
+  "sub": false,
+  "b787": "ioe-235",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.1.1.5",
+  "secTitle": "Configure Airplane for Approach/Landing",
+  "group": "Stabilized Approach Criteria",
+  "text": "What are the Stabilized Approach requirements at each “gate”?",
+  "sub": false,
+  "b787": "ioe-236",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.1.1.5",
+  "secTitle": "Configure Airplane for Approach/Landing",
+  "group": "Stabilized Approach Criteria",
+  "text": "Emphasize the importance of going around if the stabilized approach criteria are not met and the no fault go-around policy.",
+  "sub": false,
+  "b787": "ioe-237",
+  "b787sim": 0.93,
+  "fomq": true
+ },
+ {
+  "sec": "8.2.1",
+  "secTitle": "Perform CAT 1 ILS Approach",
+  "group": "",
+  "text": "Discuss/demonstrate the callouts and configuration steps",
+  "sub": false,
+  "b787": "ioe-238",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.2.1",
+  "secTitle": "Perform CAT 1 ILS Approach",
+  "group": "",
+  "text": "What about if you are inside the FAF ? Minimum visibility ?",
+  "sub": false,
+  "b787": "ioe-239",
+  "b787sim": 0.94,
+  "fomq": true
+ },
+ {
+  "sec": "8.2.1",
+  "secTitle": "Perform CAT 1 ILS Approach",
+  "group": "",
+  "text": "Discuss what is shown on FMA when the approach is armed",
+  "sub": false,
+  "b787": "ioe-240",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.1",
+  "secTitle": "Perform Managed Lateral/Managed Vertical Approach",
+  "group": "",
+  "text": "(Airbus) Perform at least one FLS approach, if equipped",
+  "sub": false
+ },
+ {
+  "sec": "8.3.1",
+  "secTitle": "Perform Managed Lateral/Managed Vertical Approach",
+  "group": "",
+  "text": "What are the different levels of Managed (Airbus)/VNAV (Boeing) approaches?",
+  "sub": false
+ },
+ {
+  "sec": "8.3.1",
+  "secTitle": "Perform Managed Lateral/Managed Vertical Approach",
+  "group": "",
+  "text": "What different approach modes(s) are eligible to perform a non-precision approach?",
+  "sub": false,
+  "b787": "ioe-241",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.2",
+  "secTitle": "Perform Managed Lateral/Selected Vertical Approach (Airbus) (Optional)",
+  "group": "",
+  "text": "What approaches would be flown in Managed/Selected?",
+  "sub": false,
+  "b787": "ioe-242",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.1.1",
+  "secTitle": "Perform Visual Approach",
+  "group": "",
+  "text": "Can we fly a visual approach at night?",
+  "sub": false,
+  "b787": "ioe-243",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Airspeed Control",
+  "text": "Is the auto-thrust/auto-throttle system required during approach and/or landing?",
+  "sub": false,
+  "b787": "ioe-244",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Airspeed Control",
+  "text": "What factors should be considered if deciding to turn off the auto-thrust/auto-throttle system for the approach?",
+  "sub": false,
+  "b787": "ioe-245",
+  "b787sim": 0.96
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Centerline Drift / Crosswind Control",
+  "text": "Where can you find guidance on landing the aircraft in a crosswind?",
+  "sub": false,
+  "b787": "ioe-246",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Thrust Reverse Usage",
+  "text": "Is max thrust reverser required upon landing?",
+  "sub": false,
+  "b787": "ioe-247",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Thrust Reverse Usage",
+  "text": "When should the thrust reversers be stowed?",
+  "sub": false,
+  "b787": "ioe-248",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Thrust Reverse Usage",
+  "text": "(A321) Discuss system particulars of the thrust levers quadrant and the threats associated with improperly stowing the thrust reversers during the landing rollout. (i.e. positioning the thrust levers above idle while stowing)",
+  "sub": false
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Brakes Usage",
+  "text": "What braking technique is used with carbon brakes?",
+  "sub": false,
+  "b787": "ioe-249",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1",
+  "secTitle": "Perform Manual Landing",
+  "group": "Brakes Usage",
+  "text": "What is the difference between factored vs unfactored landing data?",
+  "sub": false,
+  "b787": "ioe-250",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "8.5.1",
+  "secTitle": "Perform Go-Around/Missed Approach",
+  "group": "Bounced Landing Recovery",
+  "text": "What is a key component during a bounced landing recovery to avoid a tail strike?",
+  "sub": false,
+  "b787": "ioe-251",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "9.1.1.14",
+  "secTitle": "Perform FCOM Procedure(s) Following Landing",
+  "group": "",
+  "text": "What are the FCOM procedures after landing?",
+  "sub": false,
+  "b787": "ioe-252",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1.10",
+  "secTitle": "Know Single Engine Taxi Procedures",
+  "group": "",
+  "text": "Where can you find the single engine taxi procedures? Review any differences in SOP.",
+  "sub": false,
+  "b787": "ioe-253",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "2.1.1.10",
+  "secTitle": "Know Single Engine Taxi Procedures",
+  "group": "",
+  "text": "What is the engine cool requirements before shutting down an engine?",
+  "sub": false,
+  "b787": "ioe-254",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "2.1.1.10",
+  "secTitle": "Know Single Engine Taxi Procedures",
+  "group": "",
+  "text": "What factors should you consider before conducting a single engine taxi?",
+  "sub": false,
+  "b787": "ioe-255",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "10.1.1.1",
+  "secTitle": "Complete Parking FCOM Procedure",
+  "group": "",
+  "text": "Gate Arrival Procedures",
+  "sub": false,
+  "b787": "ioe-256",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "10.1.1.1",
+  "secTitle": "Complete Parking FCOM Procedure",
+  "group": "",
+  "text": "What should be checked prior to taxiing into the gate area?",
+  "sub": false,
+  "b787": "ioe-257",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "10.1.1.1",
+  "secTitle": "Complete Parking FCOM Procedure",
+  "group": "",
+  "text": "If there is no marshaller or if they are not marshalling you in, where should you stop the aircraft?",
+  "sub": false,
+  "b787": "ioe-258",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "10.1.2",
+  "secTitle": "Perform Postflight",
+  "group": "",
+  "text": "Perform Securing Procedure (Optional/If not performed, discuss)",
+  "sub": false,
+  "b787": "ioe-259",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "10.1.2",
+  "secTitle": "Perform Postflight",
+  "group": "",
+  "text": "ACARS Post-Flight Report (Autoland and RNP-AR Report pages)",
+  "sub": false,
+  "b787": "ioe-260",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "10.1.2",
+  "secTitle": "Perform Postflight",
+  "group": "",
+  "text": "Debrief",
+  "sub": false,
+  "b787": "ioe-261",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "Where in the FOM can you find the maintenance logbook review/checking procedures?",
+  "sub": false,
+  "b787": "ioe-262",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "How long is the PDSC good for?",
+  "sub": false,
+  "b787": "ioe-263",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "What is the difference between a white (HAL 46-1333) vs yellow (HAL 46-1333b) MEL placard?",
+  "sub": false,
+  "b787": "ioe-264",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "What are the 4 different repair intervals",
+  "sub": false,
+  "b787": "ioe-265",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "What is an “(O)” procedure listed in an MEL?",
+  "sub": false,
+  "b787": "ioe-266",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "",
+  "text": "Where can you find the Crew Placarding Procedure?",
+  "sub": false,
+  "b787": "ioe-267",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "Maintenance Communication Procedure",
+  "text": "What are the ETOPS verification flight communication requirements regarding contacting Maintenance prior to departure?",
+  "sub": false,
+  "b787": "ioe-268",
+  "b787sim": 0.91,
+  "fomq": true
+ },
+ {
+  "sec": "1.2.1.2.5.3",
+  "secTitle": "Know Maintenance Logbook Procedures",
+  "group": "Maintenance Communication Procedure",
+  "text": "What are the advantages of notifying MX of a discrepancy enroute (time permitting) vs after blocking in?",
+  "sub": false,
+  "b787": "ioe-269",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1.16.4",
+  "secTitle": "Know International Procedures (as applicable)",
+  "group": "FD Pro ICAO Procedures",
+  "text": "Where in FD Pro can you find the ICAO (country) procedures for destinations that we serve?",
+  "sub": false,
+  "b787": "ioe-270",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1.16.4",
+  "secTitle": "Know International Procedures (as applicable)",
+  "group": "FD Pro ICAO Procedures",
+  "text": "Where in FD Pro can you find the ICAO (country) emergency procedures for destinations that we serve?",
+  "sub": false,
+  "b787": "ioe-271",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "1.1.1.16.4",
+  "secTitle": "Know International Procedures (as applicable)",
+  "group": "FD Pro ICAO Procedures",
+  "text": "Review FD Pro Pubs Quick Reference guide in Comply365",
+  "sub": false,
+  "b787": "ioe-272",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "16.1.2",
+  "secTitle": "Perform Long Range Communication Procedures",
+  "group": "",
+  "text": "When is an HF position report required?",
+  "sub": false,
+  "b787": "ioe-273",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.2",
+  "secTitle": "Perform Long Range Communication Procedures",
+  "group": "",
+  "text": "Can you enter Oceanic airspace with both HF radios not working?",
+  "sub": false,
+  "b787": "ioe-274",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.3.2",
+  "secTitle": "Analyze and Assess Terrain Critical Routes",
+  "group": "",
+  "text": "Western U.S. Depressurization Strategy",
+  "sub": false,
+  "b787": "ioe-275",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "What items on the dispatch release must you take note of when planning an APU In-Flight Start Program flight?",
+  "sub": false,
+  "b787": "ioe-276",
+  "b787sim": 0.97,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "How does this differ from the APU In-Flight Start Program?",
+  "sub": false,
+  "b787": "ioe-277",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "Using the Dispatch Release, how can the Flight Crew determine which procedure to use (APU Verification Flight vs. APU In-Flight Start Program)?",
+  "sub": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "What items must be logged/noted during the APU start?",
+  "sub": false,
+  "b787": "ioe-278",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "What items must be entered into the maintenance logbook after flight completion?",
+  "sub": false,
+  "b787": "ioe-279",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "What A/C Currency Items are listed in the “Administrative Control Items” (ACI’s)?",
+  "sub": false,
+  "b787": "ioe-280",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "APU In-Flight Start Program (APU component currency)",
+  "text": "How many start attempts can be made?",
+  "sub": false,
+  "b787": "ioe-281",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "Flight Crew actions prior to ETOPS entry point (EEP)?",
+  "text": "What steps are required?",
+  "sub": false,
+  "b787": "ioe-282",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "Flight Crew actions prior to ETOPS entry point (EEP)?",
+  "text": "How is the EEP determined and depicted to the flight crew?",
+  "sub": false,
+  "b787": "ioe-283",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "Flight Crew actions prior to ETOPS entry point (EEP)?",
+  "text": "What is the maximum diversion distance, ETOPS 120? ETOPS 180?",
+  "sub": false,
+  "b787": "ioe-284",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.1.7",
+  "secTitle": "Perform ETOPS Procedures",
+  "group": "Flight Crew actions prior to ETOPS entry point (EEP)?",
+  "text": "ETOPS Diversion speed?",
+  "sub": false,
+  "b787": "ioe-285",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.2.1",
+  "secTitle": "Demonstrate Dangerous Goods Policies and Procedures",
+  "group": "",
+  "text": "Where can the dangerous goods policy be found in the FOM?",
+  "sub": false,
+  "b787": "ioe-286",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.2.1",
+  "secTitle": "Demonstrate Dangerous Goods Policies and Procedures",
+  "group": "",
+  "text": "What is an eNOTOC?",
+  "sub": false,
+  "b787": "ioe-287",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.2.1",
+  "secTitle": "Demonstrate Dangerous Goods Policies and Procedures",
+  "group": "",
+  "text": "How do you acknowledge an eNOTOC?",
+  "sub": false,
+  "b787": "ioe-288",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.2.1",
+  "secTitle": "Demonstrate Dangerous Goods Policies and Procedures",
+  "group": "",
+  "text": "How do you fight a lithium battery fire?",
+  "sub": false,
+  "b787": "ioe-289",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "15.2.1",
+  "secTitle": "Demonstrate Dangerous Goods Policies and Procedures",
+  "group": "",
+  "text": "Where can you find lithium battery type/size limitations to be carried in the cabin?",
+  "sub": false,
+  "b787": "ioe-290",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "16.1.2.1.3",
+  "secTitle": "Know ACARS Procedures",
+  "group": "",
+  "text": "Review ACARS menus and quiz them on where to find specific functions to demonstrate proficiency.",
+  "sub": false,
+  "b787": "ioe-291",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "16.1.2.1.3",
+  "secTitle": "Know ACARS Procedures",
+  "group": "",
+  "text": "Where can you find a list/directory of ACARS FUNCTIONS?",
+  "sub": false,
+  "b787": "ioe-292",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "16.1.2.1.3",
+  "secTitle": "Know ACARS Procedures",
+  "group": "",
+  "text": "Where is the spare ACARS paper located on the flight deck?",
+  "sub": false,
+  "b787": "ioe-293",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "16.1.2.1.3",
+  "secTitle": "Know ACARS Procedures",
+  "group": "",
+  "text": "Where are the instructions on how to change the ACARS paper?",
+  "sub": false,
+  "b787": "ioe-294",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.5.23",
+  "secTitle": "[PM] Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach Procedure Selection, Waypoint Coding, Navigational Performance, and Track Offsets.",
+  "group": "",
+  "text": "Diversion Procedures/Select New Destination",
+  "sub": false,
+  "b787": "ioe-295",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "8.3.5.23",
+  "secTitle": "[PM] Demonstrate Ability to Correctly Program Aircraft Guidance Systems Including Approach Procedure Selection, Waypoint Coding, Navigational Performance, and Track Offsets.",
+  "group": "",
+  "text": "Alternate Navigation System",
+  "sub": false,
+  "b787": "ioe-296",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Fuel Conservation",
+  "text": "Where can you find the Fuel Conservation considerations in the FOM?",
+  "sub": false,
+  "b787": "ioe-297",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Flight Deck Entry Procedures/Security",
+  "text": "Are there special Flight Deck Door Procedure on Flights with No Flight Attendants?",
+  "sub": false,
+  "b787": "ioe-298",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Holding (Procedures, speeds)",
+  "text": "Where can you find the holding speeds (FAR) in USA?",
+  "sub": false,
+  "b787": "ioe-299",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Holding (Procedures, speeds)",
+  "text": "Where can you find international country-specific holding speeds?",
+  "sub": false,
+  "b787": "ioe-300",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "TCAS",
+  "text": "Where can you find TCAS procedures in the FOM?",
+  "sub": false,
+  "b787": "ioe-301",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "TCAS",
+  "text": "What is an “TA”?",
+  "sub": false,
+  "b787": "ioe-302",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "TCAS",
+  "text": "What is an “RA”?",
+  "sub": false,
+  "b787": "ioe-303",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "TCAS",
+  "text": "What is phantom TA?",
+  "sub": false,
+  "b787": "ioe-304",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "TCAS",
+  "text": "Where can you find TCAS symbology definitions?",
+  "sub": false,
+  "b787": "ioe-305",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "What is MedLink?",
+  "sub": false,
+  "b787": "ioe-306",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "When should you contact MedLink?",
+  "sub": false,
+  "b787": "ioe-307",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "Who is responsible for contacting MedLink while on the ground?",
+  "sub": false,
+  "b787": "ioe-308",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "Who is responsible for contacting MedLink while in flight?",
+  "sub": false,
+  "b787": "ioe-309",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "Do we as flight crew contact MedLink directly, or do we call dispatch first?",
+  "sub": false,
+  "b787": "ioe-310",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "How do you make a MedLink call from the aircraft?",
+  "sub": false,
+  "b787": "ioe-311",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "MedLink",
+  "text": "If on an international flight, are there special procedures/notifications that must be made by the flight crew to either ATC or country officials?",
+  "sub": false,
+  "b787": "ioe-312",
+  "b787sim": 0.84,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "What is definition of icing conditions?",
+  "sub": false,
+  "b787": "ioe-313",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "Where do you find the aircraft de/anti-Ice procedures?",
+  "sub": false,
+  "b787": "ioe-314",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "Where do you find specific airport deice procedures?",
+  "sub": false,
+  "b787": "ioe-315",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "When are you required to turn the engine anti-ice on?",
+  "sub": false,
+  "b787": "ioe-316",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "When are you required to turn on the wing de/anti-ice",
+  "sub": false,
+  "b787": "ioe-317",
+  "b787sim": 1.0
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "Discuss SureWx app",
+  "sub": false,
+  "b787": "ioe-318",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "De/Anti-Ice Procedures",
+  "text": "Where can you find the cold weather procedures in the FOM? Any other manual?",
+  "sub": false,
+  "b787": "ioe-319",
+  "b787sim": 1.0,
+  "fomq": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Freighter Operations",
+  "text": "Review QRH procedures without moving any switch positions (when time permits). This reviews the switch locations that are not in the simulator.",
+  "sub": false
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Freighter Operations",
+  "text": "COND MD VENT FAULT",
+  "sub": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Freighter Operations",
+  "text": "COND CAB FAN NOT OFF",
+  "sub": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Freighter Operations",
+  "text": "SMOKE MD SMOKE",
+  "sub": true
+ },
+ {
+  "sec": "Misc",
+  "secTitle": "Miscellaneous, not associated with grade sheet tasks",
+  "group": "Freighter Operations",
+  "text": "SMOKE MD DET FAULT",
+  "sub": true
+ }
+]
