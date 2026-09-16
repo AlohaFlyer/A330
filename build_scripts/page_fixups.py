@@ -121,6 +121,27 @@ EDITS={
  'weather.html':[
   ('Open 1-page handout (PDF)','Open 2-page handout (PDF)'),
  ],
+ 'index.html':[
+  # One login only (Ryan, 2026-09-16): Cloudflare Access already checked the company email at the site
+  # gate, so the home page reads the identity Access holds (same-origin /cdn-cgi/access/get-identity),
+  # records it for the unlock log and skips its own email box. The box stays as the fallback.
+  ("  if(hasAccess()&&known()){open_();}\n  else if(inp){inp.focus();}\n",
+   "  function askBox(){if(gate)gate.style.visibility='';if(inp)inp.focus();}\n"
+   "  function fromAccess(){\n"
+   "    if(gate)gate.style.visibility='hidden';\n"
+   "    try{\n"
+   "      fetch('/cdn-cgi/access/get-identity',{credentials:'same-origin',cache:'no-store'})\n"
+   "        .then(function(r){return r.ok?r.json():null;})\n"
+   "        .then(function(j){\n"
+   "          var e=j&&j.email?String(j.email).trim():'';\n"
+   "          if(/^[^\\s@]+@alaskaair\\.com$/i.test(e)){grant();note(e);open_();}\n"
+   "          else askBox();\n"
+   "        }).catch(askBox);\n"
+   "    }catch(e){askBox();}\n"
+   "  }\n"
+   "  if(hasAccess()&&known()){open_();}\n"
+   "  else fromAccess();\n"),
+ ],
  'memory-items.html':[
   ('<div class="cond">Condition: ${d.cond}</div>','${d.cond?`<div class="cond">Condition: ${d.cond}</div>`:``}'),
   ('Condition: ${d.cond}<br>','${d.cond?`Condition: ${d.cond}<br>`:``}'),
