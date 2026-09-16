@@ -115,10 +115,12 @@ sub1(BOX_LINE, BOX_LINE[:-1] + ''' + (x.ref ? "\\n<b style='font-size:11px;color
 # 6. legend label
 sub1('</i>FMC</span>', '</i>FMS</span>')
 
-# 7. banner logo: the same placeholder wordmark gen_index.py uses (until the Hawaiian logo file lands)
-logo = "<svg xmlns='http://www.w3.org/2000/svg' width='149' height='44' viewBox='0 0 149 44'><text x='0' y='29' font-family='Segoe UI,Arial,sans-serif' font-size='17' font-weight='700' fill='%23FFFFFF' letter-spacing='1'>HAWAIIAN</text></svg>"
-sub1(r'<img src="data:image/png;base64,[A-Za-z0-9+/=]+" alt="Hawaiian Airlines" style="height:30px;">',
-     '<img src="data:image/svg+xml,' + logo + '" alt="Hawaiian Airlines" style="height:30px;">', re.S)
+# 7. banner logo: the Hawaiian Airlines wordmark gen_index.py uses (assets/hawaiian_logo.png)
+import base64
+_logo = 'data:image/png;base64,' + base64.b64encode(open('assets/hawaiian_logo.png', 'rb').read()).decode()
+t, _n = re.subn(r'<img src="data:image/png;base64,[A-Za-z0-9+/=]+" alt="Hawaiian Airlines" style="height:30px;">',
+     lambda m: '<img src="' + _logo + '" alt="Hawaiian Airlines" style="height:30px;">', t, count=1)
+assert _n == 1, 'banner logo miss'
 
 assert 'B787' not in t and '787' not in t.replace('assets/A330_hero.svg', ''), 'Boeing string survived'
 open(PAGE, 'w', encoding='utf-8').write(t)
