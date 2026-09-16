@@ -8,7 +8,7 @@ core=[]
 for dp,dn,fn in os.walk('.'):
     dn[:]=[d for d in dn if d not in SKIP and not d.startswith('.')]
     for f in sorted(fn):
-        if f in SKIP or f.endswith(('.md','.py','.sh')): continue
+        if f in SKIP or f.endswith(('.md','.py','.sh','.mp3')): continue
         p=os.path.join(dp,f)[1:].replace(os.sep,'/')
         core.append({'u':p,'b':os.path.getsize(p[1:])})
 core.sort(key=lambda x:x['u'])
@@ -23,5 +23,5 @@ print('core',len(core),'files',round(cb/1048576,1),'MB; audio',len(audio),'files
 import re
 s=open('portal-settings.js',encoding='utf-8').read()
 s=re.sub(r'About \d+ MB\.</small>', f'About {max(1,round(cb/1048576))} MB.</small>', s, count=1)
-s=re.sub(r'All \d+ episodes of Flight Deck Notes plus the SFTD briefing\. About \d+ MB\.', f'All {len(audio)} episodes of Flight Deck Notes. About {round(ab/1048576)} MB.', s)
+s=re.sub(r'All \d+ episodes of Flight Deck Notes(?: plus the SFTD briefing)?\. About \d+ MB\.', f'All {len(audio)} episodes of Flight Deck Notes. About {round(ab/1048576)} MB.', s)
 open('portal-settings.js','w',encoding='utf-8').write(s)
