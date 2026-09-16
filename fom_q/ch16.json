@@ -64,12 +64,12 @@
   "chapter": "16",
   "chapterName": "16 Non-Routine Flight Operations (NRFO)",
   "q": "Who may be carried as passengers on a Part 91 flight operated without Flight Attendants?",
-  "a": "Passengers are restricted to Alaska Air Group employees, unless authorization for non-employees is received from the Director of Operations, FODO, or NRFO Management.",
+  "a": "Working crewmembers only, unless authorization for additional passengers (deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
   "ref": "FOM 16.1.8.2",
   "src": {
    "ref": "FOM 16.1.8.2, Part 91 NRFO Flights",
-   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to Alaska Air Group employees",
-   "note": "Non-employees require authorization from the DO, FODO, or NRFO Management."
+   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to working crewmembers unless authorization for additional passengers (e.g., deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
+   "note": "Rev 125.3 changed this from Alaska Air Group employees to working crewmembers. Each additional passenger needs a Part 91 Passenger Request Form in Comply and a PNR (16.1.10)."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -303,13 +303,28 @@
   "id": "fom16-021",
   "chapter": "16",
   "chapterName": "16 Non-Routine Flight Operations (NRFO)",
-  "q": "CHECK-AIRMAN SCENARIO: You are positioning an A330 under Part 91 with no Flight Attendants on board, and a non-employee observer asks to ride along. Is that allowed, and whose authorization would it take?",
-  "a": "By default, no. Passengers on Part 91 flights without Flight Attendants are restricted to Alaska Air Group employees. Carrying a non-employee requires authorization from the Director of Operations, FODO, or NRFO Management.",
+  "q": "CHECK-AIRMAN SCENARIO: You are positioning an A330 under Part 91 with no Flight Attendants on board, and an off-duty company employee asks to ride along as a guest rider. Is that allowed, and whose authorization would it take?",
+  "a": "By default, no. Passengers on Part 91 flights without Flight Attendants are restricted to working crewmembers. Carrying additional passengers such as deadheads, non-revenues or guest riders requires authorization from the Director of Operations, FODO, or NRFO Management, and the rider needs a Part 91 Passenger Request Form and a reservation record so CLP shows them on the manifest before takeoff.",
   "ref": "FOM 16.1.8.2",
   "src": {
    "ref": "FOM 16.1.8.2, Part 91 NRFO Flights",
-   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to Alaska Air Group employees",
-   "note": "Authorization for non-employees comes from the DO, FODO, or NRFO Management (14 CFR 91.533). If a Flight Attendant is required, Alaska policy is to use a full complement."
+   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to working crewmembers unless authorization for additional passengers (e.g., deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
+   "note": "Rev 125.3: employee status no longer qualifies a rider by itself. Authorization comes from the DO, FODO, or NRFO Management (14 CFR 91.533). If a Flight Attendant is required, Alaska policy is to use a full complement."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom16-022",
+  "chapter": "16",
+  "chapterName": "16 Non-Routine Flight Operations (NRFO)",
+  "q": "What form and record does an NRFO passenger (deadhead, non-revenue employee, or guest rider) need before a Part 91 flight?",
+  "a": "A Part 91 Passenger Request Form in Comply with all required passenger information, and a computer record (PNR) in the normal reservations system so a boarding pass can be printed. The Flight Crew confirms with CLP that all passengers are on the manifest before takeoff.",
+  "ref": "FOM 16.1.10",
+  "src": {
+   "ref": "FOM 16.1.10, Flight Manifest, NRFO",
+   "quote": "All NRFO passengers, including deadheads, non-revenue employees, and guest riders, will have a computer record built within the normal reservations computer system.",
+   "note": "Rev 125.3 renamed the Guest Rider Request Form to the Part 91 Passenger Request Form and widened the wording to all NRFO passengers. Questions on the Load Manifest go to the NOC/SOCC MOD."
   },
   "fleet": "both",
   "srcKind": "manual"

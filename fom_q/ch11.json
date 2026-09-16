@@ -260,11 +260,11 @@
   "chapterName": "11 Emergency/Abnormal",
   "q": "For an A330 decompression over charted terrain polygons, what is the initial descent altitude?",
   "a": "Always 17,000 ft or FL170 on the A330 (and 737). Only the 787 takes a polygon-specific altitude from the detail drawer in Jeppesen FD Pro.",
-  "ref": "FOM 11.2.9",
+  "ref": "FOM 11.2.9.1",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
-   "note": "Rev 125 rewrote 11.2.9 and deleted the regional decompression procedures from the theater chapters. Each polygon still has its own escape procedure in the FD Pro detail drawer."
+   "note": "Rev 125 rewrote the polygon procedures and deleted the regional decompression procedures from the theater chapters; Rev 125.3 renumbered them 11.2.9.1 under a new 11.2.9 Decompression parent. Each polygon still has its own escape procedure in the FD Pro detail drawer."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -319,12 +319,12 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "CHECK-AIRMAN SCENARIO: Rapid decompression at cruise over charted high-terrain polygons in your A330. Walk me through the masks, the descent target that relieves physiological reactions, and how you pick the initial descent altitude.",
-  "a": "Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.",
-  "ref": "FOM 11.2.9",
+  "a": "Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. Plan to be at 10,000 ft before passenger oxygen supplies are depleted. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.",
+  "ref": "FOM 11.2.9.1",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "Do not enter another polygon while navigating at less than the altitude indicated in the polygon detail drawer unless terrain clearance is assured.",
-   "note": "Rev 125.1. (737/A330) initial descent altitude is always 17,000 ft or FL170; only 787 altitudes vary by polygon. Quick-don masks are designed to be donned with one hand within 5 seconds (11.2.8)."
+   "note": "Rev 125.3 renumbered the polygon procedures to 11.2.9.1 and added the 10,000 ft planning target in 11.2.9. (737/A330) initial descent altitude is always 17,000 ft or FL170; only 787 altitudes vary by polygon. Quick-don masks are designed to be donned with one hand within 5 seconds (11.2.8)."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -380,11 +380,26 @@
   "chapterName": "11 Emergency/Abnormal",
   "q": "What is the purpose of the decompression polygon procedures?",
   "a": "They provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
+  "ref": "FOM 11.2.9.1",
+  "src": {
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
+   "quote": "Decompression polygon procedures provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
+   "note": "Rewritten in Rev 125, renumbered 11.2.9.1 in Rev 125.3. The PIC is expected and encouraged to exercise sound judgment; the parent section 11.2.9 lists weather, visibility, ATC and grid MORAs as other inputs to the course of action."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom11-027",
+  "chapter": "11",
+  "chapterName": "11 Emergency/Abnormal",
+  "q": "In any decompression, what altitude should the Flight Crew plan to reach before passenger oxygen supplies are depleted, and what information may the crew use to decide a course of action?",
+  "a": "10,000 ft. Crews may use weather conditions, visibility, ATC, grid MORAs, and the decompression polygon procedures.",
   "ref": "FOM 11.2.9",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
-   "quote": "Decompression polygon procedures provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
-   "note": "Rewritten in Rev 125. The PIC is expected and encouraged to exercise sound judgment; weather, visibility, ATC and grid MORAs may also inform the course of action."
+   "ref": "FOM 11.2.9, Decompression",
+   "quote": "During a decompression event, crews may use a variety of information including weather conditions, visibility, ATC, grid MORAs, and decompression polygon procedures to assist in determining a course of action. Flight Crews should plan to be at 10,000 ft before passenger oxygen supplies are depleted.",
+   "note": "New parent section in Rev 125.3. Passenger oxygen is designed to supply oxygen while the descent to a safe altitude is performed; the polygon procedures themselves are now 11.2.9.1."
   },
   "fleet": "both",
   "srcKind": "manual"

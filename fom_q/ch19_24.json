@@ -18,13 +18,13 @@
   "id": "fom19-002",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.1, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?",
-  "a": "There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.",
-  "ref": "FOM 11.2.9 (Ch 11)",
+  "q": "Under FOM 125.3, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?",
+  "a": "There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9.1 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.",
+  "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
-   "note": "Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation. 19.3.1.1 is now Airspeed Restrictions Takeoff/Landing. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM."
+   "note": "Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation; Rev 125.3 renumbered the polygon procedures to 11.2.9.1. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -228,13 +228,13 @@
   "id": "fom19-016",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.1, what is the published decompression floor for the Greenland Mountain Range region?",
-  "a": "None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.",
-  "ref": "FOM 11.2.9 (Ch 11)",
+  "q": "Under FOM 125.3, what is the published decompression floor for the Greenland Mountain Range region?",
+  "a": "None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9.1; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.",
+  "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
-   "ref": "FOM 11.2.9 (Ch 11) and FOM 22.2 (Ch 22)",
+   "ref": "FOM 11.2.9.1 (Ch 11) and FOM 22.11 (Ch 22)",
    "quote": "Dispatchers and pilots will not permit flights to proceed through any areas charted as “No Ops Area.”",
-   "note": "Rev 125.1 removed the Decompression Procedure for Greenland Mountain Range Region from 22.5 - Weather. 22.6 is now Oceanic Procedures. The old 15,000 ft Greenland floor is no longer published. Greenland overflight limits are addressed via 11.2.9."
+   "note": "Rev 125.1 removed the Decompression Procedure for Greenland Mountain Range Region from 22.5 - Weather. The old 15,000 ft Greenland floor is no longer published. Greenland overflight limits (22.11) point to the polygon procedures in 11.2.9.1."
   },
   "fleet": "both",
   "srcKind": "manual"

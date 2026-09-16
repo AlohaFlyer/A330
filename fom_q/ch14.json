@@ -183,13 +183,13 @@
   "id": "fom14-013",
   "chapter": "14",
   "chapterName": "14 HAZMAT",
-  "q": "What crosscheck does the ACARS Load Closeout provide against the NOTOC on AS?",
-  "a": "The number of items on the ACARS Load Closeout must equal the number of shipments listed on the NOTOC. It is a discrepancy crosscheck only; if none, the message reads 'No HAZMAT.'",
+  "q": "What crosscheck does the Load Closeout provide against the NOTOC on AS?",
+  "a": "The number of items on the Load Closeout must equal the number of shipments listed on the NOTOC. It is a discrepancy crosscheck only; if none, the message reads 'No HAZMAT.'",
   "ref": "FOM 14.1.14",
   "src": {
    "ref": "FOM 14.1.14, Load Closeout Message (AS)",
-   "quote": "The number of items on the ACARS Load Closeout must be equal to the number of shipments listed on the NOTOC",
-   "note": "The Load Closeout HAZMAT message is informational and not required for dispatch; contact Station Operations for any discrepancy."
+   "quote": "The number of items on the Load Closeout must be equal to the number of shipments listed on the NOTOC",
+   "note": "Rev 125.3 dropped the word ACARS from the Load Closeout wording; the rule is unchanged. The Load Closeout HAZMAT message is informational and not required for dispatch; contact Station Operations for any discrepancy."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -318,12 +318,12 @@
   "id": "fom14-022",
   "chapter": "14",
   "chapterName": "14 HAZMAT",
-  "q": "CHECK-AIRMAN SCENARIO: You are Captain on the A330. Your eNOTOC lists three DG shipments, but the ACARS Load Closeout shows four HAZMAT lines. What is this crosscheck telling you and what do you do?",
-  "a": "On AS the number of items on the ACARS Load Closeout must equal the number of shipments listed on the NOTOC. This is a discrepancy crosscheck only; a mismatch means you contact Station Operations to reconcile the load closeout HAZMAT section against the actual HAZMAT status before you rely on the NOTOC. Note the HAZMAT Load Closeout message is informational and not required for dispatch.",
+  "q": "CHECK-AIRMAN SCENARIO: You are Captain on the A330. Your eNOTOC lists three DG shipments, but the Load Closeout shows four HAZMAT lines. What is this crosscheck telling you and what do you do?",
+  "a": "On AS the number of items on the Load Closeout must equal the number of shipments listed on the NOTOC. This is a discrepancy crosscheck only; a mismatch means you contact Station Operations to reconcile the load closeout HAZMAT section against the actual HAZMAT status before you rely on the NOTOC. Note the HAZMAT Load Closeout message is informational and not required for dispatch.",
   "ref": "FOM 14.1.14",
   "src": {
    "ref": "FOM 14.1.14, Load Closeout Message (AS)",
-   "quote": "The number of items on the ACARS Load Closeout must be equal to the number of shipments listed on the NOTOC (Exception: see Systems Failures below). This is a discrepancy crosscheck only.",
+   "quote": "The number of items on the Load Closeout must be equal to the number of shipments listed on the NOTOC (Exception: see Systems Failures below). This is a discrepancy crosscheck only.",
    "note": "If no HAZMAT is on the flight the Load Closeout reads 'No HAZMAT'; contact Station Operations for any discrepancy."
   },
   "fleet": "both",

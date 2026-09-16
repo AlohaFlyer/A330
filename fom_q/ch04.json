@@ -298,5 +298,20 @@
   },
   "fleet": "both",
   "srcKind": "manual"
+ },
+ {
+  "id": "fom04-021",
+  "chapter": "4",
+  "chapterName": "4 Crew Administration",
+  "q": "Once a pre-takeoff FDP extension is agreed upon, how is its length confirmed and documented?",
+  "a": "Via a recorded verbal communication or acknowledgment of an ACARS message specifying the length of the extension.",
+  "ref": "FOM 4.3.2.5.1",
+  "src": {
+   "ref": "FOM 4.3.2.5.1, Pre-Takeoff Extension",
+   "quote": "Once an extension is agreed upon, the length of the extension will be confirmed and documented via a recorded verbal communication or acknowledgment of an ACARS message specifying the length of the extension.",
+   "note": "Rev 125.3 deleted the HA-only Evidence of FDP Extension Concurrence process (the AOC OPS CTRL MSG \"EXTEND FDP\" message); this all-fleet method is what remains."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
  }
 ]

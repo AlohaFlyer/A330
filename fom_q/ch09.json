@@ -393,6 +393,21 @@
   "id": "fom09-027",
   "chapter": "9",
   "chapterName": "9 Weather",
+  "q": "After landing with braking action worse than GOOD, what must the A330 crew report to Dispatch, and by what means may it be sent?",
+  "a": "The worst braking action experienced. The ACARS FLT SUMMARY may be used to report it to Dispatch (737/787/A321/A330). A PIREP to ATC is also required anytime actual braking action is less than GOOD or Braking Action Advisories are in effect.",
+  "ref": "FOM 9.1.2.2",
+  "src": {
+   "ref": "FOM 9.1.2.2, Braking Action Reporting Requirements",
+   "quote": "If actual braking action is worse than GOOD, the Flight Crew shall provide the worst braking action experienced to Dispatch after landing. (737/787/A321/A330) The ACARS FLT SUMMARY may be used to report braking action to Dispatch.",
+   "note": "Rev 125.3 extended the ACARS FLT SUMMARY option from the 737 to the 787, A321 and A330."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom09-028",
+  "chapter": "9",
+  "chapterName": "9 Weather",
   "q": "Where does the A330 crew find landing performance data for a reported RWYCC?",
   "a": "In the FCOM, In-Flight Performance.",
   "ref": "FOM 9.1.6",

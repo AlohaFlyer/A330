@@ -423,6 +423,51 @@
   "id": "fom05-029",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
+  "q": "Fuel is found on the ramp during the walkaround. What makes the accumulation incidental versus significant, and what does each require?",
+  "a": "Incidental: less than 5 gallons (smaller than one baggage cart), no injuries, health not threatened; report it to Station Ops to coordinate cleanup. Significant: over 5 gallons, or a fire hazard exists, or injuries have occurred/health is threatened; the PIC informs Station Ops and/or the Ramp and decides whether to deplane passengers.",
+  "ref": "FOM 5.1.24",
+  "src": {
+   "ref": "FOM 5.1.24, Fuel Accumulation on Ramp",
+   "quote": "Incidental accumulations are less than 5 gallons (smaller than the size of one baggage cart), where injuries have not occurred, or health is not threatened. If an incidental accumulation is identified on the walkaround, it should be reported to Station Ops to coordinate cleanup. Significant Accumulations Significant accumulations occur when ANY of the following conditions apply: • Over 5 gallons (larger than the size of one baggage cart) • A fire hazard exists • Injuries have occurred/health is threatened For this type of event, the PIC should inform Station Ops and/or the Ramp.",
+   "note": "New section in Rev 125.3; 12.1.1.4 Fuel Spills now just points here. If a ground air conditioning unit is running, have Ramp/Ground personnel terminate it immediately."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-030",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "(HA) On which ACARS page is the Fit-For-Duty affirmation and Dispatch Release acceptance sent, and what restriction applies to that page?",
+  "a": "The RLS/FIT FOR DUTY page. It must not be used once airborne.",
+  "ref": "FOM 5.2.11.2",
+  "src": {
+   "ref": "FOM 5.2.11.2, Affirmation and Signature Methods (HA)",
+   "quote": "The primary means of compliance to affirm Fit-For-Duty and acceptance of the Dispatch Release will be sent via ACARS on the RLS/FIT FOR DUTY page. Note The RLS/FIT FOR DUTY page must not be used once airborne.",
+   "note": "Rev 125.3 renamed the page from OPS CTRL MSG and deleted the numbers-only entry rule. Secondary method: the Backup Fit-For-Duty/Dispatch Release Acceptance form in Comply365 Forms, Pilot Forms."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-031",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330P, how is the Passenger Count Verification performed, and who does what?",
+  "a": "The First Officer reads the passenger count and jumpseat numbers from the Load Closeout; the Captain verifies the numbers match the Flight Deck Report provided in JetPack or via alternate means. Any discrepancy: contact CLP.",
+  "ref": "FOM 5.2.17.1",
+  "src": {
+   "ref": "FOM 5.2.17.1, Passenger Count Verification",
+   "quote": "(717/787/A321/A330P) • The First Officer reads the passenger count and jumpseat numbers from the Load Closeout. • The Captain verifies the numbers match the Flight Deck Report provided in JetPack or via alternate means.",
+   "note": "Rev 125.3 split the procedure by fleet; the 737 has a JetPack primary method. The Flight Deck Report carries information from the official flight manifest (5.2.17)."
+  },
+  "fleet": "pax",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-032",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
   "q": "When should the APU be started before pushback?",
   "a": "10 minutes prior to the anticipated pushback, unless it is required earlier for passenger comfort or equipment (PCA or external power) issues.",
   "ref": "FOM 5.1.8.2",
@@ -435,7 +480,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-030",
+  "id": "fom05-033",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, how far may a cabin door be opened without fall protection in place?",
@@ -450,7 +495,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-031",
+  "id": "fom05-034",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If potable water had to be drained and cannot be refilled (for example in extreme cold), is an MEL required to operate without it?",
@@ -465,7 +510,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-032",
+  "id": "fom05-035",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "When must a broadband (entertainment system) outage be written up in the Maintenance Logbook?",
@@ -480,7 +525,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-033",
+  "id": "fom05-036",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, how many Flight Crew and how many Cabin Crew may use the Lower Deck Module Crew Rest (LDMCR) at any time, and which bunks are the Flight Crew bunks?",
@@ -495,7 +540,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-034",
+  "id": "fom05-037",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On an A330 with all LDMCR available, which pilot crew rest seats must be blocked for an Augmented Crew?",
@@ -510,7 +555,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-035",
+  "id": "fom05-038",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If the decision is made to deplane during boarding or before departure, who should be notified first and why?",
@@ -525,7 +570,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-036",
+  "id": "fom05-039",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "When and to what address do you log on CPDLC for Iceland?",
@@ -540,7 +585,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-037",
+  "id": "fom05-040",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, is a forward tow permitted with both engines running?",
@@ -555,7 +600,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-038",
+  "id": "fom05-041",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On a visual approach with an instrument approach available to the landing runway, what must the pilots do with the navaid and FMS?",
@@ -570,7 +615,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-039",
+  "id": "fom05-042",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, when may a VNAV approach be flown to a DA(H) in lieu of the published MDA(H)?",
@@ -585,7 +630,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-040",
+  "id": "fom05-043",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, is a one-engine-inoperative CAT II Autoland authorized? A CAT III?",
@@ -600,7 +645,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-041",
+  "id": "fom05-044",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "For Autoland operations on the A330, what qualification must the PIC hold, and on which runways are Autolands permitted?",
@@ -615,7 +660,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-042",
+  "id": "fom05-045",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "How must non-normal (abnormal) landing data be treated when determining runway suitability?",
@@ -630,7 +675,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-043",
+  "id": "fom05-046",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, below what height AGL must fuel jettison be avoided, and what ATC notifications are required?",
@@ -645,7 +690,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-044",
+  "id": "fom05-047",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If a hard landing is suspected, what two actions does the FOM require?",
@@ -660,7 +705,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-045",
+  "id": "fom05-048",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "What ground personnel are required to park an A330 (manual or VDGS), and where are station exceptions published?",
@@ -669,13 +714,28 @@
   "src": {
    "ref": "FOM 5.6.33, Parking Requirements (manual or VDGS)",
    "quote": "(787/A330) Two Wing Walkers and One Marshaller/VDGS Operator Station-specific exceptions to the requirement to have two Wing Walkers will be denoted in the airport 10-7.",
-   "note": "Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum."
+   "note": "Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum. Rev 125.3: if the VDGS and a Marshaller are providing conflicting guidance, follow the Marshaller."
   },
   "fleet": "both",
   "srcKind": "manual"
  },
  {
-  "id": "fom05-046",
+  "id": "fom05-049",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "The VDGS and the Marshaller are giving you conflicting guidance while parking. Which do you follow?",
+  "a": "The Marshaller.",
+  "ref": "FOM 5.6.33",
+  "src": {
+   "ref": "FOM 5.6.33, Parking Requirements (manual or VDGS)",
+   "quote": "If at any time both the VDGS and a Marshaller are providing conflicting guidance, follow the Marshaller.",
+   "note": "Rev 125.3 added the word conflicting. Ensure the correct aircraft type is displayed before entering the gate area; if required, the Marshaller reverts to manual marshalling procedures."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-050",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "Approximately 2 minutes before an oceanic waypoint, what must the crew confirm?",
@@ -690,7 +750,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-047",
+  "id": "fom05-051",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On CPDLC in oceanic airspace, what is required if SELCAL is not functioning?",

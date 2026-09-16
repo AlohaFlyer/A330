@@ -423,6 +423,36 @@
   "id": "fom08-029",
   "chapter": "8",
   "chapterName": "8 Dispatch",
+  "q": "After dispatch, the destination alternate weather drops below the minimums it was dispatched under. What must happen?",
+  "a": "Dispatch must file a new alternate that meets the required minimums (or remove the alternate entirely if the destination does not require one). If no alternate can be found that meets minimums, the flight must divert unless, in the interest of safety, the PIC continues to the destination using emergency authority.",
+  "ref": "FOM 8.2.2.1.1",
+  "src": {
+   "ref": "FOM 8.2.2.1.1, Destination Alternate Airport Weather Requirements After Dispatch",
+   "quote": "After dispatch, the weather at the destination alternate must continue to meet the weather minimum rules under which it was dispatched. If the destination alternate weather drops below those minimums, Dispatch must file a new alternate that does meet the required minimums. In some cases, the alternate airport may be removed entirely if the destination airport does not require an alternate to be listed. In the event that no alternate can be found that meets the minimum weather requirements, the flight must divert unless, in the interest of safety, the PIC continues to the destination utilizing emergency authority.",
+   "note": "New section in Rev 125.3."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom08-030",
+  "chapter": "8",
+  "chapterName": "8 Dispatch",
+  "q": "Must the Flight Crew retain paper copies of flight paperwork after the flight?",
+  "a": "No. Required flight documents are captured and stored electronically; paper copies (ACARS printouts, paper Dispatch Release Packages) need not be retained unless otherwise directed.",
+  "ref": "FOM 8.5.1.1",
+  "src": {
+   "ref": "FOM 8.5.1.1, Document Retention",
+   "quote": "For all flights, required flight documents are electronically captured and stored. The Flight Crew is not required to retain paper copies of the flight paperwork (e.g., ACARS message printouts, paper Dispatch Release Packages) after the completion of the flight unless otherwise directed.",
+   "note": "Rev 125.3 removed jumpseat forms from the example list. The certificate holder keeps the Dispatch Release/Flight Plan and the weather package for three months."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom08-031",
+  "chapter": "8",
+  "chapterName": "8 Dispatch",
   "q": "When must Dispatch perform a landing performance analysis for contamination, and what must it cover?",
   "a": "When any contamination is anticipated at the destination or alternate. It should cover both the anticipated and the worst acceptable braking action for the planned landing weight.",
   "ref": "FOM 8.3.9",
@@ -435,7 +465,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom08-030",
+  "id": "fom08-032",
   "chapter": "8",
   "chapterName": "8 Dispatch",
   "q": "On the A330 international release, how do the B043 reserves appear in the fuel summary compared with standard flag?",
@@ -450,7 +480,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom08-031",
+  "id": "fom08-033",
   "chapter": "8",
   "chapterName": "8 Dispatch",
   "q": "In the 8.1.3 Authorized Airports table, which designations may be planned as an adequate airport, and what does the asterisk mean?",

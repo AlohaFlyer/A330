@@ -408,6 +408,66 @@
   "id": "fom02-028",
   "chapter": "2",
   "chapterName": "2 Operating General",
+  "q": "Before downloading non-Company material to the EFB, how much free memory must remain on the device after the download?",
+  "a": "A minimum of 10GB.",
+  "ref": "FOM 2.5.1",
+  "src": {
+   "ref": "FOM 2.5.1, EFB Policies",
+   "quote": "For proper EFB operation, prior to downloading non-Company material, ensure a minimum of 10GB of free memory will remain on the EFB after the download.",
+   "note": "Rev 125.3 raised this from 2GB to 10GB and removed the AS banner from the EFB customization paragraph."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-029",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "The Jeppesen FD Pro app fails. Where is the Jeppesen Trip Kit accessed, and what rules apply to using it?",
+  "a": "Via a web clip on the EFB home screen. An internet connection is required, the file must be imported into an approved EFB document reader, and Trip Kit files must not be reused on subsequent flights. For an offline flight select the EJEP03 Worldwide Terminal Charts EFB Coverage.",
+  "ref": "FOM 2.5.2.1",
+  "src": {
+   "ref": "FOM 2.5.2.1, Jeppesen FD Pro Failure",
+   "quote": "Trip Kit is available via a web clip on the EFB home screen. An internet connection is required and the file must be imported into an approved EFB document reader. Flight Crewmembers must not reuse the Trip Kit files on subsequent flights to ensure data currency.",
+   "note": "Rev 125.3 aligned AS and HA: the HA SharePoint path (On the Line, Jeppesen Trip Kit) no longer exists. Select the coverage appropriate to the fleet in the Coverage drop-down menu."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-030",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "Who provides 24/7 support for a lost, stolen, or malfunctioning EFB, and how are they reached?",
+  "a": "The ITS Service Desk, at 1-877-238-1077 or its.service.desk@alaskaair.com. If an EFB is lost or stolen, time permitting, also file a police report with local authorities.",
+  "ref": "FOM 2.5.6.8",
+  "src": {
+   "ref": "FOM 2.5.6.8, EFB Troubleshooting and Lost/Stolen Device",
+   "quote": "Contact ITS Service Desk at 1-877-238-1077 or its.service.desk@alaskaair.com.",
+   "note": "Rev 125.3 deleted the HA-specific block (Hawaiian Airlines IT, EFB Locker loaner, eConnect ticket). Questions about personal apps downloaded by individual pilots are not supported."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-031",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "The Flight Deck and cabin stowage locations are not available or suitable for your crew bag. What may be done with it?",
+  "a": "It can be gate-checked with a claim-at-gate tag.",
+  "ref": "FOM 2.8.16",
+  "src": {
+   "ref": "FOM 2.8.16, Flight Crew Bag Stowage",
+   "quote": "If the above listed locations are not available or suitable, crew bags can be gate-checked with a claim-at-gate tag.",
+   "note": "Rev 125.3 removed the AS banner, so this applies to HA crews too. Deadheading crewmembers likewise gate-check with a claim-at-gate tag when cabin space is unavailable (2.8.16.1)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-032",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
   "q": "On which operations is the uniform blazer required?",
   "a": "Blazers are required on international widebody passenger operations.",
   "ref": "FOM 2.6.9.1",

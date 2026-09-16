@@ -63,13 +63,13 @@
   "id": "fom12-005",
   "chapter": "12",
   "chapterName": "12 Fueling and Maintenance",
-  "q": "In a fuel spill with passengers on board, who decides whether to deplane, and on which side of the aircraft are passengers deplaned?",
-  "a": "The Pilot-In-Command decides whether to deplane (if no pilot is on board, the 'A' Flight Attendant/FFA decides). If there is a choice of exits, passengers are deplaned on the side of the aircraft opposite the fuel spill.",
-  "ref": "FOM 12.1.1.4",
+  "q": "Fuel is accumulating on the ramp with passengers on board. Who decides whether to deplane, and which exits are used?",
+  "a": "The PIC decides whether to deplane (if no pilot is on board, the \"A\" Flight Attendant/FFA decides). If there is a choice of exits, passengers are deplaned through a boarding bridge or, if on ground level, on the side of the aircraft opposite the fuel spill.",
+  "ref": "FOM 5.1.24",
   "src": {
-   "ref": "FOM 12.1.1.4, Fuel Spills",
-   "quote": "passengers will be deplaned on the side of the aircraft opposite the fuel spill.",
-   "note": "Any ground air conditioning unit should also be terminated to prevent pushing fumes into the aircraft and to remove an ignition source."
+   "ref": "FOM 5.1.24, Fuel Accumulation on Ramp",
+   "quote": "The PIC will make the decision whether to deplane passengers. If no pilot is on board, the “A” Flight Attendant/FFA will make the decision whether to deplane. If there is a choice of exits, passengers will be deplaned through a boarding bridge or, if on ground level, on the side of the aircraft opposite the fuel spill.",
+   "note": "Rev 125.3 moved the fuel spill guidance from 12.1.1.4 to the new 5.1.24 and added the boarding bridge as the first choice. Any ground air conditioning unit is terminated to keep fumes out of the aircraft and remove an ignition source."
   },
   "fleet": "both",
   "srcKind": "manual"
