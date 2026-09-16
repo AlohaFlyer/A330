@@ -18,8 +18,8 @@
   "id": "fom11-002",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "If you lose two-way radio and must enter the US ADIZ, what do you do and what code do you squawk?",
-  "a": "Use emergency authority and enter the ADIZ as close to the Flight Plan crossing position and time as possible, squawking 7700; then follow standard comm-failure procedures.",
+  "q": "With two-way radio failure, what transponder code do you squawk to enter the US ADIZ?",
+  "a": "7700, entering the ADIZ under emergency authority as close to the flight plan crossing position and time as possible.",
   "ref": "FOM 11.1.4.1",
   "src": {
    "ref": "FOM 11.1.4.1, Entering ADIZ without Radio Contact",
@@ -34,7 +34,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "What temperature threshold makes an ill traveler a reportable communicable-disease case?",
-  "a": "A temperature of 100 degrees F (38 degrees C) or greater that has persisted more than 48 hours (or fever with certain other symptoms, or diarrhea).",
+  "a": "100 F (38 C) or greater, persisting more than 48 hours.",
   "ref": "FOM 11.1.8.2",
   "src": {
    "ref": "FOM 11.1.8.2, Communicable Diseases",
@@ -64,7 +64,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "What is the MedLink Inflight Medical Assistance phone number?",
-  "a": "(602) 282-4910. Ground Medical Assistance is (602) 282-6613 or (800) 961-4847.",
+  "a": "(602) 282-4910.",
   "ref": "FOM 11.1.9.3",
   "src": {
    "ref": "FOM 11.1.9.3, Responsibility for Contacting MedLink",
@@ -78,8 +78,8 @@
   "id": "fom11-006",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "After extinguishing a lithium battery fire, why must you cool the device and how long can it take?",
-  "a": "HALON extinguishes the fire but the device must then be cooled, preferably with water; it may take 15 or more minutes to fully cool. Avoid ice, which insulates and can let remaining cells reignite.",
+  "q": "After extinguishing a lithium battery fire, how long can it take to completely cool the device?",
+  "a": "15 or more minutes; avoid ice, which acts as an insulator.",
   "ref": "FOM 11.1.10",
   "src": {
    "ref": "FOM 11.1.10, Lithium Battery Fire",
@@ -94,7 +94,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "Can water be used on a lithium battery fire?",
-  "a": "Water may be used to fight a lithium ion battery fire, but should not be used on a lithium metal battery fire. Cool with water preferably, or any non-alcoholic liquid if water is not available.",
+  "a": "Yes. Lithium ion only; not on a lithium metal battery fire.",
   "ref": "FOM 11.1.10",
   "src": {
    "ref": "FOM 11.1.10, Lithium Battery Fire",
@@ -109,7 +109,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "What does emergency authority allow the Captain to do in a situation requiring immediate decision and action?",
-  "a": "Take any action considered necessary, including deviating from prescribed procedures, methods, weather minimums, and regulations to the extent required in the interest of safety.",
+  "a": "Any action considered necessary, including deviating from procedures, methods, weather minimums, and regulations to the extent safety requires.",
   "ref": "FOM 11.2.1",
   "src": {
    "ref": "FOM 11.2.1, Emergency Authority",
@@ -124,7 +124,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "Must you declare an emergency with ATC to use emergency authority?",
-  "a": "No. The Captain may use emergency authority without declaring an emergency if traffic or handling priority is not needed, but should still advise ATC of intentions as soon as possible.",
+  "a": "No. Not required if traffic or handling priority is not needed.",
   "ref": "FOM 11.2.1",
   "src": {
    "ref": "FOM 11.2.1, Emergency Authority",
@@ -138,8 +138,8 @@
   "id": "fom11-010",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "Name situations the FOM says pilots will consider an emergency.",
-  "a": "Fire or smoke endangering the aircraft; inability to definitely establish position; failure of a component jeopardizing safety of flight; an in-flight medical condition requiring a diversion; and a high probability of an emergency evacuation.",
+  "q": "Name one in-flight medical situation the FOM says pilots will consider an emergency.",
+  "a": "An in-flight medical condition that requires a diversion.",
   "ref": "FOM 11.2.2",
   "src": {
    "ref": "FOM 11.2.2, Declaring an Emergency",
@@ -154,7 +154,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "When should MAYDAY be used versus PAN-PAN?",
-  "a": "MAYDAY (said three times) is the distress signal reserved for life-threatening situations; PAN-PAN (said three times) is the urgency signal for urgent situations that are not immediately life-threatening but require assistance.",
+  "a": "MAYDAY for life-threatening situations; PAN-PAN for urgent situations not immediately life-threatening but requiring ground assistance.",
   "ref": "FOM 11.2.2.1",
   "src": {
    "ref": "FOM 11.2.2.1, Distress and Urgency Communication Signals",
@@ -168,8 +168,8 @@
   "id": "fom11-012",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "What information belongs in an emergency message, and what is the Alaska HAZMAT emergency contact number?",
-  "a": "Nature of emergency; number of passengers/crew and infants; passengers needing special assistance and their location; the HAZMAT emergency contact number if hazardous cargo is aboard (AS: 206-392-6465); and fuel remaining in minutes.",
+  "q": "What is the Alaska HAZMAT emergency contact number relayed in an emergency message?",
+  "a": "206-392-6465.",
   "ref": "FOM 11.2.2.3",
   "src": {
    "ref": "FOM 11.2.2.3, Emergency Message",
@@ -184,7 +184,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "After exercising emergency authority that deviates from FARs or company procedures, by when must a Captain file the safety report?",
-  "a": "As soon as possible, but no later than the conclusion of the next mandatory 24-hour rest period. A Dispatcher who exercises emergency authority must report within 10 days.",
+  "a": "As soon as possible, no later than the conclusion of the next mandatory 24-hour rest period.",
   "ref": "FOM 11.2.3",
   "src": {
    "ref": "FOM 11.2.3, Emergency Authority – Reporting",
@@ -198,8 +198,8 @@
   "id": "fom11-014",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "Is a minimum fuel advisory an emergency, and when should it be declared?",
-  "a": "No, minimum fuel is not an emergency and does not imply a need for traffic priority; it should only be declared once the flight has committed to land at a specific airport, not while a divert option still exists.",
+  "q": "Is a minimum fuel advisory an emergency?",
+  "a": "No. It only indicates an emergency is possible should any undue delay occur.",
   "ref": "FOM 11.2.5",
   "src": {
    "ref": "FOM 11.2.5, Minimum Fuel",
@@ -213,8 +213,8 @@
   "id": "fom11-015",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "What must the PIC declare when landing will occur with less than a 30-minute fuel supply, and how is that 30 minutes defined?",
-  "a": "Declare MAYDAY, MAYDAY, MAYDAY, FUEL to ensure priority handling. The 30-minute supply is based on holding fuel flow or higher at 1500 ft above field elevation, and 30 minutes is a minimum the PIC may increase.",
+  "q": "The MAYDAY FUEL threshold is a 30-minute fuel supply. How is that 30 minutes defined?",
+  "a": "Holding fuel flow at 1500 ft above field elevation.",
   "ref": "FOM 11.2.6",
   "src": {
    "ref": "FOM 11.2.6, Emergency Fuel",
@@ -228,8 +228,8 @@
   "id": "fom11-016",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "On a two-engine aircraft flying with one engine inoperative, what factors justify flying beyond the nearest suitable airport?",
-  "a": "None. Sufficient fuel to fly farther, passenger accommodation other than safety, and availability of maintenance/repair are all specifically not sufficient justification to pass the nearest suitable airport.",
+  "q": "One engine inoperative: do extra fuel, passenger accommodation, or maintenance availability justify flying beyond the nearest suitable airport?",
+  "a": "No. None of these factors is sufficient justification to pass the nearest suitable airport.",
   "ref": "FOM 11.2.7.1",
   "src": {
    "ref": "FOM 11.2.7.1, Nearest Suitable Airport",
@@ -259,7 +259,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "For an A330 decompression over charted terrain polygons, what is the initial descent altitude?",
-  "a": "Always 17,000 ft or FL170 on the A330 (and 737). Only the 787 takes a polygon-specific altitude from the detail drawer in Jeppesen FD Pro.",
+  "a": "Always 17,000 ft or FL170.",
   "ref": "FOM 11.2.9.1",
   "src": {
    "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
@@ -273,8 +273,8 @@
   "id": "fom11-019",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "What is the NTSB flight attendant briefing format, and what drives whether it is a normal or emergency landing?",
-  "a": "N - Nature of the emergency, T - Time to prepare, S - Special instructions, B - Brace signal. The type of landing is based on the likelihood of evacuation, not on what is declared with ATC.",
+  "q": "In the NTSB flight attendant briefing, what determines whether you brief a normal or emergency landing?",
+  "a": "The likelihood of evacuation, not what is declared with ATC.",
   "ref": "FOM 11.2.11",
   "src": {
    "ref": "FOM 11.2.11, Abnormal/Emergency Briefing of Flight Attendants – NTSB",
@@ -288,8 +288,8 @@
   "id": "fom11-020",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "When may the Cabin Crew initiate an evacuation on their own, and what memory aid lists the triggers?",
-  "a": "If life-threatening conditions require immediate evacuation and they cannot communicate with the Captain after trying all reasonable means. The FAST acronym lists triggers: Flight Deck incapacitated, Aircraft impacted/at a peculiar angle, Smoke and fire present, Threat of imminent danger.",
+  "q": "What acronym lists the FOM examples of Cabin Crew-initiated evacuation triggers?",
+  "a": "FAST.",
   "ref": "FOM 11.2.12.1",
   "src": {
    "ref": "FOM 11.2.12.1, Cabin Crew Initiated Evacuation (717/787/A321/A330P)",
@@ -303,8 +303,8 @@
   "id": "fom11-021",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "CHECK-AIRMAN SCENARIO: You've been holding for weather and it's now apparent you'll touch down with less than a 30-minute fuel supply. What exact call do you make, and how is that 30 minutes defined?",
-  "a": "Declare \"MAYDAY, MAYDAY, MAYDAY, FUEL\" to ensure priority handling. The 30-minute supply is based on holding fuel flow or higher, as required by configuration, at 1500 ft above field elevation; 30 minutes is a minimum the PIC may increase for runway-availability and go-around contingencies.",
+  "q": "Holding for weather, it is now apparent you will land with under 30 minutes of fuel. What exact call do you make?",
+  "a": "\"MAYDAY, MAYDAY, MAYDAY, FUEL\" to ensure priority handling.",
   "ref": "FOM 11.2.6",
   "src": {
    "ref": "FOM 11.2.6, Emergency Fuel",
@@ -318,8 +318,8 @@
   "id": "fom11-022",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "CHECK-AIRMAN SCENARIO: Rapid decompression at cruise over charted high-terrain polygons in your A330. Walk me through the masks, the descent target that relieves physiological reactions, and how you pick the initial descent altitude.",
-  "a": "Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. Plan to be at 10,000 ft before passenger oxygen supplies are depleted. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.",
+  "q": "Descending after a decompression, when may you enter another polygon below the altitude in its detail drawer?",
+  "a": "Only when terrain clearance is assured.",
   "ref": "FOM 11.2.9.1",
   "src": {
    "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
@@ -333,8 +333,8 @@
   "id": "fom11-023",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "CHECK-AIRMAN SCENARIO: A passenger collapses two hours into an overwater leg. Who do you contact, who has final authority on whether to divert, and how does the A330 crew loop the flight attendants into the call?",
-  "a": "Contact MedLink Inflight Medical Assistance at (602) 282-4910; with MedLink's advice and Dispatch, the Captain determines whether a medical diversion is necessary and coordinates diversion-airport preferences. Company policy is to follow MedLink's recommendation, but the Captain retains final authority on any operational request. On the A330 the Flight Crew relays information between the cabin and MedLink.",
+  "q": "A passenger collapses two hours into an overwater leg. Who determines whether a medical diversion is necessary?",
+  "a": "The Captain, coordinating with Dispatch and MedLink on diversion airport preferences.",
   "ref": "FOM 11.1.9.4",
   "src": {
    "ref": "FOM 11.1.9.4, Medical Diversion",
@@ -348,8 +348,8 @@
   "id": "fom11-024",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "CHECK-AIRMAN SCENARIO: You shut an engine down in flight. A field 20 minutes closer has a shorter runway; your maintenance base is 90 minutes ahead with plenty of fuel to reach it. Where do you land, and does the extra fuel or the maintenance base justify pressing on?",
-  "a": "Land at the nearest suitable airport, based on time considerations, where a safe landing can be made. On a two-engine aircraft with one engine inoperative, neither sufficient fuel to fly farther, nor passenger accommodation other than safety, nor availability of maintenance/repair justifies flying beyond the nearest suitable airport.",
+  "q": "Engine shut down in flight; a closer field has a shorter runway, your maintenance base is 90 minutes ahead. Where do you land?",
+  "a": "The nearest suitable airport, based on time considerations, where a safe landing can be made.",
   "ref": "FOM 11.2.7",
   "src": {
    "ref": "FOM 11.2.7, Engine Shutdown in Flight",
@@ -364,7 +364,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "On the A330, how long after engine shutdown do the DFDR and CVR stop recording?",
-  "a": "5 minutes after engine shutdown (A321/A330/A330F).",
+  "a": "5 minutes after engine shutdown.",
   "ref": "FOM 11.2.14",
   "src": {
    "ref": "FOM 11.2.14, Cockpit Voice Recorder and Digital Flight Data Recorder",
@@ -379,7 +379,7 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "What is the purpose of the decompression polygon procedures?",
-  "a": "They provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
+  "a": "A calculated safe method for descending to 10,000 ft before passenger oxygen is depleted after decompression over high terrain.",
   "ref": "FOM 11.2.9.1",
   "src": {
    "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
@@ -393,8 +393,8 @@
   "id": "fom11-027",
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
-  "q": "In any decompression, what altitude should the Flight Crew plan to reach before passenger oxygen supplies are depleted, and what information may the crew use to decide a course of action?",
-  "a": "10,000 ft. Crews may use weather conditions, visibility, ATC, grid MORAs, and the decompression polygon procedures.",
+  "q": "In a decompression, what altitude should the Flight Crew plan to reach before passenger oxygen supplies are depleted?",
+  "a": "10,000 ft.",
   "ref": "FOM 11.2.9",
   "src": {
    "ref": "FOM 11.2.9, Decompression",
