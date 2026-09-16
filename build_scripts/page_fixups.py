@@ -20,6 +20,10 @@ EDITS={
  ],
  'flows_quiz.html':[
   ('let seat = "CA"','let seat = "FO"'),   # Ryan flies the FO seat; the first flow is CM2-only
+  # Audit 2026-09-16: the checklist-named flow title is longer than the B787 one and ran under the
+  # prev / end / restart buttons on a phone. Reserve their width beside the title.
+  ('  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;}',
+   '  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;padding-right:150px;min-height:40px;}'),
   # Airbus crew-member labels and a CM3 (IRO) seat; engine ids stay CA/FO/IRO
   ('<button id="seatCA" class="active">CA</button>\n    <button id="seatFO">FO</button>',
    '<button id="seatCA">CM1 (CA)</button>\n    <button id="seatFO" class="active">CM2 (FO)</button>\n    <button id="seatIRO">CM3 (IRO)</button>'),

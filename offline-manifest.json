@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6744073,
+"coreBytes": 6687580,
 "audioBytes": 0,
 "core": [
 {
@@ -82,7 +82,7 @@
 },
 {
 "u": "/corpus/flows.json",
-"b": 60688
+"b": 60307
 },
 {
 "u": "/corpus/fom.json",
@@ -126,7 +126,7 @@
 },
 {
 "u": "/data/flows_trainer.json",
-"b": 91958
+"b": 91555
 },
 {
 "u": "/data/fom_all.json",
@@ -182,7 +182,7 @@
 },
 {
 "u": "/data/oe.json",
-"b": 409015
+"b": 408516
 },
 {
 "u": "/data/oral_scope.json",
@@ -214,79 +214,79 @@
 },
 {
 "u": "/flows_quiz.html",
-"b": 40426
+"b": 40445
 },
 {
 "u": "/fom_q/ch01.json",
-"b": 17228
+"b": 15283
 },
 {
 "u": "/fom_q/ch02.json",
-"b": 23907
+"b": 22420
 },
 {
 "u": "/fom_q/ch03.json",
-"b": 16376
+"b": 14643
 },
 {
 "u": "/fom_q/ch04.json",
-"b": 17960
+"b": 16303
 },
 {
 "u": "/fom_q/ch05.json",
-"b": 43461
+"b": 37227
 },
 {
 "u": "/fom_q/ch06.json",
-"b": 28583
+"b": 23185
 },
 {
 "u": "/fom_q/ch07.json",
-"b": 19824
+"b": 17844
 },
 {
 "u": "/fom_q/ch08.json",
-"b": 29953
+"b": 25207
 },
 {
 "u": "/fom_q/ch09.json",
-"b": 22007
+"b": 18261
 },
 {
 "u": "/fom_q/ch10.json",
-"b": 13705
+"b": 12456
 },
 {
 "u": "/fom_q/ch11.json",
-"b": 23046
+"b": 18797
 },
 {
 "u": "/fom_q/ch12.json",
-"b": 22156
+"b": 17290
 },
 {
 "u": "/fom_q/ch13.json",
-"b": 14548
+"b": 12914
 },
 {
 "u": "/fom_q/ch14.json",
-"b": 19792
+"b": 16730
 },
 {
 "u": "/fom_q/ch15.json",
-"b": 21649
+"b": 17735
 },
 {
 "u": "/fom_q/ch16.json",
-"b": 18656
+"b": 15994
 },
 {
 "u": "/fom_q/ch18.json",
-"b": 16254
+"b": 13720
 },
 {
 "u": "/fom_q/ch19_24.json",
-"b": 29286
+"b": 23261
 },
 {
 "u": "/fom_quiz.html",
@@ -298,7 +298,7 @@
 },
 {
 "u": "/index.html",
-"b": 11254
+"b": 11779
 },
 {
 "u": "/ioe.html",
@@ -326,15 +326,15 @@
 },
 {
 "u": "/phase_flows.html",
-"b": 39404
+"b": 40894
 },
 {
 "u": "/podcast.html",
-"b": 15241
+"b": 15004
 },
 {
 "u": "/portal-settings.js",
-"b": 45196
+"b": 46679
 },
 {
 "u": "/pwa.html",
@@ -362,7 +362,7 @@
 },
 {
 "u": "/sw.js",
-"b": 7339
+"b": 7970
 },
 {
 "u": "/systems_quiz.html",
