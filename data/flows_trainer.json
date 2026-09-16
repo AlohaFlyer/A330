@@ -38,7 +38,8 @@
      "y": 170.8,
      "d": "[FCOM PRO-NOR-SOP-03-A-00010463.0001001 · APU AREA:]\n• APU AREA...... CHECK CM2-CM3\nObserve that the APU inlet and outlet are clear."
     }
-   ]
+   ],
+   "noflow": true
   },
   {
    "n": "2. Preliminary Cockpit Prep Flow (Pt 1)",
@@ -156,7 +157,17 @@
      "role": "BOTH",
      "x": 21.0,
      "y": 254.3,
-     "d": "[FCOM PRO-NOR-SOP-04-00021766.0001001 · EFB START:]\n• ALL EFB......START ALL"
+     "d": "[FCOM PRO-NOR-SOP-04-00021766.0001001 · EFB START:]\n• ALL EFB......START ALL",
+     "pos": {
+      "CA": [
+       32.0,
+       245.0
+      ],
+      "FO": [
+       270.0,
+       245.0
+      ]
+     }
     },
     {
      "item": "RCL pb",
@@ -194,8 +205,8 @@
      "item": "ATIS",
      "act": "OBTAIN",
      "role": "FO",
-     "x": 180.2,
-     "y": 304.2,
+     "x": 150.0,
+     "y": 389.0,
      "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ATIS...... OBTAIN CM2-CM3\nThe CM2 (CM3) should attain the ATIS. Obtain data needed for initializing the system, preparing the cockpit and for preliminary takeoff performance computation. The airfield data should include: RUNWAY IN USE, ALTIMETER SETTING, and WEATHER DATA."
     },
     {
@@ -212,7 +223,17 @@
      "role": "PF",
      "x": 120.2,
      "y": 316.5,
-     "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ACARS...... INITIALIZE PF\nInitialize and check the ACARS. On the ACARS INIT page input/check the departure airport,\ndestination airport, flight number and date."
+     "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ACARS...... INITIALIZE PF\nInitialize and check the ACARS. On the ACARS INIT page input/check the departure airport,\ndestination airport, flight number and date.",
+     "pos": {
+      "CA": [
+       120.2,
+       298.0
+      ],
+      "FO": [
+       180.2,
+       298.0
+      ]
+     }
     },
     {
      "item": "PRELIMINARY TAKEOFF PERF DATA",
@@ -231,12 +252,12 @@
    "phase": "Preflight",
    "items": [
     {
-     "item": "OXY",
-     "act": "CHECK PRESSURE",
+     "item": "ECAM OXY PRESS / HYD QTY / ENG OIL QTY",
+     "act": "CHECK",
      "role": "PM",
      "x": 150.8,
      "y": 256.6,
-     "d": "[FCOM PRO-NOR-SOP-04-D-00021790.0002001 · ECAM PAGES - PAX:]\n• * OXY......CHECK PRESSURE PM"
+     "d": "[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• * ECAM OXY PRESS/HYD QTY/ENG OIL QTY...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00021790.0002001 · ECAM PAGES - PAX:]\n• On the DOOR SD page:\n• * OXY......CHECK PRESSURE PM\n• If the OXY pressure is half boxed in amber:\n• MIN FLT CREW OXY CHART...... CHECK PRESSURE PM\n• On the HYD SD page:\n• * RESERVOIR FLUID LEVEL...... CHECK WITHIN NORMAL RANGE PM\n• On the ENG SD page:\n• * ENG OIL QUANTITY......CHECK PM\n• Check that the oil quantity is above the minimum. Refer to LIM-ENG Oil."
     },
     {
      "item": "FLAPS",
@@ -279,12 +300,12 @@
      "d": "[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * BRAKES PRESS indicator......CHECK PM\nCheck for normal indications.\nWARNING The blue electric pump pressurizes the blue hydraulic system. If 'Maintenance in Progress' placard is displayed, get ground crew clearance before energizing the electric pump. In the absence of the placard, flight crew may energize the electric pump without notifying the ground crew."
     },
     {
-     "item": "CHOCKS",
-     "act": "CHECK IN PLACE",
+     "item": "ALTN BRAKING",
+     "act": "CHECK",
      "role": "PM",
      "x": 125.0,
      "y": 387.5,
-     "d": "[FCOM PRO-NOR-SOP-04-D-00010911.0001001 · ALTERNATE BRAKING SYSTEM:]\n• CHOCKS...... CHECK IN PLACE PM"
+     "d": "[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• ALTN BRAKING...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00010911.0001001 · ALTERNATE BRAKING SYSTEM:]\n• The purpose of this check is to verify, before the first flight of the day, the efficiency of the alternate braking system (absence of “spongy pedals”).\n• CHOCKS...... CHECK IN PLACE PM\n• PARK BRK handle...... OFF PM\n• BRAKE PEDALS...... PRESS PM\n• Apply maximum pressure on both pedals.\n• BRAKE PRESSURE...... CHECK PM\n• Check on BRAKE PRESS indicator:\n• ‐ The pressure builds up without delay symmetrically on left and right sides for the same application simultaneously applied on left and right pedals.\n• ‐ With full pedal deflection, the pressure is between 2 200 PSI and 2 700 PSI.\n• BRAKE PEDALS...... RELEASE PM\n• PARK BRK handle...... ON PM"
     },
     {
      "item": "EMER EQPT",
