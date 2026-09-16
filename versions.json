@@ -1,14 +1,15 @@
 {
-  "build": "v1.6",
+  "build": "v1.7",
   "default": "1.6",
   "pages": {
     "flows_quiz.html": "1.6",
     "phase_flows.html": "1.6",
     "manuals/index.html": "1.6",
-    "index.html": "1.6",
+    "index.html": "1.7",
     "podcast.html": "1.6",
     "fom_quiz.html": "1.6",
-    "ioe.html": "1.6"
+    "ioe.html": "1.6",
+    "triggers.html": "1.7"
   },
   "stubs": []
 }

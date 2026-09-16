@@ -1,8 +1,8 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6643737,
-"audioBytes": 0,
+"coreBytes": 6651484,
+"audioBytes": 16971053,
 "core": [
 {
 "u": "/A330_MCDU_Preflight_Handout.pdf",
@@ -122,7 +122,7 @@
 },
 {
 "u": "/data/episodes.json",
-"b": 2
+"b": 944
 },
 {
 "u": "/data/flows.json",
@@ -198,11 +198,11 @@
 },
 {
 "u": "/data/systems.json",
-"b": 2
+"b": 3420
 },
 {
 "u": "/data/systems_fcom_detail.json",
-"b": 2
+"b": 3406
 },
 {
 "u": "/data/systems_source_detail.json",
@@ -302,7 +302,7 @@
 },
 {
 "u": "/index.html",
-"b": 31311
+"b": 31273
 },
 {
 "u": "/ioe.html",
@@ -374,11 +374,11 @@
 },
 {
 "u": "/triggers.html",
-"b": 19081
+"b": 19074
 },
 {
 "u": "/versions.json",
-"b": 271
+"b": 299
 },
 {
 "u": "/view.html",
@@ -393,5 +393,18 @@
 "b": 10951
 }
 ],
-"audio": []
+"audio": [
+{
+"u": "flight-deck-notes-ep1.mp3",
+"b": 6521148
+},
+{
+"u": "flight-deck-notes-ep2.mp3",
+"b": 5169155
+},
+{
+"u": "flight-deck-notes-ep3.mp3",
+"b": 5280750
+}
+]
 }
