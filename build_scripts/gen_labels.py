@@ -20,6 +20,14 @@ RULES={
   ('<span class="src">QRH R7</span>', f'<span class="src">FCOM {fr} [MEM]</span>'),
   ('10 emergency injects, QRH R7 verbatim', f'10 emergency injects, FCOM {fr} verbatim'),
  ],
+ 'systems_quiz.html':[
+  ('FCOM R10 &nbsp;|&nbsp; QRH R7', f'FCOM {fr} &nbsp;|&nbsp; QRH {qr}'),
+  ('no supporting passage located in FCOM R10, FCTM R9, FOM, or QRH R7 during the source audit', f'no supporting passage located in FCOM {fr}, FCTM {T["revision"]}, FOM, or QRH {qr} during the source audit'),
+  ('SFTD 1 & 2 study podcast','systems study podcast'),
+ ],
+ 'podcast.html':[
+  ('FCOM R10, FCTM R9, QRH R7, FOM 125.1, MEL R5', f'FCOM {fr}, FCTM {T["revision"]}, QRH {qr}, FOM {FOM["revision"]}, MEL {MEL["revision"]}'),
+ ],
  'limit-or-bust.html':[
   ('<span class="src">FCOM L.10 &middot; FOM 9.2</span>', f'<span class="src">FCOM {fr} LIM</span>'),
   ('Snap judgment, FCOM L.10 limits', f'Snap judgment, FCOM {fr} LIM limits'),

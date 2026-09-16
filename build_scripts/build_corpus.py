@@ -21,10 +21,10 @@ simple('systems','Systems Quiz','systems_quiz.html','data/systems.json',lambda d
 simple('ioe','OE Workbook Trainer','ioe.html','data/oe.json',lambda d:d['q'],lambda d:f"{d['q']} {d['a']} {d.get('detail','')} {d.get('quote','')}",lambda d:f"{d.get('sec','')} {d.get('secTitle','')}")
 simple('mcdu','MCDU Preflight (PF)','mcdu_preflight.html','data/mcdu.json',lambda d:d['t'],lambda d:d['x'],lambda d:d.get('r',''))
 simple('fom','FOM Quizzer','fom_quiz.html','data/fom_all.json',lambda d:d['q'],lambda d:f"{d['q']} {d['a']} {d.get('src',{}).get('quote','') if isinstance(d.get('src'),dict) else ''}",lambda d:f"{d.get('chapterName','')} {d.get('ref','')}")
-fl=load('data/flows.json'); docs=[]
-for ph in (fl.get('phases',[]) if isinstance(fl,dict) else []):
-    for st in ph.get('steps',[]):
-        if isinstance(st,dict): docs.append({'t':f"{ph.get('label','')}: {st.get('item',st.get('t',''))}",'x':json.dumps(st,ensure_ascii=False),'r':ph.get('src','')})
+ft=load('data/flows_trainer.json'); docs=[]
+for fl in (ft.get('FLOWS',[]) if isinstance(ft,dict) else []):
+    for it in fl.get('items',[]):
+        docs.append({'t':f"{fl.get('n','')}: {it.get('item','')}",'x':f"{it.get('item','')} {it.get('act','')} {it.get('role','')} {it.get('d','')}",'r':fl.get('ref','')})
 out['flows']=('Flows Trainer','flows_quiz.html',docs)
 for k,(title,page,docs) in out.items():
     json.dump({'title':title,'page':page,'built':built,'docs':docs},open(f'corpus/{k}.json','w',encoding='utf-8'),ensure_ascii=False)

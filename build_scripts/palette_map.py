@@ -82,4 +82,5 @@ OVERRIDES = {
   ],
   'fom_quiz.html': [('--good:#b1d887', '--good:#8EC891')],
   'jeopardy.html': [('--green:#b1d887', '--green:#8EC891')],
+  'mcdu_preflight.html': [('#0a8fb0', '#831A57')],   # page-flow group 4 stays distinct from group 1
 }

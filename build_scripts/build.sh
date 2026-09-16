@@ -8,7 +8,13 @@ cp "$B787"/*.html . && mv cdu_preflight.html mcdu_preflight.html
 cp "$B787"/portal-settings.js "$B787"/assist.js "$B787"/sw.js "$B787"/site.webmanifest "$B787"/robots.txt .
 python3 build_scripts/apply_palette.py . >/dev/null
 python3 build_scripts/apply_strings.py . >/dev/null
+python3 build_scripts/page_mcdu_preflight.py
+python3 build_scripts/page_phase_flows.py
+python3 build_scripts/page_flows_quiz.py
 python3 build_scripts/project_data.py
+python3 build_scripts/build_triggers.py
+python3 build_scripts/build_weather_bank.py
+python3 build_scripts/build_fom_bank.py
 python3 build_scripts/externalize.py limitations.html DATA data/limitations_drill.json
 python3 build_scripts/externalize.py memory-items.html DATA data/memory_items_drill.json
 python3 build_scripts/externalize.py hot-seat.html DATA data/memory_items_drill.json SCN data/hot_seat_scenarios.json
@@ -26,5 +32,10 @@ python3 build_scripts/gen_index.py
 python3 build_scripts/build_stubs.py
 python3 build_scripts/stamp_versions.py
 python3 build_scripts/build_corpus.py
+python3 build_scripts/build_handouts.py
+python3 build_scripts/build_weather_handout.py
+python3 build_scripts/build_mcdu_handout.py
+python3 build_scripts/build_oe_pdf.py
+for v in triggers weather mcdu oe fom phase_flows flows_trainer; do python3 build_scripts/verify_$v.py >/dev/null || { echo "VERIFY FAIL: $v"; exit 1; }; done
 python3 build_scripts/build_offline_manifest.py
 echo BUILD OK

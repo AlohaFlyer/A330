@@ -1,0 +1,630 @@
+#!/usr/bin/env python3
+"""Build the A330 FOM Quizzer bank from the B787 bank.
+
+Input : ../src/fom_q/ch*.json (B787 bank, FOM 125.1), ../src/FOM_125.1.md, WORK/manuals.json
+Output: WORK/fom_q/chNN.json, WORK/data/fom_questions.json (manifest), WORK/data/fom_all.json
+
+Method: keep every fleet-common record, drop every 787-only record and every
+record whose source is not the FOM, rewrite records whose FOM paragraph carries
+an A330 banner or value, and add records for Rev 123.1 to 125.1 changes
+(WORK/data/fom_delta.json) and A330-bannered paragraphs. Every src.quote is a
+literal whitespace-normalized substring of FOM_125.1.md (verify_fom.py proves it).
+
+Deterministic: rerunning reproduces the same files.
+"""
+import json, os, re, glob, sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.abspath(os.path.join(HERE, '..'))
+SRC = os.path.abspath(os.path.join(WORK, '..', 'src'))
+MANUALS = json.load(open(os.path.join(WORK, 'manuals.json')))
+FOM_REV = MANUALS['FOM']['revision']
+FOM_DATE = MANUALS['FOM']['date']
+
+CHAPTERS = [
+    ('01', '1', '1 Preface'),
+    ('02', '2', '2 Operating General'),
+    ('03', '3', '3 Training Qualification and Currency Requirements'),
+    ('04', '4', '4 Crew Administration'),
+    ('05', '5', '5 Flight Operations'),
+    ('06', '6', '6 ETOPS'),
+    ('07', '7', '7 Communications and Reports'),
+    ('08', '8', '8 Dispatch'),
+    ('09', '9', '9 Weather'),
+    ('10', '10', '10 CRM'),
+    ('11', '11', '11 Emergency/Abnormal'),
+    ('12', '12', '12 Fueling and Maintenance'),
+    ('13', '13', '13 Passenger Relations'),
+    ('14', '14', '14 HAZMAT'),
+    ('15', '15', '15 Security (SSI)'),
+    ('16', '16', '16 Non-Routine Flight Operations (NRFO)'),
+    ('18', '18', '18 Areas of Operation'),
+    ('19_24', '19-24', '19-24 Theaters'),
+]
+ID_PREFIX = {'19_24': '19'}
+
+# ---------------------------------------------------------------------------
+# DROP: 787-only, non-FOM source, wrong, or duplicate records.
+# ---------------------------------------------------------------------------
+DROP = {
+    # 787-only
+    'fom05-r125b': '787-only: (737/787) takeoff below 500 RVR, HGS/HUD card',
+    'fom1924-013': '787-only: single IRU NAT HLA dispatch relief',
+    # non-FOM source (quote is a paraphrase or from NAT Doc 007 / AIP / training material)
+    'fom06-eq03': 'non-FOM source (PACOTS TDM)',
+    'fom06-eq04': 'non-FOM source (CEP tracks)',
+    'fom06-eq06': 'non-FOM source (RVSM, NAT Doc 007)',
+    'fom06-eq07': 'non-FOM source (Class I nav, AIM)',
+    'fom06-eq08': 'non-FOM paraphrase',
+    'fom06-eq09': 'non-FOM source (PBCS, NAT Doc 007)',
+    'fom06-eq10': 'non-FOM source (OpSpec B036)',
+    'fom06-eq11': 'non-FOM source (AIP)',
+    'fom06-eq12': 'non-FOM source (NAT Doc 007)',
+    'fom06-eq13': 'non-FOM source (NAT Doc 007)',
+    'fom06-eq14': 'non-FOM paraphrase',
+    'fom06-eq15': 'non-FOM paraphrase',
+    'fom06-eq18': 'non-FOM source (AC 120-42B)',
+    'fom06-eq21': 'non-FOM paraphrase',
+    'fom1924-021': 'non-FOM source (NAT HLA training)',
+    'fom1924-022': 'non-FOM source (NAT HLA training)',
+    'fom1924-023': 'non-FOM source (NAT HLA training)',
+    # wrong answer vs FOM 125.1 (adequate airport is now "listed in 8.1.3")
+    'fom06-eq23': 'answer contradicts FOM 125.1 6.2.1',
+    # duplicates in multiple-choice form
+    'fom06-eq01': 'duplicate of fom06-007',
+    'fom06-eq02': 'duplicate of fom06-003',
+    'fom06-eq05': 'duplicate of fom06-002',
+    'fom06-eq20': 'duplicate of fom06-016 / fom06-sc03',
+    'fom06-eq22': 'duplicate of fom06-004',
+    'fom06-eq25': 'duplicate of fom06-005 / fom06-006',
+}
+
+# ---------------------------------------------------------------------------
+# EDIT: per-id overrides. Keys: q, a, ref, sref, quote, note, fleet.
+# Quotes are copied from FOM_125.1.md with its own punctuation.
+# ---------------------------------------------------------------------------
+EDIT = {
+    # ---- ch 1
+    'fom01-sc01': {'q': 'SCENARIO: You are the Captain on the A330 during a line trip. A situation develops that is not covered anywhere in the FOM, and following the nearest published procedure would clearly be unsafe given the conditions. What does the FOM authorize you to do?'},
+    # ---- ch 2
+    'fom02-011': {'quote': 'The PIC’s control and authority is in effect from the time they report for duty until the termination of the flight.'},
+    'fom02-016': {'quote': 'For flights which require the Dispatch Release and ATS Flight Plan to be produced 180 minutes prior to scheduled departure, the OCW starts three hours (D-180), see 8.5.2.1 – Dispatch Release – Preparation.', 'note': 'South Korea, Amazon Cargo and (787/A330) Europe departures get a three-hour (D-180) window versus the standard D-150 (two and a half hours). The Europe line is new in Rev 125 and applies to the A330.'},
+    'fom02-020': {'quote': 'Normal flying should not require bank angles greater than 30° or airspeeds higher than the normal limit speed or pitch attitude greater than 20° nose up.'},
+    'fom02-sc03': {'quote': 'If the Captain becomes incapacitated, the IRO will assume command, perform the Captain’s duties, and assume the Captain’s responsibilities.'},
+    # ---- ch 3
+    'fom03-001': {'quote': 'For all operations, only one Flight Crewmember (CA, F/O, IRO) may have less than: • (AS) 150 hours line operating flight time at the Company (including Operating Experience, “OE”) in type and crew position (seat). • (HA) 100 hours line operating flight time at the Company (including Operating Experience, “OE”) in type.',
+                  'q': 'For AS operations, what is the maximum number of Flight Crewmembers on a pairing who may have less than 150 hours line operating flight time in type and crew position? What is the HA figure?',
+                  'a': 'Only one Flight Crewmember (CA, F/O, IRO) may have less than (AS) 150 hours line operating flight time at the Company (including OE) in type and crew position (seat). The HA figure is 100 hours in type.'},
+    'fom03-006': {'q': 'How often must a pilot accomplish a NAT HLA segment as a required Flight Crewmember to maintain North Atlantic High-Level Airspace currency on the A330?',
+                  'sref': 'FOM 3.3.4, North Atlantic High-Level Airspace (NAT HLA) Qualification (787/A330)'},
+    'fom03-009': {'quote': 'For augmented crews, the total hours of the flight segment will be subtracted as follows: • 50% for double augment • 33% for single augment'},
+    'fom03-015': {'note': 'For AS the Captain must also comply with the SA CAT I/II Approach Briefing Card.'},
+    'fom03-017': {'quote': 'Only one of the required landings may be an Autoland.'},
+    'fom03-018': {'quote': 'If the crosswind component exceeds 15 kts combined with a braking action report of less than “good,” visibility must be at least 4000 RVR (3/4 mile visibility).',
+                  'note': 'For AS the approach is flown by the Captain with the autopilot coupled to the approach to DH or missed approach.'},
+    'fom03-sc01': {'q': 'CHECK-AIRMAN SCENARIO: You are an A330 First Officer and monthly bid closure is tomorrow. A check airman notices your last takeoff and landing was 91 days ago, so your Takeoff and Landing Currency has lapsed. Under FOM 3.19, what happens to next month\'s bid and how do you correct the deficiency?',
+                   'quote': '(AS) Failure to initially accomplish and/or maintain currency requirements will result in the following month’s bid not being honored and will result in removal from flight duty and payroll until any deficiencies are corrected.'},
+    'fom03-sc02': {'q': 'CHECK-AIRMAN SCENARIO: A check airman reviews your last 90 days and finds 3 takeoffs and landings in the A330, but 2 of the 3 landings were Autolands. Are you legally current for Takeoff and Landing Currency under FOM 3.19, and why or why not?',
+                   'quote': 'Only one of the required landings may be an Autoland.'},
+    'fom03-sc03': {'q': 'CHECK-AIRMAN SCENARIO: Scheduling wants to assign you as a required Flight Crewmember on an A330 segment through North Atlantic High-Level Airspace, but your last NAT HLA segment was 25 months ago. Under FOM 3.3.4, are you current for NAT HLA, and what governs re-establishing it?',
+                   'a': 'No. NAT HLA currency requires accomplishing at least one NAT HLA segment as a required Flight Crewmember every 24 months; at 25 months your currency has lapsed. Re-establishing currency is governed by the Non-737 FOTM.',
+                   'sref': 'FOM 3.3.4, North Atlantic High-Level Airspace (NAT HLA) Qualification (787/A330)',
+                   'note': 'NAT HLA qualification applies to qualified PICs and SICs on the 787 and A330; see the Non-737 FOTM for the requirements to re-establish currency once it lapses.'},
+    # ---- ch 4
+    'fom04-004': {'quote': 'the flight time limits in Table A of Part 117 (unaugmented operations) restrict a Flight Crewmember’s time on task (flight time) to either 8 or 9 hours.'},
+    'fom04-005': {'quote': 'Flight time limits (augmented operations) restrict a Flight Crewmember’s time on task (flight time) to either 13 hours (3-pilot crew) or 17 hours (4-pilot crew).'},
+    'fom04-006': {'quote': 'A Flight Crewmember’s cumulative FTL shall not exceed: • 100 hours in any 672 consecutive hours, or • 1000 hours in any 365 consecutive calendar-day period.'},
+    'fom04-007': {'quote': '• 60 FDP hours in any 168 consecutive hours, or • 190 FDP hours in any 672 consecutive hours.'},
+    'fom04-011': {'quote': 'Theater means a geographical area in which the distance between the Flight Crewmember’s flight duty period departure point and arrival point differs by no more than 60 degrees of longitude.'},
+    'fom04-014': {'quote': 'The Flight Crewmember’s RAP may not exceed 14 hours.'},
+    'fom04-sc01': {'quote': 'Flight Duty Period (FDP) extensions of up to 2 hours are permitted provided: • Extension is required to address unforeseen operational circumstances. • Neither Flight Crewmember has experienced an extension greater than 30 minutes since the crewmember’s last period of 30 consecutive hours free from all duty.'},
+    'fom04-sc02': {'quote': 'If a Flight Crewmember feels they are too fatigued to fly, the Flight Crewmember shall contact and advise Pilot Crew Scheduling in order to be removed from the flight assignment. A Fatigue Report should be completed to identify and address any systemic conditions that caused the fatigue (see 7.2.2 – Reporting Program). (AS) Removal from assignments for flight time due to fatigue will not be cause for disciplinary action, and will be accomplished as follows:'},
+    # ---- ch 5
+    'fom05-001': {'q': 'On the A330, what takeoff and landing operations are authorized on a narrow runway, and how is a narrow runway defined?',
+                  'a': 'None. On the A330 (as on the 717, 787 and A321), takeoff and landing are not authorized on any narrow runway. A narrow runway is one whose nominal paved width is less than 100 ft (30 m).',
+                  'quote': '(717/787/A321/A330) Takeoff and landing are not authorized on any narrow runway.',
+                  'note': 'The 100 ft / 30 m threshold defines a narrow runway; only the 737 has narrow-runway authorization, with restrictions.'},
+    'fom05-004': {'note': 'Brackets the rest facility to the cruise/enroute window. On the A330 the facility is the Lower Deck Module Crew Rest unit (LDMCR); see 5.1.23.8.', 'fleet': 'pax'},
+    'fom05-008': {'note': 'The A330, having two engines, uses this standard; when published minimums are higher and no special procedure exists, takeoff below published minimums is prohibited.'},
+    'fom05-009': {'q': 'What is the maximum takeoff-alternate distance for the A330?',
+                  'a': '370 nm.',
+                  'quote': 'A330 370 nm',
+                  'note': 'Per-fleet table in 5.4.2: A321 360 nm, A330 370 nm, 717 320 nm, 737 350 nm, 787 393 nm. Takeoff-alternate weather must meet destination-alternate requirements.'},
+    'fom05-011': {'q': 'On the A330, above what speed does a rejected takeoff require a return to the gate and a Maintenance Logbook entry regardless of the reason?',
+                  'a': 'Above 100 kts (Airbus). An RTO initiated at greater than 100 kts requires that the flight return to the gate and a Maintenance Logbook entry be made regardless of the reason for the RTO.',
+                  'quote': 'An RTO initiated at greater than (Airbus) 100 kts/(Boeing) 80 kts requires that the flight returns to the gate and a Maintenance Logbook entry be made regardless of the reason for the RTO.',
+                  'note': 'At or below the Airbus 100 kt threshold for correctable issues, no gate return is required, but brake temperature limits must still be considered and a Maintenance Logbook entry may be required. New speed-based rule in Rev 125.'},
+    'fom05-016': {'q': 'Is the A330 approved for RNP-4 enroute operations?',
+                  'a': 'Yes. All Company aircraft are approved for RNP-4 operations, with the exception of the 717, which is limited to RNP-10.',
+                  'quote': 'All Company aircraft are approved for RNP-4 operations, with the exception of the 717, which is limited to RNP-10.',
+                  'note': 'RNP-4 is the enroute oceanic/remote navigation capability the A330 carries.'},
+    'fom05-018': {'q': 'By what height must the A330 normally be aligned with the runway for an approach to be stabilized?',
+                  'note': 'An approach is stabilized only if all criteria are met; either crewmember may call a no-fault go-around, and do not land from an unstable approach.'},
+    'fom05-022': {'quote': '– A ceiling of no less than 1500 ft. – A visibility of no less than 5 sm. – LAHSO weather minima may be lowered to a ceiling of no less than 1000 ft and a visibility of no less than 3 sm where a Precision Approach Path Indicator (PAPI) or Visual Approach Slope Indicator (VASI) is installed and operational.',
+                  'note': 'LAHSO criteria were rewritten in Rev 125: prohibited on wet runways, not authorized to a runway without visual or electronic vertical guidance, not authorized if windshear has been reported.'},
+    'fom05-sc01': {'q': 'SCENARIO (check airman): You are the PM on an A330 visual to a wet runway. At 400 ft AFE the aircraft is fast and still drifting back toward centerline, not yet aligned. The PF says he will have it by the numbers. By 300 ft AFE it is still not aligned and airspeed is above target. What is the required action and who may take it?',
+                   'a': 'The approach is unstable. Normally the aircraft must be aligned with the runway by 500 ft AFE; it is not aligned by 500 ft, so the stabilized-approach gate is busted. Do not land from an unstable approach. Either crewmember may call for a go-around under the no-fault go-around policy, so the PM calls and the crew goes around.',
+                   'quote': 'An approach is stabilized only if all criteria are met. Normally, the aircraft must be aligned with the runway by 500 ft AFE. Approaches which include a 300 ft AFE runway alignment exception are indicated in the relevant airport 10-7.',
+                   'note': '500 ft AFE runway alignment is the gate (300 ft AFE only where an exception is published in the 10-7); an unaligned, fast approach past the gate requires a go-around.'},
+    'fom05-sc04': {'quote': 'During low visibility operations, the Captain must taxi the aircraft.'},
+    'fom05-r125a': {'q': 'Rev 125: how is A330 operational/in-flight landing distance now calculated, and what safety margin applies?',
+                    'a': 'On TALPA guidance, using a 7-second air/flare distance from 50 ft above the runway threshold to touchdown. A 15% safety margin is applied to total landing distance, including the air distance, for both maximum manual braking and autobrake. The touchdown point is not a fixed distance; it is calculated and varies with weight, pressure altitude, temperature, approach speed, and wind.',
+                    'note': 'New in Rev 125 and bannered (717/787/A321/A330). The old fixed touchdown-point model is now banner-tagged (737) and no longer describes the A330.'},
+    # ---- ch 6
+    'fom06-001': {'note': 'This 60-minute threshold is the trigger for ETOPS. The one-engine-inoperative cruise speed used to measure it is the A330 fleet value of .82M/290 KIAS (6.2.3).'},
+    'fom06-007': {'quote': 'The Alaska Airlines’ authorized MDT is 180 minutes.'},
+    'fom06-008': {'quote': 'would exceed the approved time for the aircraft’s most limiting ETOPS-significant system (including the aircraft’s most limiting fire-suppression system time for those cargo and baggage compartments required by regulation to have fire-suppression systems) minus 15 minutes.'},
+    'fom06-010': {'q': 'For the A330-200, what single-engine speed and what flying distances correspond to the 60-, 120-, and 180-minute rings?',
+                  'a': 'A330-200: .82M/290 KIAS, giving 408 nm at 60 minutes, 803 nm at 120 minutes, and 1200 nm at 180 minutes.',
+                  'quote': 'A330-200 .82M/290 KIAS 408 nm 803 nm 1200 nm',
+                  'note': 'These are the fixed A330-200 distances that define the range rings; the 60-minute ring (408 nm) marks the EEP/EXP distance. Table 6.2.3 also lists the A330-300F at 405/792/1183 nm.',
+                  'fleet': 'pax'},
+    'fom06-015': {'q': 'For the A330, what one-engine-inoperative reference speed, reference weight, and reference flight level are used to derive ETOPS speeds?',
+                  'a': 'A330: .82M/290 KIAS, a reference weight of 470,000 lb, and reference FL350.',
+                  'quote': 'A330 .82M/290 KIAS 470,000 350',
+                  'note': 'Reference weights and OEI flight levels derive the EEP/EXP distance and ETOPS area of operation for each fleet. For dispatch planning, actual planned weights are used.'},
+    'fom06-eq16': {'q': 'Before the EEP, what ETOPS-specific duty does the Dispatcher perform for the ETOPS alternates?',
+                   'a': 'Provide via ACARS, SATCOM, or HF any relevant updates to weather and/or safety of flight NOTAMs for the ETOPS alternate airports.',
+                   'quote': 'Before EEP Provide via ACARS, SATCOM, or HF any relevant updates to weather and/or safety of flight NOTAMs for ETOPS alternate airports.',
+                   'note': 'Enroute the Dispatcher evaluates weather, NOTAMs and field conditions at each designated ETOPS alternate from earliest to latest arrival time, watches for fuel-consumption variance, and relays significant changes. The FOM does not state a crew-acknowledgement requirement.'},
+    'fom06-eq17': {'q': 'What is the ETOPS Dual Maintenance Limitation?',
+                   'a': 'Restrictions are placed on performing dual maintenance on ETOPS Significant Systems to prevent failures.',
+                   'quote': 'Dual Maintenance Limitations: Restrictions are placed on performing dual maintenance on ETOPS Significant Systems to prevent failures.',
+                   'note': 'Part of the ETOPS maintenance program (6.5.1) alongside the Verification Program and Monitoring Programs.'},
+    'fom06-eq19': {'q': 'What three checks does the ETOPS Pre-Departure Service Check (PDSC) include at minimum?',
+                   'a': 'Verification of the condition of all ETOPS Significant Systems; verification of the overall status of the aircraft by reviewing applicable maintenance records; and an interior and exterior inspection including engine and APU oil levels and consumption rates.',
+                   'quote': '• Verification of the condition of all ETOPS Significant Systems (see 6.5.3 – ETOPS Significant Systems) • Verification of the overall status of the aircraft by reviewing applicable maintenance records • An interior and exterior inspection to include a determination of engine and APU oil levels and consumption rates'},
+    'fom06-eq24': {'q': 'What weather condition must be met before the Dispatcher lists an airport as an ETOPS alternate on the Dispatch Release?',
+                   'a': 'The appropriate weather reports or forecasts, or any combination, must indicate the weather will be at or above the ETOPS alternate airport minima specified in Ops Spec C055 from the earliest to the latest time of arrival.',
+                   'quote': 'The Dispatcher will not list an airport as an ETOPS alternate airport on the Dispatch Release unless: • The appropriate weather reports or forecasts, or any combination thereof, indicate that the weather conditions will be at or above the ETOPS alternate airport minima specified in Ops Spec',
+                   'note': 'The airport must also be an adequate airport listed in 8.1.3 - Authorized Airports, and field condition reports must indicate a safe landing can be made.'},
+    'fom06-sc01': {'q': 'Check-airman scenario: You are 8 minutes from the ETOPS Entry Point (EEP) on the A330 to Honolulu when Dispatch relays that your designated ETOPS alternate\'s weather has just dropped below the crew\'s operating minima and no METAR is coming. What is required, and how would it differ if this happened AFTER the EEP?',
+                   'quote': '• A turnback is required if an ETOPS alternate is no longer available. After the EEP: • A turnback is not required if weather at the ETOPS alternate is below the crew’s operating minima or the runway is unusable. • If required, attempt to establish a new ETOPS alternate with Dispatch which may lead to a turnback, reroute, or continuation on planned route.'},
+    'fom06-sc02': {'a': 'Divert to the nearest SUITABLE airport in the Captain\'s judgment (14 CFR 121.565). By definition of the ETP, once you are past it the airport ahead now takes the least time, so it is generally the diversion field. Fly the approved one-engine-inoperative cruise speed, .82M/290 KIAS for the A330, which is the planned diversion speed; the Captain may deviate only after assessing the emergency and considering fuel remaining. The ETP is a wind-based planning point (Alaska computes ETPs at 10,000 ft) and the flight-planning system does not account for the time and fuel to make the 180 degree turn near the ETP.',
+                   'quote': '14 CFR 121.565 requires the Captain of a two-engine aircraft with one engine inoperative to land at the nearest suitable airport where, in the Captain’s judgment after considering all relevant factors, a safe landing can be made.'},
+    'fom06-sc03': {'quote': 'An ETOPS PDSC Airworthiness Release will be valid for four (4) hours from the time the Airworthiness Release block was signed in the M258 Aircraft Maintenance Logbook. If, at the end of four (4) hours, the flight or aircraft is not ready for departure and boarding has not started, the PDSC is invalidated.'},
+    'fom06-sc04': {'quote': 'ETOPS regulations do not add any additional fuel requirements once in flight.'},
+    # ---- ch 7
+    'fom07-002': {'quote': 'text is only supported in oceanic airspace. Only use standard aviation terminology. Free text in domestic airspace is not supported.'},
+    'fom07-003': {'quote': 'For operations outside of the US, the word “Heavy” applies to aircraft capable of takeoff with weights of 300,000 lbs or more and is only required upon initial contact with the tower and approach/departure control.',
+                  'note': 'In the US terminal area the 787 and A330 must add "Heavy" to the call sign in all air/ground communications; it is not required during enroute communications.'},
+    'fom07-013': {'q': 'By how much must actual fuel remaining differ from planned before contacting Dispatch on the A330?',
+                  'a': 'By plus or minus 3000 lbs on the A330 (and 787). The 717, 737 and A321 threshold is plus or minus 2000 lbs.',
+                  'quote': '(787/A330) ± 3000 lbs.',
+                  'note': 'Contact Dispatch as safety-of-flight considerations permit; notification is mandatory but timing is workload-dependent.'},
+    'fom07-015': {'note': 'On the A330 (and 717/A321) this is the No Smoking Switch; on the 737 the Fasten Seat Belts Switch. The chime is mandatory even if the cabin was already prepared for arrival due to turbulence.'},
+    'fom07-016': {'note': 'It is a verbatim announcement and must not be combined with any other announcement.'},
+    'fom07-sc03': {'quote': 'text is only supported in oceanic airspace. Only use standard aviation terminology. Free text in domestic airspace is not supported.'},
+    'fom07-sc04': {'quote': 'Position reports should include: • Company ID and type A/C • Position and Altitude • Direction of flight and intentions (landing or overflying)'},
+    # ---- ch 8
+    'fom08-003': {'quote': 'Add 400 ft to MDA(H) or Add 1 sm or 1600 m to A CAT I precision approach procedure, DA(H), as applicable landing minimum',
+                  'note': 'Table 8.2.2.1 cells run together in the text extract. Read as: one operational navigational facility, add 400 ft to MDA(H) or DA(H) as applicable, and add 1 sm or 1600 m to the landing minimum.'},
+    'fom08-004': {'quote': 'At least two operational navigational Add 200 ft to higher Add 1/2 sm or 800 m facilities, each providing a straight-in DA(H) or MDA(H) to higher authorized',
+                  'note': 'Table 8.2.2.1 cells run together in the text extract. Read as: at least two operational navigational facilities to different suitable runways, add 200 ft to the higher DA(H) or MDA(H) of the two approaches used, and add 1/2 sm or 800 m to the higher authorized landing minimum.'},
+    'fom08-016': {'q': 'Under the B043 Special Fuel Reserves in International Operations, how are the two extra reserve components computed?',
+                  'sref': 'FOM 8.3.2.3, Special Fuel Reserves in International Operations (737/787/A321/A330)',
+                  'note': 'On the (787/A321/A330) international release these appear as "10% RSV" and "45@CRZ" (B043) versus "30@1500" for standard flag. Rev 125 removed the Hawaii-only restriction.'},
+    'fom08-018': {'q': 'What is the maximum flight duration for which an aircraft may be dispatched with all autopilot systems inoperative, and what approval is needed?',
+                  'quote': 'Aircraft will not be dispatched for flights greater than 3.5 hours if all autopilot systems are inoperative without approval from the Captain and Dispatcher.'},
+    'fom08-sc01': {'q': 'Check-airman scenario: You dispatch an A330 on a domestic leg with a destination alternate required, and later the same day the crew flies an international flag leg. Contrast the required reserve fuel components for the domestic leg versus the flag leg.',
+                   'a': 'Domestic (14 CFR 121.639): fuel to the destination, then to the most distant alternate, plus 45 minutes at last cruise altitude consumption rate, or 55 minutes at last cruise altitude consumption rate if no alternate is required. Flag (14 CFR 121.645): fuel to the destination, then 10% of the total departure-to-destination time, then to the most distant alternate if one is required, then 30 minutes at holding speed at 1500 ft above the destination or alternate.',
+                   'note': 'Domestic keys on the 45/55-minute last-cruise-rate reserve; Flag adds the 10%-of-total-time burn plus a 30-minute hold at 1500 ft, the signature that separates the two.'},
+    'fom08-sc03': {'q': 'Check-airman scenario: You are planning an A330 from SEA to LAX, both in the contiguous 48. The LAX forecast at ETA +/- 1 hour is 2500 ft ceiling and 4 sm. May you dispatch with no destination alternate, and what is the governing rule?',
+                   'quote': 'conditions will be at least 2000 ft ceiling and 3 sm'},
+    'fom08-sc04': {'q': 'Check-airman scenario: An A330 is dispatched from the West Coast to Hawaii under planned redispatch, with the redispatch waypoint set late in the overwater leg. How late may Dispatch remove the destination alternate, and what condition must the intended destination meet?'},
+    'fom08-r125a': {'quote': 'A Dispatch Release and ATS Flight Plan will be generated and made available to the Flight Crew 90 minutes prior to the scheduled flight departure time except as noted below: • Interisland Hawaii: 70 minutes • South Korea Departures: 180 minutes • Amazon Cargo: 180 minutes • (787/A330) Europe Departures: 180 minutes', 'q': 'Rev 125: how far before scheduled departure is the Dispatch Release and ATS Flight Plan made available, and which A330 flying is the exception?',
+                    'note': 'The (787/A330) Europe line is new in Rev 125, and it drives a D-180 Operational Control Window per FOM 2.2.2.1.'},
+    # ---- ch 9
+    'fom09-003': {'quote': 'degrade to 3/3/3 instead of 5/5/5.'},
+    'fom09-007': {'note': 'LTP calculations are not applicable for Autoland.'},
+    'fom09-009': {'q': 'For the A330, what minimum prepared surface width must contaminated runway preparation leave for takeoffs and landings to be allowed?',
+                  'quote': 'A330 45 m 148 ft',
+                  'note': 'Takeoffs and landings are prohibited if contaminated runway preparation leaves an available prepared surface width less than the A330 figure of 45 m (148 ft). The 787 and A321 share the value; the 717 is 30 m and the 737 is 18 m.'},
+    'fom09-sc01': {'q': 'Check-airman scenario: You are departing on a runway with a FICON of 3/3/3, packed snow, a hard-packed contaminant. Your FO wants to use a FLEX (assumed temperature) takeoff. What thrust setting is legal here, and why does contaminant type drive your data selection?'},
+    # ---- ch 10
+    'fom10-001': {'quote': 'Crew Resource Management (CRM) is intentionally placed at the bottom of the model to signify that CRM is the foundation of TEM.'},
+    'fom10-007': {'quote': 'Resolutions may consist of command (“my way”), collaborate (“our way”), or accommodate (“your way”).'},
+    'fom10-008': {'quote': 'Uses “Ask, Say, Command” as applicable to restore degraded situational awareness and/or safety margins.'},
+    'fom10-009': {'quote': 'environmental threats, which are outside the airline’s direct control, such as weather, ATC, and Terrain, and airline threats, which originate within flight operations, such as system malfunctions, scheduling, and ground problems.'},
+    'fom10-015': {'quote': 'communicate in a clear, concise, and effective manner what they have observed (i.e., “See it, Say it”).'},
+    'fom10-sc03': {'quote': 'As a last resort, the PM must assume aircraft control to restore safety margins. (e.g., PM: “I have control, going around.” PF: “You have control.”).'},
+    # ---- ch 11
+    'fom11-005': {'note': 'On the A330 (and A321), when the Flight Crew calls MedLink they relay information between the cabin and MedLink.'},
+    'fom11-018': {'q': 'For an A330 decompression over charted terrain polygons, what is the initial descent altitude?',
+                  'a': 'Always 17,000 ft or FL170 on the A330 (and 737). Only the 787 takes a polygon-specific altitude from the detail drawer in Jeppesen FD Pro.',
+                  'sref': 'FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)',
+                  'quote': '(737/A330) Initial descent altitude is always 17,000 ft or FL170.',
+                  'note': 'Rev 125 rewrote 11.2.9 and deleted the regional decompression procedures from the theater chapters. Each polygon still has its own escape procedure in the FD Pro detail drawer.'},
+    'fom11-sc02': {'q': 'CHECK-AIRMAN SCENARIO: Rapid decompression at cruise over charted high-terrain polygons in your A330. Walk me through the masks, the descent target that relieves physiological reactions, and how you pick the initial descent altitude.',
+                   'a': 'Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.',
+                   'sref': 'FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)',
+                   'note': 'Rev 125.1. (737/A330) initial descent altitude is always 17,000 ft or FL170; only 787 altitudes vary by polygon. Quick-don masks are designed to be donned with one hand within 5 seconds (11.2.8).'},
+    'fom11-sc03': {'q': 'CHECK-AIRMAN SCENARIO: A passenger collapses two hours into an overwater leg. Who do you contact, who has final authority on whether to divert, and how does the A330 crew loop the flight attendants into the call?',
+                   'a': 'Contact MedLink Inflight Medical Assistance at (602) 282-4910; with MedLink\'s advice and Dispatch, the Captain determines whether a medical diversion is necessary and coordinates diversion-airport preferences. Company policy is to follow MedLink\'s recommendation, but the Captain retains final authority on any operational request. On the A330 the Flight Crew relays information between the cabin and MedLink.',
+                   'note': 'MedLink Inflight Medical Assistance: (602) 282-4910. (A321/A330) The Flight Crew will relay info between cabin and MedLink (11.1.9.3).'},
+    'fom11-020': {'fleet': 'pax', 'sref': 'FOM 11.2.12.1, Cabin Crew Initiated Evacuation (717/787/A321/A330P)'},
+    # ---- ch 12
+    'fom12-010': {'q': 'On the A330, what restriction applies to a #1 engine run relative to the boarding door and jetway?',
+                  'quote': '(787/A330) #1 engine runs are not permitted with the boarding door(s) open or the jetway extended to the boarding door(s).',
+                  'note': 'Doors not used for boarding are also closed to minimize the FOD hazard, both pilots are at their stations, and the aircraft is chocked with the parking brake set.'},
+    'fom12-015': {'q': 'For the A330, a high-speed rejected takeoff requires a Maintenance Logbook entry above what speed, and what three items must be noted?',
+                  'a': 'Above 100 kts (Airbus). Note the gross weight, reject speed, and braking effort.',
+                  'quote': '• Rejected takeoff – high speed above (Airbus) 100 kts/(Boeing) 80 kts (note gross weight, reject speed, braking effort)'},
+    'fom12-sc02': {'a': 'No. On the A330, #1 engine runs are not permitted with the boarding door(s) open or the jetway extended to the boarding door(s). Retract the jetway and close that door first. Doors not used for boarding are closed to minimize FOD, both pilots must be at their stations, the aircraft chocked with parking brake set, and a dedicated Engine Safety Observer stationed at the side of the engine.'},
+    'fom12-sc03': {'q': 'CHECK-AIRMAN SCENARIO: At a remote station your APU is MEL\'d inoperative, there is no ground power and no ground air, and you will be stranded if you shut down. Ground crew asks if you can hot-fuel with the #2 engine running. Assume the A330 fleet-specific manuals publish no procedure for single-engine-running fueling. Are you authorized?',
+                   'a': 'No. Fueling with one engine running is only considered where a lack of APU, external power, or ground air would strand the aircraft, and only per the FH/FCOM procedure. If the fleet-specific manuals do not specify a procedure, fueling with one engine running is not authorized regardless of the stranding risk.'},
+    # ---- ch 13
+    'fom13-007': {'quote': 'Spare lithium batteries of any type, including external battery chargers containing a lithium- ion battery, may not be placed in checked baggage because of the potential fire hazard.'},
+    'fom13-008': {'quote': 'during a ground delay of 15 minutes or longer with the Captain’s permission.'},
+    'fom13-sc01': {'q': 'SCENARIO: On the A330, a customer seated in the emergency exit row raises a disability concern moments before door closure. The gate agent already checked him in and a CRO, called to consult, believes the seat is fine. The lead Flight Attendant judges the customer cannot perform the exit functions. Who has the final say on whether he keeps that exit seat, and on what basis?'},
+    'fom13-sc02': {'q': 'SCENARIO: Your A330 is airborne. A passenger\'s service animal, a dog, growls and lunges at other customers in the cabin, meeting the unacceptable-behavior criteria. There is no CRO on board. As Flight Crew, what four items should you relay so the situation is handled on arrival?',
+                   'quote': 'After an incident involving unacceptable service animal behavior, the Flight Crew should relay the following: • Seat number • Passenger name • Brief description of the incident • Request that a CRO meet the aircraft'},
+    'fom13-sc03': {'q': 'SCENARIO: Two oxygen items show up for the same A330 flight. A passenger wants to bring an authorized Portable Oxygen Concentrator (POC) into the cabin and use it in cruise; separately, Cargo presents a filled oxygen bottle for the hold. How is each handled, and what paperwork does the filled bottle require?',
+                   'quote': 'Authorized POCs may be carried in the cabin and used by passengers. An authorized POC is either on the FAA-approved list available to the CSA and in the Flight Attendant Manual, or it will have a label in red lettering stating it meets the FAA-acceptance criteria. POCs are not considered HAZMAT.'},
+    # ---- ch 14
+    'fom14-017': {'quote': 'of the DG product including packaging. Only used for Class 9 DG shipments.'},
+    'fom14-018': {'note': 'The NOTOC also notes all lower-compartment DG is inaccessible in flight.'},
+    'fom14-sc01': {'q': 'CHECK-AIRMAN SCENARIO: You are Captain on the A330. Your eNOTOC lists three DG shipments, but the ACARS Load Closeout shows four HAZMAT lines. What is this crosscheck telling you and what do you do?',
+                   'quote': 'The number of items on the ACARS Load Closeout must be equal to the number of shipments listed on the NOTOC (Exception: see Systems Failures below). This is a discrepancy crosscheck only.'},
+    'fom14-sc03': {'q': 'CHECK-AIRMAN SCENARIO: A passenger boards your A330 with dry ice packing a cooler of fresh fish. On a domestic segment no NOTOC is needed within limits, but when does that dry ice become a NOTOC item?'},
+    # ---- ch 15
+    'fom15-003': {'quote': 'The Flight Deck Door shall be closed and locked from pushback (or from engine start if pushback is not required) until the time the aircraft has been brought to a stop at its final position on the ramp and the engines are shut down.'},
+    'fom15-011': {'quote': 'If a KCM/CMAP participant has a boarding pass with SSSS printed on it, the crewmember must proceed to a standard passenger screening checkpoint and undergo screening as directed.'},
+    'fom15-016': {'quote': 'The CSA only needs to verify the Team Lead’s ID. The Flight Crew need not check ID; however, if there is doubt as to the identity of the individual, contact Dispatch via telephone. Do not use the aircraft radio.'},
+    'fom15-r125b': {'q': 'Rev 125: on the A330, which galley cart arrangement options remain when the Flight Deck Door is opened without an IPSB?',
+                    'a': 'Options 1 or 2 only. Rev 125 deleted Option 3 for the 787/A330.',
+                    'note': 'Through 124.2 this read Options 1, 2, or 3. Option 3 no longer exists for the 787/A330. On the 717/737/A321 a second F/A stands facing aft as the cabin observer instead.'},
+    'fom15-019': {'quote': 'Once the Flight Deck Door has been “locked down” in response to a Level 3 or Level 4 threat, the door shall not be reopened under any circumstances'},
+    # ---- ch 16
+    'fom16-013': {'q': 'Does an A330 require a Maintenance Check Flight after a double-engine change, and which group is it?',
+                  'a': 'Yes. A 787/A330/A321 flight after a double-engine change is a Group 2 Maintenance Check Flight, which must be flown by a qualified Functional Check Pilot.',
+                  'quote': 'A 787/A330/A321 flight after a double-engine change. (717 double engine change does not require a Maintenance Check Flight provided both engines have undergone test cell runs.)'},
+    'fom16-014': {'quote': 'Group 1 Maintenance Check Flights, also referred to as an “evaluation flight,” are conducted for the purpose of verifying whether maintenance repairs have successfully corrected a specific aircraft problem.'},
+    'fom16-sc01': {'q': 'CHECK-AIRMAN SCENARIO: Maintenance has just completed a double-engine change on an A330 and requests a check flight. What group is this Maintenance Check Flight, who must be at the controls, and under what Part does it operate?',
+                   'note': 'A 787/A330/A321 flight after a double-engine change is a listed Group 2 example. Group 2 involves specialized training and may require emergency, abnormal, or special procedures.'},
+    'fom16-sc02': {'q': 'CHECK-AIRMAN SCENARIO: An A330 has a mechanical defect that is being deferred, and it must be flown empty to a maintenance base on a Special Flight Permit Ferry under Ops Spec D084. Can you carry passengers or cargo, may MELs be applied, and how many Maintenance Logbook entries are required?',
+                   'a': 'No passengers or cargo may be carried. MELs may be applied to flights on a Special Flight Permit. Two Maintenance Logbook entries are required: one deferring the defect by referencing the Special Flight Permit, and one stating the aircraft is safe for the intended flight and the Flight Crew has been briefed. The Flight Crew shall not perform any troubleshooting or non-standard activities.'},
+    'fom16-sc03': {'q': 'CHECK-AIRMAN SCENARIO: You are positioning an A330 under Part 91 with no Flight Attendants on board, and a non-employee observer asks to ride along. Is that allowed, and whose authorization would it take?'},
+    # ---- ch 18
+    'fom18-006': {'q': 'During pre-departure disinsection spraying, what must the A330 crew do if on board while the cabin is sprayed?',
+                  'a': 'On Airbus aircraft, turn off the air conditioning packs during the disinsection process. Crews are not required to remain on board once the aircraft has been configured.',
+                  'quote': 'If on board while the cabin spraying takes place, pilots shall (Airbus) turn off the air conditioning packs during the disinsection process or (787) ensure the entire aircraft is powered down including disconnected from ground power.',
+                  'note': 'New procedures in Rev 125 (18.1.10). Smoke detectors may detect the aerosol during spraying; see 18.1.10.3 for the spurious-warning window.'},
+    'fom18-014': {'quote': 'To use a PBCS filing code, the following items are required: • CPDLC/FANS 1/A+ • RNP-4 • RCP240 • ADS-C • TCAS • RSP180'},
+    # ---- ch 19-24
+    'fom1924-002': {'q': 'Under FOM 125.1, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?',
+                    'a': 'There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.',
+                    'sref': 'FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)',
+                    'quote': '(737/A330) Initial descent altitude is always 17,000 ft or FL170.'},
+    'fom1924-005': {'note': 'The 737/787/A321/A330 are RCP240, RSP180, and RNP4 capable unless an MEL reduces capability.'},
+    'fom1924-017': {'a': 'None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.',
+                    'sref': 'FOM 11.2.9 (Ch 11) and FOM 22.2 (Ch 22)'},
+    'fom1924-019': {'a': 'RNAV 5 requires aircraft to maintain a lateral navigation accuracy of plus or minus 5 nm for at least 95% of the flight time during the enroute phase. It is the standard for area navigation in ECAC enroute airspace, including SIDs and STARs into and out of terminal areas. The A330 (with the 737, 787 and A321) is RNAV 5 compliant unless degraded by inoperative equipment.',
+                    'quote': 'a lateral navigation accuracy of ±5 nm for at least 95% of the flight time.'},
+    'fom1924-sc01': {'q': 'SCENARIO (Pacific): On a Japan-to-North America leg the check airman assigns you a PACOTS track that then joins a NOPAC route. What navigation/performance approvals must the A330 hold for (a) the PACOTS track itself, and (b) the NOPAC segment?'},
+    'fom1924-sc02': {'q': 'SCENARIO (Atlantic): During NAT HLA prep the check airman fails one IRS at the gate on your A330, then asks whether you can still dispatch into NAT HLA and what the minimum post-departure comms suite is. What do you tell him?',
+                     'a': 'No single-IRU relief exists for the A330. FOM 22.1.10 requires dual Inertial Reference Systems, dual long-range navigation systems (2 MCDUs), dual NDs, one GPS receiver, ADS-C, CPDLC, SATCOM data link, and two HF radios (or a single HF radio and SATVOICE) for NAT HLA. The single-IRU dispatch note applies only to the 787. After departure, only a single HF radio and SATCOM data link are required.',
+                     'sref': 'FOM 22.1.10, Required Equipment for NAT HLA Airspace',
+                     'quote': '• Dual Inertial Reference Systems (IRS) • Dual Long Range Navigation Systems (to include 2 MCDUs) • Dual Navigation Displays (ND) • One GPS Receiver • ADS-C • CPDLC • SATCOM data link • Two HF Radios or a single HF Radio and SATVOICE',
+                     'note': 'Equipment failure after pushback but before entry that removes CPDLC and/or ADS-C: requests to operate in NAT DLM airspace are considered case by case; notify ATC and Dispatch as soon as possible.'},
+    'fom1924-sc03': {'a': 'Do not modify the FMS route. Use the FMS Lateral Offset feature to build the weather-avoidance offset, then request that track deviation from Oceanic Control; the clearance is usually granted up to the requested offset. LNAV/NAV need not remain engaged during the deviation. When you call ATC or ARINC, state WEATHER DEVIATION REQUIRED to get priority.',
+                     'quote': 'Weather avoidance offsets must be accomplished utilizing the FMC/FMS Lateral Offset feature. Select a nm offset distance that will provide an adequate weather avoidance distance and request that track deviation from Oceanic Control; the clearance will generally be granted as “up to” the requested offset distance.',
+                     'note': 'Contingency procedures for a deviation without a clearance are in the theater chapter and ICAO Doc 4444; brief them for the crossing.'},
+}
+
+# ---------------------------------------------------------------------------
+# ADD: new records (A330-bannered paragraphs and Rev 123.1 to 125.1 changes).
+# Tuple: (chapter key, q, a, ref, sref, quote, note, fleet)
+# ---------------------------------------------------------------------------
+ADD = [
+    # ch 2
+    ('02', 'What is the minimum EFB battery charge to begin a flight duty day or training event, and what is the minimum for a departure?',
+     '80% to begin a flight duty day or training event, unless the pilot carries an external backup battery of sufficient capacity and charge. 20% minimum for a departure.',
+     'FOM 2.5.1.4', 'FOM 2.5.1.4, EFB',
+     'To begin a flight duty day or training event, the minimum EFB battery charge status required is 80%, unless the pilot carries an external backup battery of sufficient capacity and charge. • Before each flight: minimum EFB battery charge for a departure is 20%.',
+     'New in Rev 124.2. Two numbers: 80% to show up, 20% to depart.', 'both'),
+    ('02', 'How long before a flight must a person requesting jumpseat access (or issued a jumpseat boarding pass) not consume alcohol?',
+     'Within 10 hours of the flight. If issued a jumpseat boarding pass, alcohol shall not be consumed on board.',
+     'FOM 2.6.3', 'FOM 2.6.3, Alcoholic Beverages',
+     'Any individual requesting jumpseat access or issued a jumpseat boarding pass (even if occupying a seat in the cabin) shall not consume alcohol within 10 hours of the flight. If issued a jumpseat boarding pass, alcohol shall not be consumed on board.',
+     'Rev 125 wording. Also: occupants must not consume alcohol in the cabin before using the crew rest facility, and deadheading crewmembers may not consume alcohol in or out of uniform.', 'both'),
+    ('02', 'May a working Flight Crewmember bring a dependent under 13 as a non-rev on their own operating flight?',
+     'Only if another adult accompanies the dependent. Family members must adhere to all non-rev travel rules.',
+     'FOM 2.6.15', 'FOM 2.6.15, Traveling with Family While on Duty',
+     'Working crewmembers may have family non-rev on the same operating flight. Family members must adhere to all non-rev travel rules. Working Flight Crews may not bring dependents under the age of 13 on flights unless another adult accompanies the dependent.',
+     'New section in Rev 125.', 'both'),
+    ('02', 'On which operations is the uniform blazer required?',
+     'Blazers are required on international widebody passenger operations.',
+     'FOM 2.6.9.1', 'FOM 2.6.9.1, Uniform Guidelines',
+     'Blazers are required on international widebody passenger operations.',
+     'Rev 125 uniform guidance. The blazer carries metal wings and sleeve rating stripes reflecting current awarded status regardless of seat occupied.', 'pax'),
+    # ch 5
+    ('05', 'When should the APU be started before pushback?',
+     '10 minutes prior to the anticipated pushback, unless it is required earlier for passenger comfort or equipment (PCA or external power) issues.',
+     'FOM 5.1.8.2', 'FOM 5.1.8.2, APU Use',
+     'The APU should be started 10 minutes prior to the anticipated pushback, unless it is required for passenger comfort or equipment (PCA or external power) issues.',
+     'Rev 125 made this all-fleet. Prioritize ground-supplied preconditioned air; if external power or PCA is not connected on arrival at the aircraft, call Ops before starting the APU.', 'both'),
+    ('05', 'On the A330, how far may a cabin door be opened without fall protection in place?',
+     'Not any distance. On the 717/787/A321/A330, cabin doors must not be opened any distance without proper fall protection in place prior to door opening (the 737 allowance is 12 inches).',
+     'FOM 5.1.12', 'FOM 5.1.12, Cabin Door Operation',
+     '(717/787/A321/A330) Cabin doors must not be opened any distance without proper fall protection in place prior to door opening.',
+     'Relevant when no Cabin Crew is on board, such as ferry or check flights.', 'both'),
+    ('05', 'If potable water had to be drained and cannot be refilled (for example in extreme cold), is an MEL required to operate without it?',
+     'No. In these instances an MEL does not need to be applied to operate without potable water.',
+     'FOM 5.1.14', 'FOM 5.1.14, Potable Water',
+     'In rare conditions, the water may need to be drained and cannot be refilled (e.g., extreme cold temperatures). In these instances, an MEL does not need to be applied to operate without potable water.',
+     'Rev 125. Whether to operate without potable water is otherwise at the Captain\'s discretion considering flight time, passenger load, and availability of bottled water, wipes and hand sanitizer.', 'both'),
+    ('05', 'When must a broadband (entertainment system) outage be written up in the Maintenance Logbook?',
+     'If the broadband system drops offline and does not automatically reestablish internet connectivity before the end of the flight, write it up at the completion of the flight.',
+     'FOM 5.1.15', 'FOM 5.1.15, Entertainment System (broadband)',
+     'If the broadband system drops offline and does not automatically reestablish internet connectivity before the end of the flight, it should be written up in the Maintenance Logbook at the completion of the flight.',
+     'New section in Rev 125. Short intermittent dropouts due to reception are expected and need no write-up.', 'both'),
+    ('05', 'On the A330, how many Flight Crew and how many Cabin Crew may use the Lower Deck Module Crew Rest (LDMCR) at any time, and which bunks are the Flight Crew bunks?',
+     'No more than 2 Flight Crew and 4 Cabin Crew at any time. Bunks 1 and 4 are reserved for Flight Crew and non-revenue HA pilots; bunks 2, 3, 5, and 6 are for Cabin Crew.',
+     'FOM 5.1.23.8', 'FOM 5.1.23.8, A330 Crew Rest Facility',
+     'There are 2 bunks (1 and 4) reserved for Flight Crew and non-revenue HA pilots, and 4 bunks (2, 3, 5, and 6) reserved for Cabin Crew. Flight Crew and non-revenue HA pilots must not use bunks 2, 3, 5, or 6, and Cabin Crew must not use bunks 1 or 4. The FAA requires Flight Crew sleeping quarters to meet certain minimum standards, and only bunks 1 and 4 meet these standards. No more than 2 Flight Crew and 4 Cabin Crew are authorized to use the LDMCR at any time.',
+     'Only bunks 1 and 4 meet the FAA Flight Crew sleeping-quarter standard. Use PA+ALL and the handset push-to-talk to make a cabin PA without disturbing the LDMCR.', 'pax'),
+    ('05', 'On an A330 with all LDMCR available, which pilot crew rest seats must be blocked for an Augmented Crew?',
+     'Hard block 3C or 3G, with the other of 3C or 3G as last sold/last assigned. For a Double Augmented or Double Crew, hard block both 3C and 3G.',
+     'FOM 5.1.23.8.1', 'FOM 5.1.23.8.1, Pilot Crew Rest Seats',
+     'A330 – All LDMCR Available Hard Blocked: 3C or 3G Last Sold/Last Assigned: 3C or 3G, whichever is not hard Hard Blocked: 3C and 3G blocked',
+     'Table 5.1.23.8.1(1) cells run together in the text extract; the Augmented column is 3C or 3G hard blocked plus the other last sold, the Double column is 3C and 3G hard blocked. Pilot crew rest seats are required on all Augmented, Double Augmented, or Double Crew flights.', 'pax'),
+    ('05', 'If the decision is made to deplane during boarding or before departure, who should be notified first and why?',
+     'The CSA, before deplaning begins, to give the station time to prepare (open the flight, coordinate installation of a tail stand).',
+     'FOM 5.2.4', 'FOM 5.2.4, Passenger Boarding',
+     'If during the boarding process or prior to departure the decision to deplane is made, the CSA should be notified before deplaning begins to give station time to prepare (e.g., open the flight, coordinate installation of tail stand).',
+     'Rev 125 addition.', 'both'),
+    ('05', 'When and to what address do you log on CPDLC for Iceland?',
+     'Climbing through FL100, logon address BIRD.',
+     'FOM 5.2.15', 'FOM 5.2.15, CPDLC Logon Policy',
+     'Iceland Climbing through FL100 BIRD',
+     'Iceland was added to the logon table in Rev 125. Japan and New Zealand are climbing through 10k (RJJJ, NZZO); Mexico is during preflight (KUSA); South Korea is east of Japan (RJJJ); Tahiti climbing through 10k (NTTT).', 'both'),
+    ('05', 'On the A330, is a forward tow permitted with both engines running?',
+     'No. For the 787 and A330 the Ground Crew policy currently prohibits forward tow operations with both engines running.',
+     'FOM 5.2.23', 'FOM 5.2.23, Pushback',
+     '(787/A330) The Ground Crew policy currently prohibits forward tow operations with both engines running.',
+     'The Marshaller may also delay engine start until pushback is complete if ramp conditions do not permit.', 'both'),
+    ('05', 'On a visual approach with an instrument approach available to the landing runway, what must the pilots do with the navaid and FMS?',
+     'Tune, identify, and monitor the appropriate navigational aid and/or program the FMS as a backup for guidance. This is mandatory; the time-permitting qualifier was removed in Rev 125.',
+     'FOM 5.6.6.3', 'FOM 5.6.6.3, Visual Approach Monitoring',
+     'When an instrument approach is available to the runway of intended landing, pilots shall tune, identify, and monitor the appropriate navigational aid and/or program the FMC/FMS as a backup for guidance.',
+     'Rev 125 changed this from a time-permitting recommendation to a shall.', 'both'),
+    ('05', 'On the A330, when may a VNAV approach be flown to a DA(H) in lieu of the published MDA(H)?',
+     'When the chart contains a note stating "Only authorized operators may use VNAV DA(H) in lieu of MDA(H)" or "VNAV DA(H) in lieu of MDA(H) depends on operator policy." Refer to the fleet-specific manuals for procedures.',
+     'FOM 5.6.14.1', 'FOM 5.6.14.1, VNAV Approaches Using DA in lieu of MDA (787/A321/A330)',
+     'VNAV approaches may be flown to the published MDA(H) if the chart contains a note stating: • “Only authorized operators may use VNAV DA(H) in lieu of MDA(H),” or • “VNAV DA(H) in lieu of MDA(H) depends on operator policy.” Refer to the fleet-specific manuals for procedures.',
+     'Ops Spec C073. Bannered (787/A321/A330).', 'both'),
+    ('05', 'On the A330, is a one-engine-inoperative CAT II Autoland authorized? A CAT III?',
+     'CAT II yes: Ops Spec authorization allows one-engine inoperative CAT II Autoland on the A321/A330. CAT III no: one-engine CAT III Autoland is not authorized.',
+     'FOM 5.6.17.2 / 5.6.17.3', 'FOM 5.6.17.2 and 5.6.17.3, CAT II and CAT III Operating Limitations',
+     '(A321/A330) Ops Spec authorization allows for one-engine inoperative CAT II Autoland.',
+     'The CAT III bullet reads: (A321/A330) One-engine CAT III Autoland is not authorized.', 'both'),
+    ('05', 'For Autoland operations on the A330, what qualification must the PIC hold, and on which runways are Autolands permitted?',
+     'The PIC must be Autoland qualified (787/A321/A330). Autoland approaches and landings are permitted on CAT II/III runways only, and pilots should advise the tower so the ILS critical zone is protected.',
+     'FOM 5.6.18', 'FOM 5.6.18, Autoland Operations',
+     '(787/A321/A330) The PIC must be Autoland qualified.',
+     'Ops Spec C061. The ILS critical area is normally protected when the weather is below 800 ft or 2 miles.', 'both'),
+    ('05', 'How must non-normal (abnormal) landing data be treated when determining runway suitability?',
+     'Unfactored data (no safety buffer) represents actual aircraft performance and must be considered the minimum acceptable limit.',
+     'FOM 5.6.24', 'FOM 5.6.24, Non-Normal Landing Data',
+     'Unfactored data (with no safety buffer) represents actual aircraft performance and must be considered the minimum acceptable limit.',
+     'Rev 125 made this all-fleet. Non-normal data may still be used for abnormals to determine runway suitability.', 'both'),
+    ('05', 'On the A330, below what height AGL must fuel jettison be avoided, and what ATC notifications are required?',
+     'Avoid jettisoning below 6000 ft AGL (also near cities and towns, into the jettisoned flow, and near thunderstorms). Notify ATC before starting jettison and when complete, and coordinate route, altitude, and duration.',
+     'FOM 5.6.29', 'FOM 5.6.29, Fuel Jettison (787/A330)',
+     'In the event the Captain elects to jettison fuel, the Flight Crew should minimize potentially adverse effects to humans, animals, or vegetation and avoid jettisoning: • Below 6000 ft AGL • Near cities and towns, and preferably remain over water • Into the jettisoned flow (which descends at about 500 ft/min) • Near areas where thunderstorms have been reported or are expected The Flight Crew must notify ATC prior to starting fuel jettison and when jettison is complete.',
+     'After jettisoning, complete a Pilot Report of Incident with date, time, and approximate amount jettisoned.', 'both'),
+    ('05', 'If a hard landing is suspected, what two actions does the FOM require?',
+     'Make a Maintenance Logbook entry, ensuring the defect description notes that it was a hard landing, and submit a safety report.',
+     'FOM 5.6.31', 'FOM 5.6.31, Hard Landing',
+     'Make a Maintenance Logbook entry, ensuring that in the defect description it is notated that it was a hard landing. • Submit a safety report.',
+     'A landing does not need to be overweight to be considered hard.', 'both'),
+    ('05', 'What ground personnel are required to park an A330 (manual or VDGS), and where are station exceptions published?',
+     'Two Wing Walkers and one Marshaller/VDGS Operator for the 787/A330. Station-specific exceptions to the two Wing Walker requirement are denoted in the airport 10-7.',
+     'FOM 5.6.33', 'FOM 5.6.33, Parking Requirements (manual or VDGS)',
+     '(787/A330) Two Wing Walkers and One Marshaller/VDGS Operator Station-specific exceptions to the requirement to have two Wing Walkers will be denoted in the airport 10-7.',
+     'Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum.', 'both'),
+    ('05', 'Approximately 2 minutes before an oceanic waypoint, what must the crew confirm?',
+     'That the upcoming waypoint and the subsequent waypoint (next + 1) agree with the Flight Plan/ATC clearance.',
+     'FOM 5.7.3.16', 'FOM 5.7.3.16, Waypoint Transition',
+     'Approximately 2 minutes prior to reaching a waypoint, confirm that the upcoming waypoint and the subsequent waypoint (next + 1) agrees with the Flight Plan/ATC clearance.',
+     'Rev 125 added the next + 1 requirement. After transition, record time and fuel from the FMS and compare with the estimates.', 'both'),
+    ('05', 'On CPDLC in oceanic airspace, what is required if SELCAL is not functioning?',
+     'One member of the crew must listen to HF continuously.',
+     'FOM 5.7.3.18', 'FOM 5.7.3.18, Position Reporting, Oceanic (CPDLC)',
+     'If SELCAL is not functioning, one member of the crew must listen to HF continuously.',
+     'Rev 125. SELCAL codes are also not unique (20.4.3.1): verify the callsign before responding.', 'both'),
+    # ch 6
+    ('06', 'Under FOM 125.1, which airports may be used as an adequate airport for ETOPS planning?',
+     'Any regular, provisional, refueling, or alternate airport listed in 8.1.3 Authorized Airports, provided the 6.2.1 criteria are met.',
+     'FOM 6.2.1', 'FOM 6.2.1, Adequate Airport',
+     'Any regular, provisional, refueling, or alternate airport may be used as an adequate airport provided it is listed in 8.1.3 – Authorized Airports.',
+     'Rev 125 re-pointed the definition from OpSpec B342/C070 to the single 8.1.3 table. An adequate airport may still be inappropriate for an actual diversion (RFFS, weather).', 'both'),
+    ('06', 'Before the EEP on an HA A330 ETOPS flight, what must be complete regarding ETOPS verification?',
+     'Complete any ETOPS verification flight checks (787/A321/A330).',
+     'FOM 6.3.5', 'FOM 6.3.5, Prior to Crossing ETOPS Entry Point (EEP)',
+     '(787/A321/A330) Complete any ETOPS verification flight checks.',
+     'The 737 line instead requires ETOPS system verification, Maintenance Control notification and an amended release. After the EEP (HA), monitor distance from an ETOPS alternate to stay within the ETOPS area of operation.', 'both'),
+    # ch 7
+    ('07', 'In the US terminal area, must the A330 add "Heavy" to its call sign?',
+     'Yes. The 787 and A330 must add the word "Heavy" to the call sign in all air/ground communications in the terminal area. It is not required during enroute communications.',
+     'FOM 7.1.2.5', 'FOM 7.1.2.5, Call Sign',
+     'The 787 and A330 aircraft must add the word “Heavy” to the aircraft’s call sign (e.g., “Alaska Twenty-one Heavy”) in all air/ground communications in the terminal area. The term “Heavy” is not required during enroute communications.',
+     'Outside the US, Heavy applies to aircraft with takeoff weights of 300,000 lbs or more and is only required on initial contact with tower and approach/departure control.', 'both'),
+    ('07', 'On the A330, how does the Flight Crew alert the Flight Attendants to an emergency, and how do the Flight Attendants alert the Flight Crew?',
+     'Flight Deck to cabin: press the EMER button. Cabin to Flight Deck: press the PRIO CAPT button once.',
+     'FOM 7.1.20.4', 'FOM 7.1.20.4, Emergency Communication',
+     '(A330) pressing the PRIO CAPT button once.',
+     'The Flight Deck to cabin line reads: (A321/A330) pressing the EMER button. The PM then immediately attempts interphone communication with the Flight Attendants.', 'both'),
+    ('07', 'Name a new trigger in Rev 125 for calling Ops after landing.',
+     'When directed by 10-7 guidance.',
+     'FOM 7.1.31', 'FOM 7.1.31, Ops Call After Landing',
+     'Directed by 10-7 guidance.',
+     'Other listed triggers include medical assistance needed at the gate and through-jumpseaters on the Freighter.', 'both'),
+    ('07', 'Where are safety reports filed, and what topics does the single system cover?',
+     'In the Safety Reporting System, accessed on the EFB app or by a link on the Pilot web page. It covers fatigue, ASAP, hazards, issues, concerns, occurrences, incidents, irregularities, and accidents.',
+     'FOM 7.2.2', 'FOM 7.2.2, Reporting Program',
+     'Safety reports can be filed in the Safety Reporting System, which can be accessed on the EFB app or by a link on the Pilot web page. Safety reports include items such as fatigue, ASAP, other hazards, issues, concerns, occurrences, incidents, irregularities, and accidents.',
+     'Rev 125 consolidated reporting into one system.', 'both'),
+    # ch 8
+    ('08', 'On an HA international A330 release, how much may the actual takeoff weight exceed the PTOW before the Flight Plan is no longer valid?',
+     'The Flight Plan is still valid as long as the ATOW is no more than 3000 lbs greater than the PTOW. More than 3000 lbs over requires a revised Dispatch Release.',
+     'FOM 8.5.7.1', 'FOM 8.5.7.1, International Dispatch Release',
+     'The Flight Plan is still considered valid as long as the ATOW is no more than 3000 lbs greater than the PTOW.',
+     'Between PTOW and 3000 lbs over, adjust MIN T/O and MIN RLS by the per-1000-lb figure printed on the release. The legend was rebuilt in Rev 125 on an A330 example.', 'both'),
+    ('08', 'When must Dispatch perform a landing performance analysis for contamination, and what must it cover?',
+     'When any contamination is anticipated at the destination or alternate. It should cover both the anticipated and the worst acceptable braking action for the planned landing weight.',
+     'FOM 8.3.9', 'FOM 8.3.9, Landing',
+     'This analysis should cover both the anticipated and worst acceptable braking action for the planned landing weight.',
+     'Rev 125 broadened the trigger. The Dispatcher and Captain should brief runway conditions before departure when braking action is anticipated less than good and landing performance is critical.', 'both'),
+    ('08', 'On the A330 international release, how do the B043 reserves appear in the fuel summary compared with standard flag?',
+     'B043 shows "10% RSV" and "45@CRZ"; standard flag shows "10% RSV" and "30@1500".',
+     'FOM 8.3.2.3', 'FOM 8.3.2.3, Special Fuel Reserves in International Operations (737/787/A321/A330)',
+     '(787/A321/A330) The B043 Dispatch Release is the same as the international Dispatch Release, except for the 45 minute and 10% fuel quantities listed in the fuel summary.',
+     'Ops Spec B043: 10% of planned time in oceanic/remote continental airspace plus 45 minutes at normal cruise consumption at top-of-descent weight and altitude.', 'both'),
+    ('08', 'In the 8.1.3 Authorized Airports table, which designations may be planned as an adequate airport, and what does the asterisk mean?',
+     'Any airport designated A, F, R, P, or E may be planned as an adequate airport, provided the 6.2.1 criteria are met and it is within the approved area of operations. The asterisk means it may be used as an ETOPS alternate unless restricted by F&F or Company NOTAM.',
+     'FOM 8.1.3', 'FOM 8.1.3, Authorized Airports',
+     'May be used as an ETOPS alternate unless restricted by F&F or Company NOTAM. Adequate Airports Any airport designated in this table as A, F, R, P, or E may be planned as an adequate airport (to define ETOPS entry and exit points) for all Alaska Airlines fleets provided the adequate airport criteria from 6.2.1 – Adequate Airport is met and the airport is within the approved area of operations for the aircraft being operated, unless restricted by F&F or Company NOTAM.',
+     'Rev 125 replaced the per-fleet lists with one table carrying 717/737/787/A321/A330 columns.', 'both'),
+    # ch 9
+    ('09', 'In what unit do ICAO SNOWTAMs report contaminant depth, and what must the crew do with it?',
+     'Millimeters. Convert to inches for AS policy adherence (1/8 in is 3.175 mm, 1/4 in is 6.35 mm, 1/2 in is 12.7 mm, 1 in is 25.4 mm).',
+     'FOM 9.1.5', 'FOM 9.1.5, SNOWTAM',
+     'Note that contaminant depth is reported in millimeters, and will need to be converted to inches for AS policy adherence.',
+     'New in Rev 125 with a conversion table. ICAO airports may report RCAM data using the term GRF (Global Reporting Format).', 'both'),
+    ('09', 'How does Alaska Airlines define a significant space weather event for dispatch purposes?',
+     'Radio Blackout R3 or greater, Solar Radiation S3 or greater, or Geomagnetic storm G4 or greater.',
+     'FOM 9.7.6.1', 'FOM 9.7.6.1, Space Weather',
+     'significant space weather events are defined by Alaska Airlines as Radio Blackout R3 or greater, Solar Radiation S3 or greater, or Geomagnetic storms G4 or greater.',
+     'Rev 125 changed the definition. Flights are not dispatched above 78 degrees N with solar radiation S3 or higher (9.6.1).', 'both'),
+    ('09', 'Where does the A330 crew find landing performance data for a reported RWYCC?',
+     'In the FCOM, In-Flight Performance.',
+     'FOM 9.1.6', 'FOM 9.1.6, Runway Condition Assessment Matrix (RCAM)',
+     '• (A330) See FCOM – In-Flight Performance',
+     'The RCAM generates the RWYCC for runways in use; the A330 performance data lives in the FCOM In-Flight Performance section.', 'both'),
+    # ch 11
+    ('11', 'On the A330, how long after engine shutdown do the DFDR and CVR stop recording?',
+     '5 minutes after engine shutdown (A321/A330/A330F).',
+     'FOM 11.2.14', 'FOM 11.2.14, Cockpit Voice Recorder and Digital Flight Data Recorder',
+     '(A321/A330/A330F) DFDR/CVR will stop recording 5 minutes after engine shutdown.',
+     'After an incident or accident the recorders must be preserved; on the 717/737 the crew pulls the CVR and DFDR circuit breakers.', 'both'),
+    ('11', 'What is the purpose of the decompression polygon procedures?',
+     'They provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.',
+     'FOM 11.2.9', 'FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)',
+     'Decompression polygon procedures provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.',
+     'Rewritten in Rev 125. The PIC is expected and encouraged to exercise sound judgment; weather, visibility, ATC and grid MORAs may also inform the course of action.', 'both'),
+    # ch 12
+    ('12', 'Who may remove a yellow-side MSP-1 from the power/thrust levers, and under what condition may the Flight Crew do it?',
+     'Maintenance, or the Flight Crew after they verify with Maintenance and confirm a clean logbook is on board the aircraft.',
+     'FOM 12.4.1.1', 'FOM 12.4.1.1, Maintenance Status Placard (MSP-1)',
+     'An MSP-1 on the yellow side can be removed by Maintenance or by the Flight Crew after they verify with Maintenance and confirm a clean logbook is on board the aircraft.',
+     'Rev 125 added the Flight Crew removal path.', 'both'),
+    ('12', 'When correcting a minor error in the Maintenance Logbook, what identification does an HA pilot write next to the correction?',
+     'Initials and (HA) Employee ID (AS pilots use their PeopleSoft number). Draw a single line through the mistake; never erase or white out.',
+     'FOM 12.4.2', 'FOM 12.4.2, General Instructions',
+     'Correct minor errors by drawing a single line through the mistake and writing your initials and (AS) PeopleSoft number or (HA) Employee ID next to the correction.',
+     'Major errors are corrected by voiding the (AS) page or (HA) block.', 'both'),
+    # ch 14
+    ('14', 'On the A330 eNOTOC, what does the RRR CAT field indicate?',
+     'The radioactive category (I, II, or III) of a Class 7 shipment.',
+     'FOM 14.1.22', 'FOM 14.1.22, eNOTOC Legend (A330 eNOTOC Example)',
+     '18. RRR CAT – Radioactive category I, II, or III.',
+     'Rev 125 reworded the radioactive fields of the A330 eNOTOC legend. The Transport Index unit is associated with the carriage of radioactive substances.', 'both'),
+    # ch 19-24
+    ('19_24', 'Why can a SELCAL alert be misleading, and what does the FOM require when responding?',
+     'SELCAL codes are not unique, so a notification may be intended for another aircraft. Use proper radio phraseology and pay close attention to callsigns.',
+     'FOM 20.4.3.1 (Ch 20)', 'FOM 20.4.3.1, SELCAL',
+     'SELCAL codes are not unique. It is possible to receive a SELCAL notification that is intended for another aircraft. When responding to SELCAL notifications, crews should use proper radio phraseology and pay close attention to callsigns to avoid miscommunication.',
+     'New caution in Rev 125.', 'both'),
+    ('19_24', 'How do crewmembers entering Hawaii from the mainland complete the agriculture declaration?',
+     'Complete the digital Plant and Animals Declaration Form before arrival, accessed via the icon on the EFB.',
+     'FOM 20.7.2 (Ch 20)', 'FOM 20.7.2, Agriculture Clearance Arriving/Departing Hawaii',
+     'Hawaii requires all passengers and crewmembers that are entering Hawaii from the mainland to complete a digital “Plant and Animals Declaration Form” prior to arrival. The form can be accessed by crewmembers via the icon on their EFB.',
+     'Rev 125 moved the form to a digital EFB process. Departing Hawaii for the mainland, crewmembers process through a USDA station.', 'both'),
+    ('19_24', 'Where does A330 SATCOM become unreliable, and where does Inmarsat CPDLC or SATVOICE stop counting as an LRCS?',
+     'Flights with Inmarsat equipment only (787/A321/A330) may experience SATCOM unreliability north of 72 degrees N. There is no Inmarsat coverage north of 80 degrees N, so Inmarsat CPDLC or SATVOICE does not qualify as an LRCS there.',
+     'FOM 19.4.1.3 (Ch 19)', 'FOM 19.4.1.3, SATCOM Service Limitations North of 72 North',
+     'Due to satellite coverage limitations, flights operating with (787/A321/A330) Inmarsat equipment only may experience SATCOM unreliability north of 72°N. There is no Inmarsat satellite coverage north of 80°N. An Inmarsat CPDLC or SATVOICE system does not qualify as a Long-Range Communication System (LRCS) when operating north of 80°N.',
+     'Only the 737 Iridium SATVOICE is available north of 80 degrees N.', 'both'),
+    ('19_24', 'In the Atlantic theater, when must the crew perform a SELCAL check before entering each OCA?',
+     'When operating outside of VHF coverage, prior to entering each individual OCA, on the designated HF frequencies, to establish and confirm voice communication.',
+     'FOM 22.4 (Ch 22)', 'FOM 22.4, Communication',
+     'When operating outside of VHF coverage, prior to entering each individual OCA, the crew must perform a SELCAL check on the designated HF frequencies to establish and confirm voice communication.',
+     'Rev 125 qualified the requirement by VHF coverage. The logon goes to the controlling authority for the OCA, not the FIR.', 'both'),
+    ('19_24', 'What are crews not permitted to bring into Iceland?',
+     'Alcohol, tobacco products, and cash over $15,000.',
+     'FOM 22.12.1 (Ch 22)', 'FOM 22.12.1, Iceland Customs',
+     'crews are not permitted to bring the following into Iceland: • Alcohol • Tobacco products • Cash over $15,000',
+     'New in Rev 125 with the Iceland section.', 'both'),
+    ('19_24', 'In Europe, can the A330 use the ground-based ATN data link network?',
+     'No. The A330 has FANS 1/A(+), which does not support the ATN network. European data link is available via ATN, FANS 1/A+, or both.',
+     'FOM 23.3 (Ch 23)', 'FOM 23.3, Communication',
+     'The A330 has FANS 1/A (+) which does not support the ATN network.',
+     'Plan on FANS 1/A+ CPDLC service in Europe; ATN-only services are not available to the A330.', 'both'),
+]
+
+EM = '—'
+
+def deem(s):
+    if not s: return s
+    s = s.replace(' ' + EM + ' ', ', ').replace(EM, ', ')
+    return re.sub(r' ,', ',', s)
+
+def load_src(key):
+    return json.load(open(os.path.join(SRC, 'fom_q', 'ch%s.json' % key), encoding='utf-8'))
+
+def main():
+    stats = {'kept': 0, 'removed': 0, 'rewritten': 0, 'added': 0, 'per_chapter': {}}
+    manifest = {'rev': FOM_REV, 'generated': 'FOM Rev %s (%s)' % (FOM_REV, FOM_DATE), 'chapters': []}
+    all_flat = []
+    removed = []
+    os.makedirs(os.path.join(WORK, 'fom_q'), exist_ok=True)
+    os.makedirs(os.path.join(WORK, 'data'), exist_ok=True)
+    for key, chap, name in CHAPTERS:
+        out = []
+        for r in load_src(key):
+            rid = r['id']
+            if rid in DROP:
+                removed.append((rid, DROP[rid])); stats['removed'] += 1; continue
+            e = EDIT.get(rid, {})
+            s = dict(r['src'])
+            rec = {
+                'id': rid, 'chapter': chap, 'chapterName': name,
+                'q': e.get('q', r['q']), 'a': e.get('a', r['a']), 'ref': e.get('ref', r['ref']),
+                'src': {'ref': e.get('sref', s.get('ref', '')), 'quote': e.get('quote', s.get('quote', '')), 'note': e.get('note', s.get('note', ''))},
+                'fleet': e.get('fleet', 'both'), 'srcKind': 'manual',
+            }
+            if e: stats['rewritten'] += 1
+            else: stats['kept'] += 1
+            out.append(rec)
+        for a in ADD:
+            if a[0] != key: continue
+            _, q, ans, ref, sref, quote, note, fleet = a
+            out.append({'id': None, 'chapter': chap, 'chapterName': name, 'q': q, 'a': ans, 'ref': ref,
+                        'src': {'ref': sref, 'quote': quote, 'note': note}, 'fleet': fleet, 'srcKind': 'manual'})
+            stats['added'] += 1
+        # renumber in manual order and strip em dashes from prose fields
+        pre = ID_PREFIX.get(key, key)
+        for i, rec in enumerate(out, 1):
+            rec['id'] = 'fom%s-%03d' % (pre, i)
+            rec['q'] = deem(rec['q']); rec['a'] = deem(rec['a']); rec['ref'] = deem(rec['ref'])
+            rec['src']['ref'] = deem(rec['src']['ref']); rec['src']['note'] = deem(rec['src']['note'])
+            if not rec['src']['note']: rec['src'].pop('note')
+        fname = 'fom_q/ch%s.json' % key
+        with open(os.path.join(WORK, fname), 'w', encoding='utf-8') as f:
+            json.dump(out, f, ensure_ascii=False, indent=1); f.write('\n')
+        manifest['chapters'].append({'chapter': chap, 'name': name, 'file': fname, 'count': len(out)})
+        stats['per_chapter'][name] = len(out)
+        all_flat.extend(out)
+    with open(os.path.join(WORK, 'data', 'fom_questions.json'), 'w', encoding='utf-8') as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=1); f.write('\n')
+    with open(os.path.join(WORK, 'data', 'fom_all.json'), 'w', encoding='utf-8') as f:
+        json.dump(all_flat, f, ensure_ascii=False, indent=1); f.write('\n')
+    print(json.dumps(stats, indent=1))
+    print('total', len(all_flat))
+    if '-v' in sys.argv:
+        for rid, why in removed: print('removed', rid, why)
+
+if __name__ == '__main__':
+    main()

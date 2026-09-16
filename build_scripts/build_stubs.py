@@ -4,11 +4,7 @@ portal chrome (home icon, header, card, footer, settings, assist) and says which
 Remove a page from STUBS once its real build lands."""
 import re, os, json
 os.chdir(os.path.join(os.path.dirname(__file__),'..'))
-STUBS={
- 'phase_flows.html':('A330 Phase Flows','Flight Phase Flows','// Normal and Non-Normal','FCOM R17 PRO-NOR-SOP',4),
- 'flows_quiz.html':('A330 Flows Trainer','Flows Trainer','// Gate to Gate','FCOM R17 PRO-NOR-SOP',4),
- 'mcdu_preflight.html':('A330 MCDU Preflight (PF)','MCDU Preflight','// Page Flow','FCOM R17 PRO-NOR-SOP',5),
-}
+STUBS={}
 tpl=open('limitations.html',encoding='utf-8').read()
 head=tpl[:tpl.index('<body>')]; homebar=re.search(r'<div class="ps-homebar">.*?</div>\n', tpl, re.S).group(0)
 footer=tpl[tpl.index('<footer'):]
