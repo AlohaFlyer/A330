@@ -54,3 +54,28 @@ repo anyway); the page tells the user when it is offline.
 `http://127.0.0.1:8765/manuals/?base=http://127.0.0.1:8765/manuals`. `build_scripts/test_manuals_headless.py`
 serves the repo with `python3 -m http.server` and uses that override; it also checks that
 without the override the sign-in prompt appears and that `login.html` bounces to `back`.
+
+## 2026-09-16 change: page served from the manuals origin
+R2 cannot send Access-Control-Allow-Credentials and answered credentialed cross-origin GETs from
+ha330pilot.app with 503, so the full Manuals page now lives in the bucket as `index.html`
+(built to `manuals/app.html`; upload that file to R2 as `index.html` after every build) and is
+opened at https://manuals.ha330pilot.app/index.html. GitHub Pages `manuals/index.html` is a
+bounce that forwards ?s= / ?q= and carries the Ask Pualani provider, key and model in the URL
+fragment (#ps=, never sent to a server). Access: team ha330pilot, app "ha330pilot manuals",
+One-time PIN only, emails ending @alaskaair.com, 1 month session. Access CORS handling is
+bypassed (same-origin now).
+
+## 2026-09-16 later: whole portal behind Access
+ha330pilot.app DNS records (4 A + www CNAME) are proxied through Cloudflare; the Access app
+"A330 Study Portal" covers ha330pilot.app and manuals.ha330pilot.app with one policy (emails
+ending @alaskaair.com, One-time PIN only, 1 month session). One code at the home page also
+opens the manuals (SSO within the identity session). Login page branded (name, icon from the
+public GitHub raw URL, header, footer, #F4F1F9). The OTP email itself is Cloudflare's fixed
+template and cannot be branded. Free plan: 50 unique users per month across the whole portal.
+
+## 2026-09-16 later: service worker and Access callback
+sw.js v5 never intercepts /cdn-cgi/ (the Access login callback and logout), passes navigations
+through with their original redirect mode, and returns redirected or opaqueredirect responses
+untouched without caching them. The older worker answered the Access callback URL from cache
+with the home page, which showed "This site can't be reached" after entering the code.
+The leftover "Cloudflare" identity provider was deleted; One-time PIN is the only IdP.
