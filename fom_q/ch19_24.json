@@ -1,0 +1,467 @@
+[
+ {
+  "id": "fom19-001",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In the North America theater, into how many Area Control Centers (ACCs) is the United States divided, and what are Canada's three airspace regions?",
+  "a": "The United States is divided into 22 ACCs. Canada is divided into three airspace regions: the Southern Control Area (SCA), Northern Control Area (NCA), and Arctic Control Area (ACA).",
+  "ref": "FOM 19.2 (Ch 19)",
+  "src": {
+   "ref": "FOM 19.2 - Airspace (North America Theater)",
+   "quote": "The United States is divided into 22 Area Control Centers (ACCs). Canada is divided into three airspace regions: the Southern Control Area (SCA), Northern Control Area (NCA), and Arctic Control Area (ACA).",
+   "note": "Ch 19 covers North America (US and Canada). The Canadian Domestic Airspace (CDA) is separately split into the Southern Domestic Airspace (SDA) and Northern Domestic Airspace (NDA)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-002",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Under FOM 125.1, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?",
+  "a": "There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.",
+  "ref": "FOM 11.2.9 (Ch 11)",
+  "src": {
+   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
+   "note": "Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation. 19.3.1.1 is now Airspeed Restrictions Takeoff/Landing. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-003",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What is the takeoff/landing airspeed restriction in Canada near a controlled airport?",
+  "a": "Canada restricts speed to 200 kts (or minimum safe/clean maneuver speed, whichever is faster) below 3000 AFL within 10 miles of a controlled airport, unless assigned a higher speed by ATC clearance.",
+  "ref": "FOM 19.3.1.2 (Ch 19)",
+  "src": {
+   "ref": "FOM 19.3.1.2 - Airspeed Restrictions Takeoff/Landing",
+   "quote": "Canada restricts speed to 200 kts or minimum safe speed (i.e., clean maneuver), whichever is faster, below 3000 AFL within 10 miles of a controlled airport",
+   "note": "Note the AFL (above field level) reference and the 10-mile radius, distinct from the US below-10,000 ft/250 kt convention."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-004",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What defines the Juneau Taku wind hazard, and what system provides alerts for it?",
+  "a": "In the Gastineau Channel, mountainous terrain induces Taku winds with very strong gusts of 72 mph or greater, producing strong windshear, rotors, and turbulence. The Juneau Area Wind System (JAWS) provides wind information and alerts for moderate to severe turbulence.",
+  "ref": "FOM 19.5.3 (Ch 19)",
+  "src": {
+   "ref": "FOM 19.5.3 - Juneau Taku Winds",
+   "quote": "Very strong wind gusts (72 mph or greater) can occur during these Taku wind events.",
+   "note": "See JNU 10-7 JAWS. This is a North America weather-hazard item alongside Anchorage Turnagain Arm turbulence and the LA Santa Ana rotor."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-005",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "On the NOPAC routes between FL340 and FL400, what is the lateral route separation and what performance capabilities are required?",
+  "a": "Lateral route separation is 23 nm and requires aircraft to be capable of RCP240 (Required Communications Performance 240), RSP180 (Required Surveillance Performance 180), and RNP4. Between FL180-FL330, or FL410 and above, separation is 50 nm and allows RNP10.",
+  "ref": "FOM 20.3.1 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.3.1 - North Pacific (NOPAC)",
+   "quote": "between FL340-FL400, the lateral route separation is 23 nm and requires aircraft to be capable of Required Communications Performance 240 (RCP240), Required Surveillance Performance 180 (RSP180), and Required Navigation Performance 4 (RNP4)",
+   "note": "The 737/787/A321/A330 are RCP240, RSP180, and RNP4 capable unless an MEL reduces capability."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-006",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "How is the altimeter set within the Hawaiian Islands domestic area, and within the broader Oakland Oceanic FIR?",
+  "a": "Within the Hawaiian Islands domestic area: at FL180 and above set standard 29.92 (QNE); below 18,000 ft MSL set current altimeter (QNH). Within all areas of the Oakland FIR, at or above 5500 ft MSL, set standard 29.92 (QNE).",
+  "ref": "FOM 20.7.1 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.7.1 - Altimeter Setting - Oakland Oceanic FIR/Hawaii",
+   "quote": "at FL180 and above, to standard altimeter setting 29.92 (QNE).",
+   "note": "The Oakland FIR 5500 ft MSL transition to QNE is a lower crossover than the standard FL180, a common trap for Pacific/Hawaii altimetry questions."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-007",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In the Pacific theater, what change in cruise Mach must be reported, and to whom?",
+  "a": "Oceanic control agencies require cruise Mach number be reported at FIR entry. All subsequent changes of cruise Mach of 0.02 or greater from any previously reported value must be communicated to ARINC.",
+  "ref": "FOM 20.2.2 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.2.2 - Oceanic Cruise Mach - Reporting Requirement",
+   "quote": "All subsequent changes of cruise Mach of 0.02 or greater from any previously reported value must be communicated to ARINC.",
+   "note": "FIR-entry Mach can be reported at check-in with ARINC (e.g., San Francisco Radio), via ADS-C, or free-text CPDLC. The 0.02 threshold mirrors the NAT/Atlantic Mach technique."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-008",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In Pacific oceanic airspace with a total loss of communications, what transponder sequence is used?",
+  "a": "Set transponder Code 7700 for a period of 1 (one) minute, then change to code 7600 and remain on 7600 for 15 minutes or the remainder of the flight, whichever occurs first; repeat the sequence as practicable.",
+  "ref": "FOM 20.4.4 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.4.4 - Lost Communications in Oceanic Airspace",
+   "quote": "adjust the transponder to Code 7700 for a period of 1 (one) minute. Then change to code 7600 and remain on 7600 for a period of 15 minutes or the remainder of the flight, whichever occurs first.",
+   "note": "Replying on 7700 first increases probability of early detection of the radio failure. In IMC, maintain last assigned speed and flight level for 20 minutes after failing to report over a compulsory point, then follow the filed flight plan."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-009",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What are the maximum speed restrictions for operations in Mexico's National airspace?",
+  "a": "Maximum 250 KIAS at or below 10,000 ft within National airspace (and within 30 nm from any airport at or below 10,000 ft AGL of airport elevation). Maximum 200 KIAS within 10 nm of any airport below 3000 ft AGL above airport elevation.",
+  "ref": "FOM 21.3.3.2 (Ch 21)",
+  "src": {
+   "ref": "FOM 21.3.3.2 - Airspeed Restrictions (Mexico)",
+   "quote": "Maximum Speed 200 KIAS within 10 nm of any airport below 3000 ft AGL above airport elevation.",
+   "note": "Certain Mexican airports restrict airspeed in National airspace at or below 18,000 ft, so check the applicable STARs."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-010",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In the Central America portion of the Caribbean theater, what are the transition level and transition altitude?",
+  "a": "Transition Level is FL200 and Transition Altitude is 19,000 ft MSL, unless charted otherwise.",
+  "ref": "FOM 21.3.4.2 (Ch 21)",
+  "src": {
+   "ref": "FOM 21.3.4.2 - Transition Level/Altitude (Central America)",
+   "quote": "Transition Level is FL200 and Transition Altitude is 19,000 ft MSL unless charted otherwise.",
+   "note": "Central America scheduled operations are Belize, Costa Rica, and Guatemala. 'Climb via'/'descend via' are NOT used in Central America (21.3.4.3)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-011",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In Mexico, what is the rule regarding visual approaches relative to distance from the airport?",
+  "a": "Mexico prohibits visual approaches outside of 10 nm. If you request the visual approach outside 10 nm from the airport, you will likely be advised to 'continue.' You must specifically request a 'visual descent' or a 'visual approach' since ATC does not respond to US colloquialisms.",
+  "ref": "FOM 21.3.3.5 (Ch 21)",
+  "src": {
+   "ref": "FOM 21.3.3.5 - Mexico Phraseology for Climbs and Descents",
+   "quote": "Mexico prohibits visual approaches outside of 10 nm.",
+   "note": "A visual descent (remain on arrival routing, provide own terrain clearance) differs from a visual approach (routings/altitudes not restricted); the crew accepts responsibility for separation from traffic and terrain."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-012",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "How is the North Atlantic High Level Airspace (NAT HLA) defined by flight levels, and which oceanic control areas comprise it?",
+  "a": "NAT HLA is the airspace between flight levels 285 and 420 (inclusive) within the oceanic control areas of Bodo Oceanic (Norway), Gander Oceanic (Canada), New York Oceanic East (USA), Reykjavik (Iceland), Santa Maria (Portugal), and Shanwick (Ireland), excluding the Shannon and Brest Ocean Transition Areas.",
+  "ref": "FOM 22.1.1 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.1.1 - North Atlantic Theater Defined",
+   "quote": "defined as the volume of airspace between flight levels 285 and 420 (inclusive)",
+   "note": "Note NAT HLA spans FL285-FL420, which is wider than the FL290-FL410 RVSM/NAT DLM band. Source: NAT DOC 007, March 2025."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-013",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "How is the North Atlantic Organized Track System (OTS) built and lettered, and what are its hours of validity at 30W?",
+  "a": "The OTS is published twice daily. Eastbound tracks (primarily night) are constructed by Gander Oceanic; westbound tracks (day) by Shanwick Oceanic. Tracks are lettered westbound from 'A' (most northerly) downward, and eastbound from 'Z' (most southerly) upward. Validity at 30W: Westbound 1130-1900 UTC; Eastbound 0100-0800 UTC.",
+  "ref": "FOM 22.3.1 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.3.1 - North Atlantic Organized Track System (OTS)",
+   "quote": "Eastbound tracks, primarily used at night, are constructed by Gander Oceanic, while westbound tracks, used during the day, are constructed by Shanwick Oceanic.",
+   "note": "OTS use is not mandatory; random routes are permitted. Times can be negotiated between Gander and Shanwick OACs, so check the NAT track message."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-014",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What are the RCL (Request for Clearance) message timing intervals prior to the OEP for Gander, Shanwick, Santa Maria, and Bodo?",
+  "a": "Gander: 60-90 minutes (flights departing less than 45 min flying time from OEP send RCL 10 minutes prior to start-up). Shanwick: 30-90 minutes. Santa Maria: at least 40 minutes. Bodo: at least 20 minutes.",
+  "ref": "FOM 22.7.4 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.7.4 - Timing for RCL Message",
+   "quote": "Gander: 60-90 minutes.",
+   "note": "Except for Shanwick OCA, oceanic clearances are no longer issued in NAT OCAs; New York East does not require an RCL message at all. Shanwick still issues an oceanic clearance following the RCL."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-015",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "How is the Northern Area of Magnetic Unreliability (AMU) defined, and how is navigation referenced within it?",
+  "a": "The Northern AMU is the area within a 1000 nautical mile radius of the Northern Magnetic Pole (excluding airspace over Alaska and its territorial waters) and includes the Canadian Northern Domestic Airspace. Navigation relies on true headings rather than magnetic; runway headings, tracks, bearings, surface winds, and NAVAID tracks are all referenced to True North.",
+  "ref": "FOM 22.2.3 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.2.3 - Northern Area of Magnetic Unreliability (AMU)",
+   "quote": "navigation in the AMU relies on true headings rather than magnetic headings.",
+   "note": "If ATC issues a heading in the AMU, confirm whether it is magnetic or true. In the AMU the Heading Reference switch is moved from NORM to TRUE, and HDG SEL must be reselected after the switch change (NAT HLA training, FCOM SP.10.1)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-016",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Under FOM 125.1, what is the published decompression floor for the Greenland Mountain Range region?",
+  "a": "None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.",
+  "ref": "FOM 11.2.9 (Ch 11)",
+  "src": {
+   "ref": "FOM 11.2.9 (Ch 11) and FOM 22.2 (Ch 22)",
+   "quote": "Dispatchers and pilots will not permit flights to proceed through any areas charted as “No Ops Area.”",
+   "note": "Rev 125.1 removed the Decompression Procedure for Greenland Mountain Range Region from 22.5 - Weather. 22.6 is now Oceanic Procedures. The old 15,000 ft Greenland floor is no longer published. Greenland overflight limits are addressed via 11.2.9."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-017",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What VHF channel spacing does Europe use, and how must 8.33 kHz frequencies be read back?",
+  "a": "Europe uses 8.33 kHz channel spacing across much of its airspace (three times as many channels as the 25 kHz US spacing). 8.33 kHz frequencies are shown with three decimal places and must be read back exactly, e.g., 132.015 MHz read back as 'WUN-TREE-TOO decimal ZE-RO-WUN-FIFE.'",
+  "ref": "FOM 23.13 (Ch 23)",
+  "src": {
+   "ref": "FOM 23.13 - Voice Procedures (Europe)",
+   "quote": "Europe utilizes 8.33 kHz channel spacing across much of its airspace",
+   "note": "Capability is confirmed with 'CONFIRM EIGHT POINT THREE THREE' / 'AFFIRM EIGHT POINT THREE THREE' / 'NEGATIVE EIGHT POINT THREE THREE.'"
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-018",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What lateral navigation accuracy does European RNAV 5 (formerly B-RNAV) require?",
+  "a": "RNAV 5 requires aircraft to maintain a lateral navigation accuracy of plus or minus 5 nm for at least 95% of the flight time during the enroute phase. It is the standard for area navigation in ECAC enroute airspace, including SIDs and STARs into and out of terminal areas. The A330 (with the 737, 787 and A321) is RNAV 5 compliant unless degraded by inoperative equipment.",
+  "ref": "FOM 23.16.1 (Ch 23)",
+  "src": {
+   "ref": "FOM 23.16.1 - Basic RNAV (B-RNAV) - RNAV 5",
+   "quote": "a lateral navigation accuracy of ±5 nm for at least 95% of the flight time.",
+   "note": "For non-RNAV 5 compliant aircraft, notify ATC and Dispatch; Dispatch may obtain authorization to operate with the remaining nav equipment."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-019",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In the Asia theater (Republic of Korea), what DMZ buffer must crews observe, and where is clear air turbulence a concern?",
+  "a": "Flight Crews must avoid overflying the Demilitarized Zone (DMZ); a buffer zone extends 5 nm south of the DMZ. With a strong jet stream present, be aware of the potential for clear air turbulence along the West Coast of Korea from FL300 to FL400.",
+  "ref": "FOM 24.2 / 24.2.1 (Ch 24)",
+  "src": {
+   "ref": "FOM 24.2 - Republic of Korea (and 24.2.1 Weather)",
+   "quote": "a buffer zone extends 5 nm south of the DMZ.",
+   "note": "The Korea Office of Civil Aviation (KOCA) oversees all civil aviation activities; operations are under strict ATC control due to high traffic density and proximity to military-controlled zones."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-020",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "SCENARIO (Pacific): On a Japan-to-North America leg the check airman assigns you a PACOTS track that then joins a NOPAC route. What navigation/performance approvals must the A330 hold for (a) the PACOTS track itself, and (b) the NOPAC segment?",
+  "a": "For the PACOTS track: the aircraft must be RNP10/RNAV10 or RNP4 approved. When the PACOTS track ends on a NOPAC route, the NOPAC route requirements apply: RCP240, RSP180, and RNP4. PACOTS tracks are established at least 50 nm apart, and when operating on the ATS routes that may be assigned as PACOTS tracks (R220 east of NANAC, R580, A590 east of PUTER), NOPAC route system procedures should be applied.",
+  "ref": "FOM 20.3.4 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.3.4 - Pacific Organized Track System (PACOTS)",
+   "quote": "An aircraft on a PACOTS track must be RNP10/RNAV10 or RNP4 approved. If the PACOTS track ends on a NOPAC route, the route requirements of RCP240, RSP180, and RNP4 apply.",
+   "note": "Check-airman scenario. Related: the CEP (Central East Pacific, FOM 20.3.5) is the organized route system between Hawaii and California with seven charted ATS routes (R463, R464, R465, R576, R577, R578, R585) plus A331/A332 to the Pacific Northwest."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-021",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "SCENARIO (Atlantic): During NAT HLA prep the check airman fails one IRS at the gate on your A330, then asks whether you can still dispatch into NAT HLA and what the minimum post-departure comms suite is. What do you tell him?",
+  "a": "No single-IRU relief exists for the A330. FOM 22.1.10 requires dual Inertial Reference Systems, dual long-range navigation systems (2 MCDUs), dual NDs, one GPS receiver, ADS-C, CPDLC, SATCOM data link, and two HF radios (or a single HF radio and SATVOICE) for NAT HLA. The single-IRU dispatch note applies only to the 787. After departure, only a single HF radio and SATCOM data link are required.",
+  "ref": "FOM 22.1.10 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.1.10, Required Equipment for NAT HLA Airspace",
+   "quote": "• Dual Inertial Reference Systems (IRS) • Dual Long Range Navigation Systems (to include 2 MCDUs) • Dual Navigation Displays (ND) • One GPS Receiver • ADS-C • CPDLC • SATCOM data link • Two HF Radios or a single HF Radio and SATVOICE",
+   "note": "Equipment failure after pushback but before entry that removes CPDLC and/or ADS-C: requests to operate in NAT DLM airspace are considered case by case; notify ATC and Dispatch as soon as possible."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-022",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "SCENARIO (oceanic weather deviation): A cell is painting on the nose in Pacific oceanic cruise and you can't get an immediate clearance. How do you build the deviation, how do you prioritize the request, and how does SLOP factor in?",
+  "a": "Do not modify the FMS route. Use the FMS Lateral Offset feature to build the weather-avoidance offset, then request that track deviation from Oceanic Control; the clearance is usually granted up to the requested offset. LNAV/NAV need not remain engaged during the deviation. When you call ATC or ARINC, state WEATHER DEVIATION REQUIRED to get priority.",
+  "ref": "FOM 20.5.1 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.5.1 - Weather Avoidance Lateral Offset",
+   "quote": "Weather avoidance offsets must be accomplished utilizing the FMC/FMS Lateral Offset feature. Select a nm offset distance that will provide an adequate weather avoidance distance and request that track deviation from Oceanic Control; the clearance will generally be granted as “up to” the requested offset distance.",
+   "note": "Contingency procedures for a deviation without a clearance are in the theater chapter and ICAO Doc 4444; brief them for the crossing."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-023",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "SCENARIO (altimetry): Descending into Hawaii through the Oakland Oceanic FIR, the check airman asks at exactly what point your altimeter should already be on 29.92, and how that differs from the Hawaiian Islands domestic transition. What's the trap?",
+  "a": "Within all areas of the Oakland FIR, at or above 5500 ft MSL the altimeter is set to standard 29.92 (QNE) - the trap is that this crossover is 5500 ft, not FL180. Within the Hawaiian Islands domestic area the normal split applies: at FL180 and above set standard 29.92 (QNE); below 18,000 ft MSL set current altimeter (QNH). So in the Oakland oceanic FIR you are on QNE far lower than the usual FL180 transition.",
+  "ref": "FOM 20.7.1 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.7.1 - Altimeter Setting - Oakland Oceanic FIR/Hawaii",
+   "quote": "Within all areas of the Oakland FIR, at or above 5500 ft MSL, the altimeter will be set to the standard 29.92 (QNE).",
+   "note": "Check-airman scenario. Contrast with the Atlantic/Europe convention (FOM 22.1.7 / 23.10) where settings are given in hectopascals (hPa) and transition altitudes are charted while transition levels come from the ATIS or approach controller."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-024",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Rev 125: what is FOM 22.2.1 now called, and where did the Oceanic Entry Point definition go?",
+  "a": "22.2.1 is now 'Transition Areas'. The Oceanic Entry Point (OEP) definition moved to 22.2.2, and the Northern Area of Magnetic Unreliability moved to 22.2.3. Note the GOTA has OEPs in the middle of the airspace, which requires SLOP halfway through the transition area, and eastbound GOTA flights send an RCL to Gander Oceanic.",
+  "ref": "FOM 22.2.1",
+  "src": {
+   "ref": "FOM 22.2.1 - Transition Areas",
+   "quote": "Note that exceptions to common rules may exist. For example, a unique feature of the GOTA is that it has OEPs in the middle of the airspace which requires SLOP procedures halfway through the transition area. Also, eastbound flights through the GOTA are to send an RCL message to Gander Oceanic.",
+   "note": "Chapter 22 renumbering is NEW in Rev 125: 22.2.1 Transition Areas, 22.2.2 OEP, 22.2.3 AMU, 22.2.4 West Atlantic."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-025",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Rev 125: what is the jumpseat rule into and out of London Heathrow, and which brand new country chapter was added?",
+  "a": "Per local regulations, jumpseaters are not authorized into or out of LHR unless operationally required. Rev 125 also added a new Italy chapter, 23.19, and retitled chapter 23.18 from London Heathrow to United Kingdom.",
+  "ref": "FOM 23.18.1.13",
+  "src": {
+   "ref": "FOM 23.18.1.13 - Jumpseat",
+   "quote": "Per local regulations, jumpseaters are not authorized into/out of LHR unless operationally required.",
+   "note": "NEW section in Rev 125. LHR subsections renumbered under 23.18.1; 23.19 Italy is a new chapter."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-026",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Why can a SELCAL alert be misleading, and what does the FOM require when responding?",
+  "a": "SELCAL codes are not unique, so a notification may be intended for another aircraft. Use proper radio phraseology and pay close attention to callsigns.",
+  "ref": "FOM 20.4.3.1 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.4.3.1, SELCAL",
+   "quote": "SELCAL codes are not unique. It is possible to receive a SELCAL notification that is intended for another aircraft. When responding to SELCAL notifications, crews should use proper radio phraseology and pay close attention to callsigns to avoid miscommunication.",
+   "note": "New caution in Rev 125."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-027",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "How do crewmembers entering Hawaii from the mainland complete the agriculture declaration?",
+  "a": "Complete the digital Plant and Animals Declaration Form before arrival, accessed via the icon on the EFB.",
+  "ref": "FOM 20.7.2 (Ch 20)",
+  "src": {
+   "ref": "FOM 20.7.2, Agriculture Clearance Arriving/Departing Hawaii",
+   "quote": "Hawaii requires all passengers and crewmembers that are entering Hawaii from the mainland to complete a digital “Plant and Animals Declaration Form” prior to arrival. The form can be accessed by crewmembers via the icon on their EFB.",
+   "note": "Rev 125 moved the form to a digital EFB process. Departing Hawaii for the mainland, crewmembers process through a USDA station."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-028",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "Where does A330 SATCOM become unreliable, and where does Inmarsat CPDLC or SATVOICE stop counting as an LRCS?",
+  "a": "Flights with Inmarsat equipment only (787/A321/A330) may experience SATCOM unreliability north of 72 degrees N. There is no Inmarsat coverage north of 80 degrees N, so Inmarsat CPDLC or SATVOICE does not qualify as an LRCS there.",
+  "ref": "FOM 19.4.1.3 (Ch 19)",
+  "src": {
+   "ref": "FOM 19.4.1.3, SATCOM Service Limitations North of 72 North",
+   "quote": "Due to satellite coverage limitations, flights operating with (787/A321/A330) Inmarsat equipment only may experience SATCOM unreliability north of 72°N. There is no Inmarsat satellite coverage north of 80°N. An Inmarsat CPDLC or SATVOICE system does not qualify as a Long-Range Communication System (LRCS) when operating north of 80°N.",
+   "note": "Only the 737 Iridium SATVOICE is available north of 80 degrees N."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-029",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In the Atlantic theater, when must the crew perform a SELCAL check before entering each OCA?",
+  "a": "When operating outside of VHF coverage, prior to entering each individual OCA, on the designated HF frequencies, to establish and confirm voice communication.",
+  "ref": "FOM 22.4 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.4, Communication",
+   "quote": "When operating outside of VHF coverage, prior to entering each individual OCA, the crew must perform a SELCAL check on the designated HF frequencies to establish and confirm voice communication.",
+   "note": "Rev 125 qualified the requirement by VHF coverage. The logon goes to the controlling authority for the OCA, not the FIR."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-030",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "What are crews not permitted to bring into Iceland?",
+  "a": "Alcohol, tobacco products, and cash over $15,000.",
+  "ref": "FOM 22.12.1 (Ch 22)",
+  "src": {
+   "ref": "FOM 22.12.1, Iceland Customs",
+   "quote": "crews are not permitted to bring the following into Iceland: • Alcohol • Tobacco products • Cash over $15,000",
+   "note": "New in Rev 125 with the Iceland section."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom19-031",
+  "chapter": "19-24",
+  "chapterName": "19-24 Theaters",
+  "q": "In Europe, can the A330 use the ground-based ATN data link network?",
+  "a": "No. The A330 has FANS 1/A(+), which does not support the ATN network. European data link is available via ATN, FANS 1/A+, or both.",
+  "ref": "FOM 23.3 (Ch 23)",
+  "src": {
+   "ref": "FOM 23.3, Communication",
+   "quote": "The A330 has FANS 1/A (+) which does not support the ATN network.",
+   "note": "Plan on FANS 1/A+ CPDLC service in Europe; ATN-only services are not available to the A330."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ }
+]

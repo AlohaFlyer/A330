@@ -1,0 +1,707 @@
+[
+ {
+  "id": "fom05-001",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, what takeoff and landing operations are authorized on a narrow runway, and how is a narrow runway defined?",
+  "a": "None. On the A330 (as on the 717, 787 and A321), takeoff and landing are not authorized on any narrow runway. A narrow runway is one whose nominal paved width is less than 100 ft (30 m).",
+  "ref": "FOM 5.1.3",
+  "src": {
+   "ref": "FOM 5.1.3, Narrow Runway Operations",
+   "quote": "(717/787/A321/A330) Takeoff and landing are not authorized on any narrow runway.",
+   "note": "The 100 ft / 30 m threshold defines a narrow runway; only the 737 has narrow-runway authorization, with restrictions."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-002",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "When must the cabin doors be armed relative to aircraft movement?",
+  "a": "Doors shall be armed for any surface movement, including all pushbacks, taxi, and towing. Pilots must give Flight Attendants adequate time and notice to secure the cabin for movement.",
+  "ref": "FOM 5.1.7",
+  "src": {
+   "ref": "FOM 5.1.7, Door Arming with Passengers on Board",
+   "quote": "Doors shall be armed for any surface movement, including all pushbacks, taxi, and towing",
+   "note": "Applies to every ground movement with passengers aboard, not just pushback."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-003",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "How many start attempts constitute a successful APU start, and when is the APU considered to have failed to start?",
+  "a": "The APU is considered to have started successfully on any one of three start attempts. It is considered to have failed to start after three consecutive start attempt failures, or when fleet-specific procedures preclude subsequent attempts.",
+  "ref": "FOM 5.1.8.1",
+  "src": {
+   "ref": "FOM 5.1.8.1, APU Start/Failed to Start",
+   "quote": "an APU is considered to have started successfully on any one of three start attempts",
+   "note": "Three consecutive failures equals a failed start and drives a required Maintenance Logbook entry."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-004",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "During which phases of flight may the crew rest facility not be occupied?",
+  "a": "It must not be occupied from pushback to 10,000 ft AFE, and from 45 minutes prior to landing to aircraft block-in.",
+  "ref": "FOM 5.1.23.1",
+  "src": {
+   "ref": "FOM 5.1.23.1, Limitations and Restrictions",
+   "quote": "The crew rest facility must not be occupied from pushback to 10,000 ft AFE and from 45 minutes prior to landing to aircraft block-in",
+   "note": "Brackets the rest facility to the cruise/enroute window. On the A330 the facility is the Lower Deck Module Crew Rest unit (LDMCR); see 5.1.23.8."
+  },
+  "fleet": "pax",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-005",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Under what braking-action report is taxi prohibited?",
+  "a": "Taxi operations are prohibited when braking action is reported as NIL by the airport or other aircraft.",
+  "ref": "FOM 5.3.1",
+  "src": {
+   "ref": "FOM 5.3.1, Taxi Prohibited",
+   "quote": "Taxi operations are prohibited when braking action is reported as NIL by airport or other aircraft",
+   "note": "A NIL braking action report is an absolute bar to taxi."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-006",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "For which taxi clearances is dual acknowledgment between both pilots required?",
+  "a": "Runway Crossing, Hold Short, Line Up and Wait, Cleared for Takeoff, and Cleared to Land.",
+  "ref": "FOM 5.3.4.1",
+  "src": {
+   "ref": "FOM 5.3.4.1, Runway Awareness",
+   "quote": "Dual acknowledgment should be used for all taxi instructions between both pilots and is required for the following clearances",
+   "note": "The listed five clearances require the transmitting pilot's readback plus a verbal confirmation from the other pilot."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-007",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Who must taxi the aircraft during low visibility operations?",
+  "a": "The Captain must taxi the aircraft during low visibility operations. Restricted visibility includes any time the RVR is less than 1200.",
+  "ref": "FOM 5.3.11",
+  "src": {
+   "ref": "FOM 5.3.11, Taxi Operations – Low Visibility",
+   "quote": "During low visibility operations, the Captain must taxi the aircraft",
+   "note": "Restricted visibility includes dense fog, heavy precipitation, or any time RVR is less than 1200; checklists are done stopped with the parking brake set."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-008",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What are the standard takeoff minimums for an aircraft with two engines or less?",
+  "a": "1 sm visibility or RVR 5000.",
+  "ref": "FOM 5.4.1.1",
+  "src": {
+   "ref": "FOM 5.4.1.1, Standard Takeoff Minimums",
+   "quote": "Defined as 1 sm visibility or RVR 5000 for aircraft having 2 engines or less",
+   "note": "The A330, having two engines, uses this standard; when published minimums are higher and no special procedure exists, takeoff below published minimums is prohibited."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-009",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What is the maximum takeoff-alternate distance for the A330?",
+  "a": "370 nm.",
+  "ref": "FOM 5.4.2",
+  "src": {
+   "ref": "FOM 5.4.2, Takeoff Alternate",
+   "quote": "A330 370 nm",
+   "note": "Per-fleet table in 5.4.2: A321 360 nm, A330 370 nm, 717 320 nm, 737 350 nm, 787 393 nm. Takeoff-alternate weather must meet destination-alternate requirements."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-010",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "At what visibility must the Captain make the takeoff?",
+  "a": "Any time the visibility is less than or equal to 1/4 sm or 1600 RVR, the Captain will make the takeoff.",
+  "ref": "FOM 5.4.3",
+  "src": {
+   "ref": "FOM 5.4.3, Captain Required Takeoff",
+   "quote": "the visibility is less than or equal to 1/4 sm or 1600 RVR, the Captain will make the takeoff",
+   "note": "The same 1600 RVR / 1/4 sm threshold appears in the lower-than-standard takeoff table as the Captain-required trigger."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-011",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, above what speed does a rejected takeoff require a return to the gate and a Maintenance Logbook entry regardless of the reason?",
+  "a": "Above 100 kts (Airbus). An RTO initiated at greater than 100 kts requires that the flight return to the gate and a Maintenance Logbook entry be made regardless of the reason for the RTO.",
+  "ref": "FOM 5.4.10",
+  "src": {
+   "ref": "FOM 5.4.10, Rejected Takeoff (RTO)",
+   "quote": "An RTO initiated at greater than (Airbus) 100 kts/(Boeing) 80 kts requires that the flight returns to the gate and a Maintenance Logbook entry be made regardless of the reason for the RTO.",
+   "note": "At or below the Airbus 100 kt threshold for correctable issues, no gate return is required, but brake temperature limits must still be considered and a Maintenance Logbook entry may be required. New speed-based rule in Rev 125."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-012",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "At what minimum height is an initial turn after takeoff normally commenced when no turn point is procedurally defined, and what turn is exempt?",
+  "a": "Normally at a minimum of 400 ft AFE, to comply with TERPS ODP criteria. A required course or heading change of less than 15 degrees initially is a non-maneuvering turn and may be commenced below 400 ft.",
+  "ref": "FOM 5.5.1",
+  "src": {
+   "ref": "FOM 5.5.1, Turns After Takeoff",
+   "quote": "an initial turn after takeoff is normally commenced at a minimum of 400 ft AFE",
+   "note": "Applies to departure procedures lacking a defined turn point; a fleet manual or DP-specified altitude overrides the 400 ft default."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-013",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Within what tolerance must the two primary altimeters agree during RVSM operations, and how often are crosschecks made?",
+  "a": "The two primary altimeters should agree within 200 ft (or a lesser value if specified in the FH/FCOM). Crosschecks between the primary altimeters and the standby are made at intervals of approximately one hour.",
+  "ref": "FOM 5.5.6.5",
+  "src": {
+   "ref": "FOM 5.5.6.5, Enroute RVSM Altitude Monitoring Requirements",
+   "quote": "The two primary altimeters should agree within 200 ft",
+   "note": "RVSM airspace is FL290 to FL410 inclusive with 1000 ft vertical separation; at level-off all altimeters are set to 29.92, and use of the standby as a primary is prohibited."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-014",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What assigned-altitude deviation requires a Flight Crew safety report, and within what time?",
+  "a": "An assigned altitude deviation of 300 ft or more (also an altimeter system error of 245 ft or more, or a total vertical error of 300 ft or more) requires a safety report within 24 hours. The Company must separately report altitude-keeping errors to the FAA within 72 hours.",
+  "ref": "FOM 5.5.7",
+  "src": {
+   "ref": "FOM 5.5.7, Altitude Deviation Reporting",
+   "quote": "Assigned altitude deviation of 300 ft or more",
+   "note": "24-hour crew safety report thresholds are 300 ft assigned deviation, 245 ft altimeter system error, and 300 ft total vertical error; Company FAA reporting is within 72 hours."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-015",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "If a pilot leaves their duty station above FL410, what is required of the remaining crewmember?",
+  "a": "The remaining crewmember must put on and use their oxygen mask before the other pilot leaves the seat and continue using it until the other crewmember has returned.",
+  "ref": "FOM 5.5.12",
+  "src": {
+   "ref": "FOM 5.5.12, Oxygen Use",
+   "quote": "above FL410, the remaining crewmember must put on and utilize their oxygen mask",
+   "note": "The trigger is the aircraft being above FL410 while one pilot is away from the controls."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-016",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Is the A330 approved for RNP-4 enroute operations?",
+  "a": "Yes. All Company aircraft are approved for RNP-4 operations, with the exception of the 717, which is limited to RNP-10.",
+  "ref": "FOM 5.5.13",
+  "src": {
+   "ref": "FOM 5.5.13, Enroute Navigation",
+   "quote": "All Company aircraft are approved for RNP-4 operations, with the exception of the 717, which is limited to RNP-10.",
+   "note": "RNP-4 is the enroute oceanic/remote navigation capability the A330 carries."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-017",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On what maximum airspeed is holding pattern protection based?",
+  "a": "A maximum of 280 KIAS / Mach 0.8, whichever is lower. Standard holding patterns are right-hand turns, and a speed reduction is begun no earlier than three minutes prior to reaching the fix.",
+  "ref": "FOM 5.5.15",
+  "src": {
+   "ref": "FOM 5.5.15, Holding",
+   "quote": "Holding pattern protection is based on a maximum of 280 KIAS/Mach 0.8, whichever is lower",
+   "note": "US holding max airspeeds by altitude are 200 KIAS at/below 6000, 230 KIAS above 6000 through 14,000, and 265 KIAS above 14,000; holding fuel is calculated every 15 minutes."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-018",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "By what height must the A330 normally be aligned with the runway for an approach to be stabilized?",
+  "a": "Normally the aircraft must be aligned with the runway by 500 ft AFE. Approaches that include a 300 ft AFE runway alignment exception are indicated in the relevant airport 10-7.",
+  "ref": "FOM 5.6.5",
+  "src": {
+   "ref": "FOM 5.6.5, Stabilized Approach",
+   "quote": "the aircraft must be aligned with the runway by 500 ft AFE",
+   "note": "An approach is stabilized only if all criteria are met; either crewmember may call a no-fault go-around, and do not land from an unstable approach."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-019",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What are the circling approach minimums?",
+  "a": "1000 ft ceiling and 3 sm visibility, or the charted circling minimums, whichever is greater.",
+  "ref": "FOM 5.6.10",
+  "src": {
+   "ref": "FOM 5.6.10, Circling Approach",
+   "quote": "Circling minimums are 1000 ft and 3 sm visibility or charted circling minimums whichever is greater",
+   "note": "After reaching MDA the PF keeps an identifiable portion of the runway environment in sight and maintains MDA until in a position to descend to land."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-020",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "With only the approach lighting system in sight, below what height is descent not allowed, and what would then permit continuing?",
+  "a": "With only the approach lights in sight, a descent below 100 ft is not allowed unless the red side row bars or the red terminating bars are in sight.",
+  "ref": "FOM 5.6.15",
+  "src": {
+   "ref": "FOM 5.6.15, Descent Below Minimums",
+   "quote": "a descent below 100 ft is not allowed unless the red side row bars or the red terminating bars are in sight",
+   "note": "One of the 14 CFR 91.175 visual references must be distinctly visible to continue below DH/MDA; the approach light system alone is limited to 100 ft above TDZE without the red bars."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-021",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Within what limits must touchdown be planned, and what is the earliest allowable touchdown point from the threshold?",
+  "a": "Touchdown shall be planned within the first 3000 ft beyond the threshold, the first third of the runway, or (AS) the Latest Touchdown Point, whichever is less. The earliest planned touchdown point shall never be less than 500 ft from the runway threshold.",
+  "ref": "FOM 5.6.22.1",
+  "src": {
+   "ref": "FOM 5.6.22.1, Landing Policy",
+   "quote": "Touchdown shall be planned within the first 3000 ft beyond the threshold, the first third of the runway",
+   "note": "A safety report is required for any touchdown less than 500 ft from the threshold or beyond the applicable distance policy."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-022",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What are the LAHSO weather minimums, and how do they change with a PAPI or VASI installed and operational?",
+  "a": "Ceiling no less than 1500 ft and visibility no less than 5 sm. If a PAPI or VASI is installed and operational, conditions may be lowered to a ceiling no less than 1000 ft and visibility no less than 3 sm. LAHSO is prohibited on wet runways, and the tailwind on the hold short runway shall be calm (less than 3 kts).",
+  "ref": "FOM 5.6.32.2",
+  "src": {
+   "ref": "FOM 5.6.32.2, Operational Information – LAHSO",
+   "quote": "– A ceiling of no less than 1500 ft. – A visibility of no less than 5 sm. – LAHSO weather minima may be lowered to a ceiling of no less than 1000 ft and a visibility of no less than 3 sm where a Precision Approach Path Indicator (PAPI) or Visual Approach Slope Indicator (VASI) is installed and operational.",
+   "note": "LAHSO criteria were rewritten in Rev 125: prohibited on wet runways, not authorized to a runway without visual or electronic vertical guidance, not authorized if windshear has been reported."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-023",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "SCENARIO (check airman): You are the PM on an A330 visual to a wet runway. At 400 ft AFE the aircraft is fast and still drifting back toward centerline, not yet aligned. The PF says he will have it by the numbers. By 300 ft AFE it is still not aligned and airspeed is above target. What is the required action and who may take it?",
+  "a": "The approach is unstable. Normally the aircraft must be aligned with the runway by 500 ft AFE; it is not aligned by 500 ft, so the stabilized-approach gate is busted. Do not land from an unstable approach. Either crewmember may call for a go-around under the no-fault go-around policy, so the PM calls and the crew goes around.",
+  "ref": "FOM 5.6.5",
+  "src": {
+   "ref": "FOM 5.6.5, Stabilized Approach",
+   "quote": "An approach is stabilized only if all criteria are met. Normally, the aircraft must be aligned with the runway by 500 ft AFE. Approaches which include a 300 ft AFE runway alignment exception are indicated in the relevant airport 10-7.",
+   "note": "500 ft AFE runway alignment is the gate (300 ft AFE only where an exception is published in the 10-7); an unaligned, fast approach past the gate requires a go-around."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-024",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "SCENARIO (check airman): On an ILS in fog you reach DH with only the approach lighting system in sight, no red side row or terminating bars, and no other listed visual reference. The PF continues descending below 100 ft looking for the runway. What is the correct action?",
+  "a": "This is a violation. With only the approach lighting system in sight, a descent below 100 ft is not allowed unless the red side row bars or the red terminating bars are in sight. With no other 14 CFR 91.175 visual reference distinctly visible, a missed approach must be immediately executed when operating below the DH/MDA. The PF must go around, not continue.",
+  "ref": "FOM 5.6.15",
+  "src": {
+   "ref": "FOM 5.6.15, Descent Below Minimums",
+   "quote": "A missed approach must be immediately executed if any of the 14 CFR 91.175 requirements are not met when operating below the DH/MDA.",
+   "note": "The approach light system alone permits descent only to 100 ft above TDZE; below that the red side row bars or red terminating bars, or another listed reference, must be distinctly visible or a missed approach is mandatory."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-025",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "SCENARIO (check airman): Level at FL360 in RVSM airspace, you lose one primary altimeter and the autopilot altitude-control system flags a fault, so required RVSM equipment is no longer operating normally. Can you reset and press on, and what does the FOM require?",
+  "a": "No. In the event of required RVSM equipment failure prior to or within RVSM airspace, notify ATC and Dispatch to coordinate a prudent course of action. ATC may not require any action, but a reroute or diversion may be required. Both primary altimeters and one autopilot altitude-control system must be operating normally for RVSM; the standby altimeter may not be used as a primary.",
+  "ref": "FOM 5.5.6.4",
+  "src": {
+   "ref": "FOM 5.5.6.4, System Failure Enroute",
+   "quote": "In the event of required RVSM equipment failure prior to or within RVSM airspace, notify ATC and Dispatch to coordinate a prudent course of action. ATC may not require any action; however, a reroute or diversion may be required.",
+   "note": "Required RVSM equipment includes both primary altimeters, one autopilot altitude-control system, and the altitude alerting system; loss of any of these drives the ATC/Dispatch coordination, and the standby altimeter is prohibited as a primary."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-026",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "SCENARIO (check airman): Landing rollout complete, the RVR is 900 and dropping in dense fog. The First Officer offers to taxi to the gate while the Captain runs the after-landing flow. Is that acceptable, and how are checklists handled?",
+  "a": "No. RVR 900 is below 1200, so this is restricted/low visibility. During low visibility operations, the Captain must taxi the aircraft, not the First Officer. Checklists are performed with the aircraft stopped and the parking brake set, all exterior lights except landing lights are on, and maximum attention is devoted to scanning outside while taxiing.",
+  "ref": "FOM 5.3.11",
+  "src": {
+   "ref": "FOM 5.3.11, Taxi Operations – Low Visibility",
+   "quote": "During low visibility operations, the Captain must taxi the aircraft.",
+   "note": "Restricted visibility includes any time RVR is less than 1200; the Captain taxis, checklists are done stopped with the parking brake set, and no taxiing-unrelated duties are performed until stopped."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-027",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Rev 125: how is A330 operational/in-flight landing distance now calculated, and what safety margin applies?",
+  "a": "On TALPA guidance, using a 7-second air/flare distance from 50 ft above the runway threshold to touchdown. A 15% safety margin is applied to total landing distance, including the air distance, for both maximum manual braking and autobrake. The touchdown point is not a fixed distance; it is calculated and varies with weight, pressure altitude, temperature, approach speed, and wind.",
+  "ref": "FOM 5.6.22.3",
+  "src": {
+   "ref": "FOM 5.6.22.3 - Landing Performance",
+   "quote": "(717/787/A321/A330) Operational/In-flight landing distance calculations are based on TALPA guidance, using a 7-second air/flare distance (from 50 ft above runway threshold to touchdown). A 15% safety margin is applied to total landing distance, including the air distance, for both maximum manual braking and autobrake configurations. The touchdown point is not a fixed distance but rather a calculated value that varies with landing conditions such as aircraft weight, pressure altitude, temperature, approach speed, and wind.",
+   "note": "New in Rev 125 and bannered (717/787/A321/A330). The old fixed touchdown-point model is now banner-tagged (737) and no longer describes the A330."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-028",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Rev 125: after 'Cabin Secure' and Flight Deck Door closure, what must the Flight Crew confirm before the aircraft moves?",
+  "a": "All door indications closed, verbal confirmation from the Ground Crew that the Walkaround Check is complete, and, if installed, the Installed Physical Secondary Barrier (IPSB) verified stowed and latched.",
+  "ref": "FOM 5.2.20",
+  "src": {
+   "ref": "FOM 5.2.20 - Cabin Safety Check Prior to Taxi or Pushback",
+   "quote": "The Flight Crew must check all door indications to confirm they are closed and receive a verbal confirmation from the Ground Crew that the Walkaround Check is complete. If installed, the Installed Physical Secondary Barrier (IPSB) must be verified stowed and latched.",
+   "note": "The IPSB sentence is NEW in Rev 125."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-029",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "When should the APU be started before pushback?",
+  "a": "10 minutes prior to the anticipated pushback, unless it is required earlier for passenger comfort or equipment (PCA or external power) issues.",
+  "ref": "FOM 5.1.8.2",
+  "src": {
+   "ref": "FOM 5.1.8.2, APU Use",
+   "quote": "The APU should be started 10 minutes prior to the anticipated pushback, unless it is required for passenger comfort or equipment (PCA or external power) issues.",
+   "note": "Rev 125 made this all-fleet. Prioritize ground-supplied preconditioned air; if external power or PCA is not connected on arrival at the aircraft, call Ops before starting the APU."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-030",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, how far may a cabin door be opened without fall protection in place?",
+  "a": "Not any distance. On the 717/787/A321/A330, cabin doors must not be opened any distance without proper fall protection in place prior to door opening (the 737 allowance is 12 inches).",
+  "ref": "FOM 5.1.12",
+  "src": {
+   "ref": "FOM 5.1.12, Cabin Door Operation",
+   "quote": "(717/787/A321/A330) Cabin doors must not be opened any distance without proper fall protection in place prior to door opening.",
+   "note": "Relevant when no Cabin Crew is on board, such as ferry or check flights."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-031",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "If potable water had to be drained and cannot be refilled (for example in extreme cold), is an MEL required to operate without it?",
+  "a": "No. In these instances an MEL does not need to be applied to operate without potable water.",
+  "ref": "FOM 5.1.14",
+  "src": {
+   "ref": "FOM 5.1.14, Potable Water",
+   "quote": "In rare conditions, the water may need to be drained and cannot be refilled (e.g., extreme cold temperatures). In these instances, an MEL does not need to be applied to operate without potable water.",
+   "note": "Rev 125. Whether to operate without potable water is otherwise at the Captain's discretion considering flight time, passenger load, and availability of bottled water, wipes and hand sanitizer."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-032",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "When must a broadband (entertainment system) outage be written up in the Maintenance Logbook?",
+  "a": "If the broadband system drops offline and does not automatically reestablish internet connectivity before the end of the flight, write it up at the completion of the flight.",
+  "ref": "FOM 5.1.15",
+  "src": {
+   "ref": "FOM 5.1.15, Entertainment System (broadband)",
+   "quote": "If the broadband system drops offline and does not automatically reestablish internet connectivity before the end of the flight, it should be written up in the Maintenance Logbook at the completion of the flight.",
+   "note": "New section in Rev 125. Short intermittent dropouts due to reception are expected and need no write-up."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-033",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, how many Flight Crew and how many Cabin Crew may use the Lower Deck Module Crew Rest (LDMCR) at any time, and which bunks are the Flight Crew bunks?",
+  "a": "No more than 2 Flight Crew and 4 Cabin Crew at any time. Bunks 1 and 4 are reserved for Flight Crew and non-revenue HA pilots; bunks 2, 3, 5, and 6 are for Cabin Crew.",
+  "ref": "FOM 5.1.23.8",
+  "src": {
+   "ref": "FOM 5.1.23.8, A330 Crew Rest Facility",
+   "quote": "There are 2 bunks (1 and 4) reserved for Flight Crew and non-revenue HA pilots, and 4 bunks (2, 3, 5, and 6) reserved for Cabin Crew. Flight Crew and non-revenue HA pilots must not use bunks 2, 3, 5, or 6, and Cabin Crew must not use bunks 1 or 4. The FAA requires Flight Crew sleeping quarters to meet certain minimum standards, and only bunks 1 and 4 meet these standards. No more than 2 Flight Crew and 4 Cabin Crew are authorized to use the LDMCR at any time.",
+   "note": "Only bunks 1 and 4 meet the FAA Flight Crew sleeping-quarter standard. Use PA+ALL and the handset push-to-talk to make a cabin PA without disturbing the LDMCR."
+  },
+  "fleet": "pax",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-034",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On an A330 with all LDMCR available, which pilot crew rest seats must be blocked for an Augmented Crew?",
+  "a": "Hard block 3C or 3G, with the other of 3C or 3G as last sold/last assigned. For a Double Augmented or Double Crew, hard block both 3C and 3G.",
+  "ref": "FOM 5.1.23.8.1",
+  "src": {
+   "ref": "FOM 5.1.23.8.1, Pilot Crew Rest Seats",
+   "quote": "A330 – All LDMCR Available Hard Blocked: 3C or 3G Last Sold/Last Assigned: 3C or 3G, whichever is not hard Hard Blocked: 3C and 3G blocked",
+   "note": "Table 5.1.23.8.1(1) cells run together in the text extract; the Augmented column is 3C or 3G hard blocked plus the other last sold, the Double column is 3C and 3G hard blocked. Pilot crew rest seats are required on all Augmented, Double Augmented, or Double Crew flights."
+  },
+  "fleet": "pax",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-035",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "If the decision is made to deplane during boarding or before departure, who should be notified first and why?",
+  "a": "The CSA, before deplaning begins, to give the station time to prepare (open the flight, coordinate installation of a tail stand).",
+  "ref": "FOM 5.2.4",
+  "src": {
+   "ref": "FOM 5.2.4, Passenger Boarding",
+   "quote": "If during the boarding process or prior to departure the decision to deplane is made, the CSA should be notified before deplaning begins to give station time to prepare (e.g., open the flight, coordinate installation of tail stand).",
+   "note": "Rev 125 addition."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-036",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "When and to what address do you log on CPDLC for Iceland?",
+  "a": "Climbing through FL100, logon address BIRD.",
+  "ref": "FOM 5.2.15",
+  "src": {
+   "ref": "FOM 5.2.15, CPDLC Logon Policy",
+   "quote": "Iceland Climbing through FL100 BIRD",
+   "note": "Iceland was added to the logon table in Rev 125. Japan and New Zealand are climbing through 10k (RJJJ, NZZO); Mexico is during preflight (KUSA); South Korea is east of Japan (RJJJ); Tahiti climbing through 10k (NTTT)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-037",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, is a forward tow permitted with both engines running?",
+  "a": "No. For the 787 and A330 the Ground Crew policy currently prohibits forward tow operations with both engines running.",
+  "ref": "FOM 5.2.23",
+  "src": {
+   "ref": "FOM 5.2.23, Pushback",
+   "quote": "(787/A330) The Ground Crew policy currently prohibits forward tow operations with both engines running.",
+   "note": "The Marshaller may also delay engine start until pushback is complete if ramp conditions do not permit."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-038",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On a visual approach with an instrument approach available to the landing runway, what must the pilots do with the navaid and FMS?",
+  "a": "Tune, identify, and monitor the appropriate navigational aid and/or program the FMS as a backup for guidance. This is mandatory; the time-permitting qualifier was removed in Rev 125.",
+  "ref": "FOM 5.6.6.3",
+  "src": {
+   "ref": "FOM 5.6.6.3, Visual Approach Monitoring",
+   "quote": "When an instrument approach is available to the runway of intended landing, pilots shall tune, identify, and monitor the appropriate navigational aid and/or program the FMC/FMS as a backup for guidance.",
+   "note": "Rev 125 changed this from a time-permitting recommendation to a shall."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-039",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, when may a VNAV approach be flown to a DA(H) in lieu of the published MDA(H)?",
+  "a": "When the chart contains a note stating \"Only authorized operators may use VNAV DA(H) in lieu of MDA(H)\" or \"VNAV DA(H) in lieu of MDA(H) depends on operator policy.\" Refer to the fleet-specific manuals for procedures.",
+  "ref": "FOM 5.6.14.1",
+  "src": {
+   "ref": "FOM 5.6.14.1, VNAV Approaches Using DA in lieu of MDA (787/A321/A330)",
+   "quote": "VNAV approaches may be flown to the published MDA(H) if the chart contains a note stating: • “Only authorized operators may use VNAV DA(H) in lieu of MDA(H),” or • “VNAV DA(H) in lieu of MDA(H) depends on operator policy.” Refer to the fleet-specific manuals for procedures.",
+   "note": "Ops Spec C073. Bannered (787/A321/A330)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-040",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, is a one-engine-inoperative CAT II Autoland authorized? A CAT III?",
+  "a": "CAT II yes: Ops Spec authorization allows one-engine inoperative CAT II Autoland on the A321/A330. CAT III no: one-engine CAT III Autoland is not authorized.",
+  "ref": "FOM 5.6.17.2 / 5.6.17.3",
+  "src": {
+   "ref": "FOM 5.6.17.2 and 5.6.17.3, CAT II and CAT III Operating Limitations",
+   "quote": "(A321/A330) Ops Spec authorization allows for one-engine inoperative CAT II Autoland.",
+   "note": "The CAT III bullet reads: (A321/A330) One-engine CAT III Autoland is not authorized."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-041",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "For Autoland operations on the A330, what qualification must the PIC hold, and on which runways are Autolands permitted?",
+  "a": "The PIC must be Autoland qualified (787/A321/A330). Autoland approaches and landings are permitted on CAT II/III runways only, and pilots should advise the tower so the ILS critical zone is protected.",
+  "ref": "FOM 5.6.18",
+  "src": {
+   "ref": "FOM 5.6.18, Autoland Operations",
+   "quote": "(787/A321/A330) The PIC must be Autoland qualified.",
+   "note": "Ops Spec C061. The ILS critical area is normally protected when the weather is below 800 ft or 2 miles."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-042",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "How must non-normal (abnormal) landing data be treated when determining runway suitability?",
+  "a": "Unfactored data (no safety buffer) represents actual aircraft performance and must be considered the minimum acceptable limit.",
+  "ref": "FOM 5.6.24",
+  "src": {
+   "ref": "FOM 5.6.24, Non-Normal Landing Data",
+   "quote": "Unfactored data (with no safety buffer) represents actual aircraft performance and must be considered the minimum acceptable limit.",
+   "note": "Rev 125 made this all-fleet. Non-normal data may still be used for abnormals to determine runway suitability."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-043",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330, below what height AGL must fuel jettison be avoided, and what ATC notifications are required?",
+  "a": "Avoid jettisoning below 6000 ft AGL (also near cities and towns, into the jettisoned flow, and near thunderstorms). Notify ATC before starting jettison and when complete, and coordinate route, altitude, and duration.",
+  "ref": "FOM 5.6.29",
+  "src": {
+   "ref": "FOM 5.6.29, Fuel Jettison (787/A330)",
+   "quote": "In the event the Captain elects to jettison fuel, the Flight Crew should minimize potentially adverse effects to humans, animals, or vegetation and avoid jettisoning: • Below 6000 ft AGL • Near cities and towns, and preferably remain over water • Into the jettisoned flow (which descends at about 500 ft/min) • Near areas where thunderstorms have been reported or are expected The Flight Crew must notify ATC prior to starting fuel jettison and when jettison is complete.",
+   "note": "After jettisoning, complete a Pilot Report of Incident with date, time, and approximate amount jettisoned."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-044",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "If a hard landing is suspected, what two actions does the FOM require?",
+  "a": "Make a Maintenance Logbook entry, ensuring the defect description notes that it was a hard landing, and submit a safety report.",
+  "ref": "FOM 5.6.31",
+  "src": {
+   "ref": "FOM 5.6.31, Hard Landing",
+   "quote": "Make a Maintenance Logbook entry, ensuring that in the defect description it is notated that it was a hard landing. • Submit a safety report.",
+   "note": "A landing does not need to be overweight to be considered hard."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-045",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "What ground personnel are required to park an A330 (manual or VDGS), and where are station exceptions published?",
+  "a": "Two Wing Walkers and one Marshaller/VDGS Operator for the 787/A330. Station-specific exceptions to the two Wing Walker requirement are denoted in the airport 10-7.",
+  "ref": "FOM 5.6.33",
+  "src": {
+   "ref": "FOM 5.6.33, Parking Requirements (manual or VDGS)",
+   "quote": "(787/A330) Two Wing Walkers and One Marshaller/VDGS Operator Station-specific exceptions to the requirement to have two Wing Walkers will be denoted in the airport 10-7.",
+   "note": "Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-046",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "Approximately 2 minutes before an oceanic waypoint, what must the crew confirm?",
+  "a": "That the upcoming waypoint and the subsequent waypoint (next + 1) agree with the Flight Plan/ATC clearance.",
+  "ref": "FOM 5.7.3.16",
+  "src": {
+   "ref": "FOM 5.7.3.16, Waypoint Transition",
+   "quote": "Approximately 2 minutes prior to reaching a waypoint, confirm that the upcoming waypoint and the subsequent waypoint (next + 1) agrees with the Flight Plan/ATC clearance.",
+   "note": "Rev 125 added the next + 1 requirement. After transition, record time and fuel from the FMS and compare with the estimates."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-047",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On CPDLC in oceanic airspace, what is required if SELCAL is not functioning?",
+  "a": "One member of the crew must listen to HF continuously.",
+  "ref": "FOM 5.7.3.18",
+  "src": {
+   "ref": "FOM 5.7.3.18, Position Reporting, Oceanic (CPDLC)",
+   "quote": "If SELCAL is not functioning, one member of the crew must listen to HF continuously.",
+   "note": "Rev 125. SELCAL codes are also not unique (20.4.3.1): verify the callsign before responding."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ }
+]
