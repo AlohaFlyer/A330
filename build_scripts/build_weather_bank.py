@@ -2,12 +2,12 @@
 """Write data/weather.json, the A330 Weather Requirements bank consumed by weather.html.
 
 Record shape (engine, frozen): {cat, ref, q, a:[html lines], src, tbl?}
-  src   = verbatim FOM 125.1 text. Fragments from one passage that the extract prints
+  src   = verbatim FOM 125.3 text. Fragments from one passage that the extract prints
           non-contiguously (page breaks, two-column tables) are joined with " ... ";
           verify_weather.py checks every fragment as a literal substring.
   tbl   = list of [label, value, highlight] rows (the engine renders Fleet / Max distance).
 Extra fields per the build brief: fleet ("pax"|"both"), srcType ("manual").
-Source: src/FOM_125.1.md only. Run verify_weather.py after any edit.
+Source: src/FOM_125.3.md only. Run verify_weather.py after any edit.
 """
 import json, os
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
@@ -84,6 +84,13 @@ rec('Destination Alternate', 'FOM 8.2.3',
     ['<b>Thunderstorms or volcanic ash</b> forecast in the TAF at the ETA.',
      'A Dispatcher may add an alternate for other considerations.'],
     'An alternate airport must be listed on the release prior to dispatch when thunderstorms or volcanic ash are forecast in the TAF at the ETA. A Dispatcher may decide an alternate should be added due to other considerations.')
+
+rec('Destination Alternate', 'FOM 8.2.2.1.1',
+    'After dispatch, the destination alternate weather drops below the minimums it was dispatched under. What happens?',
+    ['The alternate must <b>continue to meet the minimums it was dispatched under</b>. Below them, <b>Dispatch files a new alternate</b> that does, or <b>removes the alternate</b> if the destination no longer requires one.',
+     'No alternate can be found: <b>divert</b>, unless in the interest of safety the <b>PIC continues to the destination under emergency authority</b>.',
+     'New in Rev 125.3.'],
+    'After dispatch, the weather at the destination alternate must continue to meet the weather minimum rules under which it was dispatched. If the destination alternate weather drops below those minimums, Dispatch must file a new alternate that does meet the required minimums. In some cases, the alternate airport may be removed entirely if the destination airport does not require an alternate to be listed. In the event that no alternate can be found that meets the minimum weather requirements, the flight must divert unless, in the interest of safety, the PIC continues to the destination utilizing emergency authority.')
 
 rec('Destination Alternate', 'FOM 8.4.1.4',
     'Extended overwater flag flight, destination forecast below minimums at ETA. Can Dispatch release it?',
@@ -182,6 +189,12 @@ rec('Contaminated Runway', 'FOM 9.1.6.1',
      'Reduced thrust by assumed temperature (<b>FLEX</b>) is <b>not authorized</b> on a contaminated runway.'],
     '(A330) See FCOM – In-Flight Performance ... Runway Condition Code values range from 0 (NIL) to 6 (dry). ... Reduced thrust using assumed temperature, labeled AT or FLEX, is not authorized on a contaminated runway.')
 
+rec('Contaminated Runway', 'FOM 9.1.2.2',
+    'Braking action worse than GOOD: who gets a report, and how may the A330 send it to Dispatch?',
+    ['<b>PIREP to ATC</b> anytime actual braking action is <b>less than GOOD</b> or Braking Action Advisories are in effect, with descriptive terms and aircraft type.',
+     '<b>Worst braking action experienced to Dispatch after landing</b>; the <b>ACARS FLT SUMMARY</b> may be used (737/787/A321/A330, A330 added in Rev 125.3).'],
+    'Flight Crews shall provide a braking action report (PIREP) to ATC anytime actual braking action is less than GOOD or Braking Action Advisories are in effect. ... If actual braking action is worse than GOOD, the Flight Crew shall provide the worst braking action experienced to Dispatch after landing. (737/787/A321/A330) The ACARS FLT SUMMARY may be used to report braking action to Dispatch.')
+
 rec('Contaminated Runway', 'FOM 5.6.22.3',
     'A330 in-flight landing distance: what assumptions does the TALPA calculation use?',
     ['<b>7-second air/flare distance</b> from 50 ft over the threshold to touchdown, plus a <b>15% safety margin</b> on total landing distance (air distance included), for both max manual braking and autobrake.'],
@@ -209,11 +222,12 @@ rec('Controlling Report', 'FOM 9.2.1',
     'The controlling visibility for an airport, or if a particular runway is identified, is the most recent report, including Remarks or conditional language. A verbal report from a control tower that includes a visibility value, Runway Visibility (RVV) or Runway Visual Range (RVR), is controlling and will take precedence over a METAR or ATIS.')
 
 # ---------------- A330 specific ----------------
-rec('A330 Specific', 'FOM 11.2.9',
+rec('A330 Specific', 'FOM 11.2.9.1',
     'Decompression polygon: A330 initial descent altitude?',
     ['<b>Always 17,000 ft or FL170</b> (737 and A330). The 787 uses the altitude in the polygon detail drawer.',
-     'Never proceed through a charted No Ops Area.'],
-    '(737/A330) Initial descent altitude is always 17,000 ft or FL170.')
+     'Never proceed through a charted No Ops Area.',
+     'Plan to be at <b>10,000 ft before passenger oxygen is depleted</b> (11.2.9). Polygon procedures renumbered 11.2.9.1 in Rev 125.3.'],
+    'Flight Crews should plan to be at 10,000 ft before passenger oxygen supplies are depleted. ... (737/A330) Initial descent altitude is always 17,000 ft or FL170.')
 
 rec('A330 Specific', 'FOM 5.1.3',
     'Narrow runway: definition, and is the A330 allowed?',

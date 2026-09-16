@@ -34,6 +34,9 @@ for href,sub in SUB.items():
 logo='<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'149\' height=\'44\' viewBox=\'0 0 149 44\'><text x=\'0\' y=\'29\' font-family=\'Segoe UI,Arial,sans-serif\' font-size=\'17\' font-weight=\'700\' fill=\'%23FFFFFF\' letter-spacing=\'1\'>HAWAIIAN</text></svg>'
 t=re.sub(r'<img src="data:image/png;base64,[A-Za-z0-9+/=]+" alt="Hawaiian Airlines">', '<img src="data:image/svg+xml,'+logo+'" alt="Hawaiian Airlines">', t)
 t=t.replace('href="/favicon.ico"','href="/assets/icons/favicon.ico"').replace('href="/favicon-32x32.png"','href="/assets/icons/icon-32.png"').replace('href="/favicon-16x16.png"','href="/assets/icons/icon-16.png"').replace('href="/apple-touch-icon.png"','href="/assets/icons/icon-180.png"')
+# Manuals tile, directly above the ALPA tile, same tint class (no new CSS)
+if 'href="manuals/"' not in t:
+    t=t.replace('  <a class="alpa" href="pwa.html">', '  <a class="alpa" href="manuals/"><span>Manuals<small>FCOM, QRH, FCTM, FOM, MEL, AFM, PRC - search every manual at once, ask Pualani, company email login</small></span><span class="arrow">&#9654;</span></a>\n  <a class="alpa" href="pwa.html">',1)
 open('index.html','w',encoding='utf-8').write(t); print('index rewritten')
 for f in ['pwa.html','pwa_pdf.html','fom_quiz.html','jeopardy.html']:
     s=open(f,encoding='utf-8').read(); o=s

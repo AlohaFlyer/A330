@@ -28,6 +28,9 @@ RULES={
  'podcast.html':[
   ('FCOM R10, FCTM R9, QRH R7, FOM 125.1, MEL R5', f'FCOM {fr}, FCTM {T["revision"]}, QRH {qr}, FOM {FOM["revision"]}, MEL {MEL["revision"]}'),
  ],
+ 'weather.html':[
+  ('<span class="src">FOM Rev 125.1</span>', f'<span class="src">FOM Rev {FOM["revision"]}</span>'),
+ ],
  'limit-or-bust.html':[
   ('<span class="src">FCOM L.10 &middot; FOM 9.2</span>', f'<span class="src">FCOM {fr} LIM</span>'),
   ('Snap judgment, FCOM L.10 limits', f'Snap judgment, FCOM {fr} LIM limits'),

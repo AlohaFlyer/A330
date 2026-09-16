@@ -13,7 +13,9 @@ and keyboard handling stay byte-identical to the B787 engine):
   3. the .src line reads the FCOM revision from manuals.json (no lights legend: no A330 light photos);
   4. the checklist overlay footer and the not-found text name the FCTM (A330 normal checklists live
      in FCTM PR-NP-CL; the QRH R35 has none), revision from manuals.json;
-  5. the supplementary-procedure cross-reference token pattern SP.n becomes PRO-NOR-SUP-XXX;
+  5. the cross-reference linkifier SP.n becomes the A330 manual token set (DSC / PRO / LIM / PER /
+     FCTM PR / QRH, longest first) and runs before the all-caps highlighter; the xref box adds the
+     section id, PDF page and an Open in Manuals link (/manuals/?s=<section id>) via the .xref class;
   6. the legend label FMC becomes FMS;
   7. the banner logo PNG becomes the placeholder wordmark SVG that gen_index.py uses on index.html.
 Each edit asserts its anchor so a changed B787 engine fails loudly.
@@ -85,8 +87,30 @@ sub1('<div class="src">FCOM R10 NP.21 &middot; exact items, exact order &middot;
 sub1("QRH R7 Normal Checklists (NC.1-2)", f"FCTM {FCTM_REV} Normal Checklists (PR-NP-CL)")
 sub1("Checklist not found - see QRH Normal Checklists.", "Checklist not found - see FCTM Normal Checklists.")
 
-# 5. supplementary-procedure cross-reference tokens
-sub1(r"t = t.replace(/\b(SP\.\d+(?:\.\d+)?)\b/g, function(m){", r"t = t.replace(/\b(PRO-NOR-SUP-[A-Z]+)\b/g, function(m){")
+# 5. manual cross-reference tokens. The B787 engine links SP.n tokens after its all-caps highlighter. The
+#    A330 tokens (DSC-35-20-30, PRO-NOR-SUP-SEC, LIM-APU, PER-..., FCTM PR-NP-CL-..., QRH ...) are one
+#    alternation, longest first, and the block moves in front of the all-caps highlighter, because that
+#    highlighter wraps "APU APU" in "Refer to LIM-APU APU Start" (and "FCTM PR") in a span, which would
+#    split the token. A key containing a space is written with \x20 inside the onclick so the highlighter
+#    cannot match inside the attribute either.
+XREF_TOKENS = r"FCTM PR-[A-Z0-9-]+|QRH [A-Z0-9.-]+|PRO-(?:NOR|ABN|SPO|SUP)-[A-Z0-9-]+|DSC-\d\d-\d\d(?:-\d\d)?|LIM-[A-Z0-9-]+|PER-[A-Z0-9-]+"
+SP_BLOCK = ("  t = t.replace(/\\b(SP\\.\\d+(?:\\.\\d+)?)\\b/g, function(m){\n"
+            "    if(XREFS[m]) return '<span class=\"xref\" onclick=\"showXref(\\''+m+'\\');\">'+m+'</span>';\n"
+            "    return m;\n"
+            "  });\n")
+assert t.count(SP_BLOCK) == 1, 'SP.n linkifier block'
+t = t.replace(SP_BLOCK, '')
+XREF_BLOCK = ("  t = t.replace(/\\b(" + XREF_TOKENS + ")\\b/g, function(m){\n"
+              "    if(XREFS[m]) return '<span class=\"xref\" onclick=\"showXref(\\''+m.replace(/ /g,'\\\\x20')+'\\');\">'+m+'</span>';\n"
+              "    return m;\n"
+              "  });\n")
+CAPS_LINE = "  t = t.replace(/([A-Z]{2,}(?:\\s[A-Z0-9\\/]{2,}){1,4})/g, function(m){\n"
+sub1(CAPS_LINE, XREF_BLOCK + CAPS_LINE)
+
+# 5b. the cross-reference box also prints the section id and PDF page and links the Manuals page
+#     (it accepts ?s=<section id>); the link is styled by the existing .xref class only, no new CSS.
+BOX_LINE = '''  box.innerHTML = "<b style='font-size:11px;color:#888;'>" + x.title + "</b>\\n" + x.body;'''
+sub1(BOX_LINE, BOX_LINE[:-1] + ''' + (x.ref ? "\\n<b style='font-size:11px;color:#888;'>" + x.ref + (x.page ? " &middot; PDF p. " + x.page : "") + "</b> <a class=\\"xref\\" href=\\"/manuals/?s=" + encodeURIComponent(x.ref) + "\\" target=\\"_blank\\" rel=\\"noopener\\">Open in Manuals</a>" : "");''')
 
 # 6. legend label
 sub1('</i>FMC</span>', '</i>FMS</span>')

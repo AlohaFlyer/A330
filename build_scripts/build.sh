@@ -11,6 +11,7 @@ python3 build_scripts/apply_strings.py . >/dev/null
 python3 build_scripts/page_mcdu_preflight.py
 python3 build_scripts/page_phase_flows.py
 python3 build_scripts/page_flows_quiz.py
+python3 build_scripts/page_manuals.py
 python3 build_scripts/project_data.py
 python3 build_scripts/build_triggers.py
 python3 build_scripts/build_weather_bank.py
@@ -27,11 +28,13 @@ python3 build_scripts/externalize.py podcast.html EPISODES data/episodes.json
 sed -i 's|fetch("ioe_questions.json").catch(()=>caches.match("ioe_questions.json"))|fetch("data/oe.json").catch(()=>caches.match("data/oe.json"))|' ioe.html
 sed -i "s|fetch('fom_questions.json',{cache:'no-store'})|fetch('data/fom_questions.json',{cache:'no-store'})|" fom_quiz.html
 python3 build_scripts/page_fixups.py
+python3 build_scripts/gen_chrome.py
 python3 build_scripts/gen_labels.py
 python3 build_scripts/gen_index.py
 python3 build_scripts/build_stubs.py
 python3 build_scripts/stamp_versions.py
 python3 build_scripts/build_corpus.py
+if [ -d "${A330_SRC:-../src}" ]; then python3 build_scripts/build_manuals_index.py >/dev/null && { python3 build_scripts/verify_manuals.py >/dev/null || { echo 'VERIFY FAIL: manuals'; exit 1; }; }; else echo 'manuals index skipped: extracts not present (A330_SRC)'; fi
 python3 build_scripts/build_handouts.py
 python3 build_scripts/build_weather_handout.py
 python3 build_scripts/build_mcdu_handout.py

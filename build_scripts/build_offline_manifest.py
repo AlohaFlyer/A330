@@ -3,7 +3,7 @@
 size strings in portal-settings.js. Audio comes from data/episodes.json (media origin)."""
 import json, os, datetime
 os.chdir(os.path.join(os.path.dirname(__file__),'..'))
-SKIP={'.git','build_scripts','docs','.gitignore','README.md','BUILD_NOTES.md','offline-manifest.json','CNAME','robots.txt','manuals.json'}
+SKIP={'.git','build_scripts','docs','manuals','.gitignore','README.md','BUILD_NOTES.md','offline-manifest.json','CNAME','robots.txt','manuals.json'}
 core=[]
 for dp,dn,fn in os.walk('.'):
     dn[:]=[d for d in dn if d not in SKIP and not d.startswith('.')]

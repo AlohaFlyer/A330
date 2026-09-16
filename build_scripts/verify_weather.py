@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify data/weather.json against src/FOM_125.1.md.
+"""Verify data/weather.json against src/FOM_125.3.md.
 
 Every record's src must be verbatim FOM text: after whitespace normalization (runs of
 whitespace -> one space) each " ... "-separated fragment must be a literal substring of the
@@ -13,7 +13,7 @@ import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(HERE, '..'))
-DEFAULT_FOM = os.path.abspath(os.path.join(WORK, '..', 'src', 'FOM_125.1.md'))
+DEFAULT_FOM = os.path.abspath(os.path.join(WORK, '..', 'src', 'FOM_125.3.md'))
 WINDOW = 4000
 
 def norm(s):

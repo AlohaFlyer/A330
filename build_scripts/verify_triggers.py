@@ -21,8 +21,8 @@ BANK = os.path.join(WORK, 'data', 'triggers.json')
 
 EXTRACTS = {
     'FCOM': 'A330P_FCOM_R17_PRO-NOR.md',
-    'FCTM': 'A330_FCTM_R5.md',
-    'PRC': 'A330_PRC_2026-03-09.md',
+    'FCTM': 'A330_FCTM_R6.md',
+    'PRC': 'A330_PRC_2026-08-31.md',
     'QuickRef': 'QuickRef.md',
 }
 CATS = {'Phase Triggers', 'Approach Setup', 'Go-Around Brief', 'Checklist Order'}

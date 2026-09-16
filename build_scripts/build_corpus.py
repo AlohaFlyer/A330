@@ -26,6 +26,8 @@ for fl in (ft.get('FLOWS',[]) if isinstance(ft,dict) else []):
     for it in fl.get('items',[]):
         docs.append({'t':f"{fl.get('n','')}: {it.get('item','')}",'x':f"{it.get('item','')} {it.get('act','')} {it.get('role','')} {it.get('d','')}",'r':fl.get('ref','')})
 out['flows']=('Flows Trainer','flows_quiz.html',docs)
+M=json.load(open('manuals.json')); F=M['A330P_FCOM']; Q=M['A330P_QRH']; T=M['A330_FCTM']; FO=M['FOM']
+SRC={'limitations':f"the Hawaiian Airlines A330 PAX FCOM {F['revision']} Limitations chapter and the A330 AFM",'memory':f"the Hawaiian Airlines A330 PAX FCOM {F['revision']} [MEM] procedures",'triggers':f"the Hawaiian Airlines A330 PAX FCOM {F['revision']} PRO-NOR-SOP, FCTM {T['revision']} and the A330 PRC",'weather':f"the Hawaiian Airlines FOM {FO['revision']}",'systems':f"the Hawaiian Airlines A330 systems question bank",'ioe':f"the Hawaiian Airlines Fleets OE Workbook, A330 sections, answered from FCOM {F['revision']}, QRH {Q['revision']}, FCTM {T['revision']} and FOM {FO['revision']}",'mcdu':f"the Hawaiian Airlines A330 PAX FCOM {F['revision']} PRO-NOR-SOP cockpit preparation",'fom':f"the Hawaiian Airlines FOM {FO['revision']}",'flows':f"the Hawaiian Airlines A330 PAX FCOM {F['revision']} PRO-NOR-SOP flows and FCTM {T['revision']} normal checklists"}
 for k,(title,page,docs) in out.items():
-    json.dump({'title':title,'page':page,'built':built,'docs':docs},open(f'corpus/{k}.json','w',encoding='utf-8'),ensure_ascii=False)
+    json.dump({'title':title,'page':page,'built':built,'source':SRC.get(k,''),'docs':docs},open(f'corpus/{k}.json','w',encoding='utf-8'),ensure_ascii=False)
     print(f'corpus/{k}.json {len(docs)}')

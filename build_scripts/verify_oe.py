@@ -6,7 +6,7 @@ normalization. Prints PASS or FAIL per record and a summary. Exit 1 on any failu
 
 Usage: verify_oe.py [--src DIR] [--bank FILE] [--quiet]
   DIR holds A330P_FCOM_R17.md, A330P_FCOM_R17_PRO-NOR.md, A330P_QRH_R35.md,
-  A330_FCTM_R5.md, A330_PRC_2026-03-09.md, FOM_125.1.md
+  A330_FCTM_R6.md, A330_PRC_2026-08-31.md, FOM_125.3.md
 """
 import json, re, sys, os, argparse, unicodedata
 
@@ -16,9 +16,9 @@ BOOKS = {
     'fcom': 'A330P_FCOM_R17.md',
     'pro':  'A330P_FCOM_R17_PRO-NOR.md',
     'qrh':  'A330P_QRH_R35.md',
-    'fctm': 'A330_FCTM_R5.md',
-    'prc':  'A330_PRC_2026-03-09.md',
-    'fom':  'FOM_125.1.md',
+    'fctm': 'A330_FCTM_R6.md',
+    'prc':  'A330_PRC_2026-08-31.md',
+    'fom':  'FOM_125.3.md',
 }
 DESK = "No published source located, ask the check airman"
 FLEET_RX = re.compile(r'\b(EICAS|CDU|FMC|QRC|ECL|OFCR|OFAR|Dreamliner|Boeing|B787|A330F)\b', re.I)

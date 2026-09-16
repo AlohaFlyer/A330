@@ -9,7 +9,7 @@ ORDER = [
   ('as787pilot.app','ha330pilot.app'), ('as787_','ha330_'), ('as787-','ha330-'),
   ('b787-core-','ha330-core-'), ('b787-audio-','ha330-audio-'),
   ('b787state','a330state'), ('b787dark','a330dark'), ('b787_sysquiz_v2','a330_sysquiz_v2'),
-  ('b787_jeopardy_stats','a330_jeopardy_stats'), ('B787_night.jpg','assets/A330_hero.svg'),
+  ('b787_jeopardy_stats','a330_jeopardy_stats'), ('B787_night.jpg','assets/A330_hero.jpg'),
   ('Alaska Airlines Boeing 787 at night','Hawaiian Airlines Airbus A330'),
   ('alt="Alaska Airlines"','alt="Hawaiian Airlines"'), ('alt="Boeing 787"','alt="Airbus A330"'),
   ('Fleet is B787.','Fleet is A330.'), ("fleet: 'B787'","fleet: 'A330'"), ("fleet:'B787'","fleet:'A330'"),

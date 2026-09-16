@@ -21,9 +21,9 @@ EXTRACTS = {
     'FCOM PRO-NOR': 'A330P_FCOM_R17_PRO-NOR.md',
     'FCOM': 'A330P_FCOM_R17.md',
     'QRH': 'A330P_QRH_R35.md',
-    'FCTM': 'A330_FCTM_R5.md',
-    'PRC': 'A330_PRC_2026-03-09.md',
-    'FOM': 'FOM_125.1.md',
+    'FCTM': 'A330_FCTM_R6.md',
+    'PRC': 'A330_PRC_2026-08-31.md',
+    'FOM': 'FOM_125.3.md',
 }
 
 def norm(s):

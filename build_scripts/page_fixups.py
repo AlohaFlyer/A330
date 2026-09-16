@@ -20,8 +20,25 @@ EDITS={
  ],
  'flows_quiz.html':[
   ('let seat = "CA"','let seat = "FO"'),   # Ryan flies the FO seat; the first flow is CM2-only
+  # Airbus crew-member labels and a CM3 (IRO) seat; engine ids stay CA/FO/IRO
+  ('<button id="seatCA" class="active">CA</button>\n    <button id="seatFO">FO</button>',
+   '<button id="seatCA">CM1 (CA)</button>\n    <button id="seatFO" class="active">CM2 (FO)</button>\n    <button id="seatIRO">CM3 (IRO)</button>'),
+  ('document.getElementById("seatFO").onclick = e=>setSeat("FO", e.target);',
+   'document.getElementById("seatFO").onclick = e=>setSeat("FO", e.target);\ndocument.getElementById("seatIRO").onclick = e=>setSeat("IRO", e.target);'),
+  ('if(it.role==="IRO") return true; // observer items always greyed','if(it.role==="IRO") return seat!=="IRO"; // CM3 items show in the CM3 seat'),
+  ('if(it.role==="CA" || it.role==="FO") return it.role!==seat;','if(it.role==="CA" || it.role==="FO") return seat==="IRO" ? true : it.role!==seat;'),
+  ('(seat==="BOTH"?"both seats":seat)','(seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat))'),
+  ('"No " + seat + " items in this flow. Switch seat or flow."','"No " + ({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat) + " items in this flow. Switch seat or flow."'),
+ ],
+ 'assist.js':[
+  ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),
+  ("'You are scoped to ONE section of a study portal: ' + CORPUS.title + '. ' +","'You are scoped to ONE section of a study portal: ' + CORPUS.title + '. ' + (CORPUS.source ? 'Every excerpt is from ' + CORPUS.source + '. ' : '') +"),
+ ],
+ 'portal-settings.js':[
+  ("'<div class=\"ps-h3\">Offline</div>' +","'<div class=\"ps-h3\">Contact</div>' +\n    '<p class=\"ps-note\">Questions, corrections, requests: <a href=\"mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal\" style=\"color:#CE0C88;font-weight:700;text-decoration:none\">ryan.pettit@alaskaair.com</a></p>' +\n    '<div class=\"ps-h3\">Offline</div>' +"),
  ],
  'phase_flows.html':[
+  ('<button data-s="C" class="on">CA</button>\n      <button data-s="F">FO</button>','<button data-s="C">CM1 (CA)</button>\n      <button data-s="F" class="on">CM2 (FO)</button>'),
   ("let state={phase:'preflight',seat:'C',duty:'PF'","let state={phase:'preflight',seat:'F',duty:'PM'"),   # FO seat, PM duty default
  ],
  'weather.html':[

@@ -24,8 +24,8 @@ OUT = os.path.join(WORK, 'data', 'triggers.json')
 
 EXTRACTS = {
     'FCOM': 'A330P_FCOM_R17_PRO-NOR.md',
-    'FCTM': 'A330_FCTM_R5.md',
-    'PRC': 'A330_PRC_2026-03-09.md',
+    'FCTM': 'A330_FCTM_R6.md',
+    'PRC': 'A330_PRC_2026-08-31.md',
     'QuickRef': 'QuickRef.md',
 }
 
@@ -355,7 +355,7 @@ rec(AS,
     q='Approach Briefing: the Plan items on the Crew Briefing Card?',
     a='Route (STAR, Approach, Approach Mode); Missed Approach, Fuel/route to alternate; Landing Runway Assessment, Exit, Taxi; Autobrakes; Flaps, Approach/Target Speed. Threats first (PM, PF), Considerations after.',
     who='Both. Threats are called by PM then PF.',
-    ref='PRC p51 Crew Briefing Card',
+    ref='PRC p24 Crew Briefing Card',
     src='• Route (STAR, Approach, Approach Mode)', ext='PRC', kind='sop')
 
 
@@ -363,9 +363,9 @@ rec(AS,
     q='ILS: the three conditions before APPR pb, and what follows?',
     a='Cleared for the approach, on the intercept trajectory for the final approach course, LOC deviation available on the PFD. Then APPR pb press, BOTH APs engage (PF).',
     who='PF presses APPR and engages both APs.',
-    ref='PRC p13 ILS Profile',
-    src='- On the intercept trajectory for the final approach course - LOC deviation is available on the PFD - Cleared for Approach APPR pb…. Press',
-    ext='PRC', kind='sop')
+    ref='FCOM PRO-NOR-SOP-18-C-A', ident='PRO-NOR-SOP-18-C-A-00014488.0001001',
+    src='Press the APPR pb when all of the following is applicable: • The aircraft is cleared for the approach • The aircraft is on the intercept trajectory for the final approach course • LOC deviation is available on the PFD.',
+    ext='FCOM', kind='manual')
 
 rec(AS,
     q='Decelerated ILS: when is FLAPS 1 called, and when FLAPS 2?',
