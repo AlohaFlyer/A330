@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A330 Limitations Drill</title>
+<title>A330 Phase Flows</title>
 <style>
   :root{
     --bg:#1A1630; --panel:#2A2440; --panel2:#332E44; --line:#453F58;
@@ -104,99 +104,15 @@
 
 <div class="wrap">
   <header>
-    <h1>A330 Limitations <span class="sub">// Number, Units, Condition</span></h1>
-    <span class="src">FCOM R17 LIM</span>
+    <h1>Flight Phase Flows <span class="sub">// Normal and Non-Normal</span></h1>
+    <span class="src">FCOM R17 PRO-NOR-SOP</span>
   </header>
-  <div class="handrow"><a class="handout" href="view.html?f=A330_Memory_Limitations.pdf" target="_blank" rel="noopener">&#128196; Open memorize-set handout (PDF)</a><a class="gamelink" href="limit-or-bust.html">&#127918; GAME</a></div>
-  <div id="app"></div>
-  <div class="hint">Amber "Memorize" = know-cold set, FCOM R17 LIM &nbsp;&middot;&nbsp; State the limit aloud, then reveal &nbsp;&middot;&nbsp; Space / Enter = reveal then advance &nbsp;&middot;&nbsp; K = got it &nbsp;&middot;&nbsp; R = review &nbsp;&middot;&nbsp; Source = verbatim FCOM quote</div>
+  <div id="app"><div class="card"><div class="summary"><div class="lbl">Building</div><div class="srcsub">This page ships in build step 4. The portal chrome, settings and offline tiers are already live.</div></div></div></div>
 </div>
-
-
-<script>
-/* bank(s) DATA live in data/, loaded here; engine below is unchanged */
-Promise.all([fetch('data/limitations_drill.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
-const [DATA]=__b;
-if(!(Array.isArray(DATA)?DATA.length:Object.keys(DATA).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
-
-
-const MEM=DATA.map((d,i)=>i).filter(i=>DATA[i].mem);
-let order=[], idx=0, revealed=false, known=new Set(), review=new Set(), reviewMode=false, srcOpen=false;
-const app=document.getElementById("app");
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function start(reviewOnly){
-  reviewMode=reviewOnly;
-  order= reviewOnly ? shuffle([...review]) : shuffle([...MEM]);
-  if(!reviewOnly){known=new Set();review=new Set();}
-  idx=0;revealed=false;srcOpen=false;render();
-}
-function render(){
-  if(idx>=order.length)return summary();
-  const d=DATA[order[idx]];
-  app.innerHTML=`
-    <div class="bar">
-      <span class="count">${idx+1} / ${order.length}</span>
-      <div class="track"><div class="fill" style="width:${(idx/order.length)*100}%"></div></div>
-      <span>${reviewMode?"REVIEW SET":"MEMORY SET"}</span>
-    </div>
-    <div class="card">
-      <span class="chip">${d.ref}</span>
-      <div class="prompt">
-        <div class="cat">${d.s}${d.mem?'<span class="mem">Memorize</span>':''}</div>
-        <div class="lead">State the limitation, then reveal to check</div>
-        <div class="q">${d.q}</div>
-      </div>
-      <div class="readout${revealed?' show':''}"><div class="answer">${d.a}</div></div>
-      <div class="srcpanel${srcOpen?' show':''}"><div class="srclabel">FCOM Source &mdash; ${d.ref}</div><div class="srcsub" style="color:#DCD8E6;font-style:normal">&ldquo;${d.src}&rdquo;</div></div>
-      <div class="spacer"></div>
-      <div class="controls">
-        ${revealed?`
-          <button class="mark knew" onclick="grade(true)">Got it &nbsp;K</button>
-          <button class="mark rev" onclick="grade(false)">Review &nbsp;R</button>
-        `:`
-          <button class="primary" style="flex:1" onclick="reveal()">Reveal limit</button>
-        `}
-        <button class="srcbtn" onclick="toggleSrc()">${srcOpen?'Hide source':'Source'}</button>
-      </div>
-    </div>
-    <div class="foot">
-      <button class="ghost" onclick="start(false)">Restart memory set</button>
-      <span>got it ${known.size} &middot; review ${review.size}</span>
-    </div>`;
-}
-function reveal(){revealed=true;render()}
-function toggleSrc(){srcOpen=!srcOpen;render()}
-function grade(ok){const id=order[idx];if(ok){known.add(id);review.delete(id)}else{review.add(id)}idx++;revealed=false;srcOpen=false;render()}
-function summary(){
-  const pct=Math.round((known.size/MEM.length)*100);
-  app.innerHTML=`
-    <div class="card"><div class="summary">
-      <div class="big">${pct}%</div>
-      <div class="lbl">known cold</div>
-      <div class="stat">
-        <div>${known.size}<span>got it</span></div>
-        <div class="r">${review.size}<span>to review</span></div>
-      </div>
-      <div class="controls" style="justify-content:center">
-        ${review.size?`<button class="primary" onclick="start(true)">Drill review only (${review.size})</button>`:''}
-        <button class="ghost" onclick="start(false)">Restart memory set</button>
-      </div>
-    </div></div>`;
-}
-document.addEventListener("keydown",e=>{
-  if(idx>=order.length)return;
-  if(e.code==="Space"||e.code==="Enter"){e.preventDefault();revealed?grade(true):reveal();}
-  else if(e.key==="k"||e.key==="K"){if(revealed)grade(true)}
-  else if(e.key==="r"||e.key==="R"){if(revealed)grade(false)}
-});
-start(false);
-Object.assign(window,{grade, render, reveal, shuffle, start, summary, toggleSrc});
-}).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
-</script>
 
 <footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
 <img src="assets/A330_hero.svg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
-<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Limitations%20Drill" style="font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
+<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Flight%20Phase%20Flows" style="font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
 <div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.0</div>
 </footer>
 <script src="/portal-settings.js" defer></script>

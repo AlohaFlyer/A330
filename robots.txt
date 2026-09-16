@@ -1,12 +1,14 @@
-# A330 Study Portal, personal and uncontrolled.
-# This site carries verbatim extracts of proprietary Hawaiian Airlines
-# manuals. It is not for public search indexing or archiving.
-#
-# NOTE: this file is a request, not a control. Well-behaved crawlers
-# honor it. It stops nobody who fetches a URL directly, and the data
-# files under /data/ are plain JSON served with no gate in front of
-# them. Treat real exposure as a hosting question, not this file.
+# ha330pilot.app
+# A330 study material for Alaska Airlines crews. Not intended for search indexing.
+# Note: this file is a request that well behaved crawlers honor.
+# It is not access control and it does not restrict access to anything.
 
 User-agent: *
 Disallow: /
-Disallow: /data/
+
+# Content paths listed explicitly. Most study content is inlined directly in the
+# root HTML pages; the paths below hold the remaining external content.
+Disallow: /fom_q/
+Disallow: /assets/
+Disallow: /build_scripts/
+Disallow: /docs/

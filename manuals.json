@@ -5,104 +5,119 @@
     "revision": "R17",
     "date": "15 MAY 26",
     "fleet": "pax",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1ojJWVrY7qWKGybhvQLnhUZuArO0FCB5T/view"
   },
   "A330F_FCOM": {
     "title": "A330 Freighter FCOM",
     "revision": "R10",
     "date": "15 MAY 26",
     "fleet": "frtr",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1MOjY1JolJytDGyiYHPLUxGUZvNwKPnak/view"
   },
   "A330P_QRH": {
     "title": "A330 Passenger QRH",
     "revision": "R35",
     "date": "26 JUN 26",
     "fleet": "pax",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1ZfQ8FxhnaA5smS0dt9HYuhFirq0IaKma/view"
   },
   "A330F_QRH": {
     "title": "A330 Freighter QRH",
     "revision": "R5",
     "date": "26 JUN 26",
     "fleet": "frtr",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1K7bNdp31iV-zaDXNZyMRAFFIKHY_wnn7/view"
   },
   "A330_FCTM": {
     "title": "A330 Flight Crew Training Manual",
     "revision": "R5",
     "date": "27 MAR 26",
     "fleet": "both",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1X98gKkYagcYEmddo0RM2o9ipNPSg9jSE/view"
   },
   "A330_MEL": {
     "title": "A330 Minimum Equipment List",
     "revision": "R59",
     "date": "4/1/26",
     "fleet": "both",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1ys2NEDPdfbLBWSEKFfYYbHLtqyaYbPSS/view"
   },
   "A330_AFM": {
     "title": "A330 Airplane Flight Manual",
     "revision": null,
     "date": "11 AUG 26",
     "fleet": "both",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1KZP6evj4od0MNKZ73Ws2BTnn3dbDkMNh/view"
   },
   "A330_AFM-SUPP": {
     "title": "A330 AFM Supplement",
     "revision": null,
     "date": "05 AUG 26",
     "fleet": "both",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1E3hH4371duBmrgw1Eb5hQOuN71xIwTbI/view"
   },
   "A330_PRC": {
     "title": "A330 Pilot Reference Cards",
     "revision": null,
     "date": "3/9/26",
     "fleet": "both",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"
   },
   "A330P_NPC-CB": {
     "title": "A330 Passenger Normal Procedures and Checklist Card Book",
     "revision": null,
     "date": "8/13/25",
     "fleet": "pax",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1gcv0a_zOc4RpwYJcQmHrr-ah6vCOYksL/view"
   },
   "A330F_NPC-CB": {
     "title": "A330 Freighter Normal Procedures and Checklist Card Book",
     "revision": null,
     "date": "8/13/25",
     "fleet": "frtr",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1woCS0FoMBmjYpC5i-TcfQsiNfOAb-eFX/view"
   },
   "A330P_PERF": {
     "title": "A330 Passenger Performance Manual",
     "revision": "R26-10",
     "date": "Aug 12 2026",
     "fleet": "pax",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"
   },
   "A330F_PERF": {
     "title": "A330 Freighter Performance Manual",
     "revision": "R26-10",
     "date": "Aug 12 2026",
     "fleet": "frtr",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1cc4IGUoysJnG-CTp5y0BXn40g6WVHufK/view"
   },
   "FOM": {
     "title": "Flight Operations Manual",
     "revision": "125.1",
     "date": "8/12/26",
     "fleet": "shared",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"
   },
   "FODM": {
     "title": "Flight Operations Data Manual",
     "revision": "R0",
     "date": "5/20/26",
     "fleet": "shared",
-    "last_vetted": null
+    "last_vetted": null,
+    "drive_url": "https://drive.google.com/file/d/1nX8Voo4Kn0-uvZq2a4rfxVoGsEGbcODz/view"
   }
 }

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A330 Systems Mastery Quiz</title>
+<style>
+  :root {
+    --bg: #15131C; --surface: #211D2E; --surface2: #2A2440; --border: #453F58;
+    --green: #4caf73; --amber: #f0a030; --red: #e05050; --blue: #E26DB8;
+    --text: #EDE9F3; --text-dim: #A29DB0; --magenta: #d060b0; --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+  #app { width: 100%; max-width: 800px; padding: 16px; }
+  .header { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 16px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+  .header-title { font-size: 1rem; font-weight: 600; color: var(--blue); letter-spacing: 0.05em; }
+  .header-sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+  .header-ver { font-size: 0.7rem; color: var(--text-dim); }
+  .progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .progress-bar-wrap { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--green); border-radius: 3px; transition: width 0.4s ease; }
+  .progress-label { font-size: 0.8rem; color: var(--text-dim); white-space: nowrap; }
+  .streak-badge { font-size: 0.75rem; color: var(--amber); font-weight: 600; background: rgba(240,160,48,0.12); border-radius: 12px; padding: 2px 8px; }
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+  .filter-btn { padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--text-dim); font-size: 0.74rem; cursor: pointer; transition: all 0.15s; }
+  .filter-btn:hover { border-color: var(--blue); color: var(--text); }
+  .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 600; }
+  .filter-btn .n { opacity: 0.65; font-size: 0.65rem; }
+  .filter-btn.fdone { border-color: var(--green); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+  .card .system-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: var(--amber); text-transform: uppercase; margin-bottom: 10px; }
+  .card .source-tag { font-size: 0.7rem; color: var(--text-dim); margin-bottom: 10px; }
+  .card .question { font-size: 1.1rem; line-height: 1.55; color: var(--text); font-weight: 500; }
+  .answer-area { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-bottom: 12px; display: none; }
+  .answer-area.visible { display: block; }
+  .answer-label { font-size: 0.7rem; font-weight: 700; color: var(--green); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .answer-text { font-size: 1rem; line-height: 1.6; color: var(--text); }
+  .fcom-area { background: #1A1630; border: 1px solid #3A3550; border-left: 3px solid var(--blue); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 12px; display: none; }
+  .fcom-area.visible { display: block; }
+  .fcom-label { font-size: 0.68rem; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .fcom-block { margin-bottom: 12px; }
+  .fcom-block:last-child { margin-bottom: 0; }
+  .fcom-ref { font-size: 0.7rem; color: var(--blue); font-weight: 600; margin-bottom: 4px; font-family: monospace; letter-spacing: 0.05em; }
+  .fcom-quote { font-size: 0.85rem; line-height: 1.6; color: #C3BED0; font-style: italic; border-left: 2px solid #3A3550; padding-left: 10px; }
+  .fcom-note { font-size: 0.8rem; color: var(--text-dim); margin-top: 6px; font-style: normal; }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .btn { padding: 11px 20px; border-radius: var(--radius); border: none; font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.15s; text-align: center; }
+  .btn-reveal { background: var(--blue); color: #fff; flex: 2; }
+  .btn-reveal:hover { background: #E26DB8; }
+  .btn-fcom { background: rgba(80,144,208,0.12); color: var(--blue); border: 1px solid #3A3550; flex: 1; }
+  .btn-fcom:hover { background: rgba(80,144,208,0.25); }
+  .btn-fcom.active { background: rgba(80,144,208,0.2); border-color: var(--blue); }
+  .btn-got-it { background: rgba(76,175,115,0.15); color: var(--green); border: 1px solid var(--green); flex: 1; }
+  .btn-got-it:hover { background: rgba(76,175,115,0.3); }
+  .btn-missed { background: rgba(224,80,80,0.12); color: var(--red); border: 1px solid var(--red); flex: 1; }
+  .btn-missed:hover { background: rgba(224,80,80,0.25); }
+  .btn-restart { background: var(--surface2); color: var(--text-dim); border: 1px solid var(--border); }
+  .btn-restart:hover { color: var(--text); border-color: var(--text-dim); }
+  .stats-row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .stat-chip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 16px; flex: 1; min-width: 100px; }
+  .stat-chip .stat-val { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+  .stat-chip .stat-lbl { font-size: 0.72rem; color: var(--text-dim); margin-top: 2px; }
+  .stat-chip.green .stat-val { color: var(--green); }
+  .stat-chip.amber .stat-val { color: var(--amber); }
+  .stat-chip.red .stat-val { color: var(--red); }
+  .complete-screen { text-align: center; padding: 48px 24px; }
+  .complete-screen .trophy { font-size: 3rem; margin-bottom: 16px; }
+  .complete-screen h2 { font-size: 1.4rem; color: var(--green); margin-bottom: 8px; }
+  .complete-screen p { color: var(--text-dim); margin-bottom: 24px; }
+  .queue-info { font-size: 0.78rem; color: var(--text-dim); display: flex; gap: 16px; flex-wrap: wrap; }
+  .queue-info span { color: var(--text); font-weight: 600; }
+  .exam-tip { margin-top: 18px; padding: 10px 14px; border: 1px dashed var(--border); border-radius: var(--radius); font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+  .exam-tip b { color: var(--amber); font-weight: 600; }
+  .reset-link { font-size: 0.72rem; color: var(--text-dim); cursor: pointer; text-decoration: underline; margin-left: auto; }
+  .reset-link:hover { color: var(--red); }
+  .portal-bar { width: 100%; background: #463C8F; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .portal-back { color: #FF9080; text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; }
+  .portal-back:hover { color: #fff; }
+  .portal-brand { color: #FF9080; font-size: 0.7rem; letter-spacing: 0.05em; opacity: 0.8; }
+</style>
+<style>
+.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
+.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
+.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}
+.ps-home:focus{outline:none;}
+.ps-home svg{display:block;}
+@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
+</style>
+</head>
+<body>
+<div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+
+<div class="portal-bar">
+  <div class="portal-brand">FCOM R10 &nbsp;|&nbsp; QRH R7 <a href="podcast.html" title="SFTD 1 & 2 study podcast" style="color:#FF9080;text-decoration:none;border:1px solid #CE0C88;border-radius:6px;padding:4px 10px;margin-left:10px;font-weight:700;">&#127897;&#65039; Back to Podcast</a> <a href="jeopardy.html" title="Systems Jeopardy game" style="color:#FF9080;text-decoration:none;border:1px solid #CE0C88;border-radius:6px;padding:4px 10px;margin-left:8px;font-weight:700;">&#127918; Game</a></div>
+</div>
+<div id="app">
+  <div class="header">
+    <div>
+      <div class="header-title">A330 SYSTEMS QUIZ</div>
+      <div class="header-sub" id="hdr-sub">Active recall - All Systems</div>
+    </div>
+    <div class="header-ver">Ver 1.0</div>
+  </div>
+  <div id="main"></div>
+</div>
+
+<script>
+/* bank(s) QUESTIONS, FCOM_DETAIL, SOURCE_DETAIL live in data/, loaded here; engine below is unchanged */
+Promise.all([fetch('data/systems.json',{cache:'no-store'}).then(r=>r.json()), fetch('data/systems_fcom_detail.json',{cache:'no-store'}).then(r=>r.json()), fetch('data/systems_source_detail.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
+const [QUESTIONS, FCOM_DETAIL, SOURCE_DETAIL]=__b;
+if(!(Array.isArray(QUESTIONS)?QUESTIONS.length:Object.keys(QUESTIONS).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
+
+
+
+// ============================================================
+// STATE + PERSISTENCE (localStorage, per-filter mastered state)
+// ============================================================
+const LS_KEY = 'a330_sysquiz_v2';
+function loadStore() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch(e) { return {}; }
+}
+function saveStore() {
+  try {
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      retired: Array.from(state.retired), filter: state.filter
+    }));
+  } catch(e) {}
+}
+const _saved = loadStore();
+const state = {
+  filter: _saved.filter || 'All',
+  queue: [],
+  retired: new Set(_saved.retired || []),
+  missed: new Set(),
+  currentIdx: 0,
+  revealed: false,
+  fcomOpen: false,
+  streak: 0,
+  sessionCorrect: 0,
+  sessionMissed: 0,
+};
+
+function getSystems() {
+  const seen = [];
+  QUESTIONS.forEach(q => { if (!seen.includes(q.system)) seen.push(q.system); });
+  return ['All', ...seen];
+}
+function getActivePool() {
+  return state.filter === 'All' ? QUESTIONS : QUESTIONS.filter(q => q.system === state.filter);
+}
+function buildQueue(keepRetired) {
+  const pool = getActivePool();
+  if (!keepRetired) { pool.forEach(q => state.retired.delete(q.id)); }
+  state.queue = shuffleArray(pool.filter(q => !state.retired.has(q.id))).slice(0, 100);
+  state.missed.clear();
+  state.currentIdx = 0;
+  state.revealed = false;
+  state.fcomOpen = false;
+  state.streak = 0;
+  state.sessionCorrect = 0;
+  state.sessionMissed = 0;
+  saveStore();
+}
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function currentCard() { return state.queue[state.currentIdx] || null; }
+
+// ============================================================
+// RENDER
+// ============================================================
+function renderProgress() {
+  const total = getActivePool().length;
+  const mastered = getActivePool().filter(q => state.retired.has(q.id)).length;
+  const pct = total > 0 ? (mastered / total) * 100 : 0;
+  return `<div class="progress-row">
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+    <div class="progress-label">${mastered}/${total} mastered</div>
+    ${state.streak >= 3 ? `<div class="streak-badge">&#128293; ${state.streak} streak</div>` : ''}
+  </div>`;
+}
+function renderFilterBar() {
+  return `<div class="filter-bar">${getSystems().map(s => {
+    const pool = s === 'All' ? QUESTIONS : QUESTIONS.filter(q => q.system === s);
+    const m = pool.filter(q => state.retired.has(q.id)).length;
+    const done = m === pool.length && pool.length > 0;
+    return `<button class="filter-btn ${state.filter===s?'active':''} ${done?'fdone':''}" onclick="setFilter('${s.replace(/'/g, "\\'")}')">${s === 'All' ? 'ALL SYS' : s} <span class="n">${m}/${pool.length}</span></button>`;
+  }).join('')}</div>`;
+}
+function renderStats() {
+  const remaining = state.queue.length - state.currentIdx;
+  return `<div class="stats-row">
+    <div class="stat-chip green"><div class="stat-val">${getActivePool().filter(q => state.retired.has(q.id)).length}</div><div class="stat-lbl">Mastered</div></div>
+    <div class="stat-chip amber"><div class="stat-val">${remaining}</div><div class="stat-lbl">Remaining</div></div>
+    <div class="stat-chip red"><div class="stat-val">${state.missed.size}</div><div class="stat-lbl">Recycle</div></div>
+  </div>`;
+}
+function renderFcomDetail(q) {
+  const blocks = (FCOM_DETAIL[q.id] && FCOM_DETAIL[q.id].length) ? FCOM_DETAIL[q.id] : (SOURCE_DETAIL[q.id] || []);
+  const legend = `<div class="fcom-note" style="margin-top:10px;border-top:1px solid #3A3550;padding-top:8px"># = memorization-required limitation (FCOM L.10) &nbsp;|&nbsp; <b>bold</b> = QRH memory item</div>`;
+  if (!blocks || blocks.length === 0) {
+    return `<div class="fcom-area ${state.fcomOpen?'visible':''}" id="fcom-area">
+      <div class="fcom-label">Source</div>
+      <div class="fcom-block"><div class="fcom-ref">${q.src || 'Deck extract'}</div>
+      <div class="fcom-note">Deck-only content: no supporting passage located in FCOM R10, FCTM R9, FOM, or QRH R7 during the source audit. Treat as training-deck material and verify independently if it matters for the exam.</div></div>
+    </div>`;
+  }
+  const blocksHtml = blocks.map(b => `
+    <div class="fcom-block">
+      <div class="fcom-ref">${b.ref}</div>
+      <div class="fcom-quote">"${b.quote}"</div>
+      ${b.note ? `<div class="fcom-note">${b.note}</div>` : ''}
+    </div>
+  `).join('');
+  return `<div class="fcom-area ${state.fcomOpen?'visible':''}" id="fcom-area">
+    <div class="fcom-label">Source - quoted from manuals</div>
+    ${blocksHtml}
+    ${legend}
+  </div>`;
+}
+function renderCard(q) {
+  const fcomLabel = 'Source';
+  const revealButtons = !state.revealed
+    ? `<div class="btn-row">
+        <button class="btn btn-reveal" onclick="reveal()">Reveal Answer</button>
+        <button class="btn btn-fcom ${state.fcomOpen?'active':''}" onclick="toggleFcom()">${state.fcomOpen ? 'Hide' : fcomLabel}</button>
+      </div>`
+    : `<div class="btn-row">
+        <button class="btn btn-got-it" onclick="mark(true)">Got it &#10003;</button>
+        <button class="btn btn-missed" onclick="mark(false)">Missed it &#10007;</button>
+        <button class="btn btn-fcom ${state.fcomOpen?'active':''}" onclick="toggleFcom()" style="flex:0.6">${state.fcomOpen ? 'Hide' : fcomLabel}</button>
+      </div>`;
+  return `
+    <div class="card">
+      <div class="system-tag">${q.system}</div>
+      <div class="source-tag">${q.src || ''}</div>
+      <div class="question">${q.q}</div>
+    </div>
+    <div class="answer-area ${state.revealed?'visible':''}" id="answer-area">
+      <div class="answer-label">Answer</div>
+      <div class="answer-text">${q.a}</div>
+    </div>
+    ${renderFcomDetail(q)}
+    ${revealButtons}
+    <div class="queue-info" style="margin-top:8px">
+      <div>Card <span>${state.currentIdx+1}</span> of <span>${state.queue.length}</span></div>
+      <div>Recycle: <span>${state.missed.size}</span></div>
+      <div class="reset-link" onclick="resetProgress()">reset ${state.filter === 'All' ? 'all' : state.filter} progress</div>
+    </div>`;
+}
+function renderComplete() {
+  return `<div class="complete-screen">
+    <div class="trophy">&#127942;</div>
+    <h2>${state.filter === 'All' ? 'ALL SYS' : state.filter} Session Complete</h2>
+    <p>Session complete.<br>
+    Correct: ${state.sessionCorrect} &nbsp;|&nbsp; Missed: ${state.sessionMissed}</p>
+    <div class="btn-row" style="justify-content:center;max-width:400px;margin:0 auto">
+      <button class="btn btn-reveal" onclick="restart()">Go Again</button>
+      <button class="btn btn-restart" onclick="resetProgress()">Reset Progress</button>
+    </div>
+  </div>`;
+}
+function examTip() {
+  return `<div class="exam-tip"><b>SV exam tip:</b> For the real systems exam, when "All of the Above" is shown that is the answer, and most of the time when it's True or False the answer is True.</div>`;
+}
+function render() {
+  const main = document.getElementById('main');
+  if (!main) return;
+  const sub = document.getElementById('hdr-sub');
+  if (sub) sub.textContent = 'Active recall - ' + (state.filter === 'All' ? 'ALL SYS' : state.filter) + ' - 100-question session from ' + QUESTIONS.length + ' question bank';
+  const q = currentCard();
+  if (!q) {
+    if (state.missed.size > 0) {
+      const pool = getActivePool();
+      const recycled = shuffleArray(pool.filter(qq => state.missed.has(qq.id)));
+      state.missed.clear();
+      state.queue = state.queue.concat(recycled);
+      if (state.queue[state.currentIdx]) { state.revealed = false; render(); return; }
+    }
+    main.innerHTML = renderProgress() + renderFilterBar() + renderStats() + renderComplete() + examTip();
+    return;
+  }
+  main.innerHTML = renderProgress() + renderFilterBar() + renderStats() + renderCard(q) + examTip();
+}
+
+// ============================================================
+// ACTIONS
+// ============================================================
+function reveal() { state.revealed = true; render(); }
+function toggleFcom() { state.fcomOpen = !state.fcomOpen; render(); }
+function mark(correct) {
+  const q = currentCard();
+  if (correct) {
+    state.retired.add(q.id); state.missed.delete(q.id);
+    state.streak++; state.sessionCorrect++;
+  } else {
+    state.missed.add(q.id); state.streak = 0; state.sessionMissed++;
+  }
+  state.currentIdx++;
+  state.revealed = false;
+  state.fcomOpen = false;
+  if (state.currentIdx >= state.queue.length && state.missed.size > 0) {
+    const pool = getActivePool();
+    const recycled = shuffleArray(pool.filter(qq => state.missed.has(qq.id)));
+    state.missed.clear();
+    state.queue = state.queue.concat(recycled);
+  }
+  saveStore();
+  render();
+}
+function setFilter(f) { state.filter = f; buildQueue(true); render(); }
+function restart() { buildQueue(true); render(); }
+function resetProgress() {
+  getActivePool().forEach(q => state.retired.delete(q.id));
+  buildQueue(true); render();
+}
+buildQueue(true);
+render();
+
+
+(function(){try{var p=new URLSearchParams(location.search).get('system');if(p){var sys=getSystems();var m=sys.find(function(x){return x.toLowerCase()===p.toLowerCase();});if(m&&m!=='All'){setFilter(m);}}}catch(e){}})();
+Object.assign(window,{buildQueue, currentCard, examTip, getActivePool, getSystems, loadStore, mark, render, renderCard, renderComplete, renderFcomDetail, renderFilterBar, renderProgress, renderStats, resetProgress, restart, reveal, saveStore, setFilter, shuffleArray, toggleFcom});
+}).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
+</script>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
+<img src="assets/A330_hero.svg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
+<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Systems%20Quiz" style="font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
+<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.0</div>
+</footer>
+<script src="/portal-settings.js" defer></script>
+<script src="/assist.js" defer></script>
+</body>
+</html>

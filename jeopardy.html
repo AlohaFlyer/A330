@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A330 Systems Jeopardy</title>
+<link rel="icon" href="/assets/icons/favicon.ico">
+<style>
+:root{
+  --midnight:#463C8F; --atlas:#CE0C88; --breeze:#F4F1F9; --green:#8EC891;
+  --board2:#060CE9; --tile:#0a1fd6; --tilehi:#1838ff;
+  --gold:#f3c44b; --ink:#1E1A2E; --line:#DBD6E8;
+  --sans:'Segoe UI',Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#F4F1F9 0%,#EAE5F4 100%);color:var(--ink);
+  font-family:var(--sans);min-height:100vh;-webkit-text-size-adjust:100%;}
+.wrap{max-width:1080px;margin:0 auto;padding:42px 14px 10px;}
+header.gamehead{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+.title-blk h1{margin:0;font-size:1.5rem;font-weight:900;color:var(--midnight);letter-spacing:.5px;}
+.title-blk h1 .pop{color:var(--atlas)}
+.title-blk .sub{font-size:.72rem;color:#5A5670;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.stats{font-size:.72rem;color:var(--midnight);text-align:right;font-weight:700;line-height:1.5}
+.stats b{color:var(--atlas)}
+.host{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--atlas);
+  border-radius:16px;padding:10px 14px;margin:6px 0 16px;box-shadow:0 4px 12px rgba(1,66,106,.08);}
+.host svg{flex:0 0 auto}
+.host .line{font-size:.95rem;font-weight:600;color:var(--midnight);line-height:1.35}
+.players{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;justify-content:center}
+.player{flex:1;min-width:150px;max-width:260px;background:#fff;border:2px solid var(--line);border-radius:16px;
+  padding:10px 12px;display:flex;align-items:center;gap:10px;transition:transform .2s, box-shadow .2s, border-color .2s;}
+.player.active{border-color:var(--gold);box-shadow:0 0 0 3px rgba(243,196,75,.35)}
+.player.you{border-color:var(--atlas)}
+.player .meta{flex:1;min-width:0}
+.player .nm{font-weight:800;font-size:.92rem;color:var(--midnight);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.player .sc{font-weight:900;font-size:1.25rem;color:var(--midnight);transition:color .2s}
+.player .sc.neg{color:#c0392b}
+.player .badge{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#fff;
+  background:var(--atlas);border-radius:6px;padding:1px 6px;display:inline-block;margin-top:2px}
+.player.buzzed{animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.06)}100%{transform:scale(1)}}
+.scorebump{animation:bump .5s ease}
+@keyframes bump{0%{transform:scale(1)}30%{transform:scale(1.35)}100%{transform:scale(1)}}
+.board{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;background:var(--midnight);
+  padding:8px;border-radius:14px;box-shadow:0 8px 24px rgba(1,66,106,.25)}
+.cat{background:var(--board2);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  text-align:center;font-weight:900;font-size:.72rem;line-height:1.15;padding:8px 4px;min-height:62px;
+  text-transform:uppercase;letter-spacing:.02em;text-shadow:1px 1px 0 rgba(0,0,0,.4)}
+.tile{background:var(--tile);color:var(--gold);border:none;border-radius:8px;min-height:58px;
+  font-weight:900;font-size:1.15rem;cursor:pointer;font-family:var(--sans);
+  text-shadow:1px 1px 0 rgba(0,0,0,.45);transition:transform .12s, background .12s;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.tile:hover:not(:disabled){background:var(--tilehi);transform:translateY(-2px)}
+.tile:disabled{background:#0a1a6b;color:#0a1a6b;cursor:default;text-shadow:none;opacity:.55}
+.overlay{position:fixed;inset:0;background:rgba(2,18,40,.78);z-index:9998;display:none;
+  align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(2px)}
+.overlay.show{display:flex}
+.clue{background:var(--board2);color:#fff;border-radius:18px;max-width:640px;width:100%;
+  padding:26px 24px;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.5);border:3px solid var(--gold);
+  position:relative;animation:cluein .25s ease}
+@keyframes cluein{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.clue .cval{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.clue .ctxt{font-size:1.35rem;font-weight:800;line-height:1.4;margin:14px 0 8px;min-height:48px;text-shadow:1px 1px 0 rgba(0,0,0,.4)}
+.clue .ans{font-size:1.15rem;font-weight:800;color:var(--green);margin:10px 0 4px;display:none}
+.clue .ans.show{display:block;animation:cluein .3s ease}
+.buzzwrap{margin:14px 0 6px}
+.buzzbar{height:12px;background:rgba(255,255,255,.18);border-radius:8px;overflow:hidden}
+.buzzfill{height:100%;width:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:8px;transform-origin:left}
+.buzzlabel{font-size:.7rem;color:#DBD6E8;margin-top:5px;font-weight:700;letter-spacing:.04em}
+.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.btn{padding:11px 20px;border:none;border-radius:10px;font-weight:800;font-size:.95rem;cursor:pointer;
+  font-family:var(--sans);transition:transform .1s, filter .12s}
+.btn:active{transform:scale(.96)}
+.btn.buzz{background:var(--gold);color:#5a3d00;font-size:1.1rem;padding:13px 30px;box-shadow:0 4px 0 #c79b1f}
+.btn.buzz:hover{filter:brightness(1.05)}
+.btn.right{background:var(--green);color:#264a07}
+.btn.wrong{background:#e7745f;color:#fff}
+.btn.cont{background:#fff;color:var(--midnight)}
+.btn.ghost{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.feedmsg{font-size:1.05rem;font-weight:800;margin-top:10px;min-height:24px}
+.feedmsg.good{color:var(--green)}
+.feedmsg.bad{color:#ffb3a3}
+.wager{display:none;margin:12px 0}
+.wager.show{display:block}
+.wager input{width:140px;font-size:1.1rem;font-weight:800;padding:8px;border-radius:8px;border:2px solid var(--gold);
+  text-align:center;font-family:var(--sans)}
+.dd-banner{font-size:1.3rem;font-weight:900;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;
+  animation:ddflash 1s ease infinite alternate;margin-bottom:8px}
+@keyframes ddflash{from{opacity:.6}to{opacity:1;text-shadow:0 0 14px rgba(243,196,75,.8)}}
+.clue.flash-good{animation:fg .6s ease}
+.clue.flash-bad{animation:fb .5s ease}
+@keyframes fg{0%,100%{box-shadow:0 12px 40px rgba(0,0,0,.5)}30%{box-shadow:0 0 0 6px var(--green),0 12px 40px rgba(0,0,0,.5)}}
+@keyframes fb{0%,100%{transform:translateX(0)}15%{transform:translateX(-10px)}30%{transform:translateX(9px)}45%{transform:translateX(-7px)}60%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:10001;overflow:hidden;display:none}
+.confetti.show{display:block}
+.confetti i{position:absolute;width:9px;height:14px;top:-20px;opacity:.95;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+.endscreen{position:fixed;inset:0;background:rgba(1,30,55,.96);z-index:10000;display:none;
+  align-items:center;justify-content:center;padding:20px;text-align:center}
+.endscreen.show{display:flex}
+.endcard{background:#fff;border-radius:22px;padding:30px 26px;max-width:520px;width:100%;
+  box-shadow:0 16px 50px rgba(0,0,0,.5);animation:cluein .35s ease}
+.endcard h2{margin:0 0 4px;font-size:1.8rem;color:var(--midnight);font-weight:900}
+.endcard .crown{font-size:3rem;line-height:1}
+.endcard .winner{font-size:1.3rem;font-weight:900;color:var(--atlas);margin:6px 0 16px}
+.endcard .finalrow{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;
+  border-radius:10px;margin:6px 0;font-weight:800;background:var(--breeze);color:var(--midnight)}
+.endcard .finalrow.win{background:var(--green);color:#264a07}
+.endcard .finalrow .v{font-size:1.15rem}
+.endcard .alltime{font-size:.8rem;color:#5A5670;margin:14px 0 6px;font-weight:700}
+footer{width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;padding:0 12px}
+@media (max-width:620px){
+  .board{gap:4px;padding:5px}
+  .cat{font-size:.56rem;min-height:50px;padding:5px 2px}
+  .tile{font-size:.92rem;min-height:48px}
+  .clue .ctxt{font-size:1.1rem}
+  .title-blk h1{font-size:1.2rem}
+  .players{gap:6px}
+  .player{min-width:0;padding:7px 8px}
+  .player .sc{font-size:1.05rem}
+}
+@media (max-width:430px){
+  .board{overflow-x:auto}
+  #boardInner{display:grid;grid-template-columns:repeat(6,minmax(58px,1fr));gap:4px;min-width:380px}
+}
+</style>
+<style>
+.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
+.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
+.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}
+.ps-home:focus{outline:none;}
+.ps-home svg{display:block;}
+@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
+</style>
+</head>
+<body>
+<div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<div class="wrap">
+  <header class="gamehead">
+    <div class="title-blk">
+      <h1>A330 Systems <span class="pop">Jeopardy</span> &#9992;&#65039;</h1>
+      <div class="sub">Active recall &bull; vs Pualani &amp; Chester</div>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+  <div class="host" id="host">
+    <svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="22" cy="22" r="21" fill="#CE0C88"/>
+      <circle cx="22" cy="18" r="9" fill="#ffe0bd"/>
+      <rect x="11" y="9" width="22" height="7" rx="3.5" fill="#3a2a1a"/>
+      <rect x="15" y="5" width="14" height="6" rx="3" fill="#3a2a1a"/>
+      <path d="M9 44c0-9 6-14 13-14s13 5 13 14z" fill="#463C8F"/>
+      <rect x="18" y="30" width="8" height="8" fill="#fff"/>
+      <path d="M22 30l-3 4 3 3 3-3z" fill="#c0392b"/>
+    </svg>
+    <div class="line" id="hostline">Welcome aboard! Pick a tile to start the climb. &#128640;</div>
+  </div>
+  <div class="players" id="players"></div>
+  <div class="board" id="board"><div id="boardInner"></div></div>
+</div>
+<footer>
+<img src="assets/A330_hero.svg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
+<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Systems%20Jeopardy" style="font-size:11px;color:#463C8F;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
+<div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.0</div>
+</footer>
+<div class="overlay" id="overlay">
+  <div class="clue" id="clueCard">
+    <div class="dd-banner" id="ddBanner" style="display:none">&#11088; Daily Double! &#11088;</div>
+    <div class="cval" id="clueVal"></div>
+    <div class="ctxt" id="clueText"></div>
+    <div class="wager" id="wagerBox">
+      <div style="font-size:.85rem;margin-bottom:6px;font-weight:700">Place your wager (max <span id="wagerMax"></span>):</div>
+      <input type="number" id="wagerInput" min="0" step="100" inputmode="numeric">
+      <div class="btnrow"><button class="btn right" id="wagerGo">Lock it in</button></div>
+    </div>
+    <div class="buzzwrap" id="buzzWrap">
+      <div class="buzzbar"><div class="buzzfill" id="buzzFill"></div></div>
+      <div class="buzzlabel" id="buzzLabel">Buzz in! (Space)</div>
+    </div>
+    <div class="ans" id="clueAns"></div>
+    <div class="feedmsg" id="feedMsg"></div>
+    <div class="btnrow" id="btnRow"></div>
+  </div>
+</div>
+<div class="confetti" id="confetti"></div>
+<div class="endscreen" id="endScreen">
+  <div class="endcard">
+    <div class="crown" id="endCrown">&#127881;</div>
+    <h2>Final Scores</h2>
+    <div class="winner" id="endWinner"></div>
+    <div id="endRows"></div>
+    <div class="alltime" id="endAlltime"></div>
+    <div class="btnrow"><button class="btn buzz" id="playAgain">Play Again &#128260;</button></div>
+  </div>
+</div>
+<script>
+/* bank(s) POOL live in data/, loaded here; engine below is unchanged */
+Promise.all([fetch('data/jeopardy_pool.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
+const [POOL]=__b;
+if(!(Array.isArray(POOL)?POOL.length:Object.keys(POOL).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
+"use strict";
+/* ===== Clue pool: sourced verbatim from the vetted A330 systems_quiz.html question bank (system, q, a). ===== */
+function avatarYou(){return '<svg width="40" height="40" viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#F4F1F9" stroke="#CE0C88" stroke-width="2"/><circle cx="22" cy="18" r="8.5" fill="#ffd9b3"/><path d="M13 12c1-5 17-5 18 0 0 3-2 4-2 4s0-4-7-4-7 4-7 4-2-1-2-4z" fill="#5a3a22"/><path d="M9 44c0-9 6-13 13-13s13 4 13 13z" fill="#CE0C88"/><path d="M22 31l-2.5 13h5z" fill="#463C8F"/></svg>';}
+function avatarPua(){return '<svg width="40" height="40" viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#F4F1F9" stroke="#e8569a" stroke-width="2"/><path d="M9 22c0-9 4-15 13-15s13 6 13 15c0 4-2 7-2 7l-2-8-3 5-2-6-2 6-3-5-2 8s-2-3-2-7z" fill="#2a1a12"/><circle cx="22" cy="20" r="8.5" fill="#f6c79b"/><circle cx="11" cy="16" r="3.5" fill="#ff5ca0"/><circle cx="11" cy="16" r="1.4" fill="#ffe14d"/><path d="M9 44c0-9 6-13 13-13s13 4 13 13z" fill="#13a89e"/><path d="M13 33c3 3 15 3 18 0l-3 6-6 2-6-2z" fill="#ffd24d" opacity=".9"/><circle cx="16" cy="35" r="2" fill="#ff5ca0"/><circle cx="22" cy="37" r="2" fill="#ffe14d"/><circle cx="28" cy="35" r="2" fill="#ff5ca0"/></svg>';}
+function avatarChe(){return '<svg width="40" height="40" viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#F4F1F9" stroke="#463C8F" stroke-width="2"/><circle cx="22" cy="19" r="8.5" fill="#f2c39a"/><path d="M13 14c0-4 18-4 18 0 0 2-1 3-1 3s-1-3-8-3-8 3-8 3-1-1-1-3z" fill="#3a3330"/><rect x="13" y="17" width="7" height="5" rx="2.5" fill="#1a1a1a"/><rect x="24" y="17" width="7" height="5" rx="2.5" fill="#1a1a1a"/><rect x="20" y="18.5" width="4" height="1.6" fill="#1a1a1a"/><path d="M9 44c0-9 6-13 13-13s13 4 13 13z" fill="#463C8F"/><rect x="20" y="31" width="4" height="13" fill="#CE0C88"/><rect x="14" y="33" width="16" height="3" fill="#ffd24d"/></svg>';}
+const PLAYERS = [
+  {id:'you', name:'You',      human:true,  avatar:avatarYou, react:0,   acc:0,    score:0},
+  {id:'pua', name:'Pualani',  human:false, avatar:avatarPua, react:900, acc:0.60, score:0},
+  {id:'che', name:'Chester',  human:false, avatar:avatarChe, react:1000,acc:0.60, score:0},
+];
+const VALUES=[200,400,600,800,1000];
+const NCOLS=6, NROWS=5;
+const BUZZ_MS=2500;
+const HOST_PICK=[
+  "Pick a tile and let's get this jet moving! &#9992;&#65039;",
+  "Choose your category &mdash; clearance granted. &#128587;",
+  "Your board, captain. Make a selection.",
+  "Tap a value &mdash; the fuel's topped off and ready.",
+  "Where to next? Pick a tile.",
+];
+const HOST_RIGHT=[
+  "Cleared direct &mdash; nicely flown! &#9989;",
+  "That's a greaser of an answer! &#128076;",
+  "On speed, on profile. Well done!",
+  "Smooth as a calm-wind approach! &#127754;",
+  "You nailed the brief on that one!",
+];
+const HOST_WRONG=[
+  "Go around &mdash; we'll try that again. &#128260;",
+  "Bit of turbulence on that one. &#127786;&#65039;",
+  "Not quite on the glidepath. &#128201;",
+  "We'll log that as a teachable moment.",
+  "Missed approach &mdash; shake it off!",
+];
+const HOST_AIWIN=[
+  "%s beat you to the buzzer &mdash; sharp!",
+  "%s grabs that one out of the flare.",
+  "%s was quick on the radios there.",
+];
+const HOST_TIMEOUT=[
+  "Nobody buzzed &mdash; that one slipped past us.",
+  "Crickets on the flight deck! Moving on.",
+  "Time's up &mdash; we'll let that clue taxi away.",
+];
+let board=[];
+let ddRow=-1, ddCol=-1;
+let current=null;
+let buzzTimer=null, aiBuzzTimers=[];
+let phase='idle';
+let tilesLeft=0;
+const $=id=>document.getElementById(id);
+function rand(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t;}return a;}
+const LS='a330_jeopardy_stats';
+function getStats(){try{return JSON.parse(localStorage.getItem(LS))||{wins:0,losses:0,ties:0,high:0,games:0};}catch(e){return{wins:0,losses:0,ties:0,high:0,games:0};}}
+function setStats(s){try{localStorage.setItem(LS,JSON.stringify(s));}catch(e){}}
+function renderStats(){
+  const s=getStats();
+  $('stats').innerHTML='Record <b>'+s.wins+'</b>W &ndash; <b>'+s.losses+'</b>L'+(s.ties?' &ndash; '+s.ties+'T':'')+
+    '<br>High score <b>$'+s.high.toLocaleString()+'</b>';
+}
+function newGame(){
+  PLAYERS.forEach(p=>p.score=0);
+  const cats=shuffle(Object.keys(POOL)).slice(0,NCOLS);
+  board=cats.map(cat=>{
+    let clues=shuffle(POOL[cat]);
+    clues=clues.slice().sort((a,b)=>(a.a.length+a.q.length*0.4)-(b.a.length+b.q.length*0.4));
+    const picked=[];
+    for(let i=0;i<NROWS;i++){picked.push(clues[Math.floor(i*clues.length/NROWS)]);}
+    return {cat:cat, clues:picked.map((c,i)=>({q:c.q,a:c.a,val:VALUES[i],done:false}))};
+  });
+  ddCol=Math.floor(Math.random()*NCOLS);
+  ddRow=Math.floor(Math.random()*NROWS);
+  tilesLeft=NCOLS*NROWS;
+  renderBoard();
+  renderPlayers();
+  renderStats();
+  setHost(rand(HOST_PICK));
+  $('endScreen').classList.remove('show');
+}
+function setHost(html){$('hostline').innerHTML=html;}
+function renderPlayers(active){
+  $('players').innerHTML=PLAYERS.map(p=>(
+    '<div class="player '+(p.human?'you':'')+(active===p.id?' active':'')+'" id="pl_'+p.id+'">'+
+      p.avatar()+
+      '<div class="meta"><div class="nm">'+p.name+(p.human?'':' <span class="badge">AI</span>')+'</div>'+
+      '<div class="sc'+(p.score<0?' neg':'')+'" id="sc_'+p.id+'">$'+p.score.toLocaleString()+'</div></div>'+
+    '</div>'
+  )).join('');
+}
+function renderBoard(){
+  const inner=$('boardInner');
+  let html='';
+  for(let c=0;c<NCOLS;c++){html+='<div class="cat">'+board[c].cat+'</div>';}
+  for(let r=0;r<NROWS;r++){
+    for(let c=0;c<NCOLS;c++){
+      const cl=board[c].clues[r];
+      html+='<button class="tile" data-c="'+c+'" data-r="'+r+'"'+(cl.done?' disabled':'')+'>'+
+            (cl.done?'':'$'+cl.val)+'</button>';
+    }
+  }
+  inner.innerHTML=html;
+  inner.querySelectorAll('.tile').forEach(t=>{
+    t.addEventListener('click',()=>openClue(+t.dataset.c,+t.dataset.r));
+  });
+}
+function openClue(c,r){
+  if(phase!=='idle') return;
+  const cl=board[c].clues[r];
+  if(cl.done) return;
+  const isDD=(c===ddCol&&r===ddRow);
+  current={c:c,r:r,val:cl.val,clue:cl,isDD:isDD};
+  phase='clue';
+  $('clueVal').textContent=board[c].cat+'  for  $'+cl.val;
+  $('clueText').innerHTML=cl.q;
+  $('clueAns').textContent='A: '+cl.a;
+  $('clueAns').classList.remove('show');
+  $('feedMsg').textContent=''; $('feedMsg').className='feedmsg';
+  $('btnRow').innerHTML='';
+  $('clueCard').className='clue';
+  $('overlay').classList.add('show');
+  renderPlayers();
+  if(isDD){startDailyDouble();}else{startBuzz();}
+}
+function startBuzz(){
+  phase='buzzing';
+  $('ddBanner').style.display='none';
+  $('wagerBox').classList.remove('show');
+  $('buzzWrap').style.display='block';
+  $('buzzLabel').textContent='Buzz in! (press Space or the button)';
+  $('btnRow').innerHTML='<button class="btn buzz" id="buzzBtn">&#128276; BUZZ</button>';
+  $('buzzBtn').addEventListener('click',playerBuzz);
+  const fill=$('buzzFill');
+  fill.style.transition='none'; fill.style.transform='scaleX(1)';
+  void fill.offsetWidth;
+  fill.style.transition='transform '+BUZZ_MS+'ms linear';
+  fill.style.transform='scaleX(0)';
+  aiBuzzTimers=[];
+  PLAYERS.filter(p=>!p.human).forEach(p=>{
+    if(Math.random()<0.78){
+      const t=p.react + Math.random()*1100;
+      if(t<BUZZ_MS){aiBuzzTimers.push(setTimeout(()=>aiBuzz(p),t));}
+    }
+  });
+  buzzTimer=setTimeout(buzzTimeout,BUZZ_MS+30);
+}
+function clearBuzz(){
+  if(buzzTimer){clearTimeout(buzzTimer);buzzTimer=null;}
+  aiBuzzTimers.forEach(t=>clearTimeout(t)); aiBuzzTimers=[];
+  const fill=$('buzzFill');
+  const cur=getComputedStyle(fill).transform;
+  fill.style.transition='none'; fill.style.transform=cur;
+}
+function playerBuzz(){
+  if(phase!=='buzzing') return;
+  clearBuzz();
+  phase='answered';
+  $('buzzWrap').style.display='none';
+  $('pl_you').classList.add('buzzed');
+  setHost("You're in! What's the answer?");
+  $('buzzLabel').textContent='';
+  $('clueAns').classList.add('show');
+  $('feedMsg').textContent='You buzzed first &mdash; did you have it?';
+  $('btnRow').innerHTML=
+    '<button class="btn right" id="selfRight">&#9989; I was right</button>'+
+    '<button class="btn wrong" id="selfWrong">&#10060; I was wrong</button>';
+  $('selfRight').addEventListener('click',()=>resolvePlayer(true));
+  $('selfWrong').addEventListener('click',()=>resolvePlayer(false));
+}
+function aiBuzz(ai){
+  if(phase!=='buzzing') return;
+  clearBuzz();
+  phase='answered';
+  $('buzzWrap').style.display='none';
+  $('pl_'+ai.id).classList.add('buzzed');
+  const correct=Math.random()<ai.acc;
+  if(correct){
+    $('clueAns').classList.add('show');
+    addScore(ai,current.val);
+    setHost(rand(HOST_AIWIN).replace('%s',ai.name));
+    $('feedMsg').textContent=ai.name+' buzzed in and got it right!';
+    $('feedMsg').className='feedmsg good';
+    finishClue();
+  } else {
+    addScore(ai,-current.val);
+    setHost(ai.name+' buzzed&hellip; and missed! The board reopens &mdash; you can buzz!');
+    $('feedMsg').textContent=ai.name+' was wrong (&minus;$'+current.val+'). Buzz in if you know it!';
+    $('feedMsg').className='feedmsg bad';
+    reopenForPlayer(ai);
+  }
+}
+function reopenForPlayer(missedAi){
+  phase='buzzing';
+  $('buzzWrap').style.display='block';
+  $('buzzLabel').textContent='Reopened &mdash; buzz now! (Space)';
+  $('btnRow').innerHTML='<button class="btn buzz" id="buzzBtn">&#128276; BUZZ</button>'+
+    '<button class="btn ghost" id="passBtn">Pass</button>';
+  $('buzzBtn').addEventListener('click',playerBuzzReopen);
+  $('passBtn').addEventListener('click',function(){phase='answered';revealAndClose("No buzz &mdash; here's the answer.");});
+  const fill=$('buzzFill');
+  fill.style.transition='none'; fill.style.transform='scaleX(1)'; void fill.offsetWidth;
+  fill.style.transition='transform 2000ms linear'; fill.style.transform='scaleX(0)';
+  aiBuzzTimers=[];
+  PLAYERS.filter(p=>!p.human&&p!==missedAi).forEach(p=>{
+    if(Math.random()<0.5){const t=300+Math.random()*1300; if(t<2000) aiBuzzTimers.push(setTimeout(()=>aiBuzz(p),t));}
+  });
+  buzzTimer=setTimeout(function(){ if(phase==='buzzing'){phase='answered';revealAndClose("Time &mdash; here's the answer.");} },2030);
+}
+function playerBuzzReopen(){
+  if(phase!=='buzzing') return;
+  clearBuzz(); phase='answered';
+  $('buzzWrap').style.display='none';
+  $('pl_you').classList.add('buzzed');
+  $('clueAns').classList.add('show');
+  setHost("You jumped on the rebound! Right or wrong?");
+  $('feedMsg').textContent='Your buzz &mdash; did you have it?';$('feedMsg').className='feedmsg';
+  $('btnRow').innerHTML=
+    '<button class="btn right" id="selfRight">&#9989; I was right</button>'+
+    '<button class="btn wrong" id="selfWrong">&#10060; I was wrong</button>';
+  $('selfRight').addEventListener('click',()=>resolvePlayer(true));
+  $('selfWrong').addEventListener('click',()=>resolvePlayer(false));
+}
+function buzzTimeout(){
+  if(phase!=='buzzing') return;
+  phase='answered';
+  clearBuzz();
+  revealAndClose(rand(HOST_TIMEOUT));
+}
+function revealAndClose(hostMsg){
+  $('buzzWrap').style.display='none';
+  $('clueAns').classList.add('show');
+  setHost(hostMsg);
+  $('feedMsg').textContent='';
+  finishClue();
+}
+function resolvePlayer(right){
+  const you=PLAYERS[0];
+  if(right){
+    addScore(you,current.val);
+    flashGood(); confettiBurst();
+    setHost(rand(HOST_RIGHT));
+    $('feedMsg').textContent='+$'+current.val+'!';
+    $('feedMsg').className='feedmsg good';
+  } else {
+    addScore(you,-current.val);
+    flashBad();
+    setHost(rand(HOST_WRONG));
+    $('feedMsg').textContent='&minus;$'+current.val;
+    $('feedMsg').className='feedmsg bad';
+  }
+  finishClue();
+}
+function startDailyDouble(){
+  phase='dd';
+  $('ddBanner').style.display='block';
+  $('buzzWrap').style.display='none';
+  setHost("Daily Double! No buzzer race &mdash; how confident are you?");
+  const you=PLAYERS[0];
+  const maxW=Math.max(1000, you.score, current.val);
+  $('wagerMax').textContent='$'+maxW.toLocaleString();
+  const wi=$('wagerInput'); wi.value=current.val; wi.max=maxW; wi.min=0;
+  $('wagerBox').classList.add('show');
+  $('clueText').innerHTML='<em style="opacity:.85;font-size:.9rem">(Category: '+board[current.c].cat+')</em><br><br>Set your wager, then reveal the clue.';
+  $('btnRow').innerHTML='';
+  $('wagerGo').onclick=function(){
+    let w=parseInt(wi.value,10); if(isNaN(w)||w<0)w=0; if(w>maxW)w=maxW;
+    current.wager=w;
+    $('wagerBox').classList.remove('show');
+    $('clueText').innerHTML=current.clue.q;
+    $('clueVal').innerHTML=board[current.c].cat+'  Daily Double  &bull;  $'+w.toLocaleString();
+    $('clueAns').classList.add('show');
+    phase='answered';
+    setHost("There's the clue &mdash; did you nail it?");
+    $('feedMsg').textContent='Wager: $'+w.toLocaleString();
+    $('btnRow').innerHTML=
+      '<button class="btn right" id="ddRight">&#9989; I was right</button>'+
+      '<button class="btn wrong" id="ddWrong">&#10060; I was wrong</button>';
+    $('ddRight').onclick=function(){resolveDD(true);};
+    $('ddWrong').onclick=function(){resolveDD(false);};
+  };
+}
+function resolveDD(right){
+  const you=PLAYERS[0];
+  const w=current.wager||0;
+  if(right){addScore(you,w);flashGood();confettiBurst();setHost(rand(HOST_RIGHT));$('feedMsg').textContent='+$'+w.toLocaleString()+'!';$('feedMsg').className='feedmsg good';}
+  else{addScore(you,-w);flashBad();setHost(rand(HOST_WRONG));$('feedMsg').textContent='&minus;$'+w.toLocaleString();$('feedMsg').className='feedmsg bad';}
+  finishClue();
+}
+function addScore(p,delta){
+  p.score+=delta;
+  const el=$('sc_'+p.id);
+  if(el){
+    el.textContent='$'+p.score.toLocaleString();
+    el.classList.toggle('neg',p.score<0);
+    el.classList.remove('scorebump'); void el.offsetWidth; el.classList.add('scorebump');
+  }
+}
+function finishClue(){
+  current.clue.done=true;
+  tilesLeft--;
+  $('btnRow').insertAdjacentHTML('beforeend','<button class="btn cont" id="contBtn">Continue &#9654; (Enter)</button>');
+  $('contBtn').addEventListener('click',closeClue);
+}
+function closeClue(){
+  $('overlay').classList.remove('show');
+  document.querySelectorAll('.player').forEach(p=>p.classList.remove('buzzed'));
+  phase='idle';
+  current=null;
+  renderBoard();
+  renderPlayers();
+  if(tilesLeft<=0){ setTimeout(endGame,400); }
+  else setHost(rand(HOST_PICK));
+}
+function flashGood(){const c=$('clueCard');c.classList.remove('flash-good');void c.offsetWidth;c.classList.add('flash-good');}
+function flashBad(){const c=$('clueCard');c.classList.remove('flash-bad');void c.offsetWidth;c.classList.add('flash-bad');}
+function confettiBurst(){
+  const box=$('confetti');box.innerHTML='';box.classList.add('show');
+  const colors=['#FFC9BF','#CE0C88','#f3c44b','#463C8F','#ff5ca0','#fff'];
+  for(let i=0;i<70;i++){
+    const s=document.createElement('i');
+    s.style.left=Math.random()*100+'vw';
+    s.style.background=colors[i%colors.length];
+    s.style.animationDuration=(1.4+Math.random()*1.4)+'s';
+    s.style.animationDelay=(Math.random()*0.3)+'s';
+    s.style.transform='rotate('+(Math.random()*360)+'deg)';
+    box.appendChild(s);
+  }
+  setTimeout(()=>box.classList.remove('show'),2600);
+}
+function endGame(){
+  const ranked=PLAYERS.slice().sort((a,b)=>b.score-a.score);
+  const top=ranked[0].score;
+  const winners=ranked.filter(p=>p.score===top);
+  const you=PLAYERS[0];
+  const youWin=winners.some(w=>w.human)&&winners.length===1;
+  const tie=winners.length>1&&winners.some(w=>w.human);
+  const s=getStats();
+  s.games++;
+  if(youWin)s.wins++; else if(tie)s.ties++; else s.losses++;
+  if(you.score>s.high)s.high=you.score;
+  setStats(s);
+  $('endCrown').innerHTML=youWin?'&#127942;':(tie?'&#129309;':'&#128640;');
+  $('endWinner').innerHTML=youWin?'You win! &#127881;':(tie?"It's a tie!":winners[0].name+' takes it');
+  $('endRows').innerHTML=ranked.map(p=>(
+    '<div class="finalrow'+(p.score===top?' win':'')+'"><span>'+p.name+(p.human?'':' (AI)')+'</span>'+
+    '<span class="v">$'+p.score.toLocaleString()+'</span></div>'
+  )).join('');
+  $('endAlltime').innerHTML='All-time: '+s.wins+'W &ndash; '+s.losses+'L'+(s.ties?' &ndash; '+s.ties+'T':'')+
+    ' &bull; high score $'+s.high.toLocaleString();
+  $('endScreen').classList.add('show');
+  if(youWin)confettiBurst();
+}
+document.addEventListener('keydown',function(e){
+  if(e.code==='Space'){
+    if(phase==='buzzing'){
+      e.preventDefault();
+      const btn=$('buzzBtn'); if(btn) btn.click();
+    }
+  } else if(e.code==='Enter'){
+    const cont=$('contBtn');
+    if(cont && $('overlay').classList.contains('show')){e.preventDefault();cont.click();}
+    if($('endScreen').classList.contains('show')){e.preventDefault();$('playAgain').click();}
+  }
+});
+$('playAgain').addEventListener('click',function(){$('endScreen').classList.remove('show');newGame();});
+newGame();
+Object.assign(window,{addScore, aiBuzz, avatarChe, avatarPua, avatarYou, buzzTimeout, clearBuzz, closeClue, confettiBurst, endGame, finishClue, flashBad, flashGood, getStats, newGame, openClue, playerBuzz, playerBuzzReopen, rand, renderBoard, renderPlayers, renderStats, reopenForPlayer, resolveDD, resolvePlayer, revealAndClose, setHost, setStats, shuffle, startBuzz, startDailyDouble});
+}).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
+</script>
+<script src="/portal-settings.js" defer></script>
+<script src="/assist.js" defer></script>
+</body>
+</html>

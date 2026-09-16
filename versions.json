@@ -1,0 +1,10 @@
+{
+ "build": "v1.0",
+ "default": "1.0",
+ "pages": {},
+ "stubs": [
+  "phase_flows.html",
+  "flows_quiz.html",
+  "mcdu_preflight.html"
+ ]
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>330 Flight Deck Notes</title>
+<style>
+:root{--midnight:#463C8F;--atlas:#CE0C88;--green:#00805E;--good:#FF9080;--ink:#1E1A2E;--ice:#F4F1F9;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:#1A1630;color:#F1EEF6;min-height:100vh;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;gap:14px;background:var(--midnight);padding:9px 14px;flex-wrap:wrap}
+.bar a.back{display:inline-flex;align-items:center;gap:6px;background:#463C8F;color:#fff;text-decoration:none;font-size:13px;font-weight:700;padding:7px 14px;border-radius:6px;border:1px solid #CE0C88}
+.bar a.back:hover{background:#831A57}
+.bar .title{color:var(--good);font-size:14px;font-weight:700;letter-spacing:.04em}
+.wrap{max-width:760px;margin:0 auto;padding:26px 16px 60px;width:100%}
+.mic{font-size:40px;text-align:center}
+h1{font-size:22px;text-align:center;color:#fff;margin:4px 0 4px}
+.sub{text-align:center;color:#C3BED0;font-size:13px;margin-bottom:8px;line-height:1.5}
+.prog{text-align:center;color:var(--good);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;margin-bottom:16px}
+.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.03em;background:transparent;border:1.5px solid;border-radius:8px;padding:8px 16px;cursor:pointer;transition:.12s}
+.tab .tcount{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11px;opacity:.8;margin-left:6px}
+.tab:hover{filter:brightness(1.18)}
+.grouphead{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin:14px 0 8px;padding-left:2px}
+.ep{border-radius:10px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border:1px solid #453F58;border-left-width:4px}
+.ep.coming{opacity:.72}
+.epnum{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:#C3BED0;min-width:34px;text-align:center}
+.epmain{flex:1 1 240px;min-width:200px}
+.eptitle{font-size:16px;font-weight:700;color:#fff}
+.epgroup{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.eptopic{font-size:12.5px;color:#C3BED0;margin-top:2px}
+.eplen{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:#DCD8E6;white-space:nowrap}
+.acts{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{font-size:12.5px;font-weight:700;text-decoration:none;border-radius:6px;padding:8px 12px;border:1px solid;cursor:pointer;background:transparent;font-family:inherit}
+.listen{border-color:var(--atlas);color:#E26DB8}.listen:hover{background:var(--atlas);color:#fff}
+.listen[disabled]{border-color:#3A3550;color:#587;cursor:default}
+.quiz{border-color:var(--green);color:#9ad9b9}.quiz:hover{background:var(--green);color:#fff}
+.heard{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#C3BED0;cursor:pointer;user-select:none}
+.heard input{width:16px;height:16px;accent-color:var(--green)}
+.offlbl input{accent-color:var(--good)}
+.offlbl.busy{opacity:.6}
+.badge{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#1A1630;background:var(--good);border-radius:3px;padding:2px 6px;font-weight:700}
+.player{width:100%;margin-top:8px}
+.note{color:#C3BED0;font-size:11.5px;text-align:center;margin-top:18px;line-height:1.5}
+.note .src{display:block;margin-top:8px;color:#8C8798;font-size:11px}
+.micbtn{font-size:22px;line-height:1;background:none;border:none;cursor:pointer;padding:2px 4px;filter:grayscale(1) opacity(.35);transition:.12s}
+.micbtn.on{filter:none;}
+.micbtn.on:hover{transform:scale(1.15);}
+.micbtn.off{cursor:default;}
+</style><style>
+.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
+.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
+.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}
+.ps-home:focus{outline:none;}
+.ps-home svg{display:block;}
+@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
+</style>
+<script>
+/* Storage access throws outright in some private-browsing and embedded-webview
+   contexts. These pages read localStorage at the top level of their inline
+   script, so an exception there aborted the whole script and the page rendered
+   inert. This shim keeps the API shape and degrades to in-memory. */
+(function () {
+  try { var t = '__t'; window.localStorage.setItem(t, t); window.localStorage.removeItem(t); return; }
+  catch (e) {}
+  var mem = {};
+  try {
+    Object.defineProperty(window, 'localStorage', {
+      configurable: true,
+      value: {
+        getItem: function (k) { return Object.prototype.hasOwnProperty.call(mem, k) ? mem[k] : null; },
+        setItem: function (k, v) { mem[k] = String(v); },
+        removeItem: function (k) { delete mem[k]; },
+        clear: function () { mem = {}; },
+        key: function (i) { return Object.keys(mem)[i] || null; },
+        get length() { return Object.keys(mem).length; }
+      }
+    });
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+
+<div class="bar"><span class="title">330 Flight Deck Notes - Podcast</span></div>
+<div class="wrap">
+  <div class="mic">&#127897;&#65039;</div>
+  <h1>330 Flight Deck Notes</h1>
+  <div class="sub">Three-host A330 study podcast - Pualani, Chester &amp; Otto. One episode per system, plus operations, review, the Procedures (PFTD) series, and the Chair-Fly flow drills.</div>
+  <div class="prog" id="prog"></div>
+  <div class="tabs" id="tabs"></div>
+  <div id="list"></div>
+  <div class="note">Tick an episode once you've listened - it's saved on this device. Tick "offline" to save the audio itself on this device for playback without a connection. More episodes drop as they are produced. "Quiz" opens the Systems Quiz for that topic.<span class="src">Built from the current manuals - FCOM R10, FCTM R9, QRH R7, FOM 125.1, MEL R5 - and kept up to date as they revise.</span></div>
+</div>
+<script>
+/* bank(s) EPISODES live in data/, loaded here; engine below is unchanged */
+Promise.all([fetch('data/episodes.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
+const [EPISODES]=__b;
+if(!(Array.isArray(EPISODES)?EPISODES.length:Object.keys(EPISODES).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
+
+// Top-level nav tabs (order matters). Chair-Fly folds into Procedures.
+// Colors drawn from Alaska (atlas blue, green) and Hawaiian (Pualani purple, maile gold) palettes.
+var TABS=[
+ {key:"Systems",   label:"Systems",    groups:["Systems"],                accent:"#3a9ee0", card:"#2A2440"},
+ {key:"Procedures",label:"Procedures", groups:["Procedures","Chair-Fly","Normal Procedures"], accent:"#a07bd6", card:"#1d1736"},
+ {key:"FFS",       label:"FFS",        groups:["FFS"],                    accent:"#e0687a", card:"#2c1218"},
+ {key:"Maneuvers", label:"Maneuvers",  groups:["Maneuvers"],              accent:"#e07b3a", card:"#301c0d"},
+ {key:"LOFT",      label:"LOFT",       groups:["LOFT"],                   accent:"#3ecf8e", card:"#0f2e22"},
+ {key:"Operations",label:"Operations", groups:["Operations"],              accent:"#2bb59a", card:"#052b25"},
+ {key:"FOM",       label:"FOM",        groups:["FOM"],                    accent:"#c58be0", card:"#241a33"},
+ {key:"Review",    label:"Review",     groups:["Review"],                 accent:"#e0a648", card:"#2c2310"}
+];
+function tabFor(group){
+  for(var i=0;i<TABS.length;i++){ if(TABS[i].groups.indexOf(group)>=0) return TABS[i]; }
+  return TABS[0];
+}
+var activeTab=localStorage.getItem('fdn_tab');
+if(!activeTab||!TABS.some(function(t){return t.key===activeTab;})) activeTab="Systems";
+function setTab(k){ activeTab=k; localStorage.setItem('fdn_tab',k); render(); }
+
+function key(n){return 'fdn_heard_'+n;}
+function heard(n){return localStorage.getItem(key(n))==='1';}
+function setHeard(n,v){localStorage.setItem(key(n),v?'1':'0');render();}
+
+var OFFLINE_CACHE='fdn-offline-v1';
+function offlineKey(n){return 'fdn_offline_'+n;}
+function isOffline(n){return localStorage.getItem(offlineKey(n))==='1';}
+function toggleOffline(n,checked){
+  var e=EPISODES.find(function(x){return x.n===n;});
+  if(!e||!e.audio||!('caches' in window)){
+    if(!('caches' in window))alert('This browser does not support offline storage.');
+    render();
+    return;
+  }
+  var lbl=document.getElementById('offlbl'+n);
+  if(lbl)lbl.classList.add('busy');
+  if(checked){
+    caches.open(OFFLINE_CACHE).then(function(cache){
+      return fetch(e.audio).then(function(resp){
+        if(!resp.ok)throw new Error('download failed ('+resp.status+')');
+        return cache.put(e.audio,resp);
+      });
+    }).then(function(){
+      localStorage.setItem(offlineKey(n),'1');
+      render();
+    }).catch(function(err){
+      localStorage.setItem(offlineKey(n),'0');
+      alert('Could not save "'+e.title+'" offline: '+err.message+'. Check your connection and try again.');
+      render();
+    });
+  }else{
+    caches.open(OFFLINE_CACHE).then(function(cache){return cache.delete(e.audio);}).then(function(){
+      localStorage.setItem(offlineKey(n),'0');
+      render();
+    });
+  }
+}
+
+function updateProg(){
+  var pub=EPISODES.filter(function(e){return e.audio;});
+  var done=pub.filter(function(e){return heard(e.n);}).length;
+  document.getElementById('prog').textContent='Listened: '+done+' / '+pub.length+' published';
+}
+function renderTabs(){
+  var html=TABS.map(function(t){
+    var count=EPISODES.filter(function(e){return e.audio && t.groups.indexOf(e.group)>=0;}).length;
+    var on=t.key===activeTab;
+    var style=on
+      ? 'background:'+t.accent+';border-color:'+t.accent+';color:#120F1F'
+      : 'background:transparent;border-color:'+t.accent+';color:'+t.accent;
+    return '<button class="tab'+(on?' on':'')+'" style="'+style+'" onclick="setTab(\''+t.key+'\')">'
+      +t.label+'<span class="tcount">'+count+'</span></button>';
+  }).join('');
+  document.getElementById('tabs').innerHTML=html;
+}
+function render(){
+  renderTabs();
+  var meta=TABS.filter(function(t){return t.key===activeTab;})[0];
+  var eps=EPISODES.filter(function(e){return e.audio && meta.groups.indexOf(e.group)>=0;});
+  var html=eps.map(function(e){
+    var coming=!e.audio;
+    var gm=tabFor(e.group);
+    var listenBtn = coming ? ''
+      : '<button class="micbtn on" onclick="play('+e.n+')" title="Listen to this episode">&#127897;&#65039;</button>'
+        +'<button class="btn listen" onclick="play('+e.n+')" title="Play episode">&#9654; Play</button>';
+    var len = e.len?('<span class="eplen">'+e.len+'</span>') : '<span class="eplen">--</span>';
+    var badge = heard(e.n)?'<span class="badge">Listened</span>':'';
+    var grp = e.group?('<div class="epgroup" style="color:'+gm.accent+'">'+e.group+'</div>'):'';
+    var offlineBtn = coming ? '' :
+      '<label class="heard offlbl" id="offlbl'+e.n+'"><input type="checkbox" '+(isOffline(e.n)?'checked':'')+' onchange="toggleOffline('+e.n+',this.checked)">offline</label>';
+    return '<div class="ep'+(coming?' coming':'')+'" id="ep'+e.n+'" style="background:'+gm.card+';border-left-color:'+gm.accent+'">'
+      +'<div class="epnum">EP '+e.n+'</div>'
+      +'<div class="epmain">'+grp+'<div class="eptitle">'+e.title+' '+badge+'</div><div class="eptopic">'+e.topic+'</div></div>'
+      +len
+      +'<div class="acts">'+listenBtn
+      +'<a class="btn quiz" href="'+e.quiz+'">Quiz</a>'
+      +'<label class="heard"><input type="checkbox" '+(heard(e.n)?'checked':'')+' onchange="setHeard('+e.n+',this.checked)">heard</label>'
+      +offlineBtn
+      +'</div></div>';
+  }).join('');
+  document.getElementById('list').innerHTML=html;
+  updateProg();
+}
+function play(n){
+  var e=EPISODES.find(function(x){return x.n===n;});
+  if(!e||!e.audio)return;
+  var row=document.getElementById('ep'+n);
+  if(row.querySelector('audio'))return;
+  var a=document.createElement('audio');a.className='player';a.controls=true;
+  a.addEventListener('ended',function(){setHeard(n,true);});
+  row.appendChild(a);
+  if(('caches' in window) && isOffline(n)){
+    caches.open(OFFLINE_CACHE).then(function(cache){return cache.match(e.audio);}).then(function(resp){
+      if(!resp)throw new Error('not cached');
+      return resp.blob();
+    }).then(function(blob){
+      a.src=URL.createObjectURL(blob);
+      a.play();
+    }).catch(function(){
+      a.src=e.audio;
+      a.play();
+    });
+  }else{
+    a.src=e.audio;
+    a.play();
+  }
+}
+// deep-link: ?ep=N selects the right tab, scrolls to and highlights that episode
+(function(){
+  var m=(location.search||'').match(/[?&]ep=(\d+)/);
+  if(m){
+    var n=+m[1];
+    var e=EPISODES.find(function(x){return x.n===n;});
+    if(e){ var t=tabFor(e.group); activeTab=t.key; localStorage.setItem('fdn_tab',t.key); }
+  }
+  render();
+  if(m){
+    var row=document.getElementById('ep'+(+m[1]));
+    if(row){
+      row.scrollIntoView({behavior:'smooth',block:'center'});
+      row.style.outline='2px solid #E26DB8'; row.style.outlineOffset='2px';
+    }
+  }
+})();
+Object.assign(window,{heard, isOffline, key, offlineKey, play, render, renderTabs, setHeard, setTab, tabFor, toggleOffline, updateProg});
+}).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
+</script>
+<!-- rev: 83 episodes; FOM Rev 125 pass 2026-07-31/08-01: ep70 re-cut (IPSB, 25:05); ep55/58/61/63/64/66/71/73 scripts rewritten to v4 REV125 and audio fully re-recorded, new runtimes, correction notes retired -->
+<script src="/portal-settings.js" defer></script>
+<script src="/assist.js" defer></script>
+</body></html>

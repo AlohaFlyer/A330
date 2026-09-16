@@ -1,0 +1,273 @@
+{
+"version": 1,
+"built": "2026-09-15",
+"coreBytes": 3247419,
+"audioBytes": 0,
+"core": [
+{
+"u": "/A330_Memory_Limitations.pdf",
+"b": 15954
+},
+{
+"u": "/A330_QRH_Memory_Items.pdf",
+"b": 6107
+},
+{
+"u": "/assets/A330_hero.svg",
+"b": 587
+},
+{
+"u": "/assets/icons/favicon.ico",
+"b": 3896
+},
+{
+"u": "/assets/icons/icon-16.png",
+"b": 928
+},
+{
+"u": "/assets/icons/icon-180.png",
+"b": 52803
+},
+{
+"u": "/assets/icons/icon-192.png",
+"b": 59260
+},
+{
+"u": "/assets/icons/icon-32.png",
+"b": 2932
+},
+{
+"u": "/assets/icons/icon-512.png",
+"b": 333465
+},
+{
+"u": "/assets/pualani-2001.png",
+"b": 213076
+},
+{
+"u": "/assist.js",
+"b": 34343
+},
+{
+"u": "/corpus/flows.json",
+"b": 55965
+},
+{
+"u": "/corpus/fom.json",
+"b": 84
+},
+{
+"u": "/corpus/ioe.json",
+"b": 87
+},
+{
+"u": "/corpus/limitations.json",
+"b": 67850
+},
+{
+"u": "/corpus/mcdu.json",
+"b": 98
+},
+{
+"u": "/corpus/memory.json",
+"b": 5613
+},
+{
+"u": "/corpus/systems.json",
+"b": 89
+},
+{
+"u": "/corpus/triggers.json",
+"b": 81
+},
+{
+"u": "/corpus/weather.json",
+"b": 79
+},
+{
+"u": "/data/episodes.json",
+"b": 2
+},
+{
+"u": "/data/flows.json",
+"b": 99089
+},
+{
+"u": "/data/fom_delta.json",
+"b": 69947
+},
+{
+"u": "/data/fom_questions.json",
+"b": 54
+},
+{
+"u": "/data/hot_seat_scenarios.json",
+"b": 1013
+},
+{
+"u": "/data/jeopardy_pool.json",
+"b": 2
+},
+{
+"u": "/data/limit_or_bust_bool.json",
+"b": 706
+},
+{
+"u": "/data/limit_or_bust_num.json",
+"b": 14062
+},
+{
+"u": "/data/limitations.json",
+"b": 108954
+},
+{
+"u": "/data/limitations_drill.json",
+"b": 81837
+},
+{
+"u": "/data/memory_items.json",
+"b": 15485
+},
+{
+"u": "/data/memory_items_drill.json",
+"b": 12017
+},
+{
+"u": "/data/memory_items_visual.json",
+"b": 5982
+},
+{
+"u": "/data/oe.json",
+"b": 2
+},
+{
+"u": "/data/oral_scope.json",
+"b": 75717
+},
+{
+"u": "/data/systems.json",
+"b": 2
+},
+{
+"u": "/data/systems_fcom_detail.json",
+"b": 2
+},
+{
+"u": "/data/systems_source_detail.json",
+"b": 2
+},
+{
+"u": "/data/triggers.json",
+"b": 2
+},
+{
+"u": "/data/weather.json",
+"b": 2
+},
+{
+"u": "/flows_quiz.html",
+"b": 8903
+},
+{
+"u": "/fom_quiz.html",
+"b": 20660
+},
+{
+"u": "/hot-seat.html",
+"b": 12240
+},
+{
+"u": "/index.html",
+"b": 11171
+},
+{
+"u": "/ioe.html",
+"b": 13385
+},
+{
+"u": "/jeopardy.html",
+"b": 30953
+},
+{
+"u": "/limit-or-bust.html",
+"b": 11641
+},
+{
+"u": "/limitations.html",
+"b": 13635
+},
+{
+"u": "/mcdu_preflight.html",
+"b": 8908
+},
+{
+"u": "/memory-items.html",
+"b": 13464
+},
+{
+"u": "/phase_flows.html",
+"b": 8922
+},
+{
+"u": "/podcast.html",
+"b": 15084
+},
+{
+"u": "/portal-settings.js",
+"b": 45069
+},
+{
+"u": "/pwa.html",
+"b": 56312
+},
+{
+"u": "/pwa_index.json",
+"b": 1532420
+},
+{
+"u": "/pwa_pdf.html",
+"b": 9601
+},
+{
+"u": "/pwa_prompt.json",
+"b": 2714
+},
+{
+"u": "/pwa_toc.json",
+"b": 17731
+},
+{
+"u": "/site.webmanifest",
+"b": 419
+},
+{
+"u": "/sw.js",
+"b": 7339
+},
+{
+"u": "/systems_quiz.html",
+"b": 20665
+},
+{
+"u": "/triggers.html",
+"b": 19078
+},
+{
+"u": "/versions.json",
+"b": 136
+},
+{
+"u": "/view.html",
+"b": 3917
+},
+{
+"u": "/weather.html",
+"b": 13871
+},
+{
+"u": "/wx-alternate.html",
+"b": 11005
+}
+],
+"audio": []
+}
