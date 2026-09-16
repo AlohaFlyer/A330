@@ -1481,7 +1481,7 @@
   "fleet": "pax",
   "confidence": "VERIFIED",
   "source_book": "AFM 2026-08-11",
-  "corroboration": "AFM 2026-08-11, NORM-30-00005814.0001001 (OPERATIONS IN ICING CONDITIONS, Criteria: A330, AFM.md:19785 to 19792): 'When icing conditions are encountered: Turn on engine anti-ice. Set wing anti-ice as required.' FCTM R5, CLIMB/DESCENT (FCTM.md:13652): 'Whenever icing conditions are encountered or expected, the engine anti-ice should be turned on.' Both corroborate the ON requirement; neither carries the -40 °C SAT carve-out, which is stated only by the AFM limitation.",
+  "corroboration": "AFM 2026-08-11, NORM-30-00005814.0001001 (OPERATIONS IN ICING CONDITIONS, Criteria: A330, AFM.md:19785 to 19792): 'When icing conditions are encountered: Turn on engine anti-ice. Set wing anti-ice as required.' FCTM R6, CLIMB/DESCENT (FCTM.md:13652): 'Whenever icing conditions are encountered or expected, the engine anti-ice should be turned on.' Both corroborate the ON requirement; neither carries the -40 °C SAT carve-out, which is stated only by the AFM limitation.",
   "note": "AFM section title 'OPERATIONS IN ICING CONDITIONS', Ident.: LIM-70-00005469.0001001 / 26 NOV 09 APPROVED, Criteria: A330 (AFM.md:10885 to 10897). Filed under system 'Ice and Rain' so it sits with the five lim-ice-* icing records a pilot would search; the AFM itself prints it in its LIM-70 POWER PLANT chapter. The five lim-ice-* records are icing DEFINITIONS only (icing conditions temperature threshold, ground contamination, severe ice accretion, thin hoarfrost, rain repellent); none of them states when engine anti-ice must be selected ON, so this record fills that gap rather than duplicating them. The extent of the FCOM silence is bounded by the local extract: only the FCOM limitations slice is available here, so whether FCOM PRO-SUP-30 or PRO-NOR-SOP restates this is UNVERIFIED. Airframe visual cues are explicitly not the trigger; the icing conditions definition the AFM cross-refers to as LIM-GEN is carried in this dataset by lim-ice-01 and lim-ice-02, from FCOM LIM-ICE_RAIN-00020420.0001001."
  },
  {
@@ -1771,7 +1771,7 @@
   "fleet": "pax",
   "confidence": "VERIFIED",
   "source_book": "AFM 2026-08-11",
-  "corroboration": "FCTM R5, PR-AEP-MISC-B-00016515.0001001 (OVERSPEED - INTRODUCTION): 'The flight crew must not intentionally exceed VMO/MMO (330 kt/M 0.86) during the flight.'",
+  "corroboration": "FCTM R6, PR-AEP-MISC-B-00016515.0001001 (OVERSPEED - INTRODUCTION): 'The flight crew must not intentionally exceed VMO/MMO (330 kt/M 0.86) during the flight.'",
   "note": "Supersedes the UNCLEAR placeholder lim-spd-09, whose FCOM numeric value was lost to a graphic. Not to be confused with the landing-gear-down supplement value VMO/MMO = 255 kt IAS/M 0.6 (AFM APP-LGDN-00005557.0001001)."
  },
  {
@@ -1786,7 +1786,7 @@
   "fleet": "pax",
   "confidence": "VERIFIED",
   "source_book": "AFM 2026-08-11",
-  "corroboration": "FCTM R5, PR-AEP-MISC-B-00016515.0001001 (OVERSPEED - INTRODUCTION): 'The flight crew must not intentionally exceed VMO/MMO (330 kt/M 0.86) during the flight.'",
+  "corroboration": "FCTM R6, PR-AEP-MISC-B-00016515.0001001 (OVERSPEED - INTRODUCTION): 'The flight crew must not intentionally exceed VMO/MMO (330 kt/M 0.86) during the flight.'",
   "note": "Supersedes the UNCLEAR placeholder lim-spd-09. OVERSPEED alert triggers at VMO +4 kt / MMO +M 0.006 (FCTM PR-AEP-MISC-B-00019622.0001001). Not to be confused with the landing-gear-down supplement value M 0.6 (AFM APP-LGDN-00005557.0001001)."
  },
  {
