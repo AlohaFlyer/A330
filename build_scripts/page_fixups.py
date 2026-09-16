@@ -29,6 +29,13 @@ EDITS={
   ('if(it.role==="CA" || it.role==="FO") return it.role!==seat;','if(it.role==="CA" || it.role==="FO") return seat==="IRO" ? true : it.role!==seat;'),
   ('(seat==="BOTH"?"both seats":seat)','(seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat))'),
   ('"No " + seat + " items in this flow. Switch seat or flow."','"No " + ({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat) + " items in this flow. Switch seat or flow."'),
+  # A newly selected flow (page load, phase, flow, seat or duty change) opens fully revealed; Restart steps through it.
+  ('let stepIdx = 0;','let stepIdx = -1; // -1: a newly selected flow opens fully revealed (Ryan); Restart steps through it'),
+  ('if(first>=0){ flowIdx = first; stepIdx = 0; }','if(first>=0){ flowIdx = first; stepIdx = -1; }'),
+  ('b.onclick = ()=>{ flowIdx = i; stepIdx = 0; buildFlowBtns(); render(); };','b.onclick = ()=>{ flowIdx = i; stepIdx = -1; buildFlowBtns(); render(); };'),
+  ('  seat = s; stepIdx = 0;','  seat = s; stepIdx = -1;'),
+  ('  duty = d; stepIdx = 0;','  duty = d; stepIdx = -1;'),
+  ('  if(stepIdx > items.length) stepIdx = 0;\n','  if(stepIdx < 0) stepIdx = items.length;\n  if(stepIdx > items.length) stepIdx = 0;\n'),
   # Exterior flows (noflow) hide the cockpit map: the steps happen outside the airplane.
   ('  @media (max-width:740px){\n    .layout{grid-template-columns:1fr;}\n  }',
    '  @media (max-width:740px){\n    .layout{grid-template-columns:1fr;}\n  }\n  .layout.noflow{grid-template-columns:1fr;}\n  .layout.noflow .mapbox{display:none;}'),
