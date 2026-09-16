@@ -618,7 +618,10 @@ ASK_NEW = '''    load().then(function () {
       });
     }).catch(function (e) {
       $('answer').style.display = 'block';
-      $('answerBody').textContent = 'Could not load the manual index. ' + (e && e.message ? e.message : '');
+      var authMsg = (AUTH.failed || /sign-in|Failed to fetch|redirected/i.test(String(e && e.message || '')));
+      $('answerBody').textContent = authMsg
+        ? 'Sign in first: tap "Sign in with @alaskaair.com" below, enter your company email, type the code it sends you, then ask again.'
+        : 'Could not load the manual index. ' + (e && e.message ? e.message : '');
     });
   }
 '''
