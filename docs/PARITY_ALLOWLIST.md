@@ -7,7 +7,7 @@ deviation from the B787 original. Anything else parity_diff.py reports is a defe
 - ${d.cond?
 - data:image/svg+xml
 - assets/icons/
-- assets/A330_hero.svg
+- assets/A330_hero.jpg
 - <tbody>
 
 The last five cover the placeholder logo SVG (an inline data URI) and the sixth footer row (AFM), which the B787 table does not have.
@@ -52,3 +52,28 @@ The rect/text lines are the MCDU page-flow SVG, which has 14 nodes where the B78
 The h2/ul/li/b lines are the MCDU page cards (7 cards, 19 items) versus the CDU page (6 cards, 17 items); same card markup.
 - let seat = "FO"
 - seat:'F',duty:'PM'
+- seatIRO
+- CM1 (CA)
+- CM2 (FO)
+- CM3 (IRO)
+- seat!=="IRO"
+- seat==="IRO"
+- broad ? 30 : 8
+- CORPUS.source
+- Contact</div>
+- Questions, corrections, requests
+- mailto:
+- apple-touch-icon
+- rel="manifest"
+
+Contact line moved from every footer into Portal Settings (Ryan, 2026-09-16), and the Manuals tile added above ALPA:
+
+- font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none
+- font-size:11px;color:#463C8F;font-family:inherit;text-decoration:none
+- font-size:11px;color:#6F6B7E;font-family:inherit;text-decoration:none
+- color:#CE0C88;font-weight:700;text-decoration:none
+- -a 
+- -a contact
+- +span 
+- +small 
+- +span arrow
