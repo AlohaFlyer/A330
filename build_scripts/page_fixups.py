@@ -35,9 +35,10 @@ EDITS={
   ('function render(){\n  syncPhaseUI();\n  const f = FLOWS[flowIdx];',
    'function render(){\n  syncPhaseUI();\n  const f = FLOWS[flowIdx];\n  document.getElementById("drillLayout").classList.toggle("noflow", !!f.noflow);'),
   # Per-seat dot position: an item may carry pos:{CA:[x,y],FO:[x,y]} (e.g. each pilot\'s own EFB or MCDU);
-  # the map uses the current seat\'s pair and falls back to x,y.
+  # the map uses the current seat\'s pair and falls back to x,y. mir:true means x,y are drawn for the
+  # CM1 seat and the map mirrors x across the centerline (300-x) in the CM2 seat (own MCDU, EFIS, PFD/ND, window).
   ('function mapPt(x,y){ return [x,y]; }',
-   'function mapPt(x,y){ return [x,y]; }\nfunction seatPt(it){ const p = it.pos && (it.pos[seat] || (seat==="BOTH" && it.pos.FO)); return p ? [p[0],p[1]] : [it.x,it.y]; }'),
+   'function mapPt(x,y){ return [x,y]; }\nfunction seatPt(it){ const p = it.pos && (it.pos[seat] || (seat==="BOTH" && it.pos.FO)); if(p) return [p[0],p[1]]; if(it.mir && seat==="FO") return [Math.round((300-it.x)*10)/10, it.y]; return [it.x,it.y]; }'),
   ('  const xs = all.map(i=>i.x), ys = all.map(i=>i.y);','  const xs = all.map(i=>seatPt(i)[0]), ys = all.map(i=>seatPt(i)[1]);'),
   ('  const P = seq.map(it=>[it.x,it.y]);','  const P = seq.map(it=>seatPt(it));'),
   ('  off.forEach(it=>{ s += `<circle class="dot inactive" cx="${it.x}" cy="${it.y}" r="6"/>`; });',
