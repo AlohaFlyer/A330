@@ -109,7 +109,7 @@
   .mapbox .shapename{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:2px;}
   .mapbox .mnemonic{font-size:13px;color:var(--atlas);text-align:center;margin-bottom:6px;font-style:italic;}
   .mnemonic b{color:var(--midnight);font-style:normal;}
-  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;}
+  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;padding-right:150px;min-height:40px;}
   .who{font-size:11px;color:var(--atlas);margin-bottom:12px;}
   .done{font-size:13px;color:var(--atlas);line-height:1.55;margin-bottom:12px;}
   .done .step{display:block;}
@@ -339,9 +339,9 @@ function flowHidden(i){
   return false;
 }
 const PHASE_COLORS = {
-  "Preflight":"#463C8F","Before Start & Pushback":"#00568F","Engine Start":"#CE0C88","Taxi Out":"#2E90D0",
-  "Takeoff":"#E0A100","Climb":"#EAA52A","Cruise":"#D98A00","Descent":"#E2761A","Approach":"#D8650C","Go-Around":"#B85000",
-  "Landing Roll":"#00805E","Taxi In":"#2E9B7C","Shutdown & Secure":"#5CB89A"
+  "Cockpit Prep":"#463C8F","Before Start":"#00568F","After Start":"#CE0C88","Taxi":"#2E90D0",
+  "Line-Up":"#E0A100","Climb":"#EAA52A","Cruise":"#D98A00","Descent":"#E2761A","Approach":"#D8650C","Go-Around":"#B85000",
+  "Landing Roll":"#00805E","After Landing":"#2E9B7C","Parking":"#5CB89A"
 };
 function phaseColor(p){ return PHASE_COLORS[p] || "#CE0C88"; }
 function tintColor(hex){ return hex + "22"; }
@@ -749,7 +749,7 @@ render();
 Object.assign(window,{activeItems, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
 }).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.3</div></footer>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.4</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>
