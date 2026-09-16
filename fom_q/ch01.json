@@ -64,7 +64,7 @@
   "chapter": "1",
   "chapterName": "1 Preface",
   "q": "How are incremental revisions to the FOM numbered?",
-  "a": "They are numbered subsequent to the current revision (e.g., 123.1, 123.2) until the next full revision (e.g., 124, 125).",
+  "a": "Numbered subsequent to the current revision (123.1, 123.2) until the next full revision.",
   "ref": "FOM 1.1.3",
   "src": {
    "ref": "FOM 1.1.3, Incremental Revisions",
@@ -124,7 +124,7 @@
   "chapter": "1",
   "chapterName": "1 Preface",
   "q": "What is the difference between a WARNING and a CAUTION in the FOM?",
-  "a": "A WARNING flags a procedure, practice, or condition that may result in injury or death; a CAUTION flags one that may result in damage to equipment.",
+  "a": "WARNING: may result in injury or death. CAUTION: may result in damage to equipment.",
   "ref": "FOM 1.6",
   "src": {
    "ref": "FOM 1.6, Manual Conventions",
@@ -168,8 +168,8 @@
   "id": "fom01-012",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "Who owns the SMS at AAG, and who are the named Accountable Executives?",
-  "a": "The AAG Accountable Executives own the SMS: Jason Berry (AS, COO) for Alaska Airlines and Andy Schneider (QX, CEO/President) for Horizon Air.",
+  "q": "Who owns the SMS at AAG?",
+  "a": "The AAG Accountable Executives: Jason Berry for Alaska Airlines, Andy Schneider for Horizon Air.",
   "ref": "FOM 1.2.2",
   "src": {
    "ref": "FOM 1.2.2, SMS Ownership",
@@ -183,8 +183,8 @@
   "id": "fom01-013",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "Who is responsible for the overall content and quality of the FOM, and who may modify its policies and procedures?",
-  "a": "The Managing Director, Standards, Fleet, and Operational Control is responsible for overall content and quality; the Director, Flight Standards, or their designee, has authority to establish and modify policies and procedures.",
+  "q": "Who is responsible for the overall content and quality of the FOM?",
+  "a": "The Managing Director, Standards, Fleet, and Operational Control.",
   "ref": "FOM 1.3",
   "src": {
    "ref": "FOM 1.3, Responsibility and Authority",
@@ -229,7 +229,7 @@
   "chapter": "1",
   "chapterName": "1 Preface",
   "q": "Where are terms and definitions used in this manual found?",
-  "a": "In the Pilot/Controller Glossary of the AIM, the Introduction of the Jeppesen General Airway Manual, and 14 CFR Part 1; unique terms and acronyms are in Chapter 26 Abbreviations and Acronyms.",
+  "a": "AIM Pilot/Controller Glossary, Jeppesen General Airway Manual Introduction, and 14 CFR Part 1; unique terms in Chapter 26.",
   "ref": "FOM 1.7",
   "src": {
    "ref": "FOM 1.7, Terms, Definitions, and Acronyms",
@@ -243,8 +243,8 @@
   "id": "fom01-017",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "What does Green Policy guidance support, and what constraint always overrides it?",
-  "a": "It supports Flight Crews in making operational decisions aligned with AAG's commitment to fuel efficiency, but safety is always the top priority and fuel-saving measures must never compromise safety.",
+  "q": "What constraint always overrides Green Policy fuel-saving guidance?",
+  "a": "Safety. Fuel saving measures must never compromise safety under any circumstances.",
   "ref": "FOM 1.6.3",
   "src": {
    "ref": "FOM 1.6.3, Green Policy",
@@ -274,7 +274,7 @@
   "chapter": "1",
   "chapterName": "1 Preface",
   "q": "Where can teammates file safety reports?",
-  "a": "The Virtual Safety Center, safety reporting apps on company-issued mobile devices, Alaska's World Vendor Portal, and the Safety Hotline (on the back of all teammate badges).",
+  "a": "Virtual Safety Center, safety reporting apps on company mobile devices, Alaska's World Vendor Portal, and the Safety Hotline.",
   "ref": "FOM 1.2.6",
   "src": {
    "ref": "FOM 1.2.6, Safety Reporting",
@@ -289,7 +289,7 @@
   "chapter": "1",
   "chapterName": "1 Preface",
   "q": "What behaviors are defined as 'unacceptable' and therefore outside safety-reporting protection?",
-  "a": "Illegal activities, intentional disregard for safety/regulations/policies/procedures, drug and alcohol use, workplace violence, reckless conduct and/or willful misconduct, and falsification of records.",
+  "a": "Illegal activities, intentional disregard for safety/regulations/policies/procedures, drug and alcohol use, workplace violence, reckless or willful misconduct, falsification of records.",
   "ref": "FOM 1.2.6",
   "src": {
    "ref": "FOM 1.2.6, Safety Reporting",
@@ -303,8 +303,8 @@
   "id": "fom01-021",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "SCENARIO: You are the Captain on the A330 during a line trip. A situation develops that is not covered anywhere in the FOM, and following the nearest published procedure would clearly be unsafe given the conditions. What does the FOM authorize you to do?",
-  "a": "Exercise your PIC authority to deviate from published guidance to the extent required in the interest of safety. Per the FOM, it is not possible to develop detailed procedures for all conceivable situations, and as set forth in CFR 91.3 and 121.557 the PIC has the authority and responsibility to deviate, scoped to what safety requires, using decision-making that serves the intent of providing the highest level of operational safety.",
+  "q": "No FOM procedure covers your situation and the nearest one would be unsafe. What does the FOM authorize the PIC to do?",
+  "a": "Deviate from published guidance to the extent required in the interest of safety, per CFR 91.3 and 121.557.",
   "ref": "FOM 1.1",
   "src": {
    "ref": "FOM 1.1, Manual Overview and Usage",
@@ -318,8 +318,8 @@
   "id": "fom01-022",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "SCENARIO: On IOE, your check airman points out that two Company manuals give conflicting guidance for the same task, one is more permissive, one is more restrictive. Which do you apply, and what FOM rule governs?",
-  "a": "Apply the more restrictive guidance. Per FOM 1.1.1, in the event of conflicting manual guidance the more restrictive guidance will apply, and FOM 1.5 repeats the same principle for conflicting directives across the Company Manual System.",
+  "q": "Two Company manuals give conflicting guidance for the same task. Which guidance applies?",
+  "a": "The more restrictive guidance.",
   "ref": "FOM 1.1.1",
   "src": {
    "ref": "FOM 1.1.1, Manual Hierarchy",
@@ -333,8 +333,8 @@
   "id": "fom01-023",
   "chapter": "1",
   "chapterName": "1 Preface",
-  "q": "SCENARIO: After a line flight you realize you and the other pilot had a procedural non-compliance, nothing was damaged and no one was hurt, but a step was missed. It feels awkward to write it up. What does the FOM say you should do?",
-  "a": "File a safety report. The FOM states that reporting close calls and procedural non-compliance is critical because they are early warning signs, and AAG provides a non-punitive safety reporting system. File via the Virtual Safety Center, the safety reporting apps on company-issued devices, Alaska's World Vendor Portal, or the Safety Hotline on the back of your badge; if your division participates in ASAP, you may submit an ASAP report.",
+  "q": "After a flight you realize a procedural step was missed, with no damage or injury. What does the FOM say to do?",
+  "a": "File a safety report through the non-punitive safety reporting system.",
   "ref": "FOM 1.2.6",
   "src": {
    "ref": "FOM 1.2.6, Safety Reporting",

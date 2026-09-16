@@ -63,7 +63,7 @@
   "id": "fom02-005",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "If the flight cannot be completed safely due to hazardous conditions but the PIC believes there is no safer procedure than continuing toward the airport, what does that continuation become?",
+  "q": "The flight cannot be completed safely, but the PIC believes there is no safer procedure than continuing. What does that continuation become?",
   "a": "An emergency.",
   "ref": "FOM 2.1.1",
   "src": {
@@ -94,7 +94,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "When conditions change enroute so the flight cannot be conducted in accordance with the Dispatch Release, who is required to contact whom?",
-  "a": "The person encountering or learning of the changed conditions must contact the other to institute the necessary amendment to the Dispatch Release.",
+  "a": "Whoever encounters or learns of the change, PIC or Dispatcher, must contact the other to amend the Dispatch Release.",
   "ref": "FOM 2.1.1",
   "src": {
    "ref": "FOM 2.1.1, Joint Responsibility",
@@ -109,7 +109,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "What is the scope of the PIC's control and authority over other crewmembers during flight time?",
-  "a": "Full control and authority in the operation of the aircraft, without limitation, over other crewmembers and their duties during flight time, whether or not they hold valid certificates authorizing those duties.",
+  "a": "Full control and authority, without limitation, over other crewmembers and their duties, whether or not they hold valid certificates.",
   "ref": "FOM 2.1.2",
   "src": {
    "ref": "FOM 2.1.2, PIC's Responsibility and Authority",
@@ -169,7 +169,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "What is the sequence of command listed in the Chain of Command?",
-  "a": "Captain (PIC); International Relief Officer (IRO)/Second in Command (SIC); PIC-qualified First Officer; First Officer; \"A\" Flight Attendant/FFA; Flight Attendants in descending order.",
+  "a": "Captain; IRO/SIC; PIC-qualified First Officer; First Officer; A Flight Attendant/FFA; remaining Flight Attendants in descending order.",
   "ref": "FOM 2.1.3",
   "src": {
    "ref": "FOM 2.1.3, Chain of Command",
@@ -214,7 +214,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "When does the Operational Control Window (OCW) start and end for a normal flight?",
-  "a": "It starts two and a half hours (D-150) prior to the scheduled departure time and ends when the aircraft is blocked in at the destination airport.",
+  "a": "D-150, two and a half hours before scheduled departure, until block-in at the destination.",
   "ref": "FOM 2.2.2.1",
   "src": {
    "ref": "FOM 2.2.2.1, Operational Control Window (OCW)",
@@ -228,8 +228,8 @@
   "id": "fom02-016",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Which flights get a D-180 Operational Control Window instead of D-150, and where is that list?",
-  "a": "Flights requiring the Dispatch Release and ATS Flight Plan 180 minutes prior to scheduled departure, listed in 8.5.2.1: South Korea departures, Amazon Cargo, and (787/A330) Europe departures. All others are D-150.",
+  "q": "Which flights get a D-180 Operational Control Window instead of D-150?",
+  "a": "Flights needing the Dispatch Release and ATS Flight Plan 180 minutes before departure: South Korea, Amazon Cargo, and Europe departures.",
   "ref": "FOM 2.2.2.1",
   "src": {
    "ref": "FOM 2.2.2.1, Operational Control Window (OCW)",
@@ -243,8 +243,8 @@
   "id": "fom02-017",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Within the OCW, a decision to cancel or modify a flight is an operational control action requiring coordination and endorsement from whom, and who is ultimately responsible?",
-  "a": "It requires coordination and endorsement from the Dispatcher and the PIC; the Director of Operations is ultimately responsible.",
+  "q": "Within the OCW, canceling or modifying a flight requires coordination and endorsement from whom?",
+  "a": "The Dispatcher and the PIC.",
   "ref": "FOM 2.2.2.3",
   "src": {
    "ref": "FOM 2.2.2.3, Cancel or Modify Flights",
@@ -274,7 +274,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "What phases of flight constitute a Sterile Flight Deck (critical phases of flight)?",
-  "a": "Ground operations involving pushback, towing, taxi, takeoff, and landing; and all other flight operations conducted below 10,000 ft MSL, except cruise flight.",
+  "a": "Pushback, towing, taxi, takeoff, landing, and all other flight operations below 10,000 ft MSL except cruise flight.",
   "ref": "FOM 2.3.12",
   "src": {
    "ref": "FOM 2.3.12, Sterile Flight Deck",
@@ -303,7 +303,7 @@
   "id": "fom02-021",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Check-airman scenario: airborne, an event requires the PIC to deviate from a Company procedure and from an ATC clearance to keep the aircraft safe. What authority lets the PIC do this on their own?",
+  "q": "Airborne, the PIC must deviate from Company procedure and an ATC clearance to keep the aircraft safe. What authority allows this?",
   "a": "The PIC may unilaterally exercise emergency authority.",
   "ref": "FOM 2.2.8.1",
   "src": {
@@ -318,7 +318,7 @@
   "id": "fom02-022",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Check-airman scenario: enroute, the PIC is unsure whether a reroute still allows the flight to be conducted per the Dispatch Release. Per the FOM, who is the PIC's contact and the primary source of flight-status information?",
+  "q": "Enroute, the PIC is unsure a reroute still complies with the Dispatch Release. Who is the PIC's primary contact?",
   "a": "The Dispatcher.",
   "ref": "FOM 2.1.1",
   "src": {
@@ -348,8 +348,8 @@
   "id": "fom02-024",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Check-airman scenario: inside the Operational Control Window, the NOC business group wants to cancel your flight for commercial reasons. What does the FOM require, and who is ultimately responsible?",
-  "a": "Inside the OCW, canceling or modifying is an operational control action requiring coordination and endorsement from the Dispatcher and the PIC; the Director of Operations is ultimately responsible.",
+  "q": "Inside the OCW, the NOC business group wants to cancel your flight for commercial reasons. What does the FOM require?",
+  "a": "Coordination and endorsement from the Dispatcher and the PIC.",
   "ref": "FOM 2.2.2.3",
   "src": {
    "ref": "FOM 2.2.2.3, Cancel or Modify Flights",
@@ -363,8 +363,8 @@
   "id": "fom02-025",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "What is the minimum EFB battery charge to begin a flight duty day or training event, and what is the minimum for a departure?",
-  "a": "80% to begin a flight duty day or training event, unless the pilot carries an external backup battery of sufficient capacity and charge. 20% minimum for a departure.",
+  "q": "What are the minimum EFB battery charge levels to begin a duty day and to depart?",
+  "a": "80% to begin a duty day or training event, unless carrying a sufficient external backup battery; 20% for departure.",
   "ref": "FOM 2.5.1.4",
   "src": {
    "ref": "FOM 2.5.1.4, EFB",
@@ -394,7 +394,7 @@
   "chapter": "2",
   "chapterName": "2 Operating General",
   "q": "May a working Flight Crewmember bring a dependent under 13 as a non-rev on their own operating flight?",
-  "a": "Only if another adult accompanies the dependent. Family members must adhere to all non-rev travel rules.",
+  "a": "No. Not unless another adult accompanies the dependent.",
   "ref": "FOM 2.6.15",
   "src": {
    "ref": "FOM 2.6.15, Traveling with Family While on Duty",
@@ -423,8 +423,8 @@
   "id": "fom02-029",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "The Jeppesen FD Pro app fails. Where is the Jeppesen Trip Kit accessed, and what rules apply to using it?",
-  "a": "Via a web clip on the EFB home screen. An internet connection is required, the file must be imported into an approved EFB document reader, and Trip Kit files must not be reused on subsequent flights. For an offline flight select the EJEP03 Worldwide Terminal Charts EFB Coverage.",
+  "q": "The Jeppesen FD Pro app fails. Where is the Jeppesen Trip Kit accessed?",
+  "a": "Via a web clip on the EFB home screen; an internet connection is required.",
   "ref": "FOM 2.5.2.1",
   "src": {
    "ref": "FOM 2.5.2.1, Jeppesen FD Pro Failure",
@@ -438,8 +438,8 @@
   "id": "fom02-030",
   "chapter": "2",
   "chapterName": "2 Operating General",
-  "q": "Who provides 24/7 support for a lost, stolen, or malfunctioning EFB, and how are they reached?",
-  "a": "The ITS Service Desk, at 1-877-238-1077 or its.service.desk@alaskaair.com. If an EFB is lost or stolen, time permitting, also file a police report with local authorities.",
+  "q": "Who provides 24/7 support for a lost, stolen, or malfunctioning EFB?",
+  "a": "The ITS Service Desk, 1-877-238-1077 or its.service.desk@alaskaair.com.",
   "ref": "FOM 2.5.6.8",
   "src": {
    "ref": "FOM 2.5.6.8, EFB Troubleshooting and Lost/Stolen Device",
