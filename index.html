@@ -128,8 +128,21 @@
   // existed have access but no recorded email, so the owner gate and the
   // collector both see nothing. Re-show the gate once to capture it.
   function known(){try{return !!localStorage.getItem('ha330_email');}catch(e){return false;}}
+  function askBox(){if(gate)gate.style.visibility='';if(inp)inp.focus();}
+  function fromAccess(){
+    if(gate)gate.style.visibility='hidden';
+    try{
+      fetch('/cdn-cgi/access/get-identity',{credentials:'same-origin',cache:'no-store'})
+        .then(function(r){return r.ok?r.json():null;})
+        .then(function(j){
+          var e=j&&j.email?String(j.email).trim():'';
+          if(/^[^\s@]+@alaskaair\.com$/i.test(e)){grant();note(e);open_();}
+          else askBox();
+        }).catch(askBox);
+    }catch(e){askBox();}
+  }
   if(hasAccess()&&known()){open_();}
-  else if(inp){inp.focus();}
+  else fromAccess();
   if(btn)btn.addEventListener('click',check);
   if(inp)inp.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();check();}});
 })();
