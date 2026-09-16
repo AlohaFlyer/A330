@@ -64,7 +64,7 @@
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
   "q": "How does the FOM define a service animal?",
-  "a": "A dog, regardless of breed or type, that is individually trained to do work or perform tasks for the benefit of a qualified individual with a disability.",
+  "a": "A dog of any breed or type, individually trained to do work or perform tasks for a disabled person.",
   "ref": "FOM 13.3",
   "src": {
    "ref": "FOM 13.3, Unacceptable Service Animal Behavior",
@@ -94,7 +94,7 @@
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
   "q": "May spare lithium batteries be placed in checked baggage?",
-  "a": "No. Spare lithium batteries may not be placed in checked baggage due to the potential fire hazard; they must go in carry-on baggage.",
+  "a": "No. Spare lithium batteries go in carry-on baggage only.",
   "ref": "FOM 13.4.1",
   "src": {
    "ref": "FOM 13.4.1, Lithium Batteries in PEDs",
@@ -139,7 +139,7 @@
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
   "q": "What will the Flight Deck Report state when a lithium-ion wheelchair battery is carried in the cabin?",
-  "a": "The Flight Deck Report will state \"Lithium Battery Wheelchair,\" and the \"A\" FA/FFA notifies the Captain of the battery's location.",
+  "a": "\"Lithium Battery Wheelchair.\"",
   "ref": "FOM 13.6.1",
   "src": {
    "ref": "FOM 13.6.1, Lithium-Ion Battery",
@@ -168,8 +168,8 @@
   "id": "fom13-012",
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
-  "q": "How must filled oxygen bottles be transported, and what documents are required?",
-  "a": "In an approved container (superbox), shipped as HAZMAT; a NOTOC and the Emergency Response Guide (ERG) are required.",
+  "q": "How must filled oxygen bottles be transported?",
+  "a": "In an approved superbox as HAZMAT, with a NOTOC and the Emergency Response Guide.",
   "ref": "FOM 13.8.1",
   "src": {
    "ref": "FOM 13.8.1, Oxygen Bottle Transportation",
@@ -228,8 +228,8 @@
   "id": "fom13-016",
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
-  "q": "SCENARIO: On the A330, a customer seated in the emergency exit row raises a disability concern moments before door closure. The gate agent already checked him in and a CRO, called to consult, believes the seat is fine. The lead Flight Attendant judges the customer cannot perform the exit functions. Who has the final say on whether he keeps that exit seat, and on what basis?",
-  "a": "The Flight Attendant. Per FOM 13.1, Flight Attendants have final authority in determining suitability of exit seat occupants on board the aircraft, in accordance with FAA regulations. A CRO may be called to consult on an exit-seat disability concern, but the FA decides the exit seat and must verify suitability prior to each door closure.",
+  "q": "Moments before door closure, a CRO thinks an exit-row customer is fine but the lead FA judges him unable. Who decides?",
+  "a": "The Flight Attendant; FAs have final authority on exit seat occupant suitability per FAA regulations.",
   "ref": "FOM 13.1",
   "src": {
    "ref": "FOM 13.1, Emergency Exit Row Seating",
@@ -243,8 +243,8 @@
   "id": "fom13-017",
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
-  "q": "SCENARIO: Your A330 is airborne. A passenger's service animal, a dog, growls and lunges at other customers in the cabin, meeting the unacceptable-behavior criteria. There is no CRO on board. As Flight Crew, what four items should you relay so the situation is handled on arrival?",
-  "a": "Relay the seat number, the passenger name, a brief description of the incident, and a request that a CRO meet the aircraft (FOM 13.3.2, After Departure). At the gate before departure the FAs instead consult a CRO per 13.3.1; the four-item relay is the after-departure procedure.",
+  "q": "Airborne, a service animal lunges at customers. What four items should the Flight Crew relay for arrival handling?",
+  "a": "Seat number, passenger name, brief description of the incident, and a request that a CRO meet the aircraft.",
   "ref": "FOM 13.3.2",
   "src": {
    "ref": "FOM 13.3.2, After Departure",
@@ -258,8 +258,8 @@
   "id": "fom13-018",
   "chapter": "13",
   "chapterName": "13 Passenger Relations",
-  "q": "SCENARIO: Two oxygen items show up for the same A330 flight. A passenger wants to bring an authorized Portable Oxygen Concentrator (POC) into the cabin and use it in cruise; separately, Cargo presents a filled oxygen bottle for the hold. How is each handled, and what paperwork does the filled bottle require?",
-  "a": "The authorized POC may be carried in the cabin and used by the passenger, and is NOT considered HAZMAT (FOM 13.7). The filled oxygen bottle must be transported in an approved container (superbox) and is shipped as HAZMAT, so a NOTOC and the Emergency Response Guide (ERG) are required (FOM 13.8.1). Empty bottles are not HAZMAT and need no superbox or NOTOC.",
+  "q": "A passenger wants to use an authorized Portable Oxygen Concentrator in the cabin. Is it HAZMAT?",
+  "a": "No. Authorized POCs may be carried in the cabin and used by passengers.",
   "ref": "FOM 13.7 / 13.8.1",
   "src": {
    "ref": "FOM 13.7, Portable Oxygen Concentrator (POC); 13.8.1, Oxygen Bottle Transportation",
