@@ -36,6 +36,9 @@ EDITS={
   ('  seat = s; stepIdx = 0;','  seat = s; stepIdx = -1;'),
   ('  duty = d; stepIdx = 0;','  duty = d; stepIdx = -1;'),
   ('  if(stepIdx > items.length) stepIdx = 0;\n','  if(stepIdx < 0) stepIdx = items.length;\n  if(stepIdx > items.length) stepIdx = 0;\n'),
+  # Phase bar named after the A330 normal checklists (Ryan): Cockpit Prep, Before Start, After Start, Taxi, Line-Up, Climb, Approach, After Landing, Parking.
+  ('  "Preflight":"#463C8F","Before Start & Pushback":"#00568F","Engine Start":"#CE0C88","Taxi Out":"#2E90D0",\n  "Takeoff":"#E0A100","Climb":"#EAA52A","Cruise":"#D98A00","Descent":"#E2761A","Approach":"#D8650C","Go-Around":"#B85000",\n  "Landing Roll":"#00805E","Taxi In":"#2E9B7C","Shutdown & Secure":"#5CB89A"',
+   '  "Cockpit Prep":"#463C8F","Before Start":"#00568F","After Start":"#CE0C88","Taxi":"#2E90D0",\n  "Line-Up":"#E0A100","Climb":"#EAA52A","Cruise":"#D98A00","Descent":"#E2761A","Approach":"#D8650C","Go-Around":"#B85000",\n  "Landing Roll":"#00805E","After Landing":"#2E9B7C","Parking":"#5CB89A"'),
   # Exterior flows (noflow) hide the cockpit map: the steps happen outside the airplane.
   ('  @media (max-width:740px){\n    .layout{grid-template-columns:1fr;}\n  }',
    '  @media (max-width:740px){\n    .layout{grid-template-columns:1fr;}\n  }\n  .layout.noflow{grid-template-columns:1fr;}\n  .layout.noflow .mapbox{display:none;}'),
