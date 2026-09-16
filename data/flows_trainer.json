@@ -599,38 +599,38 @@
      "d": "[FCOM PRO-NOR-SOP-07-B-00015355.0001001 · ATC:]\n• ATC......SET FOR OPERATION PM\nATC is set in accordance with airport requirements."
     },
     {
-     "item": "WINDOWS and DOORS",
+     "item": "WINDOWS",
      "act": "CHECK CLOSED",
      "role": "PF",
      "x": 16.5,
      "y": 212.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.",
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible",
      "mir": true
     },
     {
-     "item": "WINDOWS and DOORS",
+     "item": "WINDOWS",
      "act": "CHECK CLOSED",
      "role": "PM",
      "x": 16.5,
      "y": 212.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.",
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible",
      "mir": true
     },
     {
-     "item": "SLIDES",
-     "act": "CHECK ARMED",
+     "item": "DOORS and SLIDES",
+     "act": "CHECK CLOSED and ARMED",
      "role": "PF",
      "x": 150.8,
      "y": 256.6,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• SLIDES......CHECK ARMED PF-PM\nCheck, on the ECAM lower display, that all slides are armed."
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.\n• SLIDES......CHECK ARMED PF-PM\nCheck, on the ECAM lower display, that all slides are armed."
     },
     {
-     "item": "SLIDES",
-     "act": "CHECK ARMED",
+     "item": "DOORS and SLIDES",
+     "act": "CHECK CLOSED and ARMED",
      "role": "PM",
      "x": 150.8,
      "y": 267.1,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• SLIDES......CHECK ARMED PF-PM\nCheck, on the ECAM lower display, that all slides are armed."
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.\n• SLIDES......CHECK ARMED PF-PM\nCheck, on the ECAM lower display, that all slides are armed."
     },
     {
      "item": "THRUST LEVERS",
@@ -816,7 +816,7 @@
    "phase": "Taxi Out",
    "items": [
     {
-     "item": "TERR ON ND ",
+     "item": "TERR ON ND",
      "act": "AS RQRD",
      "role": "PF",
      "x": 115.5,
@@ -833,7 +833,7 @@
      "d": "[FCOM PRO-NOR-SOP-10-A-00011954.0001001 · AUTO BRK:]\n• AUTO BRK MAX pb-sw...... ON PM"
     },
     {
-     "item": "TERR ON ND ",
+     "item": "TERR ON ND",
      "act": "AS RQRD",
      "role": "PM",
      "x": 116.2,
@@ -842,7 +842,7 @@
      "mir": true
     },
     {
-     "item": "ATC CODE/MODE",
+     "item": "SQUAWK (ATC CODE/MODE)",
      "act": "CONFIRM/SET FOR TAKEOFF",
      "role": "PM",
      "x": 180.2,
@@ -858,7 +858,7 @@
      "d": "[FCOM PRO-NOR-SOP-10-A-00012083.0002001 · ENG START SELECTOR:]\n• ENG START selector......AS RQRD PM\nSelect IGN/START if:\n‐ Heavy rain, or\n‐ Moderate turbulence, or\n‐ Severe turbulence is expected after takeoff."
     },
     {
-     "item": "WXR/PWS sw",
+     "item": "RADAR/PWS (WXR/PWS sw)",
      "act": "SYS 1(2)",
      "role": "PM",
      "x": 119.5,
@@ -988,12 +988,12 @@
      "d": "[FCOM PRO-NOR-SOP-12-A-00012091.0001001 · ABOVE ACCELERATION ALTITUDE (OR ONCE IN CLIMB PHASE):]\n• L/G...... CHECK UP PM"
     },
     {
-     "item": "RWY TURN OFF sw",
+     "item": "RWY TURN OFF sw and NOSE sw",
      "act": "OFF",
      "role": "PM",
      "x": 133.4,
      "y": 176.8,
-     "d": "[FCOM PRO-NOR-SOP-12-A-00012091.0001001 · ABOVE ACCELERATION ALTITUDE (OR ONCE IN CLIMB PHASE):]\n• RWY TURN OFF sw......OFF PM"
+     "d": "[FCOM PRO-NOR-SOP-12-A-00012091.0001001 · ABOVE ACCELERATION ALTITUDE (OR ONCE IN CLIMB PHASE):]\n• NOSE sw......OFF PM\n• RWY TURN OFF sw......OFF PM"
     }
    ],
    "trig": "Selection of flaps 0"
@@ -1006,20 +1006,20 @@
    "items": [
     {
      "item": "EFIS OPTIONS",
-     "act": "AS RQRD",
+     "act": "CSTR (AS RQRD)",
      "role": "PF",
      "x": 114.0,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.\n[Exterior lights, quick reference (technique):] PM: Land OFF",
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.\n💡 Technique (Ryan's quick reference): PF selects CSTR, PM selects ARPT.",
      "mir": true
     },
     {
-     "item": "LAND sw",
+     "item": "LAND sw and WING sw",
      "act": "OFF",
      "role": "PM",
      "x": 138.4,
      "y": 177.2,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• LAND sw......OFF PM"
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• LAND sw......OFF PM\n💡 Technique (Ryan's quick reference): WING lights OFF with the LAND lights (WING sw is not an FCOM SOP-14 item)."
     },
     {
      "item": "NO SMOKING sw",
@@ -1031,11 +1031,11 @@
     },
     {
      "item": "EFIS OPTIONS",
-     "act": "AS RQRD",
+     "act": "ARPT (AS RQRD)",
      "role": "PM",
      "x": 106.5,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.",
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.\n💡 Technique (Ryan's quick reference): PF selects CSTR, PM selects ARPT.",
      "mir": true
     },
     {
@@ -1047,12 +1047,12 @@
      "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• ECAM MEMO...... REVIEW PM"
     },
     {
-     "item": "NAVAIDS",
-     "act": "CLEAR",
+     "item": "RAD NAV / SEC F-PLN / PROG",
+     "act": "NAVAIDS CLEAR, SEC F-PLN AS RQRD, OPT FL/REC MAX FL CHECK",
      "role": "PM",
      "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• NAVAIDS ...... CLEAR PM\nClear manually tuned VORs from RAD NAV page.",
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• NAVAIDS ...... CLEAR PM\nClear manually tuned VORs from RAD NAV page.\n• SEC F-PLN...... AS RQRD PM\nRecopy the active flight plan in the secondary if an immediate return flight plan has been constructed previously.\n• OPT FL/REC MAX FL......CHECK PM\nOn PROG page, check the optimum and recommended maximum flight levels.",
      "mir": true
     }
    ],
@@ -1070,7 +1070,7 @@
      "role": "PF",
      "x": 114.0,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides.\n[Exterior lights, quick reference (technique):] PM: Land ON",
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides.",
      "mir": true
     },
     {
@@ -1313,7 +1313,7 @@
      "role": "PM",
      "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-22-A-00012200.0001001 · IRS PERFORMANCE:]\n• IRS PERFORMANCE...... CHECK PM",
+     "d": "[FCOM PRO-NOR-SOP-22-A-00012200.0001001 · IRS PERFORMANCE:]\n• IRS PERFORMANCE...... CHECK PM\nOn the FMS POSITION/MONITOR page, check that the deviation does not exceed the following:\n[IMG:irs_performance_chart.png]\n💡 Position error vs block time. Green: use. Orange: check next flight. Red: IR inoperative.",
      "mir": true
     },
     {
