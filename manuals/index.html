@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Manuals</title>
+<link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#463C8F">
+<style>
+  :root{--midnight:#463C8F;--atlas:#CE0C88;--blue:#E26DB8;--breeze:#EAE5F4;--ice:#F4F1F9;--good:#FF9080;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:var(--ice);color:var(--midnight);min-height:100vh;display:flex;flex-direction:column;align-items:center;}
+  .wrap{width:100%;max-width:820px;padding:0 10px 40px;}
+  .banner{display:flex;align-items:center;justify-content:space-between;background:var(--midnight);padding:12px 20px;margin-top:24px;gap:12px;}
+  .banner a.home{color:var(--breeze);text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;}
+  .banner a.home:hover{color:#fff;}
+  .banner span.t{color:var(--good);font-size:17px;font-weight:700;letter-spacing:1px;text-align:right;}
+  .sub{font-size:12px;color:#555;padding:8px 4px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .sub a{color:var(--atlas);font-weight:700;text-decoration:none;}
+  .card{background:#fff;border:2px solid var(--midnight);padding:16px;margin-top:14px;}
+  textarea#q{width:100%;min-height:78px;padding:12px;border:2px solid var(--midnight);border-radius:6px;font-family:inherit;font-size:16px;resize:vertical;}
+  textarea#q:focus{outline:none;border-color:var(--atlas);}
+  .row{display:flex;align-items:center;gap:16px;margin-top:14px;flex-wrap:wrap;}
+  button.primary{flex:1 1 240px;background:var(--midnight);color:#fff;border:none;border-radius:6px;padding:16px 20px;font-size:16px;font-weight:700;cursor:pointer;}
+  button.primary:hover{background:var(--atlas);}
+  .pualani{display:flex;flex-direction:column;align-items:center;gap:5px;background:none;border:none;cursor:pointer;padding:0;font-family:inherit;}
+  .pualani .disc{width:96px;height:96px;border-radius:50%;overflow:hidden;background:#fff;border:3px solid var(--midnight);display:flex;align-items:center;justify-content:center;transition:transform .12s,box-shadow .12s;}
+  .pualani:hover .disc{transform:scale(1.04);box-shadow:0 2px 10px rgba(1,65,110,.35);}
+  .pualani .disc img{width:100%;height:100%;object-fit:contain;padding:4px;}
+  .pualani .disc .fallback{font-size:38px;line-height:1;}
+  .pualani .lbl{font-size:12px;font-weight:700;color:var(--midnight);letter-spacing:.02em;}
+  .pualani:focus{outline:none;}
+  .pualani:focus-visible{outline:none;}
+  .pualani:focus-visible .disc{box-shadow:0 0 0 3px var(--breeze);}
+  .pualani::-moz-focus-inner{border:0;}
+  .pualani[disabled]{cursor:not-allowed;}
+  .pualani[disabled] .disc{filter:grayscale(1);opacity:.45;}
+  .pualani[disabled] .lbl{color:#888;}
+  .hint{font-size:12px;color:#666;margin-top:10px;}
+  .card{position:relative;}
+  .gear{position:absolute;top:8px;right:10px;background:none;border:none;color:#A29DB0;font-size:20px;line-height:1;cursor:pointer;padding:4px 6px;border-radius:6px;transition:color .12s,background .12s,transform .2s;}
+  .gear:hover{color:var(--midnight);background:var(--breeze);}
+  .gear[aria-expanded="true"]{color:var(--midnight);transform:rotate(60deg);}
+  #settings{display:none;margin-top:12px;border-top:2px solid var(--breeze);padding-top:12px;}
+  #settings h3{margin:0 0 8px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--midnight);}
+  .fld{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;}
+  .fld label{font-size:12px;font-weight:700;}
+  .fld input,.fld select{padding:9px;border:2px solid var(--breeze);border-radius:5px;font-family:inherit;font-size:13px;}
+  .fld input:focus,.fld select:focus{outline:none;border-color:var(--atlas);}
+  .fld .keyrow{display:flex;gap:6px;}
+  .fld .keyrow input{flex:1;}
+  .mini{background:var(--breeze);border:none;border-radius:5px;padding:0 10px;font-size:11px;font-weight:700;color:var(--midnight);cursor:pointer;}
+  .mini:hover{background:var(--blue);color:#fff;}
+  .note{font-size:11px;color:#666;line-height:1.5;}
+  .seg{display:inline-flex;border:2px solid var(--midnight);border-radius:999px;overflow:hidden;align-self:flex-start;}
+  .seg button{font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.03em;background:#fff;color:var(--midnight);border:none;padding:8px 20px;cursor:pointer;transition:background .12s,color .12s;}
+  .seg button+button{border-left:2px solid var(--midnight);}
+  .seg button[aria-pressed="true"]{background:var(--midnight);color:#fff;}
+  .seg button:hover:not([aria-pressed="true"]){background:var(--breeze);}
+  .modebar{display:flex;align-items:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+  .modebar .mlbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#6F6B7E;}
+  .modebar .mhelp{font-size:11px;color:#666;flex:1 1 100%;}
+  @media (max-width:430px){.seg button{padding:8px 13px;font-size:12px;}}
+  .chips{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px;font-size:12px;}
+  .chips .chip{background:var(--midnight);color:#fff;border-radius:999px;padding:3px 11px;font-weight:700;letter-spacing:.04em;}
+  .chips .caveat{color:#8a6d00;font-size:11px;}
+  #answer{display:none;background:#fff;border:2px solid var(--good);border-left:8px solid var(--good);padding:16px;margin-top:14px;}
+  #answer h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;}
+  #answer .body{font-size:15px;line-height:1.6;}
+  #answer .who{font-size:11px;color:#666;margin-top:10px;}
+  .res{background:#fff;border:2px solid var(--breeze);border-left:6px solid var(--atlas);padding:12px 14px;margin-top:10px;}
+  .res .h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:12px;font-weight:700;color:var(--midnight);}
+  .res .h .pg a{color:var(--atlas);text-decoration:none;}
+  .res .h .pg a:hover{text-decoration:underline;}
+  .res .sn{font-size:14px;line-height:1.55;color:#333;margin-top:7px;}
+  .res mark{background:var(--good);color:var(--midnight);padding:0 2px;}
+  .res .tag{background:var(--good);color:var(--midnight);border-radius:3px;padding:1px 6px;font-size:10px;letter-spacing:.06em;margin-left:6px;}
+  .atts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+  .att{position:relative;width:62px;height:62px;border:2px solid var(--breeze);border-radius:6px;overflow:hidden;background:#fff;}
+  .att img{width:100%;height:100%;object-fit:cover;display:block;}
+  .att button{position:absolute;top:1px;right:1px;width:20px;height:20px;border:none;border-radius:50%;background:rgba(1,23,43,.78);color:#fff;font-size:13px;line-height:1;cursor:pointer;padding:0;}
+  .clip{background:#fff;border:2px solid var(--midnight);color:var(--midnight);border-radius:6px;padding:10px 13px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;min-height:40px;}
+  .clip:hover{background:var(--breeze);}
+  .drop{outline:3px dashed var(--atlas);outline-offset:3px;}
+  .attnote{font-size:11px;color:#666;margin-top:7px;}
+  .working{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--midnight);font-weight:700;}
+  .working .dots{display:inline-flex;gap:4px;}
+  .working .dots i{width:7px;height:7px;border-radius:50%;background:var(--atlas);display:block;animation:bl 1.05s infinite ease-in-out;}
+  .working .dots i:nth-child(2){animation-delay:.16s;}
+  .working .dots i:nth-child(3){animation-delay:.32s;}
+  @keyframes bl{0%,72%,100%{opacity:.22;transform:translateY(0);}36%{opacity:1;transform:translateY(-3px);}}
+  @media (prefers-reduced-motion:reduce){.working .dots i{animation:none;opacity:.7;}}
+  details.think{margin-top:9px;}
+  details.think summary{cursor:pointer;font-size:11px;font-weight:700;color:#6F6B7E;letter-spacing:.04em;text-transform:uppercase;}
+  details.think .tb{white-space:pre-wrap;font-size:12.5px;line-height:1.55;color:#444;background:#F7F5FB;border-left:4px solid var(--breeze);padding:9px 11px;margin-top:7px;}
+  #answer .turn{border-top:2px solid var(--breeze);margin-top:14px;padding-top:12px;}
+  #answer .turn:first-child{border-top:none;margin-top:0;padding-top:0;}
+  #answer .tq{font-size:13px;font-weight:700;color:var(--atlas);margin-bottom:7px;}
+  #answer .tq:before{content:"You: ";color:#6F6B7E;}
+  .fu{border-top:2px solid var(--breeze);margin-top:14px;padding-top:12px;}
+  .fu textarea{width:100%;min-height:54px;padding:10px;border:2px solid var(--breeze);border-radius:6px;font-family:inherit;font-size:16px;resize:vertical;}
+  .fu textarea:focus{outline:none;border-color:var(--atlas);}
+  .fubar{display:flex;align-items:center;gap:9px;margin-top:9px;flex-wrap:wrap;}
+  .fubar button{font-family:inherit;font-size:13px;font-weight:700;border-radius:6px;padding:10px 15px;cursor:pointer;min-height:40px;border:2px solid var(--midnight);}
+  #fuAsk{background:var(--midnight);color:#fff;}
+  #fuAsk:hover{background:var(--atlas);}
+  #fuAsk[disabled]{opacity:.5;cursor:not-allowed;}
+  #fuNew{background:#fff;color:var(--midnight);}
+  #fuNew:hover{background:var(--breeze);}
+  .fubar .fucount{font-size:11px;color:#666;}
+  #answer .lead{font-size:16.5px;font-weight:700;line-height:1.5;margin:0 0 10px;}
+  #answer ul{margin:0;padding-left:20px;}
+  #answer li{margin:7px 0;line-height:1.6;}
+  #answer li::marker{color:var(--midnight);}
+  a.cite{white-space:nowrap;}
+  #status{font-size:13px;color:#555;margin-top:14px;min-height:18px;}
+  details.toc{margin-top:18px;background:#fff;border:2px solid var(--breeze);padding:10px 14px;}
+  details.toc summary{cursor:pointer;font-weight:700;font-size:13px;}
+  details.toc ol{margin:10px 0 4px;padding-left:20px;font-size:13px;line-height:1.8;}
+  details.toc a{color:var(--atlas);text-decoration:none;}
+  footer{font-size:11px;color:#666;text-align:center;padding:18px 10px 30px;line-height:1.6;}
+  a.cite{color:var(--atlas);font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;cursor:pointer;}
+  a.cite:hover{background:var(--breeze);color:var(--midnight);}
+  .res .h .pg a{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;}
+  .res{cursor:pointer;}
+  .res:hover{border-color:var(--atlas);}
+  details.toc a{cursor:pointer;}
+  .ovl{position:fixed;inset:0;background:rgba(1,23,43,.72);display:none;align-items:center;justify-content:center;padding:16px;z-index:50;}
+  .ovl.on{display:flex;}
+  .modal{background:#fff;border:2px solid var(--midnight);width:100%;max-width:720px;max-height:86vh;display:flex;flex-direction:column;}
+  .modal .mh{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--midnight);color:#fff;padding:11px 14px;flex-wrap:wrap;}
+  .modal .mh .mt{font-size:13px;font-weight:700;letter-spacing:.03em;color:var(--good);}
+  .modal .mh button{background:none;border:none;color:var(--breeze);font-size:20px;line-height:1;cursor:pointer;padding:0 4px;}
+  .modal .mh button:hover{color:#fff;}
+  .modal .mb{padding:0 0 14px;overflow:auto;font-size:14px;line-height:1.6;color:#222;}
+  .modal .pgmark{position:sticky;top:0;background:var(--breeze);color:var(--midnight);font-size:11px;font-weight:700;letter-spacing:.05em;padding:5px 16px;border-bottom:1px solid var(--midnight);}
+  .modal .pgtext{white-space:pre-wrap;padding:12px 16px 18px;}
+  .modal .pgnote{background:#fff7e0;color:#7a5c00;font-size:12px;padding:8px 16px;}
+  .modal .mb mark{background:var(--good);}
+  .modal .mf{display:flex;gap:10px;justify-content:flex-end;padding:10px 14px;border-top:2px solid var(--breeze);flex-wrap:wrap;}
+  .modal .mf a,.modal .mf button{font-family:inherit;font-size:13px;font-weight:700;text-decoration:none;border-radius:6px;padding:9px 14px;cursor:pointer;border:2px solid var(--midnight);background:#fff;color:var(--midnight);}
+  .modal .mf a.go{background:var(--midnight);color:#fff;}
+</style>
+<style>
+.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
+.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
+.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}
+.ps-home:focus{outline:none;}
+.ps-home svg{display:block;}
+@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
+</style>
+</head>
+<body>
+<div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+
+<div class="wrap">
+  <div class="banner">
+    <span class="t">A330 MANUALS</span>
+  </div>
+  <div class="sub">
+    <span id="meta">FCOM R17 15 MAY 26 &middot; QRH R35 26 JUN 26 &middot; FCTM R6 14 SEP 26 &middot; FOM 125.3 9/15/26 &middot; MEL R59 4/1/26 &middot; AFM 11 AUG 26 &middot; PRC 8/31/26 &middot; AFM-SUPP 05 AUG 26 &middot; PERF R26-12 Sep 09 2026 &middot; NPC-CB 8/13/25 &middot; FODM R0 5/20/26</span>
+  </div>
+
+  <div class="card">
+    <textarea id="q" placeholder="Ask a manual question, e.g. how do I test the oxygen mask?" aria-label="Your question"></textarea>
+    <div class="modebar">
+      <span class="mlbl">Match</span>
+      <div class="seg" id="modeSeg" role="group" aria-label="Search mode">
+        <button type="button" data-mode="keywords" aria-pressed="true">Keywords</button>
+        <button type="button" data-mode="exact" aria-pressed="false">Exact</button>
+        <button type="button" data-mode="phrase" aria-pressed="false">Phrase</button>
+      </div>
+      <span class="mhelp" id="modeHelp"></span>
+    </div>
+    <div class="modebar">
+      <span class="mlbl">Manual</span>
+      <div class="seg" id="manSeg" role="group" aria-label="Manual">
+        <button type="button" data-man="ALL" aria-pressed="true">All</button>
+        <button type="button" data-man="A330P_FCOM" aria-pressed="false">FCOM</button>
+        <button type="button" data-man="A330P_QRH" aria-pressed="false">QRH</button>
+        <button type="button" data-man="A330_FCTM" aria-pressed="false">FCTM</button>
+        <button type="button" data-man="FOM" aria-pressed="false">FOM</button>
+      </div>
+      <div class="seg" id="manSeg2" role="group" aria-label="Manual, continued">
+        <button type="button" data-man="A330_MEL" aria-pressed="false">MEL</button>
+        <button type="button" data-man="A330_AFM" aria-pressed="false">AFM</button>
+        <button type="button" data-man="A330_PRC" aria-pressed="false">PRC</button>
+        <button type="button" data-man="more" aria-pressed="false">more</button>
+      </div>
+      <div class="seg" id="manSegMore" role="group" aria-label="More manuals" style="display:none">
+        <button type="button" data-man="A330_AFM-SUPP" aria-pressed="false">AFM-SUPP</button>
+        <button type="button" data-man="A330P_PERF" aria-pressed="false">PERF</button>
+        <button type="button" data-man="A330P_NPC-CB" aria-pressed="false">NPC-CB</button>
+        <button type="button" data-man="FODM" aria-pressed="false">FODM</button>
+      </div>
+      <span class="mhelp" id="manHelp"></span>
+    </div>
+    <div class="atts" id="atts"></div>
+    <div class="attnote" id="attNote"></div>
+    <div class="row">
+      <button class="primary" id="searchBtn" type="button">Offline Search</button>
+      <button class="clip" id="clipBtn" type="button" title="Attach a screenshot">&#128206; Attach</button>
+      <input type="file" id="fileIn" accept="image/*" multiple style="display:none">
+      <button class="pualani" id="askBtn" type="button" title="Ask Pualani">
+        <span class="disc"><img id="pualaniImg" src="/assets/pualani-2001.png" alt=""><span class="fallback" style="display:none">&#127802;</span></span>
+        <span class="lbl">Ask Pualani</span>
+      </button>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="hint" id="hintText">
+      Offline search always works, radio off, no account. Ask Pualani needs a connection and the key in portal settings.
+    </div>
+
+  </div>
+
+  <div id="answer">
+    <h3>Pualani says</h3>
+    <div class="body" id="answerBody"></div>
+    <div class="who" id="answerWho"></div>
+    <div class="fu" id="fuWrap" style="display:none">
+      <textarea id="fuQ" placeholder="Follow up on this answer" aria-label="Follow-up question"></textarea>
+      <div class="atts" id="fuAtts"></div>
+      <div class="attnote" id="fuAttNote"></div>
+      <div class="fubar">
+        <button type="button" id="fuAsk">Ask follow-up</button>
+        <button type="button" class="clip" id="fuClip" title="Attach a screenshot">&#128206;</button>
+        <input type="file" id="fuFileIn" accept="image/*" multiple style="display:none">
+        <button type="button" id="fuNew">New thread</button>
+        <span class="fucount" id="fuCount"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="status"></div>
+  <div id="results"></div>
+
+  <details class="toc">
+    <summary>Browse by section</summary>
+    <ol id="tocList"></ol>
+  </details>
+
+  <footer>
+    Hawaiian Airlines A330 passenger fleet manuals: FCOM R17 15 MAY 26, QRH R35 26 JUN 26, FCTM R6 14 SEP 26, FOM 125.3 9/15/26, MEL R59 4/1/26, AFM 11 AUG 26, PRC 8/31/26, AFM-SUPP 05 AUG 26, PERF R26-12 Sep 09 2026, NPC-CB 8/13/25, FODM R0 5/20/26.<br>
+    Study aid only. The manuals in Drive govern. Verify anything you act on against the source.
+  </footer>
+</div>
+
+<div class="ovl" id="ovl" role="dialog" aria-modal="true" aria-labelledby="ovlTitle">
+  <div class="modal">
+    <div class="mh"><span class="mt" id="ovlTitle">Reference</span><button type="button" id="ovlX" aria-label="Close">&times;</button></div>
+    <div class="mb" id="ovlBody"></div>
+    <div class="mf"><button type="button" id="ovlClose">Close</button><a class="go" id="ovlPdf" href="#" target="_blank" rel="noopener">Open in Drive &#9654;</a></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var IDX = null, BM = null, LOADING = null;
+  var MANUALS = [{"key": "A330P_FCOM", "short": "FCOM", "title": "A330 Passenger FCOM", "revision": "R17", "date": "15 MAY 26", "drive_url": "https://drive.google.com/file/d/1ojJWVrY7qWKGybhvQLnhUZuArO0FCB5T/view"}, {"key": "A330P_QRH", "short": "QRH", "title": "A330 Passenger QRH", "revision": "R35", "date": "26 JUN 26", "drive_url": "https://drive.google.com/file/d/1ZfQ8FxhnaA5smS0dt9HYuhFirq0IaKma/view"}, {"key": "A330_FCTM", "short": "FCTM", "title": "A330 Flight Crew Training Manual", "revision": "R6", "date": "14 SEP 26", "drive_url": "https://drive.google.com/file/d/1X98gKkYagcYEmddo0RM2o9ipNPSg9jSE/view"}, {"key": "FOM", "short": "FOM", "title": "Flight Operations Manual", "revision": "125.3", "date": "9/15/26", "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"}, {"key": "A330_MEL", "short": "MEL", "title": "A330 Minimum Equipment List", "revision": "R59", "date": "4/1/26", "drive_url": "https://drive.google.com/file/d/1ys2NEDPdfbLBWSEKFfYYbHLtqyaYbPSS/view"}, {"key": "A330_AFM", "short": "AFM", "title": "A330 Airplane Flight Manual", "revision": null, "date": "11 AUG 26", "drive_url": "https://drive.google.com/file/d/1KZP6evj4od0MNKZ73Ws2BTnn3dbDkMNh/view"}, {"key": "A330_PRC", "short": "PRC", "title": "A330 Pilot Reference Cards", "revision": null, "date": "8/31/26", "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"}, {"key": "A330_AFM-SUPP", "short": "AFM-SUPP", "title": "A330 AFM Supplement", "revision": null, "date": "05 AUG 26", "drive_url": "https://drive.google.com/file/d/1E3hH4371duBmrgw1Eb5hQOuN71xIwTbI/view"}, {"key": "A330P_PERF", "short": "PERF", "title": "A330 Passenger Performance Manual", "revision": "R26-12", "date": "Sep 09 2026", "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"}, {"key": "A330P_NPC-CB", "short": "NPC-CB", "title": "A330 Passenger Normal Procedures and Checklist Card Book", "revision": null, "date": "8/13/25", "drive_url": "https://drive.google.com/file/d/1gcv0a_zOc4RpwYJcQmHrr-ah6vCOYksL/view"}, {"key": "FODM", "short": "FODM", "title": "Flight Operations Data Manual", "revision": "R0", "date": "5/20/26", "drive_url": "https://drive.google.com/file/d/1nX8Voo4Kn0-uvZq2a4rfxVoGsEGbcODz/view"}];
+  var BYKEY = {}; MANUALS.forEach(function (m) { BYKEY[m.key] = m; });
+  var BYSHORT = {}; MANUALS.forEach(function (m) { BYSHORT[m.short] = m; });
+  var STORE = {};        // key -> {meta, toc, docs, bm, parts:{name:1}}
+  var PENDING = {};      // key -> promise while a manual is loading
+  var SCOPE = 'ALL';     // manual key or ALL
+  function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- persistence ---------- */
+  var LS = {
+    get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} },
+    del: function (k) { try { localStorage.removeItem(k); } catch (e) {} }
+  };
+
+  /* ---------- text search ---------- */
+  var STOP = ('a an the and or of to in on for is are was were be been am i my me you your it its this that these those ' +
+    'do does did can could would should shall will may might must have has had if then than as at by from with without ' +
+    'what when where which who whom how why not no yes about into over under any all some each per').split(' ');
+  var STOPS = {}; STOP.forEach(function (w) { STOPS[w] = 1; });
+
+  var SYN = {
+    oxygen: ['oxy', 'mask', 'crew oxygen'], mask: ['oxygen', 'oxy', 'quick donning'],
+    takeoff: ['tkof', 't.o', 'toga', 'flex'], landing: ['ldg', 'approach', 'touchdown'],
+    gear: ['landing gear', 'l/g', 'lg'], autopilot: ['ap', 'a/p', 'fmgec'],
+    autothrust: ['a/thr', 'athr', 'thrust lever'], director: ['fd', 'flight director'],
+    engine: ['eng', 'trent', 'n1', 'epr'], hydraulic: ['hyd', 'green', 'blue', 'yellow'],
+    electrical: ['elec', 'gen', 'bus'], pressurization: ['cab pr', 'cabin pressure', 'outflow valve'],
+    flaps: ['flap', 'slat', 'conf'], radar: ['wxr', 'weather radar'], tcas: ['traffic', 'ra', 'ta'],
+    terrain: ['gpws', 'egpws', 'pull up'], apu: ['auxiliary power unit', 'apu bleed'],
+    fuel: ['fob', 'trim tank', 'jettison', 'imbalance'], brakes: ['brk', 'autobrake', 'antiskid'],
+    ecam: ['warning', 'caution', 'master'], mcdu: ['fmgs', 'fms', 'fmgec', 'init', 'perf'],
+    goaround: ['go around', 'ga', 'toga'], approach: ['appr', 'app', 'final', 'minimum'],
+    autoland: ['cat ii', 'cat iii', 'cat 2', 'cat 3', 'land', 'flare'], minimums: ['minima', 'da', 'mda', 'dh', 'rvr'],
+    alternate: ['altn', 'divert', 'diversion'], etops: ['orcn', 'oceanic', 'etp'],
+    deice: ['de-ice', 'anti-ice', 'holdover', 'hot'], icing: ['ice', 'anti ice', 'wing anti ice', 'engine anti ice'],
+    crosswind: ['xwind', 'wind', 'gust'], tailwind: ['tail wind', 'wind component'],
+    mel: ['inoperative', 'inop', 'dispatch', 'deferred'], rest: ['fatigue', 'duty', 'crew rest'],
+    memory: ['memory item', 'immediate action', 'from memory'], limitation: ['limit', 'maximum', 'minimum', 'max'],
+    speed: ['vmo', 'mmo', 'vfe', 'vle', 'vlo', 'kt'], weight: ['mtow', 'mlw', 'mzfw', 'kg', 'lb'],
+    pushback: ['push back', 'towing', 'tow'], taxi: ['taxiing', 'single engine taxi'],
+    smoke: ['fumes', 'fire', 'avncs'], evacuation: ['evac', 'emer evac'], ditching: ['forced landing'],
+    unreliable: ['adr', 'airspeed', 'pitot'], runway: ['rwy', 'contaminated', 'wet', 'rcam']
+  };
+
+  function norm(w) {
+    w = w.toLowerCase();
+    if (w.length > 4 && /ies$/.test(w)) return w.slice(0, -3) + 'y';
+    if (w.length > 3 && /(ses|xes|zes|ches|shes)$/.test(w)) return w.slice(0, -2);
+    if (w.length > 3 && /s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1);
+    if (w.length > 5 && /ing$/.test(w)) return w.slice(0, -3);
+    if (w.length > 4 && /ed$/.test(w)) return w.slice(0, -2);
+    return w;
+  }
+  function tok(s) {
+    var out = [], m = String(s).toLowerCase().match(/[a-z0-9][a-z0-9.']*/g) || [];
+    for (var i = 0; i < m.length; i++) {
+      var w = m[i].replace(/\.+$/, '').replace(/'s$/, '');
+      if (!w || STOPS[w] || w.length < 2) continue;
+      out.push(norm(w));
+    }
+    return out;
+  }
+
+  function buildBM(docs) {
+    var N = docs.length, df = {}, tf = new Array(N), len = new Array(N), sum = 0;
+    for (var i = 0; i < N; i++) {
+      var t = tok(docs[i].x), c = {}, ht = tok((docs[i].s || '') + ' ' + (docs[i].t || ''));
+      for (var r = 0; r < 4; r++) t = t.concat(ht);
+      for (var j = 0; j < t.length; j++) c[t[j]] = (c[t[j]] || 0) + 1;
+      tf[i] = c; len[i] = t.length; sum += t.length;
+      for (var k in c) df[k] = (df[k] || 0) + 1;
+    }
+    return { N: N, df: df, tf: tf, len: len, avg: sum / N };
+  }
+
+  function expand(terms, query) {
+    var out = terms.slice(), joined = terms.join(' ');
+    for (var key in SYN) {
+      if (joined.indexOf(norm(key)) >= 0) SYN[key].forEach(function (s) { tok(s).forEach(function (t) { if (out.indexOf(t) < 0) out.push(t); }); });
+    }
+    return out;
+  }
+
+  /* ---------- literal modes ----------
+     Keywords is the BM25 engine below: stems, synonyms, ranked recall.
+     Exact and Phrase do no stemming and no expansion at all. Both compare a
+     squashed form, lowercase with every run of non-alphanumerics turned into a
+     single space, so "compensation, payable monthly" still matches the phrase
+     "compensation payable monthly" while "compensation is payable" does not. */
+  var MODES = {
+    keywords: { label: 'Keywords', help: 'Ranked by relevance. Stems words and adds related manual terms.' },
+    exact:    { label: 'Exact',    help: 'Every word you type must appear, as typed. No stemming, no synonyms.' },
+    phrase:   { label: 'Phrase',   help: 'The whole string must appear together, in that order.' }
+  };
+  var MODE = 'keywords';
+  var SEARCHED = false;   // a zero-hit search still counts, otherwise the mode buttons go dead
+
+  function squash(s) {
+    return String(s == null ? '' : s).toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/^ | $/g, '');
+  }
+  function sqDoc(d) {
+    if (d.__sq === undefined) d.__sq = ' ' + squash(d.x) + ' ';
+    return d.__sq;
+  }
+  function sqHead(d) {
+    if (d.__sh === undefined) d.__sh = ' ' + squash((d.h || '') + ' ' + (d.t || '')) + ' ';
+    return d.__sh;
+  }
+  function countOf(hay, needle) {
+    if (!needle) return 0;
+    var n = 0, i = hay.indexOf(needle);
+    while (i >= 0) { n++; i = hay.indexOf(needle, i + 1); }
+    return n;
+  }
+  function litWords(query) {
+    var q = squash(query);
+    return q ? q.split(' ') : [];
+  }
+
+  function searchExact(query, limit) {
+    var words = litWords(query).filter(function (w, i, a) { return a.indexOf(w) === i; });
+    if (!words.length) return [];
+    var out = [];
+    for (var d = 0; d < IDX.docs.length; d++) {
+      var doc = IDX.docs[d], body = sqDoc(doc), head = sqHead(doc), score = 0, all = true;
+      for (var w = 0; w < words.length; w++) {
+        var t = ' ' + words[w] + ' ';
+        var c = countOf(body, t);
+        if (!c) { all = false; break; }
+        score += 1 + Math.log(1 + c) + (countOf(head, t) ? 3 : 0);
+      }
+      if (all) out.push([score, d]);
+    }
+    out.sort(function (a, c) { return c[0] - a[0]; });
+    return out.slice(0, limit || 12).map(function (r) {
+      return { score: r[0], doc: IDX.docs[r[1]], terms: words, base: words, lit: words.slice() };
+    });
+  }
+
+  function searchPhrase(query, limit) {
+    var p = squash(query);
+    if (!p) return [];
+    var needle = ' ' + p + ' ', out = [];
+    for (var d = 0; d < IDX.docs.length; d++) {
+      var doc = IDX.docs[d], c = countOf(sqDoc(doc), needle);
+      if (!c) continue;
+      out.push([1 + Math.log(1 + c) + (countOf(sqHead(doc), needle) ? 3 : 0), d]);
+    }
+    out.sort(function (a, c) { return c[0] - a[0]; });
+    var words = p.split(' ');
+    return out.slice(0, limit || 12).map(function (r) {
+      return { score: r[0], doc: IDX.docs[r[1]], terms: words, base: words, lit: [p], phrase: p };
+    });
+  }
+
+  function runSearch(query, limit) {
+    if (MODE === 'exact') return searchExact(query, limit);
+    if (MODE === 'phrase') return searchPhrase(query, limit);
+    return search(query, limit);
+  }
+
+  function search(query, limit) {
+    var base = tok(query);
+    if (!base.length) return [];
+    var terms = expand(base, query), k1 = 1.5, b = 0.75, scores = new Array(BM.N).fill(0);
+    for (var ti = 0; ti < terms.length; ti++) {
+      var t = terms[ti], n = BM.df[t]; if (!n) continue;
+      var boost = base.indexOf(t) >= 0 ? 1 : 0.45;
+      var idf = Math.log(1 + (BM.N - n + 0.5) / (n + 0.5));
+      for (var d = 0; d < BM.N; d++) {
+        var f = BM.tf[d][t]; if (!f) continue;
+        scores[d] += boost * idf * (f * (k1 + 1)) / (f + k1 * (1 - b + b * BM.len[d] / BM.avg));
+      }
+    }
+    // exact phrase bonus
+    var phrase = query.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+    if (phrase.length > 8) {
+      for (var d2 = 0; d2 < BM.N; d2++) {
+        if (IDX.docs[d2].x.toLowerCase().replace(/\s+/g, ' ').indexOf(phrase) >= 0) scores[d2] += 6;
+      }
+    }
+    // explicit section reference, e.g. "DSC-35-20-30", "PRO-NOR-SOP-06", "5.4.2" or "21-51-1A"
+    var secRef = query.match(/\b([A-Z]{2,4}(?:-[A-Z0-9_]+)+|\d{1,2}(?:\.\d{1,3})+|\d{2}-\d{2}-\d{1,2}[A-Z]?)\b/i);
+    if (secRef) {
+      var want = secRef[1].toUpperCase();
+      for (var d3 = 0; d3 < BM.N; d3++) if (String(IDX.docs[d3].s).toUpperCase() === want) scores[d3] += 6;
+    }
+    var order = [];
+    for (var i2 = 0; i2 < scores.length; i2++) if (scores[i2] > 0) order.push([scores[i2], i2]);
+    order.sort(function (a, c) { return c[0] - a[0]; });
+    return order.slice(0, limit || 12).map(function (r) {
+      return { score: r[0], doc: IDX.docs[r[1]], terms: terms, base: base };
+    });
+  }
+
+  // Performance tables are walls of digits. Collapse them so the sentence survives.
+  function tidy(s) {
+    return s.replace(/\s+/g, ' ')
+      .replace(/(?:(?:\$?\d[\d.,]*|\d{1,2}\/\d{1,2}\/\d{2,4})\s+){5,}/g, ' [table] ')
+      .replace(/\s{2,}/g, ' ').trim();
+  }
+  function snippet(text, terms, width) {
+    width = width || 320;
+    var flat = tidy(text), low = flat.toLowerCase(), best = 0, bestScore = -1e9;
+    var step = 30;
+    for (var s = 0; s < Math.max(1, flat.length - width); s += step) {
+      var win = low.slice(s, s + width), score = 0;
+      for (var i = 0; i < terms.length; i++) {
+        if (win.indexOf(terms[i].slice(0, Math.max(4, terms[i].length - 1))) >= 0) score += 2;
+      }
+      var digits = (win.match(/[0-9$]/g) || []).length;
+      score -= digits / 18;                       // prose beats digit soup
+      if (/^[A-Z(]/.test(flat.slice(s, s + 1))) score += 0.6;
+      if (s > 0 && /[.;:] $/.test(flat.slice(s - 2, s))) score += 1.2;
+      if (score > bestScore) { bestScore = score; best = s; }
+    }
+    var out = flat.slice(best, best + width);
+    var sp = out.lastIndexOf(' ');
+    if (sp > width - 40) out = out.slice(0, sp);
+    if (best > 0) out = '... ' + out;
+    if (best + width < flat.length) out += ' ...';
+    return out;
+  }
+
+  // Exact and Phrase centre the window on the literal hit instead of a stem guess.
+  function snippetLit(text, lits, width) {
+    width = width || 320;
+    var flat = tidy(text), low = ' ' + squash(flat) + ' ', at = -1;
+    for (var i = 0; i < lits.length && at < 0; i++) at = low.indexOf(' ' + lits[i] + ' ');
+    if (at < 0) return snippet(text, lits, width);
+    // squashed offsets track the original closely enough to centre a 320 char window
+    var ratio = flat.length / Math.max(1, low.length - 2);
+    var mid = Math.round(at * ratio);
+    var best = Math.max(0, Math.min(Math.max(0, flat.length - width), mid - Math.round(width / 3)));
+    var out = flat.slice(best, best + width);
+    var sp = out.lastIndexOf(' ');
+    if (sp > width - 40) out = out.slice(0, sp);
+    if (best > 0) out = '... ' + out;
+    if (best + width < flat.length) out += ' ...';
+    return out;
+  }
+
+  function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function reEsc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+  // Whole words only, and a phrase tolerates the punctuation the source actually has.
+  function highlightLit(s, lits) {
+    var html = esc(s);
+    lits.slice().sort(function (a, b) { return b.length - a.length; }).slice(0, 8).forEach(function (t) {
+      if (!t) return;
+      var pat = t.split(' ').map(reEsc).join('[^a-zA-Z0-9]+');
+      html = html.replace(new RegExp('(?<![a-zA-Z0-9>])(' + pat + ')(?![a-zA-Z0-9])', 'gi'), '<mark>$1</mark>');
+    });
+    return html;
+  }
+  function highlight(s, terms) {
+    var html = esc(s);
+    var uniq = terms.slice().sort(function (a, b) { return b.length - a.length; }).slice(0, 6);
+    uniq.forEach(function (t) {
+      if (t.length < 3) return;
+      var stem = t.slice(0, Math.max(4, t.length - 1)).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      html = html.replace(new RegExp('(?<![\\w>])(' + stem + '\\w*)', 'gi'), '<mark>$1</mark>');
+    });
+    return html;
+  }
+
+  /* ---------- index loading ----------
+     One JSON per manual under /manuals/. Big manuals are split into parts listed in
+     their main file; every part fetched is remembered so All never re-downloads. */
+  function fetchJSON(url) {
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error(url.split('/').pop() + ' ' + r.status); return r.json(); });
+  }
+  function adopt(key, docs) {
+    docs.forEach(function (d) { d.m = key; });
+    return docs;
+  }
+  function loadManual(key) {
+    if (STORE[key] && STORE[key].done) return Promise.resolve(STORE[key]);
+    if (PENDING[key]) return PENDING[key];
+    var m = BYKEY[key];
+    setStatus('Loading the ' + m.short + ' index...');
+    PENDING[key] = fetchJSON('/manuals/' + key + '.json').then(function (j) {
+      var st = STORE[key] || (STORE[key] = { meta: j.meta, toc: j.toc, docs: [], parts: {}, done: false });
+      st.meta = j.meta; st.toc = j.toc;
+      if (!j.parts || !j.parts.length) {
+        st.docs = adopt(key, j.docs || []);
+        return st;
+      }
+      var todo = j.parts.filter(function (p) { return !st.parts[p.part]; }), got = 0;
+      return todo.reduce(function (chain, p) {
+        return chain.then(function () {
+          return fetchJSON('/manuals/' + p.file).then(function (pj) {
+            st.parts[p.part] = 1;
+            st.docs = st.docs.concat(adopt(key, pj.docs || []));
+            got++;
+            setStatus('Loading the ' + m.short + ' index, ' + got + ' of ' + todo.length + ' parts...');
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        st.docs.sort(function (a, b) { return a.p - b.p; });
+        return st;
+      });
+    }).then(function (st) {
+      st.bm = buildBM(st.docs);
+      st.done = true;
+      delete PENDING[key];
+      return st;
+    }).catch(function (e) {
+      delete PENDING[key];
+      setStatus('Could not load the ' + m.short + ' index: ' + e.message + '. If you are offline, tick Make Available Offline on the portal while you have signal.');
+      throw e;
+    });
+    return PENDING[key];
+  }
+  // Merge the per-manual BM25 tables for the current scope into the engine's IDX and BM.
+  function activate() {
+    var keys = SCOPE === 'ALL' ? MANUALS.map(function (m) { return m.key; }) : [SCOPE];
+    var docs = [], tf = [], len = [], df = {}, sum = 0;
+    keys.forEach(function (k) {
+      var st = STORE[k];
+      if (!st || !st.done) return;
+      docs = docs.concat(st.docs);
+      tf = tf.concat(st.bm.tf); len = len.concat(st.bm.len); sum += st.bm.avg * st.bm.N;
+      for (var w in st.bm.df) df[w] = (df[w] || 0) + st.bm.df[w];
+    });
+    IDX = { docs: docs };
+    BM = { N: docs.length, df: df, tf: tf, len: len, avg: docs.length ? sum / docs.length : 1 };
+    paintToc();
+    paintProfile();
+  }
+  function load() {
+    if (LOADING) return LOADING;
+    var keys = SCOPE === 'ALL' ? MANUALS.map(function (m) { return m.key; }) : [SCOPE];
+    var need = keys.filter(function (k) { return !(STORE[k] && STORE[k].done); });
+    if (!need.length) { activate(); return Promise.resolve(IDX); }
+    LOADING = need.reduce(function (chain, k) { return chain.then(function () { return loadManual(k); }); }, Promise.resolve())
+      .then(function () { LOADING = null; activate(); setStatus(''); return IDX; })
+      .catch(function (e) { LOADING = null; activate(); throw e; });
+    return LOADING;
+  }
+  function paintToc() {
+    var ol = $('tocList'); ol.innerHTML = '';
+    var keys = SCOPE === 'ALL' ? MANUALS.map(function (m) { return m.key; }) : [SCOPE];
+    keys.forEach(function (k) {
+      var st = STORE[k];
+      if (!st || !st.done) return;
+      var li = document.createElement('li');
+      var inner = st.toc.map(function (s) {
+        return '<li><a class="cite" data-m="' + k + '" data-p="' + s.p + '" data-s="' + esc(String(s.s)) + '">' +
+          esc(String(s.s)) + ' &mdash; ' + esc(s.t || '') + '</a></li>';
+      }).join('');
+      li.innerHTML = '<details><summary>' + esc(shortOf(k)) + ' &middot; ' + esc(st.meta.title) +
+        (st.meta.revision ? ' ' + esc(st.meta.revision) : '') + ', ' + esc(st.meta.date) +
+        ' &middot; ' + st.toc.length + ' sections</summary><ol>' + inner + '</ol></details>';
+      ol.appendChild(li);
+    });
+  }
+
+  function setStatus(t) { $('status').textContent = t; }
+
+  function render(hits) {
+    var box = $('results'); box.innerHTML = '';
+    if (!hits.length) { setStatus(emptyMsg()); return; }
+    setStatus(hits.length + ' matching page' + (hits.length === 1 ? '' : 's') +
+      ' · ' + MODES[MODE].label + (MODE === 'keywords' ? ', best first' : ' match') +
+      ' · ' + scopeText() + '.');
+    hits.forEach(function (h) {
+      var d = h.doc, div = document.createElement('div'), mm = BYKEY[d.m];
+      div.className = 'res';
+      div.innerHTML =
+        '<div class="h"><span>' + esc(shortOf(d.m)) + ' &middot; ' + esc(String(d.s)) + (d.t && d.t !== d.s ? ' &middot; ' + esc(d.t) : '') +
+        (d.cp ? ' &middot; ' + esc(d.cp) : '') + '</span>' +
+        '<span class="pg"><a href="' + esc(mm.drive_url) + '" target="_blank" rel="noopener">Open ' + esc(mm.short) + ' in Drive, p.' + d.p + ' &#9654;</a></span></div>' +
+        '<div class="sn">' + (h.lit
+          ? highlightLit(snippetLit(d.x, h.lit), h.lit)
+          : highlight(snippet(d.x, h.terms), h.base)) + '</div>';
+      div.setAttribute('role', 'button');
+      div.setAttribute('tabindex', '0');
+      div.addEventListener('click', function (ev) {
+        if (ev.target.closest('a')) return;
+        openRef(d.m, d.p, String(d.s), h.base.concat(h.terms));
+      });
+      div.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); div.click(); }
+      });
+      box.appendChild(div);
+    });
+  }
+
+  function emptyMsg() {
+    if (MODE === 'phrase') return 'That exact phrase is not in ' + scopeText() + '. Try Exact, or drop a word.';
+    if (MODE === 'exact') return 'No page contains every one of those words. Try Keywords, or drop a word.';
+    return 'No match in ' + scopeText() + '. Try different words, or a section id like DSC-35-20-30 or 5.4.2.';
+  }
+
+  function setMode(m, rerun) {
+    if (!MODES[m]) m = 'keywords';
+    MODE = m;
+    LS.set('manuals_search_mode', m);
+    var btns = $('modeSeg').querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-mode') === m ? 'true' : 'false');
+    }
+    $('modeHelp').textContent = MODES[m].help;
+    if (rerun && SEARCHED && $('q').value.trim()) doSearch();
+  }
+
+  function doSearch() {
+    var q = $('q').value.trim();
+    if (!q) { $('q').focus(); return; }
+    $('answer').style.display = 'none';
+    SEARCHED = true;
+    load().then(function () { render(runSearch(q, 12)); }).catch(function () {});
+  }
+
+  /* ---------- reference popout ---------- */
+  function docByPage(key, pg) {
+    var st = STORE[key];
+    if (!st || !st.done) return null;
+    for (var i = 0; i < st.docs.length; i++) if (st.docs[i].p === pg) return st.docs[i];
+    return null;
+  }
+
+  function docsForSection(key, s) {
+    var st = STORE[key];
+    if (!st || !st.done) return [];
+    return st.docs.filter(function (d) { return String(d.s) === String(s); }).sort(function (a, b) { return a.p - b.p; });
+  }
+
+  // A section is its labelled pages plus the page its toc entry starts on (FOM headings
+  // start mid-page, so the start page carries the previous heading's label).
+  function tocEntry(key, s) {
+    var st = STORE[key];
+    if (!st) return null;
+    for (var i = 0; i < st.toc.length; i++) if (String(st.toc[i].s) === String(s)) return st.toc[i];
+    return null;
+  }
+  function pagesForSection(key, s) {
+    var out = docsForSection(key, s), e = tocEntry(key, s);
+    if (e && !out.some(function (d) { return d.p === e.p; })) {
+      var d0 = docByPage(key, e.p);
+      if (d0) out.push(d0);
+    }
+    return out.sort(function (a, b) { return a.p - b.p; });
+  }
+
+  function drivePdf(key, pg) {
+    var mm = BYKEY[key], a = $('ovlPdf');
+    a.setAttribute('href', mm ? mm.drive_url : '#');
+    a.innerHTML = 'Open ' + esc(mm ? mm.short : key) + ' in Drive, p.' + pg + ' &#9654;';
+  }
+
+  // Show the whole section, continuous, and jump to the page you came from.
+  function openRef(key, pg, label, terms) {
+    if (!BYKEY[key]) { key = BYSHORT[key] ? BYSHORT[key].key : key; }
+    if (!BYKEY[key]) return;
+    if (!STORE[key] || !STORE[key].done) {
+      setStatus('Loading the ' + shortOf(key) + ' index...');
+      loadManual(key).then(function () { activate(); setStatus(''); openRef(key, pg, label, terms); }).catch(function () {});
+      return;
+    }
+    var d = docByPage(key, pg), e = label ? tocEntry(key, label) : null;
+    if (!d && label) {
+      var secPages = pagesForSection(key, label);
+      if (secPages.length) { d = secPages[0]; pg = d.p; }
+    }
+    if (!d) {
+      $('ovlTitle').textContent = shortOf(key) + ' PDF p.' + pg;
+      $('ovlBody').innerHTML = 'That page is not in the offline index. Open the manual in Drive instead.';
+      drivePdf(key, pg);
+      $('ovl').classList.add('on');
+      return;
+    }
+    var sec = e ? String(e.s) : String(d.s), secT = e ? (e.t || '') : (d.t || '');
+    var all = pagesForSection(key, sec), list = all, note = '';
+    if (all.length > 20) {                       // long sections: a window, not a novel
+      var at = all.findIndex(function (x) { return x.p === d.p; });
+      var from = Math.max(0, at - 8), to = Math.min(all.length, from + 20);
+      list = all.slice(from, to);
+      note = '<div class="pgnote">Showing pages ' + list[0].p + ' to ' + list[list.length - 1].p +
+        ' of a ' + all.length + ' page section. Open the manual in Drive for the rest.</div>';
+    }
+    $('ovlTitle').textContent = shortOf(key) + ' · ' + sec + (secT && secT !== sec ? ' · ' + secT : '') +
+      '  ·  ' + all.length + (all.length === 1 ? ' page' : ' pages');
+    $('ovlBody').innerHTML = note + list.map(function (x) {
+      return '<div class="pgmark" id="pgm' + x.p + '">' + esc(shortOf(key)) + ' · ' + esc(String(x.s)) + ' · PDF p.' + x.p + (x.cp ? '  ·  ' + esc(x.cp) : '') + '</div>' +
+        '<div class="pgtext">' + highlight(x.x, terms || []) + '</div>';
+    }).join('');
+    drivePdf(key, pg);
+    $('ovl').classList.add('on');
+    var anchor = document.getElementById('pgm' + pg);
+    if (anchor) $('ovlBody').scrollTop = anchor.offsetTop - 8; else $('ovlBody').scrollTop = 0;
+  }
+
+  function closeRef() { $('ovl').classList.remove('on'); }
+
+  // Turn "(FCOM DSC-35-20-30 p.1945)", "(FOM 5.4.2, p.250)" and "(QRH p.121)" into popout links.
+  var MANRE = MANUALS.map(function (m) { return m.short.replace(/[-]/g, '\\-'); }).sort(function (a, b) { return b.length - a.length; }).join('|');
+  function linkCites(text) {
+    var html = esc(text);
+    html = html.replace(new RegExp('\\(\\s*(' + MANRE + ')\\s+([^()]{1,90}?)\\s*,?\\s*p\\.?\\s*(\\d{1,4})\\s*\\)', 'g'),
+      function (m, man, sec, pg) {
+        var key = BYSHORT[man] ? BYSHORT[man].key : man;
+        return '<a class="cite" data-m="' + key + '" data-p="' + pg + '" data-s="' + sec.replace(/"/g, '') + '">' + m + '</a>';
+      });
+    html = html.replace(new RegExp('(^|[^"=;])\\(\\s*(' + MANRE + ')\\s*,?\\s*p\\.?\\s*(\\d{1,4})\\s*\\)', 'g'),
+      function (m, pre, man, pg) {
+        var key = BYSHORT[man] ? BYSHORT[man].key : man;
+        return pre + '<a class="cite" data-m="' + key + '" data-p="' + pg + '">(' + man + ' p.' + pg + ')</a>';
+      });
+    return html;
+  }
+
+  // Lead sentence, then real bullets. Citations never wrap.
+  function renderAnswer(text) {
+    var lines = text.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+    var lead = [], items = [];
+    lines.forEach(function (l) {
+      var m = l.match(/^[-•*]\s+(.*)$/);
+      if (m) items.push(m[1]);
+      else if (!items.length) lead.push(l);
+      else items.push(l);
+    });
+    var html = '';
+    if (lead.length) html += '<p class="lead">' + linkCites(lead.join(' ')) + '</p>';
+    if (items.length) html += '<ul>' + items.map(function (i) { return '<li>' + linkCites(i) + '</li>'; }).join('') + '</ul>';
+    return html || linkCites(text);
+  }
+
+  /* ---------- scope, no pilot profile on this page ---------- */
+  function PS() { return window.PortalSettings || null; }
+  function scopeText() {
+    if (SCOPE === 'ALL') return 'all manuals';
+    var mm = BYKEY[SCOPE];
+    return mm ? mm.short + (mm.revision ? ' ' + mm.revision : '') : SCOPE;
+  }
+  function paintProfile() {
+    var keys = SCOPE === 'ALL' ? MANUALS.map(function (m) { return m.key; }) : [SCOPE];
+    $('chips').innerHTML = keys.filter(function (k) { return STORE[k] && STORE[k].done; }).map(function (k) {
+      return '<span class="chip">' + esc(shortOf(k)) + ' ' + STORE[k].docs.length + ' pp</span>';
+    }).join('');
+  }
+  function updateAskState() {
+    var online = navigator.onLine, btn = $('askBtn');
+    btn.style.display = online ? '' : 'none';
+    btn.disabled = !online;
+    $('hintText').textContent = online
+      ? 'Offline search always works, radio off, no account. Ask Pualani needs a connection and the key in portal settings.'
+      : 'No connection, so offline search is the whole show. Ask Pualani comes back when you have signal.';
+  }
+
+  /* ---------- ask ---------- */
+  var SYS = 'You answer questions about the Hawaiian Airlines A330 passenger fleet from its manuals (FCOM, QRH, FCTM, FOM, MEL, AFM, PRC, PERF, NPC-CB, FODM). '
+    + 'Use ONLY the excerpts provided. Answer in TLDR format: line 1 is the bottom line in one sentence under 20 words, '
+    + 'then 2 to 5 one-line bullets under 18 words each, every bullet ending with its citation like (FCOM DSC-35-20-30 p.1945). '
+    + 'A citation names the manual, the section id and the PDF page exactly as the excerpt marker prints them. '
+    + 'No preamble, no closing summary, no em dashes, no run-on sentences. Numbers carry units and conditions. '
+    + 'Never invent a section id, a page, or a figure.';
+  var ROUTER_SYS = 'You route questions about the Hawaiian Airlines A330 manuals to the sections that answer them. '
+    + 'Reply with the menu numbers only, comma separated, at most 4, most likely first. No words, no punctuation beyond commas. '
+    + 'Choose generously: include any section that could plausibly govern any part of the question.';
+
+  // Answer style lives in manuals/prompt.json so it can be tuned without touching this page.
+  fetch('/manuals/prompt.json').then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+    if (!j) return;
+    if (j.system) SYS = j.system;
+    if (j.router) ROUTER_SYS = j.router;
+  }).catch(function () {});
+
+  // Section menu for the router pass: the distinct sections behind the top ranked pages,
+  // numbered, so the router answers with numbers whatever shape the section ids have.
+  function sectionMenu(hits) {
+    var seen = {}, out = [];
+    hits.forEach(function (h) {
+      var d = h.doc, k = d.m + '|' + d.s;
+      if (seen[k]) return;
+      seen[k] = 1;
+      out.push({ m: d.m, s: String(d.s), t: d.t || '' });
+    });
+    return out.slice(0, 120);
+  }
+  function sectionPages(key, s) {
+    return pagesForSection(key, s);
+  }
+  var CTX_CAP = 140000;
+  function buildWholeSections(entries, hits) {
+    var out = [], used = 0, seenPage = {}, readList = [];
+    entries.forEach(function (e) {
+      var pages = sectionPages(e.m, e.s);
+      if (!pages.length) return;
+      var lab = shortOf(e.m) + ' ' + e.s;
+      readList.push(lab + ' (' + pages.length + (pages.length === 1 ? ' page)' : ' pages)'));
+      var head = '===== ' + lab + ' ' + (pages[0].t && pages[0].t !== e.s ? pages[0].t : '') + ', COMPLETE TEXT =====';
+      var body = pages.map(function (d) {
+        seenPage[d.m + '|' + d.p] = 1;
+        return '[' + shortOf(d.m) + ' ' + d.s + ' p.' + d.p + (d.cp ? ', ' + d.cp : '') + '] ' + String(d.x || '').replace(/\s+/g, ' ');
+      }).join('\n');
+      var block = head + '\n' + body;
+      if (used + block.length > CTX_CAP) block = block.slice(0, Math.max(0, CTX_CAP - used));
+      if (!block) return;
+      out.push(block); used += block.length;
+    });
+    // Always append the ranked hits, so a page outside the routed sections still lands.
+    var extra = [];
+    hits.forEach(function (h) {
+      var d = h.doc;
+      if (seenPage[d.m + '|' + d.p]) return;
+      seenPage[d.m + '|' + d.p] = 1;
+      extra.push('[' + shortOf(d.m) + ' ' + d.s + ' p.' + d.p + (d.cp ? ', ' + d.cp : '') + '] ' + (d.t || '') +
+        '\n' + String(d.x || '').replace(/\s+/g, ' '));
+    });
+    if (extra.length && used < CTX_CAP) {
+      out.push('===== ADDITIONAL PAGES MATCHED BY SEARCH =====\n' + extra.join('\n\n').slice(0, CTX_CAP - used));
+    }
+    return { text: out.join('\n\n'), read: readList };
+  }
+
+  /* ---------- attachments ----------
+     Paste, paperclip and drop all land here. Images ride on the turn they were
+     attached to, so a screenshot on a follow-up is only sent with that question. */
+  var ATT = { main: [], fu: [] };
+
+  function attCap() { var s = PS(); return (s && s.MAX_IMAGES) || 4; }
+
+  function paintAtts(which) {
+    var box = $(which === 'fu' ? 'fuAtts' : 'atts');
+    var note = $(which === 'fu' ? 'fuAttNote' : 'attNote');
+    var list = ATT[which];
+    box.innerHTML = '';
+    list.forEach(function (im, i) {
+      var d = document.createElement('div');
+      d.className = 'att';
+      d.innerHTML = '<img src="' + im.url + '" alt="' + esc(im.name || 'attachment') + '">' +
+        '<button type="button" aria-label="Remove attachment">&times;</button>';
+      d.querySelector('button').addEventListener('click', function () {
+        list.splice(i, 1); paintAtts(which);
+      });
+      box.appendChild(d);
+    });
+    note.textContent = list.length
+      ? list.length + ' image' + (list.length === 1 ? '' : 's') + ' attached. Paste, drop or use Attach. Max ' + attCap() + '.'
+      : '';
+  }
+
+  function addFiles(which, files) {
+    var s = PS();
+    if (!s || !s.prepImage) return;
+    var list = ATT[which], room = attCap() - list.length;
+    var take = Array.prototype.slice.call(files).filter(function (f) { return /^image\//.test(f.type); }).slice(0, Math.max(0, room));
+    if (!take.length) {
+      if (room <= 0) $(which === 'fu' ? 'fuAttNote' : 'attNote').textContent = 'That is the ' + attCap() + ' image limit for one question.';
+      return;
+    }
+    Promise.all(take.map(function (f) { return s.prepImage(f).catch(function () { return null; }); }))
+      .then(function (out) {
+        out.forEach(function (im) { if (im) list.push(im); });
+        paintAtts(which);
+      });
+  }
+
+  function wireAttach(which, boxId, btnId, inputId) {
+    var box = $(boxId), btn = $(btnId), inp = $(inputId);
+    if (!box) return;
+    btn.addEventListener('click', function () { inp.click(); });
+    inp.addEventListener('change', function () { addFiles(which, inp.files); inp.value = ''; });
+    box.addEventListener('paste', function (e) {
+      var items = e.clipboardData && e.clipboardData.files;
+      if (items && items.length) { e.preventDefault(); addFiles(which, items); }
+    });
+    ['dragenter', 'dragover'].forEach(function (t) {
+      box.addEventListener(t, function (e) { e.preventDefault(); box.classList.add('drop'); });
+    });
+    ['dragleave', 'drop'].forEach(function (t) {
+      box.addEventListener(t, function (e) { e.preventDefault(); box.classList.remove('drop'); });
+    });
+    box.addEventListener('drop', function (e) {
+      if (e.dataTransfer && e.dataTransfer.files) addFiles(which, e.dataTransfer.files);
+    });
+  }
+
+  function workingHTML(label) {
+    return '<div class="working"><span class="dots"><i></i><i></i><i></i></span><span>' + esc(label) + '</span></div>';
+  }
+
+  /* ---------- thread ----------
+     One thread holds the sections retrieved for the opening question. Follow-ups
+     add only the new question, so the manual text is sent once and, on Claude,
+     read from cache thereafter. Typing in the main box starts a new thread. */
+  var THREAD = null, MAXTURNS = 12, BUSY = false;
+
+  // The system prompt says to use ONLY the manual excerpts. That is right for
+  // procedures and limits and wrong for an ECAM, MCDU or logbook screenshot the pilot
+  // attached on purpose, so widen it only when images are actually present, and keep
+  // the two sources separately citable so a fact's origin is never ambiguous.
+  function imageRule(n) {
+    return '\n\nThe user attached ' + n + ' image' + (n === 1 ? '' : 's') +
+      ', such as an ECAM, MCDU page, weather, NOTAM, release or logbook screenshot. Treat those images as the ' +
+      'situation being asked about: read the values, messages and entries they show. ' +
+      'Keep using ONLY the manual excerpts for procedures, limits and policy. ' +
+      'When a fact comes from an image, cite it as (from your image) rather than a section. ' +
+      'If two images disagree, say which you used and why. Never invent a value that is in ' +
+      'neither the excerpts nor the images. If an image is unreadable, say so rather than guessing.';
+  }
+
+  function threadHTML() {
+    if (!THREAD) return '';
+    return THREAD.turns.map(function (t) {
+      return '<div class="turn"><div class="tq">' + esc(t.q) + '</div>' +
+        '<div class="ta">' + t.a + '</div>' +
+        (t.think ? '<details class="think"><summary>Show reasoning</summary><div class="tb">' + esc(t.think) + '</div></details>' : '') +
+        '</div>';
+    }).join('');
+  }
+
+  // pendingText is a status label, not prose, so it renders as the live indicator.
+  function paintThread(pendingText) {
+    var html = threadHTML();
+    if (pendingText) {
+      html += '<div class="turn"><div class="tq">' + esc(THREAD.pendingQ || '') + '</div>' +
+        '<div class="ta">' + workingHTML(pendingText) + '</div></div>';
+    }
+    $('answerBody').innerHTML = html;
+    var n = THREAD ? THREAD.turns.length : 0;
+    var done = n > 0 && !pendingText;
+    $('fuWrap').style.display = done ? '' : 'none';
+    if (done) {
+      var left = MAXTURNS - n;
+      $('fuAsk').disabled = left <= 0;
+      $('fuCount').textContent = left > 0
+        ? left + ' follow-up' + (left === 1 ? '' : 's') + ' left in this thread'
+        : 'Thread full. Start a new one.';
+    }
+  }
+
+  function newThread() {
+    THREAD = null;
+    $('answer').style.display = 'none';
+    $('fuWrap').style.display = 'none';
+    $('fuQ').value = '';
+    ATT.fu = []; paintAtts('fu');
+  }
+
+  function send(s) {
+    BUSY = true;
+    $('fuAsk').disabled = true;
+    return s.askFull(THREAD.sys, THREAD.messages).then(function (res) {
+      var body = (res.text || '').trim();
+      var html = body ? renderAnswer(body) : '<p>' + esc(s.emptyReason(res)) + '</p>';
+      THREAD.messages.push({ role: 'assistant', content: body || '(no answer)' });
+      THREAD.turns.push({ q: THREAD.pendingQ, a: html, think: (res.thinking || '').trim() });
+      THREAD.pendingQ = null;
+      paintThread();
+      if (THREAD.turns.length === 1 && THREAD.readList.length) {
+        var n = document.createElement('div');
+        n.style.cssText = 'font-size:11px;color:#666;margin-top:8px;';
+        n.textContent = 'Read in full: ' + THREAD.readList.join(', ') + '.';
+        $('answerBody').appendChild(n);
+      }
+    }).catch(function (e) {
+      // Drop the unanswered question so the next attempt is not sent twice.
+      THREAD.messages.pop();
+      THREAD.pendingQ = null;
+      paintThread();
+      var n = document.createElement('div');
+      n.style.cssText = 'color:#8a1f1f;font-size:13px;margin-top:10px;';
+      n.textContent = 'Could not reach the model. ' + (e && e.message ? e.message : '');
+      $('answerBody').appendChild(n);
+      $('fuWrap').style.display = THREAD.turns.length ? '' : 'none';
+    }).then(function () { BUSY = false; if ($('fuAsk')) $('fuAsk').disabled = THREAD && THREAD.turns.length >= MAXTURNS; });
+  }
+
+  function followUp() {
+    var st = PS();
+    if (BUSY || !THREAD || !st) return;
+    var q = $('fuQ').value.trim();
+    if (!q) { $('fuQ').focus(); return; }
+    if (THREAD.turns.length >= MAXTURNS) return;
+    $('fuQ').value = '';
+    THREAD.pendingQ = q;
+    var msg = { role: 'user', content: q };
+    if (ATT.fu.length) {
+      msg.images = ATT.fu.map(function (im) { return { mime: im.mime, b64: im.b64 }; });
+      THREAD.imgs = (THREAD.imgs || 0) + ATT.fu.length;
+      if (THREAD.sys.indexOf('attached') < 0) THREAD.sys = THREAD.sys + imageRule(THREAD.imgs);
+      ATT.fu = []; paintAtts('fu');
+    }
+    THREAD.messages.push(msg);
+    paintThread('Reading your question' + (msg.images ? ' and ' + msg.images.length + ' image' + (msg.images.length === 1 ? '' : 's') : '') + '...');
+    send(st);
+  }
+
+  function ask() {
+    var q = $('q').value.trim();
+    if (!q) { $('q').focus(); return; }
+    var s = PS();
+    if (!s) { setStatus('Portal settings did not load on this page.'); return; }
+    if (!s.ready()) { setStatus('Add an API key and pick a model in portal settings first.'); s.open(); return; }
+
+    load().then(function () {
+      paintProfile();
+      var hits = search(q, 8);
+      render(hits);
+      var menuHits = search(q, 60);
+      var menu = sectionMenu(menuHits);
+
+      THREAD = { sys: SYS, messages: [], turns: [], readList: [], pendingQ: q, imgs: ATT.main.length };
+      if (ATT.main.length) THREAD.sys = SYS + imageRule(ATT.main.length);
+      $('answer').style.display = 'block';
+      $('fuWrap').style.display = 'none';
+      $('answerBody').innerHTML = workingHTML('Working out which sections govern this...');
+      $('answerWho').textContent = s.modelLabel() + ' · ' + scopeText() +
+        (s.threadsAreCheap && s.threadsAreCheap() ? '' : ' · follow-ups re-send the full text on this provider');
+
+      var routerUser = 'Question: ' + q + '\n\nSection menu:\n' + menu.map(function (e, i) {
+        return (i + 1) + '. ' + shortOf(e.m) + ' ' + e.s + (e.t && e.t !== e.s ? ': ' + e.t : '');
+      }).join('\n');
+
+      function fallbackEntries() {
+        return menu.slice(0, 2);
+      }
+      function answerWith(entries) {
+        var built = buildWholeSections(entries, hits);
+        if (!built.text) { $('answerBody').textContent = 'Nothing in ' + scopeText() + ' matched.'; THREAD = null; return; }
+        $('answerBody').innerHTML = workingHTML('Reading ' + (built.read.join(', ') || 'the matched pages') + '...');
+        // Everything the thread will ever need from the manuals rides in this one
+        // message, which is also the cache anchor. Follow-ups add a bare question.
+        var user = 'Question: ' + q +
+          '\n\nYou have been given the COMPLETE text of these sections of the Hawaiian Airlines A330 manuals: ' +
+          (built.read.join('; ') || 'the pages matched by search') +
+          '. Read all of it before answering. Cite the manual, section id and PDF page from the [MANUAL SECTION p.N] markers. ' +
+          'Later questions in this conversation refer back to this same text.\n\n' + built.text;
+        THREAD.readList = built.read;
+        var first = { role: 'user', content: user };
+        if (ATT.main.length) {
+          first.images = ATT.main.map(function (im) { return { mime: im.mime, b64: im.b64 }; });
+          ATT.main = []; paintAtts('main');
+        }
+        THREAD.messages.push(first);
+        send(s);
+      }
+
+      s.ask(ROUTER_SYS, routerUser).then(function (txt) {
+        var nums = String(txt || '').match(/\d+/g) || [];
+        var entries = [];
+        nums.forEach(function (n) {
+          var e = menu[parseInt(n, 10) - 1];
+          if (e && entries.indexOf(e) < 0) entries.push(e);
+        });
+        entries = entries.slice(0, 4);
+        if (!entries.length) entries = fallbackEntries();
+        answerWith(entries);
+      }).catch(function () {
+        answerWith(fallbackEntries());
+      });
+    }).catch(function (e) {
+      $('answer').style.display = 'block';
+      $('answerBody').textContent = 'Could not load the manual index. ' + (e && e.message ? e.message : '');
+    });
+  }
+
+  /* ---------- manual selector ---------- */
+  function setScope(k, rerun) {
+    if (k !== 'ALL' && !BYKEY[k]) k = 'ALL';
+    SCOPE = k;
+    LS.set('manuals_scope', k);
+    var more = k !== 'ALL' && MANUALS.slice(7).some(function (m) { return m.key === k; });
+    ['manSeg', 'manSeg2', 'manSegMore'].forEach(function (id) {
+      var btns = $(id).querySelectorAll('button');
+      for (var i = 0; i < btns.length; i++) {
+        var v = btns[i].getAttribute('data-man');
+        btns[i].setAttribute('aria-pressed', (v === k || (v === 'more' && more)) ? 'true' : 'false');
+      }
+    });
+    if (more) $('manSegMore').style.display = '';
+    var mm = BYKEY[k];
+    $('manHelp').textContent = k === 'ALL'
+      ? 'Every manual. The first All search downloads every index (' + MANUALS.length + ' manuals, about 13 MB); they stay cached in this tab.'
+      : mm.title + (mm.revision ? ' ' + mm.revision : '') + ', ' + mm.date + '.';
+    activate();
+    if (rerun && SEARCHED && $('q').value.trim()) doSearch();
+  }
+  ['manSeg', 'manSeg2', 'manSegMore'].forEach(function (id) {
+    $(id).addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-man]');
+      if (!b) return;
+      var v = b.getAttribute('data-man');
+      if (v === 'more') {
+        var box = $('manSegMore'), open = box.style.display !== 'none';
+        box.style.display = open ? 'none' : '';
+        b.setAttribute('aria-pressed', open ? 'false' : 'true');
+        return;
+      }
+      setScope(v, true);
+    });
+  });
+
+  /* ---------- wire up ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a.cite');
+    if (!a) return;
+    e.preventDefault();
+    openRef(a.getAttribute('data-m') || SCOPE, parseInt(a.getAttribute('data-p'), 10), a.getAttribute('data-s') || '', tok($('q').value || ''));
+  });
+  $('ovlX').addEventListener('click', closeRef);
+  $('ovlClose').addEventListener('click', closeRef);
+  $('ovl').addEventListener('click', function (e) { if (e.target === $('ovl')) closeRef(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeRef(); });
+  $('modeSeg').addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-mode]');
+    if (b) setMode(b.getAttribute('data-mode'), true);
+  });
+  setMode(LS.get('manuals_search_mode', 'keywords'), false);
+  wireAttach('main', 'q', 'clipBtn', 'fileIn');
+  wireAttach('fu', 'fuQ', 'fuClip', 'fuFileIn');
+  paintAtts('main'); paintAtts('fu');
+  $('fuAsk').addEventListener('click', followUp);
+  $('fuNew').addEventListener('click', function () { newThread(); $('q').focus(); });
+  $('fuQ').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); followUp(); }
+    e.stopPropagation();
+  });
+  $('searchBtn').addEventListener('click', doSearch);
+  $('askBtn').addEventListener('click', ask);
+  $('q').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); doSearch(); }
+  });
+  $('pualaniImg').addEventListener('error', function () {
+    this.style.display = 'none';
+    this.parentNode.querySelector('.fallback').style.display = 'block';
+  });
+  window.addEventListener('online', updateAskState);
+  window.addEventListener('offline', updateAskState);
+  updateAskState();
+  paintProfile();
+  window.addEventListener('portalsettings:ready', paintProfile);
+
+  // URL params: ?q=<text> prefills and runs a search, ?m=<key or short> preselects a manual,
+  // ?s=<section id> opens that section's page modal (cross-reference links from other pages).
+  var QS = {};
+  try {
+    location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
+      if (!kv) return;
+      var i = kv.indexOf('='), k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));
+      QS[k] = decodeURIComponent((i < 0 ? '' : kv.slice(i + 1)).replace(/\+/g, ' '));
+    });
+  } catch (e) {}
+  var startScope = QS.m ? (BYKEY[QS.m] ? QS.m : (BYSHORT[QS.m.toUpperCase()] ? BYSHORT[QS.m.toUpperCase()].key : 'ALL'))
+    : LS.get('manuals_scope', 'ALL');
+  if (QS.s && !QS.m) {
+    // guess the manual from the id shape, then confirm against the loaded toc
+    var sid = QS.s.trim(), guess = [];
+    var mq = sid.match(/^(FCOM|QRH|FCTM|FOM|MEL|AFM|AFM-SUPP|PRC|PERF|NPC-CB|FODM)\s+(.+)$/i);
+    if (mq) { guess = [BYSHORT[mq[1].toUpperCase()].key]; sid = mq[2]; }
+    else if (/^(DSC|PRO|LIM|PER|GEN|PLP|TAB|BUL|TRL)\b/i.test(sid)) guess = ['A330P_FCOM', 'A330_AFM'];
+    else if (/^(PR|AS|AOP|GI|FI)\b/i.test(sid)) guess = ['A330_FCTM'];
+    else if (/^(ABN|EMER|NORM|MCDL|APP|SPERF|PERF|APPRO)\b/i.test(sid)) guess = ['A330_AFM', 'A330P_FCOM'];
+    else if (/^\d{2}-\d{2}/.test(sid)) guess = ['A330_MEL'];
+    else if (/^\d{1,2}(\.\d{1,3})*$/.test(sid)) guess = ['FOM', 'FODM'];
+    else guess = ['A330P_QRH', 'A330_PRC', 'A330P_PERF'];
+    QS.s = sid;
+    var tries = guess.slice();
+    var tryNext = function () {
+      var k = tries.shift();
+      if (!k) { setStatus('Section ' + sid + ' is not in the offline index.'); return; }
+      loadManual(k).then(function (st) {
+        var hit = st.toc.filter(function (e) { return String(e.s).toUpperCase() === sid.toUpperCase(); })[0];
+        if (hit) { setScope(k, false); openRef(k, hit.p, String(hit.s), tok($('q').value || '')); }
+        else tryNext();
+      }).catch(tryNext);
+    };
+    setScope(startScope, false);
+    tryNext();
+  } else {
+    setScope(startScope, false);
+    if (QS.q) { $('q').value = QS.q; doSearch(); }
+    if (QS.s) {
+      loadManual(SCOPE === 'ALL' ? 'A330P_FCOM' : SCOPE).then(function (st) {
+        var hit = st.toc.filter(function (e) { return String(e.s).toUpperCase() === QS.s.toUpperCase(); })[0];
+        if (hit) openRef(st.meta.key, hit.p, String(hit.s), tok($('q').value || ''));
+        else setStatus('Section ' + QS.s + ' is not in the ' + shortOf(st.meta.key) + ' index.');
+      }).catch(function () {});
+    }
+    if (!QS.q && !QS.s && SCOPE !== 'ALL') load().catch(function () {});
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});
+})();
+</script>
+<script src="/portal-settings.js" defer></script>
+<script src="/assist.js" defer></script>
+</body>
+</html>
