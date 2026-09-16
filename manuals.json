@@ -1,5 +1,5 @@
 {
-  "_comment": "Single source of truth for displayed manual revision info. Every page footer renders from this file. Nothing may hardcode a revision string in HTML. Where a manual publishes no revision number, revision is null and the date carries the identity. Never invent a revision number. last_vetted is the date a human confirmed portal content against that revision; null means never vetted.",
+  "_comment": "Single source of truth for displayed manual revision info. Every page footer renders from this file. Nothing may hardcode a revision string in HTML. Where a manual publishes no revision number, revision is null and the date carries the identity. Never invent a revision number. last_vetted is the date a human confirmed portal content against that revision; null means never vetted. Dates are written DD MON YY, e.g. 15 MAY 26.",
   "A330P_FCOM": {
     "title": "A330 Passenger FCOM",
     "revision": "R17",
@@ -43,7 +43,7 @@
   "A330_MEL": {
     "title": "A330 Minimum Equipment List",
     "revision": "R59",
-    "date": "4/1/26",
+    "date": "01 APR 26",
     "fleet": "both",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1ys2NEDPdfbLBWSEKFfYYbHLtqyaYbPSS/view"
@@ -67,7 +67,7 @@
   "A330_PRC": {
     "title": "A330 Pilot Reference Cards",
     "revision": null,
-    "date": "8/31/26",
+    "date": "31 AUG 26",
     "fleet": "both",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"
@@ -75,7 +75,7 @@
   "A330P_NPC-CB": {
     "title": "A330 Passenger Normal Procedures and Checklist Card Book",
     "revision": null,
-    "date": "8/13/25",
+    "date": "13 AUG 25",
     "fleet": "pax",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1gcv0a_zOc4RpwYJcQmHrr-ah6vCOYksL/view"
@@ -83,7 +83,7 @@
   "A330F_NPC-CB": {
     "title": "A330 Freighter Normal Procedures and Checklist Card Book",
     "revision": null,
-    "date": "8/13/25",
+    "date": "13 AUG 25",
     "fleet": "frtr",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1woCS0FoMBmjYpC5i-TcfQsiNfOAb-eFX/view"
@@ -91,7 +91,7 @@
   "A330P_PERF": {
     "title": "A330 Passenger Performance Manual",
     "revision": "R26-12",
-    "date": "Sep 09 2026",
+    "date": "09 SEP 26",
     "fleet": "pax",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"
@@ -99,7 +99,7 @@
   "A330F_PERF": {
     "title": "A330 Freighter Performance Manual",
     "revision": "R26-10",
-    "date": "Aug 12 2026",
+    "date": "12 AUG 26",
     "fleet": "frtr",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1cc4IGUoysJnG-CTp5y0BXn40g6WVHufK/view"
@@ -107,7 +107,7 @@
   "FOM": {
     "title": "Flight Operations Manual",
     "revision": "125.3",
-    "date": "9/15/26",
+    "date": "15 SEP 26",
     "fleet": "shared",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"
@@ -115,7 +115,7 @@
   "FODM": {
     "title": "Flight Operations Data Manual",
     "revision": "R0",
-    "date": "5/20/26",
+    "date": "20 MAY 26",
     "fleet": "shared",
     "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1nX8Voo4Kn0-uvZq2a4rfxVoGsEGbcODz/view"

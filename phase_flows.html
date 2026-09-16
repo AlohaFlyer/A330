@@ -282,7 +282,7 @@ const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref+']':''):'';
   } };
 const PHASES=PHASE_FLOWS.phases.map(p=>({id:p.id,label:p.label,kind:p.kind,title:p.title,src:p.src,
   sections:p.sections.map(s=>S(s.h,s.c,s.items.map(__mk),s.cite,s.appr))}));
-const VERSIONS="FCOM R17 · QRH R35 · FCTM R6 · FOM 125.3 · PRC 8/31/26";
+const VERSIONS="FCOM R17 · QRH R35 · FCTM R6 · FOM 125.3 · PRC 31 AUG 26";
 document.getElementById('srcsub').textContent=VERSIONS;
 const QUOTES=PHASE_FLOWS.quotes||{};
 const NOTES=PHASE_FLOWS.notes||[];
