@@ -1,7 +1,7 @@
 /* AS330 Study Portal service worker - offline support
    Two tiers: core (pages, quizzes, data, PDFs) and audio (podcast mp3s).
    Nothing is downloaded until the user asks for it from the menu page. */
-const VERSION = 'v4';
+const VERSION = 'v5';
 const CORE  = 'ha330-core-'  + VERSION;
 const AUDIO = 'ha330-audio-' + VERSION;
 const MANIFEST = '/offline-manifest.json';
@@ -12,7 +12,7 @@ self.addEventListener('install', e => { self.skipWaiting(); });
 self.addEventListener('activate', e => {
   e.waitUntil((async () => {
     const names = await caches.keys();
-    await Promise.all(names.filter(n => n.startsWith('b330-') && !KEEP.includes(n)).map(n => caches.delete(n)));
+    await Promise.all(names.filter(n => n.startsWith('ha330-') && !KEEP.includes(n)).map(n => caches.delete(n)));
     await self.clients.claim();
   })());
 });
@@ -51,6 +51,8 @@ self.addEventListener('fetch', event => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  // Cloudflare Access endpoints (login callback, logout) are never ours to cache or rewrite.
+  if (url.pathname.startsWith('/cdn-cgi/')) return;
 
   const cacheName = isAudio(url.pathname) ? AUDIO : CORE;
 
@@ -65,11 +67,19 @@ self.addEventListener('fetch', event => {
         // the SW read the origin's current bytes, which is the whole point of
         // going network first for code.
         let fresh;
-        try {
-          fresh = await fetch(req.url, { cache: 'no-store', credentials: 'same-origin' });
-        } catch (e) {
+        if (req.mode === 'navigate') {
+          // Navigations keep the original Request (redirect mode 'manual'): the site sits
+          // behind Cloudflare Access, and a followed 302 to the login page handed back to a
+          // navigation makes the browser show "This site can't be reached".
           fresh = await fetch(req);
+        } else {
+          try {
+            fresh = await fetch(req.url, { cache: 'no-store', credentials: 'same-origin' });
+          } catch (e) {
+            fresh = await fetch(req);
+          }
         }
+        if (fresh && (fresh.type === 'opaqueredirect' || fresh.redirected)) return fresh;
         if (fresh && fresh.ok) {
           const c = await caches.open(CORE);
           c.put(req, fresh.clone());
@@ -101,7 +111,7 @@ self.addEventListener('fetch', event => {
     if (hit) return hit;
     try {
       const fresh = await fetch(req);
-      if (fresh && fresh.ok && fresh.type === 'basic') {
+      if (fresh && fresh.ok && fresh.type === 'basic' && !fresh.redirected) {
         const c = await caches.open(cacheName);
         c.put(req, fresh.clone());
       }
