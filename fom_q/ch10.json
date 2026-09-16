@@ -94,7 +94,7 @@
   "chapter": "10",
   "chapterName": "10 CRM",
   "q": "Under Address Conflicts, what three forms may a resolution take?",
-  "a": "Command (\"my way\"), collaborate (\"our way\"), or accommodate (\"your way\").",
+  "a": "Command, my way; collaborate, our way; accommodate, your way.",
   "ref": "FOM 10.1.1.3",
   "src": {
    "ref": "FOM 10.1.1.3, Leadership Command",
@@ -123,8 +123,8 @@
   "id": "fom10-009",
   "chapter": "10",
   "chapterName": "10 CRM",
-  "q": "Into what two categories are threats divided in Alaska's TEM model, and what are examples of each?",
-  "a": "Environmental threats (outside the airline's direct control, such as weather, ATC, and Terrain) and airline threats (originating within flight operations, such as system malfunctions, scheduling, and ground problems).",
+  "q": "Into what two categories are threats divided in Alaska's TEM model?",
+  "a": "Environmental threats, outside the airline's direct control, and airline threats, originating within flight operations.",
   "ref": "FOM 10.1.2.1",
   "src": {
    "ref": "FOM 10.1.2.1, Definitions",
@@ -154,7 +154,7 @@
   "chapter": "10",
   "chapterName": "10 CRM",
   "q": "How is an Undesired Aircraft State (UAS) defined?",
-  "a": "A position, speed, attitude, or configuration of an aircraft that clearly reduces safety margins resulting from Flight Crew error, actions, or inaction.",
+  "a": "A position, speed, attitude, or configuration of the aircraft that clearly reduces safety margins.",
   "ref": "FOM 10.1.2.1",
   "src": {
    "ref": "FOM 10.1.2.1, Definitions",
@@ -199,7 +199,7 @@
   "chapter": "10",
   "chapterName": "10 CRM",
   "q": "Anticipation is described as a two-step process. What are the two steps?",
-  "a": "(1) Identify relevant threats, and (2) develop management strategies for each using various resources.",
+  "a": "Identify relevant threats, then develop management strategies for each.",
   "ref": "FOM 10.1.2.3",
   "src": {
    "ref": "FOM 10.1.2.3, Anticipate/Recognize/Recover",
@@ -214,7 +214,7 @@
   "chapter": "10",
   "chapterName": "10 CRM",
   "q": "In the Recognize phase, what should the PM do if they observe a new threat or error the PF does not respond to?",
-  "a": "Communicate in a clear, concise, and effective manner what they observed, the \"See it, Say it\" principle (e.g., PM: \"You're 10 knots fast\" or \"SPEED;\" PF: \"Correcting\").",
+  "a": "Communicate clearly, concisely, and effectively what they observed: See it, Say it.",
   "ref": "FOM 10.1.2.3",
   "src": {
    "ref": "FOM 10.1.2.3, Anticipate/Recognize/Recover",
@@ -228,8 +228,8 @@
   "id": "fom10-016",
   "chapter": "10",
   "chapterName": "10 CRM",
-  "q": "SCENARIO, TEM in action: You are briefing an approach into a station where LLWS (low-level windshear) advisories are in effect. Per the Prevent stage of the TEM model, what is your single best resource, and what should the briefing cover?",
-  "a": "A threat-based briefing/TPC is the best resource for preventing threats from becoming errors. With LLWS advisories active, the briefing should review the resources that will keep that threat from progressing into an error or UAS, for example, delay, change runways, adjust speeds, monitor radar, and review windshear procedures.",
+  "q": "Briefing an approach with LLWS advisories in effect, what is the best resource for preventing threats from becoming errors?",
+  "a": "A threat-based briefing/TPC.",
   "ref": "FOM 10.1.2.1",
   "src": {
    "ref": "FOM 10.1.2.1, Definitions (Prevent)",
@@ -243,8 +243,8 @@
   "id": "fom10-017",
   "chapter": "10",
   "chapterName": "10 CRM",
-  "q": "SCENARIO, Assertive callout to a senior captain: You are the PM flying with a check airman on the glideslope. The approach is deteriorating and you feel yourself wanting to soften the call because of the captain's seniority. What does the FOM require of your speech in this high-risk moment?",
-  "a": "Do not mitigate your speech. It is imperative that pilots do not lessen or downplay the importance of a callout in high-risk situations, say it clearly and with the urgency the situation demands, regardless of the other pilot's seniority.",
+  "q": "As PM with a senior check airman, the approach deteriorates and you want to soften your callout. What does the FOM require?",
+  "a": "Do not mitigate your speech; never lessen or downplay a callout in high-risk situations.",
   "ref": "FOM 10.1.2.3",
   "src": {
    "ref": "FOM 10.1.2.3, Anticipate/Recognize/Recover (CAUTION)",
@@ -258,8 +258,8 @@
   "id": "fom10-018",
   "chapter": "10",
   "chapterName": "10 CRM",
-  "q": "SCENARIO, Recover, last resort: On approach the aircraft reaches full-scale glideslope deflection. You command \"Go around\" and the PF does not react. What is the FOM's last-resort action, and what is the exact control-transfer exchange?",
-  "a": "As a last resort, the PM must assume aircraft control to restore safety margins. The exchange is PM: \"I have control, going around.\" PF: \"You have control.\"",
+  "q": "Full-scale glideslope deflection, you command Go around and the PF does not react. What is the FOM's last-resort action?",
+  "a": "The PM assumes aircraft control: 'I have control, going around.' PF: 'You have control.'",
   "ref": "FOM 10.1.2.3",
   "src": {
    "ref": "FOM 10.1.2.3, Anticipate/Recognize/Recover (Recovery)",
