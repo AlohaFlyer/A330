@@ -351,9 +351,10 @@
      "item": "EXTERIOR WALKAROUND",
      "act": "PERFORM (PRO-NOR-SOP-05)",
      "role": "PM",
-     "x": 287.2,
+     "x": 12.8,
      "y": 268.6,
-     "d": "[FCOM PRO-NOR-SOP-05-A-00011096.0001001 · SCHEMATIC:]\nRefer to PRO-NOR-SOP-05 Exterior Walkaround"
+     "d": "[FCOM PRO-NOR-SOP-05-A-00011096.0001001 · SCHEMATIC:]\nRefer to PRO-NOR-SOP-05 Exterior Walkaround",
+     "mir": true
     },
     {
      "item": "Front Instr Panels scan",
@@ -369,7 +370,8 @@
      "role": "PF",
      "x": 120.2,
      "y": 331.5,
-     "d": "[FCOM PRO-NOR-SOP-06-C-00011889.0001001 · RMP:]\n• RMP 1 and 2 ......CHECK ON PF"
+     "d": "[FCOM PRO-NOR-SOP-06-C-00011889.0001001 · RMP:]\n• RMP 1 and 2 ......CHECK ON PF",
+     "mir": true
     },
     {
      "item": "A-DIFSRIPP scan",
@@ -377,15 +379,17 @@
      "role": "PF",
      "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-06-D-90000090.9000245 · INIT A PAGE (PART 2):]\n• TO/FROM...... CHECK PF\nPress the INIT button on the MCDU to display the INIT A page. Check the TO/FROM field [1R] to confirm the correct flight plan uplink occurred. If the TO/FROM field is incorrect, the flight plan can be deleted by cycling the FMS NAV Database (Refer to PRO-NOR-SOP-04 DATA page)."
+     "d": "[FCOM PRO-NOR-SOP-06-D-90000090.9000245 · INIT A PAGE (PART 2):]\n• TO/FROM...... CHECK PF\nPress the INIT button on the MCDU to display the INIT A page. Check the TO/FROM field [1R] to confirm the correct flight plan uplink occurred. If the TO/FROM field is incorrect, the flight plan can be deleted by cycling the FMS NAV Database (Refer to PRO-NOR-SOP-04 DATA page).",
+     "mir": true
     },
     {
-     "item": "FMS PREPARATION",
+     "item": "FMS PREPARATION (check DIFSRIPP)",
      "act": "CROSSCHECK",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-06-D-00015238.0001001:]\n• * FMS PREPARATION...... CROSSCHECK PM\nAfter the PF prepares the FMS, the PM checks all the data entered in the FMS. This check includes a crosscheck between:\n‐ Waypoints of the expected departure route that include constraints\n‐ Waypoints of the flight plan and the computerized flight plan\n‐ Initial cruise altitude and the computerized flight plan\n‐ Total track miles and the computerized flight plan\n‐ Fuel remaining at destination and the computerized flight plan\n‐ Performance data including modifications of the THR RED/ACCEL/EO ACCEL settings, if applicable\n‐ TRANS ALT in the ACTIVE/PERF page\n‐ Setup of the SEC flight plan. The PM should have the same mental image of the intended departure procedure, trajectory, and constraints as the PF. The PM should check with the PF if anything is not clear. For more information, Refer to FCTM/PR-NP-SOP-60 Check of Departure Preparation."
+     "d": "[FCOM PRO-NOR-SOP-06-D-00015238.0001001:]\n• * FMS PREPARATION...... CROSSCHECK PM\nAfter the PF prepares the FMS, the PM checks all the data entered in the FMS. This check includes a crosscheck between:\n‐ Waypoints of the expected departure route that include constraints\n‐ Waypoints of the flight plan and the computerized flight plan\n‐ Initial cruise altitude and the computerized flight plan\n‐ Total track miles and the computerized flight plan\n‐ Fuel remaining at destination and the computerized flight plan\n‐ Performance data including modifications of the THR RED/ACCEL/EO ACCEL settings, if applicable\n‐ TRANS ALT in the ACTIVE/PERF page\n‐ Setup of the SEC flight plan. The PM should have the same mental image of the intended departure procedure, trajectory, and constraints as the PF. The PM should check with the PF if anything is not clear. For more information, Refer to FCTM/PR-NP-SOP-60 Check of Departure Preparation.\n💡 Technique (Ryan's quick reference): the PM checks DIFSRIPP after the PF's A-DIFSRIPP scan.",
+     "mir": true
     },
     {
      "item": "BAROMETRIC REFERENCE",
@@ -401,31 +405,34 @@
      "role": "BOTH",
      "x": 9.0,
      "y": 277.9,
-     "d": "[FCOM PRO-NOR-SOP-06-00011910.0001001:]\n• OXYGEN MASK TEST...... PERFORM PF-PM\nFor a detailed test of the mask, Refer to DSC-35-20-30 How to Test the Mask."
+     "d": "[FCOM PRO-NOR-SOP-06-00011910.0001001:]\n• OXYGEN MASK TEST...... PERFORM PF-PM\nFor a detailed test of the mask, Refer to DSC-35-20-30 How to Test the Mask.",
+     "mir": true
     },
     {
-     "item": "PFD",
+     "item": "PFD and ND",
      "act": "CHECK",
      "role": "BOTH",
      "x": 62.2,
      "y": 230.3,
-     "d": "[FCOM PRO-NOR-SOP-06-00011911.0002001:]\n• * PFD......CHECK PF-PM\n‐ Check PFD/ND not transferred\n‐ Check for correct display, when ATT and HDG are available\n‐ Check IAS, FMA, initial target ALT, altimeter readings, VSI, altimeter settings, heading and attitude display."
+     "d": "[FCOM PRO-NOR-SOP-06-00011911.0002001:]\n• * PFD......CHECK PF-PM\n‐ Check PFD/ND not transferred\n‐ Check for correct display, when ATT and HDG are available\n‐ Check IAS, FMA, initial target ALT, altimeter readings, VSI, altimeter settings, heading and attitude display.\n• * ND......CHECK PF-PM\n‐ Check for correct display\n‐ Check heading, initial waypoint, VOR/ADF  indications.",
+     "mir": true
     },
     {
-     "item": "PRESS pb",
+     "item": "PRESS, STS, FUEL pb",
      "act": "PRESS",
      "role": "PF",
      "x": 149.5,
      "y": 304.9,
-     "d": "[FCOM PRO-NOR-SOP-06-00011885.0001001 · ECAM CONTROL PANEL:]\n• * PRESS pb......PRESS PF\nCheck that the CAB PRESS SD page displays LDG ELEV AUTO to confirm correct position of the LDG ELEV knob."
+     "d": "[FCOM PRO-NOR-SOP-06-00011885.0001001 · ECAM CONTROL PANEL:]\n• * PRESS pb......PRESS PF\nCheck that the CAB PRESS SD page displays LDG ELEV AUTO to confirm correct position of the LDG ELEV knob.\n• * STS pb......PRESS PF\nCheck that INOP SYS display is compatible with MEL.\n[FCOM PRO-NOR-SOP-06-00024946.0001001 · FUEL ON BOARD:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits."
     },
     {
      "item": "IRS ALIGN",
      "act": "CHECK",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 316.5,
-     "d": "[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs."
+     "d": "[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs.",
+     "mir": true
     },
     {
      "item": "RELEASE VERSION #__/ FITNESS/ FOB/ PDSC",
@@ -433,7 +440,8 @@
      "role": "PF",
      "x": 120.2,
      "y": 316.5,
-     "d": "[FCOM PRO-NOR-SOP-06-90000100.9000254:]\n• RELEASE VERSION #__/ FITNESS/ FOB/ PDSC...... SENT PF\nElectronically accept latest flight release version fitness for duty, Fuel on Board and PDSC time via OPS CTRL MSG page in ACARS."
+     "d": "[FCOM PRO-NOR-SOP-06-90000100.9000254:]\n• RELEASE VERSION #__/ FITNESS/ FOB/ PDSC...... SENT PF\nElectronically accept latest flight release version fitness for duty, Fuel on Board and PDSC time via OPS CTRL MSG page in ACARS.",
+     "mir": true
     },
     {
      "item": "FUEL ON BOARD",
@@ -447,9 +455,10 @@
      "item": "ATC clearance",
      "act": "CONFIRM",
      "role": "PM",
-     "x": 177.0,
+     "x": 123.0,
      "y": 270.1,
-     "d": "[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC."
+     "d": "[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC.",
+     "mir": true
     },
     {
      "item": "DEPARTURE LEGS VERIFICATION",
@@ -457,17 +466,19 @@
      "role": "BOTH",
      "x": 93.8,
      "y": 228.0,
-     "d": "[FCOM PRO-NOR-SOP-06-90000102.9000255:]\n• DEPARTURE LEGS VERIFICATION...... PERFORM BOTH\nThe PF reads from the “glass” (ND), and the PM verifies against the “paper” (Flight Plan/ Navigation Log, Jeppesen Charts and ATC Clearance).\n‐ Select PLAN mode on EFIS Control Panel.\n‐ Select CSTR pb ON, on EFIS Control Panel, to display speed/altitude constraints.\n‐ Select F-PLN on MCDU.\n‐ Read aloud each Departure and Enroute waypoint and corresponding speed/altitude constraint (if any) off the ND.\n‐ After each waypoint, select the ‘UP’ arrow key on the MCDU to display the next waypoint.\n‐ Check all “non-defined” waypoints (waypoints that are not in Jeppesen FD Pro Charts or the FMS database, or waypoints in an expired Nav database) and all “user-defined” waypoints (waypoints entered via LAT/LONG inputs). This check is achieved by doing the following: • Select the left LSK next to the non-defined waypoint to display the LAT REV page. • Read aloud the full Latitude and Longitude located at the top of the LAT REV page. • Select the left LSK next to < RETURN. …\n‐ Follow along with the PF by checking each waypoint and constraint against the Jeppesen SID, Dispatch release, and current ATC clearance.\n‐ Resolve any discrepancy.\nThe final step is to confirm that the total F-PLN distance (DIST) and the Estimated Fuel On Board (EFOB) at the destination agree with the Dispatch Release. Resolve any large discrepancies."
+     "d": "[FCOM PRO-NOR-SOP-06-90000102.9000255:]\n• DEPARTURE LEGS VERIFICATION...... PERFORM BOTH\nThe PF reads from the “glass” (ND), and the PM verifies against the “paper” (Flight Plan/ Navigation Log, Jeppesen Charts and ATC Clearance).\n‐ Select PLAN mode on EFIS Control Panel.\n‐ Select CSTR pb ON, on EFIS Control Panel, to display speed/altitude constraints.\n‐ Select F-PLN on MCDU.\n‐ Read aloud each Departure and Enroute waypoint and corresponding speed/altitude constraint (if any) off the ND.\n‐ After each waypoint, select the ‘UP’ arrow key on the MCDU to display the next waypoint.\n‐ Check all “non-defined” waypoints (waypoints that are not in Jeppesen FD Pro Charts or the FMS database, or waypoints in an expired Nav database) and all “user-defined” waypoints (waypoints entered via LAT/LONG inputs). This check is achieved by doing the following: • Select the left LSK next to the non-defined waypoint to display the LAT REV page. • Read aloud the full Latitude and Longitude located at the top of the LAT REV page. • Select the left LSK next to < RETURN. …\n‐ Follow along with the PF by checking each waypoint and constraint against the Jeppesen SID, Dispatch release, and current ATC clearance.\n‐ Resolve any discrepancy.\nThe final step is to confirm that the total F-PLN distance (DIST) and the Estimated Fuel On Board (EFOB) at the destination agree with the Dispatch Release. Resolve any large discrepancies.",
+     "mir": true
     },
     {
      "item": "DEPARTURE BRIEFING",
      "act": "PERFORM",
      "role": "BOTH",
-     "x": 204.0,
-     "y": 228.0,
+     "x": 100.0,
+     "y": 246.0,
      "d": "[FCOM PRO-NOR-SOP-06-00011915.0001001:]\n• * DEPARTURE BRIEFING...... PERFORM BOTH\nPerform a Threat Based Departure Briefing. For more information, refer to FOM \"Threat Based Departure Briefing/ TPC\".\n[FCTM PR-NP-CL-00024935.0001001 · COCKPIT PREPARATION:]\nChecklist trigger: Departure briefing completed.\n✅ COCKPIT PREPARATION CHECKLIST: PF requests it, PM reads the challenge, PF responds after checking the aircraft. Card trigger: Departure Briefing complete. (FCTM PR-NP-CL-00024935.0001001)",
      "cl": "COCKPIT PREPARATION CHECKLIST",
-     "clWho": "PF requests · PM reads · PF responds"
+     "clWho": "PF requests · PM reads · PF responds",
+     "mir": true
     }
    ]
   },
@@ -483,7 +494,8 @@
      "role": "PF",
      "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• ACARS PERF page...... SELECT “*LOAD FMC” PF\nThe PF selects the “*LOAD FMC” prompt when it appears. This will allow the FMS to upload the ACARS final weight data and takeoff performance. Note: The first indication the final weight and takeoff performance data was transmitted to the aircraft (“*LOAD FMC” prompt available for selection) is usually when the ACARS printer begins to automatically print the Load closeout."
+     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• ACARS PERF page...... SELECT “*LOAD FMC” PF\nThe PF selects the “*LOAD FMC” prompt when it appears. This will allow the FMS to upload the ACARS final weight data and takeoff performance. Note: The first indication the final weight and takeoff performance data was transmitted to the aircraft (“*LOAD FMC” prompt available for selection) is usually when the ACARS printer begins to automatically print the Load closeout.",
+     "mir": true
     },
     {
      "item": "LOAD CLOSEOUT (LCO)",
@@ -491,15 +503,17 @@
      "role": "PF",
      "x": 120.2,
      "y": 297.4,
-     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• LOAD CLOSEOUT (LCO)......CHECK PF-PM\nBoth crew members carefully check the Load Closeout data is correct:\n‐ Flight number / date\n‐ Aircraft\n‐ Crew Count\n‐ Takeoff Fuel (“TOF”)\n‐ Takeoff Weight (“TOW”) - crosscheck against the planned takeoff weight on the dispatch flight plan to determine if an adjustment to the MIN RLS FUEL and MIN TAKEOFF FUEL is required. For more information, refer to FOM “Flight Plan Weight Tolerances”\n‐ Total persons on board (“TOB”)\n‐ Jumpseat occupants\n‐ ZFW/ZFWCG (“FMS ZFW/ZFCG”)\n‐ Dangerous Goods (“NOTOC”)\n‐ Animals (“AVI”)\n‐ Federal Air Marshals (“FAM”)"
+     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• LOAD CLOSEOUT (LCO)......CHECK PF-PM\nBoth crew members carefully check the Load Closeout data is correct:\n‐ Flight number / date\n‐ Aircraft\n‐ Crew Count\n‐ Takeoff Fuel (“TOF”)\n‐ Takeoff Weight (“TOW”) - crosscheck against the planned takeoff weight on the dispatch flight plan to determine if an adjustment to the MIN RLS FUEL and MIN TAKEOFF FUEL is required. For more information, refer to FOM “Flight Plan Weight Tolerances”\n‐ Total persons on board (“TOB”)\n‐ Jumpseat occupants\n‐ ZFW/ZFWCG (“FMS ZFW/ZFCG”)\n‐ Dangerous Goods (“NOTOC”)\n‐ Animals (“AVI”)\n‐ Federal Air Marshals (“FAM”)",
+     "mir": true
     },
     {
      "item": "LOAD CLOSEOUT (LCO)",
      "act": "CHECK",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 297.4,
-     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• LOAD CLOSEOUT (LCO)......CHECK PF-PM\nBoth crew members carefully check the Load Closeout data is correct:\n‐ Flight number / date\n‐ Aircraft\n‐ Crew Count\n‐ Takeoff Fuel (“TOF”)\n‐ Takeoff Weight (“TOW”) - crosscheck against the planned takeoff weight on the dispatch flight plan to determine if an adjustment to the MIN RLS FUEL and MIN TAKEOFF FUEL is required. For more information, refer to FOM “Flight Plan Weight Tolerances”\n‐ Total persons on board (“TOB”)\n‐ Jumpseat occupants\n‐ ZFW/ZFWCG (“FMS ZFW/ZFCG”)\n‐ Dangerous Goods (“NOTOC”)\n‐ Animals (“AVI”)\n‐ Federal Air Marshals (“FAM”)"
+     "d": "[FCOM PRO-NOR-SOP-07-A-00021319.9000330 · LOAD CLOSEOUT - PASSENGER AIRCRAFT:]\n• LOAD CLOSEOUT (LCO)......CHECK PF-PM\nBoth crew members carefully check the Load Closeout data is correct:\n‐ Flight number / date\n‐ Aircraft\n‐ Crew Count\n‐ Takeoff Fuel (“TOF”)\n‐ Takeoff Weight (“TOW”) - crosscheck against the planned takeoff weight on the dispatch flight plan to determine if an adjustment to the MIN RLS FUEL and MIN TAKEOFF FUEL is required. For more information, refer to FOM “Flight Plan Weight Tolerances”\n‐ Total persons on board (“TOB”)\n‐ Jumpseat occupants\n‐ ZFW/ZFWCG (“FMS ZFW/ZFCG”)\n‐ Dangerous Goods (“NOTOC”)\n‐ Animals (“AVI”)\n‐ Federal Air Marshals (“FAM”)",
+     "mir": true
     },
     {
      "item": "MIN RLS FUEL",
@@ -515,7 +529,8 @@
      "role": "PF",
      "x": 120.2,
      "y": 316.5,
-     "d": "[FCOM PRO-NOR-SOP-07-A-00021320.0001001 · TAKEOFF DATA:]\n• TAKEOFF PERFORMANCE......UPLINK FLX or UPLINK TOGA PF\nThe PF uplinks the Takeoff Data into the FMS PERF TO page. The crew can select to uplink either FLX or TOGA takeoff data. Note: When FLX takeoff performance data is uplinked to the FMS, behind the scenes TOGA takeoff data is also uplinked in case the flight crew chooses to revert to a TOGA thrust takeoff at a later time."
+     "d": "[FCOM PRO-NOR-SOP-07-A-00021320.0001001 · TAKEOFF DATA:]\n• TAKEOFF PERFORMANCE......UPLINK FLX or UPLINK TOGA PF\nThe PF uplinks the Takeoff Data into the FMS PERF TO page. The crew can select to uplink either FLX or TOGA takeoff data. Note: When FLX takeoff performance data is uplinked to the FMS, behind the scenes TOGA takeoff data is also uplinked in case the flight crew chooses to revert to a TOGA thrust takeoff at a later time.",
+     "mir": true
     },
     {
      "item": "FINAL TAKEOFF DATA (TPR/TLR)",
@@ -537,9 +552,10 @@
      "item": "FMS PERF TO page",
      "act": "SELECT",
      "role": "BOTH",
-     "x": 180.2,
+     "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-07-A-00011059.0001001 · MCDU:]\n• FMS PERF TO page...... SELECT PF\nIt is recommended to display the PERF TAKEOFF page on the PF side."
+     "d": "[FCOM PRO-NOR-SOP-07-A-00011059.0001001 · MCDU:]\n• FMS PERF TO page...... SELECT PF\nIt is recommended to display the PERF TAKEOFF page on the PF side.",
+     "mir": true
     },
     {
      "item": "SEATS, SEAT BELTS, HARNESSES, RUDDER PEDALS, ARMRESTS",
@@ -553,9 +569,10 @@
      "item": "PUSHBACK/START CLEARANCE",
      "act": "OBTAIN",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 331.5,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011040.0004001 · PUSHBACK/START CLEARANCE:]\n• PUSHBACK/START CLEARANCE...... OBTAIN PM\nObtain ATC pushback/start clearance and ground crew clearance."
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011040.0004001 · PUSHBACK/START CLEARANCE:]\n• PUSHBACK/START CLEARANCE...... OBTAIN PM\nObtain ATC pushback/start clearance and ground crew clearance.",
+     "mir": true
     }
    ]
   },
@@ -587,15 +604,17 @@
      "role": "PF",
      "x": 16.5,
      "y": 212.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure."
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.",
+     "mir": true
     },
     {
      "item": "WINDOWS and DOORS",
      "act": "CHECK CLOSED",
      "role": "PM",
-     "x": 283.5,
+     "x": 16.5,
      "y": 212.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure."
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011063.0002001 · WINDOWS AND DOORS:]\n• WINDOWS and DOORS......CHECK CLOSED PF-PM\n‐ To ensure that the sliding window is correctly closed and locked, push the handle of the sliding window fully forward to the closed position, and verify that the red indicator is no longer visible\n‐ Check, on the ECAM lower display, that all the aircraft doors are closed\n‐ When required by FOM policies, check that the cockpit door is closed and locked (no cockpit door open/fault indication). If entry is requested, identify the person requesting entry before unlocking the door. With the cockpit door selector on NORM, the cockpit door is closed and locked. If entry is requested from the cabin, and if no further action is performed by the pilot, the cabin crew will be able to unlock the door by using the emergency access procedure. …\nNote: Starting one engine with a door not closed will result in pack valve closure.",
+     "mir": true
     },
     {
      "item": "SLIDES",
@@ -785,7 +804,8 @@
      "role": "BOTH",
      "x": 62.2,
      "y": 230.3,
-     "d": "[FCOM PRO-NOR-SOP-10-A-00015138.0001001 · AFS/FLIGHT INSTRUMENTS:]\n• PFD/ND...... CHECK PF-PM\nCheck that the PFD (e.g. airspeeds, initial target altitude, heading, FMA modes) and the ND indications (SID) are in accordance with the departure."
+     "d": "[FCOM PRO-NOR-SOP-10-A-00015138.0001001 · AFS/FLIGHT INSTRUMENTS:]\n• PFD/ND...... CHECK PF-PM\nCheck that the PFD (e.g. airspeeds, initial target altitude, heading, FMA modes) and the ND indications (SID) are in accordance with the departure.",
+     "mir": true
     }
    ]
   },
@@ -801,7 +821,8 @@
      "role": "PF",
      "x": 115.5,
      "y": 238.6,
-     "d": "[FCOM PRO-NOR-SOP-10-A-00011953.0001001 · TERR ON ND:]\n• TERR ON ND  ......AS RQRD PF-PM\nConsider selecting the radar display on the PF side, and TERR ON ND on the PM side only."
+     "d": "[FCOM PRO-NOR-SOP-10-A-00011953.0001001 · TERR ON ND:]\n• TERR ON ND  ......AS RQRD PF-PM\nConsider selecting the radar display on the PF side, and TERR ON ND on the PM side only.",
+     "mir": true
     },
     {
      "item": "AUTO BRK MAX pb-sw",
@@ -815,9 +836,10 @@
      "item": "TERR ON ND ",
      "act": "AS RQRD",
      "role": "PM",
-     "x": 183.8,
+     "x": 116.2,
      "y": 239.3,
-     "d": "[FCOM PRO-NOR-SOP-10-A-00011953.0001001 · TERR ON ND:]\n• TERR ON ND  ......AS RQRD PF-PM\nConsider selecting the radar display on the PF side, and TERR ON ND on the PM side only."
+     "d": "[FCOM PRO-NOR-SOP-10-A-00011953.0001001 · TERR ON ND:]\n• TERR ON ND  ......AS RQRD PF-PM\nConsider selecting the radar display on the PF side, and TERR ON ND on the PM side only.",
+     "mir": true
     },
     {
      "item": "ATC CODE/MODE",
@@ -876,7 +898,8 @@
      "role": "PF",
      "x": 93.8,
      "y": 228.0,
-     "d": "[FCOM PRO-NOR-SOP-11-A-00012077.0001001 · TAKEOFF RUNWAY:]\n• TAKEOFF RUNWAY......CONFIRM BOTH\nConfirm that the line up is performed on the intended runway and from the intended intersection. Useful aids are:\n‐ The runway markings\n‐ The runway lights Be careful that in low visibility, edge lights could be mixed up with the center line lights.\n‐ The ILS signal If the runway is ILS equipped, the flight crew can press the ILS pb (or LS pb): the LOC deviation should be centered after line up\n‐ The runway symbol on the ND\n‐ The Runway Awareness and Advisory System  .\n[Exterior lights, quick reference (technique):] PF*: Strobes ON"
+     "d": "[FCOM PRO-NOR-SOP-11-A-00012077.0001001 · TAKEOFF RUNWAY:]\n• TAKEOFF RUNWAY......CONFIRM BOTH\nConfirm that the line up is performed on the intended runway and from the intended intersection. Useful aids are:\n‐ The runway markings\n‐ The runway lights Be careful that in low visibility, edge lights could be mixed up with the center line lights.\n‐ The ILS signal If the runway is ILS equipped, the flight crew can press the ILS pb (or LS pb): the LOC deviation should be centered after line up\n‐ The runway symbol on the ND\n‐ The Runway Awareness and Advisory System  .\n[Exterior lights, quick reference (technique):] PF*: Strobes ON",
+     "mir": true
     },
     {
      "item": "TCAS Mode selector",
@@ -892,15 +915,17 @@
      "role": "PF",
      "x": 93.8,
      "y": 237.8,
-     "d": "[FCOM PRO-NOR-SOP-11-A-00012070.0001001 · APPROACH PATH CLEAR OF TRAFFIC:]\n• APPROACH PATH......CLEAR OF TRAFFIC PF-PM\nCheck that the approach path is clear of traffic, visually and using TCAS display on ND."
+     "d": "[FCOM PRO-NOR-SOP-11-A-00012070.0001001 · APPROACH PATH CLEAR OF TRAFFIC:]\n• APPROACH PATH......CLEAR OF TRAFFIC PF-PM\nCheck that the approach path is clear of traffic, visually and using TCAS display on ND.",
+     "mir": true
     },
     {
      "item": "TAKEOFF RUNWAY",
      "act": "CONFIRM",
      "role": "PM",
-     "x": 204.0,
+     "x": 96.0,
      "y": 228.0,
-     "d": "[FCOM PRO-NOR-SOP-11-A-00012077.0001001 · TAKEOFF RUNWAY:]\n• TAKEOFF RUNWAY......CONFIRM BOTH\nConfirm that the line up is performed on the intended runway and from the intended intersection. Useful aids are:\n‐ The runway markings\n‐ The runway lights Be careful that in low visibility, edge lights could be mixed up with the center line lights.\n‐ The ILS signal If the runway is ILS equipped, the flight crew can press the ILS pb (or LS pb): the LOC deviation should be centered after line up\n‐ The runway symbol on the ND\n‐ The Runway Awareness and Advisory System  ."
+     "d": "[FCOM PRO-NOR-SOP-11-A-00012077.0001001 · TAKEOFF RUNWAY:]\n• TAKEOFF RUNWAY......CONFIRM BOTH\nConfirm that the line up is performed on the intended runway and from the intended intersection. Useful aids are:\n‐ The runway markings\n‐ The runway lights Be careful that in low visibility, edge lights could be mixed up with the center line lights.\n‐ The ILS signal If the runway is ILS equipped, the flight crew can press the ILS pb (or LS pb): the LOC deviation should be centered after line up\n‐ The runway symbol on the ND\n‐ The Runway Awareness and Advisory System  .",
+     "mir": true
     },
     {
      "item": "STROBE sw",
@@ -914,9 +939,10 @@
      "item": "APPROACH PATH",
      "act": "CLEAR OF TRAFFIC",
      "role": "PM",
-     "x": 204.0,
+     "x": 96.0,
      "y": 237.8,
-     "d": "[FCOM PRO-NOR-SOP-11-A-00012070.0001001 · APPROACH PATH CLEAR OF TRAFFIC:]\n• APPROACH PATH......CLEAR OF TRAFFIC PF-PM\nCheck that the approach path is clear of traffic, visually and using TCAS display on ND."
+     "d": "[FCOM PRO-NOR-SOP-11-A-00012070.0001001 · APPROACH PATH CLEAR OF TRAFFIC:]\n• APPROACH PATH......CLEAR OF TRAFFIC PF-PM\nCheck that the approach path is clear of traffic, visually and using TCAS display on ND.",
+     "mir": true
     },
     {
      "item": "PACK 1 pb-sw and PACK 2 pb-sw",
@@ -984,7 +1010,8 @@
      "role": "PF",
      "x": 114.0,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.\n[Exterior lights, quick reference (technique):] PM: Land OFF"
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.\n[Exterior lights, quick reference (technique):] PM: Land OFF",
+     "mir": true
     },
     {
      "item": "LAND sw",
@@ -1006,9 +1033,10 @@
      "item": "EFIS OPTIONS",
      "act": "AS RQRD",
      "role": "PM",
-     "x": 193.5,
+     "x": 106.5,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side."
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• EFIS OPTIONS...... AS RQRD PF-PM\nSelect CSTR on one side, for grid MORA (if available), and ARPT on the other side.",
+     "mir": true
     },
     {
      "item": "ECAM MEMO",
@@ -1022,9 +1050,10 @@
      "item": "NAVAIDS",
      "act": "CLEAR",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• NAVAIDS ...... CLEAR PM\nClear manually tuned VORs from RAD NAV page."
+     "d": "[FCOM PRO-NOR-SOP-14-A-00012135.0001001 · AT 10 000 FT MSL:]\n• NAVAIDS ...... CLEAR PM\nClear manually tuned VORs from RAD NAV page.",
+     "mir": true
     }
    ],
    "trig": "Climbing 10,000' AAL"
@@ -1041,7 +1070,8 @@
      "role": "PF",
      "x": 114.0,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides.\n[Exterior lights, quick reference (technique):] PM: Land ON"
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides.\n[Exterior lights, quick reference (technique):] PM: Land ON",
+     "mir": true
     },
     {
      "item": "LAND sw",
@@ -1057,7 +1087,8 @@
      "role": "PF",
      "x": 108.0,
      "y": 206.7,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• LS pb......AS RQRD PF-PM\nPress the LS pb, if one of the following approaches is planned:\n‐ ILS, GLS \n‐ ILS G/S out, LOC only, LOC B/C\n‐ Approach with the FLS  function\n‐ Approach with the SLS  function. The flight crew checks that:\n‐ Deviation scales are displayed on the PFD\n‐ The IDENT is properly displayed on the PFD."
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• LS pb......AS RQRD PF-PM\nPress the LS pb, if one of the following approaches is planned:\n‐ ILS, GLS \n‐ ILS G/S out, LOC only, LOC B/C\n‐ Approach with the FLS  function\n‐ Approach with the SLS  function. The flight crew checks that:\n‐ Deviation scales are displayed on the PFD\n‐ The IDENT is properly displayed on the PFD.",
+     "mir": true
     },
     {
      "item": "NO SMOKING sw",
@@ -1073,23 +1104,26 @@
      "role": "PF",
      "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• NAVAIDS...... AS RQRD/CHECK PF\nEnsure that the appropriate navaids are tuned and identified."
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• NAVAIDS...... AS RQRD/CHECK PF\nEnsure that the appropriate navaids are tuned and identified.",
+     "mir": true
     },
     {
      "item": "EFIS option pb",
      "act": "CSTR",
      "role": "PM",
-     "x": 186.0,
+     "x": 114.0,
      "y": 195.3,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides."
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• EFIS option pb...... CSTR PF-PM\nSelect CSTR on both sides.",
+     "mir": true
     },
     {
      "item": "LS pb",
      "act": "AS RQRD",
      "role": "PM",
-     "x": 191.3,
+     "x": 108.7,
      "y": 206.7,
-     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• LS pb......AS RQRD PF-PM\nPress the LS pb, if one of the following approaches is planned:\n‐ ILS, GLS \n‐ ILS G/S out, LOC only, LOC B/C\n‐ Approach with the FLS  function\n‐ Approach with the SLS  function. The flight crew checks that:\n‐ Deviation scales are displayed on the PFD\n‐ The IDENT is properly displayed on the PFD."
+     "d": "[FCOM PRO-NOR-SOP-17-A-00011974.0002001 · AT 10 000 FT AAL:]\n• LS pb......AS RQRD PF-PM\nPress the LS pb, if one of the following approaches is planned:\n‐ ILS, GLS \n‐ ILS G/S out, LOC only, LOC B/C\n‐ Approach with the FLS  function\n‐ Approach with the SLS  function. The flight crew checks that:\n‐ Deviation scales are displayed on the PFD\n‐ The IDENT is properly displayed on the PFD.",
+     "mir": true
     },
     {
      "item": "ENG START selector",
@@ -1277,9 +1311,10 @@
      "item": "IRS PERFORMANCE",
      "act": "CHECK",
      "role": "PM",
-     "x": 180.2,
+     "x": 120.2,
      "y": 304.2,
-     "d": "[FCOM PRO-NOR-SOP-22-A-00012200.0001001 · IRS PERFORMANCE:]\n• IRS PERFORMANCE...... CHECK PM"
+     "d": "[FCOM PRO-NOR-SOP-22-A-00012200.0001001 · IRS PERFORMANCE:]\n• IRS PERFORMANCE...... CHECK PM",
+     "mir": true
     },
     {
      "item": "SLIDES",
