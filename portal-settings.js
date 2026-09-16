@@ -415,28 +415,49 @@
         }
       });
 
-      if (document.querySelector('.ps-home')) return;
+      // The home icon lives at the right end of the page's top bar (Ryan, 2026-09-16): the
+      // page's static .ps-homebar is emptied and its link moved into the banner; pages without
+      // one get a fresh link. Falls back to the old top-left bar when no banner is found.
       var css = document.createElement('style');
       css.textContent =
         '.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}' +
+        '.ps-homebar:empty{display:none;}' +
         '.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;' +
         'background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);' +
         'transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}' +
         '.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}' +
         '.ps-home:focus{outline:none;}' +
         '.ps-home svg{display:block;}' +
-        '@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}';
+        '.ps-home.in-bar{margin-left:12px;flex:0 0 auto;background:rgba(255,255,255,.16);border:0;color:#fff;box-shadow:none;width:36px;height:36px;}' +
+        '.ps-home.in-bar:hover,.ps-home.in-bar:focus-visible{background:#fff;color:#463C8F;}' +
+        '@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}.ps-home.in-bar{width:36px;height:36px;margin-left:8px;}}';
       document.head.appendChild(css);
 
-      var bar = document.createElement('div');
-      bar.className = 'ps-homebar';
-      bar.innerHTML = '<a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal">' +
-        '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">' +
-        '<path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '</svg></a>';
-      document.body.insertBefore(bar, document.body.firstChild);
+      var a = document.querySelector('.ps-home');
+      if (!a) {
+        a = document.createElement('a');
+        a.className = 'ps-home'; a.href = '/index.html'; a.title = 'A330 Study Portal'; a.setAttribute('aria-label', 'A330 Study Portal');
+        a.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">' +
+          '<path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      }
+      if (a.classList.contains('in-bar')) return;
+      var host = document.querySelector('header .ctrls') || document.querySelector('header') ||
+        document.querySelector('div[style*="background:var(--midnight)"]') || document.querySelector('.banner');
+      if (host) {
+        var last = host.lastElementChild;
+        if (last && host.children.length > 1 && !document.querySelector('header .ctrls') && host.tagName !== 'HEADER' && last.tagName === 'SPAN') last.style.marginLeft = 'auto';
+        a.classList.add('in-bar');
+        host.appendChild(a);
+        var bar0 = document.querySelector('.ps-homebar');
+        if (bar0 && !bar0.children.length) bar0.parentNode.removeChild(bar0);
+      } else if (!a.parentNode) {
+        var bar = document.createElement('div');
+        bar.className = 'ps-homebar';
+        bar.appendChild(a);
+        document.body.insertBefore(bar, document.body.firstChild);
+      }
     })();
 
     // ---- unlock log ----
