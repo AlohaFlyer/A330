@@ -1284,11 +1284,122 @@
  "XREFS": {
   "PRO-NOR-SUP-ADVWXR": {
    "title": "FCOM PRO-NOR-SUP-ADVWXR - Engine Ice Shedding on Ground",
-   "body": "CAUTION During engine operations on ground in icing conditions, and with the OAT at or below 1 °C (34 °F), ice accretion may affect the fan and core engine parts. Apply the following procedure for engine ice shedding to prevent possible engine degradation or damage. The quantity of ice accretion depends on the time during which the engine is running on ground in the above-mentioned icing conditions.\nThis procedure involves the performance of engine accelerations before the end of specific time intervals. The taxi-out time starts when the first engine is running, and finishes when the aircraft is aligned on the departure runway for takeoff. The taxi-in time starts at touchdown, and finishes when both engines are set to off. The flight crew can check the following diagram to anticipate the procedure to be performed during taxi-out. …"
+   "body": "CAUTION During engine operations on ground in icing conditions, and with the OAT at or below 1 °C (34 °F), ice accretion may affect the fan and core engine parts. Apply the following procedure for engine ice shedding to prevent possible engine degradation or damage. The quantity of ice accretion depends on the time during which the engine is running on ground in the above-mentioned icing conditions.\nThis procedure involves the performance of engine accelerations before the end of specific time intervals. The taxi-out time starts when the first engine is running, and finishes when the aircraft is aligned on the departure runway for takeoff. The taxi-in time starts at touchdown, and finishes when both engines are set to off. The flight crew can check the following diagram to anticipate the procedure to be performed during taxi-out. …",
+   "ref": "PRO-NOR-SUP-ADVWXR",
+   "page": 3497,
+   "manual": "FCOM"
   },
   "PRO-NOR-SUP-SEC": {
    "title": "FCOM PRO-NOR-SUP-SEC - Securing the Aircraft",
-   "body": "The flight crew should apply the following procedure, when the last additional aircraft occupant left the aircraft and the securing of the aircraft is intended. Airbus recommends performing the following procedure when the aircraft is left unattended: i.e. no qualified flight crew or ground crew are in the cockpit to supervise and monitor the aircraft systems. Prior to performing this check, the following SUP Adverse Weather procedures should be taken into account when appropriate: ‐ Securing the aircraft for cold soak (Refer to PRO-NOR-SUP-ADVWXR Securing the Aircraft for Cold Soak). ‐ Water system draining (Refer to PRO-NOR-SUP-ADVWXR Water System Depressurization or Draining - General). ‐ Operations on contaminated airports (Refer to PRO-NOR-SUP-ADVWXR Parking). ‐ Operations with volcanic ash, sand or dust (Refer to PRO-NOR-SUP-ADVWXR Securing the Aircraft).\n• PARK BRK handle......CHECK ON\n• OXYGEN CREW SUPPLY pb......OFF\n• All IR MODE selectors......OFF\n• EXTERIOR LIGHTS......OFF\n• GND SELECT CTL sw......AS RQRD\n• APU BLEED pb-sw......OFF\n• EXT PWR pb......AS RQRD\n• APU MASTER SW pb-sw......OFF\n• EMER EXIT LT sw...... OFF CM2\n• SIGNS sw...... OFF CM2\n• BAT 1 pb-sw and BAT 2 pb-sw and APU BAT pb-sw...... OFF\n• WINDOWS...... CHECK CLOSED CM1-CM2\n• EFB APPLICATIONS......CLOSE"
+   "body": "The flight crew should apply the following procedure, when the last additional aircraft occupant left the aircraft and the securing of the aircraft is intended. Airbus recommends performing the following procedure when the aircraft is left unattended: i.e. no qualified flight crew or ground crew are in the cockpit to supervise and monitor the aircraft systems. Prior to performing this check, the following SUP Adverse Weather procedures should be taken into account when appropriate: ‐ Securing the aircraft for cold soak (Refer to PRO-NOR-SUP-ADVWXR Securing the Aircraft for Cold Soak). ‐ Water system draining (Refer to PRO-NOR-SUP-ADVWXR Water System Depressurization or Draining - General). ‐ Operations on contaminated airports (Refer to PRO-NOR-SUP-ADVWXR Parking). ‐ Operations with volcanic ash, sand or dust (Refer to PRO-NOR-SUP-ADVWXR Securing the Aircraft).\n• PARK BRK handle......CHECK ON\n• OXYGEN CREW SUPPLY pb......OFF\n• All IR MODE selectors......OFF\n• EXTERIOR LIGHTS......OFF\n• GND SELECT CTL sw......AS RQRD\n• APU BLEED pb-sw......OFF\n• EXT PWR pb......AS RQRD\n• APU MASTER SW pb-sw......OFF\n• EMER EXIT LT sw...... OFF CM2\n• SIGNS sw...... OFF CM2\n• BAT 1 pb-sw and BAT 2 pb-sw and APU BAT pb-sw...... OFF\n• WINDOWS...... CHECK CLOSED CM1-CM2\n• EFB APPLICATIONS......CLOSE",
+   "ref": "PRO-NOR-SUP-SEC",
+   "page": 3568,
+   "manual": "FCOM"
+  },
+  "LIM-APU": {
+   "title": "FCOM LIM-APU - Auxiliary Power Unit",
+   "body": "APU START\nAfter three consecutive APU start attempts, the flight crew must wait 60 min before a new start attempt.\nROTOR SPEED\nMaximum N speed...... 107 %\nEGT\nMaximum EGT for APU start...... 1 250 °C\nMaximum EGT for APU running......650 °C\nAPU START/SHUTDOWN DURING REFUELING/DEFUELING\nDuring refuel/defuel procedures, APU starts or shutdown are permitted with the following restrictions:\n‐ If the APU failed to start or following an automatic APU shutdown, do not start the APU\n‐ If a fuel spill occurs, perform a normal APU shutdown.\nOPERATIONAL ENVELOPE\nNote: When JET B or JP4 is used, APU operation is limited to 25 000 ft.\nAPU BLEED\nMax altitude to assist engine start...... 20 000 ft\nMax altitude for air conditioning and pressurization (single pack operation)...... 22 500 ft\nMax altitude for air conditioning and pressurization (dual pack operation)......17 500 ft\nUse of APU bleed air for wing anti-ice is not permitted.",
+   "ref": "LIM-APU",
+   "page": 3800,
+   "manual": "FCOM"
+  },
+  "PRO-NOR-SOP-05": {
+   "title": "FCOM PRO-NOR-SOP-05 - Exterior Walkaround",
+   "body": "GENERAL\nThe exterior walkaround ensures that the general condition of the aircraft is satisfactory and that the visible aircraft components and equipment are safe for the flight:\n‐ There is no impact damage to the structure\n‐ There is no evident fuel, oil, or hydraulic leak\n‐ All ground access doors are closed\n‐ All covers are removed (e.g. pitot covers, AOA covers, etc.). The flight crew must perform a complete walkaround before each flight. The parking brake must be set to ON during the exterior walkaround, in order to enable the flight crew to check brake wear indicators. WARNING If any landing gear door is open, do not apply hydraulic power until clearance is obtained from ground personnel. On flights with Augmented Crew, the additional crew member shall accomplish the exterior walkaround, unless otherwise assigned by the CM1.\nEXTERIOR WALKAROUND\nSCHEMATIC\n(1) Refer to PRO-NOR-SOP-05 Exterior Walkaround - LH FWD Fuselage (2) Refer to PRO-NOR-SOP-05 Exterior Walkaround - Nose Section ...",
+   "ref": "PRO-NOR-SOP-05",
+   "page": 3283,
+   "manual": "FCOM"
+  },
+  "DSC-34-10-20": {
+   "title": "FCOM DSC-34-10-20 - Standby Instruments",
+   "body": "DESCRIPTION OF THE ISIS\nGENERAL\nThe ISIS system displays the following information:\n‐ Attitude\n‐ Airspeed and mach\n‐ Altitude\n‐ Barometric pressure\n‐ LS function\n‐ Bugs.\n(1) \"+\"/\"-\" activation pushbuttons Two pushbuttons, labelled \"+\" and \"-\", are used to adjust the level of brightness. This brightness of the screen automatically adjusts after power-up tests. This is because of the photosensitive cell located on the surface of the ISIS system display. The \"+\" and \"-\" pushbuttons then allow this initial brightness to be manually adjusted and changed.\nARCHITECTURE\nATTITUDE\nNote: When leveling the wings, after performing a small turn of a small bank angle, the displayed roll attitude may temporarily be incorrect by a few degrees.\n(1) Fixed aircraft symbol The fixed aircraft symbol is in black, and outlined in yellow. Depending of the aircraft configuration, the center of the fixed aircraft symbol is a point (like on the illustration above) or \"V-bars\". (2) Roll scale The roll scale is in white. The markers are at 0 (small yellow triangle), 10, 20, 30, 45, 60 ° of bank. (3) Roll index The roll index is in black, and outlined in white. It indicates the bank angle. ...",
+   "ref": "DSC-34-10-20",
+   "page": 1815,
+   "manual": "FCOM"
+  },
+  "PRO-NOR-SOP-04": {
+   "title": "FCOM PRO-NOR-SOP-04 - Preliminary Cockpit Preparation",
+   "body": "DATA PAGE\nA/C STATUS...... CHECK CM1\nPress the DATA button on the MCDU, then press the A/C STATUS [4L] to access the A/C STATUS page. Check of the A/C STATUS page:\n‐ Check the model number is A330-200 or A330-300, as applicable.\n‐ Check the ENG type: TRENT772B-60\nACTIVE NAV DATABASE...... CYCLE CM1\nSelect the Second NAV Database [3L] to activate the non-current database, and then re-select the Second NAV Database [3L] again to activate the current NAV Database. Cycling the FMS Active NAV Database erases all Pilot entered and/or Uplinked data.\n‐ Check that all pilot stored data has been erased. If any data is displayed in the STORED field [4R], select the DELETE ALL [5R] prompt.\nFMS DATABASE VALIDITY...... CHECK CM1\nVerify the Day, Month, and Year is correct for the ACTIVE NAV DATABASE:\n‐ Month and Day (2L) – e.g., “26MAR-22APR” shows the day and month that the NAV Database is active.\n‐ Year (2R) - The Database code shows the two-digit year in the NAV Database name. The naming convention is HAL1YYMMNN where “YY” = Year, “MM” = Month, “NN” = Sequence. For example, “HAL8200401”\n‐ “HAL8” - is the name of our A330 NAV Database\n‐ “20” - is the year of issuance, 2020 ...",
+   "ref": "PRO-NOR-SOP-04",
+   "page": 3274,
+   "manual": "FCOM"
+  },
+  "PRO-SPO-50": {
+   "title": "FCOM PRO-SPO-50 - Reduced Vertical Separation Minimum - RVSM",
+   "body": "REQUIRED EQUIPMENTS/FUNCTIONS FOR RVSM\nRVSM regulations require the following equipment/functions to be operative :\n‐ 2 ADRs + 2 DMCs\n‐ 1 transponder\n‐ 1 autopilot function\n‐ 1 FCU channel (for altitude target selection and OP CLB/OP DES mode engagement)\n‐ 2 PFD functions (for altitude indication)\n‐ 1 FWC (for altitude alert function).\nRVSM NORMAL PROCEDURE\nFor flights in RVSM airspace, the flight crew must apply the standard procedures, in addition to the following RVSM procedures.\nFLIGHT PREPARATION\nThe flight crew must take into account the conditions that may affect operations in RVSM airspace, including:\nRVSM APPROVAL......CHECK\nVerify that the aircraft is approved for RVSM operations.\nWEATHER...... CHECK\nReview the weather forecasted for the flight route. If severe turbulence is expected, this may affect the ability to maintain aircraft altitude.\nREQUIRED EQUIPMENT FOR RVSM......CHECK\nCheck that the required equipment is operative (MEL).\nThe flight crew should review the maintenance logs and forms, in order to ensure that the equipment required for RVSM is satisfactory.\nALTITUDES...... CHECK ...",
+   "ref": "PRO-SPO-50",
+   "page": 3714,
+   "manual": "FCOM"
+  },
+  "DSC-35-20-30": {
+   "title": "FCOM DSC-35-20-30 - How to",
+   "body": "HOW TO TEST THE MASK\nWARNING To prevent hearing damage to ground crew connected to the intercom system, inform them that a loud noise may be heard in the headset when performing the oxygen mask test. Mask Stowage Box\n▸ On the OXYGEN panel:\nCREW SUPPLY pb......CHECK ON\n▸ On the glareshield:\nLOUDSPEAKERS...... ON\n▸ On the ACP:\nINT reception knob...... PRESS OUT - ADJUST\nINT/RAD sw......INT\n▸ On the mask stowage box:\n‐ Press and hold the RESET/TEST button in the direction of the arrow.\n• Check that the blinker turns yellow for a short time, and then goes black.\n‐ Hold the RESET/TEST button down, and press the Emergency Pressure selector.\n• Check that the blinker turns yellow and remains yellow, as long as the Emergency Pressure selector is pressed.\n• Listen for oxygen flow through the loudspeakers.\n‐ Check that the RESET/TEST button returns to the up position and the N/100% selector is in the 100 % position.\n‐ Press the Emergency Pressure selector again, and check that the blinker does not turn yellow. This ensures that the mask is not supplied. ...",
+   "ref": "DSC-35-20-30",
+   "page": 1945,
+   "manual": "FCOM"
+  },
+  "FCTM PR-NP-CL-00024935": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "COCKPIT PREPARATION\nChecklist trigger: Departure briefing completed.\nFUEL QUANTITY ...... ____ BALANCED\nThe PF checks the FOB and fuel distribution on the FUEL SD page, and compare with the Dispatch/Flight Release. The PF announces \"One hundred thirty five thousand pounds balanced.\"\nSEAT BELTS ...... ON\nThe PF checks the memo. The PF announces \"ON\".\nBARO REF ...... _____ (BOTH)\nThe PF and PM check and read the QNH BARO setting (or QFE BARO setting  ). The PF then PM announce e.g. “QNH One Zero One Three”.\nOXYGEN MASK ...... TESTED / 100% (BOTH)\nThe PF and PM confirm the Oxygen Masks were checked and the regulator is set to supply 100% oxygen. The PF then PM announces \"TESTED / 100%\".\nLOGBOOK ...... ONBOARD\nThe PF checks the correct logbook is onboard and has been reviewed.\nBEFORE START\nChecklist trigger:\n‐ Pushback clearance or start clearance received, and\n‐ Before Start flow pattern completed.\nPARKING BRAKE ...... ____\nThe PF checks the PARK BRK memo. The PF announces e.g. \"SET\" or \"RELEASED,\" as applicable.\nT.O SPEEDS & THRUST ...... _____ (BOTH) ...",
+   "ref": "PR-NP-CL",
+   "page": 376,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024936": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "BEFORE START\nChecklist trigger:\n‐ Pushback clearance or start clearance received, and\n‐ Before Start flow pattern completed.\nPARKING BRAKE ...... ____\nThe PF checks the PARK BRK memo. The PF announces e.g. \"SET\" or \"RELEASED,\" as applicable.\nT.O SPEEDS & THRUST ...... _____ (BOTH)\nThe PF reads aloud V1, VR, V2 and thrust setting on the FMS PERF page while PM checks V1 and V2 on the PFD . The PF announces e.g. “125, 125, 129, Flex 52”.\nThe PM reads aloud V1, VR, V2 and thrust setting on the FMS PERF page while PF checks V1 and V2 on the PFD. The PM announces e.g. “125, 125, 129, Flex 52”.\nPITOT COVERS ...... REMOVED\nThe PF confirms that the pilot covers were checked removed (e.g., during the walkaround or via communication with the ground crew). The PF announces \"REMOVED\".\nWINDOWS ...... CLOSED (BOTH)\nThe PF and PM confirm that the sliding windows are closed. The PF then PM announces \"CLOSED\".\nNW/S MEMO ...... ______\nThe PF confirms that the N/WS DISC is displayed in green on the EWD if preparing for a push. If powering out from a hardstand, the N/WS DISC will not be displayed on the EWD. The PF announces \"N/WS Disconnect\" or \"N/A\".\nBEACON ...... ON ...",
+   "ref": "PR-NP-CL",
+   "page": 376,
+   "manual": "FCTM"
+  },
+  "DSC-70-80-30": {
+   "title": "FCOM DSC-70-80-30 - Engine Starting System",
+   "body": "SEQUENCE OF THE AUTOMATIC START\nINITIAL CONFIGURATION OF THE CONTROLS\nThe initial configuration prior to an automatic engine start is the following:\n‐ The ENG MASTER lever is set to OFF\n‐ The ENG START selector is set to NORM\n‐ The ENG MAN START pb-sw is set to OFF.\nFIRST STEP\nThe flight crew must set the ENG START selector to IGN/START, leading to the following:\n‐ The ENG SD page appears on the SD\n‐ All engine parameters are available\n‐ All pack valves automatically close. After 30 s, if the flight crew does not set the ENG MASTER lever to ON (Refer to DSC-70-80-30 Second Step), the pack valves automatically open again and in case of first engine start the ENG SD page will automatically disappear.\nSECOND STEP\nThe flight crew must set the ENG MASTER lever to ON, and the following steps occur:\n‐ The LP fuel valve opens\n‐ The engine start valve opens (except in flight in the stabilized windmill zone)\n‐ The ignition starts:\n‐ On ground: when N3 is between 25 and 30 %\n‐ In flight: Immediately.\n‐ The HP fuel valve opens\n‐ When N3 ≥ 50 %, the engine start valve closes (the valve is fully closed in 10 s)\n‐ The ignition stops.\nTHIRD STEP ...",
+   "ref": "DSC-70-80-30",
+   "page": 2360,
+   "manual": "FCOM"
+  },
+  "FCTM PR-NP-CL-00024937": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "AFTER START\nChecklist trigger: On hand signal (salute) from the ground personnel.\nSALUTE ...... RECEIVED\nThe PF checks the hand signal from the ground personnel was received (trigger for the After Start Checklist) The PF announces “RECEIVED\".\nANTI ICE ...... ____\nThe PF checks the WING ANTI ICE pb and ENG 1(2) ANTI ICE pb on the ANTI ICE overhead panel. The PF announces “OFF” or “Engines ON” or “Engines ON Wings ON”.\nECAM STATUS ...... CHECKED\nThe PF checks on ECAM that the STATUS REMINDER is not displayed.\nPITCH TRIM ...... ____%\nCheck the takeoff CG on the PITCH TRIM handwheel using the ECAM’s CG indication. The PF announces e.g. \"Thirty Two point Four percent\".\nRUDDER TRIM ...... NEUTRAL\nThe PF checks the rudder trim is within the tolerance ±0.6 °. The PF announces \"NEUTRAL\".\nTAXI\n1 Criteria: 31-3279, S12968, S33449, LR\nChecklist trigger:\n‐ T.O. CONFIG pb pressed, and\n‐ Takeoff Advisory PA complete (if applicable).\nFLIGHT CONTROLS ...... CHECKED (BOTH)\nThe PF confirms that the flight controls check was performed. The PF then PM announce “CHECKED”.\nFLAPS SETTING ...... CONF ____ (BOTH) ...",
+   "ref": "PR-NP-CL",
+   "page": 377,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024938": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "TAXI\n1 Criteria: 31-3279, S12968, S33449, LR\nChecklist trigger:\n‐ T.O. CONFIG pb pressed, and\n‐ Takeoff Advisory PA complete (if applicable).\nFLIGHT CONTROLS ...... CHECKED (BOTH)\nThe PF confirms that the flight controls check was performed. The PF then PM announce “CHECKED”.\nFLAPS SETTING ...... CONF ____ (BOTH)\nThe PF and the PM check and compare the flaps setting on the E/WD and FMS PERF page. The PF then PM announce the configuration displayed on E/WD e.g. “CONF 1+F”.\nRADAR & PRED W/S ...... ON & AUTO\nCollins WX RADAR: The PF checks on the ND that the weather radar is ON. The PF checks on the pedestal that the predictive windshear is AUTO. RDR 4000 WX RADAR-PF checks on the ND that the weather radar is ON and Display is in ALL. The PF checks on the pedstal that TURB is in AUTO. The PF announces “ON AND AUTO”.\nENG START SEL ...... _____\nThe PF checks the position of the ENG START selector. The PF announces \"IGNITION\" or \"NORM\".\nECAM MEMO ...... T.O NO BLUE\n‐ SEAT BELTS ON\n‐ SPLRS ARM\n‐ FLAPS T.O\n‐ AUTO BRK MAX\n‐ T.O CONFIG NORM The PF checks no blue items on the ECAM memo. The PF announces \"TAKEOFF NO BLUE\".\nCABIN ...... NA/ADVISED ...",
+   "ref": "PR-NP-CL",
+   "page": 378,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024939": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "LINE-UP\nChecklist trigger:\n‐ Line-up clearance received\n‐ Line-Up flow pattern completed.\nT.O RWY......____ (BOTH)\nThe PF and PM confirm that the line-up is performed on the intended runway and intersection. The PF then PM announce the runway and intersection (e.g. Runway one four Left Bravo four).\nTCAS......_____\nThe PF checks the TCAS mode selector. The PF announces \"TA ONLY\" or \"TA/RA\".\nPACKS 1 & 2......_____\nThe PF checks the PACK 1 pb-sw, PACK 2 pb-sw and APU BLEED pb-sw on the AIR overhead panel. The PF announces “ON” or “ON supplied by APU” or “OFF”.\n<< DEPARTURE CHANGE >>\nChecklist trigger: Revised departure briefing completed.\nRWY & SID ...... ____\nThe PF checks the runway, the shift and the SID on the FMS. The PF announces e.g. “Runway One four Right”, “Shift five hundred feet” and “SID HUNTR ONE”.\nFLAPS SETTING ...... CONF ____ (BOTH)\nThe PF and the PM check and compare the flaps setting on the E/WD and FMS PERF page. The PF then PM announce the configuration displayed on E/WD e.g. “CONF 1+F”.\nT.O SPEEDS & THRUST ...... _____ (BOTH) ...",
+   "ref": "PR-NP-CL",
+   "page": 379,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024941": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "APPROACH\nChecklist trigger:\n‐ Below 10 000 ft AAL and barometric reference set, or\n‐ After the approach briefing is completed, for the case when not leaving the terminal area or climbing above 10 000 ft AAL (Case of an Air Turn Back or Traffic Pattern or Go Around)\nBARO REF ...... _____ (BOTH)\nThe PF and PM check and read the QNH BARO setting (or QFE BARO setting  ). The PF then PM announce e.g. QNH One Zero One Three”.\nSEAT BELTS ...... ON\nThe PF checks the memo. The PF announces \"ON\".\nMINIMUM ...... ____\nThe PF checks the baro or radio minimum on the FMA. The PF announces e.g. “BARO Four hundred fifty feet” or “RADIO One hundred sixty feet”.\nAUTO BRAKE ...... ____\nThe PF checks the autobrake mode on the autobrake panel. The PF announces the autobrake mode e.g. \"LOW\" or \"MED\".\nENG START SEL ...... ____\nThe PF checks the position of the ENG START selector.\nThe PF announces \"IGNITION\" or \"NORM\".\nLANDING\n2 Criteria: 31-3279, S33449, LR\nChecklist trigger: LDG CONF set.\nECAM MEMO ...... LDG NO BLUE\n‐ LDG GEAR DN\n‐ SEAT BELTS ON\n‐ SPLRS ARM\n‐ FLAPS LDG The PF checks no blue items on the ECAM memo. The PF announces \"LANDING NO BLUE\".\nCABIN ...... NA/ADVISED ...",
+   "ref": "PR-NP-CL",
+   "page": 380,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024943": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "AFTER LANDING\nChecklist trigger: After Landing Flow pattern completed.\nRADAR & PRED W/S...... OFF\nThe PF checks on the pedestal that the weather radar and predictive windshear are OFF. The PF announces \"OFF\".\nPARKING\nChecklist trigger: After Parking flow pattern completed.\nPARKING BRAKE OR CHOCKS ...... _____ SET\nThe PF checks the PARK BRK memo or confirms that the ground personnel set the chocks. The PF announces “PARKING BRAKE SET” or “CHOCKS SET”.\nENGINES ...... OFF\nThe PF checks the master levers and engine parameters on EWD. The PF announces \"OFF\".\nWING LIGHTS ...... OFF\nThe PF checks the WING LIGHTS pb-sw on the EXT LT overhead panel. The PF announces “OFF”.\nFUEL PUMPs ...... OFF\nThe PF checks the FUEL pb-sw on the overhead panel. The PF announces \"OFF\".\nSECURING THE AIRCRAFT\nRefer to FCOM/FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General",
+   "ref": "PR-NP-CL",
+   "page": 381,
+   "manual": "FCTM"
+  },
+  "FCTM PR-NP-CL-00024944": {
+   "title": "FCTM PR-NP-CL - Normal Checklists",
+   "body": "PARKING\nChecklist trigger: After Parking flow pattern completed.\nPARKING BRAKE OR CHOCKS ...... _____ SET\nThe PF checks the PARK BRK memo or confirms that the ground personnel set the chocks. The PF announces “PARKING BRAKE SET” or “CHOCKS SET”.\nENGINES ...... OFF\nThe PF checks the master levers and engine parameters on EWD. The PF announces \"OFF\".\nWING LIGHTS ...... OFF\nThe PF checks the WING LIGHTS pb-sw on the EXT LT overhead panel. The PF announces “OFF”.\nFUEL PUMPs ...... OFF\nThe PF checks the FUEL pb-sw on the overhead panel. The PF announces \"OFF\".\nSECURING THE AIRCRAFT\nRefer to FCOM/FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General",
+   "ref": "PR-NP-CL",
+   "page": 381,
+   "manual": "FCTM"
   }
  },
  "NORMAL_CHECKLISTS": {
@@ -1564,7 +1675,7 @@
   ],
   "SECURING THE AIRCRAFT CHECKLIST": [
    [
-    "Refer to /FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General",
+    "Refer to FCOM/FCOM/PRO-NOR-SUP-SEC Securing the Aircraft - General",
     "",
     "PM"
    ]

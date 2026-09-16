@@ -753,6 +753,66 @@
   "id": "fom02-028",
   "chapter": "2",
   "chapterName": "2 Operating General",
+  "q": "Before downloading non-Company material to the EFB, how much free memory must remain on the device after the download?",
+  "a": "A minimum of 10GB.",
+  "ref": "FOM 2.5.1",
+  "src": {
+   "ref": "FOM 2.5.1, EFB Policies",
+   "quote": "For proper EFB operation, prior to downloading non-Company material, ensure a minimum of 10GB of free memory will remain on the EFB after the download.",
+   "note": "Rev 125.3 raised this from 2GB to 10GB and removed the AS banner from the EFB customization paragraph."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-029",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "The Jeppesen FD Pro app fails. Where is the Jeppesen Trip Kit accessed, and what rules apply to using it?",
+  "a": "Via a web clip on the EFB home screen. An internet connection is required, the file must be imported into an approved EFB document reader, and Trip Kit files must not be reused on subsequent flights. For an offline flight select the EJEP03 Worldwide Terminal Charts EFB Coverage.",
+  "ref": "FOM 2.5.2.1",
+  "src": {
+   "ref": "FOM 2.5.2.1, Jeppesen FD Pro Failure",
+   "quote": "Trip Kit is available via a web clip on the EFB home screen. An internet connection is required and the file must be imported into an approved EFB document reader. Flight Crewmembers must not reuse the Trip Kit files on subsequent flights to ensure data currency.",
+   "note": "Rev 125.3 aligned AS and HA: the HA SharePoint path (On the Line, Jeppesen Trip Kit) no longer exists. Select the coverage appropriate to the fleet in the Coverage drop-down menu."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-030",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "Who provides 24/7 support for a lost, stolen, or malfunctioning EFB, and how are they reached?",
+  "a": "The ITS Service Desk, at 1-877-238-1077 or its.service.desk@alaskaair.com. If an EFB is lost or stolen, time permitting, also file a police report with local authorities.",
+  "ref": "FOM 2.5.6.8",
+  "src": {
+   "ref": "FOM 2.5.6.8, EFB Troubleshooting and Lost/Stolen Device",
+   "quote": "Contact ITS Service Desk at 1-877-238-1077 or its.service.desk@alaskaair.com.",
+   "note": "Rev 125.3 deleted the HA-specific block (Hawaiian Airlines IT, EFB Locker loaner, eConnect ticket). Questions about personal apps downloaded by individual pilots are not supported."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-031",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
+  "q": "The Flight Deck and cabin stowage locations are not available or suitable for your crew bag. What may be done with it?",
+  "a": "It can be gate-checked with a claim-at-gate tag.",
+  "ref": "FOM 2.8.16",
+  "src": {
+   "ref": "FOM 2.8.16, Flight Crew Bag Stowage",
+   "quote": "If the above listed locations are not available or suitable, crew bags can be gate-checked with a claim-at-gate tag.",
+   "note": "Rev 125.3 removed the AS banner, so this applies to HA crews too. Deadheading crewmembers likewise gate-check with a claim-at-gate tag when cabin space is unavailable (2.8.16.1)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom02-032",
+  "chapter": "2",
+  "chapterName": "2 Operating General",
   "q": "On which operations is the uniform blazer required?",
   "a": "Blazers are required on international widebody passenger operations.",
   "ref": "FOM 2.6.9.1",
@@ -1350,6 +1410,21 @@
   "srcKind": "manual"
  },
  {
+  "id": "fom04-021",
+  "chapter": "4",
+  "chapterName": "4 Crew Administration",
+  "q": "Once a pre-takeoff FDP extension is agreed upon, how is its length confirmed and documented?",
+  "a": "Via a recorded verbal communication or acknowledgment of an ACARS message specifying the length of the extension.",
+  "ref": "FOM 4.3.2.5.1",
+  "src": {
+   "ref": "FOM 4.3.2.5.1, Pre-Takeoff Extension",
+   "quote": "Once an extension is agreed upon, the length of the extension will be confirmed and documented via a recorded verbal communication or acknowledgment of an ACARS message specifying the length of the extension.",
+   "note": "Rev 125.3 deleted the HA-only Evidence of FDP Extension Concurrence process (the AOC OPS CTRL MSG \"EXTEND FDP\" message); this all-fleet method is what remains."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
   "id": "fom05-001",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
@@ -1773,6 +1848,51 @@
   "id": "fom05-029",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
+  "q": "Fuel is found on the ramp during the walkaround. What makes the accumulation incidental versus significant, and what does each require?",
+  "a": "Incidental: less than 5 gallons (smaller than one baggage cart), no injuries, health not threatened; report it to Station Ops to coordinate cleanup. Significant: over 5 gallons, or a fire hazard exists, or injuries have occurred/health is threatened; the PIC informs Station Ops and/or the Ramp and decides whether to deplane passengers.",
+  "ref": "FOM 5.1.24",
+  "src": {
+   "ref": "FOM 5.1.24, Fuel Accumulation on Ramp",
+   "quote": "Incidental accumulations are less than 5 gallons (smaller than the size of one baggage cart), where injuries have not occurred, or health is not threatened. If an incidental accumulation is identified on the walkaround, it should be reported to Station Ops to coordinate cleanup. Significant Accumulations Significant accumulations occur when ANY of the following conditions apply: • Over 5 gallons (larger than the size of one baggage cart) • A fire hazard exists • Injuries have occurred/health is threatened For this type of event, the PIC should inform Station Ops and/or the Ramp.",
+   "note": "New section in Rev 125.3; 12.1.1.4 Fuel Spills now just points here. If a ground air conditioning unit is running, have Ramp/Ground personnel terminate it immediately."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-030",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "(HA) On which ACARS page is the Fit-For-Duty affirmation and Dispatch Release acceptance sent, and what restriction applies to that page?",
+  "a": "The RLS/FIT FOR DUTY page. It must not be used once airborne.",
+  "ref": "FOM 5.2.11.2",
+  "src": {
+   "ref": "FOM 5.2.11.2, Affirmation and Signature Methods (HA)",
+   "quote": "The primary means of compliance to affirm Fit-For-Duty and acceptance of the Dispatch Release will be sent via ACARS on the RLS/FIT FOR DUTY page. Note The RLS/FIT FOR DUTY page must not be used once airborne.",
+   "note": "Rev 125.3 renamed the page from OPS CTRL MSG and deleted the numbers-only entry rule. Secondary method: the Backup Fit-For-Duty/Dispatch Release Acceptance form in Comply365 Forms, Pilot Forms."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-031",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "On the A330P, how is the Passenger Count Verification performed, and who does what?",
+  "a": "The First Officer reads the passenger count and jumpseat numbers from the Load Closeout; the Captain verifies the numbers match the Flight Deck Report provided in JetPack or via alternate means. Any discrepancy: contact CLP.",
+  "ref": "FOM 5.2.17.1",
+  "src": {
+   "ref": "FOM 5.2.17.1, Passenger Count Verification",
+   "quote": "(717/787/A321/A330P) • The First Officer reads the passenger count and jumpseat numbers from the Load Closeout. • The Captain verifies the numbers match the Flight Deck Report provided in JetPack or via alternate means.",
+   "note": "Rev 125.3 split the procedure by fleet; the 737 has a JetPack primary method. The Flight Deck Report carries information from the official flight manifest (5.2.17)."
+  },
+  "fleet": "pax",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-032",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
   "q": "When should the APU be started before pushback?",
   "a": "10 minutes prior to the anticipated pushback, unless it is required earlier for passenger comfort or equipment (PCA or external power) issues.",
   "ref": "FOM 5.1.8.2",
@@ -1785,7 +1905,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-030",
+  "id": "fom05-033",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, how far may a cabin door be opened without fall protection in place?",
@@ -1800,7 +1920,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-031",
+  "id": "fom05-034",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If potable water had to be drained and cannot be refilled (for example in extreme cold), is an MEL required to operate without it?",
@@ -1815,7 +1935,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-032",
+  "id": "fom05-035",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "When must a broadband (entertainment system) outage be written up in the Maintenance Logbook?",
@@ -1830,7 +1950,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-033",
+  "id": "fom05-036",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, how many Flight Crew and how many Cabin Crew may use the Lower Deck Module Crew Rest (LDMCR) at any time, and which bunks are the Flight Crew bunks?",
@@ -1845,7 +1965,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-034",
+  "id": "fom05-037",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On an A330 with all LDMCR available, which pilot crew rest seats must be blocked for an Augmented Crew?",
@@ -1860,7 +1980,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-035",
+  "id": "fom05-038",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If the decision is made to deplane during boarding or before departure, who should be notified first and why?",
@@ -1875,7 +1995,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-036",
+  "id": "fom05-039",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "When and to what address do you log on CPDLC for Iceland?",
@@ -1890,7 +2010,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-037",
+  "id": "fom05-040",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, is a forward tow permitted with both engines running?",
@@ -1905,7 +2025,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-038",
+  "id": "fom05-041",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On a visual approach with an instrument approach available to the landing runway, what must the pilots do with the navaid and FMS?",
@@ -1920,7 +2040,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-039",
+  "id": "fom05-042",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, when may a VNAV approach be flown to a DA(H) in lieu of the published MDA(H)?",
@@ -1935,7 +2055,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-040",
+  "id": "fom05-043",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, is a one-engine-inoperative CAT II Autoland authorized? A CAT III?",
@@ -1950,7 +2070,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-041",
+  "id": "fom05-044",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "For Autoland operations on the A330, what qualification must the PIC hold, and on which runways are Autolands permitted?",
@@ -1965,7 +2085,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-042",
+  "id": "fom05-045",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "How must non-normal (abnormal) landing data be treated when determining runway suitability?",
@@ -1980,7 +2100,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-043",
+  "id": "fom05-046",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On the A330, below what height AGL must fuel jettison be avoided, and what ATC notifications are required?",
@@ -1995,7 +2115,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-044",
+  "id": "fom05-047",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "If a hard landing is suspected, what two actions does the FOM require?",
@@ -2010,7 +2130,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-045",
+  "id": "fom05-048",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "What ground personnel are required to park an A330 (manual or VDGS), and where are station exceptions published?",
@@ -2019,13 +2139,28 @@
   "src": {
    "ref": "FOM 5.6.33, Parking Requirements (manual or VDGS)",
    "quote": "(787/A330) Two Wing Walkers and One Marshaller/VDGS Operator Station-specific exceptions to the requirement to have two Wing Walkers will be denoted in the airport 10-7.",
-   "note": "Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum."
+   "note": "Rev 125 added the 10-7 exception wording. Local policies may require more personnel than the minimum. Rev 125.3: if the VDGS and a Marshaller are providing conflicting guidance, follow the Marshaller."
   },
   "fleet": "both",
   "srcKind": "manual"
  },
  {
-  "id": "fom05-046",
+  "id": "fom05-049",
+  "chapter": "5",
+  "chapterName": "5 Flight Operations",
+  "q": "The VDGS and the Marshaller are giving you conflicting guidance while parking. Which do you follow?",
+  "a": "The Marshaller.",
+  "ref": "FOM 5.6.33",
+  "src": {
+   "ref": "FOM 5.6.33, Parking Requirements (manual or VDGS)",
+   "quote": "If at any time both the VDGS and a Marshaller are providing conflicting guidance, follow the Marshaller.",
+   "note": "Rev 125.3 added the word conflicting. Ensure the correct aircraft type is displayed before entering the gate area; if required, the Marshaller reverts to manual marshalling procedures."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom05-050",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "Approximately 2 minutes before an oceanic waypoint, what must the crew confirm?",
@@ -2040,7 +2175,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom05-047",
+  "id": "fom05-051",
   "chapter": "5",
   "chapterName": "5 Flight Operations",
   "q": "On CPDLC in oceanic airspace, what is required if SELCAL is not functioning?",
@@ -2122,7 +2257,7 @@
   "a": "RFFS equivalent to that specified by ICAO as Category 4, or higher.",
   "ref": "FOM 6.2.2",
   "src": {
-   "ref": "FOM 6.2.1 - Adequate Airport",
+   "ref": "FOM 6.2.2, ETOPS Alternate Airport",
    "quote": "rescue and firefighting service (RFFS) equivalent to that specified by ICAO as Category 4, or higher",
    "note": "Note the distinction: an adequate airport does not require ARFF, but a designated ETOPS alternate must have at least ICAO Category 4 RFFS."
   },
@@ -2134,12 +2269,12 @@
   "chapter": "6",
   "chapterName": "6 ETOPS",
   "q": "What firefighting response time must an FAA-approved ETOPS alternate meet, and what does it actually require?",
-  "a": "A 30-minute response time. It does not require equipment to be pre-positioned; it means firefighting equipment must be available on arrival of the diverting airplane and remain on station as long as needed.",
+  "a": "A 30-minute response time. It does not require equipment to be pre-positioned; it means firefighting equipment must be available on arrival of the diverting airplane and remain on station as long as needed. Airports listed in 8.1.3 Authorized Airports meet the requirement.",
   "ref": "FOM 6.2.2",
   "src": {
    "ref": "FOM 6.2.2, ETOPS Alternate Airport",
-   "quote": "firefighting assistance within a 30-minute response time",
-   "note": "The FOM clarifies the 30-minute response time means equipment available on arrival of the diverting airplane, not standing by for 30 minutes beforehand."
+   "quote": "firefighting assistance within a 30-minute response time. Airports listed in 8.1.3 – Authorized Airports meet this requirement.",
+   "note": "Rev 125.3 pointed every fleet to the 8.1.3 table (the AS 8.2.2 / HA Ops Spec B342 and C070 split is gone). The 30-minute response time means equipment available on arrival of the diverting airplane, not standing by for 30 minutes beforehand."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -2255,11 +2390,11 @@
   "chapterName": "6 ETOPS",
   "q": "What does the '(AS) ER or ETOPS' designation mean in the MEL, and how is it typically used?",
   "a": "It refers to Extended Operations of a two-engine aircraft with a type design approval for ETOPS. The designation is used primarily as an exception to a normally allowed MEL deferred item.",
-  "ref": "FOM 6.2.8",
+  "ref": "FOM 6.2.7",
   "src": {
-   "ref": "FOM 6.2.8, MEL Policy",
+   "ref": "FOM 6.2.7, MEL Policy",
    "quote": "The ER or ETOPS designation is used primarily as an exception to a normally allowed MEL deferred item.",
-   "note": "MEL ETOPS-critical items may limit the ETOPS area of operations or preclude ETOPS entirely; compliance with the MEL is a critical factor in ETOPS."
+   "note": "Renumbered from 6.2.8 in Rev 125.3 when HF Frequency Assignments was deleted. MEL ETOPS-critical items may limit the ETOPS area of operations or preclude ETOPS entirely; compliance with the MEL is a critical factor in ETOPS."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -2270,11 +2405,11 @@
   "chapterName": "6 ETOPS",
   "q": "For the A330, what one-engine-inoperative reference speed, reference weight, and reference flight level are used to derive ETOPS speeds?",
   "a": "A330: .82M/290 KIAS, a reference weight of 470,000 lb, and reference FL350.",
-  "ref": "FOM 6.2.9",
+  "ref": "FOM 6.2.8",
   "src": {
-   "ref": "FOM 6.2.9, One-Engine-Inoperative Cruise Speed",
+   "ref": "FOM 6.2.8, One-Engine-Inoperative Cruise Speed",
    "quote": "A330 .82M/290 KIAS 470,000 350",
-   "note": "Reference weights and OEI flight levels derive the EEP/EXP distance and ETOPS area of operation for each fleet. For dispatch planning, actual planned weights are used."
+   "note": "Renumbered from 6.2.9 in Rev 125.3. Reference weights and OEI flight levels derive the EEP/EXP distance and ETOPS area of operation for each fleet. For dispatch planning, actual planned weights are used."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -2491,6 +2626,21 @@
  },
  {
   "id": "fom06-030",
+  "chapter": "6",
+  "chapterName": "6 ETOPS",
+  "q": "Under FOM 125.3, where does the FOM send you for oceanic HF frequencies and ARINC communication procedures?",
+  "a": "Jeppesen FD Pro (ARINC Services). HF frequencies are also in the communications boxes on the Enroute Navigation Charts, and ARINC provides the primary and secondary frequencies predicted for the day.",
+  "ref": "FOM 20.4.3 / 20.4.3.3",
+  "src": {
+   "ref": "FOM 20.4.3, Non-CPDLC Oceanic Communication, and 20.4.3.3, Frequency Selection",
+   "quote": "All communications are relayed through ARINC (e.g., San Francisco Radio). Communication procedures and frequencies can be found in Jeppesen FD Pro.",
+   "note": "Rev 125.3 deleted 6.2.7 HF Frequency Assignments (the JetPack HF Frequencies tab, radio.arinc.net and the ARINC VHF frequency list); MEL Policy is now 6.2.7 and One-Engine-Inoperative Cruise Speed is 6.2.8."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom06-031",
   "chapter": "6",
   "chapterName": "6 ETOPS",
   "q": "Before the EEP on an HA A330 ETOPS flight, what must be complete regarding ETOPS verification?",
@@ -3318,6 +3468,36 @@
   "id": "fom08-029",
   "chapter": "8",
   "chapterName": "8 Dispatch",
+  "q": "After dispatch, the destination alternate weather drops below the minimums it was dispatched under. What must happen?",
+  "a": "Dispatch must file a new alternate that meets the required minimums (or remove the alternate entirely if the destination does not require one). If no alternate can be found that meets minimums, the flight must divert unless, in the interest of safety, the PIC continues to the destination using emergency authority.",
+  "ref": "FOM 8.2.2.1.1",
+  "src": {
+   "ref": "FOM 8.2.2.1.1, Destination Alternate Airport Weather Requirements After Dispatch",
+   "quote": "After dispatch, the weather at the destination alternate must continue to meet the weather minimum rules under which it was dispatched. If the destination alternate weather drops below those minimums, Dispatch must file a new alternate that does meet the required minimums. In some cases, the alternate airport may be removed entirely if the destination airport does not require an alternate to be listed. In the event that no alternate can be found that meets the minimum weather requirements, the flight must divert unless, in the interest of safety, the PIC continues to the destination utilizing emergency authority.",
+   "note": "New section in Rev 125.3."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom08-030",
+  "chapter": "8",
+  "chapterName": "8 Dispatch",
+  "q": "Must the Flight Crew retain paper copies of flight paperwork after the flight?",
+  "a": "No. Required flight documents are captured and stored electronically; paper copies (ACARS printouts, paper Dispatch Release Packages) need not be retained unless otherwise directed.",
+  "ref": "FOM 8.5.1.1",
+  "src": {
+   "ref": "FOM 8.5.1.1, Document Retention",
+   "quote": "For all flights, required flight documents are electronically captured and stored. The Flight Crew is not required to retain paper copies of the flight paperwork (e.g., ACARS message printouts, paper Dispatch Release Packages) after the completion of the flight unless otherwise directed.",
+   "note": "Rev 125.3 removed jumpseat forms from the example list. The certificate holder keeps the Dispatch Release/Flight Plan and the weather package for three months."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom08-031",
+  "chapter": "8",
+  "chapterName": "8 Dispatch",
   "q": "When must Dispatch perform a landing performance analysis for contamination, and what must it cover?",
   "a": "When any contamination is anticipated at the destination or alternate. It should cover both the anticipated and the worst acceptable braking action for the planned landing weight.",
   "ref": "FOM 8.3.9",
@@ -3330,7 +3510,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom08-030",
+  "id": "fom08-032",
   "chapter": "8",
   "chapterName": "8 Dispatch",
   "q": "On the A330 international release, how do the B043 reserves appear in the fuel summary compared with standard flag?",
@@ -3345,7 +3525,7 @@
   "srcKind": "manual"
  },
  {
-  "id": "fom08-031",
+  "id": "fom08-033",
   "chapter": "8",
   "chapterName": "8 Dispatch",
   "q": "In the 8.1.3 Authorized Airports table, which designations may be planned as an adequate airport, and what does the asterisk mean?",
@@ -3751,6 +3931,21 @@
  },
  {
   "id": "fom09-027",
+  "chapter": "9",
+  "chapterName": "9 Weather",
+  "q": "After landing with braking action worse than GOOD, what must the A330 crew report to Dispatch, and by what means may it be sent?",
+  "a": "The worst braking action experienced. The ACARS FLT SUMMARY may be used to report it to Dispatch (737/787/A321/A330). A PIREP to ATC is also required anytime actual braking action is less than GOOD or Braking Action Advisories are in effect.",
+  "ref": "FOM 9.1.2.2",
+  "src": {
+   "ref": "FOM 9.1.2.2, Braking Action Reporting Requirements",
+   "quote": "If actual braking action is worse than GOOD, the Flight Crew shall provide the worst braking action experienced to Dispatch after landing. (737/787/A321/A330) The ACARS FLT SUMMARY may be used to report braking action to Dispatch.",
+   "note": "Rev 125.3 extended the ACARS FLT SUMMARY option from the 737 to the 787, A321 and A330."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom09-028",
   "chapter": "9",
   "chapterName": "9 Weather",
   "q": "Where does the A330 crew find landing performance data for a reported RWYCC?",
@@ -4295,11 +4490,11 @@
   "chapterName": "11 Emergency/Abnormal",
   "q": "For an A330 decompression over charted terrain polygons, what is the initial descent altitude?",
   "a": "Always 17,000 ft or FL170 on the A330 (and 737). Only the 787 takes a polygon-specific altitude from the detail drawer in Jeppesen FD Pro.",
-  "ref": "FOM 11.2.9",
+  "ref": "FOM 11.2.9.1",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
-   "note": "Rev 125 rewrote 11.2.9 and deleted the regional decompression procedures from the theater chapters. Each polygon still has its own escape procedure in the FD Pro detail drawer."
+   "note": "Rev 125 rewrote the polygon procedures and deleted the regional decompression procedures from the theater chapters; Rev 125.3 renumbered them 11.2.9.1 under a new 11.2.9 Decompression parent. Each polygon still has its own escape procedure in the FD Pro detail drawer."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -4354,12 +4549,12 @@
   "chapter": "11",
   "chapterName": "11 Emergency/Abnormal",
   "q": "CHECK-AIRMAN SCENARIO: Rapid decompression at cruise over charted high-terrain polygons in your A330. Walk me through the masks, the descent target that relieves physiological reactions, and how you pick the initial descent altitude.",
-  "a": "Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.",
-  "ref": "FOM 11.2.9",
+  "a": "Don quick-don masks (one hand, within 5 seconds), execute the escape procedure for the polygon you are in from the detail drawer in Jeppesen FD Pro, and descend to the initial descent altitude, which on the A330 is always 17,000 ft or FL170. Do not enter another polygon below the altitude indicated in the polygon detail drawer unless terrain clearance is assured. Plan to be at 10,000 ft before passenger oxygen supplies are depleted. After terrain and fuel are addressed, a descent to 8000 ft cabin altitude should eliminate adverse physiological reactions.",
+  "ref": "FOM 11.2.9.1",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "Do not enter another polygon while navigating at less than the altitude indicated in the polygon detail drawer unless terrain clearance is assured.",
-   "note": "Rev 125.1. (737/A330) initial descent altitude is always 17,000 ft or FL170; only 787 altitudes vary by polygon. Quick-don masks are designed to be donned with one hand within 5 seconds (11.2.8)."
+   "note": "Rev 125.3 renumbered the polygon procedures to 11.2.9.1 and added the 10,000 ft planning target in 11.2.9. (737/A330) initial descent altitude is always 17,000 ft or FL170; only 787 altitudes vary by polygon. Quick-don masks are designed to be donned with one hand within 5 seconds (11.2.8)."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -4415,11 +4610,26 @@
   "chapterName": "11 Emergency/Abnormal",
   "q": "What is the purpose of the decompression polygon procedures?",
   "a": "They provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
+  "ref": "FOM 11.2.9.1",
+  "src": {
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
+   "quote": "Decompression polygon procedures provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
+   "note": "Rewritten in Rev 125, renumbered 11.2.9.1 in Rev 125.3. The PIC is expected and encouraged to exercise sound judgment; the parent section 11.2.9 lists weather, visibility, ATC and grid MORAs as other inputs to the course of action."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom11-027",
+  "chapter": "11",
+  "chapterName": "11 Emergency/Abnormal",
+  "q": "In any decompression, what altitude should the Flight Crew plan to reach before passenger oxygen supplies are depleted, and what information may the crew use to decide a course of action?",
+  "a": "10,000 ft. Crews may use weather conditions, visibility, ATC, grid MORAs, and the decompression polygon procedures.",
   "ref": "FOM 11.2.9",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
-   "quote": "Decompression polygon procedures provide a calculated safe method for descending to 10,000 ft before passenger oxygen supplies are depleted following a rapid decompression over high terrain.",
-   "note": "Rewritten in Rev 125. The PIC is expected and encouraged to exercise sound judgment; weather, visibility, ATC and grid MORAs may also inform the course of action."
+   "ref": "FOM 11.2.9, Decompression",
+   "quote": "During a decompression event, crews may use a variety of information including weather conditions, visibility, ATC, grid MORAs, and decompression polygon procedures to assist in determining a course of action. Flight Crews should plan to be at 10,000 ft before passenger oxygen supplies are depleted.",
+   "note": "New parent section in Rev 125.3. Passenger oxygen is designed to supply oxygen while the descent to a safe altitude is performed; the polygon procedures themselves are now 11.2.9.1."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -4488,13 +4698,13 @@
   "id": "fom12-005",
   "chapter": "12",
   "chapterName": "12 Fueling and Maintenance",
-  "q": "In a fuel spill with passengers on board, who decides whether to deplane, and on which side of the aircraft are passengers deplaned?",
-  "a": "The Pilot-In-Command decides whether to deplane (if no pilot is on board, the 'A' Flight Attendant/FFA decides). If there is a choice of exits, passengers are deplaned on the side of the aircraft opposite the fuel spill.",
-  "ref": "FOM 12.1.1.4",
+  "q": "Fuel is accumulating on the ramp with passengers on board. Who decides whether to deplane, and which exits are used?",
+  "a": "The PIC decides whether to deplane (if no pilot is on board, the \"A\" Flight Attendant/FFA decides). If there is a choice of exits, passengers are deplaned through a boarding bridge or, if on ground level, on the side of the aircraft opposite the fuel spill.",
+  "ref": "FOM 5.1.24",
   "src": {
-   "ref": "FOM 12.1.1.4, Fuel Spills",
-   "quote": "passengers will be deplaned on the side of the aircraft opposite the fuel spill.",
-   "note": "Any ground air conditioning unit should also be terminated to prevent pushing fumes into the aircraft and to remove an ignition source."
+   "ref": "FOM 5.1.24, Fuel Accumulation on Ramp",
+   "quote": "The PIC will make the decision whether to deplane passengers. If no pilot is on board, the “A” Flight Attendant/FFA will make the decision whether to deplane. If there is a choice of exits, passengers will be deplaned through a boarding bridge or, if on ground level, on the side of the aircraft opposite the fuel spill.",
+   "note": "Rev 125.3 moved the fuel spill guidance from 12.1.1.4 to the new 5.1.24 and added the boarding bridge as the first choice. Any ground air conditioning unit is terminated to keep fumes out of the aircraft and remove an ignition source."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -5238,13 +5448,13 @@
   "id": "fom14-013",
   "chapter": "14",
   "chapterName": "14 HAZMAT",
-  "q": "What crosscheck does the ACARS Load Closeout provide against the NOTOC on AS?",
-  "a": "The number of items on the ACARS Load Closeout must equal the number of shipments listed on the NOTOC. It is a discrepancy crosscheck only; if none, the message reads 'No HAZMAT.'",
+  "q": "What crosscheck does the Load Closeout provide against the NOTOC on AS?",
+  "a": "The number of items on the Load Closeout must equal the number of shipments listed on the NOTOC. It is a discrepancy crosscheck only; if none, the message reads 'No HAZMAT.'",
   "ref": "FOM 14.1.14",
   "src": {
    "ref": "FOM 14.1.14, Load Closeout Message (AS)",
-   "quote": "The number of items on the ACARS Load Closeout must be equal to the number of shipments listed on the NOTOC",
-   "note": "The Load Closeout HAZMAT message is informational and not required for dispatch; contact Station Operations for any discrepancy."
+   "quote": "The number of items on the Load Closeout must be equal to the number of shipments listed on the NOTOC",
+   "note": "Rev 125.3 dropped the word ACARS from the Load Closeout wording; the rule is unchanged. The Load Closeout HAZMAT message is informational and not required for dispatch; contact Station Operations for any discrepancy."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -5373,12 +5583,12 @@
   "id": "fom14-022",
   "chapter": "14",
   "chapterName": "14 HAZMAT",
-  "q": "CHECK-AIRMAN SCENARIO: You are Captain on the A330. Your eNOTOC lists three DG shipments, but the ACARS Load Closeout shows four HAZMAT lines. What is this crosscheck telling you and what do you do?",
-  "a": "On AS the number of items on the ACARS Load Closeout must equal the number of shipments listed on the NOTOC. This is a discrepancy crosscheck only; a mismatch means you contact Station Operations to reconcile the load closeout HAZMAT section against the actual HAZMAT status before you rely on the NOTOC. Note the HAZMAT Load Closeout message is informational and not required for dispatch.",
+  "q": "CHECK-AIRMAN SCENARIO: You are Captain on the A330. Your eNOTOC lists three DG shipments, but the Load Closeout shows four HAZMAT lines. What is this crosscheck telling you and what do you do?",
+  "a": "On AS the number of items on the Load Closeout must equal the number of shipments listed on the NOTOC. This is a discrepancy crosscheck only; a mismatch means you contact Station Operations to reconcile the load closeout HAZMAT section against the actual HAZMAT status before you rely on the NOTOC. Note the HAZMAT Load Closeout message is informational and not required for dispatch.",
   "ref": "FOM 14.1.14",
   "src": {
    "ref": "FOM 14.1.14, Load Closeout Message (AS)",
-   "quote": "The number of items on the ACARS Load Closeout must be equal to the number of shipments listed on the NOTOC (Exception: see Systems Failures below). This is a discrepancy crosscheck only.",
+   "quote": "The number of items on the Load Closeout must be equal to the number of shipments listed on the NOTOC (Exception: see Systems Failures below). This is a discrepancy crosscheck only.",
    "note": "If no HAZMAT is on the flight the Load Closeout reads 'No HAZMAT'; contact Station Operations for any discrepancy."
   },
   "fleet": "both",
@@ -5899,12 +6109,12 @@
   "chapter": "16",
   "chapterName": "16 Non-Routine Flight Operations (NRFO)",
   "q": "Who may be carried as passengers on a Part 91 flight operated without Flight Attendants?",
-  "a": "Passengers are restricted to Alaska Air Group employees, unless authorization for non-employees is received from the Director of Operations, FODO, or NRFO Management.",
+  "a": "Working crewmembers only, unless authorization for additional passengers (deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
   "ref": "FOM 16.1.8.2",
   "src": {
    "ref": "FOM 16.1.8.2, Part 91 NRFO Flights",
-   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to Alaska Air Group employees",
-   "note": "Non-employees require authorization from the DO, FODO, or NRFO Management."
+   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to working crewmembers unless authorization for additional passengers (e.g., deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
+   "note": "Rev 125.3 changed this from Alaska Air Group employees to working crewmembers. Each additional passenger needs a Part 91 Passenger Request Form in Comply and a PNR (16.1.10)."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -6138,13 +6348,28 @@
   "id": "fom16-021",
   "chapter": "16",
   "chapterName": "16 Non-Routine Flight Operations (NRFO)",
-  "q": "CHECK-AIRMAN SCENARIO: You are positioning an A330 under Part 91 with no Flight Attendants on board, and a non-employee observer asks to ride along. Is that allowed, and whose authorization would it take?",
-  "a": "By default, no. Passengers on Part 91 flights without Flight Attendants are restricted to Alaska Air Group employees. Carrying a non-employee requires authorization from the Director of Operations, FODO, or NRFO Management.",
+  "q": "CHECK-AIRMAN SCENARIO: You are positioning an A330 under Part 91 with no Flight Attendants on board, and an off-duty company employee asks to ride along as a guest rider. Is that allowed, and whose authorization would it take?",
+  "a": "By default, no. Passengers on Part 91 flights without Flight Attendants are restricted to working crewmembers. Carrying additional passengers such as deadheads, non-revenues or guest riders requires authorization from the Director of Operations, FODO, or NRFO Management, and the rider needs a Part 91 Passenger Request Form and a reservation record so CLP shows them on the manifest before takeoff.",
   "ref": "FOM 16.1.8.2",
   "src": {
    "ref": "FOM 16.1.8.2, Part 91 NRFO Flights",
-   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to Alaska Air Group employees",
-   "note": "Authorization for non-employees comes from the DO, FODO, or NRFO Management (14 CFR 91.533). If a Flight Attendant is required, Alaska policy is to use a full complement."
+   "quote": "Passengers on Part 91 flights without Flight Attendants will be restricted to working crewmembers unless authorization for additional passengers (e.g., deadheads, non-revenues, guest riders) is received from the Director of Operations, FODO, or NRFO Management.",
+   "note": "Rev 125.3: employee status no longer qualifies a rider by itself. Authorization comes from the DO, FODO, or NRFO Management (14 CFR 91.533). If a Flight Attendant is required, Alaska policy is to use a full complement."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
+ },
+ {
+  "id": "fom16-022",
+  "chapter": "16",
+  "chapterName": "16 Non-Routine Flight Operations (NRFO)",
+  "q": "What form and record does an NRFO passenger (deadhead, non-revenue employee, or guest rider) need before a Part 91 flight?",
+  "a": "A Part 91 Passenger Request Form in Comply with all required passenger information, and a computer record (PNR) in the normal reservations system so a boarding pass can be printed. The Flight Crew confirms with CLP that all passengers are on the manifest before takeoff.",
+  "ref": "FOM 16.1.10",
+  "src": {
+   "ref": "FOM 16.1.10, Flight Manifest, NRFO",
+   "quote": "All NRFO passengers, including deadheads, non-revenue employees, and guest riders, will have a computer record built within the normal reservations computer system.",
+   "note": "Rev 125.3 renamed the Guest Rider Request Form to the Part 91 Passenger Request Form and widened the wording to all NRFO passengers. Questions on the Load Manifest go to the NOC/SOCC MOD."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -6438,13 +6663,13 @@
   "id": "fom19-002",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.1, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?",
-  "a": "There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.",
-  "ref": "FOM 11.2.9 (Ch 11)",
+  "q": "Under FOM 125.3, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?",
+  "a": "There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9.1 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.",
+  "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
-   "ref": "FOM 11.2.9, Decompression Polygon Procedures (737/787/A330)",
+   "ref": "FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)",
    "quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
-   "note": "Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation. 19.3.1.1 is now Airspeed Restrictions Takeoff/Landing. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM."
+   "note": "Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation; Rev 125.3 renumbered the polygon procedures to 11.2.9.1. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -6648,13 +6873,13 @@
   "id": "fom19-016",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.1, what is the published decompression floor for the Greenland Mountain Range region?",
-  "a": "None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.",
-  "ref": "FOM 11.2.9 (Ch 11)",
+  "q": "Under FOM 125.3, what is the published decompression floor for the Greenland Mountain Range region?",
+  "a": "None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9.1; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.",
+  "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
-   "ref": "FOM 11.2.9 (Ch 11) and FOM 22.2 (Ch 22)",
+   "ref": "FOM 11.2.9.1 (Ch 11) and FOM 22.11 (Ch 22)",
    "quote": "Dispatchers and pilots will not permit flights to proceed through any areas charted as “No Ops Area.”",
-   "note": "Rev 125.1 removed the Decompression Procedure for Greenland Mountain Range Region from 22.5 - Weather. 22.6 is now Oceanic Procedures. The old 15,000 ft Greenland floor is no longer published. Greenland overflight limits are addressed via 11.2.9."
+   "note": "Rev 125.1 removed the Decompression Procedure for Greenland Mountain Range Region from 22.5 - Weather. The old 15,000 ft Greenland floor is no longer published. Greenland overflight limits (22.11) point to the polygon procedures in 11.2.9.1."
   },
   "fleet": "both",
   "srcKind": "manual"

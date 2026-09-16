@@ -485,7 +485,7 @@
   "q": "Approach Briefing: the Plan items on the Crew Briefing Card?",
   "a": "Route (STAR, Approach, Approach Mode); Missed Approach, Fuel/route to alternate; Landing Runway Assessment, Exit, Taxi; Autobrakes; Flaps, Approach/Target Speed. Threats first (PM, PF), Considerations after.",
   "who": "Both. Threats are called by PM then PF.",
-  "ref": "PRC p51 Crew Briefing Card",
+  "ref": "PRC p24 Crew Briefing Card",
   "src": "• Route (STAR, Approach, Approach Mode)",
   "fleet": "pax",
   "kind": "sop",
@@ -496,11 +496,12 @@
   "q": "ILS: the three conditions before APPR pb, and what follows?",
   "a": "Cleared for the approach, on the intercept trajectory for the final approach course, LOC deviation available on the PFD. Then APPR pb press, BOTH APs engage (PF).",
   "who": "PF presses APPR and engages both APs.",
-  "ref": "PRC p13 ILS Profile",
-  "src": "- On the intercept trajectory for the final approach course - LOC deviation is available on the PFD - Cleared for Approach APPR pb…. Press",
+  "ref": "FCOM PRO-NOR-SOP-18-C-A",
+  "src": "Press the APPR pb when all of the following is applicable: • The aircraft is cleared for the approach • The aircraft is on the intercept trajectory for the final approach course • LOC deviation is available on the PFD.",
   "fleet": "pax",
-  "kind": "sop",
-  "ext": "PRC"
+  "kind": "manual",
+  "ext": "FCOM",
+  "ident": "PRO-NOR-SOP-18-C-A-00014488.0001001"
  },
  {
   "s": "Approach Setup",

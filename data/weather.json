@@ -157,6 +157,19 @@
  },
  {
   "cat": "Destination Alternate",
+  "ref": "FOM 8.2.2.1.1",
+  "q": "After dispatch, the destination alternate weather drops below the minimums it was dispatched under. What happens?",
+  "a": [
+   "The alternate must <b>continue to meet the minimums it was dispatched under</b>. Below them, <b>Dispatch files a new alternate</b> that does, or <b>removes the alternate</b> if the destination no longer requires one.",
+   "No alternate can be found: <b>divert</b>, unless in the interest of safety the <b>PIC continues to the destination under emergency authority</b>.",
+   "New in Rev 125.3."
+  ],
+  "src": "After dispatch, the weather at the destination alternate must continue to meet the weather minimum rules under which it was dispatched. If the destination alternate weather drops below those minimums, Dispatch must file a new alternate that does meet the required minimums. In some cases, the alternate airport may be removed entirely if the destination airport does not require an alternate to be listed. In the event that no alternate can be found that meets the minimum weather requirements, the flight must divert unless, in the interest of safety, the PIC continues to the destination utilizing emergency authority.",
+  "fleet": "both",
+  "srcType": "manual"
+ },
+ {
+  "cat": "Destination Alternate",
   "ref": "FOM 8.4.1.4",
   "q": "Extended overwater flag flight, destination forecast below minimums at ETA. Can Dispatch release it?",
   "a": [
@@ -341,6 +354,18 @@
  },
  {
   "cat": "Contaminated Runway",
+  "ref": "FOM 9.1.2.2",
+  "q": "Braking action worse than GOOD: who gets a report, and how may the A330 send it to Dispatch?",
+  "a": [
+   "<b>PIREP to ATC</b> anytime actual braking action is <b>less than GOOD</b> or Braking Action Advisories are in effect, with descriptive terms and aircraft type.",
+   "<b>Worst braking action experienced to Dispatch after landing</b>; the <b>ACARS FLT SUMMARY</b> may be used (737/787/A321/A330, A330 added in Rev 125.3)."
+  ],
+  "src": "Flight Crews shall provide a braking action report (PIREP) to ATC anytime actual braking action is less than GOOD or Braking Action Advisories are in effect. ... If actual braking action is worse than GOOD, the Flight Crew shall provide the worst braking action experienced to Dispatch after landing. (737/787/A321/A330) The ACARS FLT SUMMARY may be used to report braking action to Dispatch.",
+  "fleet": "both",
+  "srcType": "manual"
+ },
+ {
+  "cat": "Contaminated Runway",
   "ref": "FOM 5.6.22.3",
   "q": "A330 in-flight landing distance: what assumptions does the TALPA calculation use?",
   "a": [
@@ -390,13 +415,14 @@
  },
  {
   "cat": "A330 Specific",
-  "ref": "FOM 11.2.9",
+  "ref": "FOM 11.2.9.1",
   "q": "Decompression polygon: A330 initial descent altitude?",
   "a": [
    "<b>Always 17,000 ft or FL170</b> (737 and A330). The 787 uses the altitude in the polygon detail drawer.",
-   "Never proceed through a charted No Ops Area."
+   "Never proceed through a charted No Ops Area.",
+   "Plan to be at <b>10,000 ft before passenger oxygen is depleted</b> (11.2.9). Polygon procedures renumbered 11.2.9.1 in Rev 125.3."
   ],
-  "src": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
+  "src": "Flight Crews should plan to be at 10,000 ft before passenger oxygen supplies are depleted. ... (737/A330) Initial descent altitude is always 17,000 ft or FL170.",
   "fleet": "both",
   "srcType": "manual"
  },
