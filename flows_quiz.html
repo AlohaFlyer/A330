@@ -7,89 +7,172 @@
 <title>A330 Flows Trainer</title>
 <style>
   :root{
-    --bg:#1A1630; --panel:#2A2440; --panel2:#332E44; --line:#453F58;
-    --ink:#F1EEF6; --muted:#C3BED0;
-    --mid:#463C8F; --atlas:#CE0C88; --breeze:#E26DB8; --green:#8EC891;
-    --amber:#f2a65a;
-    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --midnight:#463C8F;
+    --atlas:#CE0C88;
+    --blue:#E26DB8;
+    --breeze:#EAE5F4;
+    --ice:#F4F1F9;
+    --good:#8EC891;
+    --red:#C8102E;
   }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-    min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px 60px;}
-  .wrap{width:100%;max-width:700px}
-  header{display:flex;align-items:baseline;justify-content:space-between;
-    border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;gap:12px}
-  h1{font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0}
-  h1 .sub{color:var(--breeze);font-weight:600}
-  .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
-  .bar{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap}
-  .bar .count{color:var(--ink)}
-  .track{flex:1;height:3px;background:var(--panel2);border-radius:2px;overflow:hidden;min-width:120px}
-  .fill{height:100%;width:0;background:var(--atlas);transition:width .25s}
-  .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--breeze);border:1px solid var(--line);border-radius:3px;padding:3px 8px;align-self:flex-start}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;
-    padding:24px 22px;min-height:240px;display:flex;flex-direction:column;gap:14px}
-  .prompt .lead{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .q{font-size:23px;line-height:1.25;font-weight:700;letter-spacing:.01em}
-  .cond{font-size:13px;color:var(--muted);font-style:italic;margin-top:6px;line-height:1.4}
-  .readout{background:#120F1F;border:1px solid #4A4460;border-left:3px solid var(--green);
-    border-radius:5px;padding:0 16px;font-size:14.5px;line-height:1.5;
-    opacity:0;max-height:0;overflow:hidden;transition:opacity .2s}
-  .readout.show{opacity:1;max-height:1200px;padding:14px 16px}
-  .readout .ln{margin:3px 0;color:var(--ink)}
-  .readout .num{display:inline-block;min-width:18px;color:var(--breeze);font-weight:700;font-family:var(--mono)}
-  .readout .sub{margin-left:22px;color:#DCD8E6}
-  .readout .bul{margin-left:34px;color:#DCD8E6}
-  .readout b{color:var(--green);font-weight:700}
-  .readout i{color:var(--muted);font-style:italic}
-  .spacer{flex:1}
-  .controls{display:flex;gap:10px;flex-wrap:wrap}
-  button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:6px;
-    padding:11px 18px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);transition:.12s}
-  button:hover{border-color:var(--breeze)}
-  button:focus-visible{outline:2px solid var(--breeze);outline-offset:2px}
-  .primary{background:var(--atlas);color:#fff;border-color:var(--atlas)}
-  .primary:hover{filter:brightness(1.1)}
-  .ghost{background:transparent}
-  .mark{flex:1}
-  .knew{border-color:var(--green);color:var(--green)}
-  .knew:hover{background:rgba(192,229,133,.12)}
-  .rev{border-color:var(--amber);color:var(--amber)}
-  .rev:hover{background:rgba(242,166,90,.12)}
-  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
-  .foot button{padding:6px 12px;font-size:12px}
-  .hint{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:.03em}
-  .summary{text-align:center;padding:38px 20px}
-  .summary .big{font-family:var(--mono);font-size:46px;color:var(--green);font-weight:700}
-  .summary .lbl{color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
-  .summary .stat{display:flex;justify-content:center;gap:32px;margin:18px 0 28px;font-family:var(--mono)}
-  .summary .stat div span{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
-  .summary .stat .r{color:var(--amber)}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-  @media (max-width:480px){.q{font-size:19px}.readout{font-size:13.5px}}
-.srcbtn{background:transparent;border:1px solid var(--atlas);color:var(--breeze);border-radius:5px;padding:10px 14px;font-weight:700;font-family:var(--sans);cursor:pointer}
-.srcbtn:hover{background:var(--atlas);color:#fff}
-.srcpanel{max-height:0;overflow:hidden;opacity:0;background:#201B33;border:1px solid var(--line);border-radius:6px;padding:0 16px;margin-top:10px;transition:max-height .2s,opacity .2s,padding .2s}
-.srcpanel.show{max-height:320px;opacity:1;padding:14px 16px}
-.srclabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.srcref{font-family:var(--mono);font-size:14px;color:var(--breeze);font-weight:700}
-.srcsub{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
-.gamelink{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--atlas);color:var(--breeze);border-radius:5px;padding:8px 12px;font-weight:700;font-size:12px;text-decoration:none;font-family:var(--sans);margin-left:8px}
-.gamelink:hover{background:var(--atlas);color:#fff}
-.handrow{flex-wrap:wrap;gap:8px}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Segoe UI",Arial,Helvetica,sans-serif;
+    background:var(--ice);
+    color:var(--midnight);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+  }
+  h1{
+    background:var(--midnight);color:#fff;padding:10px 24px;
+    font-size:20px;letter-spacing:1px;margin-bottom:4px;
+  }
+  .src{font-size:11px;color:var(--atlas);margin-bottom:14px;text-align:center;}
+  .topbar{display:flex;gap:14px;align-items:center;margin-bottom:14px;flex-wrap:wrap;justify-content:center;}
+  .modes,.seat{display:flex;gap:0;}
+  .modes button,.seat button{
+    background:#fff;border:1.5px solid var(--blue);color:var(--blue);
+    padding:6px 16px;font-size:13px;font-weight:700;cursor:pointer;
+  }
+  .seat button{border-color:var(--midnight);color:var(--midnight);}
+  .modes button.active{background:var(--blue);color:#fff;}
+  .seat button.active{background:var(--midnight);color:#fff;}
+  .controls{margin-bottom:14px;display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:760px;}
+  .phasebar{display:flex;gap:4px;overflow-x:auto;max-width:96vw;width:auto;margin-bottom:8px;padding:2px 2px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+  .phasebar button{flex:0 0 auto;background:#fff;border:1.5px solid var(--atlas);color:var(--atlas);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:5px 10px;cursor:pointer;border-radius:14px;white-space:nowrap;}
+  .phasebar button.active{background:var(--atlas);color:#fff;}
+  @media (max-width:480px){ .phasebar button{min-height:38px;} }
+  .controls button{
+    background:#fff;border:1.5px solid var(--midnight);color:var(--midnight);
+    padding:6px 10px;font-size:12px;font-weight:600;cursor:pointer;
+  }
+  .controls button.active{background:var(--midnight);color:#fff;}
+  .fl-item{color:var(--midnight);cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .fl-item b{color:var(--midnight);}
+  .fl-item:hover{text-decoration:underline;}
+  .fl-item.open b{text-decoration:underline;}
+  .fl-detail{display:none;white-space:pre-line;color:var(--midnight);font-size:12.5px;line-height:1.45;
+    background:#fff;border-left:3px solid var(--good);padding:7px 10px;margin:5px 0 7px;}
+  .fl-detail.shown{display:block;}
+  .clbadge{display:block;color:#2a7a2a;font-weight:700;font-size:12px;margin:3px 0 6px;}
+  .trigbadge{color:#c8880a;font-weight:700;font-size:11.5px;margin-top:2px;}
+  .brbadge{display:block;color:#831A57;font-weight:700;font-size:12px;margin:3px 0 6px;}
+  .strgbadge{display:block;color:#d9534f;font-weight:700;font-size:12px;margin:3px 0 6px;}
+  .phasehdr{width:100%;margin:18px 0 6px;padding:6px 12px;background:var(--midnight);color:#fff;font-weight:700;letter-spacing:1.5px;font-size:13px;text-transform:uppercase;box-sizing:border-box;}
+  .phasesep{flex-basis:100%;width:100%;font-size:10px;font-weight:700;color:var(--atlas);text-transform:uppercase;letter-spacing:1px;margin:6px 0 0;text-align:left;}
+  @media (max-width:480px){
+    .modes button,.seat button{
+      min-height:44px;padding:10px 16px;
+      display:inline-flex;align-items:center;justify-content:center;
+    }
+    .controls button{
+      min-height:44px;padding:10px 12px;
+      display:inline-flex;align-items:center;justify-content:center;
+    }
+  }
+  .layout{
+    display:grid;
+    grid-template-columns:minmax(280px,45%) 1fr;
+    gap:14px;
+    max-width:1024px;
+    width:100%;
+    align-items:start;
+  }
+  @media (max-width:740px){
+    .layout{grid-template-columns:1fr;}
+  }
+  .card{
+    background:#fff;border:2px solid var(--midnight);
+    flex:1;min-width:320px;max-width:560px;min-height:320px;
+    padding:22px;display:flex;flex-direction:column;
+  }
+  .mapbox{background:#fff;border:2px solid var(--midnight);width:100%;box-sizing:border-box;padding:10px;position:relative;}
+  #shapeBtn{position:absolute;top:8px;right:8px;z-index:5;background:#fff;border:1.5px solid var(--atlas);color:var(--atlas);font-size:11px;font-weight:700;padding:4px 10px;cursor:pointer;border-radius:3px;}
+  #shapeBtn.active{background:var(--atlas);color:#fff;}
+  #clOverlay{display:none;position:fixed;inset:0;background:rgba(1,33,55,0.55);z-index:50;align-items:center;justify-content:center;padding:16px;}
+  .clbox{background:#fff;border:2px solid var(--midnight);max-width:480px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 8px 30px rgba(0,0,0,0.35);}
+  .clbox .clhead{display:flex;justify-content:space-between;align-items:center;background:var(--midnight);color:#fff;padding:8px 12px;font-weight:700;letter-spacing:0.5px;}
+  .clbox .clhead button{background:none;border:none;color:#fff;font-size:20px;cursor:pointer;line-height:1;}
+  .clbox table{width:100%;border-collapse:collapse;padding:6px;}
+  .clbox td{padding:7px 8px;font-size:13.5px;border-bottom:1px solid #EAE5F4;color:var(--midnight);}
+  .clbox td.dots{border-bottom:1px dotted #A29DB0;width:20%;}
+  .clbox td.resp{font-weight:700;text-align:right;white-space:nowrap;}
+  .clbox td.who{color:var(--atlas);font-size:11px;white-space:nowrap;}
+  .clbox .clsrc{font-size:10.5px;color:#888;padding:6px 12px 10px;text-align:right;}
+  .clbadge{cursor:pointer;}
+  .clbadge:hover{text-decoration:underline;}
+  .mapbox .shapename{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:2px;}
+  .mapbox .mnemonic{font-size:13px;color:var(--atlas);text-align:center;margin-bottom:6px;font-style:italic;}
+  .mnemonic b{color:var(--midnight);font-style:normal;}
+  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;}
+  .who{font-size:11px;color:var(--atlas);margin-bottom:12px;}
+  .done{font-size:13px;color:var(--atlas);line-height:1.55;margin-bottom:12px;}
+  .done .step{display:block;}
+  .done .step b{color:#6fae3d;} .done .step:hover b{text-decoration:underline;}
+  .q{font-size:18px;font-weight:700;flex:1;}
+  .a{
+    font-size:16px;font-weight:600;margin-top:14px;padding:13px;
+    background:var(--breeze);border-left:4px solid var(--blue);
+    display:none;white-space:pre-line;
+  }
+  .a.shown{display:block;}
+  .detail{
+    font-size:13px;font-weight:400;color:#111;margin-top:10px;padding:12px 14px;
+    background:#f4f0fa;border-left:4px solid #4B2D89;display:none;
+    white-space:pre-line;line-height:1.65;border-radius:0 4px 4px 0;
+  }
+  .detail.shown{display:block;}
+  .actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+  .actions button{
+    flex:1;min-width:105px;padding:13px;font-size:15px;font-weight:700;
+    border:none;cursor:pointer;color:#fff;background:var(--atlas);
+    -webkit-tap-highlight-color:transparent;
+  }
+  #reveal{background:var(--blue);}
+  
+  #nextBtn{background:var(--midnight);}
+  .count{margin-top:12px;font-size:12px;color:var(--atlas);}
+  .fulllist{max-width:680px;width:100%;}
+  .flowblock{background:#fff;border:2px solid var(--midnight);margin-bottom:14px;}
+  .flowblock header{background:var(--midnight);color:#fff;padding:6px 10px;font-weight:700;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;}
+  .flowblock header span:last-child{color:var(--breeze);font-size:12px;font-weight:600;}
+  .flowblock .mn{padding:5px 10px;font-size:13px;font-style:italic;color:var(--atlas);border-bottom:1px dashed var(--blue);}
+  .flowblock .mn b{color:var(--midnight);font-style:normal;}
+  .flowblock .body{display:flex;gap:8px;align-items:flex-start;padding:8px;}
+  .flowblock ol{padding:0 6px 4px 30px;font-size:13px;line-height:1.65;flex:1;}
+  .flowblock svg{flex-shrink:0;}
+  .hidden{display:none !important;}
+  svg .zone{fill:var(--ice);stroke:var(--atlas);stroke-width:1;}
+  svg .zonelabel{font-size:9px;fill:var(--atlas);font-weight:700;letter-spacing:1px;}
+  svg .trace{fill:none;stroke:#F9423A;stroke-width:4;stroke-linejoin:round;stroke-linecap:round;}
+  svg .ghost{fill:none;stroke:#8d8d8d;stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:4 4;opacity:0.95;}
+  svg .dot{fill:#fff;stroke:var(--midnight);stroke-width:1.5;}
+  svg .dot.donept{fill:var(--breeze);}
+  svg .dot.startpt{fill:#FFC9BF;stroke:#6fae3d;}
+  svg .dot.endpt{fill:#d9534f;stroke:#b52b27;}
+  svg .num{font-size:9px;fill:var(--midnight);font-weight:700;}
+  svg .dot.roleCA{fill:#4B2D89;stroke:#3a2169;}
+  svg .dot.roleFO{fill:#CE0C88;stroke:#9D178D;}
+  svg .dot.rolePF{fill:#00805E;stroke:#1C4A0C;}
+  svg .dot.rolePM{fill:#E26DB8;stroke:#831A57;}
+  svg .dot.roleIRO{fill:#aaaaaa;stroke:#888;}
+  svg .dot.roleBOTH{fill:#fff;stroke:#463C8F;}
+  svg .dot.inactive{fill:#dcdcdc;stroke:#bdbdbd;opacity:.55;}
+  svg .dot.current{fill:#E26DB8;stroke:var(--midnight);stroke-width:2;}
+  svg .dot.trigpt{ fill:#d9534f; stroke:#8f2b27; stroke-width:2.5; }
+  .legend{display:flex;gap:5px;flex-wrap:wrap;align-items:center;font-size:10px;color:#333;margin-top:6px;}
+  .legend span{display:flex;align-items:center;gap:4px;}
+  .xref{color:#CE0C88;text-decoration:underline;cursor:pointer;font-weight:600;}
+  .legend i{width:9px;height:9px;border-radius:50%;display:inline-block;border:1.5px solid #463C8F;flex-shrink:0;}
+  .miniBtns{position:absolute;top:10px;right:12px;display:flex;gap:6px;}
+  .miniBtns button{font-size:14px;padding:6px 12px;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:4px;cursor:pointer;}
+  .miniBtns button:hover{background:var(--midnight);color:#fff;}
+  svg .numlight{font-size:9px;fill:#fff;font-weight:700;}
+  svg .dot, svg .num, svg .numlight{cursor:pointer;}
 </style>
-
-<style>
-.handout{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#1A1630;border:1px solid var(--green);border-radius:5px;padding:8px 13px;font-weight:700;font-size:12.5px;text-decoration:none;font-family:var(--sans);letter-spacing:.02em}
-.handout:hover{filter:brightness(1.06)}
-.handrow{display:flex;justify-content:flex-end;margin:-6px 0 14px}
-.cat{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
-.mem{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#1A1630;background:var(--amber);border-radius:3px;padding:2px 6px;margin-left:8px;font-weight:700;vertical-align:middle}
-.answer{font-family:var(--mono);font-size:22px;line-height:1.3;color:var(--green);font-weight:700}
-</style>
-
 <style>
 .ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
 .ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
@@ -98,23 +181,564 @@
 .ps-home svg{display:block;}
 @media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
 </style>
+<style>
+/* The banner title is nowrap and the logo cannot shrink, so at 390px the
+   pair needed 340px inside a 310px content box and the page scrolled
+   sideways. Let it wrap and shrink below 480px. */
+@media (max-width:480px){
+  body > div:first-of-type span{font-size:15px !important;letter-spacing:0 !important;white-space:normal !important;}
+}
+</style>
 </head>
 <body>
 <div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 
-<div class="wrap">
-  <header>
-    <h1>Flows Trainer <span class="sub">// Gate to Gate</span></h1>
-    <span class="src">FCOM R17 PRO-NOR-SOP</span>
-  </header>
-  <div id="app"><div class="card"><div class="summary"><div class="lbl">Building</div><div class="srcsub">This page ships in build step 4. The portal chrome, settings and offline tiers are already live.</div></div></div></div>
+<div style="display:flex;align-items:center;justify-content:space-between;background:var(--midnight);padding:10px 20px;margin-bottom:4px;max-width:980px;width:100%;"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='149' height='44' viewBox='0 0 149 44'><text x='0' y='29' font-family='Segoe UI,Arial,sans-serif' font-size='17' font-weight='700' fill='%23FFFFFF' letter-spacing='1'>HAWAIIAN</text></svg>" alt="Hawaiian Airlines" style="height:30px;"><span style="color:#FF9080;font-size:20px;font-weight:700;letter-spacing:1px;white-space:nowrap;">A330 FLOWS TRAINER</span></div>
+<div class="src">FCOM R17 PRO-NOR-SOP &middot; exact items, exact order &middot; gate to gate by phase<br>✅ checklist · 🔶 flow trigger · 🗣️ briefing</div>
+
+<div class="topbar">
+  <div class="modes">
+    <button id="modeDrill" class="active">Sequence Drill</button>
+    <button id="modeList">Full Flows</button>
+    <button id="posterBtn" title="View clean full-resolution cockpit poster">Poster</button>
+  </div>
+  <div class="seat" id="seatGroup">
+    <button id="seatCA" class="active">CA</button>
+    <button id="seatFO">FO</button>
+  </div>
+  <div class="seat" id="dutyGroup">
+    <button id="dutyPF" class="active">PF</button>
+    <button id="dutyPM">PM</button>
+  </div>
 </div>
 
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
-<img src="assets/A330_hero.svg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
-<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Flows%20Trainer" style="font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
-<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.0</div>
-</footer>
+<div class="phasebar" id="phaseBar"></div>
+<div class="controls" id="filters"></div>
+
+<div class="layout" id="drillLayout">
+  <div class="mapbox">
+<button id="shapeBtn" title="Toggle full flow shape">Shape</button>
+<svg id="cockpitMap" viewBox="0 0 300 437" style="width:100%;height:auto;display:block;"></svg>
+  <div class="legend" id="legend" style="width:100%;justify-content:center;margin-top:8px;"></div>
+  </div>
+  <div class="card" style="position:relative;">
+    <div class="miniBtns"><button id="prevBtn" title="Previous step">&#9664;</button><button id="endBtn" title="Jump to end - reveal all steps">&#9654;&#9654;</button><button id="restartBtn" title="Restart flow">&#8634;</button></div>
+    <div class="tag" id="tag"></div>
+    <div class="who" id="who"></div>
+    <div class="done" id="done"></div>
+    <div class="q" id="q"></div>
+    <div class="a" id="a"></div>
+    <div class="detail" id="detail"></div>
+    <div class="actions"><div style="display:flex;gap:8px;width:100%;"><button id="reveal" style="flex:1;">Reveal</button></div></div>
+  </div>
+</div>
+<div class="count" id="count"></div>
+
+<div class="fulllist hidden" id="fullList"></div>
+
+<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div>
+
+<script>
+/* FLOWS, XREFS and NORMAL_CHECKLISTS live in data/flows_trainer.json, loaded here; engine below is unchanged */
+fetch('data/flows_trainer.json',{cache:'no-store'}).then(r=>r.json()).then(function(__d){
+const FLOWS=__d.FLOWS, XREFS=__d.XREFS, NORMAL_CHECKLISTS=__d.NORMAL_CHECKLISTS;
+if(!FLOWS.length){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank not loaded yet</div><div class="who">This bank is built in a later step. The engine is live.</div></div>';return;}
+// role: CA | FO | BOTH | PF | PM. Seat filter CA hides pure-FO items; FO hides pure-CA. PF/PM shown to both seats.
+// Mnemonics: first letters bold-capped via <b> markup, matching the items in order (for the seat=Both view).
+
+
+
+function showXref(key){
+  const x = XREFS[key]; if(!x) return;
+  const existing = document.getElementById("xrefBox");
+  if(existing){ existing.remove(); return; }
+  const box = document.createElement("div");
+  box.id = "xrefBox";
+  box.style.cssText = "margin-top:8px;padding:10px 12px;background:#fff8e7;border-left:4px solid #e6a817;border-radius:0 4px 4px 0;font-size:13px;white-space:pre-line;line-height:1.6;";
+  box.innerHTML = "<b style='font-size:11px;color:#888;'>" + x.title + "</b>\n" + x.body;
+  document.getElementById("detail").after(box);
+}
+
+function fmtLine(l){
+  if(l.startsWith("[LINK:")){ var inr=l.slice(6, l.lastIndexOf("]")); var bp=inr.indexOf("|"); var url=inr.slice(0,bp); var txt=inr.slice(bp+1); return "<a href='"+url+"' style='display:inline-block;margin-top:8px;color:#CE0C88;font-weight:700;text-decoration:underline;'>"+txt+"</a>"; }
+  if(l.startsWith("[IMG:")) { var p = l.slice(5, l.indexOf("]")); return "<img src='assets/" + p + "' alt='light switch positions' style='width:100%;max-width:520px;display:block;margin:6px 0;border:1px solid #ccc;border-radius:4px;cursor:zoom-in;' onclick='window.open(this.src,\"_blank\")'>"; }
+  if(l.startsWith("#")) return "<span style='color:#4B2D89;font-weight:600;'>" + linkRefs(l) + "</span>";
+  if(l.startsWith("[")) return "<span style='color:#888;font-size:11px;font-weight:600;'>" + l + "</span>";
+  if(l.startsWith("✅")) return "<span style='color:#2a7a2a;font-weight:700;'>" + l + "</span>";
+  if(l.startsWith("•")){
+    return l.replace(/^(• )([^:]+)(:.*)$/, function(m,p,label,rest){
+      return p + "<b>" + label + "</b>" + rest;
+    });
+  }
+  return linkRefs(l);
+}
+function linkRefs(t){
+  t = t.replace(/\b(WARNING)\b/g, '<b style="color:#d9534f;">$1</b>');
+  t = t.replace(/\b(CAUTION)\b/g, '<b style="color:#e6a817;">$1</b>');
+  t = t.replace(/\b(ADVISORY)\b/g, '&#8594; <b style="color:#c8880a;">$1</b>');
+  t = t.replace(/\b(MEMO)\b/g, '<b style="color:#E26DB8;">$1</b>');
+  t = t.replace(/([A-Z]{2,}(?:\s[A-Z0-9\/]{2,}){1,4})/g, function(m){
+    if(/</.test(m)||m==='FCOM'||m==='FCTM'||m==='EICAS'||m==='AFDS'||m==='LNAV'||m==='VNAV'||m==='FLCH'||m==='BOTH') return m;
+    return '<span style="color:#e6a817;font-weight:600;">'+m+'</span>';
+  });
+  t = t.replace(/\b(PRO-NOR-SUP-[A-Z]+)\b/g, function(m){
+    if(XREFS[m]) return '<span class="xref" onclick="showXref(\''+m+'\');">'+m+'</span>';
+    return m;
+  });
+  return t;
+}
+
+function showChecklist(name){
+  let ov = document.getElementById("clOverlay");
+  if(!ov){
+    ov = document.createElement("div");
+    ov.id = "clOverlay";
+    ov.onclick = (e)=>{ if(e.target===ov) ov.style.display="none"; };
+    document.body.appendChild(ov);
+  }
+  const cl = NORMAL_CHECKLISTS[name];
+  let rows = "";
+  if(cl){ cl.forEach(r=>{ rows += "<tr><td>"+r[0]+"</td><td class='dots'></td><td class='resp'>"+r[1]+"</td><td class='who'>("+r[2]+")</td></tr>"; }); }
+  else { rows = "<tr><td colspan='4'>Checklist not found - see FCTM Normal Checklists.</td></tr>"; }
+  ov.innerHTML = "<div class='clbox'><div class='clhead'><span>✅ "+name+"</span><button onclick=\"document.getElementById('clOverlay').style.display='none'\">×</button></div><table>"+rows+"</table><div class='clsrc'>FCTM R5 Normal Checklists (PR-NP-CL)</div></div>";
+  ov.style.display = "flex";
+}
+let flowIdx = 0;
+let stepIdx = 0;
+let revealed = false;
+let showShape = false;
+let seat = "FO"; // CA | FO
+let duty = "PF"; // PF | PM
+
+function activeItems(f){
+  // sequence items only (drilled); inactive ones are drawn greyed on the map
+  return f.items.filter(it=>!isOff(it));
+}
+function isOff(it){
+  if(it.role==="IRO") return true; // observer items always greyed
+  if(it.role==="BOTH") return false; // BOTH items always show
+  if(it.role==="CA" || it.role==="FO") return it.role!==seat;
+  if(it.role==="PF" || it.role==="PM") return it.role!==duty;
+  return false;
+}
+
+const fdiv = document.getElementById("filters");
+const pbar = document.getElementById("phaseBar");
+const PHASES = [...new Set(FLOWS.map(f=>f.phase))];
+let curPhase = FLOWS[0].phase;
+
+function flowHidden(i){
+  if(seat==="CA" && FLOWS[i].n.includes("Preflight - FO")) return true;
+  if(seat==="FO" && FLOWS[i].n.includes("Preflight - CA")) return true;
+  return false;
+}
+const PHASE_COLORS = {
+  "Preflight":"#463C8F","Before Start & Pushback":"#00568F","Engine Start":"#CE0C88","Taxi Out":"#2E90D0",
+  "Takeoff":"#E0A100","Climb":"#EAA52A","Cruise":"#D98A00","Descent":"#E2761A","Approach":"#D8650C","Go-Around":"#B85000",
+  "Landing Roll":"#00805E","Taxi In":"#2E9B7C","Shutdown & Secure":"#5CB89A"
+};
+function phaseColor(p){ return PHASE_COLORS[p] || "#CE0C88"; }
+function tintColor(hex){ return hex + "22"; }
+function buildPhaseBar(){
+  pbar.innerHTML = "";
+  PHASES.forEach(p=>{
+    const b = document.createElement("button");
+    b.textContent = p;
+    b.classList.toggle("active", p===curPhase);
+    b.onclick = ()=>{
+      if(!listDiv.classList.contains("hidden")){
+        const h = [...document.querySelectorAll(".fulllist .phasehdr")].find(x=>x.textContent===p);
+        if(h) h.scrollIntoView({behavior:"smooth", block:"start"});
+        return;
+      }
+      curPhase = p;
+      const first = FLOWS.findIndex((f,i)=>f.phase===p && !flowHidden(i));
+      if(first>=0){ flowIdx = first; stepIdx = 0; }
+      buildPhaseBar(); buildFlowBtns(); render();
+    };
+    const _pc = phaseColor(p);
+    if(p===curPhase){ b.style.background=_pc; b.style.color="#fff"; b.style.borderColor=_pc; }
+    else { b.style.background="#fff"; b.style.color=_pc; b.style.borderColor=_pc; }
+    pbar.appendChild(b);
+  });
+}
+function buildFlowBtns(){
+  fdiv.innerHTML = "";
+  FLOWS.forEach((f,i)=>{
+    if(f.phase !== curPhase || flowHidden(i)) return;
+    const b = document.createElement("button");
+    b.textContent = f.n;
+    b.classList.toggle("active", i===flowIdx);
+    b.onclick = ()=>{ flowIdx = i; stepIdx = 0; buildFlowBtns(); render(); };
+    const _fc = phaseColor(f.phase);
+    if(i===flowIdx){ b.style.background=_fc; b.style.color="#fff"; b.style.borderColor=_fc; }
+    else { b.style.background=tintColor(_fc); b.style.color=_fc; b.style.borderColor=_fc; }
+    fdiv.appendChild(b);
+  });
+}
+function syncPhaseUI(){
+  const p = FLOWS[flowIdx].phase;
+  if(p !== curPhase){ curPhase = p; buildPhaseBar(); buildFlowBtns(); }
+}
+
+const BG = "assets/a330_cockpit.jpg";
+function zoneSvg(){
+  return `<image href="${BG}" x="0" y="0" width="300" height="437" opacity="1"/>`;
+}
+// Path builder: straight runs stay direct, but any segment that reverses
+// course (>~100 degree turn) bows out to the side so it never overdraws
+// the lines already on the map.
+function flowPath(P){
+  if(P.length<2) return "";
+  let d = `M${P[0][0]},${P[0][1]}`;
+  for(let i=1;i<P.length;i++){
+    const a=P[i-1], b=P[i];
+    const vx=b[0]-a[0], vy=b[1]-a[1];
+    const segLen=Math.hypot(vx,vy);
+    let reverse=false;
+    if(i>1 && segLen>0){
+      const ux=a[0]-P[i-2][0], uy=a[1]-P[i-2][1];
+      const ulen=Math.hypot(ux,uy);
+      if(ulen>0 && (ux*vx+uy*vy)/(ulen*segLen) < -0.3) reverse=true;
+    }
+    if(reverse){
+      const nx=-vy/segLen, ny=vx/segLen;
+      const off=Math.min(42, 16+segLen*0.22);
+      const mx=(a[0]+b[0])/2, my=(a[1]+b[1])/2;
+      let cx=mx+nx*off, cy=my+ny*off;
+      const cx2=mx-nx*off, cy2=my-ny*off;
+      if(Math.abs(cx2-150)>Math.abs(cx-150)){cx=cx2; cy=cy2;}
+      cx=Math.max(8,Math.min(292,cx)); cy=Math.max(8,Math.min(429,cy));
+      d += ` Q${cx.toFixed(1)},${cy.toFixed(1)} ${b[0]},${b[1]}`;
+    } else {
+      d += ` L${b[0]},${b[1]}`;
+    }
+  }
+  return d;
+}
+function mapPt(x,y){ return [x,y]; }
+
+// smooth hand-motion curve through points (Catmull-Rom -> cubic Bezier)
+function smoothPath(P){
+  if(P.length<2) return "";
+  if(P.length===2) return `M${P[0][0]},${P[0][1]} L${P[1][0]},${P[1][1]}`;
+  let d = `M${P[0][0]},${P[0][1]}`;
+  for(let i=0;i<P.length-1;i++){
+    const p0 = P[Math.max(i-1,0)], p1 = P[i], p2 = P[i+1], p3 = P[Math.min(i+2,P.length-1)];
+    const c1 = [p1[0]+(p2[0]-p0[0])/6, p1[1]+(p2[1]-p0[1])/6];
+    const c2 = [p2[0]-(p3[0]-p1[0])/6, p2[1]-(p3[1]-p1[1])/6];
+    d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+
+function getViewBox(flow){
+  if(flow.vb) return flow.vb;
+  const all = flow.items;
+  if(!all.length) return "0 0 300 437";
+  const xs = all.map(i=>i.x), ys = all.map(i=>i.y);
+  const pad = 30;
+  let x0=Math.max(0,Math.min(...xs)-pad), y0=Math.max(0,Math.min(...ys)-pad);
+  let x1=Math.min(300,Math.max(...xs)+pad), y1=Math.min(437,Math.max(...ys)+pad);
+  // minimum size 90x90 so small flows aren't absurdly zoomed
+  const minW=90, minH=90;
+  if(x1-x0<minW){const cx=(x0+x1)/2; x0=Math.max(0,cx-minW/2); x1=Math.min(300,cx+minW/2);}
+  if(y1-y0<minH){const cy=(y0+y1)/2; y0=Math.max(0,cy-minH/2); y1=Math.min(437,cy+minH/2);}
+  return `${x0} ${y0} ${x1-x0} ${y1-y0}`;
+}
+
+function drawMap(svgEl, flow, upto, showAll){
+  const vb = getViewBox(flow);
+  svgEl.setAttribute("viewBox", vb);
+  if(flow.noflow){ svgEl.innerHTML = zoneSvg(); return; }
+  const seq = flow.items.filter(it=>!isOff(it));
+  const off = flow.items.filter(it=>isOff(it));
+  const P = seq.map(it=>[it.x,it.y]);
+  let s = zoneSvg();
+  s += `<path class="ghost" d="${flowPath(P)}"/>`;
+  if(upto>1 || showAll){
+    const PD = showAll ? P : P.slice(0, Math.max(upto,1));
+    s += `<path class="trace" d="${flowPath(PD)}"/>`;
+  }
+  off.forEach(it=>{ s += `<circle class="dot inactive" cx="${it.x}" cy="${it.y}" r="6"/>`; });
+  const last = seq.length-1;
+  seq.forEach((it,i)=>{
+    let cls = "dot role"+it.role;
+    let lightNum = ["CA","FO","PF","PM"].includes(it.role);
+    if(i===0){cls="dot startpt"; lightNum=false;}
+    else if(i===last){cls="dot endpt"; lightNum=true;}
+    if(!showAll && i===upto && i!==0 && i!==last){cls+=" current"; lightNum=false;}
+    if(it.trg){ cls += " trigpt"; }
+    s += `<circle class="${cls}" data-i="${i}" cx="${it.x}" cy="${it.y}" r="8"/>`;
+    s += `<text class="${lightNum?'numlight':'num'}" data-i="${i}" x="${it.x-3}" y="${it.y+3.5}">${i+1}</text>`;
+  });
+  svgEl.innerHTML = s;
+}
+const LEGEND = '<span><i style="background:#4B2D89;border-color:#3a2169"></i>CA</span><span><i style="background:#CE0C88;border-color:#9D178D"></i>FO</span><span><i style="background:#00805E;border-color:#1C4A0C"></i>PF</span><span><i style="background:#E26DB8;border-color:#831A57"></i>PM</span><span><i style="background:#fff"></i>Both</span><span style="color:#aaa;padding:0 4px;">|</span><span><i style="background:#FFC9BF;border-color:#6fae3d"></i>Start</span><span><i style="background:#d9534f;border-color:#b52b27"></i>End</span><span style="color:#aaa;padding:0 4px;">|</span><span><i style="background:#d9534f;border-color:#8f2b27"></i>Trigger</span><span><i style="background:#d9534f;border-color:#8f2b27"></i>Call</span><span><i style="background:#CE0C88;border-color:#CE0C88"></i>FMS</span>';
+document.getElementById("legend").innerHTML = LEGEND;
+
+function render(){
+  syncPhaseUI();
+  const f = FLOWS[flowIdx];
+  const items = activeItems(f);
+  document.getElementById("tag").textContent = (f.phase ? f.phase + "  ▸  " : "") + f.n + "  [" + f.ref + "]";
+  document.getElementById("who").innerHTML = (f.who + " · viewing: " + (seat==="BOTH"?"both seats":seat) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "");
+  
+  if(items.length===0){
+    document.getElementById("q").textContent = "No " + seat + " items in this flow. Switch seat or flow.";
+    document.getElementById("done").innerHTML = "";
+    document.getElementById("a").textContent = "";
+    drawMap(document.getElementById("cockpitMap"), f, 0, true);
+    return;
+  }
+  if(stepIdx > items.length) stepIdx = 0;
+
+  drawMap(document.getElementById("cockpitMap"), f, stepIdx, showShape);
+
+  const doneDiv = document.getElementById("done");
+  doneDiv.innerHTML = "";
+  for(let i=0;i<stepIdx;i++){
+    const s = document.createElement("span");
+    s.className = "step";
+    s.style.cursor = "pointer";
+    s.title = "Tap to view FCOM detail";
+    s.innerHTML = (i+1) + ". " + (items[i].lt ? "\ud83d\udca1 " : "") + "<b>" + items[i].item + "</b> - " + items[i].act + " <small>(" + items[i].role + ")</small>" + (items[i].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[i].cl + "')\">✅ " + items[i].cl + "</span>" : "") + (items[i].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[i].brief + "</span>" : "") + (items[i].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[i].trg + "</span>" : "");
+    (function(d){ s.onclick = ()=>{ (function(){
+  const existing2 = document.getElementById("xrefBox"); if(existing2) existing2.remove();
+  const html = d.split("\n").map(fmtLine).join("\n");
+  document.getElementById("detail").innerHTML = html;
+})(); document.getElementById("detail").classList.toggle("shown"); }; })(items[i].d || "");
+    doneDiv.appendChild(s);
+  }
+  if(stepIdx < items.length){
+    document.getElementById("q").textContent = "Step " + (stepIdx+1) + " of " + items.length + "... ?";
+    document.getElementById("a").innerHTML = (items[stepIdx].lt ? "\ud83d\udca1 " : "") + (items[stepIdx].item + " - " + items[stepIdx].act + "  (" + items[stepIdx].role + ")").replace(/</g,"&lt;") + (items[stepIdx].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[stepIdx].cl + "')\">✅ Call: " + items[stepIdx].cl + " <small style='color:#5a8a5a;font-weight:600;'>(" + (items[stepIdx].clWho||"") + ")</small></span>" : "") + (items[stepIdx].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[stepIdx].brief + " <small style='color:#8C7EB8;font-weight:600;'>(" + (items[stepIdx].briefWho||"") + ")</small></span>" : "") + (items[stepIdx].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[stepIdx].trg + "</span>" : "");
+    (function(){
+  const raw = items[stepIdx].d || "No additional amplified detail for this item.";
+  const existing = document.getElementById("xrefBox"); if(existing) existing.remove();
+  const html = raw.split("\n").map(fmtLine).join("\n");
+  document.getElementById("detail").innerHTML = html;
+})();
+    document.getElementById("detail").classList.add("shown");
+  } else {
+    drawMap(document.getElementById("cockpitMap"), f, items.length, true);
+    document.getElementById("q").textContent = "✈\uFE0F";
+    document.getElementById("a").textContent = "";
+    document.getElementById("detail").textContent = "";
+    document.getElementById("detail").classList.remove("shown");
+  }
+  document.getElementById("a").classList.remove("shown");
+  document.getElementById("detail").classList.remove("shown");
+  revealed = false;
+  document.getElementById("reveal").textContent = (stepIdx < items.length) ? "Reveal" : "Restart flow";
+  document.getElementById("count").textContent = f.n + " · " + seat + " · step " + Math.min(stepIdx+1, items.length) + "/" + items.length;
+  if(f.single){ document.getElementById("q").textContent=""; document.getElementById("a").classList.add("shown"); document.getElementById("detail").classList.add("shown"); document.getElementById("reveal").style.display="none"; revealed=true; } else { document.getElementById("reveal").style.display=""; }
+}
+
+document.getElementById("reveal").onclick = ()=>{
+  const items = activeItems(FLOWS[flowIdx]);
+  if(revealed){ nextStep(); return; }
+  if(stepIdx >= items.length){ nextStep(); return; }
+  document.getElementById("a").classList.add("shown");
+  document.getElementById("a").style.cursor="pointer";
+  if(FLOWS[flowIdx].noflow){ document.getElementById("detail").classList.add("shown"); }
+  // detailBtn always visible
+  drawMap(document.getElementById("cockpitMap"), FLOWS[flowIdx], stepIdx+1, showShape);
+  revealed = true;
+  document.getElementById("reveal").textContent = "Next step";
+};
+
+function nextStep(){
+  const items = activeItems(FLOWS[flowIdx]);
+  if(stepIdx >= items.length){ stepIdx = 0; } else { stepIdx++; }
+  render();
+}
+document.getElementById("a").onclick = ()=>{
+  document.getElementById("detail").classList.toggle("shown");
+};
+
+document.getElementById("prevBtn").onclick = ()=>{
+  if(stepIdx>0){ stepIdx--; render(); }
+};
+document.getElementById("restartBtn").onclick = ()=>{ stepIdx = 0; render(); };
+document.getElementById("endBtn").onclick = ()=>{
+  stepIdx = activeItems(FLOWS[flowIdx]).length;
+  render();
+};
+const shapeBtn = document.getElementById("shapeBtn");
+shapeBtn.onclick = ()=>{
+  showShape = !showShape;
+  shapeBtn.classList.toggle("active", showShape);
+  render();
+};
+const posterBtn = document.getElementById("posterBtn");
+const posterView = document.getElementById("posterView");
+function hidePoster(){
+  posterBtn.classList.remove("active");
+  posterView.classList.add("hidden");
+  document.getElementById("filters").classList.remove("hidden");
+  pbar.classList.remove("hidden");
+}
+posterBtn.onclick = ()=>{
+  const img = document.getElementById("posterImg");
+  if(!img.src) img.src = BG;
+  posterBtn.classList.add("active");
+  document.getElementById("modeDrill").classList.remove("active");
+  document.getElementById("modeList").classList.remove("active");
+  document.getElementById("filters").classList.add("hidden");
+  pbar.classList.add("hidden");
+  document.getElementById("drillLayout").classList.add("hidden");
+  document.getElementById("count").classList.add("hidden");
+  listDiv.classList.add("hidden");
+  posterView.classList.remove("hidden");
+};
+document.getElementById("cockpitMap").addEventListener("click", e=>{
+  const t = e.target.closest("[data-i]");
+  if(!t) return;
+  stepIdx = +t.getAttribute("data-i");
+  render();
+  document.getElementById("reveal").click();
+  document.getElementById("detail").classList.add("shown");
+});
+document.addEventListener("keydown",e=>{
+  if(e.code==="Space"){e.preventDefault(); revealed?nextStep():document.getElementById("reveal").click();}
+  if(e.code==="KeyD" && revealed){document.getElementById("detail").classList.toggle("shown");}
+});
+
+// Seat toggle
+function setSeat(s, btn){
+  seat = s; stepIdx = 0;
+  document.querySelectorAll("#seatGroup button").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  if(seat==="CA" && flowIdx===2) flowIdx = 3;
+  if(seat==="FO" && flowIdx===3) flowIdx = 2;
+  buildFlowBtns();
+  buildFullList();
+  render();
+}
+document.getElementById("seatCA").onclick = e=>setSeat("CA", e.target);
+document.getElementById("seatFO").onclick = e=>setSeat("FO", e.target);
+
+function setDuty(d, btn){
+  duty = d; stepIdx = 0;
+  document.querySelectorAll("#dutyGroup button").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  buildFlowBtns();
+  buildFullList();
+  render();
+}
+document.getElementById("dutyPF").onclick = e=>setDuty("PF", e.target);
+document.getElementById("dutyPM").onclick = e=>setDuty("PM", e.target);
+
+// Full Flows mode
+const listDiv = document.getElementById("fullList");
+function buildFullList(){
+  listDiv.innerHTML = "";
+  let lastPh = null;
+  FLOWS.forEach(f=>{
+    const items = activeItems(f);
+    if(items.length===0) return;
+    if(f.phase && f.phase !== lastPh){
+      const ph = document.createElement("div");
+      ph.className = "phasehdr";
+      ph.textContent = f.phase;
+      listDiv.appendChild(ph);
+      lastPh = f.phase;
+    }
+    const block = document.createElement("div");
+    block.className = "flowblock";
+    const h = document.createElement("header");
+    h.innerHTML = "<span>"+f.n+"</span><span>"+f.who+" · "+f.ref+"</span>";
+    block.appendChild(h);
+    if(f.trig){
+      const tb = document.createElement("div");
+      tb.className = "trigbadge";
+      tb.style.padding = "4px 14px 0";
+      tb.innerHTML = "\ud83d\udd36 Triggered by: " + f.trig;
+      block.appendChild(tb);
+    }
+    const body = document.createElement("div");
+    body.className = "body";
+    const ol = document.createElement("ol");
+    items.forEach(it=>{
+      const li = document.createElement("li");
+      const head = document.createElement("div");
+      head.className = "fl-item";
+      head.innerHTML = (it.lt ? "\ud83d\udca1 " : "") + "<b>"+it.item+"</b> — "+it.act+" <small>("+it.role+")</small>";
+      const det = document.createElement("div");
+      det.className = "fl-detail";
+      det.innerHTML = (it.d && it.d.trim() ? it.d : "No amplified FCOM note for this step. Ref: "+f.ref).split("\n").map(fmtLine).join("\n");
+      head.onclick = ()=>{ det.classList.toggle("shown"); head.classList.toggle("open"); };
+      li.appendChild(head);
+      li.appendChild(det);
+      if(it.cl){
+        const cb = document.createElement("span");
+        cb.className = "clbadge";
+        cb.innerHTML = "✅ " + it.cl + " <small style='color:#5a8a5a;font-weight:600;'>(" + (it.clWho||"") + ")</small>";
+        cb.title = "Tap to view the checklist";
+        cb.onclick = (e)=>{ e.stopPropagation(); showChecklist(it.cl); };
+        li.appendChild(cb);
+      }
+      if(it.brief){
+        const bb = document.createElement("span");
+        bb.className = "brbadge";
+        bb.innerHTML = "\ud83d\udde3\ufe0f " + it.brief + " <small style='color:#8C7EB8;font-weight:600;'>(" + (it.briefWho||"") + ")</small>";
+        li.appendChild(bb);
+      }
+      if(it.trg){
+        const tg = document.createElement("span");
+        tg.className = "strgbadge";
+        tg.innerHTML = "\ud83d\udd3b TRIGGER → " + it.trg;
+        li.appendChild(tg);
+      }
+      ol.appendChild(li);
+    });
+    const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    svg.setAttribute("viewBox", getViewBox(f));
+    svg.setAttribute("width","170");
+    svg.setAttribute("height","170");
+    drawMap(svg, f, items.length, true);
+    const dets = Array.from(ol.querySelectorAll(".fl-detail"));
+    const heads = Array.from(ol.querySelectorAll(".fl-item"));
+    svg.addEventListener("click", e=>{
+      const t = e.target.closest("[data-i]");
+      if(!t) return;
+      const i = +t.getAttribute("data-i");
+      if(dets[i]){ dets[i].classList.add("shown"); heads[i].classList.add("open");
+        heads[i].scrollIntoView({behavior:"smooth", block:"center"}); }
+    });
+    body.appendChild(ol);
+    body.appendChild(svg);
+    block.appendChild(body);
+    listDiv.appendChild(block);
+  });
+}
+buildFullList();
+buildPhaseBar();
+buildFlowBtns();
+
+document.getElementById("modeDrill").onclick = ()=>{
+  hidePoster();
+  document.getElementById("modeDrill").classList.add("active");
+  document.getElementById("modeList").classList.remove("active");
+  document.getElementById("drillLayout").classList.remove("hidden");
+  document.getElementById("count").classList.remove("hidden");
+  listDiv.classList.add("hidden");
+};
+document.getElementById("modeList").onclick = ()=>{
+  hidePoster();
+  document.getElementById("modeList").classList.add("active");
+  document.getElementById("modeDrill").classList.remove("active");
+  document.getElementById("drillLayout").classList.add("hidden");
+  document.getElementById("count").classList.add("hidden");
+  listDiv.classList.remove("hidden");
+};
+
+render();
+Object.assign(window,{activeItems, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
+}).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
+</script>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.svg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20Flows%20Trainer" style="font-size:11px;color:#463C8F;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 1.1</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

@@ -9,7 +9,7 @@
   var TAX_SRC = 'Tax Foundation, top marginal rates effective 1 Jan 2026';
   // Bump this every deploy. It is the only way to tell from inside the browser
   // whether you are looking at current code or a cached copy.
-  var BUILD = 'v1.0';
+  var BUILD = 'v1.1';
 
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
@@ -211,7 +211,7 @@
     '<p class="ps-note">Keys stay in this browser on this device. They go straight to the provider, never to ha330pilot.app.</p>' +
     '<div class="ps-h3">Offline</div>' +
     '<label class="ps-ck" id="psLblCore"><input type="checkbox" id="psCore"><span>Make Available Offline' +
-      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 3 MB.</small></span></label>' +
+      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 6 MB.</small></span></label>' +
     '<div class="ps-bar" id="psBarCore"><i id="psFillCore"></i></div>' +
     '<label class="ps-ck off" id="psLblAudio"><input type="checkbox" id="psAudio" disabled><span>Include podcast audio' +
       '<small>All 0 episodes of Flight Deck Notes. About 0 MB. Do this on wifi.</small></span></label>' +

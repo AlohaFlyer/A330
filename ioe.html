@@ -81,7 +81,7 @@ footer{text-align:right;padding:14px 18px;color:var(--accent);font-size:11px}
 <div class="bank" id="bankInfo"></div>
 
 <div id="main"><div class="empty">Loading question bank...</div></div>
-<footer>Ver 1.0</footer>
+<footer>Ver 1.1</footer>
 
 <script>
 const GAME_SECS=20, BEST_KEY="ioe_best";
@@ -90,7 +90,7 @@ let BANK=[], deck=[], idx=0, game=false, revealed=false, t=null, left=GAME_SECS,
 function esc(s){return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
 
 fetch("data/oe.json").catch(()=>caches.match("data/oe.json")).then(r=>r.json()).then(d=>{BANK=d;init();})
- .catch(()=>{document.getElementById("main").innerHTML='<div class="card"><p class="q">Question bank not loaded</p><p class="ans">ioe_questions.json is missing from the repo root.</p><p>This page is data-driven and works the moment that file lands beside it. Nothing here needs to change.</p></div>';});
+ .catch(()=>{document.getElementById("main").innerHTML='<div class="card"><p class="q">Question bank not loaded</p><p class="ans">data/oe.json is missing from the repo.</p><p>This page is data-driven and works the moment that file lands beside it. Nothing here needs to change.</p></div>';});
 
 function fill(sel,vals,label){
   sel.innerHTML='<option value="">'+label+'</option>'+vals.map(v=>`<option value="${esc(v)}">${esc(v.length>46?v.slice(0,46)+"...":v)}</option>`).join("");
@@ -108,7 +108,7 @@ function init(){
   const v=BANK.filter(b=>b.status==="verified").length,
         d=BANK.filter(b=>b.status==="desktop").length,
         w=BANK.filter(b=>b.kind==="walkthrough").length;
-  document.getElementById("bankInfo").textContent=`${BANK.length} workbook questions, ${BANK.length-w} to drill and ${w} walkthrough items you perform rather than recall. ${v} answered with a verbatim quote from the company manuals (FOM, FCOM, QRH, FCTM, MEL) or, where those are silent, FAA and Jeppesen material. ${d} have no published source and say to ask the check airman.`;
+  document.getElementById("bankInfo").textContent=`${BANK.length} workbook questions, ${BANK.length-w} to drill and ${w} walkthrough items you perform rather than recall. ${v} answered with a verbatim quote from the company manuals (FOM, FCOM, QRH, FCTM, PRC). ${d} have no published source and say to ask the check airman.`;
   build();
 }
 
@@ -225,7 +225,7 @@ async function saveOffline(){
   b.textContent="Saving...";
   try{
     const c=await caches.open("ioe-offline-v1");
-    await c.addAll(["ioe.html","ioe_questions.json","A330_OE_Workbook_Answered.pdf","view.html"]);
+    await c.addAll(["ioe.html","data/oe.json","A330_OE_Workbook_Answered.pdf","view.html"]);
     b.textContent="Saved offline"; b.classList.add("on");
     try{localStorage.setItem("ioe_offline","1");}catch(e){}
   }catch(e){ b.textContent="Save failed"; }

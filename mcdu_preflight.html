@@ -1,95 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A330 MCDU Preflight (PF)</title>
 <style>
-  :root{
-    --bg:#1A1630; --panel:#2A2440; --panel2:#332E44; --line:#453F58;
-    --ink:#F1EEF6; --muted:#C3BED0;
-    --mid:#463C8F; --atlas:#CE0C88; --breeze:#E26DB8; --green:#8EC891;
-    --amber:#f2a65a;
-    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-    min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px 60px;}
-  .wrap{width:100%;max-width:700px}
-  header{display:flex;align-items:baseline;justify-content:space-between;
-    border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:18px;gap:12px}
-  h1{font-size:15px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0}
-  h1 .sub{color:var(--breeze);font-weight:600}
-  .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
-  .bar{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap}
-  .bar .count{color:var(--ink)}
-  .track{flex:1;height:3px;background:var(--panel2);border-radius:2px;overflow:hidden;min-width:120px}
-  .fill{height:100%;width:0;background:var(--atlas);transition:width .25s}
-  .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--breeze);border:1px solid var(--line);border-radius:3px;padding:3px 8px;align-self:flex-start}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;
-    padding:24px 22px;min-height:240px;display:flex;flex-direction:column;gap:14px}
-  .prompt .lead{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .q{font-size:23px;line-height:1.25;font-weight:700;letter-spacing:.01em}
-  .cond{font-size:13px;color:var(--muted);font-style:italic;margin-top:6px;line-height:1.4}
-  .readout{background:#120F1F;border:1px solid #4A4460;border-left:3px solid var(--green);
-    border-radius:5px;padding:0 16px;font-size:14.5px;line-height:1.5;
-    opacity:0;max-height:0;overflow:hidden;transition:opacity .2s}
-  .readout.show{opacity:1;max-height:1200px;padding:14px 16px}
-  .readout .ln{margin:3px 0;color:var(--ink)}
-  .readout .num{display:inline-block;min-width:18px;color:var(--breeze);font-weight:700;font-family:var(--mono)}
-  .readout .sub{margin-left:22px;color:#DCD8E6}
-  .readout .bul{margin-left:34px;color:#DCD8E6}
-  .readout b{color:var(--green);font-weight:700}
-  .readout i{color:var(--muted);font-style:italic}
-  .spacer{flex:1}
-  .controls{display:flex;gap:10px;flex-wrap:wrap}
-  button{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;border-radius:6px;
-    padding:11px 18px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);transition:.12s}
-  button:hover{border-color:var(--breeze)}
-  button:focus-visible{outline:2px solid var(--breeze);outline-offset:2px}
-  .primary{background:var(--atlas);color:#fff;border-color:var(--atlas)}
-  .primary:hover{filter:brightness(1.1)}
-  .ghost{background:transparent}
-  .mark{flex:1}
-  .knew{border-color:var(--green);color:var(--green)}
-  .knew:hover{background:rgba(192,229,133,.12)}
-  .rev{border-color:var(--amber);color:var(--amber)}
-  .rev:hover{background:rgba(242,166,90,.12)}
-  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
-  .foot button{padding:6px 12px;font-size:12px}
-  .hint{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:.03em}
-  .summary{text-align:center;padding:38px 20px}
-  .summary .big{font-family:var(--mono);font-size:46px;color:var(--green);font-weight:700}
-  .summary .lbl{color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
-  .summary .stat{display:flex;justify-content:center;gap:32px;margin:18px 0 28px;font-family:var(--mono)}
-  .summary .stat div span{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
-  .summary .stat .r{color:var(--amber)}
-  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
-  @media (max-width:480px){.q{font-size:19px}.readout{font-size:13.5px}}
-.srcbtn{background:transparent;border:1px solid var(--atlas);color:var(--breeze);border-radius:5px;padding:10px 14px;font-weight:700;font-family:var(--sans);cursor:pointer}
-.srcbtn:hover{background:var(--atlas);color:#fff}
-.srcpanel{max-height:0;overflow:hidden;opacity:0;background:#201B33;border:1px solid var(--line);border-radius:6px;padding:0 16px;margin-top:10px;transition:max-height .2s,opacity .2s,padding .2s}
-.srcpanel.show{max-height:320px;opacity:1;padding:14px 16px}
-.srclabel{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.srcref{font-family:var(--mono);font-size:14px;color:var(--breeze);font-weight:700}
-.srcsub{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.45}
-.gamelink{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--atlas);color:var(--breeze);border-radius:5px;padding:8px 12px;font-weight:700;font-size:12px;text-decoration:none;font-family:var(--sans);margin-left:8px}
-.gamelink:hover{background:var(--atlas);color:#fff}
-.handrow{flex-wrap:wrap;gap:8px}
+  body{margin:0;background:#F1EEF6;color:#1E1A2E;font-family:'Segoe UI',Arial,Helvetica,sans-serif;}
+  a.back{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:#463C8F;padding:5px 14px;border-radius:0 0 6px 6px;text-decoration:none;}
+  header.hd{background:#463C8F;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;}
+  header.hd h1{margin:0;font-size:20px;letter-spacing:.5px;}
+  header.hd .src{font-size:12px;color:#EAE5F4;}
+  .wrap{max-width:760px;margin:16px auto;padding:0 16px 40px;}
+  .card{background:#fff;border:1px solid #DBDDDD;border-radius:10px;padding:18px;margin-bottom:16px;}
+  .btnrow{text-align:center;margin:6px 0 2px;}
+  a.pdf{display:inline-block;background:#831A57;color:#fff;font-weight:700;font-size:14px;text-decoration:none;padding:10px 20px;border-radius:8px;}
+  a.pdf:hover{background:#463C8F;}
+  h2{font-size:15px;color:#463C8F;border-bottom:2px solid #E4E0EC;padding-bottom:4px;margin:18px 0 8px;}
+  ul{margin:6px 0 0;padding-left:20px;} li{margin:4px 0;font-size:13.5px;line-height:1.5;}
+  footer{text-align:right;font-size:11px;color:#6F6B7E;max-width:760px;margin:0 auto;padding:0 16px 24px;}
 </style>
-
-<style>
-.handout{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#1A1630;border:1px solid var(--green);border-radius:5px;padding:8px 13px;font-weight:700;font-size:12.5px;text-decoration:none;font-family:var(--sans);letter-spacing:.02em}
-.handout:hover{filter:brightness(1.06)}
-.handrow{display:flex;justify-content:flex-end;margin:-6px 0 14px}
-.cat{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
-.mem{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#1A1630;background:var(--amber);border-radius:3px;padding:2px 6px;margin-left:8px;font-weight:700;vertical-align:middle}
-.answer{font-family:var(--mono);font-size:22px;line-height:1.3;color:var(--green);font-weight:700}
-</style>
-
 <style>
 .ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
 .ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
@@ -102,19 +32,59 @@
 <body>
 <div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 
+<header class="hd"><h1>A330 MCDU PREFLIGHT (PF)</h1><span class="src">FCOM R17 PRO-NOR-SOP-04, SOP-06 &middot; page flow</span></header>
 <div class="wrap">
-  <header>
-    <h1>MCDU Preflight <span class="sub">// Page Flow</span></h1>
-    <span class="src">FCOM R17 PRO-NOR-SOP</span>
-  </header>
-  <div id="app"><div class="card"><div class="summary"><div class="lbl">Building</div><div class="srcsub">This page ships in build step 5. The portal chrome, settings and offline tiers are already live.</div></div></div></div>
-</div>
+  <div class="card">
+    <svg style="width:100%;height:auto;max-width:640px;display:block;margin:0 auto;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 680 1156" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d"><title id="t">MCDU Preflight page flow</title><desc id="d">MCDU page flow for the pilot flying, six numbered groups bookended by the ATIS and the Departure Legs Verification.</desc><rect x="40" y="18" width="600" height="46" rx="8" fill="#463C8F"/><text x="54" y="40" font-family="sans-serif" font-size="16" font-weight="700" fill="#ffffff">MCDU Preflight (PF)</text><text x="54" y="57" font-family="sans-serif" font-size="11" fill="#EAE5F4">FCOM R17 PRO-NOR-SOP-04, SOP-06</text><rect x="40" y="76" width="600" height="50" rx="10" fill="#e6e6e6" stroke="#9aa0a6" stroke-width="1"/><rect x="40" y="76" width="7" height="50" rx="0" fill="#6F6B7E"/><text x="60" y="97" font-family="sans-serif" font-size="13" font-weight="700" fill="#333">ATIS  (CM2 obtains)</text><text x="60" y="115" font-family="sans-serif" font-size="11" fill="#555">RUNWAY IN USE, ALTIMETER SETTING, WEATHER DATA · SOP-04</text><rect x="40" y="138" width="600" height="26" rx="5" fill="#CE0C88"/><text x="52" y="156" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">1  -  FMGS PRE-INIT (CM1)</text><rect x="40" y="170" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="170" width="7" height="44" rx="0" fill="#CE0C88"/><text x="60" y="189" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">DATA</text><text x="60" y="206" font-family="sans-serif" font-size="11" fill="#555">A/C STATUS: model, ENG TRENT772B-60; cycle ACTIVE NAV DATABASE; validity; SEL NAVAIDS</text><rect x="40" y="222" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="222" width="7" height="44" rx="0" fill="#CE0C88"/><text x="60" y="241" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">INIT A  (PART 1)</text><text x="60" y="258" font-family="sans-serif" font-size="11" fill="#555">FLT NBR [3L] exactly as on the release, INIT REQUEST* [2R]; do not enter TO/FROM</text><rect x="40" y="280" width="600" height="26" rx="5" fill="#00805E"/><text x="52" y="298" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">2  -  INIT A (PF)</text><rect x="40" y="312" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="312" width="7" height="44" rx="0" fill="#00805E"/><text x="60" y="331" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">INIT A  (PART 2)</text><text x="60" y="348" font-family="sans-serif" font-size="11" fill="#555">TO/FROM check, ALTN enter, FLT NBR, COST INDEX, CRZ FL/TEMP check, TROPO as rqrd</text><rect x="40" y="364" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="364" width="7" height="44" rx="0" fill="#00805E"/><text x="60" y="383" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">WIND</text><text x="60" y="400" font-family="sans-serif" font-size="11" fill="#555">WIND [5R]: CLB, CRZ, DES pages; verify the uplink, else WIND REQUEST* or manual entry</text><rect x="40" y="422" width="600" height="26" rx="5" fill="#E0A100"/><text x="52" y="440" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#3a2a00">3  -  F-PLN / SEC F-PLN / RAD NAV</text><rect x="40" y="454" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="454" width="7" height="44" rx="0" fill="#E0A100"/><text x="60" y="473" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">F-PLN  DEPARTURE</text><text x="60" y="490" font-family="sans-serif" font-size="11" fill="#555">LAT REV at the departure airport [1L], DEPARTURE, RWY, SID and transition, TMPY INSERT*</text><rect x="40" y="506" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="506" width="7" height="44" rx="0" fill="#E0A100"/><text x="60" y="525" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">F-PLN  ENROUTE / ARRIVAL</text><text x="60" y="542" font-family="sans-serif" font-size="11" fill="#555">waypoints and airways check, STEP ALTS; LAT REV at arrival [6L], ARRIVAL, APPR, STAR, INSERT</text><rect x="40" y="558" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="558" width="7" height="44" rx="0" fill="#E0A100"/><text x="60" y="577" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">ETOPS: STORED WPTS / FIX INFO / EQUITIME</text><text x="60" y="594" font-family="sans-serif" font-size="11" fill="#555">ETPs as STORED WAYPOINTS, not in the F-PLN; FIX INFO REF FIX at the FROM wpt; EQUITIME POINT</text><rect x="40" y="610" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="610" width="7" height="44" rx="0" fill="#E0A100"/><text x="60" y="629" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">SEC F-PLN</text><text x="60" y="646" font-family="sans-serif" font-size="11" fill="#555">copy of the active F-PLN; modify for an immediate return, a diversion, or a RWY/SID change</text><rect x="40" y="662" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="662" width="7" height="44" rx="0" fill="#E0A100"/><text x="60" y="681" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">RAD NAV</text><text x="60" y="698" font-family="sans-serif" font-size="11" fill="#555">check the VOR, ILS and ADF the FMGC tuned; modify as rqrd; correct ident on ND and PFD</text><rect x="40" y="720" width="600" height="26" rx="5" fill="#831A57"/><text x="52" y="738" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">4  -  INIT B (FUEL PRED)</text><rect x="40" y="752" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="752" width="7" height="44" rx="0" fill="#831A57"/><text x="60" y="771" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">INIT B</text><text x="60" y="788" font-family="sans-serif" font-size="11" fill="#555">TAXI, RTE RSV / % = 0, ALTN/TIME (greater value), FINAL/TIME, ZFW/ZFWCG, BLOCK, EXTRA/TIME</text><rect x="40" y="810" width="600" height="26" rx="5" fill="#5A4AB7"/><text x="52" y="828" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">5  -  PERF / PROG</text><rect x="40" y="842" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="842" width="7" height="44" rx="0" fill="#5A4AB7"/><text x="60" y="861" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">PERF TAKE OFF</text><text x="60" y="878" font-family="sans-serif" font-size="11" fill="#555">SHIFT as rqrd; THR RED/ACC and ENG OUT ACC set or check (default 1 000 ft above the rwy)</text><rect x="40" y="894" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="894" width="7" height="44" rx="0" fill="#5A4AB7"/><text x="60" y="913" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">PERF CLB / CRZ / DES</text><text x="60" y="930" font-family="sans-serif" font-size="11" fill="#555">PRESEL as rqrd; DRT CLB D1/D2 as rqrd; DES crossover 300 kt, or the STAR transition speed</text><rect x="40" y="946" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="946" width="7" height="44" rx="0" fill="#5A4AB7"/><text x="60" y="965" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">PROG</text><text x="60" y="982" font-family="sans-serif" font-size="11" fill="#555">BRG / DIST TO: return rwy, destination or ETP; RNP set or check for an RNP AR departure</text><rect x="40" y="1004" width="600" height="26" rx="5" fill="#463C8F"/><text x="52" y="1022" font-family="sans-serif" font-size="12.5" font-weight="700" fill="#ffffff">6  -  CROSSCHECK (PM)</text><rect x="40" y="1036" width="600" height="44" rx="6" fill="#ffffff" stroke="#d7d7d7" stroke-width="1"/><rect x="40" y="1036" width="7" height="44" rx="0" fill="#463C8F"/><text x="60" y="1055" font-family="sans-serif" font-size="13" font-weight="700" fill="#1a1a1a">FMS PREPARATION  (PM)</text><text x="60" y="1072" font-family="sans-serif" font-size="11" fill="#555">waypoints and constraints, CRZ ALT, track miles, dest fuel, THR RED/ACC/EO, TRANS ALT, SEC</text><rect x="40" y="1094" width="600" height="50" rx="10" fill="#e6e6e6" stroke="#9aa0a6" stroke-width="1"/><rect x="40" y="1094" width="7" height="50" rx="0" fill="#6F6B7E"/><text x="60" y="1115" font-family="sans-serif" font-size="13" font-weight="700" fill="#333">DEPARTURE LEGS VERIFICATION  (BOTH)</text><text x="60" y="1133" font-family="sans-serif" font-size="11" fill="#555">PF reads the ND (PLAN, CSTR), PM verifies the paper · F-PLN DIST and EFOB vs release · SOP-06</text></svg>
 
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
-<img src="assets/A330_hero.svg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
-<a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal%20-%20MCDU%20Preflight" style="font-size:11px;color:#FF9080;font-family:inherit;text-decoration:none;">ryan.pettit@alaskaair.com</a>
-<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.0</div>
-</footer>
+  </div>
+  <div class="btnrow"><a class="pdf" href="A330_MCDU_Preflight_Handout.pdf">Download 1-page PDF handout</a></div>
+  <div class="card">
+    
+<h2>1 - FMGS Pre-Initialization (CM1, SOP-04)</h2>
+<ul>
+<li><b>DATA</b> (CM1): MCDU ON (short press BRT); no amber annunciator lights; wait out the 3 min FMGS/FCU power-up tests. A/C STATUS [4L]: model A330-200 or A330-300, ENG type TRENT772B-60. ACTIVE NAV DATABASE: cycle the Second NAV Database [3L] twice to erase pilot and uplinked data, DELETE ALL [5R] if STORED shows anything. FMS DATABASE VALIDITY: day, month, year (HAL8YYMMNN). NAVAID DESELECTION as required: DATA, POSITION MONITOR [1L], SEL NAVAIDS [6R], DESELECT [1R].</li>
+<li><b>INIT A (PART 1)</b> (CM1): INIT key. Enter the flight number in FLT NBR [3L] exactly as it appears on the ATC Flight Plan section of the dispatch release (e.g. HAL25), then INIT REQUEST* [2R]. Do not enter TO/FROM [1R] or the INIT REQUEST* prompt will not appear; a wrong TO/FROM is cleared by cycling the NAV database.</li>
+</ul>
+<h2>2 - INIT A, Part 2 (PF, SOP-06)</h2>
+<ul>
+<li><b>INIT A (PART 2)</b> (PF): first IDLE / PERF FACTOR check. INIT key. TO/FROM [1R] confirms the uplink; wrong means cycle the NAV database. ALTN [2L] enter from the release. FLT NBR [3L], COST INDEX [5L], CRZ FL/TEMP [6L] check against the release. TROPO [5R] optional, improves predictions.</li>
+<li><b>WIND</b> (PF): WIND [5R], NEXT PHASE / PREVIOUS PHASE through CLIMB, CRUISE, DESCENT. Verify the automatic wind uplink came with the flight plan. If NO ANSWER TO REQUEST: WIND REQUEST* [2R], or enter the release winds by hand (cruise: initial CRZ waypoint, then waypoints with a 30 kt, 30 deg or 5 deg SAT change or a step). To get an altitude that did not uplink, enter 0/0/350 and send again.</li>
+</ul>
+<h2>3 - F-PLN, SEC F-PLN, RAD NAV (PF, SOP-06)</h2>
+<ul>
+<li><b>F-PLN DEPARTURE</b> (PF): FPLN key. LAT REV at the departure airport [1L], DEPARTURE [1L], select the RWY, the SID and SID transition; verify RWY [1L], SID and transition [1R] on the top row; TMPY INSERT* [6L]. To change the RWY with a SID already in, slew back to departure page 1.</li>
+<li><b>F-PLN ENROUTE and ARRIVAL</b> (PF): check ENROUTE WAYPOINTS and AIRWAYS; enter STEP ALTS. LAT REV at the arrival airport [6L], ARRIVAL [1R], select the APPR, the STAR and STAR transition; verify APPR [1L], APPR VIA [2L], STAR [1R], STAR transition [2R]; TMPY INSERT* [6L].</li>
+<li><b>ETOPS</b> (PF, if an ETOPS segment is planned): DATA, right arrow to DATA INDEX page 2, STORED WAYPOINTS [1R], name ETP1 etc., enter LAT/LONG from the flight plan, STORE [6R]. Do not enter the ETPs as waypoints in the flight plan. FIX INFO: F-PLN, LAT REV at the FROM waypoint [1L], FIX INFO [1R], REF FIX [1L] = the stored ETP (max 4 FIX INFO waypoints). EQUITIME POINT: DATA, EQUITIME POINT, ETOPS alternates in [1L] and [3L] with TRU WIND [2L] and [4L] at CRZ FL.</li>
+<li><b>SEC F-PLN</b> (PF): routinely a copy of the active flight plan, but consider: copy and modify at a suitable waypoint for an immediate return (engine failure); if departure weather is below landing minima, the diversion right after takeoff; if a runway or SID change during taxi is likely, copy and pre-modify.</li>
+<li><b>RAD NAV</b> (PF): check the VOR, ILS and ADF tuned by the FMGC; modify if required and check the correct identifier is displayed on the ND and PFD (VOR, ILS). If unsatisfactory, go through the audio check.</li>
+</ul>
+<h2>4 - INIT B, INIT FUEL PRED (PF, SOP-06)</h2>
+<ul>
+<li><b>INIT B</b> (PF): INIT then horizontal slew (labeled INIT FUEL PRED on some FMGS). TAXI [1L] adjust only for a large disparity. RTE RSV / % [3L] = 0 so EXTRA shows the fuel you actually manage (the dispatcher carries route reserve as 10 PCT TIME). ALTN/TIME [4L]: if the release ALTN fuel differs from the FMS value, enter the greater; pilot entries overwrite the FMS and must be cleared or redone when the alternate, routing or altitude changes. FINAL/TIME [5L]: Final Reserve per FOM fuel policy, 30 min holding at 1 500 ft AFL, protected. ZFW/ZFWCG [1R] from the release if not auto-populated, ZFWCG may stay blank. BLOCK [2R]: FOB from the E/WD once fueled, else Ramp Fuel from the release. EXTRA/TIME [6R] check. INIT B is not available after engine start.</li>
+</ul>
+<h2>5 - PERF and PROG (PF, SOP-06)</h2>
+<ul>
+<li><b>PERF TAKE OFF</b> (PF): PERF key. SHIFT: insert a T.O shift for an intersection takeoff even with GPS PRIMARY. THR RED/ACC and ENG OUT ACC: set or check, default 1 000 ft above departure runway altitude, modify for the expected RWY/SID. A takeoff data uplink deletes previously entered THR RED / ACCEL ALT (SOP-07 Takeoff Data). TPR/TLR data goes in later, before pushback.</li>
+<li><b>PERF CLB, CRZ, DES</b> (PF): NEXT PHASE [6R] through the pages. CLB and CRZ PRESEL speed as required (green dot for a close-in turn or constraint, a CRZ Mach; cancel with ECON before the phase activates). DRT CLB as required: D1 for TOW below 463 000 lb, D2 below 441 000 lb. DES: descent Mach equals end-of-cruise Mach, edit the crossover speed [3L] to 300 kt, or the published STAR transition speed (HAWKZ4 into SEA is 280 kt). SPD LIM 250 kt below 10 000 ft is cleared or changed on the VERT REV page.</li>
+<li><b>PROG</b> (PF): BRG / DIST TO as appropriate: the runway ident for an immediate return, the destination, or an ETP. RNP: for an RNP AR departure, check or insert the RNP.</li>
+</ul>
+<h2>6 - Crosscheck (PM, SOP-06)</h2>
+<ul>
+<li><b>FMS PREPARATION CROSSCHECK</b> (PM): after the PF prepares the FMS the PM checks everything entered: departure waypoints with constraints; flight plan waypoints vs the computerized flight plan; initial cruise altitude; total track miles; fuel remaining at destination; performance data including THR RED/ACCEL/EO ACCEL changes; TRANS ALT on the ACTIVE/PERF page; SEC flight plan setup. The PM must hold the same mental picture of the departure as the PF and asks if anything is unclear (FCTM PR-NP-SOP-60).</li>
+</ul>
+<h2>Bookends and gates</h2>
+<ul>
+<li><b>ATIS</b> (CM2, CM3): obtain before the pre-initialization. Runway in use, altimeter setting and weather data feed the system initialization and the preliminary takeoff performance. ACARS INIT (PF): departure, destination, flight number, date. Preliminary takeoff perf (PF): from the AeroData TPR or TLR review RWY, intersection, flaps, anti-ice, packs, FLEX or TOGA.</li>
+<li><b>Tasksharing</b>: the PF prepares the overhead panel, center instrument panel and pedestal while the PM does the walkaround; when both are seated and the PM has checked the FMS, both continue the cockpit preparation. Pre-initialization items in SOP-04 are CM1, the FMGES preparation in SOP-06 is PF, the crosscheck is PM.</li>
+<li><b>IRS ALIGN</b> (PM): POSITION MONITOR, IRS in NAV, each IRS within 5 NM of the FMS position; ND in ROSE-NAV or ARC, position consistent with the airport, SID and navaids. <b>FUEL ON BOARD</b> (PF, PM): ECAM FOB matches the block fuel, balanced, CG in limits. <b>ATC clearance</b> (PM): VHF, ACARS PDC or CPDLC DCL.</li>
+<li><b>DEPARTURE LEGS VERIFICATION</b> (BOTH): after the FMGS preparation and before the Departure Briefing; repeat after any routing change. PF reads from the glass: PLAN mode, CSTR on, F-PLN, each departure and enroute waypoint and constraint aloud, UP arrow after each; non-defined and user-defined waypoints by LAT REV full lat/long. PM verifies against the flight plan, Jeppesen charts and ATC clearance and resolves any discrepancy. Last step: total F-PLN DIST and destination EFOB agree with the release.</li>
+<li><b>Gates</b>: aircraft acceptance complete by the end of the cockpit preparation; FMS pre-initialization done before the FMGES preparation continues; INIT B is not available after engine start; Departure Legs Verification before the Departure Briefing, then the COCKPIT PREPARATION C/L.</li>
+</ul>
+
+  </div>
+</div>
+<footer>FCOM R17 PRO-NOR-SOP-04, SOP-06 &middot; PF prepares, PM crosschecks &middot; Ver 1.1</footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

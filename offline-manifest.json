@@ -1,20 +1,36 @@
 {
 "version": 1,
-"built": "2026-09-15",
-"coreBytes": 3247419,
+"built": "2026-09-16",
+"coreBytes": 6007529,
 "audioBytes": 0,
 "core": [
 {
+"u": "/A330_MCDU_Preflight_Handout.pdf",
+"b": 6144
+},
+{
 "u": "/A330_Memory_Limitations.pdf",
 "b": 15954
+},
+{
+"u": "/A330_OE_Workbook_Answered.pdf",
+"b": 317254
 },
 {
 "u": "/A330_QRH_Memory_Items.pdf",
 "b": 6107
 },
 {
+"u": "/A330_Weather_Requirements.pdf",
+"b": 10503
+},
+{
 "u": "/assets/A330_hero.svg",
 "b": 587
+},
+{
+"u": "/assets/a330_cockpit.jpg",
+"b": 162612
 },
 {
 "u": "/assets/icons/favicon.ico",
@@ -50,15 +66,15 @@
 },
 {
 "u": "/corpus/flows.json",
-"b": 55965
+"b": 57352
 },
 {
 "u": "/corpus/fom.json",
-"b": 84
+"b": 276446
 },
 {
 "u": "/corpus/ioe.json",
-"b": 87
+"b": 228299
 },
 {
 "u": "/corpus/limitations.json",
@@ -66,7 +82,7 @@
 },
 {
 "u": "/corpus/mcdu.json",
-"b": 98
+"b": 21803
 },
 {
 "u": "/corpus/memory.json",
@@ -78,11 +94,11 @@
 },
 {
 "u": "/corpus/triggers.json",
-"b": 81
+"b": 18536
 },
 {
 "u": "/corpus/weather.json",
-"b": 79
+"b": 22890
 },
 {
 "u": "/data/episodes.json",
@@ -93,12 +109,20 @@
 "b": 99089
 },
 {
+"u": "/data/flows_trainer.json",
+"b": 68964
+},
+{
+"u": "/data/fom_all.json",
+"b": 381934
+},
+{
 "u": "/data/fom_delta.json",
 "b": 69947
 },
 {
 "u": "/data/fom_questions.json",
-"b": 54
+"b": 2025
 },
 {
 "u": "/data/hot_seat_scenarios.json",
@@ -125,6 +149,10 @@
 "b": 81837
 },
 {
+"u": "/data/mcdu.json",
+"b": 22379
+},
+{
 "u": "/data/memory_items.json",
 "b": 15485
 },
@@ -138,11 +166,15 @@
 },
 {
 "u": "/data/oe.json",
-"b": 2
+"b": 407583
 },
 {
 "u": "/data/oral_scope.json",
 "b": 75717
+},
+{
+"u": "/data/phase_flows.json",
+"b": 300768
 },
 {
 "u": "/data/systems.json",
@@ -158,15 +190,87 @@
 },
 {
 "u": "/data/triggers.json",
-"b": 2
+"b": 35589
 },
 {
 "u": "/data/weather.json",
-"b": 2
+"b": 24654
 },
 {
 "u": "/flows_quiz.html",
-"b": 8903
+"b": 39258
+},
+{
+"u": "/fom_q/ch01.json",
+"b": 17228
+},
+{
+"u": "/fom_q/ch02.json",
+"b": 20633
+},
+{
+"u": "/fom_q/ch03.json",
+"b": 16376
+},
+{
+"u": "/fom_q/ch04.json",
+"b": 17113
+},
+{
+"u": "/fom_q/ch05.json",
+"b": 39325
+},
+{
+"u": "/fom_q/ch06.json",
+"b": 27266
+},
+{
+"u": "/fom_q/ch07.json",
+"b": 19824
+},
+{
+"u": "/fom_q/ch08.json",
+"b": 27609
+},
+{
+"u": "/fom_q/ch09.json",
+"b": 21048
+},
+{
+"u": "/fom_q/ch10.json",
+"b": 13705
+},
+{
+"u": "/fom_q/ch11.json",
+"b": 21663
+},
+{
+"u": "/fom_q/ch12.json",
+"b": 21780
+},
+{
+"u": "/fom_q/ch13.json",
+"b": 14548
+},
+{
+"u": "/fom_q/ch14.json",
+"b": 19740
+},
+{
+"u": "/fom_q/ch15.json",
+"b": 21649
+},
+{
+"u": "/fom_q/ch16.json",
+"b": 16948
+},
+{
+"u": "/fom_q/ch18.json",
+"b": 16254
+},
+{
+"u": "/fom_q/ch19_24.json",
+"b": 29276
 },
 {
 "u": "/fom_quiz.html",
@@ -182,7 +286,7 @@
 },
 {
 "u": "/ioe.html",
-"b": 13385
+"b": 13314
 },
 {
 "u": "/jeopardy.html",
@@ -198,7 +302,7 @@
 },
 {
 "u": "/mcdu_preflight.html",
-"b": 8908
+"b": 20088
 },
 {
 "u": "/memory-items.html",
@@ -206,11 +310,11 @@
 },
 {
 "u": "/phase_flows.html",
-"b": 8922
+"b": 36355
 },
 {
 "u": "/podcast.html",
-"b": 15084
+"b": 15086
 },
 {
 "u": "/portal-settings.js",
@@ -246,15 +350,15 @@
 },
 {
 "u": "/systems_quiz.html",
-"b": 20665
+"b": 20664
 },
 {
 "u": "/triggers.html",
-"b": 19078
+"b": 19093
 },
 {
 "u": "/versions.json",
-"b": 136
+"b": 67
 },
 {
 "u": "/view.html",
