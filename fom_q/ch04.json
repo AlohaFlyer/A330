@@ -3,8 +3,8 @@
   "id": "fom04-001",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "How far in advance of scheduled departure must a pilot check in with Pilot Crew Scheduling for the originating flight of a pairing, and what is the deadheading check-in time?",
-  "a": "One hour prior to scheduled departure, or 45 minutes prior for deadheading.",
+  "q": "How far before scheduled departure must a pilot check in for the originating flight of a pairing?",
+  "a": "One hour prior, or 45 minutes for deadheading.",
   "ref": "FOM 4.2.2",
   "src": {
    "ref": "FOM 4.2.2, Crew Check-In – Scheduling",
@@ -123,8 +123,8 @@
   "id": "fom04-009",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "What is the maximum FDP extension permitted under 14 CFR 117.19, and what is the prior-extension gate?",
-  "a": "Up to 2 hours, provided neither Flight Crewmember has had an extension greater than 30 minutes since their last period of 30 consecutive hours free from all duty.",
+  "q": "What is the maximum FDP extension permitted under 14 CFR 117.19?",
+  "a": "Up to 2 hours; no prior extension over 30 minutes since the last 30 consecutive hours free from duty.",
   "ref": "FOM 4.3.2.5",
   "src": {
    "ref": "FOM 4.3.2.5, Flight Duty Period Extensions",
@@ -139,7 +139,7 @@
   "chapter": "4",
   "chapterName": "4 Crew Administration",
   "q": "How does a Flight Crewmember become acclimated to a new theater under Part 117?",
-  "a": "By receiving 36 consecutive hours of rest in the new theater, or by having been in the new theater for 72 hours.",
+  "a": "36 consecutive hours of rest in the new theater, or 72 hours in the new theater.",
   "ref": "FOM 4.3.2.4.6",
   "src": {
    "ref": "FOM 4.3.2.4.6, Acclimation",
@@ -169,7 +169,7 @@
   "chapter": "4",
   "chapterName": "4 Crew Administration",
   "q": "What is the minimum recline requirement that defines a Class 3 rest facility?",
-  "a": "A seat in an aircraft cabin or Flight Deck that reclines at least 40 degrees and provides leg and foot support.",
+  "a": "A cabin or Flight Deck seat reclining at least 40 degrees with leg and foot support.",
   "ref": "FOM 4.3.2.4.1",
   "src": {
    "ref": "FOM 4.3.2.4.1, Classification of Rest Facilities",
@@ -243,8 +243,8 @@
   "id": "fom04-017",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "CHECK AIRMAN SCENARIO: You're the PIC on a long Pacific pairing. An unforeseen gate hold has pushed you toward your Flight Duty Period limit and Pilot Crew Scheduling asks for an extension so you can complete the flight. What is the maximum FDP extension, and what prior-extension condition must be satisfied before you can accept it?",
-  "a": "Up to 2 hours, provided neither Flight Crewmember has experienced an extension greater than 30 minutes since their last period of 30 consecutive hours free from all duty (and the extension addresses unforeseen operational circumstances, CBA/PWA limits are not exceeded, and the PIC and certificate holder agree on the length).",
+  "q": "PIC on a Pacific pairing, an unforeseen gate hold pushes you toward your FDP limit. What is the maximum FDP extension you may accept?",
+  "a": "Up to 2 hours; no extension over 30 minutes for either pilot since their last 30 hours free from duty.",
   "ref": "FOM 4.3.2.5",
   "src": {
    "ref": "FOM 4.3.2.5, Flight Duty Period Extensions",
@@ -258,8 +258,8 @@
   "id": "fom04-018",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "CHECK AIRMAN SCENARIO: After a red-eye Pacific crossing you determine you are too fatigued to safely fly the next leg. What action does the FOM require of you to be removed from the assignment, and what is the disciplinary consequence of removing yourself for fatigue on the Alaska side?",
-  "a": "You must contact and advise Pilot Crew Scheduling in order to be removed from the flight assignment (and should complete a Fatigue Report). Removal from assignments for flight time due to fatigue will not be cause for disciplinary action.",
+  "q": "After a red-eye crossing you are too fatigued to fly the next leg. What must you do to be removed from the assignment?",
+  "a": "Contact and advise Pilot Crew Scheduling, and complete a Fatigue Report.",
   "ref": "FOM 4.3.1.2",
   "src": {
    "ref": "FOM 4.3.1.2, Procedure",
@@ -273,8 +273,8 @@
   "id": "fom04-019",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "CHECK AIRMAN SCENARIO: On a long Pacific pairing your scheduled outstation layover looks like it will not give you a full 10 hours of rest or the 8 uninterrupted hours of sleep opportunity. What does Part 117 prescribe for minimum rest, and what is your obligation when you spot the shortfall?",
-  "a": "Minimum rest is 10 consecutive hours measured from release from duty, and that period must provide at least 8 uninterrupted hours of sleep opportunity. If you determine your scheduled rest will not provide the 10 hours or the 8 uninterrupted sleep hours, you must notify Pilot Crew Scheduling.",
+  "q": "Before a RAP or between FDPs, what minimum rest period does Part 117 prescribe?",
+  "a": "10 consecutive hours from release from duty, including at least 8 uninterrupted hours of sleep opportunity.",
   "ref": "FOM 4.3.2.7",
   "src": {
    "ref": "FOM 4.3.2.7, Rest Period",
@@ -288,8 +288,8 @@
   "id": "fom04-020",
   "chapter": "4",
   "chapterName": "4 Crew Administration",
-  "q": "CHECK AIRMAN SCENARIO: You're airborne on a long over-water leg when an unforeseen circumstance means finishing the flight will push you past your cumulative FDP limits. Is exceeding those cumulative limits permitted, and what is the catch?",
-  "a": "Yes. Under 14 CFR 117.19 a post-takeoff FDP extension allows a Flight Crewmember to exceed the cumulative FDP limits, but only to the extent necessary to complete that flight, and the extension expires once the aircraft lands.",
+  "q": "Airborne, an unforeseen circumstance means finishing the flight will exceed your cumulative FDP limits. Is exceeding them permitted?",
+  "a": "Yes. A post-takeoff FDP extension under 14 CFR 117.19 allows it, but expires once the aircraft lands.",
   "ref": "FOM 4.3.2.6",
   "src": {
    "ref": "FOM 4.3.2.6, Cumulative Flight Duty Limitations",
