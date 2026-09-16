@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Manuals sign-in</title>
+<meta name="theme-color" content="#463C8F">
+<style>
+  :root{--midnight:#463C8F;--atlas:#CE0C88;--breeze:#EAE5F4;--ice:#F4F1F9;--good:#FF9080;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:var(--ice);color:var(--midnight);min-height:100vh;display:flex;flex-direction:column;align-items:center;}
+  .wrap{width:100%;max-width:820px;padding:0 10px 40px;}
+  .banner{display:flex;align-items:center;justify-content:space-between;background:var(--midnight);padding:12px 20px;margin-top:24px;gap:12px;}
+  .banner span.t{color:var(--good);font-size:17px;font-weight:700;letter-spacing:1px;}
+  .card{background:#fff;border:2px solid var(--midnight);padding:16px;margin-top:14px;font-size:15px;line-height:1.6;}
+  a{color:var(--atlas);font-weight:700;}
+</style>
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#463C8F">
+</head>
+<body>
+<div class="wrap">
+  <div class="banner"><span class="t">A330 MANUALS</span></div>
+  <div class="card" id="msg">Signed in. Returning to the manuals...</div>
+</div>
+<script>
+(function () {
+  // Reaching this page means Cloudflare Access let the session through. Bounce back to the
+  // portal page that asked for the sign-in; only portal URLs are accepted as a return address.
+  var DEFAULT = 'https://ha330pilot.app/manuals/';
+  var back = DEFAULT;
+  try {
+    var m = location.search.match(/[?&]back=([^&]*)/);
+    if (m) back = decodeURIComponent(m[1].replace(/\+/g, ' '));
+  } catch (e) {}
+  var ok = /^https:\/\/ha330pilot\.app\//.test(back) || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?\//.test(back);
+  if (!ok) back = DEFAULT;
+  document.getElementById('msg').innerHTML = 'Signed in. Returning to the manuals... <a href="' +
+    back.replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '">Continue</a>';
+  location.replace(back);
+})();
+</script>
+</body>
+</html>

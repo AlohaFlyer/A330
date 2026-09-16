@@ -161,7 +161,7 @@
     <span class="t">A330 MANUALS</span>
   </div>
   <div class="sub">
-    <span id="meta">FCOM R17 15 MAY 26 &middot; QRH R35 26 JUN 26 &middot; FCTM R6 14 SEP 26 &middot; FOM 125.3 9/15/26 &middot; MEL R59 4/1/26 &middot; AFM 11 AUG 26 &middot; PRC 8/31/26 &middot; AFM-SUPP 05 AUG 26 &middot; PERF R26-12 Sep 09 2026 &middot; NPC-CB 8/13/25 &middot; FODM R0 5/20/26</span>
+    <span id="meta">FCOM R17 15 MAY 26 &middot; QRH R35 26 JUN 26 &middot; FCTM R6 14 SEP 26 &middot; FOM 125.3 15 SEP 26 &middot; MEL R59 01 APR 26 &middot; AFM 11 AUG 26 &middot; PRC 31 AUG 26 &middot; AFM-SUPP 05 AUG 26 &middot; PERF R26-12 09 SEP 26 &middot; NPC-CB 13 AUG 25 &middot; FODM R0 20 MAY 26</span>
   </div>
 
   <div class="card">
@@ -243,7 +243,7 @@
   </details>
 
   <footer>
-    Hawaiian Airlines A330 passenger fleet manuals: FCOM R17 15 MAY 26, QRH R35 26 JUN 26, FCTM R6 14 SEP 26, FOM 125.3 9/15/26, MEL R59 4/1/26, AFM 11 AUG 26, PRC 8/31/26, AFM-SUPP 05 AUG 26, PERF R26-12 Sep 09 2026, NPC-CB 8/13/25, FODM R0 5/20/26.<br>
+    Hawaiian Airlines A330 passenger fleet manuals: FCOM R17 15 MAY 26, QRH R35 26 JUN 26, FCTM R6 14 SEP 26, FOM 125.3 15 SEP 26, MEL R59 01 APR 26, AFM 11 AUG 26, PRC 31 AUG 26, AFM-SUPP 05 AUG 26, PERF R26-12 09 SEP 26, NPC-CB 13 AUG 25, FODM R0 20 MAY 26.<br>
     Study aid only. The manuals in Drive govern. Verify anything you act on against the source.
   </footer>
 </div>
@@ -260,13 +260,26 @@
 (function () {
   'use strict';
   var IDX = null, BM = null, LOADING = null;
-  var MANUALS = [{"key": "A330P_FCOM", "short": "FCOM", "title": "A330 Passenger FCOM", "revision": "R17", "date": "15 MAY 26", "drive_url": "https://drive.google.com/file/d/1ojJWVrY7qWKGybhvQLnhUZuArO0FCB5T/view"}, {"key": "A330P_QRH", "short": "QRH", "title": "A330 Passenger QRH", "revision": "R35", "date": "26 JUN 26", "drive_url": "https://drive.google.com/file/d/1ZfQ8FxhnaA5smS0dt9HYuhFirq0IaKma/view"}, {"key": "A330_FCTM", "short": "FCTM", "title": "A330 Flight Crew Training Manual", "revision": "R6", "date": "14 SEP 26", "drive_url": "https://drive.google.com/file/d/1X98gKkYagcYEmddo0RM2o9ipNPSg9jSE/view"}, {"key": "FOM", "short": "FOM", "title": "Flight Operations Manual", "revision": "125.3", "date": "9/15/26", "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"}, {"key": "A330_MEL", "short": "MEL", "title": "A330 Minimum Equipment List", "revision": "R59", "date": "4/1/26", "drive_url": "https://drive.google.com/file/d/1ys2NEDPdfbLBWSEKFfYYbHLtqyaYbPSS/view"}, {"key": "A330_AFM", "short": "AFM", "title": "A330 Airplane Flight Manual", "revision": null, "date": "11 AUG 26", "drive_url": "https://drive.google.com/file/d/1KZP6evj4od0MNKZ73Ws2BTnn3dbDkMNh/view"}, {"key": "A330_PRC", "short": "PRC", "title": "A330 Pilot Reference Cards", "revision": null, "date": "8/31/26", "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"}, {"key": "A330_AFM-SUPP", "short": "AFM-SUPP", "title": "A330 AFM Supplement", "revision": null, "date": "05 AUG 26", "drive_url": "https://drive.google.com/file/d/1E3hH4371duBmrgw1Eb5hQOuN71xIwTbI/view"}, {"key": "A330P_PERF", "short": "PERF", "title": "A330 Passenger Performance Manual", "revision": "R26-12", "date": "Sep 09 2026", "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"}, {"key": "A330P_NPC-CB", "short": "NPC-CB", "title": "A330 Passenger Normal Procedures and Checklist Card Book", "revision": null, "date": "8/13/25", "drive_url": "https://drive.google.com/file/d/1gcv0a_zOc4RpwYJcQmHrr-ah6vCOYksL/view"}, {"key": "FODM", "short": "FODM", "title": "Flight Operations Data Manual", "revision": "R0", "date": "5/20/26", "drive_url": "https://drive.google.com/file/d/1nX8Voo4Kn0-uvZq2a4rfxVoGsEGbcODz/view"}];
+  var MANUALS = [{"key": "A330P_FCOM", "short": "FCOM", "title": "A330 Passenger FCOM", "revision": "R17", "date": "15 MAY 26", "drive_url": "https://drive.google.com/file/d/1ojJWVrY7qWKGybhvQLnhUZuArO0FCB5T/view"}, {"key": "A330P_QRH", "short": "QRH", "title": "A330 Passenger QRH", "revision": "R35", "date": "26 JUN 26", "drive_url": "https://drive.google.com/file/d/1ZfQ8FxhnaA5smS0dt9HYuhFirq0IaKma/view"}, {"key": "A330_FCTM", "short": "FCTM", "title": "A330 Flight Crew Training Manual", "revision": "R6", "date": "14 SEP 26", "drive_url": "https://drive.google.com/file/d/1X98gKkYagcYEmddo0RM2o9ipNPSg9jSE/view"}, {"key": "FOM", "short": "FOM", "title": "Flight Operations Manual", "revision": "125.3", "date": "15 SEP 26", "drive_url": "https://drive.google.com/file/d/1R0MDZFscA0Q--zzfEKDR5gx4xcXpVcau/view"}, {"key": "A330_MEL", "short": "MEL", "title": "A330 Minimum Equipment List", "revision": "R59", "date": "01 APR 26", "drive_url": "https://drive.google.com/file/d/1ys2NEDPdfbLBWSEKFfYYbHLtqyaYbPSS/view"}, {"key": "A330_AFM", "short": "AFM", "title": "A330 Airplane Flight Manual", "revision": null, "date": "11 AUG 26", "drive_url": "https://drive.google.com/file/d/1KZP6evj4od0MNKZ73Ws2BTnn3dbDkMNh/view"}, {"key": "A330_PRC", "short": "PRC", "title": "A330 Pilot Reference Cards", "revision": null, "date": "31 AUG 26", "drive_url": "https://drive.google.com/file/d/1b-xJ76Q3NqgQptVkTrmfnzxLJTCvDWT-/view"}, {"key": "A330_AFM-SUPP", "short": "AFM-SUPP", "title": "A330 AFM Supplement", "revision": null, "date": "05 AUG 26", "drive_url": "https://drive.google.com/file/d/1E3hH4371duBmrgw1Eb5hQOuN71xIwTbI/view"}, {"key": "A330P_PERF", "short": "PERF", "title": "A330 Passenger Performance Manual", "revision": "R26-12", "date": "09 SEP 26", "drive_url": "https://drive.google.com/file/d/1pOOWuVzDoraZUjH637fMHypYf0QX7_gq/view"}, {"key": "A330P_NPC-CB", "short": "NPC-CB", "title": "A330 Passenger Normal Procedures and Checklist Card Book", "revision": null, "date": "13 AUG 25", "drive_url": "https://drive.google.com/file/d/1gcv0a_zOc4RpwYJcQmHrr-ah6vCOYksL/view"}, {"key": "FODM", "short": "FODM", "title": "Flight Operations Data Manual", "revision": "R0", "date": "20 MAY 26", "drive_url": "https://drive.google.com/file/d/1nX8Voo4Kn0-uvZq2a4rfxVoGsEGbcODz/view"}];
   var BYKEY = {}; MANUALS.forEach(function (m) { BYKEY[m.key] = m; });
   var BYSHORT = {}; MANUALS.forEach(function (m) { BYSHORT[m.short] = m; });
   var STORE = {};        // key -> {meta, toc, docs, bm, parts:{name:1}}
   var PENDING = {};      // key -> promise while a manual is loading
   var SCOPE = 'ALL';     // manual key or ALL
   function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }
+  // URL params, parsed first because ?base= steers every index fetch.
+  var QS = {};
+  try {
+    location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
+      if (!kv) return;
+      var i = kv.indexOf('='), k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));
+      QS[k] = decodeURIComponent((i < 0 ? '' : kv.slice(i + 1)).replace(/\+/g, ' '));
+    });
+  } catch (e) {}
+  // The index JSON lives in an R2 bucket behind Cloudflare Access (company email sign-in),
+  // not in this repo. ?base=<url> overrides it so the headless test can serve it locally.
+  var MANUALS_BASE = QS.base ? String(QS.base).replace(/\/+$/, '') : 'https://manuals.ha330pilot.app';
+  var AUTH = { ok: false, failed: false };
   var $ = function (id) { return document.getElementById(id); };
 
   /* ---------- persistence ---------- */
@@ -530,8 +543,28 @@
   /* ---------- index loading ----------
      One JSON per manual under /manuals/. Big manuals are split into parts listed in
      their main file; every part fetched is remembered so All never re-downloads. */
-  function fetchJSON(url) {
-    return fetch(url).then(function (r) { if (!r.ok) throw new Error(url.split('/').pop() + ' ' + r.status); return r.json(); });
+  function fetchJSON(path) {
+    var url = MANUALS_BASE + path;
+    return fetch(url, { credentials: 'include', mode: 'cors' }).then(function (r) {
+      if (!r.ok || r.redirected) throw new Error(path.split('/').pop() + ' ' + (r.redirected ? 'redirected' : r.status));
+      return r.json();
+    });
+  }
+  // Access answers an unauthenticated request with a redirect to its login page, which the
+  // browser reports as a CORS TypeError or a redirect. Either way: ask for the sign-in.
+  function showSignIn() {
+    AUTH.failed = true;
+    $('status').innerHTML = 'Company email sign-in required for the manuals. ' +
+      '<div class="seg" style="margin-top:8px"><button type="button" id="signIn">Sign in with @alaskaair.com</button></div>';
+    $('signIn').addEventListener('click', function () {
+      location.href = MANUALS_BASE + '/login.html?back=' + encodeURIComponent(location.href);
+    });
+  }
+  function probeAuth() {
+    return fetchJSON('/manifest.json').then(function (j) {
+      AUTH.ok = true; AUTH.failed = false;
+      return j;
+    }).catch(function () { showSignIn(); throw new Error('sign-in'); });
   }
   function adopt(key, docs) {
     docs.forEach(function (d) { d.m = key; });
@@ -542,7 +575,7 @@
     if (PENDING[key]) return PENDING[key];
     var m = BYKEY[key];
     setStatus('Loading the ' + m.short + ' index...');
-    PENDING[key] = fetchJSON('/manuals/' + key + '.json').then(function (j) {
+    PENDING[key] = fetchJSON('/' + key + '.json').then(function (j) {
       var st = STORE[key] || (STORE[key] = { meta: j.meta, toc: j.toc, docs: [], parts: {}, done: false });
       st.meta = j.meta; st.toc = j.toc;
       if (!j.parts || !j.parts.length) {
@@ -552,7 +585,7 @@
       var todo = j.parts.filter(function (p) { return !st.parts[p.part]; }), got = 0;
       return todo.reduce(function (chain, p) {
         return chain.then(function () {
-          return fetchJSON('/manuals/' + p.file).then(function (pj) {
+          return fetchJSON('/' + p.file).then(function (pj) {
             st.parts[p.part] = 1;
             st.docs = st.docs.concat(adopt(key, pj.docs || []));
             got++;
@@ -570,7 +603,8 @@
       return st;
     }).catch(function (e) {
       delete PENDING[key];
-      setStatus('Could not load the ' + m.short + ' index: ' + e.message + '. If you are offline, tick Make Available Offline on the portal while you have signal.');
+      if (!navigator.onLine) setStatus('No connection. The manuals index is served from the company sign-in bucket, so this search needs signal.');
+      else showSignIn();
       throw e;
     });
     return PENDING[key];
@@ -1198,15 +1232,8 @@
   window.addEventListener('portalsettings:ready', paintProfile);
 
   // URL params: ?q=<text> prefills and runs a search, ?m=<key or short> preselects a manual,
-  // ?s=<section id> opens that section's page modal (cross-reference links from other pages).
-  var QS = {};
-  try {
-    location.search.replace(/^\?/, '').split('&').forEach(function (kv) {
-      if (!kv) return;
-      var i = kv.indexOf('='), k = decodeURIComponent(i < 0 ? kv : kv.slice(0, i));
-      QS[k] = decodeURIComponent((i < 0 ? '' : kv.slice(i + 1)).replace(/\+/g, ' '));
-    });
-  } catch (e) {}
+  // ?s=<section id> opens that section's page modal (cross-reference links from other pages),
+  // ?base=<url> points the index fetches at another host (local testing).
   var startScope = QS.m ? (BYKEY[QS.m] ? QS.m : (BYSHORT[QS.m.toUpperCase()] ? BYSHORT[QS.m.toUpperCase()].key : 'ALL'))
     : LS.get('manuals_scope', 'ALL');
   if (QS.s && !QS.m) {
@@ -1232,10 +1259,12 @@
       }).catch(tryNext);
     };
     setScope(startScope, false);
-    tryNext();
+    probeAuth().then(tryNext).catch(function () {});
   } else {
     setScope(startScope, false);
-    if (QS.q) { $('q').value = QS.q; doSearch(); }
+    if (QS.q) $('q').value = QS.q;
+    probeAuth().then(function () {
+    if (QS.q) doSearch();
     if (QS.s) {
       loadManual(SCOPE === 'ALL' ? 'A330P_FCOM' : SCOPE).then(function (st) {
         var hit = st.toc.filter(function (e) { return String(e.s).toUpperCase() === QS.s.toUpperCase(); })[0];
@@ -1244,6 +1273,7 @@
       }).catch(function () {});
     }
     if (!QS.q && !QS.s && SCOPE !== 'ALL') load().catch(function () {});
+    }).catch(function () {});
   }
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});
 })();
