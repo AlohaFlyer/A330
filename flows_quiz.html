@@ -423,7 +423,7 @@ function flowPath(P){
   return d;
 }
 function mapPt(x,y){ return [x,y]; }
-function seatPt(it){ const p = it.pos && (it.pos[seat] || (seat==="BOTH" && it.pos.FO)); return p ? [p[0],p[1]] : [it.x,it.y]; }
+function seatPt(it){ const p = it.pos && (it.pos[seat] || (seat==="BOTH" && it.pos.FO)); if(p) return [p[0],p[1]]; if(it.mir && seat==="FO") return [Math.round((300-it.x)*10)/10, it.y]; return [it.x,it.y]; }
 
 // smooth hand-motion curve through points (Catmull-Rom -> cubic Bezier)
 function smoothPath(P){

@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6700726,
+"coreBytes": 6705179,
 "audioBytes": 0,
 "core": [
 {
@@ -78,7 +78,7 @@
 },
 {
 "u": "/corpus/flows.json",
-"b": 57453
+"b": 59365
 },
 {
 "u": "/corpus/fom.json",
@@ -122,7 +122,7 @@
 },
 {
 "u": "/data/flows_trainer.json",
-"b": 88229
+"b": 90691
 },
 {
 "u": "/data/fom_all.json",
@@ -210,7 +210,7 @@
 },
 {
 "u": "/flows_quiz.html",
-"b": 40217
+"b": 40296
 },
 {
 "u": "/fom_q/ch01.json",
