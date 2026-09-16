@@ -73,6 +73,17 @@ EDITS={
  'phase_flows.html':[
   ('<button data-s="C" class="on">CA</button>\n      <button data-s="F">FO</button>','<button data-s="C">CM1 (CA)</button>\n      <button data-s="F" class="on">CM2 (FO)</button>'),
   ("let state={phase:'preflight',seat:'C',duty:'PF'","let state={phase:'preflight',seat:'F',duty:'PM'"),   # FO seat, PM duty default
+  # Checklist colour coding (Ryan): nav buttons, phase header and gate bar carry the checklist colour, same hexes as the Flows Trainer phase bar.
+  ('.phasehead .src{font-size:.7em;font-weight:600;color:var(--muted);}',
+   '.phasehead .src{font-size:.7em;font-weight:600;color:var(--muted);}\n.phasehead.tinted{color:var(--pc);border-left:6px solid var(--pc);padding-left:10px;}\n.gate.tinted{background:var(--pc);}\nnav button[data-pc],.rail button[data-pc]{color:var(--pc);border-color:var(--pc);}\nnav button[data-pc].on,.rail button[data-pc].on{background:var(--pc);color:#fff;border-color:var(--pc);}'),
+  ("const NORMAL=PHASES.filter(p=>p.kind==='n'), ABN=PHASES.filter(p=>p.kind==='a');",
+   "const NORMAL=PHASES.filter(p=>p.kind==='n'), ABN=PHASES.filter(p=>p.kind==='a');\n// Checklist colours, identical to the Flows Trainer phase bar, keyed by the checklist each phase sits under.\nconst CL_COLORS={'Cockpit Prep':'#463C8F','Before Start':'#00568F','After Start':'#CE0C88','Taxi':'#2E90D0','Line-Up':'#E0A100','Climb':'#EAA52A','Cruise':'#D98A00','Descent':'#E2761A','Approach':'#D8650C','Landing':'#00805E','Go-Around':'#B85000','After Landing':'#2E9B7C','Parking':'#5CB89A'};\nconst PHASE_CL={'preflight':'Cockpit Prep','cockpit-prep':'Cockpit Prep','before-push':'Before Start','before-start':'Before Start','after-start':'After Start','taxi':'Taxi','before-takeoff':'Line-Up','after-takeoff':'Climb','cruise':'Cruise','descent':'Descent','approach':'Approach','landing':'Landing','go-around':'Go-Around','after-landing':'After Landing','parking':'Parking'};\nfunction phaseColor(id){ const c=PHASE_CL[id]; return c ? CL_COLORS[c] : ''; }"),
+  ('  NORMAL.forEach(p=>{ html+=`<button data-p="${p.id}">${p.label}</button>`; });',
+   '  NORMAL.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });'),
+  ('  ABN.forEach(p=>{ html+=`<button class="ab" data-p="${p.id}">${p.label}</button>`; });',
+   '  ABN.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });'),
+  ('  main.innerHTML=`<div class="phasehead">${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;\n  const g=document.getElementById(\'gate\'); const gn=gateFor(ph);\n  if(gn.length){ g.className=\'gate\';',
+   '  const pc=phaseColor(ph.id);\n  main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;\n  const g=document.getElementById(\'gate\'); const gn=gateFor(ph);\n  if(pc) g.style.setProperty(\'--pc\',pc); else g.style.removeProperty(\'--pc\');\n  if(gn.length){ g.className=\'gate\'+(pc?\' tinted\':\'\');'),
   # QUICK REF: Ryan's own A330 OEM Quick Reference card (2 pages, assets/quickref/p1.png p2.png,
   # PDF at /A330_OEM_Quick_Reference.pdf) as a full-screen overlay with Back, its own Day/Night
   # and a PDF link. Back button, Esc and the browser/phone back gesture all close it.
