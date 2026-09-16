@@ -1,6 +1,10 @@
 {
- "build": "v1.2",
+ "build": "v1.3",
  "default": "1.2",
- "pages": {},
+ "pages": {
+  "flows_quiz.html": "1.3",
+  "phase_flows.html": "1.3",
+  "manuals/index.html": "1.3"
+ },
  "stubs": []
 }
