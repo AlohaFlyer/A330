@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6687762,
+"coreBytes": 6643737,
 "audioBytes": 0,
 "core": [
 {
@@ -37,28 +37,32 @@
 "b": 162612
 },
 {
+"u": "/assets/hawaiian_logo.png",
+"b": 14786
+},
+{
 "u": "/assets/icons/favicon.ico",
-"b": 7412
+"b": 10060
 },
 {
 "u": "/assets/icons/icon-16.png",
-"b": 697
+"b": 1159
 },
 {
 "u": "/assets/icons/icon-180.png",
-"b": 53515
+"b": 47612
 },
 {
 "u": "/assets/icons/icon-192.png",
-"b": 59991
+"b": 52976
 },
 {
 "u": "/assets/icons/icon-32.png",
-"b": 2192
+"b": 3052
 },
 {
 "u": "/assets/icons/icon-512.png",
-"b": 372871
+"b": 283949
 },
 {
 "u": "/assets/irs_performance_chart.png",
@@ -214,7 +218,7 @@
 },
 {
 "u": "/flows_quiz.html",
-"b": 40445
+"b": 59930
 },
 {
 "u": "/fom_q/ch01.json",
@@ -298,7 +302,7 @@
 },
 {
 "u": "/index.html",
-"b": 11826
+"b": 31311
 },
 {
 "u": "/ioe.html",
@@ -334,7 +338,7 @@
 },
 {
 "u": "/portal-settings.js",
-"b": 46679
+"b": 46793
 },
 {
 "u": "/pwa.html",
@@ -346,7 +350,7 @@
 },
 {
 "u": "/pwa_pdf.html",
-"b": 9756
+"b": 9712
 },
 {
 "u": "/pwa_prompt.json",
@@ -374,7 +378,7 @@
 },
 {
 "u": "/versions.json",
-"b": 252
+"b": 271
 },
 {
 "u": "/view.html",

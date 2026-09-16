@@ -77,11 +77,11 @@
 </div>
 <div class="fallback" id="fb" style="display:none">
   Your browser will not display the PDF inline.
-  <a id="direct" href="https://as787pilot.app/2023-pwa.pdf">Open the agreement directly</a>, then use the back gesture to return.
+  <a id="direct" href="/2023-pwa.pdf">Open the agreement directly</a>, then use the back gesture to return.
 </div>
 <script>
 (function () {
-  var PDF = 'https://as787pilot.app/2023-pwa.pdf', TOC = null;
+  var PDF = '/2023-pwa.pdf', TOC = null;
   function $(i){ return document.getElementById(i); }
   function pageFromHash() {
     var m = (location.hash || '').match(/page=(\d+)/i);

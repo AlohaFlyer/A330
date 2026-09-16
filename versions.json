@@ -1,14 +1,14 @@
 {
- "build": "v1.5",
- "default": "1.5",
- "pages": {
-  "flows_quiz.html": "1.5",
-  "phase_flows.html": "1.5",
-  "manuals/index.html": "1.5",
-  "index.html": "1.5",
-  "podcast.html": "1.5",
-  "fom_quiz.html": "1.5",
-  "ioe.html": "1.5"
- },
- "stubs": []
+  "build": "v1.6",
+  "default": "1.6",
+  "pages": {
+    "flows_quiz.html": "1.6",
+    "phase_flows.html": "1.6",
+    "manuals/index.html": "1.6",
+    "index.html": "1.6",
+    "podcast.html": "1.6",
+    "fom_quiz.html": "1.6",
+    "ioe.html": "1.6"
+  },
+  "stubs": []
 }

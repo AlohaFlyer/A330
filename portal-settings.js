@@ -9,7 +9,7 @@
   var TAX_SRC = 'Tax Foundation, top marginal rates effective 1 Jan 2026';
   // Bump this every deploy. It is the only way to tell from inside the browser
   // whether you are looking at current code or a cached copy.
-  var BUILD = 'v1.5';
+  var BUILD = 'v1.6';
 
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
@@ -464,7 +464,7 @@
     // Every visitor queues their unlock in index.html. This flushes the queue to
     // the collector. Writes need no key. Reading the log back does, and that key
     // is only ever entered on the owner's own device.
-    var LOG_URL = '';
+    var LOG_URL = 'https://script.google.com/macros/s/AKfycbzbpHnlzrRXeiTd1UfAXNGfIxHpDxqlg-E1t5Ip_JwFoZFXwjV5eLW0uNpUCg2SzwODnQ/exec';
     var OWNER = 'ryan.pettit@alaskaair.com';
 
     function myEmail() { try { return (localStorage.getItem('ha330_email') || '').toLowerCase(); } catch (e) { return ''; } }
