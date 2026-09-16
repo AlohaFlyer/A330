@@ -11,8 +11,10 @@ Output: manuals/index.html. Served at /manuals/ (Cloudflare Access protects /man
 
 What changes (content and data only; every CSS rule, class, id, control, key handler and
 the two-stage Ask flow are kept):
-  - title, banner title "A330 MANUALS", the .sub line listing the manuals with revisions
-    from manuals.json (no "Open full PDF" link), footer text, textarea placeholder.
+  - title, banner title "A330 MANUALS", a one-sentence .sub line (no "Open full PDF" link),
+    footer text, textarea placeholder. Revisions from manuals.json appear once, as
+    "<short> <revision> · <date>" on each manual's Browse by section header and as the title
+    attribute of its selector chip.
   - a Manual selector in the existing .seg pill style (All, FCOM, QRH, FCTM, FOM, MEL, AFM,
     PRC, more) directly under the Match segment; "more" reveals AFM-SUPP, PERF, NPC-CB, FODM.
   - no profile chips and no profile text anywhere in the prompt.
@@ -57,11 +59,9 @@ MANUALS = [{'key': k, 'short': SHORT[k], 'title': M[k]['title'], 'revision': M[k
 
 def rev_text(k):
     r = M[k]['revision']
-    return SHORT[k] + ' ' + ((r + ' ') if r else '') + M[k]['date']
+    return SHORT[k] + ' ' + ((r + ' \u00b7 ') if r else '') + M[k]['date']
 
 
-SUB_LINE = ' &middot; '.join(html.escape(rev_text(k)) for k in ORDER)
-FOOT_LINE = ', '.join(html.escape(rev_text(k)) for k in ORDER)
 
 
 def sub(t, a, b, count=1):
@@ -88,11 +88,11 @@ t = sub(t, 'href="/apple-touch-icon.png"', 'href="/assets/icons/icon-180.png"')
 t = sub(t, '<span class="t">ALPA PILOT WORKING AGREEMENT</span>', '<span class="t">A330 MANUALS</span>')
 t = sub(t, '''    <span id="meta">Hawaiian Airlines 2023 Pilots Agreement</span>
     <span><a href="/pwa_pdf.html">Open full PDF &#9654;</a></span>''',
-        '''    <span id="meta">''' + SUB_LINE + '''</span>''')
+        '''    <span id="meta">Search every current Hawaiian A330 PAX manual at once, or pick one. Revisions are listed under Browse by section.</span>''')
 t = sub(t, 'placeholder="Ask a contract question, e.g. how much rest do I get at a domestic overnight?"',
         'placeholder="Ask a manual question, e.g. how do I test the oxygen mask?"')
 
-seg_btn = lambda k, pressed: '        <button type="button" data-man="%s" aria-pressed="%s">%s</button>\n' % (k, 'true' if pressed else 'false', SHORT[k])
+seg_btn = lambda k, pressed: '        <button type="button" data-man="%s" aria-pressed="%s" title="%s">%s</button>\n' % (k, 'true' if pressed else 'false', html.escape(rev_text(k)), SHORT[k])
 MAN_ROW = '''    <div class="modebar">
       <span class="mlbl">Manual</span>
       <div class="seg" id="manSeg" role="group" aria-label="Manual">
@@ -114,8 +114,7 @@ t = sub(t, '''      <span class="mhelp" id="modeHelp"></span>
 
 t = sub(t, '''    Hawaiian Airlines 2023 Pilots Agreement, effective March 2, 2023 to March 2, 2027.<br>
     Study aid only. The filed PDF governs. Verify anything you act on against the source.''',
-        '''    Hawaiian Airlines A330 passenger fleet manuals: ''' + FOOT_LINE + '''.<br>
-    Study aid only. The manuals in Drive govern. Verify anything you act on against the source.''')
+        '''    Study aid only. The manuals in Drive govern. Verify anything you act on against the source.''')
 t = sub(t, '<a class="go" id="ovlPdf" href="#">Open PDF page &#9654;</a>',
         '<a class="go" id="ovlPdf" href="#" target="_blank" rel="noopener">Open in Drive &#9654;</a>')
 
@@ -129,6 +128,7 @@ t = sub(t, "  var IDX = null, BM = null, LOADING = null;\n",
         "  var PENDING = {};      // key -> promise while a manual is loading\n"
         "  var SCOPE = 'ALL';     // manual key or ALL\n"
         "  function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }\n"
+        "  function revText(k) { var m = BYKEY[k]; return m ? m.short + ' ' + (m.revision ? m.revision + ' \u00b7 ' : '') + m.date : k; }\n"
         "  // URL params, parsed first because ?base= steers every index fetch.\n"
         "  var QS = {};\n"
         "  try {\n"
@@ -307,8 +307,7 @@ LOAD_NEW = '''  /* ---------- index loading ----------
         return '<li><a class="cite" data-m="' + k + '" data-p="' + s.p + '" data-s="' + esc(String(s.s)) + '">' +
           esc(String(s.s)) + ' &mdash; ' + esc(s.t || '') + '</a></li>';
       }).join('');
-      li.innerHTML = '<details><summary>' + esc(shortOf(k)) + ' &middot; ' + esc(st.meta.title) +
-        (st.meta.revision ? ' ' + esc(st.meta.revision) : '') + ', ' + esc(st.meta.date) +
+      li.innerHTML = '<details><summary>' + esc(revText(k)) + ' &middot; ' + esc(st.meta.title) +
         ' &middot; ' + st.toc.length + ' sections</summary><ol>' + inner + '</ol></details>';
       ol.appendChild(li);
     });
