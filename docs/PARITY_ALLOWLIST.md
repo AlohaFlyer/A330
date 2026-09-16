@@ -77,3 +77,22 @@ Contact line moved from every footer into Portal Settings (Ryan, 2026-09-16), an
 - +span 
 - +small 
 - +span arrow
+- var LOG_URL = ''
+
+Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide the cockpit map (noflow), items may carry a per-seat map position (pos:{CA,FO}) or mir:true (x,y drawn for CM1, mirrored across the centerline for CM2), and Phase Flows gets a QUICK REF overlay for Ryan's A330 OEM Quick Reference card (Back, Day/Night, PDF link):
+
+- .layout.noflow
+- classList.toggle("noflow"
+- seatPt
+- .qref
+- qrefBtn
+- qrefBack
+- qrefTheme
+- QUICK REF
+- a330qrefdark
+- assets/quickref/
+- A330_OEM_Quick_Reference.pdf
+- +div qref
+- +div qbar
+- +div qpages
+- +img 
