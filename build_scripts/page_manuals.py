@@ -727,7 +727,77 @@ assert '—' not in re.sub(r'&mdash;', '', t.replace('—', '', 0)) or True
 # no em dashes in page text (the &mdash; entity in the toc line mirrors the B787 page and renders as a dash)
 assert '—' not in t, 'em dash in page'
 
+# ---- same-origin hosting (2026-09-16) ----
+# The full page is served from the manuals origin itself (R2 object index.html on
+# manuals.ha330pilot.app, behind Access), so every index fetch is same-origin: no CORS, no
+# cross-site cookie. R2 cannot send Access-Control-Allow-Credentials and answered credentialed
+# cross-origin GETs with 503, which is why the page moved. Portal-relative URLs become absolute.
+PORTAL = 'https://ha330pilot.app'
+for a, b in [('href="/assets/', 'href="' + PORTAL + '/assets/'), ('src="/assets/', 'src="' + PORTAL + '/assets/'),
+             ('href="/site.webmanifest"', 'href="' + PORTAL + '/site.webmanifest"'),
+             ('href="/index.html"', 'href="' + PORTAL + '/index.html"'),
+             ('<script src="/portal-settings.js" defer></script>', '<script src="' + PORTAL + '/portal-settings.js" defer></script>'),
+             ('<script src="/assist.js" defer></script>', '<script src="' + PORTAL + '/assist.js" defer></script>'),
+             ("fetch('/manuals/prompt.json')", "fetch('" + PORTAL + "/manuals/prompt.json')"),
+             ("  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(function () {});", ''),
+             (": 'https://manuals.ha330pilot.app';", ": '';   // same origin as this page")]:
+    assert a in t, a[:50]; t = t.replace(a, b)
+# settings hand-off: the portal bounce page sends the Ask Pualani provider/key/model in the URL
+# fragment (never to a server); import it once and drop it from the URL.
+anchor = "  var AUTH = { ok: false, failed: false };\n"
+assert anchor in t
+t = t.replace(anchor, anchor + """  (function importSettings() {
+    var m = (location.hash || '').match(/^#ps=([A-Za-z0-9+\\/=_-]+)/);
+    if (!m) return;
+    try {
+      var o = JSON.parse(decodeURIComponent(escape(atob(m[1].replace(/-/g, '+').replace(/_/g, '/')))));
+      Object.keys(o).forEach(function (k) { if (/^pwa_/.test(k)) { try { localStorage.setItem(k, o[k]); } catch (e) {} } });
+    } catch (e) {}
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  })();
+""")
+old2 = "    if (!s.ready()) { setStatus('Add an API key and pick a model in portal settings first.'); s.open(); return; }"
+new2 = "    if (!s.ready()) { $('status').innerHTML = 'No API key here yet. <a href=\"" + PORTAL + "/manuals/?handoff=1\">Copy it from the portal</a>, or add one in settings.'; s.open(); return; }"
+assert old2 in t; t = t.replace(old2, new2)
+assert "function setStatus(" in t
 os.makedirs(os.path.join(WORK, 'manuals'), exist_ok=True)
-out = os.path.join(WORK, 'manuals', 'index.html')
+out = os.path.join(WORK, 'manuals', 'app.html')
 open(out, 'w', encoding='utf-8').write(t)
-print('wrote', os.path.relpath(out, WORK), len(t), 'bytes')
+print('wrote', os.path.relpath(out, WORK), len(t), 'bytes (upload to R2 as index.html)')
+BOUNCE = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A330 Manuals</title>
+<meta name="theme-color" content="#463C8F">
+<link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<style>
+  body{margin:0;font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:#F4F1F9;color:#463C8F;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:20px;}
+  a{color:#CE0C88;font-weight:700;}
+</style>
+</head>
+<body>
+<div>Opening the A330 manuals (company email sign-in)... <a id="go" href="https://manuals.ha330pilot.app/index.html">Continue</a></div>
+<script>
+(function () {
+  // The manuals page lives on manuals.ha330pilot.app (behind Cloudflare Access) so its index
+  // fetches are same-origin. Carry the Ask Pualani provider, key and model across in the URL
+  // fragment (never sent to a server); the page stores them and clears the fragment.
+  var o = {};
+  try { for (var i = 0; i < localStorage.length; i++) { var k = localStorage.key(i); if (/^pwa_/.test(k)) o[k] = localStorage.getItem(k); } } catch (e) {}
+  var frag = '';
+  try { if (Object.keys(o).length) frag = '#ps=' + btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\\+/g, '-').replace(/\\//g, '_'); } catch (e) {}
+  var qs = location.search.replace(/[?&]handoff=1/, '').replace(/^&/, '?');
+  var url = 'https://manuals.ha330pilot.app/index.html' + qs + frag;
+  document.getElementById('go').href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
+"""
+open(os.path.join(WORK, 'manuals', 'index.html'), 'w', encoding='utf-8').write(BOUNCE)
+print('wrote manuals/index.html (bounce)')
