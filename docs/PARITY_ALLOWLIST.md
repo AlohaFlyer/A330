@@ -108,3 +108,8 @@ Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide 
 - -@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
 - get-identity
 - padding-right:150px;min-height:40px
+
+Hidden-until-built tiles and buttons (Ryan, 2026-09-16): Systems Quiz (no bank), Podcast (no episodes).
+
+- .menu a[hidden]
+- .navbtn[hidden]

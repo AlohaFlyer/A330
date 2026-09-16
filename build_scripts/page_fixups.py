@@ -17,6 +17,9 @@ EDITS={
  'triggers.html':[
   ('Trigger Map &middot; FCOM NP.21','FCOM PRO-NOR-SOP &middot; FCTM PR-NP-CL &middot; PRC'),
   ('href="podcast.html?ep=44"','href="podcast.html"'),
+  # Hidden until the podcast exists (Ryan, 2026-09-16).
+  ('    <a class="navbtn pod" href="podcast.html">','    <a class="navbtn pod" hidden href="podcast.html">'),
+  ('  .navbtn.pod{border-color:var(--green);color:#9ad9b9}','  .navbtn[hidden]{display:none;}\n  .navbtn.pod{border-color:var(--green);color:#9ad9b9}'),
  ],
  'flows_quiz.html':[
   ('let seat = "CA"','let seat = "FO"'),   # Ryan flies the FO seat; the first flow is CM2-only
@@ -126,6 +129,10 @@ EDITS={
   ('Open 1-page handout (PDF)','Open 2-page handout (PDF)'),
  ],
  'index.html':[
+  # Hidden until built (Ryan, 2026-09-16): Systems Quiz has no bank, Podcast has no episodes. Pages stay live at their URLs.
+  ('  <a href="systems_quiz.html"><span>Systems Quiz','  <a hidden href="systems_quiz.html"><span>Systems Quiz'),
+  ('  <a class="podcast" href="podcast.html">','  <a class="podcast" hidden href="podcast.html">'),
+  ('  .menu a.podcast{background:#FDF1F8;}','  .menu a.podcast{background:#FDF1F8;}\n  .menu a[hidden]{display:none;}'),
   # One login only (Ryan, 2026-09-16): Cloudflare Access already checked the company email at the site
   # gate, so the home page reads the identity Access holds (same-origin /cdn-cgi/access/get-identity),
   # records it for the unlock log and skips its own email box. The box stays as the fallback.

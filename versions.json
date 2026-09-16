@@ -1,14 +1,14 @@
 {
- "build": "v1.4",
- "default": "1.4",
+ "build": "v1.5",
+ "default": "1.5",
  "pages": {
-  "flows_quiz.html": "1.4",
-  "phase_flows.html": "1.4",
-  "manuals/index.html": "1.4",
-  "index.html": "1.4",
-  "podcast.html": "1.4",
-  "fom_quiz.html": "1.4",
-  "ioe.html": "1.4"
+  "flows_quiz.html": "1.5",
+  "phase_flows.html": "1.5",
+  "manuals/index.html": "1.5",
+  "index.html": "1.5",
+  "podcast.html": "1.5",
+  "fom_quiz.html": "1.5",
+  "ioe.html": "1.5"
  },
  "stubs": []
 }

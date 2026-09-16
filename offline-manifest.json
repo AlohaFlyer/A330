@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-16",
-"coreBytes": 6687580,
+"coreBytes": 6687762,
 "audioBytes": 0,
 "core": [
 {
@@ -298,7 +298,7 @@
 },
 {
 "u": "/index.html",
-"b": 11779
+"b": 11826
 },
 {
 "u": "/ioe.html",
@@ -370,11 +370,11 @@
 },
 {
 "u": "/triggers.html",
-"b": 19041
+"b": 19081
 },
 {
 "u": "/versions.json",
-"b": 157
+"b": 252
 },
 {
 "u": "/view.html",
