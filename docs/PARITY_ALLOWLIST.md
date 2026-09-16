@@ -107,3 +107,4 @@ Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide 
 - --pc:${pc}
 - -@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
 - get-identity
+- padding-right:150px;min-height:40px
