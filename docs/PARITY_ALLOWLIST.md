@@ -79,7 +79,7 @@ Contact line moved from every footer into Portal Settings (Ryan, 2026-09-16), an
 - +span arrow
 - var LOG_URL = ''
 
-Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide the cockpit map (noflow), items may carry a per-seat map position (pos:{CA,FO}) or mir:true (x,y drawn for CM1, mirrored across the centerline for CM2), a newly selected flow opens fully revealed (stepIdx -1; Restart steps through), the phase bar carries the checklist names, the home icon sits at the right end of each page's top bar (in-bar), and Phase Flows gets a QUICK REF overlay for Ryan's A330 OEM Quick Reference card (Back, Day/Night, PDF link):
+Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide the cockpit map (noflow), items may carry a per-seat map position (pos:{CA,FO}) or mir:true (x,y drawn for CM1, mirrored across the centerline for CM2), a newly selected flow opens fully revealed (stepIdx -1; Restart steps through), the phase bar carries the checklist names, the home icon sits at the right end of each page's top bar (in-bar), Phase Flows nav buttons, phase header and gate bar carry the checklist colour (same hexes as the Flows Trainer phase bar), and Phase Flows gets a QUICK REF overlay for Ryan's A330 OEM Quick Reference card (Back, Day/Night, PDF link):
 
 - .layout.noflow
 - classList.toggle("noflow"
@@ -101,3 +101,8 @@ Flows Trainer and Phase Flows additions (Ryan, 2026-09-16): exterior flows hide 
 - "Cockpit Prep":"#463C8F"
 - in-bar
 - .ps-homebar:empty
+- .tinted
+- data-pc
+- CL_COLORS
+- --pc:${pc}
+- -@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
