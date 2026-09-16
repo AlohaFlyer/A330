@@ -1,0 +1,12 @@
+{
+ "EMER DESCENT": "Cruise, mid-Pacific. CAB PR EXCESS CAB ALT. Cabin altitude is climbing fast.",
+ "STALL RECOVERY": "Level off after a step climb, autopilot dropped out. The stall warning sounds.",
+ "STALL WARNING AT LIFTOFF": "Rotation at KOA, gear still down. STALL, STALL as the wheels leave the runway.",
+ "UNRELIABLE SPEED INDICATION": "Climbing out of HNL in rain. The three airspeed indications disagree and the FDs are chasing.",
+ "LOSS OF BRAKING": "Landing roll at NRT, wet runway. Brake pedals go to the floor and nothing happens.",
+ "TAWS CAUTION": "Night vectors for the approach, IMC. TERRAIN AHEAD.",
+ "TAWS WARNING": "Descending in IMC below the MSA. PULL UP. PULL UP.",
+ "TCAS CAUTION - TRAFFIC ADVISORY": "Cruise, converging traffic 1,500 ft below. TRAFFIC, TRAFFIC.",
+ "TCAS WARNING - RESOLUTION ADVISORY": "Final approach in CONF FULL, autopilot on. CLIMB, CLIMB.",
+ "WINDSHEAR WARNING - REACTIVE WINDSHEAR": "Rotating off HNL in a thunderstorm downdraft. WINDSHEAR, WINDSHEAR, WINDSHEAR."
+}

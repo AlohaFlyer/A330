@@ -1,0 +1,20 @@
+[
+ {
+  "p": "CAT II / CAT III autoland with engine out, Engine-out CAT II/CAT III autoland",
+  "legal": true,
+  "ref": "FCOM LIM-AFS-20",
+  "lim": "Approved only in Configuration 3, engine-out procedures completed before 1 000 ft in approach"
+ },
+ {
+  "p": "Automatic landing and rollout with outdated MAGVAR",
+  "legal": false,
+  "ref": "AFM LIM-22-FGS",
+  "lim": "Not permitted when the airport magnetic variation and the ADIRU magnetic variation differ by more than 3 °"
+ },
+ {
+  "p": "Towbarless operation on the nose landing gear, Towing and pushback",
+  "legal": true,
+  "ref": "FCOM LIM-LG-10",
+  "lim": "Approved with accepted towbarless towing vehicles listed in Airbus WISE ISI 09.11.00001"
+ }
+]

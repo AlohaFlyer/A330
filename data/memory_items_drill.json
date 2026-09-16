@@ -1,0 +1,578 @@
+[
+ {
+  "id": "mi-vis-01",
+  "name": "EMER DESCENT",
+  "ref": "FCOM R17 PRO-ABN-MISC P1/26 and QRH R35 22.02A",
+  "ident": "PRO-ABN-MISC-00012261.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "n",
+    "n": "1",
+    "h": "CREW OXY MASKS ... <b>USE</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "SIGNS ... <b>ON</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "EMER DESCENT ... <b>INITIATE</b>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "THR LEVERS ... <b>IDLE</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "SPD BRK ... <b>FULL</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-MISC P1/26, ident PRO-ABN-MISC-00012261.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-02",
+  "name": "STALL RECOVERY",
+  "ref": "FCOM R17 PRO-ABN-MISC P2/26",
+  "ident": "PRO-ABN-MISC-00013664.0002001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "n",
+    "n": "1",
+    "h": "NOSE DOWN PITCH CONTROL ... <b>APPLY</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "BANK ... <b>WINGS LEVEL</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "THRUST ... <b>INCREASE SMOOTHLY AS NEEDED</b>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "SPEEDBRAKES ... <b>CHECK RETRACTED</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "FLIGHT PATH ... <b>RECOVER SMOOTHLY</b>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "FLAPS 1 ... <b>SELECT</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-MISC P2/26, ident PRO-ABN-MISC-00013664.0002001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-03",
+  "name": "STALL WARNING AT LIFTOFF",
+  "ref": "FCOM R17 PRO-ABN-MISC P3/26",
+  "ident": "PRO-ABN-MISC-00013665.0002001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "n",
+    "n": "1",
+    "h": "THRUST ... <b>TOGA</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "PITCH ATTITUDE ... <b>15 °</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "BANK ... <b>WINGS LEVEL</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-MISC P3/26, ident PRO-ABN-MISC-00013665.0002001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-05",
+  "name": "UNRELIABLE SPEED INDICATION",
+  "ref": "QRH R35 23.03A",
+  "ident": "ABN-23-A-00017854.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "b",
+    "h": "If the safe conduct of the flight is impacted"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "AP ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "A/THR ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "FD ... <b>OFF</b>"
+   },
+   {
+    "t": "b",
+    "h": "PITCH/THRUST"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "Below THRUST RED ALT ... <b>15° / TOGA</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "Above THRUST RED ALT and Below FL 100 ... <b>10° / CLB</b>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "Above THRUST RED ALT and Above FL 100 ... <b>5° / CLB</b>"
+   },
+   {
+    "t": "n",
+    "n": "7",
+    "h": "FLAPS (if CONF 0(1)(2)(3)) ... <b>MAINTAIN CURRENT CONF</b>"
+   },
+   {
+    "t": "n",
+    "n": "8",
+    "h": "FLAPS (if CONF FULL) ... <b>SELECT CONF 3 AND MAINTAIN</b>"
+   },
+   {
+    "t": "n",
+    "n": "9",
+    "h": "SPEEDBRAKES ... <b>CHECK RETRACTED</b>"
+   },
+   {
+    "t": "n",
+    "n": "10",
+    "h": "L/G ... <b>UP</b>"
+   },
+   {
+    "t": "b",
+    "h": "When at or above MSA or Circuit Altitude: Level off for troubleshooting"
+   }
+  ],
+  "fctm": "Memory items per QRH R35 23.03A, ident ABN-23-A-00017854.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-06",
+  "name": "LOSS OF BRAKING",
+  "ref": "FCOM R17 PRO-ABN-BRAKES P 1/16",
+  "ident": "PRO-ABN-BRAKES-00010803.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "s",
+    "h": "<i>If no braking:</i>"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "REV ... <b>MAX</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "BRAKE PEDALS ... <b>RELEASE</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "A/SKID OFF ... <b>ORDER</b>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "A/SKID &amp; N/W STRG ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "BRAKE PEDALS ... <b>PRESS</b>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "MAX BRK PR ... <b>1000 PSI</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>If still no braking:</i>"
+   },
+   {
+    "t": "n",
+    "n": "7",
+    "h": "PARK BRAKE ... <b>USE</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-BRAKES P 1/16, ident PRO-ABN-BRAKES-00010803.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-07",
+  "name": "TAWS CAUTION",
+  "ref": "FCOM R17 PRO-ABN-SURV P 1/8 to 2/8",
+  "ident": "PRO-ABN-SURV-AA-00026795.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "s",
+    "h": "<i>&quot;TERRAIN TERRAIN&quot; - &quot;TOO LOW TERRAIN&quot; - &quot;TERRAIN AHEAD&quot; - &quot;CAUTION TERRAIN&quot; - &quot;OBSTACLE AHEAD&quot; - &quot;CAUTION OBSTACLE&quot;</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>During night or IMC conditions:</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Simultaneously:</i>"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "AP ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "PITCH ... <b>PULL UP</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "THRUST LEVERS ... <b>TOGA</b>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "SPEED BRAKE LEVER ... <b>CHECK RETRACTED</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "BANK ... <b>WINGS LEVEL or ADJUST</b>"
+   },
+   {
+    "t": "b",
+    "h": "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE."
+   },
+   {
+    "t": "s",
+    "h": "<i>During daylight and VMC conditions, with terrain and obstacles clearly in sight:</i>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "FLIGHT PATH ... <b>ADJUST</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>&quot;SINK RATE&quot;</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Above 1 000 ft AAL IMC or above 500 ft AAL VMC:</i>"
+   },
+   {
+    "t": "n",
+    "n": "7",
+    "h": "FLIGHT PATH ... <b>ADJUST</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Below 1 000 ft AAL IMC or below 500 ft AAL VMC:</i>"
+   },
+   {
+    "t": "n",
+    "n": "8",
+    "h": "GO-AROUND ... <b>CONSIDER</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>&quot;DON’T SINK&quot;</i>"
+   },
+   {
+    "t": "n",
+    "n": "9",
+    "h": "FLIGHT PATH ... <b>ADJUST</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>&quot;TOO LOW GEAR&quot; or &quot;TOO LOW FLAPS&quot;</i>"
+   },
+   {
+    "t": "n",
+    "n": "10",
+    "h": "GO-AROUND ... <b>PERFORM</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>&quot;GLIDESLOPE&quot;</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Above 1 000 ft AAL IMC or above 500 ft AAL VMC:</i>"
+   },
+   {
+    "t": "n",
+    "n": "11",
+    "h": "FLIGHT PATH ... <b>ADJUST</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>When conditions require a deliberate approach below glideslope:</i>"
+   },
+   {
+    "t": "n",
+    "n": "12",
+    "h": "G/S MODE ... <b>OFF</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Below 1 000 ft AAL IMC or below 500 ft AAL VMC:</i>"
+   },
+   {
+    "t": "n",
+    "n": "13",
+    "h": "GO-AROUND ... <b>CONSIDER</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-SURV P 1/8 to 2/8, ident PRO-ABN-SURV-AA-00026795.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-08",
+  "name": "TAWS WARNING",
+  "ref": "FCOM R17 PRO-ABN-SURV P 3/8",
+  "ident": "PRO-ABN-SURV-00026799.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "s",
+    "h": "<i>If the TAWS triggers one of the PULL UP alerts:</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Simultaneously:</i>"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "AP ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "PITCH ... <b>PULL UP</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "THRUST LEVERS ... <b>TOGA</b>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "SPEED BRAKE LEVER ... <b>CHECK RETRACTED</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "BANK ... <b>WINGS LEVEL or ADJUST</b>"
+   },
+   {
+    "t": "b",
+    "h": "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE."
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-SURV P 3/8, ident PRO-ABN-SURV-00026799.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-09",
+  "name": "TCAS CAUTION - TRAFFIC ADVISORY",
+  "ref": "FCOM R17 PRO-ABN-SURV P 3/8",
+  "ident": "PRO-ABN-SURV-00025042.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "b",
+    "h": "Do not perform a maneuver based on a TA alone."
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-SURV P 3/8, ident PRO-ABN-SURV-00025042.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-10",
+  "name": "TCAS WARNING - RESOLUTION ADVISORY",
+  "ref": "FCOM R17 PRO-ABN-SURV P 4/8 to 5/8",
+  "ident": "PRO-ABN-SURV-00011464.0005001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "s",
+    "h": "<i>All RA, except any CLIMB RA during approach in CONF 3 or FULL:</i>"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "AP (if engaged) ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "BOTH FDs ... <b>OFF</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "VERTICAL SPEED ... <b>ADJUST or MAINTAIN</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Any CLIMB RA during approach in CONF 3 or FULL:</i>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "GO-AROUND ... <b>PERFORM</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "VERTICAL SPEED ... <b>MONITOR</b>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "ATC ... <b>NOTIFY</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>When the “CLEAR OF CONFLICT” aural alert sounds:</i>"
+   },
+   {
+    "t": "n",
+    "n": "7",
+    "h": "ATC ... <b>NOTIFY</b>"
+   },
+   {
+    "t": "n",
+    "n": "8",
+    "h": "LATERAL AND VERTICAL GUIDANCE ... <b>ADJUST</b>"
+   },
+   {
+    "t": "n",
+    "n": "9",
+    "h": "AP/FD ... <b>AS RQRD</b>"
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-SURV P 4/8 to 5/8, ident PRO-ABN-SURV-00011464.0005001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ },
+ {
+  "id": "mi-vis-11",
+  "name": "WINDSHEAR WARNING - REACTIVE WINDSHEAR",
+  "ref": "FCOM R17 PRO-ABN-SURV P 6/8 to 7/8",
+  "ident": "PRO-ABN-SURV-00012300.0001001",
+  "cond": "",
+  "steps": [
+   {
+    "t": "s",
+    "h": "<i>At Takeoff:</i>"
+   },
+   {
+    "t": "s",
+    "h": "<i>Before V1:</i>"
+   },
+   {
+    "t": "b",
+    "h": "If there are significant variations in airspeed, and in airspeed trend below the indicated V1, reject the takeoff."
+   },
+   {
+    "t": "s",
+    "h": "<i>After V1:</i>"
+   },
+   {
+    "t": "n",
+    "n": "1",
+    "h": "THR LEVERS ... <b>TOGA</b>"
+   },
+   {
+    "t": "n",
+    "n": "2",
+    "h": "REACHING VR ... <b>ROTATE</b>"
+   },
+   {
+    "t": "n",
+    "n": "3",
+    "h": "SRS ORDERS ... <b>FOLLOW</b>"
+   },
+   {
+    "t": "s",
+    "h": "<i>When airborne, during initial climb, or at landing:</i>"
+   },
+   {
+    "t": "n",
+    "n": "4",
+    "h": "THR LEVERS AT TOGA ... <b>SET OR CONFIRM</b>"
+   },
+   {
+    "t": "n",
+    "n": "5",
+    "h": "AP (if engaged) ... <b>KEEP ON</b>"
+   },
+   {
+    "t": "n",
+    "n": "6",
+    "h": "SRS ORDERS ... <b>FOLLOW</b>"
+   },
+   {
+    "t": "b",
+    "h": "DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL OUT OF WINDSHEAR."
+   },
+   {
+    "t": "b",
+    "h": "CAREFULLY MONITOR FLIGHT PATH AND SPEED."
+   },
+   {
+    "t": "b",
+    "h": "WHEN OUT OF WINDSHEAR, SMOOTHLY RECOVER NORMAL CLIMB."
+   }
+  ],
+  "fctm": "Memory items per FCOM R17 PRO-ABN-SURV P 6/8 to 7/8, ident PRO-ABN-SURV-00012300.0001001. MEMORY ITEMS. Boxed lines recited cold, verbatim.",
+  "fleet": "pax",
+  "provenance": "manual"
+ }
+]

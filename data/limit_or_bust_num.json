@@ -1,0 +1,732 @@
+[
+ {
+  "p": "Maximum EGT for APU start",
+  "v": 1250.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-APU-10",
+  "step": 1,
+  "spread": 312.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum EGT for APU running",
+  "v": 650.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-APU-10",
+  "step": 1,
+  "spread": 162.5,
+  "dec": 0
+ },
+ {
+  "p": "APU maximum operating altitude with JET B or JP4, When JET B or JP4 is used",
+  "v": 25000.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-APU-20",
+  "step": 1,
+  "spread": 6250.0,
+  "dec": 0
+ },
+ {
+  "p": "APU bleed maximum altitude to assist engine start, APU bleed for engine start",
+  "v": 20000.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-APU-20",
+  "step": 1,
+  "spread": 5000.0,
+  "dec": 0
+ },
+ {
+  "p": "APU bleed maximum altitude for air conditioning and pressurization, single pack, Single pack operation",
+  "v": 22500.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-APU-20",
+  "step": 1,
+  "spread": 5625.0,
+  "dec": 0
+ },
+ {
+  "p": "APU bleed maximum altitude for air conditioning and pressurization, dual pack, Dual pack operation",
+  "v": 17500.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-APU-20",
+  "step": 1,
+  "spread": 4375.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum positive differential pressure, Cabin pressure",
+  "v": 9.25,
+  "u": "PSI",
+  "k": "max",
+  "ref": "FCOM LIM-AIR",
+  "step": 0.5,
+  "spread": 3.0,
+  "dec": 1
+ },
+ {
+  "p": "Maximum negative differential pressure, Cabin pressure",
+  "v": -0.73,
+  "u": "PSI",
+  "k": "max",
+  "ref": "FCOM LIM-AIR",
+  "step": 0.1,
+  "spread": 0.6000000000000001,
+  "dec": 1
+ },
+ {
+  "p": "Maximum normal cabin altitude, Depending on CPC standard, for flights longer than 2.5 h",
+  "v": 7460.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-AIR",
+  "step": 1,
+  "spread": 1865.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum TAT, Environmental envelope",
+  "v": -53.0,
+  "u": "°C",
+  "k": "min",
+  "ref": "FCOM LIM-AG-OPS-ENV",
+  "step": 0.1,
+  "spread": 0.6000000000000001,
+  "dec": 1
+ },
+ {
+  "p": "Nominal runway width, Airport operations",
+  "v": 148.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 1,
+  "spread": 37.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum certified crosswind for takeoff, Takeoff, A330 PAX fleet; AFM limitation, engine limitation",
+  "v": 32.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 1,
+  "spread": 8.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum demonstrated crosswind for landing, Landing, A330 PAX fleet; demonstrated value, not an AFM limitation",
+  "v": 45.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 1,
+  "spread": 11.2,
+  "dec": 0
+ },
+ {
+  "p": "Maximum tailwind for takeoff",
+  "v": 15.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 0.5,
+  "spread": 3.8,
+  "dec": 1
+ },
+ {
+  "p": "Maximum tailwind for landing",
+  "v": 10.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 0.5,
+  "spread": 3.0,
+  "dec": 1
+ },
+ {
+  "p": "Maximum wind for passenger door operation, Passenger door operation on ground",
+  "v": 40.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 1,
+  "spread": 10.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum wind for FWD and AFT cargo door operation, FWD and AFT cargo door operation on ground",
+  "v": 40.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-OPS-ARPT_WIND",
+  "step": 1,
+  "spread": 10.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum operating altitude, slats and flaps retracted",
+  "v": 41450.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "AFM LIM-GEN",
+  "step": 1,
+  "spread": 10362.5,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP engagement height at takeoff",
+  "v": 100.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 25.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height in approach with F-G/S mode",
+  "v": 200.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 50.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height in approach with FINAL APP, V/S or FPA mode",
+  "v": 250.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 62.5,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height in circling approach",
+  "v": 500.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 125.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height, ILS approach with CAT1 on FMA, ILS approach when CAT1 is displayed on the FMA",
+  "v": 160.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 40.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height, GLS approach without AUTOLAND on FMA, GLS approach when AUTOLAND is not displayed on the FMA",
+  "v": 160.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 40.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height, LPV approach with SLS when CAT1 on FMA, LPV approach (with SLS) when CAT1 is displayed on the FMA",
+  "v": 160.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 40.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height, ILS approach with CAT2 or CAT3 on FMA",
+  "v": 0.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 0.1,
+  "spread": 0.6000000000000001,
+  "dec": 1
+ },
+ {
+  "p": "Minimum AP engagement height after a manual go-around",
+  "v": 100.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 25.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum AP use height in all other phases",
+  "v": 500.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-10-10",
+  "step": 1,
+  "spread": 125.0,
+  "dec": 0
+ },
+ {
+  "p": "ILS CAT II minimum decision height",
+  "v": 100.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 1,
+  "spread": 25.0,
+  "dec": 0
+ },
+ {
+  "p": "SA CAT II minimum decision height",
+  "v": 100.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 1,
+  "spread": 25.0,
+  "dec": 0
+ },
+ {
+  "p": "OTS CAT II minimum decision height",
+  "v": 100.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 1,
+  "spread": 25.0,
+  "dec": 0
+ },
+ {
+  "p": "ILS CAT III fail passive (single) minimum decision height",
+  "v": 50.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 1,
+  "spread": 12.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum headwind for ILS CAT II/CAT III and GLS CAT I",
+  "v": 35.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 1,
+  "spread": 8.8,
+  "dec": 0
+ },
+ {
+  "p": "Maximum tailwind for ILS CAT II/CAT III and GLS CAT I",
+  "v": 10.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 0.5,
+  "spread": 3.0,
+  "dec": 1
+ },
+ {
+  "p": "Maximum crosswind for ILS CAT II/CAT III and GLS CAT I",
+  "v": 15.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AFS-20",
+  "step": 0.5,
+  "spread": 3.8,
+  "dec": 1
+ },
+ {
+  "p": "EGT limit, Maximum Continuous Thrust (MCT)",
+  "v": 850.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-ENG",
+  "step": 1,
+  "spread": 212.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum continuous oil temperature",
+  "v": 190.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-ENG",
+  "step": 1,
+  "spread": 47.5,
+  "dec": 0
+ },
+ {
+  "p": "Minimum oil temperature before takeoff",
+  "v": 50.0,
+  "u": "°C",
+  "k": "min",
+  "ref": "FCOM LIM-ENG",
+  "step": 1,
+  "spread": 12.5,
+  "dec": 0
+ },
+ {
+  "p": "Minimum oil pressure",
+  "v": 25.0,
+  "u": "PSI",
+  "k": "min",
+  "ref": "FCOM LIM-ENG",
+  "step": 1,
+  "spread": 6.2,
+  "dec": 0
+ },
+ {
+  "p": "Starter maximum continuous operation",
+  "v": 5.0,
+  "u": "min",
+  "k": "max",
+  "ref": "FCOM LIM-ENG",
+  "step": 0.5,
+  "spread": 3.0,
+  "dec": 1
+ },
+ {
+  "p": "Minimum speed for maximum reverse thrust",
+  "v": 70.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-ENG",
+  "step": 1,
+  "spread": 17.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum operating altitude with slats and/or flaps extended",
+  "v": 20000.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM LIM-F_CTL",
+  "step": 1,
+  "spread": 5000.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum fuel temperature, JET A, JET A1, JP5, JP8, N°3 JET, RT and TS-1",
+  "v": 55.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-FUEL",
+  "step": 1,
+  "spread": 13.8,
+  "dec": 0
+ },
+ {
+  "p": "Maximum fuel temperature, JP4, JET B",
+  "v": 49.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-FUEL",
+  "step": 1,
+  "spread": 12.2,
+  "dec": 0
+ },
+ {
+  "p": "Maximum allowed wing fuel imbalance, inner tanks (outer balanced)",
+  "v": 2900.0,
+  "u": "kg",
+  "k": "max",
+  "ref": "FCOM LIM-FUEL",
+  "step": 1,
+  "spread": 725.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum allowed wing fuel imbalance, outer tanks (inner balanced)",
+  "v": 1480.0,
+  "u": "kg",
+  "k": "max",
+  "ref": "FCOM LIM-FUEL",
+  "step": 1,
+  "spread": 370.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum fuel quantity for takeoff, Takeoff; fuel wing tank low level ECAM alerts must not be present",
+  "v": 5200.0,
+  "u": "kg",
+  "k": "min",
+  "ref": "FCOM LIM-FUEL",
+  "step": 1,
+  "spread": 1300.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum brake temperature for takeoff, Brake fans off",
+  "v": 300.0,
+  "u": "°C",
+  "k": "max",
+  "ref": "FCOM LIM-LG",
+  "step": 1,
+  "spread": 75.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum taxi speed during turn with deflated tire(s)",
+  "v": 7.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-LG",
+  "step": 0.5,
+  "spread": 3.0,
+  "dec": 1
+ },
+ {
+  "p": "Maximum taxi speed with two tires deflated on the same main gear, Two tires deflated on the same main gear (maximum one main gear)",
+  "v": 3.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-LG",
+  "step": 0.1,
+  "spread": 0.8,
+  "dec": 1
+ },
+ {
+  "p": "ITP maximum altitude change, In-Trail Procedure climb or descent",
+  "v": 4000.0,
+  "u": "ft",
+  "k": "max",
+  "ref": "FCOM PRO-SPO-90-10",
+  "step": 1,
+  "spread": 1000.0,
+  "dec": 0
+ },
+ {
+  "p": "ITP minimum rate of climb",
+  "v": 300.0,
+  "u": "ft",
+  "k": "min",
+  "ref": "FCOM PRO-SPO-90-10",
+  "step": 1,
+  "spread": 75.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum bottle pressure design case (not a crew limitation): protection during emergency descent",
+  "v": 15.0,
+  "u": "min",
+  "k": "min",
+  "ref": "FCOM LIM-OXY",
+  "step": 0.5,
+  "spread": 3.8,
+  "dec": 1
+ },
+ {
+  "p": "Minimum bottle pressure design case (not a crew limitation): protection during cruise at FL 100",
+  "v": 105.0,
+  "u": "min",
+  "k": "min",
+  "ref": "FCOM LIM-OXY",
+  "step": 1,
+  "spread": 26.2,
+  "dec": 0
+ },
+ {
+  "p": "Minimum bottle pressure design case (not a crew limitation): protection against smoke, 100 % oxygen; basis for the minimum bottle pressure",
+  "v": 15.0,
+  "u": "min",
+  "k": "min",
+  "ref": "FCOM LIM-OXY",
+  "step": 0.5,
+  "spread": 3.8,
+  "dec": 1
+ },
+ {
+  "p": "Maximum operating speed (VMO)",
+  "v": 330.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "AFM LIM-SPD",
+  "step": 1,
+  "spread": 82.5,
+  "dec": 0
+ },
+ {
+  "p": "Cockpit window open maximum speed",
+  "v": 230.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 57.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum flaps/slats speed - CONF 1 (slats 1), Flaps lever 1, holding; unit 'kt' corroborated by the AFM VFE table",
+  "v": 240.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 60.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum flaps/slats speed - CONF 1+F, Flaps lever 1, takeoff; unit 'kt' corroborated by the AFM VFE table",
+  "v": 215.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 53.8,
+  "dec": 0
+ },
+ {
+  "p": "Maximum flaps/slats speed - CONF 2",
+  "v": 196.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 49.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum flaps/slats speed - CONF 3",
+  "v": 186.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 46.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum flaps/slats speed - CONF FULL",
+  "v": 180.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 45.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum speed with landing gear extended (VLE)",
+  "v": 250.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 62.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum speed with landing gear operating (VLO), Landing gear extension and retraction",
+  "v": 250.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 62.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum speed for landing gear gravity extension (VLE/VLO)",
+  "v": 200.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 50.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum tire speed (ground speed)",
+  "v": 204.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 51.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum control speed for landing (VMCL)",
+  "v": 118.0,
+  "u": "kt",
+  "k": "min",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 29.5,
+  "dec": 0
+ },
+ {
+  "p": "Wipers maximum operating speed, Wipers operating",
+  "v": 230.0,
+  "u": "kt",
+  "k": "max",
+  "ref": "FCOM LIM-AG-SPD",
+  "step": 1,
+  "spread": 57.5,
+  "dec": 0
+ },
+ {
+  "p": "Maximum taxi weight, A330 PAX fleet",
+  "v": 238900.0,
+  "u": "kg",
+  "k": "max",
+  "ref": "FCOM LIM-AG-WGHT",
+  "step": 1,
+  "spread": 59725.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum takeoff weight (brake release), A330 PAX fleet",
+  "v": 238000.0,
+  "u": "kg",
+  "k": "max",
+  "ref": "FCOM LIM-AG-WGHT",
+  "step": 1,
+  "spread": 59500.0,
+  "dec": 0
+ },
+ {
+  "p": "Maximum landing weight, A330 PAX fleet",
+  "v": 182000.0,
+  "u": "kg",
+  "k": "max",
+  "ref": "FCOM LIM-AG-WGHT",
+  "step": 1,
+  "spread": 45500.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum weight, A330 PAX fleet",
+  "v": 116000.0,
+  "u": "kg",
+  "k": "min",
+  "ref": "FCOM LIM-AG-WGHT",
+  "step": 1,
+  "spread": 29000.0,
+  "dec": 0
+ },
+ {
+  "p": "Minimum RAT speed, RAT deployed (EMER ELEC CONFIG; also G+B SYS LO PR procedure)",
+  "v": 140.0,
+  "u": "kt",
+  "k": "min",
+  "ref": "FCOM AFM EMER-24-00005218.0006001 (ELEC - EMER CONFIG); also AFM EMER-29-00005726.0006001 (HYD - G+B SYS LO PR): 'Minimum RAT speed: 140 kt.'",
+  "step": 1,
+  "spread": 35.0,
+  "dec": 0
+ }
+]
