@@ -161,7 +161,7 @@
     <span class="t">A330 MANUALS</span>
   </div>
   <div class="sub">
-    <span id="meta">FCOM R17 15 MAY 26 &middot; QRH R35 26 JUN 26 &middot; FCTM R6 14 SEP 26 &middot; FOM 125.3 15 SEP 26 &middot; MEL R59 01 APR 26 &middot; AFM 11 AUG 26 &middot; PRC 31 AUG 26 &middot; AFM-SUPP 05 AUG 26 &middot; PERF R26-12 09 SEP 26 &middot; NPC-CB 13 AUG 25 &middot; FODM R0 20 MAY 26</span>
+    <span id="meta">Search every current Hawaiian A330 PAX manual at once, or pick one. Revisions are listed under Browse by section.</span>
   </div>
 
   <div class="card">
@@ -179,22 +179,22 @@
       <span class="mlbl">Manual</span>
       <div class="seg" id="manSeg" role="group" aria-label="Manual">
         <button type="button" data-man="ALL" aria-pressed="true">All</button>
-        <button type="button" data-man="A330P_FCOM" aria-pressed="false">FCOM</button>
-        <button type="button" data-man="A330P_QRH" aria-pressed="false">QRH</button>
-        <button type="button" data-man="A330_FCTM" aria-pressed="false">FCTM</button>
-        <button type="button" data-man="FOM" aria-pressed="false">FOM</button>
+        <button type="button" data-man="A330P_FCOM" aria-pressed="false" title="FCOM R17 · 15 MAY 26">FCOM</button>
+        <button type="button" data-man="A330P_QRH" aria-pressed="false" title="QRH R35 · 26 JUN 26">QRH</button>
+        <button type="button" data-man="A330_FCTM" aria-pressed="false" title="FCTM R6 · 14 SEP 26">FCTM</button>
+        <button type="button" data-man="FOM" aria-pressed="false" title="FOM 125.3 · 15 SEP 26">FOM</button>
       </div>
       <div class="seg" id="manSeg2" role="group" aria-label="Manual, continued">
-        <button type="button" data-man="A330_MEL" aria-pressed="false">MEL</button>
-        <button type="button" data-man="A330_AFM" aria-pressed="false">AFM</button>
-        <button type="button" data-man="A330_PRC" aria-pressed="false">PRC</button>
+        <button type="button" data-man="A330_MEL" aria-pressed="false" title="MEL R59 · 01 APR 26">MEL</button>
+        <button type="button" data-man="A330_AFM" aria-pressed="false" title="AFM 11 AUG 26">AFM</button>
+        <button type="button" data-man="A330_PRC" aria-pressed="false" title="PRC 31 AUG 26">PRC</button>
         <button type="button" data-man="more" aria-pressed="false">more</button>
       </div>
       <div class="seg" id="manSegMore" role="group" aria-label="More manuals" style="display:none">
-        <button type="button" data-man="A330_AFM-SUPP" aria-pressed="false">AFM-SUPP</button>
-        <button type="button" data-man="A330P_PERF" aria-pressed="false">PERF</button>
-        <button type="button" data-man="A330P_NPC-CB" aria-pressed="false">NPC-CB</button>
-        <button type="button" data-man="FODM" aria-pressed="false">FODM</button>
+        <button type="button" data-man="A330_AFM-SUPP" aria-pressed="false" title="AFM-SUPP 05 AUG 26">AFM-SUPP</button>
+        <button type="button" data-man="A330P_PERF" aria-pressed="false" title="PERF R26-12 · 09 SEP 26">PERF</button>
+        <button type="button" data-man="A330P_NPC-CB" aria-pressed="false" title="NPC-CB 13 AUG 25">NPC-CB</button>
+        <button type="button" data-man="FODM" aria-pressed="false" title="FODM R0 · 20 MAY 26">FODM</button>
       </div>
       <span class="mhelp" id="manHelp"></span>
     </div>
@@ -243,7 +243,6 @@
   </details>
 
   <footer>
-    Hawaiian Airlines A330 passenger fleet manuals: FCOM R17 15 MAY 26, QRH R35 26 JUN 26, FCTM R6 14 SEP 26, FOM 125.3 15 SEP 26, MEL R59 01 APR 26, AFM 11 AUG 26, PRC 31 AUG 26, AFM-SUPP 05 AUG 26, PERF R26-12 09 SEP 26, NPC-CB 13 AUG 25, FODM R0 20 MAY 26.<br>
     Study aid only. The manuals in Drive govern. Verify anything you act on against the source.
   </footer>
 </div>
@@ -267,6 +266,7 @@
   var PENDING = {};      // key -> promise while a manual is loading
   var SCOPE = 'ALL';     // manual key or ALL
   function shortOf(k) { return BYKEY[k] ? BYKEY[k].short : k; }
+  function revText(k) { var m = BYKEY[k]; return m ? m.short + ' ' + (m.revision ? m.revision + ' · ' : '') + m.date : k; }
   // URL params, parsed first because ?base= steers every index fetch.
   var QS = {};
   try {
@@ -646,8 +646,7 @@
         return '<li><a class="cite" data-m="' + k + '" data-p="' + s.p + '" data-s="' + esc(String(s.s)) + '">' +
           esc(String(s.s)) + ' &mdash; ' + esc(s.t || '') + '</a></li>';
       }).join('');
-      li.innerHTML = '<details><summary>' + esc(shortOf(k)) + ' &middot; ' + esc(st.meta.title) +
-        (st.meta.revision ? ' ' + esc(st.meta.revision) : '') + ', ' + esc(st.meta.date) +
+      li.innerHTML = '<details><summary>' + esc(revText(k)) + ' &middot; ' + esc(st.meta.title) +
         ' &middot; ' + st.toc.length + ' sections</summary><ol>' + inner + '</ol></details>';
       ol.appendChild(li);
     });
