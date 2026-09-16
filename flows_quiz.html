@@ -310,7 +310,7 @@ function showChecklist(name){
   ov.style.display = "flex";
 }
 let flowIdx = 0;
-let stepIdx = 0;
+let stepIdx = -1; // -1: a newly selected flow opens fully revealed (Ryan); Restart steps through it
 let revealed = false;
 let showShape = false;
 let seat = "FO"; // CA | FO
@@ -359,7 +359,7 @@ function buildPhaseBar(){
       }
       curPhase = p;
       const first = FLOWS.findIndex((f,i)=>f.phase===p && !flowHidden(i));
-      if(first>=0){ flowIdx = first; stepIdx = 0; }
+      if(first>=0){ flowIdx = first; stepIdx = -1; }
       buildPhaseBar(); buildFlowBtns(); render();
     };
     const _pc = phaseColor(p);
@@ -375,7 +375,7 @@ function buildFlowBtns(){
     const b = document.createElement("button");
     b.textContent = f.n;
     b.classList.toggle("active", i===flowIdx);
-    b.onclick = ()=>{ flowIdx = i; stepIdx = 0; buildFlowBtns(); render(); };
+    b.onclick = ()=>{ flowIdx = i; stepIdx = -1; buildFlowBtns(); render(); };
     const _fc = phaseColor(f.phase);
     if(i===flowIdx){ b.style.background=_fc; b.style.color="#fff"; b.style.borderColor=_fc; }
     else { b.style.background=tintColor(_fc); b.style.color=_fc; b.style.borderColor=_fc; }
@@ -500,6 +500,7 @@ function render(){
     drawMap(document.getElementById("cockpitMap"), f, 0, true);
     return;
   }
+  if(stepIdx < 0) stepIdx = items.length;
   if(stepIdx > items.length) stepIdx = 0;
 
   drawMap(document.getElementById("cockpitMap"), f, stepIdx, showShape);
@@ -616,7 +617,7 @@ document.addEventListener("keydown",e=>{
 
 // Seat toggle
 function setSeat(s, btn){
-  seat = s; stepIdx = 0;
+  seat = s; stepIdx = -1;
   document.querySelectorAll("#seatGroup button").forEach(x=>x.classList.remove("active"));
   btn.classList.add("active");
   if(seat==="CA" && flowIdx===2) flowIdx = 3;
@@ -630,7 +631,7 @@ document.getElementById("seatFO").onclick = e=>setSeat("FO", e.target);
 document.getElementById("seatIRO").onclick = e=>setSeat("IRO", e.target);
 
 function setDuty(d, btn){
-  duty = d; stepIdx = 0;
+  duty = d; stepIdx = -1;
   document.querySelectorAll("#dutyGroup button").forEach(x=>x.classList.remove("active"));
   btn.classList.add("active");
   buildFlowBtns();
