@@ -443,7 +443,7 @@
     // Every visitor queues their unlock in index.html. This flushes the queue to
     // the collector. Writes need no key. Reading the log back does, and that key
     // is only ever entered on the owner's own device.
-    var LOG_URL = 'https://script.google.com/macros/s/AKfycbyrHlq0FrUwA2CtCHBo3dGB_CjZaR-igFntcR9nVBGWF84MrLK0VKW6UdCFpyUHVNdN2w/exec';
+    var LOG_URL = '';
     var OWNER = 'ryan.pettit@alaskaair.com';
 
     function myEmail() { try { return (localStorage.getItem('ha330_email') || '').toLowerCase(); } catch (e) { return ''; } }
