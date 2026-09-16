@@ -4,7 +4,7 @@
    "n": "1. Safety Exterior Inspection (CM2)",
    "who": "FO (CM2)",
    "ref": "PRO-NOR-SOP-03",
-   "phase": "Preflight",
+   "phase": "Cockpit Prep",
    "items": [
     {
      "item": "General",
@@ -45,7 +45,7 @@
    "n": "2. Preliminary Cockpit Prep Flow (Pt 1)",
    "who": "CA (CM1) / FO (CM2)",
    "ref": "PRO-NOR-SOP-04",
-   "phase": "Preflight",
+   "phase": "Cockpit Prep",
    "items": [
     {
      "item": "ENG 1, 2 MASTERS LEVERS",
@@ -249,7 +249,7 @@
    "n": "3. Before Walkaround Flow (PCP pt 2)",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-04",
-   "phase": "Preflight",
+   "phase": "Cockpit Prep",
    "items": [
     {
      "item": "ECAM OXY PRESS / HYD QTY / ENG OIL QTY",
@@ -337,7 +337,7 @@
    "n": "4. Cockpit Preparation Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-05, PRO-NOR-SOP-06",
-   "phase": "Preflight",
+   "phase": "Cockpit Prep",
    "items": [
     {
      "item": "Overhead Panels scan",
@@ -486,7 +486,7 @@
    "n": "5. Before Pushback/Start Clearance",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-07",
-   "phase": "Before Start & Pushback",
+   "phase": "Before Start",
    "items": [
     {
      "item": "ACARS PERF page",
@@ -580,7 +580,7 @@
    "n": "6. Before Start Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-07",
-   "phase": "Before Start & Pushback",
+   "phase": "Before Start",
    "items": [
     {
      "item": "BEACON sw",
@@ -657,7 +657,7 @@
    "n": "7. After Start Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-09",
-   "phase": "Engine Start",
+   "phase": "After Start",
    "items": [
     {
      "item": "ENG START selector",
@@ -764,7 +764,7 @@
    "n": "8. During Taxi",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-10",
-   "phase": "Taxi Out",
+   "phase": "Taxi",
    "items": [
     {
      "item": "BRAKES",
@@ -813,7 +813,7 @@
    "n": "9. Taxi Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-10",
-   "phase": "Taxi Out",
+   "phase": "Taxi",
    "items": [
     {
      "item": "TERR ON ND",
@@ -890,7 +890,7 @@
    "n": "10. Line-Up Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-11",
-   "phase": "Takeoff",
+   "phase": "Line-Up",
    "items": [
     {
      "item": "TAKEOFF RUNWAY",
@@ -1062,7 +1062,7 @@
    "n": "13. Descending 10,000' Flow",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-17",
-   "phase": "Descent",
+   "phase": "Approach",
    "items": [
     {
      "item": "EFIS option pb",
@@ -1142,7 +1142,7 @@
    "n": "14. After Landing",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-21",
-   "phase": "Taxi In",
+   "phase": "After Landing",
    "items": [
     {
      "item": "GND SPLRS",
@@ -1233,7 +1233,7 @@
    "n": "15. Parking",
    "who": "PF / PM",
    "ref": "PRO-NOR-SOP-22",
-   "phase": "Shutdown & Secure",
+   "phase": "Parking",
    "items": [
     {
      "item": "ACCU PRESS indicator",
