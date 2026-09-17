@@ -79,6 +79,12 @@
 .gamelink{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--atlas);color:var(--breeze);border-radius:5px;padding:8px 12px;font-weight:700;font-size:12px;text-decoration:none;font-family:var(--sans);margin-left:8px}
 .gamelink:hover{background:var(--atlas);color:#fff}
 .handrow{flex-wrap:wrap;gap:8px}
+.fleetbar{display:flex;align-items:center;gap:0;margin:0 0 14px;border:1px solid var(--line);border-radius:6px;overflow:hidden;width:fit-content}
+.fleetbar button{border:0;border-radius:0;padding:7px 16px;font-size:12.5px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--muted)}
+.fleetbar button.on{background:var(--atlas);color:#fff}
+.fleetbar button:not(.on):hover{background:var(--panel2);color:var(--ink)}
+.unver{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#1A1630;background:var(--amber);border-radius:3px;padding:2px 6px;margin-left:8px;font-weight:700;vertical-align:middle}
+.unvernote{border-left:3px solid var(--amber);background:#2A2033;border-radius:4px;padding:10px 12px;font-size:12.5px;color:#EBD9C6;line-height:1.45;margin-top:2px}
 </style>
 
 <style>
@@ -108,9 +114,13 @@
 <div class="wrap">
   <header>
     <h1>A330 Limitations <span class="sub">// Number, Units, Condition</span></h1>
-    <span class="src">FCOM R17 LIM</span>
+    <span class="src" id="srclabel">FCOM R17 LIM</span>
   </header>
   <div class="handrow"><a class="handout" href="view.html?f=A330_Memory_Limitations.pdf" target="_blank" rel="noopener">&#128196; Open memorize-set handout (PDF)</a><a class="gamelink" href="limit-or-bust.html">&#127918; GAME</a></div>
+  <div class="fleetbar" id="fleetbar">
+    <button id="fb-pax"  onclick="setFleet('pax')">Passenger</button>
+    <button id="fb-frtr" onclick="setFleet('frtr')">Freighter</button>
+  </div>
   <div id="app"></div>
   <div class="hint">Amber "Memorize" = know-cold set, FCOM R17 LIM &nbsp;&middot;&nbsp; State the limit aloud, then reveal &nbsp;&middot;&nbsp; Space / Enter = reveal then advance &nbsp;&middot;&nbsp; K = got it &nbsp;&middot;&nbsp; R = review &nbsp;&middot;&nbsp; Source = verbatim FCOM quote</div>
 </div>
@@ -123,7 +133,21 @@ const [DATA]=__b;
 if(!(Array.isArray(DATA)?DATA.length:Object.keys(DATA).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
 
 
-const MEM=DATA.map((d,i)=>i).filter(i=>DATA[i].mem);
+let FLEET=(localStorage.getItem('a330_lim_fleet')==='frtr')?'frtr':'pax';
+function inFleet(d){return d.fleet===FLEET||d.fleet==='both'||!d.fleet}
+let MEM=[];
+function buildMem(){MEM=DATA.map((d,i)=>i).filter(i=>DATA[i].mem&&inFleet(DATA[i]));}
+function paintFleet(){
+  var sl=document.getElementById('srclabel');
+  if(sl)sl.textContent=(FLEET==='frtr')?'A330F FCOM R10 LIM':'FCOM R17 LIM';
+  var p=document.getElementById('fb-pax'),f=document.getElementById('fb-frtr');
+  if(p&&f){p.className=FLEET==='pax'?'on':'';f.className=FLEET==='frtr'?'on':'';}
+}
+function setFleet(f){
+  if(f===FLEET)return;
+  FLEET=f;localStorage.setItem('a330_lim_fleet',f);
+  buildMem();paintFleet();start(false);
+}
 let order=[], idx=0, revealed=false, known=new Set(), review=new Set(), reviewMode=false, srcOpen=false;
 const app=document.getElementById("app");
 function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -145,11 +169,11 @@ function render(){
     <div class="card">
       <span class="chip">${d.ref}</span>
       <div class="prompt">
-        <div class="cat">${d.s}${d.mem?'<span class="mem">Memorize</span>':''}</div>
+        <div class="cat">${d.s}${d.mem?'<span class="mem">Memorize</span>':''}${d.confidence==='UNVERIFIED'?'<span class="unver">Unverified</span>':''}</div>
         <div class="lead">State the limitation, then reveal to check</div>
         <div class="q">${d.q}</div>
       </div>
-      <div class="readout${revealed?' show':''}"><div class="answer">${d.a}</div></div>
+      <div class="readout${revealed?' show':''}"><div class="answer">${d.a}</div>${d.confidence==='UNVERIFIED'?'<div class="unvernote">Not located in the A330F book. The figure shown is the passenger value and is <b>unconfirmed for the freighter</b> - verify before relying on it.</div>':''}</div>
       <div class="srcpanel${srcOpen?' show':''}"><div class="srclabel">FCOM Source &mdash; ${d.ref}</div><div class="srcsub" style="color:#DCD8E6;font-style:normal">&ldquo;${d.src}&rdquo;</div></div>
       <div class="spacer"></div>
       <div class="controls">
@@ -192,14 +216,14 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="k"||e.key==="K"){if(revealed)grade(true)}
   else if(e.key==="r"||e.key==="R"){if(revealed)grade(false)}
 });
-start(false);
-Object.assign(window,{grade, render, reveal, shuffle, start, summary, toggleSrc});
+buildMem();paintFleet();start(false);
+Object.assign(window,{grade, render, reveal, shuffle, start, summary, toggleSrc, setFleet, buildMem, paintFleet});
 }).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
 </script>
 
 <footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
 <img src="assets/A330_hero.jpg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
-<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.6</div>
+<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.8</div>
 </footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
