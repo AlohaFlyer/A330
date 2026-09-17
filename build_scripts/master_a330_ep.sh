@@ -40,7 +40,13 @@ done
 
 B="/tmp/a330_m_$EP"; rm -rf "$B"; mkdir -p "$B"
 
-mapfile -t dirs < <(ls -d "$SRC/ep${EP}_seg"* 2>/dev/null | sort -V)
+# bash 3.2 (stock macOS) has no mapfile, and BSD sort has no -V.
+# Read into an array the portable way, and sort numerically on the seg number.
+dirs=()
+while IFS= read -r line; do
+  [ -n "$line" ] && dirs+=("$line")
+done < <(ls -d "$SRC/ep${EP}_seg"* 2>/dev/null \
+         | sed 's/.*_seg\([0-9]*\)$/\1 &/' | sort -n -k1,1 | cut -d' ' -f2-)
 if [ "${#dirs[@]}" -eq 0 ]; then
   echo "no segment folders matched $SRC/ep${EP}_seg*" >&2
   exit 1
