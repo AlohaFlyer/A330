@@ -402,8 +402,8 @@
   "a": "41 450 ft",
   "ref": "AFM LIM-GEN",
   "mem": true,
-  "src": "Slats and flaps retracted: 41 450 ft. This is the maximum altitude at which it is possible to maintain cabin pressure altitude below 8 000 ft. [LIM-GEN-00005448.0002001]",
-  "fleet": "pax",
+  "src": "Slats and flaps retracted: 41 450 ft. This is the maximum altitude at which it is possible to maintain cabin pressure altitude below 8 000 ft. [LIM-GEN-00005448.0002001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -846,8 +846,8 @@
   "a": "Not permitted when the airport magnetic variation and the ADIRU magnetic variation differ by more than 3 °",
   "ref": "AFM LIM-22-FGS",
   "mem": true,
-  "src": "Automatic landing and rollout operations are not permitted when the difference between the magnetic variation at a given airport, and the magnetic variation of the ADIRU installed on the aircraft is more than 3 °. Note: The magnetic variation to be taken into account for a given airport is the most recent value provided by the local Aeronautical Information Publication (AIP). CAT II approaches without AUTOLAND are still allowed. [LIM-22-FGS-00027205.0001001]",
-  "fleet": "pax",
+  "src": "Automatic landing and rollout operations are not permitted when the difference between the magnetic variation at a given airport, and the magnetic variation of the ADIRU installed on the aircraft is more than 3 °. Note: The magnetic variation to be taken into account for a given airport is the most recent value provided by the local Aeronautical Information Publication (AIP). CAT II approaches without AUTOLAND are still allowed. [LIM-22-FGS-00027205.0001001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -1410,8 +1410,8 @@
   "a": "ON for all ground and flight operations when icing conditions exist or are anticipated, except during climb and cruise below -40 °C SAT; ON prior to and during descent in icing conditions, including below -40 °C SAT",
   "ref": "AFM LIM-70",
   "mem": true,
-  "src": "The engine anti-ice must be ON during all ground and flight operations when icing conditions exist or are anticipated, except during climb and cruise when the temperature is below -40 °C SAT. The engine anti-ice must be ON prior to and during descent in icing conditions, including temperatures below -40 °C SAT. Note: Do not rely on airframe visual icing cues to turn engine anti-ice on. Use the temperature and visual moisture criteria specified in the icing conditions definition (Refer to LIM-GEN Icing Conditions Definition). Delaying the use of engine anti-ice until buildup is visible from the cockpit may result in severe engine damage and/or flameout. [LIM-70-00005469.0001001]",
-  "fleet": "pax",
+  "src": "The engine anti-ice must be ON during all ground and flight operations when icing conditions exist or are anticipated, except during climb and cruise when the temperature is below -40 °C SAT. The engine anti-ice must be ON prior to and during descent in icing conditions, including temperatures below -40 °C SAT. Note: Do not rely on airframe visual icing cues to turn engine anti-ice on. Use the temperature and visual moisture criteria specified in the icing conditions definition (Refer to LIM-GEN Icing Conditions Definition). Delaying the use of engine anti-ice until buildup is visible from the cockpit may result in severe engine damage and/or flameout. [LIM-70-00005469.0001001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -1602,8 +1602,8 @@
   "a": "Must not be used for operations",
   "ref": "AFM LIM-34",
   "mem": false,
-  "src": "The HUD installed on the First Officer side must not be used for operations. [LIM-34-00020731.0002001]",
-  "fleet": "pax",
+  "src": "The HUD installed on the First Officer side must not be used for operations. [LIM-34-00020731.0002001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -1662,8 +1662,8 @@
   "a": "330 kt IAS",
   "ref": "AFM LIM-SPD",
   "mem": true,
-  "src": "MAXIMUM OPERATING LIMIT SPEED (VMO/MMO) VMO = 330 kt IAS [LIM-SPD-00006064.0001001]",
-  "fleet": "pax",
+  "src": "MAXIMUM OPERATING LIMIT SPEED (VMO/MMO) VMO = 330 kt IAS [LIM-SPD-00006064.0001001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -1674,8 +1674,8 @@
   "a": "M 0.86",
   "ref": "AFM LIM-SPD",
   "mem": true,
-  "src": "MMO = M 0.86 This limit must not be intentionally exceeded in any flight regime. [LIM-SPD-00006064.0001001]",
-  "fleet": "pax",
+  "src": "MMO = M 0.86 This limit must not be intentionally exceeded in any flight regime. [LIM-SPD-00006064.0001001]  NOTE: AFM criteria carries no fleet split (A330, or explicitly 330-200F for the autoland/MAGVAR item), so this AFM limitation applies to the freighter as well as the passenger fleet. Verified in A330_AFM_2026-08-11.",
+  "fleet": "both",
   "provenance": "manual",
   "confidence": "VERIFIED"
  },
@@ -2412,18 +2412,6 @@
   "confidence": "UNCLEAR"
  },
  {
-  "s": "Aircraft General",
-  "q": "Maximum operating altitude, slats and flaps retracted?",
-  "mem": true,
-  "id": "lim-afm-03-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "41 450 ft",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
- },
- {
   "s": "Automatic Flight",
   "q": "Radio altimeter flight restrictions?",
   "mem": false,
@@ -2444,7 +2432,7 @@
   "provenance": "manual",
   "a": "100 ft AGL and at least 5 s after liftoff",
   "ref": "A330F FCOM LIM-AFS-10-10",
-  "src": "At takeoff 100 ft AGL and at least 5 s after liftoff Ident.: LIM-AFS-10-10-00020141.0001001 / 27 DEC 23 In approach with F-G/S  mode 200 ft AGL In approach with FINAL APP, V/S or FPA mode 250 ft AGL Ident.: LIM-AFS-10-10-00020142.0001001 / 27 DEC 23 In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS ap [LIM-AFS-10-10-00020140.0001001]",
+  "src": "At takeoff 100 ft AGL and at least 5 s after liftoff Ident.: LIM-AFS-10-10-00020141.0001001 / 27 DEC 23 In approach with F-G/S mode 200 ft AGL In approach with FINAL APP, V/S or FPA mode 250 ft AGL Ident.: LIM-AFS-10-10-00020142.0001001 / 27 DEC 23 In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS appr [LIM-AFS-10-10-00020140.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2455,9 +2443,9 @@
   "fleet": "frtr",
   "provenance": "manual",
   "a": "200 ft AGL",
-  "ref": "A330F FCOM R10 (not located)",
-  "src": "NOT LOCATED in the A330F FCOM R10 extract. Value shown is the PAX figure and is unconfirmed for the freighter. Verify in the freighter book before relying on it.",
-  "confidence": "UNVERIFIED"
+  "ref": "A330F FCOM LIM-AFS-10-10",
+  "src": "In approach with F-G/S mode 200 ft AGL In approach with FINAL APP, V/S or FPA mode 250 ft AGL Ident.: LIM-AFS-10-10-00020142.0001001 / 27 DEC 23 In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS approach when AUTOLAND is not displayed on the FMA [LIM-AFS-10-10-00020141.0001001]",
+  "confidence": "VERIFIED"
  },
  {
   "s": "Automatic Flight",
@@ -2468,7 +2456,7 @@
   "provenance": "manual",
   "a": "250 ft AGL",
   "ref": "A330F FCOM LIM-AFS-10-10",
-  "src": "In approach with FINAL APP, V/S or FPA mode 250 ft AGL Ident.: LIM-AFS-10-10-00020142.0001001 / 27 DEC 23 In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS  approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS  [LIM-AFS-10-10-00020141.0001001]",
+  "src": "In approach with FINAL APP, V/S or FPA mode 250 ft AGL Ident.: LIM-AFS-10-10-00020142.0001001 / 27 DEC 23 In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS ) wh [LIM-AFS-10-10-00020141.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2480,7 +2468,7 @@
   "provenance": "manual",
   "a": "500 ft AGL",
   "ref": "A330F FCOM LIM-AFS-10-10",
-  "src": "In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS  approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS  ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displaye [LIM-AFS-10-10-00020142.0001001]",
+  "src": "In circling approach 500 ft AGL Ident.: LIM-AFS-10-10-00020143.0001001 / 27 DEC 23 ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on [LIM-AFS-10-10-00020142.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2492,7 +2480,7 @@
   "provenance": "manual",
   "a": "160 ft AGL",
   "ref": "A330F FCOM LIM-AFS-10-10",
-  "src": "ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS  approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS  ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on the 0 ft AGL if autoland FMA Ident.: LIM-AFS-10-10-00020144.0001001 / 27 DEC 2 [LIM-AFS-10-10-00020143.0001001]",
+  "src": "ILS approach when CAT1 is displayed on the FMA 160 ft AGL GLS approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on the 0 ft AGL if autoland FMA Ident.: LIM-AFS-10-10-00020144.0001001 / 27 DEC 23 Af [LIM-AFS-10-10-00020143.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2503,9 +2491,9 @@
   "fleet": "frtr",
   "provenance": "manual",
   "a": "160 ft AGL",
-  "ref": "A330F FCOM R10 (not located)",
-  "src": "NOT LOCATED in the A330F FCOM R10 extract. Value shown is the PAX figure and is unconfirmed for the freighter. Verify in the freighter book before relying on it.",
-  "confidence": "UNVERIFIED"
+  "ref": "A330F FCOM LIM-AFS-10-10",
+  "src": "GLS approach when AUTOLAND is not displayed on the FMA 160 ft AGL LPV approach (with SLS ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on the 0 ft AGL if autoland FMA Ident.: LIM-AFS-10-10-00020144.0001001 / 27 DEC 23 After a manual go-around 100 ft AGL Ident.: LIM-AFS-10-10-00 [LIM-AFS-10-10-00020143.0001001]",
+  "confidence": "VERIFIED"
  },
  {
   "s": "Automatic Flight",
@@ -2516,7 +2504,7 @@
   "provenance": "manual",
   "a": "160 ft AGL",
   "ref": "A330F FCOM LIM-AFS-10-10",
-  "src": "LPV approach (with SLS  ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on the 0 ft AGL if autoland FMA Ident.: LIM-AFS-10-10-00020144.0001001 / 27 DEC 23 After a manual go-around 100 ft AGL Ident.: LIM-AFS-10-10-00020145.0001001 / 27 DEC 23 In all other phases 500 ft AGL The AP [LIM-AFS-10-10-00020143.0001001]",
+  "src": "LPV approach (with SLS ) when CAT1 is displayed on the FMA 160 ft AGL ILS approach when CAT2 or CAT3 (single or dual) is displayed on the 0 ft AGL if autoland FMA Ident.: LIM-AFS-10-10-00020144.0001001 / 27 DEC 23 After a manual go-around 100 ft AGL Ident.: LIM-AFS-10-10-00020145.0001001 / 27 DEC 23 In all other phases 500 ft AGL The AP o [LIM-AFS-10-10-00020143.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2576,7 +2564,7 @@
   "provenance": "manual",
   "a": "1 NM (AP ON), 1 NM (AP OFF/FD ON), 1.1 NM (AP OFF/FD OFF)",
   "ref": "A330F FCOM LIM-AFS-10-20",
-  "src": "RNP accuracy with GPS PRIMARY  is: With AP ON (1) With AP OFF and FD ON (1) With AP OFF and FD OFF En route 1 NM 1 NM 1.1 NM In terminal area 0.5 NM 0.51 NM 0.51 NM With F-LOC  deviation: 0.3 NM In approach 0.3 NM 0.3 NM Without F-LOC  deviation: not authorized (1) - In NAV mode (all phases), or - In F-LOC  (approach phase). [LIM-AFS-10-20-00020163.0002001]",
+  "src": "RNP accuracy with GPS PRIMARY is: With AP ON (1) With AP OFF and FD ON (1) With AP OFF and FD OFF En route 1 NM 1 NM 1.1 NM In terminal area 0.5 NM 0.51 NM 0.51 NM With F-LOC deviation: 0.3 NM In approach 0.3 NM 0.3 NM Without F-LOC deviation: not authorized (1) - In NAV mode (all phases), or - In F-LOC (approach phase). [LIM-AFS-10-20-00020163.0002001]",
   "confidence": "UNCLEAR"
  },
  {
@@ -2588,7 +2576,7 @@
   "provenance": "manual",
   "a": "0.5 NM (AP ON), 0.51 NM (AP OFF/FD ON), 0.51 NM (AP OFF/FD OFF)",
   "ref": "A330F FCOM LIM-AFS-10-20",
-  "src": "In terminal area 0.5 NM 0.51 NM 0.51 NM With F-LOC  deviation: 0.3 NM In approach 0.3 NM 0.3 NM Without F-LOC  deviation: not authorized (1) - In NAV mode (all phases), or - In F-LOC  (approach phase). [LIM-AFS-10-20-00020163.0002001]",
+  "src": "In terminal area 0.5 NM 0.51 NM 0.51 NM With F-LOC deviation: 0.3 NM In approach 0.3 NM 0.3 NM Without F-LOC deviation: not authorized (1) - In NAV mode (all phases), or - In F-LOC (approach phase). [LIM-AFS-10-20-00020163.0002001]",
   "confidence": "UNCLEAR"
  },
  {
@@ -2599,9 +2587,9 @@
   "fleet": "frtr",
   "provenance": "manual",
   "a": "0.3 NM; with F-LOC deviation 0.3 NM, without F-LOC deviation not authorized",
-  "ref": "A330F FCOM R10 (not located)",
-  "src": "NOT LOCATED in the A330F FCOM R10 extract. Value shown is the PAX figure and is unconfirmed for the freighter. Verify in the freighter book before relying on it.",
-  "confidence": "UNVERIFIED"
+  "ref": "A330F FCOM LIM-AFS-10-20",
+  "src": "With F-LOC deviation: 0.3 NM In approach 0.3 NM 0.3 NM Without F-LOC deviation: not authorized (1) - In NAV mode (all phases), or - In F-LOC (approach phase). [LIM-AFS-10-20-00020163.0002001]",
+  "confidence": "UNCLEAR"
  },
  {
   "s": "Automatic Flight",
@@ -2780,7 +2768,7 @@
   "provenance": "manual",
   "a": "CONF 3 and CONF FULL",
   "ref": "A330F FCOM LIM-AFS-20-10",
-  "src": "ILS CAT II and CAT III autoland and GLS  CAT I autoland are approved in CONF 3 and CONF FULL. Ident.: LIM-AFS-20-10-00020147.0001001 / 27 DEC 23 Automatic landing is demonstrated: - With CAT II and CAT III ILS beam and CAT I GLS  beam. [LIM-AFS-20-10-00020146.0001001]",
+  "src": "ILS CAT II and CAT III autoland and GLS CAT I autoland are approved in CONF 3 and CONF FULL. Ident.: LIM-AFS-20-10-00020147.0001001 / 27 DEC 23 Automatic landing is demonstrated: - With CAT II and CAT III ILS beam and CAT I GLS beam. [LIM-AFS-20-10-00020146.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2856,18 +2844,6 @@
   "confidence": "VERIFIED"
  },
  {
-  "s": "Automatic Flight",
-  "q": "Automatic landing and rollout with outdated MAGVAR?",
-  "mem": true,
-  "id": "lim-afm-06-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "Not permitted when the airport magnetic variation and the ADIRU magnetic variation differ by more than 3 °",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
- },
- {
   "s": "Cabin/IFE",
   "q": "Starlink Aviation System use?",
   "mem": false,
@@ -2912,7 +2888,7 @@
   "provenance": "manual",
   "a": "920 °C for 20 s / 900 °C for 5 min all engines operative, 10 min one engine inoperative",
   "ref": "A330F FCOM LIM-ENG",
-  "src": "Operating Conditions Time Limit EGT Limit 20 s 920 °C All engines operative Takeoff(1) and Go-around 5 min 900 °C One engine inoperative 10 min Maximum Continuous Thrust (MCT) Not limited 850 °C On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE  thrust modes. [LIM-ENG-00020225.0004001]",
+  "src": "Operating Conditions Time Limit EGT Limit 20 s 920 °C All engines operative Takeoff(1) and Go-around 5 min 900 °C One engine inoperative 10 min Maximum Continuous Thrust (MCT) Not limited 850 °C On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE thrust modes. [LIM-ENG-00020225.0004001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2924,7 +2900,7 @@
   "provenance": "manual",
   "a": "850 °C, not limited in time",
   "ref": "A330F FCOM LIM-ENG",
-  "src": "Maximum Continuous Thrust (MCT) Not limited 850 °C On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE  thrust modes. [LIM-ENG-00020225.0004001]",
+  "src": "Maximum Continuous Thrust (MCT) Not limited 850 °C On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE thrust modes. [LIM-ENG-00020225.0004001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2936,7 +2912,7 @@
   "provenance": "manual",
   "a": "700 °C",
   "ref": "A330F FCOM LIM-ENG",
-  "src": "On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE  thrust modes. SHAFT SPEEDS Ident.: LIM-ENG-00020227.0004001 / 27 DEC 23 Applicable to: ALL Maximum N1.................................................................................................................................. [LIM-ENG-00020225.0004001]",
+  "src": "On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE thrust modes. SHAFT SPEEDS Ident.: LIM-ENG-00020227.0004001 / 27 DEC 23 Applicable to: ALL Maximum N1.................................................................................................................................. [LIM-ENG-00020225.0004001]",
   "confidence": "VERIFIED"
  },
  {
@@ -2948,7 +2924,7 @@
   "provenance": "manual",
   "a": "850 °C",
   "ref": "A330F FCOM LIM-ENG",
-  "src": "In flight 850 °C (1) Includes TOGA, FLEX, and DERATE  thrust modes. SHAFT SPEEDS Ident.: LIM-ENG-00020227.0004001 / 27 DEC 23 Applicable to: ALL Maximum N1.................................................................................................................................. [LIM-ENG-00020225.0004001]",
+  "src": "In flight 850 °C (1) Includes TOGA, FLEX, and DERATE thrust modes. SHAFT SPEEDS Ident.: LIM-ENG-00020227.0004001 / 27 DEC 23 Applicable to: ALL Maximum N1.................................................................................................................................. [LIM-ENG-00020225.0004001]",
   "confidence": "VERIFIED"
  },
  {
@@ -3188,7 +3164,7 @@
   "provenance": "manual",
   "a": "32 kt (gust included)",
   "ref": "A330F FCOM LIM-ENG",
-  "src": "Engine crosswind limit at takeoff........................................................................... 32 kt (gust included) SOFT GO-AROUND  Ident.: LIM-ENG-00020233.0001001 / 27 DEC 23 Applicable to: ALL The use of soft go-around is prohibited with one engine inoperative. [LIM-ENG-00020232.0002001]",
+  "src": "Engine crosswind limit at takeoff........................................................................... 32 kt (gust included) SOFT GO-AROUND Ident.: LIM-ENG-00020233.0001001 / 27 DEC 23 Applicable to: ALL The use of soft go-around is prohibited with one engine inoperative. [LIM-ENG-00020232.0002001]",
   "confidence": "VERIFIED"
  },
  {
@@ -3420,18 +3396,6 @@
   "confidence": "VERIFIED"
  },
  {
-  "s": "Ice and Rain",
-  "q": "Engine anti-ice, operations in icing conditions?",
-  "mem": true,
-  "id": "lim-afm-05-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "ON for all ground and flight operations when icing conditions exist or are anticipated, except during climb and cruise below -40 °C SAT; ON prior to and during descent in icing conditions, including below -40 °C SAT",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
- },
- {
   "s": "Landing Gear",
   "q": "Braking system holding capability, Ground procedures requiring a thrust increase with braking?",
   "mem": false,
@@ -3452,7 +3416,7 @@
   "provenance": "manual",
   "a": "300 °C",
   "ref": "A330F FCOM LIM-LG",
-  "src": "Maximum brake temperature for takeoff (brake fans  off).....................................................300 °C MAXIMUM SPEEDS WITH THE LANDING GEAR EXTENDED Ident.: LIM-LG-00020195.0001001 / 27 DEC 23 Applicable to: ALL Refer to LIM-AG-SPD Maximum Speeds with the Landing Gear Extended. [LIM-LG-00020192.0001001]",
+  "src": "Maximum brake temperature for takeoff (brake fans off).....................................................300 °C MAXIMUM SPEEDS WITH THE LANDING GEAR EXTENDED Ident.: LIM-LG-00020195.0001001 / 27 DEC 23 Applicable to: ALL Refer to LIM-AG-SPD Maximum Speeds with the Landing Gear Extended. [LIM-LG-00020192.0001001]",
   "confidence": "VERIFIED"
  },
  {
@@ -3612,18 +3576,6 @@
   "confidence": "VERIFIED"
  },
  {
-  "s": "Navigation",
-  "q": "Use of the First Officer side HUD?",
-  "mem": false,
-  "id": "lim-afm-04-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "Must not be used for operations",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
- },
- {
   "s": "Oxygen",
   "q": "Minimum flight crew oxygen bottle pressure?",
   "mem": true,
@@ -3670,30 +3622,6 @@
   "ref": "A330F FCOM TDU",
   "src": "Protection against smoke with 100 % oxygen for all cockpit members during 15 min at 8 000 ft cabin altitude. [TDU]",
   "confidence": "VERIFIED"
- },
- {
-  "s": "Speeds",
-  "q": "Maximum operating speed (VMO)?",
-  "mem": true,
-  "id": "lim-afm-01-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "330 kt IAS",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
- },
- {
-  "s": "Speeds",
-  "q": "Maximum operating Mach (MMO)?",
-  "mem": true,
-  "id": "lim-afm-02-f",
-  "fleet": "frtr",
-  "provenance": "manual",
-  "a": "M 0.86",
-  "ref": "A330F AFM (not extracted)",
-  "src": "NOT LOCATED in A330F FCOM R10. This limitation is AFM-sourced; the A330 Freighter AFM has not been extracted, so the freighter value is unconfirmed. The value shown is the PAX figure and must be verified against the freighter AFM before it is relied on.",
-  "confidence": "UNVERIFIED"
  },
  {
   "s": "Speeds",
@@ -3895,9 +3823,9 @@
   "fleet": "frtr",
   "provenance": "manual",
   "a": "Less than 15 NM from the airfield",
-  "ref": "A330F FCOM R10 (not located)",
-  "src": "NOT LOCATED in the A330F FCOM R10 extract. Value shown is the PAX figure and is unconfirmed for the freighter. Verify in the freighter book before relying on it.",
-  "confidence": "UNVERIFIED"
+  "ref": "A330F FCOM LIM-SURV",
+  "src": "The predictive GPWS functions should be inhibited (TERR pushbutton to OFF, on the GPWS panel) when the aircraft position is less than 15 NM from the airfield : - For operations from/to runways not incorporated in the predictive GPWS database. [LIM-SURV-00019862.0001001]",
+  "confidence": "VERIFIED"
  },
  {
   "s": "Weights",

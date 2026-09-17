@@ -15,10 +15,16 @@ HOME = Path.home(); REPO = HOME / "A330"
 FRTR = HOME / ("My Drive (ryanpettit@gmail.com)/Claude - Alaska Airlines/"
                "HA - Airbus A330/extracts/A330F_FCOM_R10.md")
 
+# Airbus embeds marker glyphs as Private Use Area codepoints (e.g. U+E111 after
+# "F-G/S", "GLS", "SLS", "F-LOC", "DERATE"). They are invisible in print but
+# break any literal match, so they are stripped before matching.
+PUA = re.compile(r"[\ue000-\uf8ff]")
+
 def norm(s):
     s = unicodedata.normalize("NFKC", s)
     for a, b in [("\u2010","-"),("\u2011","-"),("\u2013","-"),("\u2019","'"),("\u00a0"," ")]:
         s = s.replace(a, b)
+    s = PUA.sub(" ", s)
     return re.sub(r"\s+", " ", s).strip()
 
 raw = norm(FRTR.read_text(encoding="utf-8", errors="replace"))
