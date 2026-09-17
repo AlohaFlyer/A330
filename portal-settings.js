@@ -430,6 +430,7 @@
         '.ps-home svg{display:block;}' +
         '.ps-home.in-bar{margin-left:12px;flex:0 0 auto;background:rgba(255,255,255,.16);border:0;color:#fff;box-shadow:none;width:36px;height:36px;}' +
         '.ps-home.in-bar:hover,.ps-home.in-bar:focus-visible{background:#fff;color:#463C8F;}' +
+        '.ps-home.in-bar.at-end{margin-left:auto;}' +
         '@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}.ps-home.in-bar{width:36px;height:36px;margin-left:8px;}}';
       document.head.appendChild(css);
 
@@ -445,10 +446,21 @@
       if (a.classList.contains('in-bar')) return;
       var host = document.querySelector('header .ctrls') || document.querySelector('header') ||
         document.querySelector('div[style*="background:var(--midnight)"]') || document.querySelector('.banner');
+      // Pages whose top banner is a plain styled div matched none of the above and fell back to
+      // the floating top-left bar: podcast/view/pwa_pdf (.bar), flows_quiz (.topbar),
+      // systems_quiz (.portal-bar). They are flex rows, so an auto left margin parks the icon
+      // at the right end of the banner.
+      var atEnd = false;
+      if (!host) {
+        host = document.querySelector('div.bar') || document.querySelector('div.topbar') ||
+          document.querySelector('div.portal-bar');
+        atEnd = !!host;
+      }
       if (host) {
         var last = host.lastElementChild;
         if (last && host.children.length > 1 && !document.querySelector('header .ctrls') && host.tagName !== 'HEADER' && last.tagName === 'SPAN') last.style.marginLeft = 'auto';
         a.classList.add('in-bar');
+        if (atEnd) a.classList.add('at-end');
         host.appendChild(a);
         var bar0 = document.querySelector('.ps-homebar');
         if (bar0 && !bar0.children.length) bar0.parentNode.removeChild(bar0);
