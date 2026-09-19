@@ -1,12 +1,12 @@
 {
-  "build": "v1.8",
+  "build": "v1.9",
   "default": "1.6",
   "pages": {
     "flows_quiz.html": "1.6",
     "phase_flows.html": "1.6",
     "manuals/index.html": "1.6",
     "index.html": "1.7",
-    "podcast.html": "1.8",
+    "podcast.html": "1.9",
     "fom_quiz.html": "1.6",
     "ioe.html": "1.6",
     "triggers.html": "1.7",

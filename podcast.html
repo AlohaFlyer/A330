@@ -89,7 +89,7 @@ h1{font-size:22px;text-align:center;color:#fff;margin:4px 0 4px}
 <div class="wrap">
   <div class="mic">&#127897;&#65039;</div>
   <h1>330 Flight Deck Notes</h1>
-  <div class="sub">Three-host A330 study podcast - Pualani, Chester &amp; Otto. One episode per system, plus operations, review, procedures and chair-fly flow drills.</div>
+  <div class="sub">Three-host A330 study podcast - Pualani, Chester &amp; Otto. One episode per system, plus flows, operations, review, procedures and chair-fly drills.</div>
   <div class="prog" id="prog"></div>
   <div class="tabs" id="tabs"></div>
   <div id="list"></div>
@@ -105,6 +105,7 @@ if(!(Array.isArray(EPISODES)?EPISODES.length:Object.keys(EPISODES).length)){(doc
 // Colors drawn from Alaska (atlas blue, green) and Hawaiian (Pualani purple, maile gold) palettes.
 var TABS=[
  {key:"Systems",   label:"Systems",    groups:["Systems"],                accent:"#3a9ee0", card:"#2A2440"},
+ {key:"Flows",     label:"Flows",      groups:["Flows"],                  accent:"#4fd1c5", card:"#0d2b2b"},
  {key:"Procedures",label:"Procedures", groups:["Procedures","Chair-Fly","Normal Procedures"], accent:"#a07bd6", card:"#1d1736"},
  {key:"FFS",       label:"FFS",        groups:["FFS"],                    accent:"#e0687a", card:"#2c1218"},
  {key:"Maneuvers", label:"Maneuvers",  groups:["Maneuvers"],              accent:"#e07b3a", card:"#301c0d"},
@@ -117,8 +118,18 @@ function tabFor(group){
   for(var i=0;i<TABS.length;i++){ if(TABS[i].groups.indexOf(group)>=0) return TABS[i]; }
   return TABS[0];
 }
+function tabCount(t){
+  return EPISODES.filter(function(e){return e.audio && t.groups.indexOf(e.group)>=0;}).length;
+}
+// Only tabs holding at least one published episode are shown. When every tab is
+// empty (a bank that has not shipped audio yet) fall back to the full list so the
+// page still renders its nav instead of going blank.
+function visibleTabs(){
+  var v=TABS.filter(function(t){return tabCount(t)>0;});
+  return v.length?v:TABS;
+}
 var activeTab=localStorage.getItem('fdn_tab');
-if(!activeTab||!TABS.some(function(t){return t.key===activeTab;})) activeTab="Systems";
+if(!activeTab||!visibleTabs().some(function(t){return t.key===activeTab;})) activeTab=visibleTabs()[0].key;
 function setTab(k){ activeTab=k; localStorage.setItem('fdn_tab',k); render(); }
 
 function key(n){return 'fdn_heard_'+n;}
@@ -165,8 +176,8 @@ function updateProg(){
   document.getElementById('prog').textContent='Listened: '+done+' / '+pub.length+' published';
 }
 function renderTabs(){
-  var html=TABS.map(function(t){
-    var count=EPISODES.filter(function(e){return e.audio && t.groups.indexOf(e.group)>=0;}).length;
+  var html=visibleTabs().map(function(t){
+    var count=tabCount(t);
     var on=t.key===activeTab;
     var style=on
       ? 'background:'+t.accent+';border-color:'+t.accent+';color:#120F1F'
@@ -178,7 +189,7 @@ function renderTabs(){
 }
 function render(){
   renderTabs();
-  var meta=TABS.filter(function(t){return t.key===activeTab;})[0];
+  var meta=TABS.filter(function(t){return t.key===activeTab;})[0]||visibleTabs()[0];
   var eps=EPISODES.filter(function(e){return e.audio && meta.groups.indexOf(e.group)>=0;});
   var html=eps.map(function(e){
     var coming=!e.audio;
@@ -245,7 +256,7 @@ function play(n){
     }
   }
 })();
-Object.assign(window,{heard, isOffline, key, offlineKey, play, render, renderTabs, setHeard, setTab, tabFor, toggleOffline, updateProg});
+Object.assign(window,{heard, isOffline, key, offlineKey, play, render, renderTabs, setHeard, setTab, tabCount, tabFor, toggleOffline, updateProg, visibleTabs});
 }).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
 </script>
 <script src="/portal-settings.js" defer></script>
