@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>A330 Flow Memorization Plan</title>
+<style>
+:root{--midnight:#463C8F;--atlas:#CE0C88;--green:#00805E;--good:#FF9080;--ink:#1E1A2E;--ice:#F4F1F9;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;background:#1A1630;color:#F1EEF6;min-height:100vh;display:flex;flex-direction:column;-webkit-text-size-adjust:100%}
+.bar{display:flex;align-items:center;gap:14px;background:var(--midnight);padding:9px 14px;flex-wrap:wrap}
+.bar .title{color:var(--good);font-size:14px;font-weight:700;letter-spacing:.04em}
+.bar a.back{margin-left:auto;background:#463C8F;color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:6px;border:1px solid var(--atlas)}
+.bar a.back:hover{background:#831A57}
+.wrap{max-width:820px;margin:0 auto;padding:22px 16px 70px;width:100%}
+h1{font-size:22px;color:#fff;margin-bottom:6px}
+.sub{color:#C3BED0;font-size:12.5px;line-height:1.55;margin-bottom:18px}
+h2{font-size:16px;color:#fff;margin:26px 0 8px;padding-bottom:5px;border-bottom:1px solid #453F58}
+h3{font-size:13.5px;color:var(--good);margin:18px 0 6px;letter-spacing:.02em}
+p{font-size:14px;line-height:1.62;color:#E4E0EC;margin-bottom:11px}
+ul{margin:0 0 13px 20px}
+li{font-size:14px;line-height:1.55;color:#E4E0EC;margin-bottom:5px}
+strong{color:#fff}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:#2A2440;padding:1px 5px;border-radius:4px;color:#E26DB8}
+a{color:#E26DB8}
+hr{border:none;border-top:1px solid #3A3550;margin:22px 0}
+.tw{overflow-x:auto;margin-bottom:14px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:420px}
+th{background:var(--midnight);color:#fff;font-size:12px;text-align:left;padding:7px 10px;letter-spacing:.03em}
+td{font-size:13px;line-height:1.5;color:#E4E0EC;padding:7px 10px;border-top:1px solid #3A3550;vertical-align:top}
+tbody tr:nth-child(even){background:#221D3A}
+.note{color:#8C8798;font-size:11.5px;line-height:1.5;margin-top:26px;border-top:1px solid #3A3550;padding-top:12px}
+@media print{body{background:#fff;color:#000}.bar,.ps-homebar,.note{display:none}h1,h2,h3,p,li,td{color:#000}th{background:#ddd;color:#000}}
+</style>
+<style>
+.ps-homebar{align-self:stretch;width:100%;box-sizing:border-box;padding:8px 0 0 10px;flex:0 0 auto;text-align:left;}
+.ps-home{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:#fff;border:2px solid #463C8F;color:#463C8F;text-decoration:none;box-shadow:0 1px 4px rgba(1,23,43,.2);transition:background .12s,color .12s;-webkit-tap-highlight-color:transparent;}
+.ps-home:hover,.ps-home:focus-visible{background:#463C8F;color:#fff;}
+.ps-home:focus{outline:none;}
+.ps-home svg{display:block;}
+@media (max-width:480px){.ps-homebar{padding:6px 0 0 8px;}.ps-home{width:40px;height:40px;}}
+</style>
+<link rel="apple-touch-icon" href="/assets/icons/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#463C8F">
+</head>
+<body>
+<div class="ps-homebar"><a class="ps-home" href="/index.html" title="A330 Study Portal" aria-label="A330 Study Portal"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false"><path d="M3 11.3 12 4l9 7.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.7 10.1v9.4h12.6v-9.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 19.5v-5.1h4v5.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<div class="bar"><span class="title">A330 FLOW MEMORIZATION PLAN</span><a class="back" href="flows_quiz.html">&#8592; Flows Trainer</a></div>
+<div class="wrap">
+<h1>Cockpit Preparation - Flow Memorization Plan</h1>
+<div class="sub">How to commit the three biggest ground flows to memory, and how to practise them so they survive the thing that actually breaks them. Method is sourced; where a technique is one pilot's opinion rather than documented practice, it says so.</div>
+<p>Target flows: Preliminary Cockpit Prep (22 steps), Before Walkaround (10), Cockpit Preparation (16 card lines over ~60 FCOM document units). Source of truth: data/flows.json, A330P FCOM R17 PRO-NOR-SOP-04/05/06, A330P NPC-CB 2025-08-13 Cockpit Preparation card, FCTM PR-NP-CL.</p>
+<p>Evidence basis for the method is cited inline. Where something is one pilot&#x27;s opinion rather than documented practice, it says so.</p>
+<hr>
+<h2>0. What you are actually up against</h2>
+<p>NASA Ames ran a line observation study across 20 flight segments focused on the preflight phase. Two numbers from it set the stakes:</p>
+<ul><li>23 percent of errors and 38 percent of threats occur before the aircraft moves.</li><li>The preflight in that study was 50+ flow items followed by a 13-item checklist. Yours is larger.</li></ul>
+<p>The mechanism they identified is the one that will get you: crews must interleave novel, unpredictable tasks (paperwork, weather, a gate agent at your shoulder) with a well-practiced habitual sequence. The habit is what makes the interruption dangerous, because a sequence running on autopilot does not consciously encode where it stopped.</p>
+<p>So the goal is not &quot;know the flow.&quot; The goal is know the flow, survive being stopped in the middle of it, and be able to run it from either seat.</p>
+<hr>
+<h2>1. Four layers, in this order</h2>
+<p>Do not try to hold 48 items. Hold four structures, and let each one generate its own items.</p>
+<div class="tw"><table><thead><tr><th>Layer</th><th>What it is</th><th>Covers</th></tr></thead><tbody><tr><td>Gates</td><td>Four named blocks</td><td>Preliminary Cockpit Prep</td></tr><tr><td>Two questions</td><td>Move / hurt</td><td>Before Walkaround</td></tr><tr><td>Spiral</td><td>Eight physical stations, one direction</td><td>Cockpit Preparation</td></tr><tr><td>Pairs</td><td>Six coordinated items, both halves</td><td>Across all three</td></tr></tbody></table></div>
+<p>Plus two satellite structures: A-DIFSRIPP for the FMS, and the exception rack.</p>
+<hr>
+<h2>2. Layer one - the gates</h2>
+<h3>SAFE (4, CM2)</h3>
+<p>Nothing starts, nothing radiates, nothing retracts, nothing wipes. Engine masters OFF. WXR/PWS OFF. L/G lever DOWN. Both wiper selectors OFF. Same DUs also carry ENG START selector NORM and the radar display/gain/turb set.</p>
+<h3>POWER (5, CM2)</h3>
+<p>BAT 1, BAT 2, APU BAT to AUTO. EXT PWR ON when AVAIL. APU FIRE pb IN and GUARDED, agent light OFF, then APU FIRE TEST press and maintain. APU MASTER ON, APU START ON. APU BLEED ON when AVAIL. X-BLEED AUTO.</p>
+<h3>ALIGN (3, CM2)</h3>
+<p>RMP 1 and 2 CHECK ON, green nav light off, frequencies tuned. ALL IR MODE selector NAV. ATIS obtain.</p>
+<h3>LEAP (4)</h3>
+<p>Lights. EFB. Acceptance. Performance. This one is not mine. It is a published Airbus operator mnemonic, from the A320 Normal Procedures document at theairlinepilots.com. Lights as required. EFB start, version check, status page (tagged ALL). Acceptance is the whole paperwork bundle: MCDU on, RCL pb 3 s, logbook and MEL/CDL, OEBs, aircraft acceptance, Jeppesen charts. Performance is ACARS initialize and preliminary takeoff performance data, both tagged PF on your card.</p>
+<p>Note on indexing, and this is the structural insight worth more than any mnemonic: the general Airbus pattern indexes preliminary prep by SEAT (CM1/CM2), not by role. Your Hawaiian card follows that for 20 of 22 steps and then tags the last two PF. So there is almost nothing to keep separate at this stage. The PF/PM divergence is real but it starts at Before Walkaround.</p>
+<hr>
+<h2>3. Layer two - Before Walkaround, two questions</h2>
+<p>All PM. Do not hold ten items. Hold two questions and sort.</p>
+<p><strong>Can it move?</strong> Flaps position. Speed brake retracted and disarmed. ACCU PRESS. PARK BRK ON. BRAKES PRESS. Chocks in place. Three gear pins onboard and stowed.</p>
+<p><strong>Can it hurt you?</strong> Oxygen pressure. Hydraulic reservoir levels. Engine oil quantity. Emergency equipment. Rain repellent pressure and quantity.</p>
+<p>First three of the second bucket come off SD pages: DOOR/OXY, HYD, ENG. Two conditionals: chocks not in means park brake set with adequate accumulator pressure; gear door open means do not pressurize hydraulics until ground clears.</p>
+<hr>
+<h2>4. Layer three - the spiral</h2>
+<p>Airbus designs flows as closed continuous shapes. Their own vocabulary for the taxi flow is &quot;U-shaped,&quot; and in the 2022 SOP revision they reversed that U to accommodate different weather radar installations and to standardize across the fleet for mixed-fleet flying. Flows follow the panel, not the pilot.</p>
+<p>Consequence for you: do not invent your own order. Learn the shape the panel imposes, and never reverse it once learned.</p>
+<p>Eight stations, same direction every time:</p>
+<ul><li>Overhead (PF) - all white lights OFF, umbrella over 14 DUs</li><li>Center instrument panel (PF) - ISIS, north ref, ECAM switching, clock, gravity extension OFF, A/SKID and N/W STRG ON</li><li>Pedestal (PF) - RMP, ACP, park brake, door test, switching panel, engines (levers IDLE, reversers STOWED, masters OFF, start NORM), ATC/TCAS STBY</li><li>MCDU (PF) - A-DIFSRIPP</li><li>Glareshield (BOTH) - baro set/crosscheck, loudspeaker, EFIS CP, FD, LS, ND mode and range, ADF/VOR, FCU speed/mach dashed, HDG-V/S, ALT to initial expected clearance altitude</li><li>Lateral consoles (BOTH) - oxygen mask test, then DOOR/OXY SD REGUL LO PR not displayed</li><li>PFD and ND (BOTH) - DMC selector NORM, brightness, PFD check, ND check</li><li>ECAM (PF) - PRESS pb, STS pb (INOP SYS compatible with MEL), FOB check</li></ul>
+<p>Closeout: IRS align check (PM), release/fitness/FOB/PDSC sent (PF), FOB (PM), ATC clearance confirm (PM), departure legs verification (BOTH), departure briefing (BOTH).</p>
+<p>Departure Briefing complete triggers the Cockpit Preparation checklist.</p>
+<p>On overhead scan direction specifically: there is no Airbus FCOM or FCTM statement prescribing one that I could find, and no operator mnemonic for the overhead exists. The only published convention is from FlyByWire Simulations (left to right, bottom to top, in three sub-blocks), which is a simulation community project, not an operator. Treat it as one credible convention. Pick a direction, write it down, and never change it. Consistency matters more than which direction you choose.</p>
+<hr>
+<h2>5. A-DIFSRIPP</h2>
+<p>Not a Hawaiian invention. It is the standard Airbus FMGS setup mnemonic used across A320 and A330 operators. Spoken &quot;ay DIF-srip.&quot;</p>
+<div class="tw"><table><thead><tr><th>Letter</th><th>Page</th></tr></thead><tbody><tr><td>A</td><td>ATC Datalink - MSG ERASE, ADS CHECK ARMED</td></tr><tr><td>D</td><td>DATA</td></tr><tr><td>I</td><td>INIT A</td></tr><tr><td>F</td><td>F-PLN</td></tr><tr><td>S</td><td>SEC F-PLN</td></tr><tr><td>R</td><td>RAD NAV</td></tr><tr><td>I</td><td>INIT B</td></tr><tr><td>P</td><td>PERF</td></tr><tr><td>P</td><td>PROG</td></tr></tbody></table></div>
+<p>Two things to know that make it stick:</p>
+<p>The S was added on purpose. The original was DIFRIP, and operators kept finding crews who skipped the secondary flight plan. The S was promoted ahead of RAD NAV to force it into the sequence. That letter is a scar. Knowing why a letter exists makes it survive stress in a way rote order does not.</p>
+<p>INIT B sits at position six deliberately. An operator training document states it plainly: insert the weights after completing all other insertions, to avoid cycles of prediction computations. A legacy FMS concern that persists as good practice. If someone tells you to do INIT B early, that is why the mnemonic disagrees.</p>
+<p>PM half is one word: crosscheck. Eight things entered, eight things verified: departure route waypoints and constraints, flight plan against CFP, initial cruise altitude, total track miles, fuel at destination, performance data, TRANS ALT, SEC flight plan.</p>
+<hr>
+<h2>6. Layer four - pairs</h2>
+<p>Six coordinated items. Half of a coordinated item is a miss. Encode who calls and who answers, both directions.</p>
+<p>EFB initialization (ALL). Barometric reference set/crosscheck (BOTH). Oxygen mask test (PF-PM). PFD and ND check (PF-PM). Departure legs verification (BOTH, PF reads from ND in PLAN with CSTR on, PM verifies against flight plan, Jepp charts and clearance). Departure briefing (BOTH, threat based per FOM).</p>
+<hr>
+<h2>7. The practice protocol</h2>
+<p>This is the part that matters. The structures above are one evening of work. The protocol is three weeks.</p>
+<h3>Phase 1, days 1 to 3 - do-list, seated, card in hand</h3>
+<p>Run the flow reading the card, touching every switch. Slow. No attempt to recall. You are building the motor path and the panel geography, not memory.</p>
+<p>Hard rule from AOPA&#x27;s chair-flying guidance: do not rehearse a botched rep. If you fumble a sequence, stop, re-read it, and start the block again. You are strengthening whatever you rehearse, including the errors.</p>
+<h3>Phase 2, days 4 to 10 - flow first, card second</h3>
+<p>This ordering is not optional and it is not stylistic. Flight Safety Foundation ALAR states it directly: normal checklists are not read-and-do lists, and are accomplished after performing the flow defined in the SOPs.</p>
+<p>The reason is in Degani and Wiener&#x27;s NASA study. Challenge-response preserves what they call configuration redundancy and mutual redundancy: you configure from memory, then a second independent pass verifies. A do-list collapses the two into one pass, and a mistake passes unnoticed once the sequence is interrupted.</p>
+<p>If you learn this flow by reading the checklist, you will have built a do-list habit and destroyed the redundancy the checklist exists to provide.</p>
+<p>So: run the block cold from the gate name or station name. Then pick up the card and verify. Never the reverse.</p>
+<h3>Phase 3, days 8 onward, overlapping - randomize and interrupt</h3>
+<p>Two countermeasures against documented failure modes. These are the two things almost nobody does, and they are the two that decide whether this holds up.</p>
+<p><strong>Randomize the panel before every rep.</strong> Degani and Wiener observed expectation bias directly on the line: the flap handle sits at zero, the pilot perceives it at 5 because he expects it there, and calls &quot;flaps 5.&quot; Their verdict on how that forms: the routine which developed turned into a very tough habit to break. A garage cockpit where every switch is always in the same place trains exactly that error. Before each rep, have someone set switches wrong, or set them wrong yourself the night before and run it cold in the morning.</p>
+<p>Every rep must terminate in a reported state, not a remembered action. Not &quot;bat one, AUTO.&quot; Rather: &quot;bat one, I am looking at it, AUTO.&quot;</p>
+<p><strong>Get interrupted on purpose.</strong> The NASA preflight study splits disruptions into uncertainties (fuel, lighting, IRS alignment: these force rescheduling) and intrusions (cabin crew, gate agents, ground: these demand immediate attention). Practicing clean does not train the thing that fails.</p>
+<p>Have Elaine or a study partner interrupt you at a random point. Score two things only:</p>
+<ul><li>Did you verbalize an explicit hold before your attention left the flow?</li><li>On resumption, did you go back one item, not forward?</li></ul>
+<p>Both come from FSF ALAR Briefing Note 2.4 and the SKYbrary OGHFA note. The recovery frame is Identify, Ask, Decide: what was I doing, where was I interrupted, what action gets me back on track.</p>
+<p>Worth knowing: Degani and Wiener found that although some airlines mandate a hold callout, most pilots interviewed said they rarely actually use it. The defense exists on paper and not in practice. Building it into your reps now is free.</p>
+<h3>Phase 4, days 11 to 21 - role swap and stress</h3>
+<p>Alternate PF and PM cuts day by day. Never two days in the same role.</p>
+<p>There is no documented technique for keeping role versions separate. The only method that surfaced, from a type-rating account, is observational: you learn the other role by watching it, not by running it. Practically, that means when you chair-fly with Win, one of you runs it and the other watches and scores rather than both running silently.</p>
+<p>Then run it tired, run it after a leg, run it in the garage with the radio on. The quiet-room rep is the easy rep.</p>
+<hr>
+<h2>8. Documented failure modes to score yourself against</h2>
+<p>All observed on the line by Degani and Wiener, not speculation.</p>
+<div class="tw"><table><thead><tr><th>Failure</th><th>What it looks like</th></tr></thead><tbody><tr><td>Touch without read</td><td>Hand goes to the checklist, card never comes out of the slot</td></tr><tr><td>Verification collapse</td><td>Challenge read without eyes leaving the card; response given before looking</td></tr><tr><td>Chunking</td><td>Several challenge items called together, chunked response back</td></tr><tr><td>Expectation bias</td><td>Item perceived where it should be, not where it is</td></tr><tr><td>Sing-song</td><td>Flow run, replies from memory, not from the actual state</td></tr><tr><td>Layout mismatch</td><td>Checklist order fights panel geometry, forcing a non-intuitive path</td></tr></tbody></table></div>
+<p>Score a rep as failed if any of these show up, even if every item was named.</p>
+<hr>
+<h2>9. The exception rack</h2>
+<p>Drill these separately from the flow. They are what the evaluator reaches for.</p>
+<ul><li>Battery voltage above 25.5 V if unpowered 6 h or more</li><li>No APU bleed with a ground air unit connected</li><li>Full IRS alignment: first flight of day, crew change, departure between 2 N and 2 S, GPS not available with poor navaid coverage, GPS not available with flight time over 3 hours</li><li>IRS in NAV, each within 5 NM of FMS position</li><li>Aircraft acceptance may be later, complete by end of Cockpit Preparation</li><li>Warn ground crew on intercom before the oxygen mask test</li><li>STS pb: INOP SYS must be compatible with the MEL</li><li>Chocks not in place: park brake set with adequate accumulator pressure</li><li>Gear door open: do not pressurize hydraulics until ground clears</li></ul>
+<hr>
+<h2>10. Wording traps</h2>
+<p>Card and FCOM disagree. FCOM wording is what gets quoted.</p>
+<div class="tw"><table><thead><tr><th>Card</th><th>FCOM</th></tr></thead><tbody><tr><td>ELEC, Bat ON</td><td>BAT 1, BAT 2 and APU BAT pb-sw AUTO (no ON label exists)</td></tr><tr><td>ADIRS ON</td><td>ALL IR MODE selector NAV (positions OFF, NAV, ATT)</td></tr></tbody></table></div>
+<hr>
+<h2>11. Open questions to resolve with your own training department</h2>
+<ul><li>RESOLVED: flows run simultaneously at Alaska/Hawaiian. You are not required to watch the other pilot&#x27;s flow. So practise at full working pace with no pauses waiting on the other seat, and treat verification as happening at the defined crosscheck points (FMS PREPARATION CROSSCHECK, departure legs verification, the checklist), not continuously.</li><li>Confirm the A in A-DIFSRIPP against your printed card. The card does not expand it.</li><li>Pick and record your overhead scan direction, since no source prescribes one.</li></ul>
+<hr>
+<h2>Sources</h2>
+<ul><li>Degani &amp; Wiener, Human Factors of Flight-Deck Checklists: The Normal Checklist, NASA <a href="https://ntrs.nasa.gov/api/citations/19910017830/downloads/19910017830.pdf" rel="noopener" target="_blank">https://ntrs.nasa.gov/api/citations/19910017830/downloads/19910017830.pdf</a></li><li>Loukopoulos &amp; Dismukes, Cockpit interruptions and distractions: a line observation study, NASA Ames <a href="https://human-factors.arc.nasa.gov/publications/LL_KD_ISAP01DOC.pdf" rel="noopener" target="_blank">https://human-factors.arc.nasa.gov/publications/LL_KD_ISAP01DOC.pdf</a></li><li>FSF ALAR Briefing Note 2.4, Interruptions/Distractions <a href="https://flightsafety.org/wp-content/uploads/2016/09/alar_bn2-4-distractions.pdf" rel="noopener" target="_blank">https://flightsafety.org/wp-content/uploads/2016/09/alar_bn2-4-distractions.pdf</a></li><li>SKYbrary / OGHFA, Managing Interruptions and Distractions <a href="https://skybrary.aero/sites/default/files/bookshelf/176.pdf" rel="noopener" target="_blank">https://skybrary.aero/sites/default/files/bookshelf/176.pdf</a></li><li>FSF ALAR, Standard Operating Procedures and Normal Checklists <a href="https://skybrary.aero/sites/default/files/bookshelf/187.pdf" rel="noopener" target="_blank">https://skybrary.aero/sites/default/files/bookshelf/187.pdf</a></li><li>TheAirlinePilots.com, A320 Normal Procedures, rev 20 Mar 2026 (LEAP, INIT B caution) <a href="https://theairlinepilots.com/forumarchive/a320/a320-normal-procedures.pdf" rel="noopener" target="_blank">https://theairlinepilots.com/forumarchive/a320/a320-normal-procedures.pdf</a></li><li>PPRuNe, Airbus FMGS DIFRISP to DIFSRIP <a href="https://www.pprune.org/tech-log/604918-airbus-fmgs-difrisp-difsrip.html" rel="noopener" target="_blank">https://www.pprune.org/tech-log/604918-airbus-fmgs-difrisp-difsrip.html</a></li><li>PPRuNe, Setting up the MCDU <a href="https://www.pprune.org/tech-log/476492-setting-up-mcdu.html" rel="noopener" target="_blank">https://www.pprune.org/tech-log/476492-setting-up-mcdu.html</a></li><li>PPRuNe, 320 cockpit preparation: how do the flows work? <a href="https://www.pprune.org/tech-log/470213-320-cockpit-preperation-how-do-flows-work.html" rel="noopener" target="_blank">https://www.pprune.org/tech-log/470213-320-cockpit-preperation-how-do-flows-work.html</a></li><li>Travel Radar, Airbus Publishes New SOP and Checklist for 2022 <a href="https://travelradar.aero/new-airbus-sop-and-checklist-2022/" rel="noopener" target="_blank">https://travelradar.aero/new-airbus-sop-and-checklist-2022/</a></li><li>FlyByWire Simulations, Cockpit Preparation (overhead scan convention, community source) <a href="https://docs.flybywiresim.com/pilots-corner/a380x/a380x-beginner-guide/02_cockpit-preparation/" rel="noopener" target="_blank">https://docs.flybywiresim.com/pilots-corner/a380x/a380x-beginner-guide/02_cockpit-preparation/</a></li><li>AOPA, Training and Safety Tip: Master the chair <a href="https://www.aopa.org/news-and-media/all-news/2024/july/23/training-and-safety-tip-master-the-chair" rel="noopener" target="_blank">https://www.aopa.org/news-and-media/all-news/2024/july/23/training-and-safety-tip-master-the-chair</a></li><li>Code7700, Checklist Flows <a href="https://code7700.com/checklist_flows.htm" rel="noopener" target="_blank">https://code7700.com/checklist_flows.htm</a></li></ul>
+<div class="note">Companion to podcast Ep5 and Ep6 in the Flows tab. Print-friendly: use your browser's print command and the navigation drops out.</div>
+</div>
+<script src="/portal-settings.js" defer></script>
+<script src="/assist.js" defer></script>
+</body></html>
