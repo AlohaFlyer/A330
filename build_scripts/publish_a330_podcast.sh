@@ -27,7 +27,7 @@ MASTER="$HERE/master_a330_ep.sh"
 [ -x "$MASTER" ] || chmod +x "$MASTER"
 
 EPS=("$@")
-if [ "${#EPS[@]}" -eq 0 ]; then EPS=(1 2 3 4 5 6); fi
+if [ "${#EPS[@]}" -eq 0 ]; then EPS=(1 2 3 4 5 6 7); fi
 
 for n in "${EPS[@]}"; do
   out="$REPO/flight-deck-notes-ep${n}.mp3"
@@ -58,10 +58,13 @@ META = {
       "Speeds, weights, wind, engines, APU, autoflight, fuel and icing limits for the freighter - A330 Freighter FCOM R10 LIM chapter",
       "limitations.html"),
   5: ("Flows", "Preliminary Cockpit Prep - CM2 as PF",
-      "Four gates, the eight-station spiral and A-DIFSRIPP, from sitting down through the Cockpit Preparation checklist, flown from the right seat as PF - FCOM R17 PRO-NOR-SOP-04/05/06, NPC-CB Cockpit Preparation card, FCTM PR-NP-CL",
+      "Four gates, the eight-station spiral and A-DIFSRIPP, from sitting down through the Cockpit Preparation checklist, flown from the right seat as PF. Gate grouping here predates Ep7; Ep7 has the current card-order version - FCOM R17 PRO-NOR-SOP-04/05/06, NPC-CB Cockpit Preparation card, FCTM PR-NP-CL",
       "phase_flows.html"),
   6: ("Flows", "Preliminary Cockpit Prep - CM2 as PM",
-      "Same flow from the monitoring seat: the two questions of Before Walkaround, the exterior split, and the eight-item FMS crosscheck through the Cockpit Preparation checklist - FCOM R17 PRO-NOR-SOP-04/05/06, NPC-CB Cockpit Preparation card, FCTM PR-NP-CL",
+      "Same flow from the monitoring seat: the two questions of Before Walkaround, the exterior split, and the eight-item FMS crosscheck through the Cockpit Preparation checklist. Gate grouping here predates Ep7; Ep7 has the current card-order version - FCOM R17 PRO-NOR-SOP-04/05/06, NPC-CB Cockpit Preparation card, FCTM PR-NP-CL",
+      "phase_flows.html"),
+  7: ("Flows", "Preliminary Cockpit Prep - One Spine, Two Roles",
+      "Why CM2 runs one fifteen-item flow, not two: the four gates re-cut into card order, the two-item PF tail, Before Walkaround as an all-PM block, the wording traps and the branch-point drill - FCOM R17 PRO-NOR-SOP-04, NPC-CB Cockpit Preparation card",
       "phase_flows.html"),
 }
 
