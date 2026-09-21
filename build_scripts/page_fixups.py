@@ -59,6 +59,9 @@ EDITS={
    '  off.forEach(it=>{ const q=seatPt(it); s += `<circle class="dot inactive" cx="${q[0]}" cy="${q[1]}" r="6"/>`; });'),
   ('    s += `<circle class="${cls}" data-i="${i}" cx="${it.x}" cy="${it.y}" r="8"/>`;\n    s += `<text class="${lightNum?\'numlight\':\'num\'}" data-i="${i}" x="${it.x-3}" y="${it.y+3.5}">${i+1}</text>`;',
    '    const q=seatPt(it);\n    s += `<circle class="${cls}" data-i="${i}" cx="${q[0]}" cy="${q[1]}" r="8"/>`;\n    s += `<text class="${lightNum?\'numlight\':\'num\'}" data-i="${i}" x="${q[0]-3}" y="${q[1]+3.5}">${i+1}</text>`;'),
+  # group-colored markers (2026-09-21), after the seatPt edit above so both anchors hold
+  ("    if(it.trg){ cls += \" trigpt\"; }\n    const q=seatPt(it);\n    s += `<circle class=\"${cls}\" data-i=\"${i}\" cx=\"${q[0]}\" cy=\"${q[1]}\" r=\"8\"/>`;",
+   "    if(it.trg){ cls += \" trigpt\"; }\n    const q=seatPt(it);\n    let gstyle = \"\";\n    if(it.gc){ cls += \" grp\"; lightNum = true; gstyle = ` style=\"fill:${it.gc}${(!showAll && i===upto) ? \";stroke:#1A1630;stroke-width:2.5\" : (i===0||i===last||it.trg) ? \"\" : \";stroke:#fff;stroke-width:1.5\"}\"`; }\n    s += `<circle class=\"${cls}\" data-i=\"${i}\" cx=\"${q[0]}\" cy=\"${q[1]}\" r=\"8\"${gstyle}/>`;"),
  ],
  'assist.js':[
   ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),

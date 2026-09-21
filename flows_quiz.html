@@ -400,8 +400,11 @@ function zoneSvg(){
 // Path builder: straight runs stay direct, but any segment that reverses
 // course (>~100 degree turn) bows out to the side so it never overdraws
 // the lines already on the map.
-function flowPath(P){
-  if(P.length<2) return "";
+function flowPath(P){ return flowSegs(P).join(" "); }
+function flowSegs(P){
+  // one path command per segment, so a grouped flow can color each segment (2026-09-21)
+  const segs = [];
+  if(P.length<2) return segs;
   let d = `M${P[0][0]},${P[0][1]}`;
   for(let i=1;i<P.length;i++){
     const a=P[i-1], b=P[i];
@@ -425,8 +428,9 @@ function flowPath(P){
     } else {
       d += ` L${b[0]},${b[1]}`;
     }
+    segs.push(d); d = `M${b[0]},${b[1]}`;
   }
-  return d;
+  return segs;
 }
 function mapPt(x,y){ return [x,y]; }
 function seatPt(it){ const p = it.pos && (it.pos[seat] || (seat==="BOTH" && it.pos.FO)); if(p) return [p[0],p[1]]; if(it.mir && seat==="FO") return [Math.round((300-it.x)*10)/10, it.y]; return [it.x,it.y]; }
@@ -471,7 +475,8 @@ function drawMap(svgEl, flow, upto, showAll){
   s += `<path class="ghost" d="${flowPath(P)}"/>`;
   if(upto>1 || showAll){
     const PD = showAll ? P : P.slice(0, Math.max(upto,1));
-    s += `<path class="trace" d="${flowPath(PD)}"/>`;
+    if(flow.groups){ flowSegs(PD).forEach((sg,k)=>{ const gc = seq[k+1] && seq[k+1].gc; s += `<path class="trace" d="${sg}"${gc?` style="stroke:${gc}"`:""}/>`; }); }
+    else s += `<path class="trace" d="${flowPath(PD)}"/>`;
   }
   off.forEach(it=>{ const q=seatPt(it); s += `<circle class="dot inactive" cx="${q[0]}" cy="${q[1]}" r="6"/>`; });
   const last = seq.length-1;
@@ -483,13 +488,20 @@ function drawMap(svgEl, flow, upto, showAll){
     if(!showAll && i===upto && i!==0 && i!==last){cls+=" current"; lightNum=false;}
     if(it.trg){ cls += " trigpt"; }
     const q=seatPt(it);
-    s += `<circle class="${cls}" data-i="${i}" cx="${q[0]}" cy="${q[1]}" r="8"/>`;
+    let gstyle = "";
+    if(it.gc){ cls += " grp"; lightNum = true; gstyle = ` style="fill:${it.gc}${(!showAll && i===upto) ? ";stroke:#1A1630;stroke-width:2.5" : (i===0||i===last||it.trg) ? "" : ";stroke:#fff;stroke-width:1.5"}"`; }
+    s += `<circle class="${cls}" data-i="${i}" cx="${q[0]}" cy="${q[1]}" r="8"${gstyle}/>`;
     s += `<text class="${lightNum?'numlight':'num'}" data-i="${i}" x="${q[0]-3}" y="${q[1]+3.5}">${i+1}</text>`;
   });
   svgEl.innerHTML = s;
 }
 const LEGEND = '<span><i style="background:#4B2D89;border-color:#3a2169"></i>CA</span><span><i style="background:#CE0C88;border-color:#9D178D"></i>FO</span><span><i style="background:#00805E;border-color:#1C4A0C"></i>PF</span><span><i style="background:#E26DB8;border-color:#831A57"></i>PM</span><span><i style="background:#fff"></i>Both</span><span style="color:#aaa;padding:0 4px;">|</span><span><i style="background:#FFC9BF;border-color:#6fae3d"></i>Start</span><span><i style="background:#d9534f;border-color:#b52b27"></i>End</span><span style="color:#aaa;padding:0 4px;">|</span><span><i style="background:#d9534f;border-color:#8f2b27"></i>Trigger</span><span><i style="background:#d9534f;border-color:#8f2b27"></i>Call</span><span><i style="background:#CE0C88;border-color:#CE0C88"></i>FMS</span>';
 document.getElementById("legend").innerHTML = LEGEND;
+function legendFor(f){
+  if(!f.groups){ document.getElementById("legend").innerHTML = LEGEND; return; }
+  const items = activeItems(f);
+  document.getElementById("legend").innerHTML = LEGEND + '<div style="flex-basis:100%;height:2px"></div>' + f.groups.filter(g=>items.some(it=>it.g===g.g)).map(g=>`<span><i style="background:${g.gc};border-color:${g.gc}"></i>${g.gb?g.gb+" · ":""}${g.g}</span>`).join("");
+}
 
 function grpInfo(items, i){
   // position of item i inside its group, counting only the items active for this seat/duty
@@ -512,6 +524,7 @@ function render(){
   syncPhaseUI();
   const f = FLOWS[flowIdx];
   document.getElementById("drillLayout").classList.toggle("noflow", !!f.noflow);
+  legendFor(f);
   const items = activeItems(f);
   document.getElementById("tag").textContent = (f.phase ? f.phase + "  ▸  " : "") + f.n + "  [" + f.ref + "]";
   document.getElementById("who").innerHTML = (f.who + " · viewing: " + (seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat)) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "") + grpLegend(f);
@@ -778,7 +791,7 @@ render();
 Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
 }).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 2.3</div></footer>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 2.4</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

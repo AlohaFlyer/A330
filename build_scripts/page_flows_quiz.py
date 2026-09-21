@@ -165,5 +165,19 @@ sub1('    items.forEach(it=>{\n      const li = document.createElement("li");\n 
      '    items.forEach((it, i)=>{\n      const gh = grpHeader(items, i);\n      if(gh){ const gl = document.createElement("li"); gl.style.listStyle = "none"; gl.style.marginLeft = "-22px"; gl.innerHTML = gh; ol.appendChild(gl); }\n      const li = document.createElement("li"); li.value = i+1;\n      const head = document.createElement("div");\n      head.className = "fl-item" + (it.g ? " gitem" : "");\n      if(it.gc) head.style.setProperty("--gc", it.gc);')
 sub1('Object.assign(window,{activeItems,', 'Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend,')
 
+
+# 9. map colors follow the memorization groups (2026-09-21): a grouped flow fills each marker with its
+#    group color, colors each trace segment by the group it leads into, and adds the group chips to the legend.
+sub1("function flowPath(P){\n  if(P.length<2) return \"\";\n  let d = `M${P[0][0]},${P[0][1]}`;\n  for(let i=1;i<P.length;i++){",
+     "function flowPath(P){ return flowSegs(P).join(\" \"); }\nfunction flowSegs(P){\n  // one path command per segment, so a grouped flow can color each segment (2026-09-21)\n  const segs = [];\n  if(P.length<2) return segs;\n  let d = `M${P[0][0]},${P[0][1]}`;\n  for(let i=1;i<P.length;i++){")
+sub1("      d += ` Q${cx.toFixed(1)},${cy.toFixed(1)} ${b[0]},${b[1]}`;\n    } else {\n      d += ` L${b[0]},${b[1]}`;\n    }\n  }\n  return d;\n}",
+     "      d += ` Q${cx.toFixed(1)},${cy.toFixed(1)} ${b[0]},${b[1]}`;\n    } else {\n      d += ` L${b[0]},${b[1]}`;\n    }\n    segs.push(d); d = `M${b[0]},${b[1]}`;\n  }\n  return segs;\n}")
+sub1("    const PD = showAll ? P : P.slice(0, Math.max(upto,1));\n    s += `<path class=\"trace\" d=\"${flowPath(PD)}\"/>`;",
+     "    const PD = showAll ? P : P.slice(0, Math.max(upto,1));\n    if(flow.groups){ flowSegs(PD).forEach((sg,k)=>{ const gc = seq[k+1] && seq[k+1].gc; s += `<path class=\"trace\" d=\"${sg}\"${gc?` style=\"stroke:${gc}\"`:\"\"}/>`; }); }\n    else s += `<path class=\"trace\" d=\"${flowPath(PD)}\"/>`;")
+sub1("document.getElementById(\"legend\").innerHTML = LEGEND;",
+     "document.getElementById(\"legend\").innerHTML = LEGEND;\nfunction legendFor(f){\n  if(!f.groups){ document.getElementById(\"legend\").innerHTML = LEGEND; return; }\n  const items = activeItems(f);\n  document.getElementById(\"legend\").innerHTML = LEGEND + '<div style=\"flex-basis:100%;height:2px\"></div>' + f.groups.filter(g=>items.some(it=>it.g===g.g)).map(g=>`<span><i style=\"background:${g.gc};border-color:${g.gc}\"></i>${g.gb?g.gb+\" · \":\"\"}${g.g}</span>`).join(\"\");\n}")
+sub1("function render(){\n  syncPhaseUI();\n  const f = FLOWS[flowIdx];",
+     "function render(){\n  syncPhaseUI();\n  const f = FLOWS[flowIdx];\n  legendFor(f);")
+
 open(PAGE, 'w', encoding='utf-8').write(t)
 print('page_flows_quiz: wrote', PAGE, len(t), 'bytes; window exports:', ', '.join(funcs))
