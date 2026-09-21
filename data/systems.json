@@ -1,1 +1,5074 @@
-[{"id":"hyd-001","system":"Hydraulic","q":"How many hydraulic systems does the A330 have, and what are they called?","a":"Three: GREEN, BLUE and YELLOW.","src":"FCOM R17 DSC-29-10-10"},{"id":"hyd-002","system":"Hydraulic","q":"What is normal hydraulic system operating pressure?","a":"3,000 psi (2,500 psi on the RAT).","src":"FCOM R17 DSC-29-10-10"},{"id":"hyd-003","system":"Hydraulic","q":"Can hydraulic fluid be transferred between systems?","a":"No.","src":"FCOM R17 DSC-29-10-10"},{"id":"hyd-004","system":"Hydraulic","q":"Which engines drive pumps on the GREEN system?","a":"Both engines.","src":"FCOM R17 DSC-29-10-20"},{"id":"hyd-005","system":"Hydraulic","q":"Which hydraulic system does the RAT pressurize?","a":"GREEN.","src":"FCOM R17 DSC-29-10-20"},{"id":"elec-001","system":"Electrical","q":"What is the output rating of each engine generator?","a":"115 KVA, three-phase 115/200 V 400 Hz.","src":"FCOM R17 DSC-24-10-20-10"},{"id":"elec-002","system":"Electrical","q":"Can the APU generator replace a main engine generator in flight?","a":"Yes, one or more, at any time.","src":"FCOM R17 DSC-24-10-20-10"},{"id":"elec-003","system":"Electrical","q":"What drives the emergency generator?","a":"The GREEN hydraulic system.","src":"FCOM R17 DSC-24-10-20-10"},{"id":"elec-004","system":"Electrical","q":"What is the emergency generator output with the RAT powering GREEN below 260 kt?","a":"3.5 KVA, with some shedding.","src":"FCOM R17 DSC-24-10-20-10"},{"id":"elec-005","system":"Electrical","q":"In flight, when does the static inverter activate?","a":"Automatically, when only the batteries supply power, regardless of BAT 1 and BAT 2 pushbutton position.","src":"FCOM R17 DSC-24-10-20-10"},{"id":"fuel-001","system":"Fuel","q":"Where is fuel stored on the A330?","a":"Wings, center section and the THS trim tank.","src":"FCOM R17 DSC-28-10-20"},{"id":"fuel-002","system":"Fuel","q":"How much fuel does each inner tank collector cell hold?","a":"About 1,000 kg (2,200 lb), kept full.","src":"FCOM R17 DSC-28-10-20"},{"id":"fuel-003","system":"Fuel","q":"If the inner tank SPLIT valves are closed, is fuel in the aft section still usable?","a":"Yes, through the standby pumps.","src":"FCOM R17 DSC-28-10-20"},{"id":"fuel-005","system":"Fuel","q":"How many computers control the fuel system, and what are they called?","a":"Two: FCMC.","src":"FCOM R17 DSC-28-10-30"},{"id":"brk-001","system":"Brakes","q":"Which hydraulic system supplies normal braking?","a":"GREEN.","src":"FCOM R17 DSC-32-30-10"},{"id":"brk-002","system":"Brakes","q":"Which hydraulic system supplies alternate braking, and what backs it up?","a":"BLUE, backed up by the accumulator.","src":"FCOM R17 DSC-32-30-10"},{"id":"brk-003","system":"Brakes","q":"When do the two BSCU systems change over?","a":"At each landing gear lever DOWN selection, or if one system fails.","src":"FCOM R17 DSC-32-30-10"},{"id":"pneu-001","system":"Pneumatic","q":"What are the three sources of high pressure air?","a":"Engine bleed, the APU load compressor, and two HP ground connections.","src":"FCOM R17 DSC-36-10-10"},{"id":"pneu-002","system":"Pneumatic","q":"What controls and monitors each engine bleed system?","a":"One Bleed Monitoring Computer (BMC) per system.","src":"FCOM R17 DSC-36-10-20"},{"id":"pneu-003","system":"Pneumatic","q":"What controls the APU bleed supply?","a":"The APU Electronic Control Box (ECB).","src":"FCOM R17 DSC-36-10-10"}]
+[
+{
+"id": "air-001",
+"system": "Air Cond and Press",
+"q": "What happens to the APU Bleed when you select the APU BLD Pb?",
+"a": "The APU Bleed opens.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-002",
+"system": "Air Cond and Press",
+"q": "What does the Crossbleed Valve do when you select the APU BLD Pb?",
+"a": "The Crossbleed Valve opens.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-003",
+"system": "Air Cond and Press",
+"q": "What do the Engine Bleed Valves do when you select the APU BLD Pb?",
+"a": "The Engine Bleed Valves close.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-004",
+"system": "Air Cond and Press",
+"q": "If the APU Bleed is left on during climb, at what altitude does it automatically close?",
+"a": "Passing 25,000 ft climbing.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-005",
+"system": "Air Cond and Press",
+"q": "After closing automatically in the climb, at what altitude does the APU Bleed reopen in descent?",
+"a": "After descending through 23,000 ft.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-006",
+"system": "Air Cond and Press",
+"q": "With the Crossbleed Valve in AUTO, Engines on and APU bleed OFF, what is the normal Crossbleed valve position?",
+"a": "Closed.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-007",
+"system": "Air Cond and Press",
+"q": "When does the Crossbleed Valve move automatically?",
+"a": "Only when the APU BLD valve opens or closes.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-008",
+"system": "Air Cond and Press",
+"q": "When do we manually open or close the Crossbleed Valve?",
+"a": "Only when directed by ECAM.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-009",
+"system": "Air Cond and Press",
+"q": "What controls the Packs?",
+"a": "The Pack Controllers, one Pack Controller per pack.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-010",
+"system": "Air Cond and Press",
+"q": "How many Pack Controllers are there per pack?",
+"a": "One Pack Controller per pack.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-011",
+"system": "Air Cond and Press",
+"q": "If a Pack Controller fails, between what temperatures is the Pack outlet temperature regulated?",
+"a": "Between 48°F and 59°F.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-012",
+"system": "Air Cond and Press",
+"q": "What regulates the temperature in the aircraft?",
+"a": "The zone controller.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-013",
+"system": "Air Cond and Press",
+"q": "How many zone controllers and channels are there?",
+"a": "One controller with two channels.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-014",
+"system": "Air Cond and Press",
+"q": "If the zone controller fails, to what temperature is the aircraft regulated?",
+"a": "68°F.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-015",
+"system": "Air Cond and Press",
+"q": "What does the Pack Flow Selector regulate?",
+"a": "The Pack Flow.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-016",
+"system": "Air Cond and Press",
+"q": "What pack flow does the LOW position of the Pack Flow Selector give?",
+"a": "80% flow.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-017",
+"system": "Air Cond and Press",
+"q": "In AUTO pack flow, where is the Passenger Count entered?",
+"a": "On the INIT A page in the MCDU.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-018",
+"system": "Air Cond and Press",
+"q": "In AUTO pack flow, what is airflow automatically adjusted on?",
+"a": "The entered passenger load.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-019",
+"system": "Air Cond and Press",
+"q": "What pack flow does the HIGH position of the Pack Flow Selector give?",
+"a": "120% flow.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-020",
+"system": "Air Cond and Press",
+"q": "For what conditions is HIGH pack flow used?",
+"a": "Abnormally hot or humid conditions.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-021",
+"system": "Air Cond and Press",
+"q": "When do the packs go to 125% flow?",
+"a": "When the APU Bleed is ON, or for Single Pack operations.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-022",
+"system": "Air Cond and Press",
+"q": "Where is the HOT AIR system air tapped from?",
+"a": "Upstream of the packs.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-023",
+"system": "Air Cond and Press",
+"q": "Which temperatures does the HOT AIR system regulate via the trim air valves?",
+"a": "Cockpit, Cabin, and FWD cargo temperatures.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-024",
+"system": "Air Cond and Press",
+"q": "What heats and what cools the Forward Cargo compartment?",
+"a": "Heated by Hot Air 1, cooled by Pack 2.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-025",
+"system": "Air Cond and Press",
+"q": "What primarily heats the Cockpit?",
+"a": "Hot Air 2.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-026",
+"system": "Air Cond and Press",
+"q": "How are the valves in the Air Conditioning system controlled and operated?",
+"a": "All electrically controlled and pneumatically operated.",
+"src": "REV1 Systems Guide p.3 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-027",
+"system": "Air Cond and Press",
+"q": "What temperature control range does the Flight Attendant CIDS panel have?",
+"a": "5.4°F.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-028",
+"system": "Air Cond and Press",
+"q": "On what is the Flight Attendant CIDS panel temperature range centered?",
+"a": "The Cabin temperature setting in the Cockpit.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-029",
+"system": "Air Cond and Press",
+"q": "Where is the RAM AIR scoop located?",
+"a": "On the lower left side of the fuselage.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-030",
+"system": "Air Cond and Press",
+"q": "In what failure case can the RAM AIR scoop provide air into the cabin?",
+"a": "Dual pack failure.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-031",
+"system": "Air Cond and Press",
+"q": "Which QRH checklist uses the RAM AIR scoop?",
+"a": "The Smoke/Fumes Removal Checklist.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-032",
+"system": "Air Cond and Press",
+"q": "When will the RAM AIR Pb not function?",
+"a": "When the Ditching Pb is selected.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-033",
+"system": "Air Cond and Press",
+"q": "At what ∆P will the RAM AIR system open?",
+"a": "When ∆P is less than 1 psi.",
+"src": "REV1 Systems Guide p.4 · DSC-21-10-10, DSC-36-10-30",
+"sec": "AIR"
+},
+{
+"id": "air-034",
+"system": "Air Cond and Press",
+"q": "What do the outflow valves do when the Ditching Pb is selected on with the Press Mode Selector in AUTO?",
+"a": "They close.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-035",
+"system": "Air Cond and Press",
+"q": "What do the Cargo Isolation Valves do when the Ditching Pb is selected on?",
+"a": "They close.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-036",
+"system": "Air Cond and Press",
+"q": "What does the Ram Air Inlet do when the Ditching Pb is selected on?",
+"a": "It closes.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-037",
+"system": "Air Cond and Press",
+"q": "What does the Avionics Ventilation Overboard Valve do when the Ditching Pb is selected on?",
+"a": "It closes.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-038",
+"system": "Air Cond and Press",
+"q": "What do the Pack Flow Control Valves do when the Ditching Pb is selected on?",
+"a": "They close.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-039",
+"system": "Air Cond and Press",
+"q": "What are the two normal uses of the Ditching Pb?",
+"a": "Ditching, and Deicing (per FCOM Procedure).",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-040",
+"system": "Air Cond and Press",
+"q": "Which cabin pressurization mode is the normal mode of operation?",
+"a": "AUTO.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-041",
+"system": "Air Cond and Press",
+"q": "How many CPCs (Cabin Pressure Controllers) are there?",
+"a": "2 CPCs.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-042",
+"system": "Air Cond and Press",
+"q": "How many outflow valves are there, and how many motors does each use in AUTO mode?",
+"a": "2 Outflow valves, each with 2 motors for the AUTO modes.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-043",
+"system": "Air Cond and Press",
+"q": "In AUTO mode, where does the pressurization system get the landing elevation?",
+"a": "FMGC provided landing elevation for the entered destination.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-044",
+"system": "Air Cond and Press",
+"q": "When is the SEMI-AUTOMATIC pressurization mode used?",
+"a": "When operating at an airport not in the database.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-045",
+"system": "Air Cond and Press",
+"q": "In SEMI-AUTOMATIC mode, how is the destination elevation set?",
+"a": "With the LDG ELEV selector.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-046",
+"system": "Air Cond and Press",
+"q": "Which CPCs and motors does SEMI-AUTOMATIC mode use?",
+"a": "The same two CPCs and motors as the auto mode.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-047",
+"system": "Air Cond and Press",
+"q": "In MANUAL pressurization mode, which controls are used to adjust pressurization?",
+"a": "MODE SEL to Manual, then VALVE SEL and V/S CTL per ECAM procedure.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-048",
+"system": "Air Cond and Press",
+"q": "In MANUAL pressurization mode, where are the target cabin altitudes provided?",
+"a": "In the FCOM and on the STS page.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-049",
+"system": "Air Cond and Press",
+"q": "Which outflow valve motor is used for Manual mode?",
+"a": "A third motor on each Outflow valve.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-050",
+"system": "Air Cond and Press",
+"q": "In MANUAL mode, how much change does each toggle of the V/S CTL give?",
+"a": "About 150-200 fpm.",
+"src": "REV1 Systems Guide p.4 · DSC-21-20-10, DSC-21-20-40",
+"sec": "Cabin Pressurization"
+},
+{
+"id": "air-051",
+"system": "Air Cond and Press",
+"q": "What circulates the air that cools the avionics?",
+"a": "The Extract Fan.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-052",
+"system": "Air Cond and Press",
+"q": "On the ground, where is the avionics cooling air exhausted?",
+"a": "Out of the OVBD Extract Valve.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-053",
+"system": "Air Cond and Press",
+"q": "What happens to the OVBD Extract Valve and Underfloor Extract Valve at first engine start?",
+"a": "The OVBD Extract Valve closes and the Underfloor Extract Valve opens.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-054",
+"system": "Air Cond and Press",
+"q": "After first engine start, where does the avionics cooling air exit the aircraft?",
+"a": "Under the Forward Cargo compartment and out the Forward Outflow Valve.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-055",
+"system": "Air Cond and Press",
+"q": "What does the Underfloor Extract Valve do when the EXTRACT Pb is selected to OVRD?",
+"a": "It closes.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-056",
+"system": "Air Cond and Press",
+"q": "What does the OVBD Extract Valve do when the EXTRACT Pb is selected to OVRD?",
+"a": "It opens partially, using a separate small portion of the door.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-057",
+"system": "Air Cond and Press",
+"q": "Which ECAM procedures most likely call for selecting the EXTRACT Pb to OVRD?",
+"a": "Vent Extract Fault or Vent OVBD Valve Fault.",
+"src": "REV1 Systems Guide p.5 · DSC 21-30-20",
+"sec": "VENTILATION"
+},
+{
+"id": "air-058",
+"system": "Air Cond and Press",
+"q": "What is the source of air for the Cargo compartments?",
+"a": "Circulated Cabin air.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-059",
+"system": "Air Cond and Press",
+"q": "What is the top row of the CARGO AIR COND panel?",
+"a": "Ventilation.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-060",
+"system": "Air Cond and Press",
+"q": "What is the middle row of the CARGO AIR COND panel?",
+"a": "Cooling.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-061",
+"system": "Air Cond and Press",
+"q": "What is the bottom row of the CARGO AIR COND panel?",
+"a": "Heating.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-062",
+"system": "Air Cond and Press",
+"q": "What happens to the Isolation Valves when a compartment Isolation Valve Pb is selected to Off?",
+"a": "The Inlet and Outlet Isolation Valves close.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-063",
+"system": "Air Cond and Press",
+"q": "What happens to the Extract Fan when a compartment Isolation Valve Pb is selected to Off?",
+"a": "The Extract Fan stops.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-064",
+"system": "Air Cond and Press",
+"q": "With the Isolation Valve Pbs ON, when do the isolation valves automatically close?",
+"a": "When Cargo Smoke is detected or the Ditching Pb is selected ON.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-065",
+"system": "Air Cond and Press",
+"q": "What cools the forward cargo compartment?",
+"a": "Pack 2.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-066",
+"system": "Air Cond and Press",
+"q": "What heats the forward cargo compartment?",
+"a": "Hot Air 1.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-067",
+"system": "Air Cond and Press",
+"q": "What is the memory phrase for forward cargo heating and cooling?",
+"a": "Heated from the left, Cooled from the right.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-068",
+"system": "Air Cond and Press",
+"q": "What does the temperature selector knob below the cargo cooling selector control?",
+"a": "The trim air valve on the Hot Air 1 system.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-069",
+"system": "Air Cond and Press",
+"q": "Can the Aft cargo compartment be heated or cooled?",
+"a": "No. It cannot be heated or cooled.",
+"src": "REV1 Systems Guide p.5 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-070",
+"system": "Air Cond and Press",
+"q": "How is the Bulk cargo compartment heated?",
+"a": "By an electric heater.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-071",
+"system": "Air Cond and Press",
+"q": "When does the Bulk cargo compartment heater activate?",
+"a": "When the temperature falls below the set level.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-072",
+"system": "Air Cond and Press",
+"q": "What does the Bulk cargo heater do once the set temperature level is reached?",
+"a": "It shuts off until the temperature falls again.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-073",
+"system": "Air Cond and Press",
+"q": "What Bulk temperature do we set when live animals are carried in the Bulk compartment?",
+"a": "A comfortable temperature.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-074",
+"system": "Air Cond and Press",
+"q": "What is the normal position of the FWD CARGO COOLING selector?",
+"a": "OFF, unless plants, livestock, or foods are carried.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-075",
+"system": "Air Cond and Press",
+"q": "Which carried items require the FWD CARGO COOLING selector to be on?",
+"a": "Plants, Livestock, and Foods.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "air-076",
+"system": "Air Cond and Press",
+"q": "In which compartment are pets carried?",
+"a": "The Bulk compartment.",
+"src": "REV1 Systems Guide p.6 · DSC-21-40-20, PRO-NOR-SOP-06",
+"sec": "CARGO AIR COND"
+},
+{
+"id": "afs-001",
+"system": "Auto Flight",
+"q": "Which QRH reset table is used to reset a blank or locked MCDU?",
+"a": "The QRH reset table (02.02D) and related procedures.",
+"src": "REV1 Systems Guide p.6 · DSC-22-10-40-10",
+"sec": "MCDU"
+},
+{
+"id": "afs-002",
+"system": "Auto Flight",
+"q": "How can a blank or locked MCDU be turned off?",
+"a": "By pressing and holding the DIM key.",
+"src": "REV1 Systems Guide p.6 · DSC-22-10-40-10",
+"sec": "MCDU"
+},
+{
+"id": "afs-003",
+"system": "Auto Flight",
+"q": "Which MCDU can be used as a replacement after a failed MCDU is turned off?",
+"a": "MCDU 3.",
+"src": "REV1 Systems Guide p.6 · DSC-22-10-40-10",
+"sec": "MCDU"
+},
+{
+"id": "afs-004",
+"system": "Auto Flight",
+"q": "Below what altitude do the Autoland Lights become active in LAND mode?",
+"a": "Below 200 ft RA.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-30",
+"sec": "AUTOLAND LIGHTS"
+},
+{
+"id": "afs-005",
+"system": "Auto Flight",
+"q": "What is the action if the Autoland lights begin flashing?",
+"a": "Go Around.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-30",
+"sec": "AUTOLAND LIGHTS"
+},
+{
+"id": "afs-006",
+"system": "Auto Flight",
+"q": "When do mode reversions occur?",
+"a": "When the pilot asks the FMGEC to perform a task it is unable to do.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-007",
+"system": "Auto Flight",
+"q": "What does the FMGEC do during a mode reversion?",
+"a": "It reverts to a simpler mode to ensure a safe flight path.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-008",
+"system": "Auto Flight",
+"q": "What aural cue is heard when a mode reversion occurs?",
+"a": "A triple click, click click click, think Look Look Look.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-009",
+"system": "Auto Flight",
+"q": "During a managed climb in CLB and NAV, what does CLB revert to when HDG is selected?",
+"a": "OP CLB.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-010",
+"system": "Auto Flight",
+"q": "During a managed descent in DES and NAV, what does DES revert to when HDG is selected?",
+"a": "V/S.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-011",
+"system": "Auto Flight",
+"q": "When climbing or descending with ALT* engaged, what happens if a different altitude is selected?",
+"a": "ALT* reverts to V/S.",
+"src": "REV1 Systems Guide p.6 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-012",
+"system": "Auto Flight",
+"q": "What happens when an altitude opposite to the direction of flight is set in the FCU?",
+"a": "The vertical mode reverts to V/S.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-013",
+"system": "Auto Flight",
+"q": "What does NAV revert to when overflying a route discontinuity?",
+"a": "HDG.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-014",
+"system": "Auto Flight",
+"q": "With the FDs on in a climb and the pilot leveling off without following them, to what speed does the aircraft accelerate?",
+"a": "Vmax.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-015",
+"system": "Auto Flight",
+"q": "In a climb with FDs on, what happens to the FDs and A/THR when Vmax is reached?",
+"a": "Both FDs disengage and A/THR reverts to SPEED.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-016",
+"system": "Auto Flight",
+"q": "In a climb with FDs on, what does A/THR do to thrust after reverting to SPEED at Vmax?",
+"a": "Reduces thrust to recover the speed target.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-017",
+"system": "Auto Flight",
+"q": "With the FDs on in a descent and the pilot leveling off without following them, to what speed does the aircraft decelerate?",
+"a": "Vls.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-018",
+"system": "Auto Flight",
+"q": "In a descent with FDs on, what happens to the FDs and A/THR when Vls is reached?",
+"a": "Both FDs disengage and A/THR reverts to SPEED.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-019",
+"system": "Auto Flight",
+"q": "In a descent with FDs on, what does A/THR do to thrust after reverting to SPEED at Vls?",
+"a": "Increases thrust to recover the speed target.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-75",
+"sec": "MODE REVERSIONS"
+},
+{
+"id": "afs-020",
+"system": "Auto Flight",
+"q": "How many Autothrust computers and channels are there?",
+"a": "1 Autothrust computer with 2 channels, one channel per FMGEC.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-021",
+"system": "Auto Flight",
+"q": "How is switching between Autothrust channels accomplished?",
+"a": "By switching autopilots.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-022",
+"system": "Auto Flight",
+"q": "What is the Match and Mash method of turning off the Autothrust inflight?",
+"a": "Match TLA on the EPR gauges to current thrust, then press the Instinctive Disconnect Pb.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-023",
+"system": "Auto Flight",
+"q": "What happens if the Instinctive Disconnect Pb is pressed and held for 15 seconds?",
+"a": "The Autothrust is removed for the remainder of the flight.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-024",
+"system": "Auto Flight",
+"q": "What protection is lost when the Autothrust is removed for the remainder of the flight?",
+"a": "Alpha Floor protection.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-025",
+"system": "Auto Flight",
+"q": "What is the Non-Standard method of turning off the Autothrust?",
+"a": "Retard the thrust levers to IDLE, then press the Autothrust Pb on the FCU.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-026",
+"system": "Auto Flight",
+"q": "What condition results from the Non-Standard method of turning off the Autothrust?",
+"a": "A Thrust Lock condition until the Thrust Levers are moved manually.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-027",
+"system": "Auto Flight",
+"q": "On takeoff, what arms the Autothrust?",
+"a": "Moving the Thrust Levers to Flex or TOGA.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-028",
+"system": "Auto Flight",
+"q": "What flashes on the FMA at THR RED altitude?",
+"a": "LVR CLB.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-029",
+"system": "Auto Flight",
+"q": "On takeoff, what activates the Autothrust?",
+"a": "Moving the Thrust Levers to CLB.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-030",
+"system": "Auto Flight",
+"q": "In flight, what activates the Autothrust?",
+"a": "Pressing the A/THR Pb.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-031",
+"system": "Auto Flight",
+"q": "After pressing the A/THR Pb in flight, how long does LVR CLB flash on the FMA?",
+"a": "Until the Thrust Levers are in the climb detent.",
+"src": "REV1 Systems Guide p.7 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-032",
+"system": "Auto Flight",
+"q": "What is Groundspeed Mini designed to protect the aircraft from?",
+"a": "Windshear on approach.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-033",
+"system": "Auto Flight",
+"q": "What does Groundspeed Mini attempt to maintain during the approach?",
+"a": "A minimum energy level throughout the approach during variable wind conditions.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-034",
+"system": "Auto Flight",
+"q": "What must be engaged for Groundspeed Mini?",
+"a": "Managed speed.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-035",
+"system": "Auto Flight",
+"q": "Is Autothrust required for Groundspeed Mini?",
+"a": "No. Autothrust is not required.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-90",
+"sec": "A/THR"
+},
+{
+"id": "afs-036",
+"system": "Auto Flight",
+"q": "What FMA is displayed on takeoff?",
+"a": "MAN FLEX __ | SRS | RWY | | A/THR.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-037",
+"system": "Auto Flight",
+"q": "When does RWY appear on the takeoff FMA?",
+"a": "Only if there is an ILS for that runway.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-038",
+"system": "Auto Flight",
+"q": "What color is A/THR on the takeoff FMA, and what does it signify?",
+"a": "Blue, meaning armed.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-039",
+"system": "Auto Flight",
+"q": "What FMA is displayed for an RNAV climb?",
+"a": "THR CLB | CLB | NAV | | A/THR.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-040",
+"system": "Auto Flight",
+"q": "What FMA is displayed in a vectored descent?",
+"a": "THR IDLE | OP DES | HDG | | A/THR.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-041",
+"system": "Auto Flight",
+"q": "What FMA is displayed in a NAV descent?",
+"a": "THR IDLE or THR DES | DES | NAV | | A/THR.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-042",
+"system": "Auto Flight",
+"q": "What FMA is displayed on an ILS APP?",
+"a": "SPEED | GS | LOC | CAT3/DUAL | 1AP2.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-043",
+"system": "Auto Flight",
+"q": "What is the highest landing capability of the aircraft?",
+"a": "CAT 3 DUAL.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-044",
+"system": "Auto Flight",
+"q": "What is the highest landing capability when single engine?",
+"a": "CAT 3 SINGLE.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-045",
+"system": "Auto Flight",
+"q": "What does 1 FD 2 on the FMA mean?",
+"a": "Normal mode of operation, both FDs selected on.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-046",
+"system": "Auto Flight",
+"q": "What does 1 FD on the FMA mean?",
+"a": "FD 2 is not selected on.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-047",
+"system": "Auto Flight",
+"q": "What does 1 FD 1 on the FMA mean?",
+"a": "FD 2 has failed.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-048",
+"system": "Auto Flight",
+"q": "What does SRS stand for?",
+"a": "Speed Reference System.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-049",
+"system": "Auto Flight",
+"q": "How does SRS deliver a speed?",
+"a": "It uses vertical guidance to deliver a speed.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-050",
+"system": "Auto Flight",
+"q": "What speed does SRS target on a normal takeoff?",
+"a": "V2 + 10.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-051",
+"system": "Auto Flight",
+"q": "What speed does SRS target on a go around?",
+"a": "The highest of Vapp or the current speed at Go Around.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "afs-052",
+"system": "Auto Flight",
+"q": "What speed does SRS target single engine?",
+"a": "The highest of V2 or the airspeed at failure.",
+"src": "REV1 Systems Guide p.8 · DSC-22-30-100",
+"sec": "FMA"
+},
+{
+"id": "com-001",
+"system": "Comms and Cabin Systems",
+"q": "What must illuminate during a CVR test?",
+"a": "One or more green lights.",
+"src": "REV1 Systems Guide p.8 · DSC-23-10-40",
+"sec": "CVR Panel"
+},
+{
+"id": "com-002",
+"system": "Comms and Cabin Systems",
+"q": "During preflight, to what position is the PA reception knob set?",
+"a": "The 12 o'clock position.",
+"src": "REV1 Systems Guide p.9 · PRO-NOR-SOP-06, DSC-23-10-50",
+"sec": "ACP 3"
+},
+{
+"id": "com-003",
+"system": "Comms and Cabin Systems",
+"q": "Why is the PA reception knob set to the 12 o'clock position during preflight?",
+"a": "So the CVR records any PA transmissions.",
+"src": "REV1 Systems Guide p.9 · PRO-NOR-SOP-06, DSC-23-10-50",
+"sec": "ACP 3"
+},
+{
+"id": "com-004",
+"system": "Comms and Cabin Systems",
+"q": "What can be used as a replacement if ACP 1 or ACP 2 fails?",
+"a": "ACP 3.",
+"src": "REV1 Systems Guide p.9 · PRO-NOR-SOP-06, DSC-23-10-50",
+"sec": "ACP 3"
+},
+{
+"id": "com-005",
+"system": "Comms and Cabin Systems",
+"q": "Which control selects ACP 3 as a replacement for a failed ACP?",
+"a": "The AUDIO SWITCHING knob on the switching panel.",
+"src": "REV1 Systems Guide p.9 · PRO-NOR-SOP-06, DSC-23-10-50",
+"sec": "ACP 3"
+},
+{
+"id": "com-006",
+"system": "Comms and Cabin Systems",
+"q": "What does the ALL call do?",
+"a": "CALL ALL CAPT appears on all FA panels.",
+"src": "REV1 Systems Guide p.9 · DSC-23-20-20, DSC 23-20-30",
+"sec": "CALLS"
+},
+{
+"id": "com-007",
+"system": "Comms and Cabin Systems",
+"q": "What does the MECH call activate?",
+"a": "A horn in the nose wheel well and a light on the external power panel.",
+"src": "REV1 Systems Guide p.9 · DSC-23-20-20, DSC 23-20-30",
+"sec": "CALLS"
+},
+{
+"id": "com-008",
+"system": "Comms and Cabin Systems",
+"q": "How long does the MECH call light remain illuminated?",
+"a": "Until reset by ground crew on the external power panel.",
+"src": "REV1 Systems Guide p.9 · DSC-23-20-20, DSC 23-20-30",
+"sec": "CALLS"
+},
+{
+"id": "com-009",
+"system": "Comms and Cabin Systems",
+"q": "What does the CAB REST call do?",
+"a": "Calls the Lower Crew Rest.",
+"src": "REV1 Systems Guide p.9 · DSC-23-20-20, DSC 23-20-30",
+"sec": "CALLS"
+},
+{
+"id": "com-010",
+"system": "Comms and Cabin Systems",
+"q": "What do the FWD, MID, EXIT and AFT calls do?",
+"a": "Call the associated FA station.",
+"src": "REV1 Systems Guide p.9 · DSC-23-20-20, DSC 23-20-30",
+"sec": "CALLS"
+},
+{
+"id": "com-011",
+"system": "Comms and Cabin Systems",
+"q": "What does the EVAC switch activate?",
+"a": "The Evacuation Alert Audio.",
+"src": "REV1 Systems Guide p.9 · DSC-23-40-10",
+"sec": "EVAC"
+},
+{
+"id": "com-012",
+"system": "Comms and Cabin Systems",
+"q": "Is the EVAC alert used per HAL procedure?",
+"a": "No. It is not used per HAL procedure.",
+"src": "REV1 Systems Guide p.9 · DSC-23-40-10",
+"sec": "EVAC"
+},
+{
+"id": "com-013",
+"system": "Comms and Cabin Systems",
+"q": "During preflight, in what position do we verify the EVAC switch?",
+"a": "The CAPT position.",
+"src": "REV1 Systems Guide p.9 · DSC-23-40-10",
+"sec": "EVAC"
+},
+{
+"id": "com-014",
+"system": "Comms and Cabin Systems",
+"q": "What does the EVAC switch in the CAPT position ensure?",
+"a": "The Flight Attendants cannot activate the Alert Audio.",
+"src": "REV1 Systems Guide p.9 · DSC-23-40-10",
+"sec": "EVAC"
+},
+{
+"id": "com-015",
+"system": "Comms and Cabin Systems",
+"q": "Besides the cockpit switch, where is there an EVAC Pb?",
+"a": "On the forward CIDS panel.",
+"src": "REV1 Systems Guide p.9 · DSC-23-40-10",
+"sec": "EVAC"
+},
+{
+"id": "com-7625",
+"system": "Comms and Cabin Systems",
+"q": "How many lights are on the Cockpit Door Overhead Control Panel?",
+"a": "3.",
+"src": "REV1 Systems Guide p.34 · DSC-52-30-20",
+"sec": "APU"
+},
+{
+"id": "com-7626",
+"system": "Comms and Cabin Systems",
+"q": "What does an illuminated light on the Cockpit Door Overhead Control Panel indicate?",
+"a": "The corresponding door latch is faulty.",
+"src": "REV1 Systems Guide p.34 · DSC-52-30-20",
+"sec": "APU"
+},
+{
+"id": "ele-001",
+"system": "Electrical",
+"q": "What is the power hierarchy for AC BUS 1?",
+"a": "Generator 1, APU Generator, External B, External A, Generator 2.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-002",
+"system": "Electrical",
+"q": "What is the power hierarchy for AC BUS 2?",
+"a": "Generator 2, External A, APU Generator, External B, Generator 1.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-003",
+"system": "Electrical",
+"q": "Which source powers AC BUS 1 if Generator 1 is unavailable?",
+"a": "The APU Generator.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-004",
+"system": "Electrical",
+"q": "Which source powers AC BUS 2 if Generator 2 is unavailable?",
+"a": "External A.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-005",
+"system": "Electrical",
+"q": "When External A indicates AVAIL, what is powered regardless of the switch position?",
+"a": "The GND SRV Bus.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-006",
+"system": "Electrical",
+"q": "What happens when the External A Pb is selected ON?",
+"a": "External power connects to the rest of the system based on the power hierarchy.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-007",
+"system": "Electrical",
+"q": "What does the External B Pb display when selected with External B AVAIL?",
+"a": "AUTO.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-008",
+"system": "Electrical",
+"q": "Under what condition will External B connect with the system?",
+"a": "Provided the APU Generator is not online.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-009",
+"system": "Electrical",
+"q": "What does the AUTO indication on the External B Pb signify?",
+"a": "It connects and disconnects automatically based on the APU Generator status.",
+"src": "REV1 Systems Guide p.9 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-010",
+"system": "Electrical",
+"q": "What normally powers the AC ESS BUS?",
+"a": "AC BUS 1.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-011",
+"system": "Electrical",
+"q": "If AC BUS 1 is lost, what powers the AC ESS BUS?",
+"a": "AC BUS 2 via the ESS XFEED.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-012",
+"system": "Electrical",
+"q": "What happens when ALTN is selected on the ESS XFEED Pb?",
+"a": "AC BUS 2 powers the AC ESS BUS.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-013",
+"system": "Electrical",
+"q": "During Initial Power Up, what should the battery voltage be above?",
+"a": "25.5V.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-014",
+"system": "Electrical",
+"q": "What battery charge does 25.5V represent?",
+"a": "50% charge on the Batteries.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-015",
+"system": "Electrical",
+"q": "What do we do if the battery charge is lower than 25.5V at Initial Power Up?",
+"a": "Charge off external power for 20 minutes and check again.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-016",
+"system": "Electrical",
+"q": "Below what APU battery voltage is there a risk of an aborted APU start on battery only?",
+"a": "23.5V.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-017",
+"system": "Electrical",
+"q": "How do we check the battery voltages?",
+"a": "Select BAT 1, BAT 2, APU BAT Pbs off, read the Voltage Indicator window, switch batteries with the selector.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-018",
+"system": "Electrical",
+"q": "In what position is the battery selector left after checking battery voltages?",
+"a": "The APU BAT position.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-019",
+"system": "Electrical",
+"q": "What may not be available if the main batteries were low prior to an APU start on battery power?",
+"a": "The APU fire protection.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-020",
+"system": "Electrical",
+"q": "Which ECAM page is selected to check the Battery Charge Limiter during preflight?",
+"a": "The ELEC DC page.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-021",
+"system": "Electrical",
+"q": "What switching sequence is used to check the Battery Charge Limiter?",
+"a": "Turn off BAT 1, BAT 2, and APU BAT, then turn them back on.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-022",
+"system": "Electrical",
+"q": "What battery draw verifies the Battery Charge Limiter is functioning properly?",
+"a": "Less than 60 amps in 10 seconds or less.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-023",
+"system": "Electrical",
+"q": "How long can we operate on batteries only?",
+"a": "A minimum of 30 minutes.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-024",
+"system": "Electrical",
+"q": "What does the GALLEY Pb AUTO position (lights out) indicate?",
+"a": "The galley will automatically shed in case of failures.",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-025",
+"system": "Electrical",
+"q": "What does the COMMERCIAL Pb control?",
+"a": "Everything back of the Cockpit door (Galley, IFE, Cargo loading, etc.).",
+"src": "REV1 Systems Guide p.10 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-026",
+"system": "Electrical",
+"q": "How long, at most, should the IDG disconnect be held?",
+"a": "Not greater than 3 seconds.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-027",
+"system": "Electrical",
+"q": "Why should the IDG disconnect not be held for greater than 3 seconds?",
+"a": "The disconnect mechanism could be damaged.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-028",
+"system": "Electrical",
+"q": "Can the IDG be reconnected in flight?",
+"a": "No. The IDG cannot be reconnected in flight.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-029",
+"system": "Electrical",
+"q": "Which items connect to the Hot Battery bus on the ground and remain powered at all times?",
+"a": "The Clock and the Battery Voltage Indication Window.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-10",
+"sec": "ELECTRICAL"
+},
+{
+"id": "ele-030",
+"system": "Electrical",
+"q": "What is the EMER GEN TEST used for?",
+"a": "A maintenance function only.",
+"src": "REV1 Systems Guide p.11 · DSC-24-20",
+"sec": "EMER GEN TEST"
+},
+{
+"id": "ele-201",
+"system": "Electrical",
+"q": "What does the EMER ELEC PWR panel label refer to?",
+"a": "The Emergency Generator.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-202",
+"system": "Electrical",
+"q": "Where is the EMER ELEC CONFIG summary located?",
+"a": "In the QRH.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-203",
+"system": "Electrical",
+"q": "What is powering the aircraft when it is in EMER ELEC CONFIG?",
+"a": "The Emergency Generator, with many electrical items shed.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-204",
+"system": "Electrical",
+"q": "Which hydraulic system powers the Emergency Generator?",
+"a": "The green hydraulic system, via two methods.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-205",
+"system": "Electrical",
+"q": "What powers the green system in the “Big Green” case?",
+"a": "One or both engine driven pumps.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-206",
+"system": "Electrical",
+"q": "What powers the green system in the “Little Green” case?",
+"a": "The RAT only.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-207",
+"system": "Electrical",
+"q": "What percentage of an engine driven pump flow capability can the RAT provide?",
+"a": "Between 15% and 45%, depending on airspeed.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-208",
+"system": "Electrical",
+"q": "Loss of which two busses automatically activates EMER ELEC CONFIG?",
+"a": "AC Bus 1 and AC Bus 2, with both Engine Generators tripped offline.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-209",
+"system": "Electrical",
+"q": "After loss of AC Bus 1 and AC Bus 2, what powers the Emergency Generator?",
+"a": "Big Green hydraulics.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-210",
+"system": "Electrical",
+"q": "How many busses remain powered in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "4 busses.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-211",
+"system": "Electrical",
+"q": "Which 4 busses remain powered in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "AC ESS, AC ESS SHED, DC ESS, DC ESS SHED.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-212",
+"system": "Electrical",
+"q": "Which displays remain in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "Captains PFD, Captains ND, and E/WD.",
+"src": "REV1 Systems Guide p.11 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-213",
+"system": "Electrical",
+"q": "After loss of both engines, what powers the Emergency Generator?",
+"a": "Little Green (the RAT only).",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-214",
+"system": "Electrical",
+"q": "How many busses remain powered in EMER ELEC CONFIG after loss of both engines?",
+"a": "2 busses.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-215",
+"system": "Electrical",
+"q": "Which 2 busses remain powered in EMER ELEC CONFIG after loss of both engines?",
+"a": "AC ESS and DC ESS.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-216",
+"system": "Electrical",
+"q": "Which displays remain in EMER ELEC CONFIG after loss of both engines?",
+"a": "Captains PFD and E/WD.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-217",
+"system": "Electrical",
+"q": "Can the emergency generator be turned on manually?",
+"a": "Yes. It can also be manually turned on.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-218",
+"system": "Electrical",
+"q": "Once the emergency generator has been turned on, can it be turned off?",
+"a": "No. It cannot be turned off.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-219",
+"system": "Electrical",
+"q": "When does a RAT-powered emergency generator disconnect?",
+"a": "When the slats are extended.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-220",
+"system": "Electrical",
+"q": "How is the RAT-powered emergency generator reactivated after slat extension disconnects it?",
+"a": "Push the MAN ON Pb after the slats have been retracted.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-221",
+"system": "Electrical",
+"q": "Below what airspeed does the RAT stop being effective?",
+"a": "Less than 140 kts.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-222",
+"system": "Electrical",
+"q": "What is the only source of power once the RAT stops being effective below 140 kts?",
+"a": "The batteries.",
+"src": "REV1 Systems Guide p.12 · DSC-24-10-30-30",
+"sec": "EMER ELEC PWR"
+},
+{
+"id": "ele-223",
+"system": "Electrical",
+"q": "What happens to the Land Recovery AC and DC busses when the aircraft enters EMER ELEC CONFIG?",
+"a": "They shed.",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-224",
+"system": "Electrical",
+"q": "What kind of systems are on the Land Recovery busses?",
+"a": "Systems required for landing but not during cruise.",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-225",
+"system": "Electrical",
+"q": "Do the Land Recovery busses recover automatically if normal power is restored?",
+"a": "No. They remain shed even if normal power is restored.",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-226",
+"system": "Electrical",
+"q": "What does the Land Recovery Pb do?",
+"a": "Recovers the Land Recovery AC and DC busses, restoring systems required for landing.",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-227",
+"system": "Electrical",
+"q": "Which systems does the Land Recovery Pb restore when Big Green powers the Emergency Generator?",
+"a": "LGCIU 1, SFCC 1, BSCU CH 1, LH Windshield Heat, LH Landing Light.",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-228",
+"system": "Electrical",
+"q": "Which systems does the Land Recovery Pb restore when Little Green powers the Emergency Generator?",
+"a": "LGCIU 1 and SFCC 1 (slat channel only).",
+"src": "REV1 Systems Guide p.12 · DSC-24-20",
+"sec": "LAND RECOVERY"
+},
+{
+"id": "ele-229",
+"system": "Electrical",
+"q": "Are the reset panel switches circuit breakers?",
+"a": "No. They are computer reset switches.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-230",
+"system": "Electrical",
+"q": "Where is the explanation of the reset procedures found?",
+"a": "The first page of the reset sections in both the FCOM and QRH.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-231",
+"system": "Electrical",
+"q": "When can you accomplish a computer reset as directed?",
+"a": "When instructed by an ECAM or paper QRH procedure.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-232",
+"system": "Electrical",
+"q": "If no ECAM or QRH procedure directs a reset, how do you determine whether one is allowed?",
+"a": "Check the QRH table.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-233",
+"system": "Electrical",
+"q": "How are system Pbs that also function as resets marked?",
+"a": "Noted by /R.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-234",
+"system": "Electrical",
+"q": "Which two cockpit switches are also resets?",
+"a": "The MCDU and A/SKID & N/W STRG (BSCU) switches.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-235",
+"system": "Electrical",
+"q": "How many circuit breakers are in the cockpit?",
+"a": "Only 5.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-236",
+"system": "Electrical",
+"q": "Where are the 5 cockpit circuit breakers located?",
+"a": "3 on the cockpit door frame, 1 under each pilot seat on the pedestal.",
+"src": "REV1 Systems Guide p.13 · PRO-ABN-ABN-RST, QRH 02.02",
+"sec": "Reset Panels"
+},
+{
+"id": "ele-601",
+"system": "Electrical",
+"q": "With the Emergency Exit Light switch armed, what conditions bring the lights on?",
+"a": "Normal electrical power fails, DC ESS Bus fails, AC BUS 1 fails, or cabin altitude over 9550 ft.",
+"src": "REV1 Systems Guide p.30 · DSC-33-30-20, DSC-33-40-10",
+"sec": "EMER EXIT LIGHTS"
+},
+{
+"id": "ele-602",
+"system": "Electrical",
+"q": "Which emergency lights come on when AC BUS 1 fails with the exit lights armed?",
+"a": "Only the overhead emergency lights, to provide minimum lighting.",
+"src": "REV1 Systems Guide p.30 · DSC-33-30-20, DSC-33-40-10",
+"sec": "EMER EXIT LIGHTS"
+},
+{
+"id": "ele-603",
+"system": "Electrical",
+"q": "At what cabin altitude do the EXIT signs come on with the exit lights armed?",
+"a": "Over 9550 ft.",
+"src": "REV1 Systems Guide p.30 · DSC-33-30-20, DSC-33-40-10",
+"sec": "EMER EXIT LIGHTS"
+},
+{
+"id": "ele-604",
+"system": "Electrical",
+"q": "When are the Fasten Seat Belt signs on in the Auto position?",
+"a": "When either the gear is extended, or the flaps/slats are not at 0.",
+"src": "REV1 Systems Guide p.31 · DSC-33-40-10",
+"sec": "LIGHTS"
+},
+{
+"id": "ele-605",
+"system": "Electrical",
+"q": "Why are the No Smoking lights always on?",
+"a": "They are hardwired.",
+"src": "REV1 Systems Guide p.31 · DSC-33-40-10",
+"sec": "LIGHTS"
+},
+{
+"id": "ele-606",
+"system": "Electrical",
+"q": "What else comes on when the No Smoking switch is in the ON position?",
+"a": "The EXIT signs.",
+"src": "REV1 Systems Guide p.31 · DSC-33-40-10",
+"sec": "LIGHTS"
+},
+{
+"id": "ele-607",
+"system": "Electrical",
+"q": "What happens if the No Smoking switch is left ON after all power is shut off?",
+"a": "The EXIT sign internal batteries would be depleted. Turned off in the Securing Checklist.",
+"src": "REV1 Systems Guide p.31 · DSC-33-40-10",
+"sec": "LIGHTS"
+},
+{
+"id": "ele-608",
+"system": "Electrical",
+"q": "What is the No Smoking switch used to signal to the Flight Attendants?",
+"a": "Passing through 10000 ft.",
+"src": "REV1 Systems Guide p.31 · DSC-33-40-10",
+"sec": "LIGHTS"
+},
+{
+"id": "fir-201",
+"system": "Fire Protection",
+"q": "What type of fire detection loops do the engines use?",
+"a": "Gas detection loops, the same as the APU.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-202",
+"system": "Fire Protection",
+"q": "How many gas filled fire detection loops does each engine have?",
+"a": "2 loops.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-203",
+"system": "Fire Protection",
+"q": "How does a gas filled fire detection loop sense a fire?",
+"a": "Heated gas expands and sets off a sensor at a predetermined level.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-204",
+"system": "Fire Protection",
+"q": "Is an engine fire warning issued when both loops detect a fire?",
+"a": "Yes. Both loops detecting a fire issues a warning.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-205",
+"system": "Fire Protection",
+"q": "Is an engine fire warning issued when one loop detects a fire and the other is inoperative?",
+"a": "Yes. One loop detecting fire with the other inoperative issues a warning.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-206",
+"system": "Fire Protection",
+"q": "Within what time must both engine loops break to issue a fire warning?",
+"a": "Within 5 seconds of each other.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-207",
+"system": "Fire Protection",
+"q": "What happens to the engine fire warnings if the fire goes out?",
+"a": "The warnings stop.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-208",
+"system": "Fire Protection",
+"q": "How many Halon bottles are there per engine?",
+"a": "2 Halon bottles per engine.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-209",
+"system": "Fire Protection",
+"q": "What happens to the CRC when the ENG FIRE Pb is pushed?",
+"a": "It is silenced.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-210",
+"system": "Fire Protection",
+"q": "What does pushing the ENG FIRE Pb do to the FADEC?",
+"a": "Removes power from the FADEC.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-211",
+"system": "Fire Protection",
+"q": "What does pushing the ENG FIRE Pb do to the SQUIBS?",
+"a": "Arms the SQUIBS.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-212",
+"system": "Fire Protection",
+"q": "Which hydraulic and fuel valves close when the ENG FIRE Pb is pushed?",
+"a": "The Hydraulic Fire Shutoff Valve and the Low-Pressure Fuel Valve.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-213",
+"system": "Fire Protection",
+"q": "What does pushing the ENG FIRE Pb do to the IDG?",
+"a": "Deactivates the IDG.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-214",
+"system": "Fire Protection",
+"q": "Which pneumatic valves close when the ENG FIRE Pb is pushed?",
+"a": "The Pack Flow Control Valve and the Engine Bleed Valve.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-215",
+"system": "Fire Protection",
+"q": "What aural and master warning indications occur during the Engine Fire Test?",
+"a": "The CRC sounds and the Master Warning lights flash.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-216",
+"system": "Fire Protection",
+"q": "Which Pb lights come on during the Engine Fire Test?",
+"a": "The Engine Fire Pbs and the SQUIB and DISCH lights.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-217",
+"system": "Fire Protection",
+"q": "Where do fire lights come on near the pedestal during the Engine Fire Test?",
+"a": "By the Engine Master Switches.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-218",
+"system": "Fire Protection",
+"q": "How does the ENG 1 FIRE ECAM presentation differ from ENG 2 FIRE during the Engine Fire Test?",
+"a": "ENG 1 FIRE appears on the left with checklist, ENG 2 FIRE on the right as title only.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-219",
+"system": "Fire Protection",
+"q": "How many lights in total illuminate during the Engine Fire Test?",
+"a": "12 lights (including 2 ECAM messages), plus the CRC.",
+"src": "REV1 Systems Guide p.13 · DSC-26-20-10",
+"sec": "ENGINE FIRE PROTECTION"
+},
+{
+"id": "fir-220",
+"system": "Fire Protection",
+"q": "What controls the automatic functions of the APU?",
+"a": "The ECB (Electronic Control Box).",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-221",
+"system": "Fire Protection",
+"q": "What happens automatically in case of an APU fire on the ground?",
+"a": "APU shutdown and fire extinguishing.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-222",
+"system": "Fire Protection",
+"q": "Does automatic APU shutdown and fire extinguishing occur if the APU fire happens airborne?",
+"a": "No. It will not happen airborne.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-223",
+"system": "Fire Protection",
+"q": "How many Halon bottles does the APU have?",
+"a": "1 Halon bottle.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-224",
+"system": "Fire Protection",
+"q": "How many gas filled fire detection loops does the APU have?",
+"a": "2 loops.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-225",
+"system": "Fire Protection",
+"q": "Under what three conditions is an APU fire warning issued?",
+"a": "Both loops detect fire, one detects with the other inoperative, or both break within 5 seconds.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-226",
+"system": "Fire Protection",
+"q": "What happens to the APU fire warnings if the fire goes out?",
+"a": "The warnings stop.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-227",
+"system": "Fire Protection",
+"q": "What happens to the APU itself when the APU FIRE Pb is pushed?",
+"a": "The APU shuts down.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-228",
+"system": "Fire Protection",
+"q": "What happens to the CRC and squib when the APU FIRE Pb is pushed?",
+"a": "The CRC is silenced and the squib is armed.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-229",
+"system": "Fire Protection",
+"q": "Which fuel items are affected when the APU FIRE Pb is pushed?",
+"a": "The LP Fuel Valve closes and the APU Fuel Pumps (FWD and AFT) shut off.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-230",
+"system": "Fire Protection",
+"q": "What happens to the APU generator when the APU FIRE Pb is pushed?",
+"a": "It deactivates.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-231",
+"system": "Fire Protection",
+"q": "Which pneumatic valves close when the APU FIRE Pb is pushed?",
+"a": "The APU bleed valve and the Crossbleed valve.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-232",
+"system": "Fire Protection",
+"q": "Which lights and messages appear when the APU fire test Pb is pushed?",
+"a": "APU FIRE Pb, AGENT SQUIB and DISCH Pb lights, 2 Master Warnings, CRC, E/WD APU FIRE message.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-233",
+"system": "Fire Protection",
+"q": "How many Master Warning lights illuminate during the APU fire test?",
+"a": "2 Master Warning lights.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-234",
+"system": "Fire Protection",
+"q": "What is the total item count by color during the APU fire test?",
+"a": "4 red lights/messages, 1 amber light, 1 white light, and the CRC.",
+"src": "REV1 Systems Guide p.14 · DSC-26-20-20",
+"sec": "APU FIRE PROTECTION"
+},
+{
+"id": "fir-235",
+"system": "Fire Protection",
+"q": "What type of detectors does Avionics Smoke detection use?",
+"a": "Optical Particle Detectors.",
+"src": "REV1 Systems Guide p.15 · DSC-26-30-10",
+"sec": "AVIONICS SMOKE"
+},
+{
+"id": "fir-236",
+"system": "Fire Protection",
+"q": "What type of smoke detectors does the Cargo Smoke system use?",
+"a": "Optical detectors.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-237",
+"system": "Fire Protection",
+"q": "Why is it not possible to tell if a cargo fire has been extinguished?",
+"a": "Remaining particulates and Halon in the compartment keep the optical detectors sensing.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-238",
+"system": "Fire Protection",
+"q": "How many Halon bottles does the cargo fire extinguishing system have?",
+"a": "2 bottles, both discharging into the selected compartment.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-239",
+"system": "Fire Protection",
+"q": "How quickly does the first cargo Halon bottle discharge?",
+"a": "Within 60 seconds.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-240",
+"system": "Fire Protection",
+"q": "How is the second cargo Halon bottle released?",
+"a": "Through a restrictor valve.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-241",
+"system": "Fire Protection",
+"q": "How long does the second cargo Halon bottle take to fully discharge?",
+"a": "260 minutes.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-242",
+"system": "Fire Protection",
+"q": "Why does the second cargo Halon bottle discharge over 260 minutes?",
+"a": "For ETOPS requirements (195 minutes).",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-243",
+"system": "Fire Protection",
+"q": "When does the cargo bottle DISCH light illuminate?",
+"a": "Not until the bottle is fully empty.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-244",
+"system": "Fire Protection",
+"q": "Which Pb controls cargo fire extinguishing for the Bulk compartment?",
+"a": "The Aft Pb. The bottles discharge into both the Aft and Bulk compartments.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fir-245",
+"system": "Fire Protection",
+"q": "What is the cargo smoke Test button used for?",
+"a": "A maintenance function only.",
+"src": "REV1 Systems Guide p.15 · DSC-26-50-10",
+"sec": "CARGO SMOKE"
+},
+{
+"id": "fct-201",
+"system": "Flight Controls",
+"q": "How many PRIMs does the aircraft have?",
+"a": "3 PRIMs, used for Normal, Alternate, and Direct Laws.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-10",
+"sec": "Flight Control Computers"
+},
+{
+"id": "fct-202",
+"system": "Flight Controls",
+"q": "How many SECs does the aircraft have?",
+"a": "2 SECs, used for Direct Law if no PRIMs are working.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-10",
+"sec": "Flight Control Computers"
+},
+{
+"id": "fct-203",
+"system": "Flight Controls",
+"q": "Which flight control law do the SECs provide if no PRIMs are working?",
+"a": "Direct Law.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-10",
+"sec": "Flight Control Computers"
+},
+{
+"id": "fct-204",
+"system": "Flight Controls",
+"q": "Are the FCC Pbs reset switches?",
+"a": "Yes. All FCC Pbs are reset switches.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-10",
+"sec": "Flight Control Computers"
+},
+{
+"id": "fct-205",
+"system": "Flight Controls",
+"q": "How many flight control computers are needed to perform a safe landing?",
+"a": "Only 1 computer of any type.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-10",
+"sec": "Flight Control Computers"
+},
+{
+"id": "fct-206",
+"system": "Flight Controls",
+"q": "On which SD page are the speedbrakes displayed?",
+"a": "The F/CTL page.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-207",
+"system": "Flight Controls",
+"q": "Which spoiler panels are used for speedbrakes and ground spoilers?",
+"a": "All the panels. Only some are used for roll control.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-208",
+"system": "Flight Controls",
+"q": "Can the speedbrakes be used with Full flaps?",
+"a": "Yes. The speedbrakes can be used with Full flaps.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-209",
+"system": "Flight Controls",
+"q": "Can the aircraft be landed with the speedbrakes extended?",
+"a": "Yes. The aircraft can be landed with the speedbrakes extended.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-210",
+"system": "Flight Controls",
+"q": "During an RTO, what conditions cause the ground spoilers to extend?",
+"a": "Thrust levers retarded to idle with speed greater than 72 kts.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-211",
+"system": "Flight Controls",
+"q": "When armed, what causes the ground spoilers to extend during landing?",
+"a": "Main gear compression with the thrust levers at IDLE.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-212",
+"system": "Flight Controls",
+"q": "When not armed, what causes the ground spoilers to extend during landing?",
+"a": "Main gear compression with at least 1 engine in reverse.",
+"src": "REV1 Systems Guide p.15 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-213",
+"system": "Flight Controls",
+"q": "What do the ground spoilers do if only 1 main gear touches down with reverse selected on 1 engine?",
+"a": "They partially extend until the second main gear touches down, then extend normally.",
+"src": "REV1 Systems Guide p.16 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-214",
+"system": "Flight Controls",
+"q": "Why do the ground spoilers only partially extend when one main gear touches down first?",
+"a": "It allows a smoother touchdown in crosswind conditions.",
+"src": "REV1 Systems Guide p.16 · DSC-27-10-20",
+"sec": "SPEEDBRAKES/GROUND SPOILERS"
+},
+{
+"id": "fct-215",
+"system": "Flight Controls",
+"q": "When can the rudder trim be manually adjusted?",
+"a": "Only when the autopilot is off.",
+"src": "REV1 Systems Guide p.16 · DSC-27-10-20",
+"sec": "RUDDER TRIM"
+},
+{
+"id": "fct-216",
+"system": "Flight Controls",
+"q": "What happens to the rudder trim knob and reset button when the autopilot is on?",
+"a": "They do not function.",
+"src": "REV1 Systems Guide p.16 · DSC-27-10-20",
+"sec": "RUDDER TRIM"
+},
+{
+"id": "fct-217",
+"system": "Flight Controls",
+"q": "Which computers control the TURB DAMP function?",
+"a": "The PRIMs.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-10-60",
+"sec": "TURB DAMP"
+},
+{
+"id": "fct-218",
+"system": "Flight Controls",
+"q": "What does the TURB DAMP function do?",
+"a": "Dampens structural modes induced by atmospheric turbulence.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-10-60",
+"sec": "TURB DAMP"
+},
+{
+"id": "fct-219",
+"system": "Flight Controls",
+"q": "When can TURB DAMP be turned off?",
+"a": "If it is considered not to be helping comfort.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-10-60",
+"sec": "TURB DAMP"
+},
+{
+"id": "fct-220",
+"system": "Flight Controls",
+"q": "What three parameters must be met for TURB DAMP to be active?",
+"a": "In flight within normal envelope, Normal Law active or A/P engaged, airspeed greater than 200 kts.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-10-60",
+"sec": "TURB DAMP"
+},
+{
+"id": "fct-221",
+"system": "Flight Controls",
+"q": "Above what airspeed is TURB DAMP active?",
+"a": "Greater than 200 kts.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-10-60",
+"sec": "TURB DAMP"
+},
+{
+"id": "fct-222",
+"system": "Flight Controls",
+"q": "How many pilots should make sidestick inputs at a time?",
+"a": "Only one pilot.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-223",
+"system": "Flight Controls",
+"q": "What happens to the inputs when both sidesticks are moved at the same time?",
+"a": "The inputs are summed.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-224",
+"system": "Flight Controls",
+"q": "What audio warning sounds when both sidesticks receive inputs at the same time?",
+"a": "“Dual Input”.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-225",
+"system": "Flight Controls",
+"q": "Which SIDE STICK PRIORITY lights illuminate during a dual input?",
+"a": "Green “CAPT” and “FO” lights.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-226",
+"system": "Flight Controls",
+"q": "How does a pilot take control of the sidesticks from the other pilot?",
+"a": "Press and hold the red Pb on their sidestick.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-227",
+"system": "Flight Controls",
+"q": "When both pilots press and hold their sidestick red Pb, who has priority?",
+"a": "The last pilot to press and hold.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-228",
+"system": "Flight Controls",
+"q": "For which pilot does the red arrow in the SIDE STICK PRIORITY light illuminate?",
+"a": "The pilot who is no longer in control.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-229",
+"system": "Flight Controls",
+"q": "What audio message accompanies a sidestick priority takeover?",
+"a": "“Priority Left” or “Priority Right” as appropriate.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-230",
+"system": "Flight Controls",
+"q": "How long must the red Pb be held to lock out the other pilot's sidestick for the remainder of the flight?",
+"a": "More than 40 seconds.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-231",
+"system": "Flight Controls",
+"q": "How can a deactivated sidestick be activated again?",
+"a": "Push its red Pb.",
+"src": "REV1 Systems Guide p.16 · DSC-27-20-30",
+"sec": "SIDE STICK PRIORITY LIGHTS"
+},
+{
+"id": "fct-232",
+"system": "Flight Controls",
+"q": "What does the green band on the THS wheel indicate?",
+"a": "The certified limits.",
+"src": "REV1 Systems Guide p.17 · DSC-27-20-30, FCTM AS-CG",
+"sec": "THS WHEEL"
+},
+{
+"id": "fct-233",
+"system": "Flight Controls",
+"q": "What does setting the pitch trim within the THS green band ensure?",
+"a": "The aircraft can perform a safe takeoff.",
+"src": "REV1 Systems Guide p.17 · DSC-27-20-30, FCTM AS-CG",
+"sec": "THS WHEEL"
+},
+{
+"id": "fct-234",
+"system": "Flight Controls",
+"q": "What does having the correct pitch trim setting provide?",
+"a": "A consistent rotation.",
+"src": "REV1 Systems Guide p.17 · DSC-27-20-30, FCTM AS-CG",
+"sec": "THS WHEEL"
+},
+{
+"id": "fct-235",
+"system": "Flight Controls",
+"q": "When is the Automatic Retraction System (ARS) used?",
+"a": "Heavy weight operations when S speed is greater than or near the 1+F limit speed of 215 kts.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-236",
+"system": "Flight Controls",
+"q": "At what speed does the ARS automatically retract the flaps?",
+"a": "As the speed increases through 200 kts.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-237",
+"system": "Flight Controls",
+"q": "What does the Flap Load Relief System do?",
+"a": "Automatically retracts the flaps to the next retracted lever position in an overspeed.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-238",
+"system": "Flight Controls",
+"q": "In Flaps 2, 3, or FULL, how much overspeed causes the flaps to retract one position?",
+"a": "2.5 kts overspeed.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-239",
+"system": "Flight Controls",
+"q": "What is displayed on the PFD when the Flap Load Relief System is active?",
+"a": "RELIEF, above the Slat/Flap indicator.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-240",
+"system": "Flight Controls",
+"q": "When do the flaps reextend after a flap load relief retraction?",
+"a": "After the aircraft slows to 2.5 kts below Vfe.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-241",
+"system": "Flight Controls",
+"q": "What does the Alpha/Speed Lock inhibit?",
+"a": "Slat retraction from 1 to 0.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-242",
+"system": "Flight Controls",
+"q": "What speed or Alpha conditions activate the Alpha/Speed Lock?",
+"a": "Speed below 148 kts or Alpha exceeding 8.5 degrees.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-243",
+"system": "Flight Controls",
+"q": "What is displayed on the PFD when the Alpha/Speed Lock is active?",
+"a": "LOCK, above the Slats/Flaps indicator.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-244",
+"system": "Flight Controls",
+"q": "What conditions allow the slats to retract to 0 after an Alpha/Speed Lock?",
+"a": "Alpha below 8.2 degrees and speed exceeding 154 kts.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-245",
+"system": "Flight Controls",
+"q": "Why do the ailerons droop when the flaps are set at 1 or greater?",
+"a": "To provide additional lift.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-246",
+"system": "Flight Controls",
+"q": "How much do the ailerons droop at Flaps 1+F?",
+"a": "5 degrees.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-247",
+"system": "Flight Controls",
+"q": "How much do the ailerons droop at Flaps 2 through Full?",
+"a": "10 degrees.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fct-248",
+"system": "Flight Controls",
+"q": "Is there aileron droop when Flaps 1 is selected while airborne?",
+"a": "No. No flaps are extended at Flaps 1 airborne, so there is no droop.",
+"src": "REV1 Systems Guide p.17 · DSC-27-30-10",
+"sec": "FLAPS"
+},
+{
+"id": "fue-201",
+"system": "Fuel",
+"q": "How many Fuel Control and Monitoring Computers (FCMC) control the fuel system?",
+"a": "2 FCMCs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-202",
+"system": "Fuel",
+"q": "What is the approximate capacity of each outer tank?",
+"a": "Approximately 6,300 lbs each.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-203",
+"system": "Fuel",
+"q": "What is the approximate capacity of each inner tank?",
+"a": "Approximately 72,000 lbs each.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-204",
+"system": "Fuel",
+"q": "What is the approximate capacity of the tail tank?",
+"a": "Approximately 11,000 lbs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-205",
+"system": "Fuel",
+"q": "What is the approximate capacity of the center tank?",
+"a": "Approximately 72,000 lbs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-206",
+"system": "Fuel",
+"q": "What is the approximate total fuel capacity?",
+"a": "Approximately 240,000 lbs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-207",
+"system": "Fuel",
+"q": "Which tanks fill first during refueling?",
+"a": "The Inners and Outers.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-208",
+"system": "Fuel",
+"q": "At around what total fuel load should fuel start going into the Trim tank?",
+"a": "Around 80,500 lbs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-209",
+"system": "Fuel",
+"q": "At around what total fuel load should fuel start going into the Center tank?",
+"a": "Around 163,000 lbs.",
+"src": "REV1 Systems Guide p.17 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-210",
+"system": "Fuel",
+"q": "From where do the engines draw their fuel?",
+"a": "The INNER tank collector cells.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-211",
+"system": "Fuel",
+"q": "In what order do the other tanks feed the INNER tank as fuel burns off?",
+"a": "CENTER to INNER, then TRIM to INNER, then OUTER to INNER.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-212",
+"system": "Fuel",
+"q": "What is the tail trim tank used for?",
+"a": "CG control during flight.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-213",
+"system": "Fuel",
+"q": "Why is the CG moved aft during cruise?",
+"a": "For optimum aircraft performance.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-214",
+"system": "Fuel",
+"q": "What effect does an aft CG have during takeoff?",
+"a": "It reduces stability.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-215",
+"system": "Fuel",
+"q": "Passing what flight level in the climb do the FCMCs start the aft transfer to the trim tank?",
+"a": "FL 25.5.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-216",
+"system": "Fuel",
+"q": "During cruise, why is trim tank fuel transferred forward as needed?",
+"a": "To maintain Inner tank levels and optimum CG.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-217",
+"system": "Fuel",
+"q": "When do the FCMCs begin the forward transfer of remaining trim tank fuel during descent?",
+"a": "Passing FL 24.5, or when 35 minutes or less from destination.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-218",
+"system": "Fuel",
+"q": "What does selecting FWD on the TTANK MODE Pb do?",
+"a": "Manually transfers fuel from the TRIM tank to the CENTER tank.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-219",
+"system": "Fuel",
+"q": "Which is the only fuel transfer Pb with a direction?",
+"a": "TTANK MODE (FWD).",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-220",
+"system": "Fuel",
+"q": "What happens with the TTANK Feed switch in the AUTO position?",
+"a": "The FCMC automatically transfers fuel throughout the flight.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-221",
+"system": "Fuel",
+"q": "Why is the final forward transfer stopped with a small amount of fuel left in the trim tank?",
+"a": "So the trim tank transfer line contains fuel for APU operation.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-222",
+"system": "Fuel",
+"q": "What does the OPEN position of the TTANK Feed switch do?",
+"a": "Opens the valves to allow gravity feed to the center tank.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-223",
+"system": "Fuel",
+"q": "What happens to the trim tank transfer line with the TTANK Feed switch in OPEN?",
+"a": "It is drained, and the APU will not operate.",
+"src": "REV1 Systems Guide p.18 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-224",
+"system": "Fuel",
+"q": "What does the ISOL position of the TTANK Feed switch do?",
+"a": "Stops all transfers.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-225",
+"system": "Fuel",
+"q": "What does the CTR TANK XFR Pb do?",
+"a": "Performs a manual transfer from the Center tank to the Inner tanks.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-226",
+"system": "Fuel",
+"q": "How much fuel is unusable if the Center tank pumps are inoperative?",
+"a": "33,000 lbs.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-227",
+"system": "Fuel",
+"q": "Why is 33,000 lbs of center tank fuel unusable with the Center tank pumps inoperative?",
+"a": "Due to gravity and wing dihedral.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-228",
+"system": "Fuel",
+"q": "What does the OUTR TK XFR Pb do?",
+"a": "Performs a gravity transfer from the Outer tanks to the Inner tanks by opening the valves.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-229",
+"system": "Fuel",
+"q": "Can the engines suction feed fuel?",
+"a": "Yes. They can suction feed from the collector tanks.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-230",
+"system": "Fuel",
+"q": "What should be used to conduct all manual fuel transfers?",
+"a": "The ECAM/QRH procedures.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-231",
+"system": "Fuel",
+"q": "What protection is lost during manual fuel transfers?",
+"a": "Overfill protections. Tanks could overfill and fuel could be lost overboard.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-232",
+"system": "Fuel",
+"q": "When does the WING XFEED open automatically?",
+"a": "During a fuel jettison and during EMER ELEC CONFIG.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-233",
+"system": "Fuel",
+"q": "At around what fuel imbalance should you start checking the limitations chart?",
+"a": "Around 3,200 lbs imbalance.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-234",
+"system": "Fuel",
+"q": "At what fuel imbalance does the advisory come on?",
+"a": "6,600 lbs imbalance.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-235",
+"system": "Fuel",
+"q": "Can the aircraft be flown and landed in any fuel imbalance scenario?",
+"a": "Yes. In exceptional conditions, in any fuel imbalance scenario.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-30",
+"sec": "FUEL"
+},
+{
+"id": "fue-401",
+"system": "Fuel",
+"q": "What do the INR TANK SPLIT pushbuttons do?",
+"a": "Close a valve in each Inner tank, closing the connection between the 2 parts of the tank.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-402",
+"system": "Fuel",
+"q": "What is the normal position of the inner tank split valve?",
+"a": "Open.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-403",
+"system": "Fuel",
+"q": "What is the purpose of splitting the inner tank?",
+"a": "To protect a portion of the inner tank fuel in case of a fuel leak.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-404",
+"system": "Fuel",
+"q": "After an inner tank split, is all fuel still accessible?",
+"a": "Yes. All fuel is still accessible via the main and standby pumps.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-405",
+"system": "Fuel",
+"q": "Why are the INR TANK SPLIT pushbuttons not on the main fuel panel?",
+"a": "They were added after initial design.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-406",
+"system": "Fuel",
+"q": "Are the INR TANK SPLIT valves monitored by ECAM?",
+"a": "No. They were added after initial design and are not monitored by ECAM.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-407",
+"system": "Fuel",
+"q": "When are the INR TANK SPLIT pushbuttons used?",
+"a": "Only when directed by ECAM.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-408",
+"system": "Fuel",
+"q": "What does the amber ON light on an INR TANK SPLIT pushbutton indicate?",
+"a": "The valve is closing.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-409",
+"system": "Fuel",
+"q": "What does the blue SHUT light on an INR TANK SPLIT pushbutton indicate?",
+"a": "The valve is shut.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-410",
+"system": "Fuel",
+"q": "Which INR TANK SPLIT pushbutton lights are illuminated once the tank is split?",
+"a": "Both the amber ON and blue SHUT lights.",
+"src": "REV1 Systems Guide p.19 · DSC-28-10-20, DSC-28-20",
+"sec": "INR TANK SPLIT"
+},
+{
+"id": "fue-411",
+"system": "Fuel",
+"q": "What is the fuel jettison rate?",
+"a": "2200 lbs/min plus fuel burn.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-412",
+"system": "Fuel",
+"q": "What happens to the fuel pumps once the jettison QRH procedure is accomplished?",
+"a": "All fuel pumps turn on.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-413",
+"system": "Fuel",
+"q": "What does the crossfeed valve do when jettison begins?",
+"a": "It opens.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-414",
+"system": "Fuel",
+"q": "Which valves open to begin fuel jettison?",
+"a": "The jettison valves.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-415",
+"system": "Fuel",
+"q": "Which fuel transfers begin during jettison?",
+"a": "Trim tank to Center tank, and Outer tanks to Inner tanks.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-416",
+"system": "Fuel",
+"q": "From which tanks is fuel jettisoned?",
+"a": "Both the Inner tanks and the Center tank simultaneously.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-417",
+"system": "Fuel",
+"q": "How does the crew stop a fuel jettison?",
+"a": "Using the QRH procedure.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-418",
+"system": "Fuel",
+"q": "Which MCDU page entry stops the jettison automatically when reached?",
+"a": "The fuel level input into the MCDU FUEL PRED page.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-419",
+"system": "Fuel",
+"q": "At what combined Inner tank fuel quantity does jettison stop?",
+"a": "22,000 lbs combined Inner tank fuel quantity.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-420",
+"system": "Fuel",
+"q": "Which low level sensor condition stops the jettison?",
+"a": "Both inner tank low level sensors on one side go dry.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "fue-421",
+"system": "Fuel",
+"q": "How many conditions stop a fuel jettison?",
+"a": "Four: crew QRH stop, MCDU FUEL PRED level reached, combined Inner 22,000 lbs, one side's low level sensors dry.",
+"src": "REV1 Systems Guide p.20 · DSC-28-10-120, QRH 19.02A",
+"sec": "Fuel Jettison"
+},
+{
+"id": "hyd-401",
+"system": "Hydraulics",
+"q": "How many Hydraulic System Monitoring Units (HSMU) control the hydraulic system?",
+"a": "1 HSMU.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-402",
+"system": "Hydraulics",
+"q": "Where is the Hydraulic Architecture diagram found?",
+"a": "In the QRH, OPS.08A.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-403",
+"system": "Hydraulics",
+"q": "What are the 3 independent hydraulic systems?",
+"a": "Green, Blue, Yellow.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-404",
+"system": "Hydraulics",
+"q": "Can hydraulic fluid be transferred between the systems?",
+"a": "No. Fluid cannot be transferred between the systems.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-405",
+"system": "Hydraulics",
+"q": "What is normal hydraulic pressure?",
+"a": "3000 psi.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-406",
+"system": "Hydraulics",
+"q": "What hydraulic pressure does the RAT provide?",
+"a": "2500 psi.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-407",
+"system": "Hydraulics",
+"q": "Which is the main hydraulic system?",
+"a": "Green.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-408",
+"system": "Hydraulics",
+"q": "What powers the Green hydraulic system?",
+"a": "2 Engine Driven pumps plus the Ram Air Turbine (RAT).",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-409",
+"system": "Hydraulics",
+"q": "What is the Green system Priority Valve designed to do?",
+"a": "Prioritize the flight controls in a low-pressure situation.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-410",
+"system": "Hydraulics",
+"q": "Which high draw items does the Green Priority Valve cut off in low pressure?",
+"a": "Emergency Generator, Nosewheel Steering, Landing Gear.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-411",
+"system": "Hydraulics",
+"q": "What does the white tick mark on the SD HYD page Green reservoir signify?",
+"a": "Fluid is above 17 L / 4.5 USG.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-412",
+"system": "Hydraulics",
+"q": "What happens to the Green reservoir white tick mark if fluid falls below 17 L?",
+"a": "It becomes two amber bars.",
+"src": "REV1 Systems Guide p.20 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-413",
+"system": "Hydraulics",
+"q": "Which notable brake items are on the Blue hydraulic system?",
+"a": "Alternate Brakes, Parking Brake, Brake Accumulator.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-414",
+"system": "Hydraulics",
+"q": "Which hydraulic system operates the Cargo Doors?",
+"a": "Yellow.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-415",
+"system": "Hydraulics",
+"q": "Which hydraulic systems power parts of the flight controls?",
+"a": "All three: Green, Blue and Yellow.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-416",
+"system": "Hydraulics",
+"q": "What pumps does each hydraulic system have?",
+"a": "An Engine driven pump and an Electric Pump. Green has 2 Engine Driven Pumps.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-417",
+"system": "Hydraulics",
+"q": "How many Engine Driven Pumps does the Green system have?",
+"a": "2.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-418",
+"system": "Hydraulics",
+"q": "How long are the hydraulic electric pumps intended to be used?",
+"a": "Temporary use only.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-419",
+"system": "Hydraulics",
+"q": "Can the electric pumps replace the Engine driven pumps?",
+"a": "No. They are for temporary use only.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-420",
+"system": "Hydraulics",
+"q": "How many Pbs control each hydraulic electric pump?",
+"a": "Two Pbs.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-421",
+"system": "Hydraulics",
+"q": "What does the top electric pump Pb select?",
+"a": "AUTO/STBY or ON.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-422",
+"system": "Hydraulics",
+"q": "What does the bottom electric pump Pb do?",
+"a": "Turns the pump off.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-423",
+"system": "Hydraulics",
+"q": "How is an electric pump that was manually selected ON turned off?",
+"a": "By returning the top Pb to AUTO.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-424",
+"system": "Hydraulics",
+"q": "When should the bottom electric pump Pb OFF position be used?",
+"a": "Only if directed by ECAM/QRH/FCOM.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-425",
+"system": "Hydraulics",
+"q": "When does the Green electric pump come on automatically?",
+"a": "When either engine has failed, or when the gear has been selected up.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-426",
+"system": "Hydraulics",
+"q": "How long does the Green electric pump run after the gear is selected up?",
+"a": "25 seconds, to ensure gear retraction within the proper time.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-427",
+"system": "Hydraulics",
+"q": "When does the Blue electric pump come on automatically?",
+"a": "Engine 1 has failed and PRIM 1 or PRIM 3 is also inoperative.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-428",
+"system": "Hydraulics",
+"q": "Why does the Blue electric pump run with Engine 1 failed and PRIM 1 or 3 inoperative?",
+"a": "To assist rudder authority by ensuring at least 2 actuators are operating the rudder.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-429",
+"system": "Hydraulics",
+"q": "When does the Yellow electric pump come on after an engine failure?",
+"a": "Engine 2 has failed and the flap lever is not at 0.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-430",
+"system": "Hydraulics",
+"q": "Why does the Yellow electric pump run after Engine 2 fails with the flap lever not at 0?",
+"a": "To ensure flap retraction within the proper time.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-431",
+"system": "Hydraulics",
+"q": "What happens to the Yellow electric pump when the Green electric pump runs for gear retraction after Engine 2 failure?",
+"a": "It shuts off until the Green electric pump turns off.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-432",
+"system": "Hydraulics",
+"q": "After Engine 2 failure, how long does the Yellow electric pump stay running?",
+"a": "Until engine shutdown.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-433",
+"system": "Hydraulics",
+"q": "Besides Engine 2 failure, when does the Yellow electric pump turn on automatically?",
+"a": "During cargo door operation (Blue ON light illuminates automatically).",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-434",
+"system": "Hydraulics",
+"q": "Which valve also turns on during cargo door operation?",
+"a": "The Yellow Leak Measurement Valve.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-435",
+"system": "Hydraulics",
+"q": "What does the Ram Air Turbine provide?",
+"a": "Redundancy to Green, backup hydraulic power to the flight controls and/or the emergency generator.",
+"src": "REV1 Systems Guide p.21 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-436",
+"system": "Hydraulics",
+"q": "Which engine condition automatically deploys the RAT?",
+"a": "Engines 1 and 2 fail.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-437",
+"system": "Hydraulics",
+"q": "Which Green and Blue condition automatically deploys the RAT?",
+"a": "Green and Blue Fluid Low Level.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-438",
+"system": "Hydraulics",
+"q": "Which Green and Yellow condition automatically deploys the RAT?",
+"a": "Green and Yellow Fluid Low Level.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-439",
+"system": "Hydraulics",
+"q": "Can the RAT be manually deployed?",
+"a": "Yes. The RAT can also be manually deployed.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-440",
+"system": "Hydraulics",
+"q": "Who can stow the RAT?",
+"a": "Only maintenance, on the ground.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-441",
+"system": "Hydraulics",
+"q": "What is the minimum RAT speed?",
+"a": "140 kts.",
+"src": "REV1 Systems Guide p.22 · DSC-29-10-10",
+"sec": "HYDRAULICS"
+},
+{
+"id": "hyd-609",
+"system": "Hydraulics",
+"q": "What are the Leak Measurement Valves used for?",
+"a": "To isolate the flight controls from hydraulic pressure.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "hyd-610",
+"system": "Hydraulics",
+"q": "When does the yellow Leak Measurement Valve operate automatically?",
+"a": "When the Yellow hydraulic pump activates during cargo door operation.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "ice-401",
+"system": "Ice and Rain",
+"q": "What is the normal mode for PROBE/WINDOW HEAT?",
+"a": "AUTO.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-402",
+"system": "Ice and Rain",
+"q": "When are probes and windows automatically heated?",
+"a": "In flight, and on the ground with at least one engine running.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-403",
+"system": "Ice and Rain",
+"q": "Which probe is not heated on the ground?",
+"a": "The TAT probe.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-404",
+"system": "Ice and Rain",
+"q": "What does selecting the PROBE/WINDOW HEAT Pb to ON do?",
+"a": "Activates Probe/Window heat, except the TAT probes on the ground.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-405",
+"system": "Ice and Rain",
+"q": "How does probe/window heat level differ between ground and flight?",
+"a": "Low heat on the ground, high heat in flight.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-406",
+"system": "Ice and Rain",
+"q": "When is ENG ANTI ICE selected on?",
+"a": "When expecting potential icing. It is used as an anti-ice system.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-407",
+"system": "Ice and Rain",
+"q": "How do the Engine Anti Ice valves fail with an electrical failure?",
+"a": "Open.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-408",
+"system": "Ice and Rain",
+"q": "What limitations apply to the use of Engine Anti Ice?",
+"a": "None.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-409",
+"system": "Ice and Rain",
+"q": "What happens to EPR when Engine Anti Ice is selected on?",
+"a": "The EPR limit is reduced and the EPR idle is increased.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-410",
+"system": "Ice and Rain",
+"q": "Does engine ignition automatically come on when Engine Anti Ice is selected on?",
+"a": "No. Only if there was an EIU failure.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-411",
+"system": "Ice and Rain",
+"q": "Below what SAT is Engine Anti Ice not required in climb or cruise?",
+"a": "Below -40C SAT, due to the cold temperature.",
+"src": "REV1 Systems Guide p.22 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-412",
+"system": "Ice and Rain",
+"q": "When is WING ANTI ICE turned on?",
+"a": "Only when instructed by the ECAM or when there is visible ice buildup. It is a deice system.",
+"src": "REV1 Systems Guide p.23 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-413",
+"system": "Ice and Rain",
+"q": "Which slats are heated by WING ANTI ICE?",
+"a": "Only the outer 4 slats.",
+"src": "REV1 Systems Guide p.23 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-414",
+"system": "Ice and Rain",
+"q": "How do the WING ANTI ICE valves fail with an electrical failure?",
+"a": "Closed, because hot air with no cooling airflow can damage the wing composite.",
+"src": "REV1 Systems Guide p.23 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-415",
+"system": "Ice and Rain",
+"q": "What happens when WING ANTI ICE is activated on the ground?",
+"a": "A 30 second test occurs, then the valves close until after liftoff.",
+"src": "REV1 Systems Guide p.23 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-416",
+"system": "Ice and Rain",
+"q": "What happens to EPR when WING ANTI ICE is selected on?",
+"a": "The EPR limit is reduced and the EPR idle is increased.",
+"src": "REV1 Systems Guide p.23 · DSC-30-10-10, PRO-NOR-SUP-ADVWXR",
+"sec": "ANTI ICE"
+},
+{
+"id": "ice-417",
+"system": "Ice and Rain",
+"q": "What does one push of the RAIN RPLNT button do?",
+"a": "Distributes a measured quantity of fluid to the associated side.",
+"src": "REV1 Systems Guide p.23 · DSC-30-60-20",
+"sec": "RAIN RPLNT"
+},
+{
+"id": "ice-418",
+"system": "Ice and Rain",
+"q": "When must rain repellent not be used?",
+"a": "On a dry windshield.",
+"src": "REV1 Systems Guide p.23 · DSC-30-60-20",
+"sec": "RAIN RPLNT"
+},
+{
+"id": "ice-419",
+"system": "Ice and Rain",
+"q": "What is the maximum wiper operating speed?",
+"a": "230 kts.",
+"src": "REV1 Systems Guide p.23 · LIM-AG-SPD",
+"sec": "WIPERS"
+},
+{
+"id": "eca-401",
+"system": "ECAM and Displays",
+"q": "What type of items are Level 3 ECAM Warnings?",
+"a": "Immediate action items.",
+"src": "REV1 Systems Guide p.23 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-402",
+"system": "ECAM and Displays",
+"q": "What alerts accompany a Level 3 ECAM Warning?",
+"a": "CRC sounds, Master Warning lights flash, message in red text on the E/WD.",
+"src": "REV1 Systems Guide p.23 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-403",
+"system": "ECAM and Displays",
+"q": "What type of items are Level 2 ECAM Cautions?",
+"a": "Crew awareness items not requiring immediate action.",
+"src": "REV1 Systems Guide p.23 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-404",
+"system": "ECAM and Displays",
+"q": "What alerts accompany a Level 2 ECAM Caution?",
+"a": "A single chime, Master Caution lights on, message in amber text on the E/WD.",
+"src": "REV1 Systems Guide p.23 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-405",
+"system": "ECAM and Displays",
+"q": "What type of items are Level 1 ECAM Cautions?",
+"a": "Crew monitoring items.",
+"src": "REV1 Systems Guide p.23 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-406",
+"system": "ECAM and Displays",
+"q": "What alerts accompany a Level 1 Caution for loss of redundancy?",
+"a": "No aural alerts, no Master Caution lights, message in amber text on the E/WD.",
+"src": "REV1 Systems Guide p.24 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-407",
+"system": "ECAM and Displays",
+"q": "How does an ECAM Advisory present on the SD?",
+"a": "The relevant system page is called with the affected parameter pulsing green.",
+"src": "REV1 Systems Guide p.24 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-408",
+"system": "ECAM and Displays",
+"q": "What could an ECAM Advisory indicate?",
+"a": "An impending failure. The system requires crew monitoring.",
+"src": "REV1 Systems Guide p.24 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-409",
+"system": "ECAM and Displays",
+"q": "Which QRH chart is referenced for an ECAM Advisory?",
+"a": "The ECAM Advisory Conditions Chart, QRH 01.01A.",
+"src": "REV1 Systems Guide p.24 · DSC-31-10",
+"sec": "ECAM Priority"
+},
+{
+"id": "eca-410",
+"system": "ECAM and Displays",
+"q": "What is Groundspeed Mini designed to protect the aircraft from?",
+"a": "Windshear on approach, by maintaining a minimum energy level in variable wind conditions.",
+"src": "REV1 Systems Guide p.24 · DSC-22-30-90, DSC-31-40",
+"sec": "PFD"
+},
+{
+"id": "eca-411",
+"system": "ECAM and Displays",
+"q": "Which speed mode must be engaged for Groundspeed Mini?",
+"a": "Managed speed.",
+"src": "REV1 Systems Guide p.24 · DSC-22-30-90, DSC-31-40",
+"sec": "PFD"
+},
+{
+"id": "eca-412",
+"system": "ECAM and Displays",
+"q": "Is Autothrust required for Groundspeed Mini?",
+"a": "No.",
+"src": "REV1 Systems Guide p.24 · DSC-22-30-90, DSC-31-40",
+"sec": "PFD"
+},
+{
+"id": "eca-413",
+"system": "ECAM and Displays",
+"q": "What do the amber double tick marks on the PFD speed tape represent?",
+"a": "VFE Next.",
+"src": "REV1 Systems Guide p.24 · DSC-22-30-90, DSC-31-40",
+"sec": "PFD"
+},
+{
+"id": "eca-414",
+"system": "ECAM and Displays",
+"q": "What does a blank tuning letter next to a NAVAID on the ND mean?",
+"a": "The NAVAID is autotuned.",
+"src": "REV1 Systems Guide p.24 · DSC-31-45",
+"sec": "ND"
+},
+{
+"id": "eca-415",
+"system": "ECAM and Displays",
+"q": "What does the letter M next to a NAVAID on the ND mean?",
+"a": "Manually tuned in the RADNAV page of the MCDU.",
+"src": "REV1 Systems Guide p.24 · DSC-31-45",
+"sec": "ND"
+},
+{
+"id": "eca-416",
+"system": "ECAM and Displays",
+"q": "What does the letter R next to a NAVAID on the ND mean?",
+"a": "Physically tuned in the RMP.",
+"src": "REV1 Systems Guide p.24 · DSC-31-45",
+"sec": "ND"
+},
+{
+"id": "eca-417",
+"system": "ECAM and Displays",
+"q": "Does manually tuning a NAVAID affect the autotuning functions?",
+"a": "No.",
+"src": "REV1 Systems Guide p.24 · DSC-31-45",
+"sec": "ND"
+},
+{
+"id": "eca-418",
+"system": "ECAM and Displays",
+"q": "Why does the ECAM inhibit some warnings and cautions during takeoff?",
+"a": "To avoid unnecessary distraction.",
+"src": "REV1 Systems Guide p.24 · DSC-31-15, PRO-NOR-SOP-07",
+"sec": "E/WD"
+},
+{
+"id": "eca-419",
+"system": "ECAM and Displays",
+"q": "When does the takeoff ECAM inhibit apply?",
+"a": "From takeoff thrust until 1500 ft or 2 minutes after liftoff.",
+"src": "REV1 Systems Guide p.24 · DSC-31-15, PRO-NOR-SOP-07",
+"sec": "E/WD"
+},
+{
+"id": "eca-420",
+"system": "ECAM and Displays",
+"q": "What happens to inhibited alerts once above 1500 ft or 2 minutes after liftoff?",
+"a": "The inhibit is lifted and any inhibited alerts are displayed.",
+"src": "REV1 Systems Guide p.24 · DSC-31-15, PRO-NOR-SOP-07",
+"sec": "E/WD"
+},
+{
+"id": "eca-421",
+"system": "ECAM and Displays",
+"q": "Which E/WD message must be displayed for pushback?",
+"a": "N/WS DISC.",
+"src": "REV1 Systems Guide p.24 · DSC-31-15, PRO-NOR-SOP-07",
+"sec": "E/WD"
+},
+{
+"id": "eca-422",
+"system": "ECAM and Displays",
+"q": "What if N/WS DISC is not displayed but the ground crew says the pin is in?",
+"a": "Do not start the engine during pushback.",
+"src": "REV1 Systems Guide p.24 · DSC-31-15, PRO-NOR-SOP-07",
+"sec": "E/WD"
+},
+{
+"id": "eca-423",
+"system": "ECAM and Displays",
+"q": "What computes the GW and GW CG shown on the SD?",
+"a": "The FCMC, using the input ZFW and the actual position of the fuel.",
+"src": "REV1 Systems Guide p.25 · DSC-31-20",
+"sec": "SD"
+},
+{
+"id": "eca-424",
+"system": "ECAM and Displays",
+"q": "Where are GW and GW CG displayed?",
+"a": "In green on the bottom right of the SD.",
+"src": "REV1 Systems Guide p.25 · DSC-31-20",
+"sec": "SD"
+},
+{
+"id": "eca-425",
+"system": "ECAM and Displays",
+"q": "When is the GW CG displayed in red on the SD?",
+"a": "When the Flight Envelope portion of the FMGEC detects an out of limit CG.",
+"src": "REV1 Systems Guide p.25 · DSC-31-20",
+"sec": "SD"
+},
+{
+"id": "eca-426",
+"system": "ECAM and Displays",
+"q": "What are the white messages under MAINTENANCE on the STATUS page?",
+"a": "Class 2 Maintenance messages, requiring no action by the flight crew.",
+"src": "REV1 Systems Guide p.25 · DSC-31-20",
+"sec": "SD"
+},
+{
+"id": "eca-427",
+"system": "ECAM and Displays",
+"q": "What does the ECAM SWITCHING DMC knob select?",
+"a": "Which DMC supplies data to the E/WD and SD.",
+"src": "REV1 Systems Guide p.25 · DSC-31-05-40",
+"sec": "ECAM SWITCHING"
+},
+{
+"id": "eca-428",
+"system": "ECAM and Displays",
+"q": "With ECAM SWITCHING in AUTO, which DMC takes over if DMC 3 fails?",
+"a": "DMC 1.",
+"src": "REV1 Systems Guide p.25 · DSC-31-05-40",
+"sec": "ECAM SWITCHING"
+},
+{
+"id": "eca-429",
+"system": "ECAM and Displays",
+"q": "What does the ECAM/ND switch do?",
+"a": "Transfers the SD to either the Captains or First Officers ND.",
+"src": "REV1 Systems Guide p.25 · DSC-31-05-40",
+"sec": "ECAM SWITCHING"
+},
+{
+"id": "eca-430",
+"system": "ECAM and Displays",
+"q": "What does the ECAM/ND switch transfer if both the E/WD and SD display units have failed?",
+"a": "The E/WD to the ND.",
+"src": "REV1 Systems Guide p.25 · DSC-31-05-40",
+"sec": "ECAM SWITCHING"
+},
+{
+"id": "eca-431",
+"system": "ECAM and Displays",
+"q": "What does the EFIS DMC SWITCHING selector choose?",
+"a": "Which DMC supplies data to the respective PFD and ND.",
+"src": "REV1 Systems Guide p.25 · DSC-31-50",
+"sec": "EFIS DMC SWITCHING"
+},
+{
+"id": "eca-432",
+"system": "ECAM and Displays",
+"q": "What does the Engine position of the EFIS mode select switch display?",
+"a": "The engine portion of the E/WD on the ND.",
+"src": "REV1 Systems Guide p.25 · DSC-31-50",
+"sec": "EFIS MODE SELECT SWITCH"
+},
+{
+"id": "eca-433",
+"system": "ECAM and Displays",
+"q": "What does the LS button display?",
+"a": "The localizer and glide slope scales on the PFD.",
+"src": "REV1 Systems Guide p.25 · DSC-31-50",
+"sec": "LS Button"
+},
+{
+"id": "eca-434",
+"system": "ECAM and Displays",
+"q": "For which approaches is the LS button used?",
+"a": "Only approaches utilizing a localizer: ILS, LOC, LDA.",
+"src": "REV1 Systems Guide p.25 · DSC-31-50",
+"sec": "LS Button"
+},
+{
+"id": "eca-435",
+"system": "ECAM and Displays",
+"q": "For which approaches must the LS button be off?",
+"a": "Approaches not utilizing a localizer: RNAV, VOR, NDB.",
+"src": "REV1 Systems Guide p.25 · DSC-31-50",
+"sec": "LS Button"
+},
+{
+"id": "eca-436",
+"system": "ECAM and Displays",
+"q": "What can a Display Unit (DU) failure look like?",
+"a": "Blank screen with amber \"Invalid Display Unit\", blank screen with amber \"F\", or a distorted display.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-437",
+"system": "ECAM and Displays",
+"q": "Is a failed Display Unit recoverable?",
+"a": "No. The DU is not recoverable.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-438",
+"system": "ECAM and Displays",
+"q": "Which displays does DMC 1 provide data to?",
+"a": "The Captains PFD and ND.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-439",
+"system": "ECAM and Displays",
+"q": "Which displays does DMC 2 provide data to?",
+"a": "The First Officers PFD and ND.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-440",
+"system": "ECAM and Displays",
+"q": "Which displays does DMC 3 provide data to?",
+"a": "The E/WD and SD.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-441",
+"system": "ECAM and Displays",
+"q": "How does a DMC failure appear on the associated DUs?",
+"a": "\"Invalid Data\" in amber. The DUs can be recovered by switching DMC.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-442",
+"system": "ECAM and Displays",
+"q": "What happens if the E/WD DU fails?",
+"a": "The data automatically switches to the SD.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-443",
+"system": "ECAM and Displays",
+"q": "Does the SD automatically switch locations if its DU fails?",
+"a": "No.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-444",
+"system": "ECAM and Displays",
+"q": "How can SD data be displayed after the SD DU fails?",
+"a": "ECAM/ND XFR to the Captains or FOs ND, or press and hold a systems button over the E/WD.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-445",
+"system": "ECAM and Displays",
+"q": "Which DMCs can ECAM SWITCHING manually select as source for the E/WD and SD?",
+"a": "DMC 1 or 2.",
+"src": "REV1 Systems Guide p.26 · DSC-31-05-60",
+"sec": "SCREEN FAILURES"
+},
+{
+"id": "eca-446",
+"system": "ECAM and Displays",
+"q": "What does the TO CONFIG Pb simulate?",
+"a": "The application of takeoff power, to test if the aircraft is configured for takeoff.",
+"src": "REV1 Systems Guide p.26 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-447",
+"system": "ECAM and Displays",
+"q": "Which items does the TO CONFIG test check?",
+"a": "Slats/Flaps, Pitch Trim, Rudder Trim, Speed Brakes, Brake Temperatures, Doors.",
+"src": "REV1 Systems Guide p.26 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-448",
+"system": "ECAM and Displays",
+"q": "Which two monitored items are not checked by the TO CONFIG test?",
+"a": "Parking Brake and Thrust not set.",
+"src": "REV1 Systems Guide p.26 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-449",
+"system": "ECAM and Displays",
+"q": "What does EMER CANC do to a Warning?",
+"a": "Silences it while the failure continues and extinguishes Master Warning lights. The ECAM message remains.",
+"src": "REV1 Systems Guide p.27 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-450",
+"system": "ECAM and Displays",
+"q": "What does EMER CANC do to a Caution?",
+"a": "Cancels it for the remainder of the flight and brings up the Status page showing \"Cancelled Caution\".",
+"src": "REV1 Systems Guide p.27 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-451",
+"system": "ECAM and Displays",
+"q": "How is a cancelled Caution restored?",
+"a": "Hold RCL for more than 3 seconds.",
+"src": "REV1 Systems Guide p.27 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-452",
+"system": "ECAM and Displays",
+"q": "In which cases would EMER CANC be used?",
+"a": "To move a MEL item ECAM off the Status page, or to cancel nuisance repeating on/off Cautions.",
+"src": "REV1 Systems Guide p.27 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-453",
+"system": "ECAM and Displays",
+"q": "Which ECAM control panel keys are hardwired and still function if the panel fails?",
+"a": "CLR, STS, RCL, EMER CNCL, ALL.",
+"src": "REV1 Systems Guide p.27 · DSC-31-30",
+"sec": "ECAM CONTROL PANEL"
+},
+{
+"id": "eca-454",
+"system": "ECAM and Displays",
+"q": "When do the recorders start automatically?",
+"a": "On the ground for 5 minutes after power up, on the ground after first engine start, and in flight.",
+"src": "REV1 Systems Guide p.27 · DSC-31-60-10, DSC-23-10-40",
+"sec": "RCDR"
+},
+{
+"id": "eca-455",
+"system": "ECAM and Displays",
+"q": "How long do the recorders run automatically after power up on the ground?",
+"a": "5 minutes.",
+"src": "REV1 Systems Guide p.27 · DSC-31-60-10, DSC-23-10-40",
+"sec": "RCDR"
+},
+{
+"id": "eca-456",
+"system": "ECAM and Displays",
+"q": "What does the RCDR GND CTL Pb do?",
+"a": "Energizes the recorders during the preflight.",
+"src": "REV1 Systems Guide p.27 · DSC-31-60-10, DSC-23-10-40",
+"sec": "RCDR"
+},
+{
+"id": "eca-457",
+"system": "ECAM and Displays",
+"q": "Why is the CHRONO started at the beginning of the takeoff roll?",
+"a": "To allow monitoring of engine thrust limitations.",
+"src": "REV1 Systems Guide p.27 · PRO-NOR-SOP-12, LIM-ENG",
+"sec": "CHRONO"
+},
+{
+"id": "eca-458",
+"system": "ECAM and Displays",
+"q": "What is the engine thrust time limit at 900° in normal operations?",
+"a": "5 minutes.",
+"src": "REV1 Systems Guide p.27 · PRO-NOR-SOP-12, LIM-ENG",
+"sec": "CHRONO"
+},
+{
+"id": "eca-459",
+"system": "ECAM and Displays",
+"q": "What is the engine thrust time limit at 900° if an engine has failed?",
+"a": "10 minutes.",
+"src": "REV1 Systems Guide p.27 · PRO-NOR-SOP-12, LIM-ENG",
+"sec": "CHRONO"
+},
+{
+"id": "lg-401",
+"system": "Landing Gear",
+"q": "How is the landing gear normally controlled and operated?",
+"a": "Electrically controlled and hydraulically operated using the green hydraulic system.",
+"src": "REV1 Systems Guide p.27 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-402",
+"system": "Landing Gear",
+"q": "How is the gear controlled and operated during gravity extension?",
+"a": "Electrically controlled and mechanically operated.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-403",
+"system": "Landing Gear",
+"q": "Can the gear be retracted normally after gravity extension if green pressure is available?",
+"a": "Yes. Retract by normal methods after resetting the gravity extension switch.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-404",
+"system": "Landing Gear",
+"q": "What must be done with the gravity extension switch before a normal retraction?",
+"a": "Move it to RESET, then to OFF.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-405",
+"system": "Landing Gear",
+"q": "How many Landing Gear Control and Interface Units (LGCIUs) control the gear system?",
+"a": "Two.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-406",
+"system": "Landing Gear",
+"q": "Which LGCIU powers the Landing Gear Indicator Panel next to the gear handle?",
+"a": "LGCIU 1.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-407",
+"system": "Landing Gear",
+"q": "What does red UNLK on the Landing Gear Indicator Panel mean?",
+"a": "The gear is not in the selected position.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-408",
+"system": "Landing Gear",
+"q": "What does a green triangle on the Landing Gear Indicator Panel mean?",
+"a": "The gear is down and locked.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-409",
+"system": "Landing Gear",
+"q": "Which LGCIUs power the two triangles per gear on the SD WHEEL page?",
+"a": "Left triangle LGCIU 1, right triangle LGCIU 2.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-410",
+"system": "Landing Gear",
+"q": "How many SD WHEEL page triangles per gear are needed to show down and locked?",
+"a": "Only one.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-411",
+"system": "Landing Gear",
+"q": "When does the Red Arrow next to the landing gear handle come on?",
+"a": "At 750 ft RA if the gear is not downlocked with Flaps 2, 3, or FULL.",
+"src": "REV1 Systems Guide p.28 · DSC-32-10-10",
+"sec": "LANDING GEAR"
+},
+{
+"id": "lg-412",
+"system": "Landing Gear",
+"q": "What activates automatic braking?",
+"a": "Ground spoiler deployment.",
+"src": "REV1 Systems Guide p.28 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-413",
+"system": "Landing Gear",
+"q": "Below what speed will the autobrakes not engage during an RTO?",
+"a": "Below 72 kts, because the ground spoilers do not deploy until 72 kts.",
+"src": "REV1 Systems Guide p.28 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-414",
+"system": "Landing Gear",
+"q": "When do the autobrakes activate in LOW?",
+"a": "1 second after the ground spoilers deploy, following gear touchdown with Thrust Levers IDLE.",
+"src": "REV1 Systems Guide p.28 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-415",
+"system": "Landing Gear",
+"q": "When do the autobrakes activate in MED?",
+"a": "When the ground spoilers deploy, following gear touchdown with Thrust Levers IDLE.",
+"src": "REV1 Systems Guide p.28 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-416",
+"system": "Landing Gear",
+"q": "When during taxi may the autobrakes be armed to MAX?",
+"a": "Only after the flight control check.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-417",
+"system": "Landing Gear",
+"q": "Why not arm autobrakes MAX before the flight control check?",
+"a": "The rising spoilers during the check could activate the autobrakes.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-418",
+"system": "Landing Gear",
+"q": "What does the DECEL light on the autobrake Pbs mean?",
+"a": "Only that the aircraft is slowing at the programmed rate, not that the brakes are slowing it.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-419",
+"system": "Landing Gear",
+"q": "What is the normal landing autobrake setting?",
+"a": "LOW.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-420",
+"system": "Landing Gear",
+"q": "When should autobrakes MED be used?",
+"a": "For short or contaminated runways.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-421",
+"system": "Landing Gear",
+"q": "When are autobrakes MAX used?",
+"a": "Only for takeoff.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-10, PRO-NOR-SOP-16",
+"sec": "AUTOBRAKES"
+},
+{
+"id": "lg-601",
+"system": "Landing Gear",
+"q": "What is the normal position of the A/SKID and N/W STRG switch?",
+"a": "ON for normal operations.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-602",
+"system": "Landing Gear",
+"q": "Which hydraulic system powers the brakes when A/SKID and N/W STRG is switched OFF?",
+"a": "The Blue system, switched over from the Green system.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-603",
+"system": "Landing Gear",
+"q": "Is antiskid available with A/SKID and N/W STRG switched OFF?",
+"a": "No. Antiskid is deactivated.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-604",
+"system": "Landing Gear",
+"q": "What happens to nosewheel steering when A/SKID and N/W STRG is switched OFF?",
+"a": "Nosewheel steering is lost.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-605",
+"system": "Landing Gear",
+"q": "Where is braking pressure displayed when A/SKID and N/W STRG is switched OFF?",
+"a": "On the triple indicator.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-606",
+"system": "Landing Gear",
+"q": "What second function does the A/SKID and N/W STRG switch serve?",
+"a": "A computer reset. Check the QRH reset table on 02.02E.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-607",
+"system": "Landing Gear",
+"q": "How many different methods of braking does the aircraft have?",
+"a": "Four.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-608",
+"system": "Landing Gear",
+"q": "Which hydraulic system powers normal brakes?",
+"a": "The Green system.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-609",
+"system": "Landing Gear",
+"q": "Which hydraulic system powers alternate brakes, with or without A/SKID?",
+"a": "The Blue system.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-610",
+"system": "Landing Gear",
+"q": "What powers the Parking Brake?",
+"a": "The Blue system and the Accumulator.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-611",
+"system": "Landing Gear",
+"q": "What holds the aircraft when it is parked with the engines off?",
+"a": "Accumulator pressure.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-612",
+"system": "Landing Gear",
+"q": "Why is Engine 1 normally started first?",
+"a": "The Blue hydraulic pump is on Engine 1. It recharges the accumulator and pressurizes the parking brake.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20",
+"sec": "A/SKID and N/W STRG"
+},
+{
+"id": "lg-613",
+"system": "Landing Gear",
+"q": "What does the top scale of the triple indicator display?",
+"a": "Accumulator pressure.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20, PRO-NOR-SOP-04",
+"sec": "TRIPLE INDICATOR"
+},
+{
+"id": "lg-614",
+"system": "Landing Gear",
+"q": "What does the amber scale on the top of the triple indicator indicate?",
+"a": "The forbidden range. Recharge the accumulator using the blue hydraulic system.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20, PRO-NOR-SOP-04",
+"sec": "TRIPLE INDICATOR"
+},
+{
+"id": "lg-615",
+"system": "Landing Gear",
+"q": "Where must accumulator pressure read during preflight to ensure the Parking Brake holds the aircraft?",
+"a": "In the green band.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20, PRO-NOR-SOP-04",
+"sec": "TRIPLE INDICATOR"
+},
+{
+"id": "lg-616",
+"system": "Landing Gear",
+"q": "What does the bottom scale of the triple indicator display?",
+"a": "Blue system pressure delivered to the brakes.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20, PRO-NOR-SOP-04",
+"sec": "TRIPLE INDICATOR"
+},
+{
+"id": "lg-617",
+"system": "Landing Gear",
+"q": "What does the green band on the bottom scale of the triple indicator indicate?",
+"a": "The normal braking range.",
+"src": "REV1 Systems Guide p.29 · DSC-32-30-20, PRO-NOR-SOP-04",
+"sec": "TRIPLE INDICATOR"
+},
+{
+"id": "lg-618",
+"system": "Landing Gear",
+"q": "What positions can the Parking Brake valve take?",
+"a": "Open or closed only, there is no in between.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "lg-619",
+"system": "Landing Gear",
+"q": "Is brake pedal pressure required to set the Parking Brake?",
+"a": "No. No pressure on the brake pedals is required.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "lg-620",
+"system": "Landing Gear",
+"q": "How long can the accumulator hold the Parking Brake?",
+"a": "12 hours.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "lg-621",
+"system": "Landing Gear",
+"q": "What braking technique does the LOSS OF BRAKING memory item procedure call for?",
+"a": "Short and successive applications to stop the aircraft.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "lg-622",
+"system": "Landing Gear",
+"q": "How many full brake applications will the accumulator provide at least?",
+"a": "At least 7 full brake applications.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "lg-623",
+"system": "Landing Gear",
+"q": "Why delay braking to as low a speed as possible during a LOSS OF BRAKING?",
+"a": "To avoid tire burst.",
+"src": "REV1 Systems Guide p.30 · DSC-32-30-10, DSC-32-30-20",
+"sec": "PARKING BRAKE"
+},
+{
+"id": "nav-601",
+"system": "Navigation",
+"q": "What does the ATT HDG switch allow?",
+"a": "IR 3 to replace IR 1 or IR 2.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-602",
+"system": "Navigation",
+"q": "What is lost when an IR fails?",
+"a": "Attitude and heading information as well as the map.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-603",
+"system": "Navigation",
+"q": "What does the AIR DATA switch allow?",
+"a": "ADR 3 to replace ADR 1 or ADR 2.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-604",
+"system": "Navigation",
+"q": "What data is lost when an ADR fails?",
+"a": "Airspeed and altitude data.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-605",
+"system": "Navigation",
+"q": "What does the FM switch allow?",
+"a": "Switching to the healthy FM in the event of FM failure.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-606",
+"system": "Navigation",
+"q": "How can NAVAIDS be tuned in Back up Navigation after both FMs fail?",
+"a": "Using the Nav function on the RMPs.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-607",
+"system": "Navigation",
+"q": "Which MCDU keys still function in Back up Navigation?",
+"a": "Only the corner keys (DIR, PROG, FPLN).",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-608",
+"system": "Navigation",
+"q": "How must the crew navigate in Back up Navigation?",
+"a": "Use HDG/TRACK. NAV mode is inoperative.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-609",
+"system": "Navigation",
+"q": "Does the MCDU retain the flight plan after both FMs fail?",
+"a": "Yes. The MCDU continuously memorizes the flight plan.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-610",
+"system": "Navigation",
+"q": "Do the radios still function in Back up Navigation?",
+"a": "Yes. Radios still function normally.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-611",
+"system": "Navigation",
+"q": "What does the AUDIO switch allow?",
+"a": "The Captain or FO to utilize ACP 3 in case of ACP 1 or 2 failure.",
+"src": "REV1 Systems Guide p.30 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-612",
+"system": "Navigation",
+"q": "Which ADIRS rotary switch position is used for normal operations?",
+"a": "NAV.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-613",
+"system": "Navigation",
+"q": "What does the ADIRS rotary switch ATT position provide?",
+"a": "Only attitude and heading information.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-614",
+"system": "Navigation",
+"q": "How often must the heading be updated through the MCDU in ATT mode?",
+"a": "Every 10 minutes.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-615",
+"system": "Navigation",
+"q": "What does the ADIRS rotary switch OFF position do?",
+"a": "Shuts off the entire ADIRU (both IR and ADR).",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-616",
+"system": "Navigation",
+"q": "How can the IR and ADR be turned off separately?",
+"a": "Using their associated Pb's.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-617",
+"system": "Navigation",
+"q": "What does a flashing IR fault indicate?",
+"a": "Attitude and heading information can be recovered in ATT mode.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-618",
+"system": "Navigation",
+"q": "What does a solid IR fault indicate?",
+"a": "The IR has failed.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-619",
+"system": "Navigation",
+"q": "How many types of ADIRS alignment are there?",
+"a": "Two, Quick Alignment and Full Alignment.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-620",
+"system": "Navigation",
+"q": "What does a Quick Alignment clear?",
+"a": "Only the groundspeed.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-621",
+"system": "Navigation",
+"q": "How long does a Quick Alignment take?",
+"a": "30 seconds.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-622",
+"system": "Navigation",
+"q": "When is a Quick Alignment used?",
+"a": "When a full alignment is not required.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-623",
+"system": "Navigation",
+"q": "What does a Full Alignment clear?",
+"a": "Groundspeed and drift. It also captures present position.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-624",
+"system": "Navigation",
+"q": "How long does a Full Alignment take?",
+"a": "7 to 10 minutes.",
+"src": "REV1 Systems Guide p.31 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-625",
+"system": "Navigation",
+"q": "Why are the ADIRS left on when leaving the aircraft?",
+"a": "They provide fuel system information to calculate fuel density during fueling.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-626",
+"system": "Navigation",
+"q": "Is an ADIRS alignment during preflight acceptable while fueling?",
+"a": "Yes. It is the normal procedure.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-627",
+"system": "Navigation",
+"q": "With IRS only navigation in RNP 10 airspace, what is the time limit from the IRS ground alignment?",
+"a": "Less than 6.2 hours outside radio navaid coverage.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-628",
+"system": "Navigation",
+"q": "With IRS only navigation in RNP 10 airspace, what is the time limit from the last FM position update?",
+"a": "Less than 5.7 hours outside radio navaid coverage.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-629",
+"system": "Navigation",
+"q": "Why does the ON BAT light illuminate momentarily when turning the ADIRS on?",
+"a": "It is an internal power check using the aircraft batteries.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-630",
+"system": "Navigation",
+"q": "What indicates the ADIRS are using the aircraft batteries for power?",
+"a": "A horn sounds in the nose wheel well, the same horn as the APU fire horn.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-631",
+"system": "Navigation",
+"q": "What is the Mix IRS position?",
+"a": "Each FMGEC's average of the 3 IRS provided positions.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-632",
+"system": "Navigation",
+"q": "How does the Mix IRS treat one IRS position with a dramatic difference?",
+"a": "It is factored in less than the other two.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-633",
+"system": "Navigation",
+"q": "What is the bias in the GPIRS position computation?",
+"a": "The difference between the MIX IRS position and the GPIRS position, compared by each FMGEC.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-634",
+"system": "Navigation",
+"q": "How does the system handle the bias?",
+"a": "It is constantly memorized by the system.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-635",
+"system": "Navigation",
+"q": "What does the system do if radio or GPIRS data is lost?",
+"a": "Adjusts the MIX IRS position using the bias and navigates on it until data is restored.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10",
+"sec": "ADIRS"
+},
+{
+"id": "nav-636",
+"system": "Navigation",
+"q": "Which IR can replace IR 1 or IR 2 using the ATT HDG switch?",
+"a": "IR 3.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-637",
+"system": "Navigation",
+"q": "Which ADR can replace ADR 1 or ADR 2 using the AIR DATA switch?",
+"a": "ADR 3.",
+"src": "REV1 Systems Guide p.32 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-638",
+"system": "Navigation",
+"q": "Is NAV mode available in Back up Navigation after both FMs fail?",
+"a": "No. NAV mode is inoperative, use HDG/TRACK to navigate.",
+"src": "REV1 Systems Guide p.33 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-639",
+"system": "Navigation",
+"q": "Which ACP does the AUDIO switch give the Captain or FO?",
+"a": "ACP 3, in case of ACP 1 or 2 failure.",
+"src": "REV1 Systems Guide p.33 · DSC-34-10-10, DSC-22-10-10, DSC-23-10-50",
+"sec": "SWITCHING PANEL"
+},
+{
+"id": "nav-640",
+"system": "Navigation",
+"q": "What does GPWS SYS Off inhibit?",
+"a": "Basic GPWS Modes 1-5. It does not affect the terrain function.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-641",
+"system": "Navigation",
+"q": "What information does the GPWS TERR function use?",
+"a": "Database terrain information, operating independently of the Basic modes 1-5.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-642",
+"system": "Navigation",
+"q": "When would TERR be selected off?",
+"a": "Due to NOTAM, or runway/airport not in the database.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-643",
+"system": "Navigation",
+"q": "When should GPWS G/S Mode be turned off?",
+"a": "Only due to a failure, glideslope signal unreliable.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-644",
+"system": "Navigation",
+"q": "When should GPWS Flap Mode be turned off?",
+"a": "Only during failures requiring landing with Flaps 0-2.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-645",
+"system": "Navigation",
+"q": "Why is Flap Mode off not required for a single engine landing?",
+"a": "FLAPS 3 can be selected on the MCDU.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "nav-646",
+"system": "Navigation",
+"q": "What does the PULL UP/GPWS Pb on the forward panel do?",
+"a": "Temporarily inhibits the glideslope MODE 5 alert.",
+"src": "REV1 Systems Guide p.33 · DSC-34-20-40-10",
+"sec": "GPWS"
+},
+{
+"id": "apu-601",
+"system": "APU",
+"q": "What action is required if LOW OIL LEVEL is displayed on the APU SD page before a ground start?",
+"a": "Advise Maintenance.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-602",
+"system": "APU",
+"q": "How long can the APU operate after LOW OIL LEVEL is displayed?",
+"a": "15 hours.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-603",
+"system": "APU",
+"q": "What is the APU starter limit?",
+"a": "3 starts then a 60-minute cooldown.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-604",
+"system": "APU",
+"q": "Can APU bleed be used for Wing Anti-Ice?",
+"a": "No. It is not permitted.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-605",
+"system": "APU",
+"q": "What is the APU start limit altitude?",
+"a": "41450 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-606",
+"system": "APU",
+"q": "What is the maximum altitude for APU electrical use?",
+"a": "41450 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-607",
+"system": "APU",
+"q": "What is the maximum altitude for an APU start using batteries?",
+"a": "25000 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-608",
+"system": "APU",
+"q": "What is the maximum altitude for APU electrical use plus APU bleed for 1 pack?",
+"a": "22500 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-609",
+"system": "APU",
+"q": "What is the maximum altitude for engine start using APU bleed?",
+"a": "20000 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-610",
+"system": "APU",
+"q": "What is the maximum altitude for APU electrical use plus APU bleed for 2 packs?",
+"a": "17500 ft.",
+"src": "REV1 Systems Guide p.33 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-611",
+"system": "APU",
+"q": "From where can the APU be shut down outside the aircraft?",
+"a": "Two locations, the Refueling Panel and the External Power Panel.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-612",
+"system": "APU",
+"q": "What controls all the APU logic?",
+"a": "The Electronic Control Box (ECB).",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-613",
+"system": "APU",
+"q": "What does an APU MASTER Switch Fault mean?",
+"a": "An automatic shutdown has occurred.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-614",
+"system": "APU",
+"q": "What does resetting the APU MASTER Switch reset?",
+"a": "The ECB.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-615",
+"system": "APU",
+"q": "What happens when the APU MASTER Switch is selected ON?",
+"a": "The APU page is called on the SD and the APU intake flap opens.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-616",
+"system": "APU",
+"q": "When does the APU START switch engage the starter?",
+"a": "When the air intake is fully open with the Master Switch ON.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-617",
+"system": "APU",
+"q": "What does the APU AVAIL light mean?",
+"a": "The APU is available for Electric and/or Air.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-618",
+"system": "APU",
+"q": "From which 3 places is the APU supplied fuel through the trim tank transfer line?",
+"a": "Left Inner Collector Tank, Trim Pipe, Trim Tank, depending on phase of flight.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-619",
+"system": "APU",
+"q": "What must be maintained in the trim tank transfer line for the APU to function?",
+"a": "Fuel.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-620",
+"system": "APU",
+"q": "How is the APU shut down from the cockpit panel?",
+"a": "Turn the MASTER Switch off.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-621",
+"system": "APU",
+"q": "What does the AVAIL light do during APU cool down?",
+"a": "It remains on.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-622",
+"system": "APU",
+"q": "How long can APU cool down take after the MASTER Switch is turned off?",
+"a": "Up to 2 minutes.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-623",
+"system": "APU",
+"q": "When does the ECB command an automatic APU shutdown in the air?",
+"a": "Overspeed and certain critical ECB failures.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "apu-624",
+"system": "APU",
+"q": "In the air, what causes the ECB to command an automatic APU shutdown?",
+"a": "Overspeed and certain critical ECB failures.",
+"src": "REV1 Systems Guide p.34 · DSC-49-20, LIM-APU",
+"sec": "APU"
+},
+{
+"id": "eng-601",
+"system": "Power Plant",
+"q": "What is the active range of the Autothrust in normal operations?",
+"a": "From IDLE to CLIMB detents.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-30",
+"sec": "THRUST LEVERS"
+},
+{
+"id": "eng-602",
+"system": "Power Plant",
+"q": "What is the active range of the Autothrust in single engine operations?",
+"a": "From IDLE to MCT detents.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-30",
+"sec": "THRUST LEVERS"
+},
+{
+"id": "eng-603",
+"system": "Power Plant",
+"q": "What does MAN START provide?",
+"a": "An alternate method of engine start.",
+"src": "REV1 Systems Guide p.35 · DSC-70-80-30, PRO-NOR-SUP-ENG",
+"sec": "MAN START"
+},
+{
+"id": "eng-604",
+"system": "Power Plant",
+"q": "What should pilots follow when a Manual Start is required?",
+"a": "The Supplementary Procedures.",
+"src": "REV1 Systems Guide p.35 · DSC-70-80-30, PRO-NOR-SUP-ENG",
+"sec": "MAN START"
+},
+{
+"id": "eng-605",
+"system": "Power Plant",
+"q": "Are Start Fault protections available during a Manual Start?",
+"a": "No. The pilots must manually abort a start if there is an issue.",
+"src": "REV1 Systems Guide p.35 · DSC-70-80-30, PRO-NOR-SUP-ENG",
+"sec": "MAN START"
+},
+{
+"id": "eng-606",
+"system": "Power Plant",
+"q": "When is N1 Rated or N1 Degraded mode triggered?",
+"a": "When EPR cannot be computed by the FADEC.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-607",
+"system": "Power Plant",
+"q": "What determines whether N1 Rated or N1 Degraded mode is triggered?",
+"a": "Which inputs to the FADEC have failed.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-608",
+"system": "Power Plant",
+"q": "What do the N1 Mode Pb's allow if only one engine is affected?",
+"a": "Both engines selected to N1 mode to maintain similar thrust settings.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-609",
+"system": "Power Plant",
+"q": "What parameter controls the engine when N1 Mode is active?",
+"a": "N1, not EPR.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-610",
+"system": "Power Plant",
+"q": "Is A/THR available when N1 Mode is active?",
+"a": "No. It is lost but can be regained if only one engine is in degraded mode.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-611",
+"system": "Power Plant",
+"q": "When is Alpha Floor lost in N1 Mode?",
+"a": "When both engines are in degraded mode.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-612",
+"system": "Power Plant",
+"q": "Are Flex takeoffs allowed when dispatched in N1 mode?",
+"a": "No. Flex takeoffs are prohibited.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-613",
+"system": "Power Plant",
+"q": "How many levels of N1 mode are there?",
+"a": "Two, N1 Rated Mode and N1 Degraded Mode.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-614",
+"system": "Power Plant",
+"q": "What does the FADEC display in N1 Rated Mode?",
+"a": "N1 limits on the upper right of the E/WD. Normal engine protections still provided.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-615",
+"system": "Power Plant",
+"q": "What limits are provided in N1 Degraded Mode?",
+"a": "None on the E/WD. The FADEC computes a N1 red line.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-616",
+"system": "Power Plant",
+"q": "What does the N1 Degraded Mode red line represent?",
+"a": "The full forward position of the Thrust Lever.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-617",
+"system": "Power Plant",
+"q": "Is the N1 Degraded Mode red line within the actual N1 limit?",
+"a": "No. It is beyond the actual N1 limit and can also exceed EGT limits.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-618",
+"system": "Power Plant",
+"q": "With one engine in degraded mode, what does selecting the other engine's N1 Mode Pb do?",
+"a": "Puts it in rated mode. The displayed rated mode limits can be used for both engines.",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-619",
+"system": "Power Plant",
+"q": "Which chart is used when operating in N1 Degraded Mode?",
+"a": "The N1 Mode Thrust Control chart in the FCOM (PER-THR-N1).",
+"src": "REV1 Systems Guide p.35 · DSC 70-35-20",
+"sec": "N1 Mode"
+},
+{
+"id": "eng-620",
+"system": "Power Plant",
+"q": "What does the Engine Master Switch initiate with the ENG START selector at IGN/START?",
+"a": "The automatic start sequence.",
+"src": "REV1 Systems Guide p.36 · DSC-70-90-20",
+"sec": "ENGINE MASTER SWITCHES"
+},
+{
+"id": "eng-621",
+"system": "Power Plant",
+"q": "What must be set before the Engine Master Switch initiates a manual start sequence?",
+"a": "ENG START selector at IGN/START and ENG MAN START Pb selected ON.",
+"src": "REV1 Systems Guide p.36 · DSC-70-90-20",
+"sec": "ENGINE MASTER SWITCHES"
+},
+{
+"id": "eng-622",
+"system": "Power Plant",
+"q": "What three effects does selecting IGN/START on the ENG START selector have?",
+"a": "Brings up the Engine page on the SD, powers the FADEC, closes the Pack Flow Control Valves.",
+"src": "REV1 Systems Guide p.36 · DSC-70-90-20",
+"sec": "ENG START SWITCH"
+},
+{
+"id": "eng-623",
+"system": "Power Plant",
+"q": "What happens to the Pack Flow Control Valves when IGN/START is selected?",
+"a": "They close.",
+"src": "REV1 Systems Guide p.36 · DSC-70-90-20",
+"sec": "ENG START SWITCH"
+},
+{
+"id": "eng-701",
+"system": "Power Plant",
+"q": "What does FADEC stand for?",
+"a": "Full Authority Digital Engine Control.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-702",
+"system": "Power Plant",
+"q": "How many Pbs on the Maintenance Panel provide power to the FADECs on the ground?",
+"a": "2.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-703",
+"system": "Power Plant",
+"q": "Besides the Maintenance Panel Pbs, what else powers the FADECs?",
+"a": "Selecting IGN/START on the ENG START selector.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-704",
+"system": "Power Plant",
+"q": "What happens to the Pack valves when FADECs are powered by IGN/START?",
+"a": "They close, then reopen when selected back to NORM.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-705",
+"system": "Power Plant",
+"q": "Why are the FADECs energized during preflight?",
+"a": "To check the Engine oil level.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-706",
+"system": "Power Plant",
+"q": "What is the minimum engine oil quantity required?",
+"a": "15 qts, or 6 qts plus estimated consumption (0.7 qt/h), whichever is higher.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-707",
+"system": "Power Plant",
+"q": "What engine oil consumption rate is used for the estimate?",
+"a": "0.7 qt/h.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+},
+{
+"id": "eng-708",
+"system": "Power Plant",
+"q": "Do the FADECs rely on aircraft power to continue operating?",
+"a": "No. They have their own magnetic alternators.",
+"src": "REV1 Systems Guide p.36 · DSC-70-20, DSC-29-20",
+"sec": "MAINTENANCE PANEL"
+}
+]

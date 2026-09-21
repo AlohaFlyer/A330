@@ -299,7 +299,7 @@ const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref+']':''):'';
     default: return note(it.t||'');
   } };
 const PHASES=PHASE_FLOWS.phases.map(p=>({id:p.id,label:p.label,kind:p.kind,title:p.title,src:p.src,
-  sections:p.sections.map(s=>S(s.h,s.c,s.items.map(__mk),s.cite,s.appr))}));
+  sections:p.sections.map(s=>Object.assign(S(s.h,s.c,s.items.map(__mk),s.cite,s.appr),s.mem?{mem:true}:{}))}));
 const VERSIONS="FCOM R17 · QRH R35 · FCTM R6 · FOM 125.3 · PRC 31 AUG 26";
 document.getElementById('srcsub').textContent=VERSIONS;
 const QUOTES=PHASE_FLOWS.quotes||{};
@@ -384,7 +384,7 @@ function render(){
     if(!apprVisible(sec.appr))return;
     const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    CARDS.push(`<div class="card"><div class="ch" style="--ec:${sec.c}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    CARDS.push(`<div class="card"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   const pc=phaseColor(ph.id);
   main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
@@ -410,7 +410,7 @@ function cardsFor(pid){
   const ctx={n:1}; const out=[];
   ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    out.push(`<div class="card"><div class="ch" style="--ec:${sec.c}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    out.push(`<div class="card"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   return out;
 }

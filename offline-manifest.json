@@ -1,9 +1,13 @@
 {
 "version": 1,
-"built": "2026-09-16",
-"coreBytes": 6651484,
-"audioBytes": 16971053,
+"built": "2026-09-21",
+"coreBytes": 21891898,
+"audioBytes": 47209110,
 "core": [
+{
+"u": "/2023-pwa.pdf",
+"b": 14619761
+},
 {
 "u": "/A330_MCDU_Preflight_Handout.pdf",
 "b": 6144
@@ -70,7 +74,7 @@
 },
 {
 "u": "/assets/pualani-2001.png",
-"b": 213076
+"b": 218846
 },
 {
 "u": "/assets/quickref/p1.png",
@@ -122,7 +126,7 @@
 },
 {
 "u": "/data/episodes.json",
-"b": 944
+"b": 2646
 },
 {
 "u": "/data/flows.json",
@@ -130,7 +134,7 @@
 },
 {
 "u": "/data/flows_trainer.json",
-"b": 91555
+"b": 87582
 },
 {
 "u": "/data/fom_all.json",
@@ -142,7 +146,7 @@
 },
 {
 "u": "/data/fom_questions.json",
-"b": 2027
+"b": 1739
 },
 {
 "u": "/data/hot_seat_scenarios.json",
@@ -150,7 +154,7 @@
 },
 {
 "u": "/data/jeopardy_pool.json",
-"b": 2
+"b": 75722
 },
 {
 "u": "/data/limit_or_bust_bool.json",
@@ -166,7 +170,7 @@
 },
 {
 "u": "/data/limitations_drill.json",
-"b": 81837
+"b": 174498
 },
 {
 "u": "/data/mcdu.json",
@@ -194,15 +198,15 @@
 },
 {
 "u": "/data/phase_flows.json",
-"b": 301276
+"b": 249978
 },
 {
 "u": "/data/systems.json",
-"b": 3420
+"b": 151291
 },
 {
 "u": "/data/systems_fcom_detail.json",
-"b": 3406
+"b": 316136
 },
 {
 "u": "/data/systems_source_detail.json",
@@ -217,8 +221,12 @@
 "b": 27116
 },
 {
+"u": "/flow_memorization.html",
+"b": 32827
+},
+{
 "u": "/flows_quiz.html",
-"b": 59930
+"b": 62659
 },
 {
 "u": "/fom_q/ch01.json",
@@ -302,11 +310,11 @@
 },
 {
 "u": "/index.html",
-"b": 31273
+"b": 31649
 },
 {
 "u": "/ioe.html",
-"b": 13469
+"b": 13784
 },
 {
 "u": "/jeopardy.html",
@@ -318,7 +326,7 @@
 },
 {
 "u": "/limitations.html",
-"b": 13582
+"b": 15635
 },
 {
 "u": "/mcdu_preflight.html",
@@ -330,15 +338,15 @@
 },
 {
 "u": "/phase_flows.html",
-"b": 40894
+"b": 41001
 },
 {
 "u": "/podcast.html",
-"b": 15004
+"b": 15558
 },
 {
 "u": "/portal-settings.js",
-"b": 46793
+"b": 47435
 },
 {
 "u": "/pwa.html",
@@ -370,7 +378,7 @@
 },
 {
 "u": "/systems_quiz.html",
-"b": 20616
+"b": 20644
 },
 {
 "u": "/triggers.html",
@@ -378,7 +386,7 @@
 },
 {
 "u": "/versions.json",
-"b": 299
+"b": 426
 },
 {
 "u": "/view.html",
@@ -396,15 +404,31 @@
 "audio": [
 {
 "u": "flight-deck-notes-ep1.mp3",
-"b": 6521148
+"b": 4746597
 },
 {
 "u": "flight-deck-notes-ep2.mp3",
-"b": 5169155
+"b": 5421497
 },
 {
 "u": "flight-deck-notes-ep3.mp3",
-"b": 5280750
+"b": 4854744
+},
+{
+"u": "flight-deck-notes-ep4.mp3",
+"b": 4187995
+},
+{
+"u": "flight-deck-notes-ep5.mp3",
+"b": 10212877
+},
+{
+"u": "flight-deck-notes-ep6.mp3",
+"b": 7465631
+},
+{
+"u": "flight-deck-notes-ep7.mp3",
+"b": 10319769
 }
 ]
 }

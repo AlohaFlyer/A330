@@ -1,0 +1,12 @@
+# Systems bank from the A330 System Operational Knowledge Guide Rev 1 (24JUN2024)
+
+Built 2026-09-21. Source: training/REV1 Systems Operational Knowledge Guide.pdf (37 pages, 67 sections, 311 top-level bullets), text-extracted with pdftotext and parsed by build_scripts/gen/parse_rev1.py; the question authoring rules are in the same folder (AUTHOR_RULES.md). The guide is a training reference, not a manual: every answer carries the guide's own wording as its quote plus the DSC/PRO/LIM reference the guide prints, and the FCOM stays the primary document.
+
+- data/systems.json: 634 items, 14 categories (Air Cond and Press 76, Electrical 74, ECAM and Displays 59, Fuel 56, Auto Flight 52, Flight Controls 48, Navigation 46, Fire Protection 45, Landing Gear 44, Hydraulics 43, Power Plant 31, APU 24, Ice and Rain 19, Comms and Cabin Systems 17)
+- data/systems_fcom_detail.json: one block per item, ref = "REV1 Systems Guide p.N · <ref>", quote = the bullet and its sub-bullets verbatim
+- data/jeopardy_pool.json: the same 634 as {category: [{q,a}]}; the board draws 6 of 14 categories
+- Quality rules applied (script-checked): q <= 25 words, one ask; a <= 20 words, bare fact, yes/no first; no hedges, no other-fleet clauses, <= 1 parenthetical; no em dashes
+
+Source oddities handled: the guide's own dangling bullet "The igniters will automatically come on in the following cases:" (p36) has no cases in the PDF and was skipped; the SWITCHING PANEL section is printed twice (p30 and p32) and was banked once; the Cockpit Door Overhead Control Panel lines (DSC-52-30-20) spill into the APU section in the PDF and were filed under Comms and Cabin Systems; the FADEC lines under MAINTENANCE PANEL were filed under Power Plant, the Leak Measurement Valves under Hydraulics; the APU B12 answer "Multiple reasons" (the guide's literal wording for ground auto-shutdown) was replaced by the in-air condition.
+
+Reference check against extracts/A330P_FCOM_R17.md (2026-09-21): 66 of 73 guide references resolve as printed. The FCOM extract spells chapter 22 as DSC-22_xx; with that spelling DSC-22_10-10, DSC-22_10-40-10 and DSC-22_30-30 resolve, while DSC-22-30-75 (mode reversions), DSC-22-30-90 (A/THR) and DSC-22-30-100 (FMA) do not appear in FCOM R17 under those numbers (the guide predates R17; the AFS chapter has been renumbered). PRO-ABN-ABN-RST is not an FCOM R17 ident; the reset table is QRH 02.02. Those four are flagged, not fixed, so the guide's own citation stays visible to the student.

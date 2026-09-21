@@ -1,17 +1,19 @@
 {
-  "build": "v2.0",
+  "build": "v2.2",
   "default": "1.6",
   "pages": {
-    "flows_quiz.html": "2.0",
-    "phase_flows.html": "1.6",
+    "flows_quiz.html": "2.2",
+    "phase_flows.html": "2.2",
     "manuals/index.html": "1.6",
-    "index.html": "2.0",
+    "index.html": "2.2",
     "podcast.html": "2.0",
     "fom_quiz.html": "1.6",
-    "ioe.html": "1.6",
+    "ioe.html": "2.2",
     "triggers.html": "1.7",
     "limitations.html": "1.8",
-    "flow_memorization.html": "2.1"
+    "flow_memorization.html": "2.2",
+    "systems_quiz.html": "2.2",
+    "jeopardy.html": "2.2"
   },
   "stubs": []
 }

@@ -1,1 +1,2566 @@
-{}
+{
+"Air Cond and Press": [
+{
+"q": "What happens to the APU Bleed when you select the APU BLD Pb?",
+"a": "The APU Bleed opens."
+},
+{
+"q": "What does the Crossbleed Valve do when you select the APU BLD Pb?",
+"a": "The Crossbleed Valve opens."
+},
+{
+"q": "What do the Engine Bleed Valves do when you select the APU BLD Pb?",
+"a": "The Engine Bleed Valves close."
+},
+{
+"q": "If the APU Bleed is left on during climb, at what altitude does it automatically close?",
+"a": "Passing 25,000 ft climbing."
+},
+{
+"q": "After closing automatically in the climb, at what altitude does the APU Bleed reopen in descent?",
+"a": "After descending through 23,000 ft."
+},
+{
+"q": "With the Crossbleed Valve in AUTO, Engines on and APU bleed OFF, what is the normal Crossbleed valve position?",
+"a": "Closed."
+},
+{
+"q": "When does the Crossbleed Valve move automatically?",
+"a": "Only when the APU BLD valve opens or closes."
+},
+{
+"q": "When do we manually open or close the Crossbleed Valve?",
+"a": "Only when directed by ECAM."
+},
+{
+"q": "What controls the Packs?",
+"a": "The Pack Controllers, one Pack Controller per pack."
+},
+{
+"q": "How many Pack Controllers are there per pack?",
+"a": "One Pack Controller per pack."
+},
+{
+"q": "If a Pack Controller fails, between what temperatures is the Pack outlet temperature regulated?",
+"a": "Between 48°F and 59°F."
+},
+{
+"q": "What regulates the temperature in the aircraft?",
+"a": "The zone controller."
+},
+{
+"q": "How many zone controllers and channels are there?",
+"a": "One controller with two channels."
+},
+{
+"q": "If the zone controller fails, to what temperature is the aircraft regulated?",
+"a": "68°F."
+},
+{
+"q": "What does the Pack Flow Selector regulate?",
+"a": "The Pack Flow."
+},
+{
+"q": "What pack flow does the LOW position of the Pack Flow Selector give?",
+"a": "80% flow."
+},
+{
+"q": "In AUTO pack flow, where is the Passenger Count entered?",
+"a": "On the INIT A page in the MCDU."
+},
+{
+"q": "In AUTO pack flow, what is airflow automatically adjusted on?",
+"a": "The entered passenger load."
+},
+{
+"q": "What pack flow does the HIGH position of the Pack Flow Selector give?",
+"a": "120% flow."
+},
+{
+"q": "For what conditions is HIGH pack flow used?",
+"a": "Abnormally hot or humid conditions."
+},
+{
+"q": "When do the packs go to 125% flow?",
+"a": "When the APU Bleed is ON, or for Single Pack operations."
+},
+{
+"q": "Where is the HOT AIR system air tapped from?",
+"a": "Upstream of the packs."
+},
+{
+"q": "Which temperatures does the HOT AIR system regulate via the trim air valves?",
+"a": "Cockpit, Cabin, and FWD cargo temperatures."
+},
+{
+"q": "What heats and what cools the Forward Cargo compartment?",
+"a": "Heated by Hot Air 1, cooled by Pack 2."
+},
+{
+"q": "What primarily heats the Cockpit?",
+"a": "Hot Air 2."
+},
+{
+"q": "How are the valves in the Air Conditioning system controlled and operated?",
+"a": "All electrically controlled and pneumatically operated."
+},
+{
+"q": "What temperature control range does the Flight Attendant CIDS panel have?",
+"a": "5.4°F."
+},
+{
+"q": "On what is the Flight Attendant CIDS panel temperature range centered?",
+"a": "The Cabin temperature setting in the Cockpit."
+},
+{
+"q": "Where is the RAM AIR scoop located?",
+"a": "On the lower left side of the fuselage."
+},
+{
+"q": "In what failure case can the RAM AIR scoop provide air into the cabin?",
+"a": "Dual pack failure."
+},
+{
+"q": "Which QRH checklist uses the RAM AIR scoop?",
+"a": "The Smoke/Fumes Removal Checklist."
+},
+{
+"q": "When will the RAM AIR Pb not function?",
+"a": "When the Ditching Pb is selected."
+},
+{
+"q": "At what ∆P will the RAM AIR system open?",
+"a": "When ∆P is less than 1 psi."
+},
+{
+"q": "What do the outflow valves do when the Ditching Pb is selected on with the Press Mode Selector in AUTO?",
+"a": "They close."
+},
+{
+"q": "What do the Cargo Isolation Valves do when the Ditching Pb is selected on?",
+"a": "They close."
+},
+{
+"q": "What does the Ram Air Inlet do when the Ditching Pb is selected on?",
+"a": "It closes."
+},
+{
+"q": "What does the Avionics Ventilation Overboard Valve do when the Ditching Pb is selected on?",
+"a": "It closes."
+},
+{
+"q": "What do the Pack Flow Control Valves do when the Ditching Pb is selected on?",
+"a": "They close."
+},
+{
+"q": "What are the two normal uses of the Ditching Pb?",
+"a": "Ditching, and Deicing (per FCOM Procedure)."
+},
+{
+"q": "Which cabin pressurization mode is the normal mode of operation?",
+"a": "AUTO."
+},
+{
+"q": "How many CPCs (Cabin Pressure Controllers) are there?",
+"a": "2 CPCs."
+},
+{
+"q": "How many outflow valves are there, and how many motors does each use in AUTO mode?",
+"a": "2 Outflow valves, each with 2 motors for the AUTO modes."
+},
+{
+"q": "In AUTO mode, where does the pressurization system get the landing elevation?",
+"a": "FMGC provided landing elevation for the entered destination."
+},
+{
+"q": "When is the SEMI-AUTOMATIC pressurization mode used?",
+"a": "When operating at an airport not in the database."
+},
+{
+"q": "In SEMI-AUTOMATIC mode, how is the destination elevation set?",
+"a": "With the LDG ELEV selector."
+},
+{
+"q": "Which CPCs and motors does SEMI-AUTOMATIC mode use?",
+"a": "The same two CPCs and motors as the auto mode."
+},
+{
+"q": "In MANUAL pressurization mode, which controls are used to adjust pressurization?",
+"a": "MODE SEL to Manual, then VALVE SEL and V/S CTL per ECAM procedure."
+},
+{
+"q": "In MANUAL pressurization mode, where are the target cabin altitudes provided?",
+"a": "In the FCOM and on the STS page."
+},
+{
+"q": "Which outflow valve motor is used for Manual mode?",
+"a": "A third motor on each Outflow valve."
+},
+{
+"q": "In MANUAL mode, how much change does each toggle of the V/S CTL give?",
+"a": "About 150-200 fpm."
+},
+{
+"q": "What circulates the air that cools the avionics?",
+"a": "The Extract Fan."
+},
+{
+"q": "On the ground, where is the avionics cooling air exhausted?",
+"a": "Out of the OVBD Extract Valve."
+},
+{
+"q": "What happens to the OVBD Extract Valve and Underfloor Extract Valve at first engine start?",
+"a": "The OVBD Extract Valve closes and the Underfloor Extract Valve opens."
+},
+{
+"q": "After first engine start, where does the avionics cooling air exit the aircraft?",
+"a": "Under the Forward Cargo compartment and out the Forward Outflow Valve."
+},
+{
+"q": "What does the Underfloor Extract Valve do when the EXTRACT Pb is selected to OVRD?",
+"a": "It closes."
+},
+{
+"q": "What does the OVBD Extract Valve do when the EXTRACT Pb is selected to OVRD?",
+"a": "It opens partially, using a separate small portion of the door."
+},
+{
+"q": "Which ECAM procedures most likely call for selecting the EXTRACT Pb to OVRD?",
+"a": "Vent Extract Fault or Vent OVBD Valve Fault."
+},
+{
+"q": "What is the source of air for the Cargo compartments?",
+"a": "Circulated Cabin air."
+},
+{
+"q": "What is the top row of the CARGO AIR COND panel?",
+"a": "Ventilation."
+},
+{
+"q": "What is the middle row of the CARGO AIR COND panel?",
+"a": "Cooling."
+},
+{
+"q": "What is the bottom row of the CARGO AIR COND panel?",
+"a": "Heating."
+},
+{
+"q": "What happens to the Isolation Valves when a compartment Isolation Valve Pb is selected to Off?",
+"a": "The Inlet and Outlet Isolation Valves close."
+},
+{
+"q": "What happens to the Extract Fan when a compartment Isolation Valve Pb is selected to Off?",
+"a": "The Extract Fan stops."
+},
+{
+"q": "With the Isolation Valve Pbs ON, when do the isolation valves automatically close?",
+"a": "When Cargo Smoke is detected or the Ditching Pb is selected ON."
+},
+{
+"q": "What cools the forward cargo compartment?",
+"a": "Pack 2."
+},
+{
+"q": "What heats the forward cargo compartment?",
+"a": "Hot Air 1."
+},
+{
+"q": "What is the memory phrase for forward cargo heating and cooling?",
+"a": "Heated from the left, Cooled from the right."
+},
+{
+"q": "What does the temperature selector knob below the cargo cooling selector control?",
+"a": "The trim air valve on the Hot Air 1 system."
+},
+{
+"q": "Can the Aft cargo compartment be heated or cooled?",
+"a": "No. It cannot be heated or cooled."
+},
+{
+"q": "How is the Bulk cargo compartment heated?",
+"a": "By an electric heater."
+},
+{
+"q": "When does the Bulk cargo compartment heater activate?",
+"a": "When the temperature falls below the set level."
+},
+{
+"q": "What does the Bulk cargo heater do once the set temperature level is reached?",
+"a": "It shuts off until the temperature falls again."
+},
+{
+"q": "What Bulk temperature do we set when live animals are carried in the Bulk compartment?",
+"a": "A comfortable temperature."
+},
+{
+"q": "What is the normal position of the FWD CARGO COOLING selector?",
+"a": "OFF, unless plants, livestock, or foods are carried."
+},
+{
+"q": "Which carried items require the FWD CARGO COOLING selector to be on?",
+"a": "Plants, Livestock, and Foods."
+},
+{
+"q": "In which compartment are pets carried?",
+"a": "The Bulk compartment."
+}
+],
+"Auto Flight": [
+{
+"q": "Which QRH reset table is used to reset a blank or locked MCDU?",
+"a": "The QRH reset table (02.02D) and related procedures."
+},
+{
+"q": "How can a blank or locked MCDU be turned off?",
+"a": "By pressing and holding the DIM key."
+},
+{
+"q": "Which MCDU can be used as a replacement after a failed MCDU is turned off?",
+"a": "MCDU 3."
+},
+{
+"q": "Below what altitude do the Autoland Lights become active in LAND mode?",
+"a": "Below 200 ft RA."
+},
+{
+"q": "What is the action if the Autoland lights begin flashing?",
+"a": "Go Around."
+},
+{
+"q": "When do mode reversions occur?",
+"a": "When the pilot asks the FMGEC to perform a task it is unable to do."
+},
+{
+"q": "What does the FMGEC do during a mode reversion?",
+"a": "It reverts to a simpler mode to ensure a safe flight path."
+},
+{
+"q": "What aural cue is heard when a mode reversion occurs?",
+"a": "A triple click, click click click, think Look Look Look."
+},
+{
+"q": "During a managed climb in CLB and NAV, what does CLB revert to when HDG is selected?",
+"a": "OP CLB."
+},
+{
+"q": "During a managed descent in DES and NAV, what does DES revert to when HDG is selected?",
+"a": "V/S."
+},
+{
+"q": "When climbing or descending with ALT* engaged, what happens if a different altitude is selected?",
+"a": "ALT* reverts to V/S."
+},
+{
+"q": "What happens when an altitude opposite to the direction of flight is set in the FCU?",
+"a": "The vertical mode reverts to V/S."
+},
+{
+"q": "What does NAV revert to when overflying a route discontinuity?",
+"a": "HDG."
+},
+{
+"q": "With the FDs on in a climb and the pilot leveling off without following them, to what speed does the aircraft accelerate?",
+"a": "Vmax."
+},
+{
+"q": "In a climb with FDs on, what happens to the FDs and A/THR when Vmax is reached?",
+"a": "Both FDs disengage and A/THR reverts to SPEED."
+},
+{
+"q": "In a climb with FDs on, what does A/THR do to thrust after reverting to SPEED at Vmax?",
+"a": "Reduces thrust to recover the speed target."
+},
+{
+"q": "With the FDs on in a descent and the pilot leveling off without following them, to what speed does the aircraft decelerate?",
+"a": "Vls."
+},
+{
+"q": "In a descent with FDs on, what happens to the FDs and A/THR when Vls is reached?",
+"a": "Both FDs disengage and A/THR reverts to SPEED."
+},
+{
+"q": "In a descent with FDs on, what does A/THR do to thrust after reverting to SPEED at Vls?",
+"a": "Increases thrust to recover the speed target."
+},
+{
+"q": "How many Autothrust computers and channels are there?",
+"a": "1 Autothrust computer with 2 channels, one channel per FMGEC."
+},
+{
+"q": "How is switching between Autothrust channels accomplished?",
+"a": "By switching autopilots."
+},
+{
+"q": "What is the Match and Mash method of turning off the Autothrust inflight?",
+"a": "Match TLA on the EPR gauges to current thrust, then press the Instinctive Disconnect Pb."
+},
+{
+"q": "What happens if the Instinctive Disconnect Pb is pressed and held for 15 seconds?",
+"a": "The Autothrust is removed for the remainder of the flight."
+},
+{
+"q": "What protection is lost when the Autothrust is removed for the remainder of the flight?",
+"a": "Alpha Floor protection."
+},
+{
+"q": "What is the Non-Standard method of turning off the Autothrust?",
+"a": "Retard the thrust levers to IDLE, then press the Autothrust Pb on the FCU."
+},
+{
+"q": "What condition results from the Non-Standard method of turning off the Autothrust?",
+"a": "A Thrust Lock condition until the Thrust Levers are moved manually."
+},
+{
+"q": "On takeoff, what arms the Autothrust?",
+"a": "Moving the Thrust Levers to Flex or TOGA."
+},
+{
+"q": "What flashes on the FMA at THR RED altitude?",
+"a": "LVR CLB."
+},
+{
+"q": "On takeoff, what activates the Autothrust?",
+"a": "Moving the Thrust Levers to CLB."
+},
+{
+"q": "In flight, what activates the Autothrust?",
+"a": "Pressing the A/THR Pb."
+},
+{
+"q": "After pressing the A/THR Pb in flight, how long does LVR CLB flash on the FMA?",
+"a": "Until the Thrust Levers are in the climb detent."
+},
+{
+"q": "What is Groundspeed Mini designed to protect the aircraft from?",
+"a": "Windshear on approach."
+},
+{
+"q": "What does Groundspeed Mini attempt to maintain during the approach?",
+"a": "A minimum energy level throughout the approach during variable wind conditions."
+},
+{
+"q": "What must be engaged for Groundspeed Mini?",
+"a": "Managed speed."
+},
+{
+"q": "Is Autothrust required for Groundspeed Mini?",
+"a": "No. Autothrust is not required."
+},
+{
+"q": "What FMA is displayed on takeoff?",
+"a": "MAN FLEX __ | SRS | RWY | | A/THR."
+},
+{
+"q": "When does RWY appear on the takeoff FMA?",
+"a": "Only if there is an ILS for that runway."
+},
+{
+"q": "What color is A/THR on the takeoff FMA, and what does it signify?",
+"a": "Blue, meaning armed."
+},
+{
+"q": "What FMA is displayed for an RNAV climb?",
+"a": "THR CLB | CLB | NAV | | A/THR."
+},
+{
+"q": "What FMA is displayed in a vectored descent?",
+"a": "THR IDLE | OP DES | HDG | | A/THR."
+},
+{
+"q": "What FMA is displayed in a NAV descent?",
+"a": "THR IDLE or THR DES | DES | NAV | | A/THR."
+},
+{
+"q": "What FMA is displayed on an ILS APP?",
+"a": "SPEED | GS | LOC | CAT3/DUAL | 1AP2."
+},
+{
+"q": "What is the highest landing capability of the aircraft?",
+"a": "CAT 3 DUAL."
+},
+{
+"q": "What is the highest landing capability when single engine?",
+"a": "CAT 3 SINGLE."
+},
+{
+"q": "What does 1 FD 2 on the FMA mean?",
+"a": "Normal mode of operation, both FDs selected on."
+},
+{
+"q": "What does 1 FD on the FMA mean?",
+"a": "FD 2 is not selected on."
+},
+{
+"q": "What does 1 FD 1 on the FMA mean?",
+"a": "FD 2 has failed."
+},
+{
+"q": "What does SRS stand for?",
+"a": "Speed Reference System."
+},
+{
+"q": "How does SRS deliver a speed?",
+"a": "It uses vertical guidance to deliver a speed."
+},
+{
+"q": "What speed does SRS target on a normal takeoff?",
+"a": "V2 + 10."
+},
+{
+"q": "What speed does SRS target on a go around?",
+"a": "The highest of Vapp or the current speed at Go Around."
+},
+{
+"q": "What speed does SRS target single engine?",
+"a": "The highest of V2 or the airspeed at failure."
+}
+],
+"Comms and Cabin Systems": [
+{
+"q": "What must illuminate during a CVR test?",
+"a": "One or more green lights."
+},
+{
+"q": "During preflight, to what position is the PA reception knob set?",
+"a": "The 12 o'clock position."
+},
+{
+"q": "Why is the PA reception knob set to the 12 o'clock position during preflight?",
+"a": "So the CVR records any PA transmissions."
+},
+{
+"q": "What can be used as a replacement if ACP 1 or ACP 2 fails?",
+"a": "ACP 3."
+},
+{
+"q": "Which control selects ACP 3 as a replacement for a failed ACP?",
+"a": "The AUDIO SWITCHING knob on the switching panel."
+},
+{
+"q": "What does the ALL call do?",
+"a": "CALL ALL CAPT appears on all FA panels."
+},
+{
+"q": "What does the MECH call activate?",
+"a": "A horn in the nose wheel well and a light on the external power panel."
+},
+{
+"q": "How long does the MECH call light remain illuminated?",
+"a": "Until reset by ground crew on the external power panel."
+},
+{
+"q": "What does the CAB REST call do?",
+"a": "Calls the Lower Crew Rest."
+},
+{
+"q": "What do the FWD, MID, EXIT and AFT calls do?",
+"a": "Call the associated FA station."
+},
+{
+"q": "What does the EVAC switch activate?",
+"a": "The Evacuation Alert Audio."
+},
+{
+"q": "Is the EVAC alert used per HAL procedure?",
+"a": "No. It is not used per HAL procedure."
+},
+{
+"q": "During preflight, in what position do we verify the EVAC switch?",
+"a": "The CAPT position."
+},
+{
+"q": "What does the EVAC switch in the CAPT position ensure?",
+"a": "The Flight Attendants cannot activate the Alert Audio."
+},
+{
+"q": "Besides the cockpit switch, where is there an EVAC Pb?",
+"a": "On the forward CIDS panel."
+},
+{
+"q": "How many lights are on the Cockpit Door Overhead Control Panel?",
+"a": "3."
+},
+{
+"q": "What does an illuminated light on the Cockpit Door Overhead Control Panel indicate?",
+"a": "The corresponding door latch is faulty."
+}
+],
+"Electrical": [
+{
+"q": "What is the power hierarchy for AC BUS 1?",
+"a": "Generator 1, APU Generator, External B, External A, Generator 2."
+},
+{
+"q": "What is the power hierarchy for AC BUS 2?",
+"a": "Generator 2, External A, APU Generator, External B, Generator 1."
+},
+{
+"q": "Which source powers AC BUS 1 if Generator 1 is unavailable?",
+"a": "The APU Generator."
+},
+{
+"q": "Which source powers AC BUS 2 if Generator 2 is unavailable?",
+"a": "External A."
+},
+{
+"q": "When External A indicates AVAIL, what is powered regardless of the switch position?",
+"a": "The GND SRV Bus."
+},
+{
+"q": "What happens when the External A Pb is selected ON?",
+"a": "External power connects to the rest of the system based on the power hierarchy."
+},
+{
+"q": "What does the External B Pb display when selected with External B AVAIL?",
+"a": "AUTO."
+},
+{
+"q": "Under what condition will External B connect with the system?",
+"a": "Provided the APU Generator is not online."
+},
+{
+"q": "What does the AUTO indication on the External B Pb signify?",
+"a": "It connects and disconnects automatically based on the APU Generator status."
+},
+{
+"q": "What normally powers the AC ESS BUS?",
+"a": "AC BUS 1."
+},
+{
+"q": "If AC BUS 1 is lost, what powers the AC ESS BUS?",
+"a": "AC BUS 2 via the ESS XFEED."
+},
+{
+"q": "What happens when ALTN is selected on the ESS XFEED Pb?",
+"a": "AC BUS 2 powers the AC ESS BUS."
+},
+{
+"q": "During Initial Power Up, what should the battery voltage be above?",
+"a": "25.5V."
+},
+{
+"q": "What battery charge does 25.5V represent?",
+"a": "50% charge on the Batteries."
+},
+{
+"q": "What do we do if the battery charge is lower than 25.5V at Initial Power Up?",
+"a": "Charge off external power for 20 minutes and check again."
+},
+{
+"q": "Below what APU battery voltage is there a risk of an aborted APU start on battery only?",
+"a": "23.5V."
+},
+{
+"q": "How do we check the battery voltages?",
+"a": "Select BAT 1, BAT 2, APU BAT Pbs off, read the Voltage Indicator window, switch batteries with the selector."
+},
+{
+"q": "In what position is the battery selector left after checking battery voltages?",
+"a": "The APU BAT position."
+},
+{
+"q": "What may not be available if the main batteries were low prior to an APU start on battery power?",
+"a": "The APU fire protection."
+},
+{
+"q": "Which ECAM page is selected to check the Battery Charge Limiter during preflight?",
+"a": "The ELEC DC page."
+},
+{
+"q": "What switching sequence is used to check the Battery Charge Limiter?",
+"a": "Turn off BAT 1, BAT 2, and APU BAT, then turn them back on."
+},
+{
+"q": "What battery draw verifies the Battery Charge Limiter is functioning properly?",
+"a": "Less than 60 amps in 10 seconds or less."
+},
+{
+"q": "How long can we operate on batteries only?",
+"a": "A minimum of 30 minutes."
+},
+{
+"q": "What does the GALLEY Pb AUTO position (lights out) indicate?",
+"a": "The galley will automatically shed in case of failures."
+},
+{
+"q": "What does the COMMERCIAL Pb control?",
+"a": "Everything back of the Cockpit door (Galley, IFE, Cargo loading, etc.)."
+},
+{
+"q": "How long, at most, should the IDG disconnect be held?",
+"a": "Not greater than 3 seconds."
+},
+{
+"q": "Why should the IDG disconnect not be held for greater than 3 seconds?",
+"a": "The disconnect mechanism could be damaged."
+},
+{
+"q": "Can the IDG be reconnected in flight?",
+"a": "No. The IDG cannot be reconnected in flight."
+},
+{
+"q": "Which items connect to the Hot Battery bus on the ground and remain powered at all times?",
+"a": "The Clock and the Battery Voltage Indication Window."
+},
+{
+"q": "What is the EMER GEN TEST used for?",
+"a": "A maintenance function only."
+},
+{
+"q": "What does the EMER ELEC PWR panel label refer to?",
+"a": "The Emergency Generator."
+},
+{
+"q": "Where is the EMER ELEC CONFIG summary located?",
+"a": "In the QRH."
+},
+{
+"q": "What is powering the aircraft when it is in EMER ELEC CONFIG?",
+"a": "The Emergency Generator, with many electrical items shed."
+},
+{
+"q": "Which hydraulic system powers the Emergency Generator?",
+"a": "The green hydraulic system, via two methods."
+},
+{
+"q": "What powers the green system in the “Big Green” case?",
+"a": "One or both engine driven pumps."
+},
+{
+"q": "What powers the green system in the “Little Green” case?",
+"a": "The RAT only."
+},
+{
+"q": "What percentage of an engine driven pump flow capability can the RAT provide?",
+"a": "Between 15% and 45%, depending on airspeed."
+},
+{
+"q": "Loss of which two busses automatically activates EMER ELEC CONFIG?",
+"a": "AC Bus 1 and AC Bus 2, with both Engine Generators tripped offline."
+},
+{
+"q": "After loss of AC Bus 1 and AC Bus 2, what powers the Emergency Generator?",
+"a": "Big Green hydraulics."
+},
+{
+"q": "How many busses remain powered in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "4 busses."
+},
+{
+"q": "Which 4 busses remain powered in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "AC ESS, AC ESS SHED, DC ESS, DC ESS SHED."
+},
+{
+"q": "Which displays remain in EMER ELEC CONFIG after loss of AC Bus 1 and AC Bus 2?",
+"a": "Captains PFD, Captains ND, and E/WD."
+},
+{
+"q": "After loss of both engines, what powers the Emergency Generator?",
+"a": "Little Green (the RAT only)."
+},
+{
+"q": "How many busses remain powered in EMER ELEC CONFIG after loss of both engines?",
+"a": "2 busses."
+},
+{
+"q": "Which 2 busses remain powered in EMER ELEC CONFIG after loss of both engines?",
+"a": "AC ESS and DC ESS."
+},
+{
+"q": "Which displays remain in EMER ELEC CONFIG after loss of both engines?",
+"a": "Captains PFD and E/WD."
+},
+{
+"q": "Can the emergency generator be turned on manually?",
+"a": "Yes. It can also be manually turned on."
+},
+{
+"q": "Once the emergency generator has been turned on, can it be turned off?",
+"a": "No. It cannot be turned off."
+},
+{
+"q": "When does a RAT-powered emergency generator disconnect?",
+"a": "When the slats are extended."
+},
+{
+"q": "How is the RAT-powered emergency generator reactivated after slat extension disconnects it?",
+"a": "Push the MAN ON Pb after the slats have been retracted."
+},
+{
+"q": "Below what airspeed does the RAT stop being effective?",
+"a": "Less than 140 kts."
+},
+{
+"q": "What is the only source of power once the RAT stops being effective below 140 kts?",
+"a": "The batteries."
+},
+{
+"q": "What happens to the Land Recovery AC and DC busses when the aircraft enters EMER ELEC CONFIG?",
+"a": "They shed."
+},
+{
+"q": "What kind of systems are on the Land Recovery busses?",
+"a": "Systems required for landing but not during cruise."
+},
+{
+"q": "Do the Land Recovery busses recover automatically if normal power is restored?",
+"a": "No. They remain shed even if normal power is restored."
+},
+{
+"q": "What does the Land Recovery Pb do?",
+"a": "Recovers the Land Recovery AC and DC busses, restoring systems required for landing."
+},
+{
+"q": "Which systems does the Land Recovery Pb restore when Big Green powers the Emergency Generator?",
+"a": "LGCIU 1, SFCC 1, BSCU CH 1, LH Windshield Heat, LH Landing Light."
+},
+{
+"q": "Which systems does the Land Recovery Pb restore when Little Green powers the Emergency Generator?",
+"a": "LGCIU 1 and SFCC 1 (slat channel only)."
+},
+{
+"q": "Are the reset panel switches circuit breakers?",
+"a": "No. They are computer reset switches."
+},
+{
+"q": "Where is the explanation of the reset procedures found?",
+"a": "The first page of the reset sections in both the FCOM and QRH."
+},
+{
+"q": "When can you accomplish a computer reset as directed?",
+"a": "When instructed by an ECAM or paper QRH procedure."
+},
+{
+"q": "If no ECAM or QRH procedure directs a reset, how do you determine whether one is allowed?",
+"a": "Check the QRH table."
+},
+{
+"q": "How are system Pbs that also function as resets marked?",
+"a": "Noted by /R."
+},
+{
+"q": "Which two cockpit switches are also resets?",
+"a": "The MCDU and A/SKID & N/W STRG (BSCU) switches."
+},
+{
+"q": "How many circuit breakers are in the cockpit?",
+"a": "Only 5."
+},
+{
+"q": "Where are the 5 cockpit circuit breakers located?",
+"a": "3 on the cockpit door frame, 1 under each pilot seat on the pedestal."
+},
+{
+"q": "With the Emergency Exit Light switch armed, what conditions bring the lights on?",
+"a": "Normal electrical power fails, DC ESS Bus fails, AC BUS 1 fails, or cabin altitude over 9550 ft."
+},
+{
+"q": "Which emergency lights come on when AC BUS 1 fails with the exit lights armed?",
+"a": "Only the overhead emergency lights, to provide minimum lighting."
+},
+{
+"q": "At what cabin altitude do the EXIT signs come on with the exit lights armed?",
+"a": "Over 9550 ft."
+},
+{
+"q": "When are the Fasten Seat Belt signs on in the Auto position?",
+"a": "When either the gear is extended, or the flaps/slats are not at 0."
+},
+{
+"q": "Why are the No Smoking lights always on?",
+"a": "They are hardwired."
+},
+{
+"q": "What else comes on when the No Smoking switch is in the ON position?",
+"a": "The EXIT signs."
+},
+{
+"q": "What happens if the No Smoking switch is left ON after all power is shut off?",
+"a": "The EXIT sign internal batteries would be depleted. Turned off in the Securing Checklist."
+},
+{
+"q": "What is the No Smoking switch used to signal to the Flight Attendants?",
+"a": "Passing through 10000 ft."
+}
+],
+"Fire Protection": [
+{
+"q": "What type of fire detection loops do the engines use?",
+"a": "Gas detection loops, the same as the APU."
+},
+{
+"q": "How many gas filled fire detection loops does each engine have?",
+"a": "2 loops."
+},
+{
+"q": "How does a gas filled fire detection loop sense a fire?",
+"a": "Heated gas expands and sets off a sensor at a predetermined level."
+},
+{
+"q": "Is an engine fire warning issued when both loops detect a fire?",
+"a": "Yes. Both loops detecting a fire issues a warning."
+},
+{
+"q": "Is an engine fire warning issued when one loop detects a fire and the other is inoperative?",
+"a": "Yes. One loop detecting fire with the other inoperative issues a warning."
+},
+{
+"q": "Within what time must both engine loops break to issue a fire warning?",
+"a": "Within 5 seconds of each other."
+},
+{
+"q": "What happens to the engine fire warnings if the fire goes out?",
+"a": "The warnings stop."
+},
+{
+"q": "How many Halon bottles are there per engine?",
+"a": "2 Halon bottles per engine."
+},
+{
+"q": "What happens to the CRC when the ENG FIRE Pb is pushed?",
+"a": "It is silenced."
+},
+{
+"q": "What does pushing the ENG FIRE Pb do to the FADEC?",
+"a": "Removes power from the FADEC."
+},
+{
+"q": "What does pushing the ENG FIRE Pb do to the SQUIBS?",
+"a": "Arms the SQUIBS."
+},
+{
+"q": "Which hydraulic and fuel valves close when the ENG FIRE Pb is pushed?",
+"a": "The Hydraulic Fire Shutoff Valve and the Low-Pressure Fuel Valve."
+},
+{
+"q": "What does pushing the ENG FIRE Pb do to the IDG?",
+"a": "Deactivates the IDG."
+},
+{
+"q": "Which pneumatic valves close when the ENG FIRE Pb is pushed?",
+"a": "The Pack Flow Control Valve and the Engine Bleed Valve."
+},
+{
+"q": "What aural and master warning indications occur during the Engine Fire Test?",
+"a": "The CRC sounds and the Master Warning lights flash."
+},
+{
+"q": "Which Pb lights come on during the Engine Fire Test?",
+"a": "The Engine Fire Pbs and the SQUIB and DISCH lights."
+},
+{
+"q": "Where do fire lights come on near the pedestal during the Engine Fire Test?",
+"a": "By the Engine Master Switches."
+},
+{
+"q": "How does the ENG 1 FIRE ECAM presentation differ from ENG 2 FIRE during the Engine Fire Test?",
+"a": "ENG 1 FIRE appears on the left with checklist, ENG 2 FIRE on the right as title only."
+},
+{
+"q": "How many lights in total illuminate during the Engine Fire Test?",
+"a": "12 lights (including 2 ECAM messages), plus the CRC."
+},
+{
+"q": "What controls the automatic functions of the APU?",
+"a": "The ECB (Electronic Control Box)."
+},
+{
+"q": "What happens automatically in case of an APU fire on the ground?",
+"a": "APU shutdown and fire extinguishing."
+},
+{
+"q": "Does automatic APU shutdown and fire extinguishing occur if the APU fire happens airborne?",
+"a": "No. It will not happen airborne."
+},
+{
+"q": "How many Halon bottles does the APU have?",
+"a": "1 Halon bottle."
+},
+{
+"q": "How many gas filled fire detection loops does the APU have?",
+"a": "2 loops."
+},
+{
+"q": "Under what three conditions is an APU fire warning issued?",
+"a": "Both loops detect fire, one detects with the other inoperative, or both break within 5 seconds."
+},
+{
+"q": "What happens to the APU fire warnings if the fire goes out?",
+"a": "The warnings stop."
+},
+{
+"q": "What happens to the APU itself when the APU FIRE Pb is pushed?",
+"a": "The APU shuts down."
+},
+{
+"q": "What happens to the CRC and squib when the APU FIRE Pb is pushed?",
+"a": "The CRC is silenced and the squib is armed."
+},
+{
+"q": "Which fuel items are affected when the APU FIRE Pb is pushed?",
+"a": "The LP Fuel Valve closes and the APU Fuel Pumps (FWD and AFT) shut off."
+},
+{
+"q": "What happens to the APU generator when the APU FIRE Pb is pushed?",
+"a": "It deactivates."
+},
+{
+"q": "Which pneumatic valves close when the APU FIRE Pb is pushed?",
+"a": "The APU bleed valve and the Crossbleed valve."
+},
+{
+"q": "Which lights and messages appear when the APU fire test Pb is pushed?",
+"a": "APU FIRE Pb, AGENT SQUIB and DISCH Pb lights, 2 Master Warnings, CRC, E/WD APU FIRE message."
+},
+{
+"q": "How many Master Warning lights illuminate during the APU fire test?",
+"a": "2 Master Warning lights."
+},
+{
+"q": "What is the total item count by color during the APU fire test?",
+"a": "4 red lights/messages, 1 amber light, 1 white light, and the CRC."
+},
+{
+"q": "What type of detectors does Avionics Smoke detection use?",
+"a": "Optical Particle Detectors."
+},
+{
+"q": "What type of smoke detectors does the Cargo Smoke system use?",
+"a": "Optical detectors."
+},
+{
+"q": "Why is it not possible to tell if a cargo fire has been extinguished?",
+"a": "Remaining particulates and Halon in the compartment keep the optical detectors sensing."
+},
+{
+"q": "How many Halon bottles does the cargo fire extinguishing system have?",
+"a": "2 bottles, both discharging into the selected compartment."
+},
+{
+"q": "How quickly does the first cargo Halon bottle discharge?",
+"a": "Within 60 seconds."
+},
+{
+"q": "How is the second cargo Halon bottle released?",
+"a": "Through a restrictor valve."
+},
+{
+"q": "How long does the second cargo Halon bottle take to fully discharge?",
+"a": "260 minutes."
+},
+{
+"q": "Why does the second cargo Halon bottle discharge over 260 minutes?",
+"a": "For ETOPS requirements (195 minutes)."
+},
+{
+"q": "When does the cargo bottle DISCH light illuminate?",
+"a": "Not until the bottle is fully empty."
+},
+{
+"q": "Which Pb controls cargo fire extinguishing for the Bulk compartment?",
+"a": "The Aft Pb. The bottles discharge into both the Aft and Bulk compartments."
+},
+{
+"q": "What is the cargo smoke Test button used for?",
+"a": "A maintenance function only."
+}
+],
+"Flight Controls": [
+{
+"q": "How many PRIMs does the aircraft have?",
+"a": "3 PRIMs, used for Normal, Alternate, and Direct Laws."
+},
+{
+"q": "How many SECs does the aircraft have?",
+"a": "2 SECs, used for Direct Law if no PRIMs are working."
+},
+{
+"q": "Which flight control law do the SECs provide if no PRIMs are working?",
+"a": "Direct Law."
+},
+{
+"q": "Are the FCC Pbs reset switches?",
+"a": "Yes. All FCC Pbs are reset switches."
+},
+{
+"q": "How many flight control computers are needed to perform a safe landing?",
+"a": "Only 1 computer of any type."
+},
+{
+"q": "On which SD page are the speedbrakes displayed?",
+"a": "The F/CTL page."
+},
+{
+"q": "Which spoiler panels are used for speedbrakes and ground spoilers?",
+"a": "All the panels. Only some are used for roll control."
+},
+{
+"q": "Can the speedbrakes be used with Full flaps?",
+"a": "Yes. The speedbrakes can be used with Full flaps."
+},
+{
+"q": "Can the aircraft be landed with the speedbrakes extended?",
+"a": "Yes. The aircraft can be landed with the speedbrakes extended."
+},
+{
+"q": "During an RTO, what conditions cause the ground spoilers to extend?",
+"a": "Thrust levers retarded to idle with speed greater than 72 kts."
+},
+{
+"q": "When armed, what causes the ground spoilers to extend during landing?",
+"a": "Main gear compression with the thrust levers at IDLE."
+},
+{
+"q": "When not armed, what causes the ground spoilers to extend during landing?",
+"a": "Main gear compression with at least 1 engine in reverse."
+},
+{
+"q": "What do the ground spoilers do if only 1 main gear touches down with reverse selected on 1 engine?",
+"a": "They partially extend until the second main gear touches down, then extend normally."
+},
+{
+"q": "Why do the ground spoilers only partially extend when one main gear touches down first?",
+"a": "It allows a smoother touchdown in crosswind conditions."
+},
+{
+"q": "When can the rudder trim be manually adjusted?",
+"a": "Only when the autopilot is off."
+},
+{
+"q": "What happens to the rudder trim knob and reset button when the autopilot is on?",
+"a": "They do not function."
+},
+{
+"q": "Which computers control the TURB DAMP function?",
+"a": "The PRIMs."
+},
+{
+"q": "What does the TURB DAMP function do?",
+"a": "Dampens structural modes induced by atmospheric turbulence."
+},
+{
+"q": "When can TURB DAMP be turned off?",
+"a": "If it is considered not to be helping comfort."
+},
+{
+"q": "What three parameters must be met for TURB DAMP to be active?",
+"a": "In flight within normal envelope, Normal Law active or A/P engaged, airspeed greater than 200 kts."
+},
+{
+"q": "Above what airspeed is TURB DAMP active?",
+"a": "Greater than 200 kts."
+},
+{
+"q": "How many pilots should make sidestick inputs at a time?",
+"a": "Only one pilot."
+},
+{
+"q": "What happens to the inputs when both sidesticks are moved at the same time?",
+"a": "The inputs are summed."
+},
+{
+"q": "What audio warning sounds when both sidesticks receive inputs at the same time?",
+"a": "“Dual Input”."
+},
+{
+"q": "Which SIDE STICK PRIORITY lights illuminate during a dual input?",
+"a": "Green “CAPT” and “FO” lights."
+},
+{
+"q": "How does a pilot take control of the sidesticks from the other pilot?",
+"a": "Press and hold the red Pb on their sidestick."
+},
+{
+"q": "When both pilots press and hold their sidestick red Pb, who has priority?",
+"a": "The last pilot to press and hold."
+},
+{
+"q": "For which pilot does the red arrow in the SIDE STICK PRIORITY light illuminate?",
+"a": "The pilot who is no longer in control."
+},
+{
+"q": "What audio message accompanies a sidestick priority takeover?",
+"a": "“Priority Left” or “Priority Right” as appropriate."
+},
+{
+"q": "How long must the red Pb be held to lock out the other pilot's sidestick for the remainder of the flight?",
+"a": "More than 40 seconds."
+},
+{
+"q": "How can a deactivated sidestick be activated again?",
+"a": "Push its red Pb."
+},
+{
+"q": "What does the green band on the THS wheel indicate?",
+"a": "The certified limits."
+},
+{
+"q": "What does setting the pitch trim within the THS green band ensure?",
+"a": "The aircraft can perform a safe takeoff."
+},
+{
+"q": "What does having the correct pitch trim setting provide?",
+"a": "A consistent rotation."
+},
+{
+"q": "When is the Automatic Retraction System (ARS) used?",
+"a": "Heavy weight operations when S speed is greater than or near the 1+F limit speed of 215 kts."
+},
+{
+"q": "At what speed does the ARS automatically retract the flaps?",
+"a": "As the speed increases through 200 kts."
+},
+{
+"q": "What does the Flap Load Relief System do?",
+"a": "Automatically retracts the flaps to the next retracted lever position in an overspeed."
+},
+{
+"q": "In Flaps 2, 3, or FULL, how much overspeed causes the flaps to retract one position?",
+"a": "2.5 kts overspeed."
+},
+{
+"q": "What is displayed on the PFD when the Flap Load Relief System is active?",
+"a": "RELIEF, above the Slat/Flap indicator."
+},
+{
+"q": "When do the flaps reextend after a flap load relief retraction?",
+"a": "After the aircraft slows to 2.5 kts below Vfe."
+},
+{
+"q": "What does the Alpha/Speed Lock inhibit?",
+"a": "Slat retraction from 1 to 0."
+},
+{
+"q": "What speed or Alpha conditions activate the Alpha/Speed Lock?",
+"a": "Speed below 148 kts or Alpha exceeding 8.5 degrees."
+},
+{
+"q": "What is displayed on the PFD when the Alpha/Speed Lock is active?",
+"a": "LOCK, above the Slats/Flaps indicator."
+},
+{
+"q": "What conditions allow the slats to retract to 0 after an Alpha/Speed Lock?",
+"a": "Alpha below 8.2 degrees and speed exceeding 154 kts."
+},
+{
+"q": "Why do the ailerons droop when the flaps are set at 1 or greater?",
+"a": "To provide additional lift."
+},
+{
+"q": "How much do the ailerons droop at Flaps 1+F?",
+"a": "5 degrees."
+},
+{
+"q": "How much do the ailerons droop at Flaps 2 through Full?",
+"a": "10 degrees."
+},
+{
+"q": "Is there aileron droop when Flaps 1 is selected while airborne?",
+"a": "No. No flaps are extended at Flaps 1 airborne, so there is no droop."
+}
+],
+"Fuel": [
+{
+"q": "How many Fuel Control and Monitoring Computers (FCMC) control the fuel system?",
+"a": "2 FCMCs."
+},
+{
+"q": "What is the approximate capacity of each outer tank?",
+"a": "Approximately 6,300 lbs each."
+},
+{
+"q": "What is the approximate capacity of each inner tank?",
+"a": "Approximately 72,000 lbs each."
+},
+{
+"q": "What is the approximate capacity of the tail tank?",
+"a": "Approximately 11,000 lbs."
+},
+{
+"q": "What is the approximate capacity of the center tank?",
+"a": "Approximately 72,000 lbs."
+},
+{
+"q": "What is the approximate total fuel capacity?",
+"a": "Approximately 240,000 lbs."
+},
+{
+"q": "Which tanks fill first during refueling?",
+"a": "The Inners and Outers."
+},
+{
+"q": "At around what total fuel load should fuel start going into the Trim tank?",
+"a": "Around 80,500 lbs."
+},
+{
+"q": "At around what total fuel load should fuel start going into the Center tank?",
+"a": "Around 163,000 lbs."
+},
+{
+"q": "From where do the engines draw their fuel?",
+"a": "The INNER tank collector cells."
+},
+{
+"q": "In what order do the other tanks feed the INNER tank as fuel burns off?",
+"a": "CENTER to INNER, then TRIM to INNER, then OUTER to INNER."
+},
+{
+"q": "What is the tail trim tank used for?",
+"a": "CG control during flight."
+},
+{
+"q": "Why is the CG moved aft during cruise?",
+"a": "For optimum aircraft performance."
+},
+{
+"q": "What effect does an aft CG have during takeoff?",
+"a": "It reduces stability."
+},
+{
+"q": "Passing what flight level in the climb do the FCMCs start the aft transfer to the trim tank?",
+"a": "FL 25.5."
+},
+{
+"q": "During cruise, why is trim tank fuel transferred forward as needed?",
+"a": "To maintain Inner tank levels and optimum CG."
+},
+{
+"q": "When do the FCMCs begin the forward transfer of remaining trim tank fuel during descent?",
+"a": "Passing FL 24.5, or when 35 minutes or less from destination."
+},
+{
+"q": "What does selecting FWD on the TTANK MODE Pb do?",
+"a": "Manually transfers fuel from the TRIM tank to the CENTER tank."
+},
+{
+"q": "Which is the only fuel transfer Pb with a direction?",
+"a": "TTANK MODE (FWD)."
+},
+{
+"q": "What happens with the TTANK Feed switch in the AUTO position?",
+"a": "The FCMC automatically transfers fuel throughout the flight."
+},
+{
+"q": "Why is the final forward transfer stopped with a small amount of fuel left in the trim tank?",
+"a": "So the trim tank transfer line contains fuel for APU operation."
+},
+{
+"q": "What does the OPEN position of the TTANK Feed switch do?",
+"a": "Opens the valves to allow gravity feed to the center tank."
+},
+{
+"q": "What happens to the trim tank transfer line with the TTANK Feed switch in OPEN?",
+"a": "It is drained, and the APU will not operate."
+},
+{
+"q": "What does the ISOL position of the TTANK Feed switch do?",
+"a": "Stops all transfers."
+},
+{
+"q": "What does the CTR TANK XFR Pb do?",
+"a": "Performs a manual transfer from the Center tank to the Inner tanks."
+},
+{
+"q": "How much fuel is unusable if the Center tank pumps are inoperative?",
+"a": "33,000 lbs."
+},
+{
+"q": "Why is 33,000 lbs of center tank fuel unusable with the Center tank pumps inoperative?",
+"a": "Due to gravity and wing dihedral."
+},
+{
+"q": "What does the OUTR TK XFR Pb do?",
+"a": "Performs a gravity transfer from the Outer tanks to the Inner tanks by opening the valves."
+},
+{
+"q": "Can the engines suction feed fuel?",
+"a": "Yes. They can suction feed from the collector tanks."
+},
+{
+"q": "What should be used to conduct all manual fuel transfers?",
+"a": "The ECAM/QRH procedures."
+},
+{
+"q": "What protection is lost during manual fuel transfers?",
+"a": "Overfill protections. Tanks could overfill and fuel could be lost overboard."
+},
+{
+"q": "When does the WING XFEED open automatically?",
+"a": "During a fuel jettison and during EMER ELEC CONFIG."
+},
+{
+"q": "At around what fuel imbalance should you start checking the limitations chart?",
+"a": "Around 3,200 lbs imbalance."
+},
+{
+"q": "At what fuel imbalance does the advisory come on?",
+"a": "6,600 lbs imbalance."
+},
+{
+"q": "Can the aircraft be flown and landed in any fuel imbalance scenario?",
+"a": "Yes. In exceptional conditions, in any fuel imbalance scenario."
+},
+{
+"q": "What do the INR TANK SPLIT pushbuttons do?",
+"a": "Close a valve in each Inner tank, closing the connection between the 2 parts of the tank."
+},
+{
+"q": "What is the normal position of the inner tank split valve?",
+"a": "Open."
+},
+{
+"q": "What is the purpose of splitting the inner tank?",
+"a": "To protect a portion of the inner tank fuel in case of a fuel leak."
+},
+{
+"q": "After an inner tank split, is all fuel still accessible?",
+"a": "Yes. All fuel is still accessible via the main and standby pumps."
+},
+{
+"q": "Why are the INR TANK SPLIT pushbuttons not on the main fuel panel?",
+"a": "They were added after initial design."
+},
+{
+"q": "Are the INR TANK SPLIT valves monitored by ECAM?",
+"a": "No. They were added after initial design and are not monitored by ECAM."
+},
+{
+"q": "When are the INR TANK SPLIT pushbuttons used?",
+"a": "Only when directed by ECAM."
+},
+{
+"q": "What does the amber ON light on an INR TANK SPLIT pushbutton indicate?",
+"a": "The valve is closing."
+},
+{
+"q": "What does the blue SHUT light on an INR TANK SPLIT pushbutton indicate?",
+"a": "The valve is shut."
+},
+{
+"q": "Which INR TANK SPLIT pushbutton lights are illuminated once the tank is split?",
+"a": "Both the amber ON and blue SHUT lights."
+},
+{
+"q": "What is the fuel jettison rate?",
+"a": "2200 lbs/min plus fuel burn."
+},
+{
+"q": "What happens to the fuel pumps once the jettison QRH procedure is accomplished?",
+"a": "All fuel pumps turn on."
+},
+{
+"q": "What does the crossfeed valve do when jettison begins?",
+"a": "It opens."
+},
+{
+"q": "Which valves open to begin fuel jettison?",
+"a": "The jettison valves."
+},
+{
+"q": "Which fuel transfers begin during jettison?",
+"a": "Trim tank to Center tank, and Outer tanks to Inner tanks."
+},
+{
+"q": "From which tanks is fuel jettisoned?",
+"a": "Both the Inner tanks and the Center tank simultaneously."
+},
+{
+"q": "How does the crew stop a fuel jettison?",
+"a": "Using the QRH procedure."
+},
+{
+"q": "Which MCDU page entry stops the jettison automatically when reached?",
+"a": "The fuel level input into the MCDU FUEL PRED page."
+},
+{
+"q": "At what combined Inner tank fuel quantity does jettison stop?",
+"a": "22,000 lbs combined Inner tank fuel quantity."
+},
+{
+"q": "Which low level sensor condition stops the jettison?",
+"a": "Both inner tank low level sensors on one side go dry."
+},
+{
+"q": "How many conditions stop a fuel jettison?",
+"a": "Four: crew QRH stop, MCDU FUEL PRED level reached, combined Inner 22,000 lbs, one side's low level sensors dry."
+}
+],
+"Hydraulics": [
+{
+"q": "How many Hydraulic System Monitoring Units (HSMU) control the hydraulic system?",
+"a": "1 HSMU."
+},
+{
+"q": "Where is the Hydraulic Architecture diagram found?",
+"a": "In the QRH, OPS.08A."
+},
+{
+"q": "What are the 3 independent hydraulic systems?",
+"a": "Green, Blue, Yellow."
+},
+{
+"q": "Can hydraulic fluid be transferred between the systems?",
+"a": "No. Fluid cannot be transferred between the systems."
+},
+{
+"q": "What is normal hydraulic pressure?",
+"a": "3000 psi."
+},
+{
+"q": "What hydraulic pressure does the RAT provide?",
+"a": "2500 psi."
+},
+{
+"q": "Which is the main hydraulic system?",
+"a": "Green."
+},
+{
+"q": "What powers the Green hydraulic system?",
+"a": "2 Engine Driven pumps plus the Ram Air Turbine (RAT)."
+},
+{
+"q": "What is the Green system Priority Valve designed to do?",
+"a": "Prioritize the flight controls in a low-pressure situation."
+},
+{
+"q": "Which high draw items does the Green Priority Valve cut off in low pressure?",
+"a": "Emergency Generator, Nosewheel Steering, Landing Gear."
+},
+{
+"q": "What does the white tick mark on the SD HYD page Green reservoir signify?",
+"a": "Fluid is above 17 L / 4.5 USG."
+},
+{
+"q": "What happens to the Green reservoir white tick mark if fluid falls below 17 L?",
+"a": "It becomes two amber bars."
+},
+{
+"q": "Which notable brake items are on the Blue hydraulic system?",
+"a": "Alternate Brakes, Parking Brake, Brake Accumulator."
+},
+{
+"q": "Which hydraulic system operates the Cargo Doors?",
+"a": "Yellow."
+},
+{
+"q": "Which hydraulic systems power parts of the flight controls?",
+"a": "All three: Green, Blue and Yellow."
+},
+{
+"q": "What pumps does each hydraulic system have?",
+"a": "An Engine driven pump and an Electric Pump. Green has 2 Engine Driven Pumps."
+},
+{
+"q": "How many Engine Driven Pumps does the Green system have?",
+"a": "2."
+},
+{
+"q": "How long are the hydraulic electric pumps intended to be used?",
+"a": "Temporary use only."
+},
+{
+"q": "Can the electric pumps replace the Engine driven pumps?",
+"a": "No. They are for temporary use only."
+},
+{
+"q": "How many Pbs control each hydraulic electric pump?",
+"a": "Two Pbs."
+},
+{
+"q": "What does the top electric pump Pb select?",
+"a": "AUTO/STBY or ON."
+},
+{
+"q": "What does the bottom electric pump Pb do?",
+"a": "Turns the pump off."
+},
+{
+"q": "How is an electric pump that was manually selected ON turned off?",
+"a": "By returning the top Pb to AUTO."
+},
+{
+"q": "When should the bottom electric pump Pb OFF position be used?",
+"a": "Only if directed by ECAM/QRH/FCOM."
+},
+{
+"q": "When does the Green electric pump come on automatically?",
+"a": "When either engine has failed, or when the gear has been selected up."
+},
+{
+"q": "How long does the Green electric pump run after the gear is selected up?",
+"a": "25 seconds, to ensure gear retraction within the proper time."
+},
+{
+"q": "When does the Blue electric pump come on automatically?",
+"a": "Engine 1 has failed and PRIM 1 or PRIM 3 is also inoperative."
+},
+{
+"q": "Why does the Blue electric pump run with Engine 1 failed and PRIM 1 or 3 inoperative?",
+"a": "To assist rudder authority by ensuring at least 2 actuators are operating the rudder."
+},
+{
+"q": "When does the Yellow electric pump come on after an engine failure?",
+"a": "Engine 2 has failed and the flap lever is not at 0."
+},
+{
+"q": "Why does the Yellow electric pump run after Engine 2 fails with the flap lever not at 0?",
+"a": "To ensure flap retraction within the proper time."
+},
+{
+"q": "What happens to the Yellow electric pump when the Green electric pump runs for gear retraction after Engine 2 failure?",
+"a": "It shuts off until the Green electric pump turns off."
+},
+{
+"q": "After Engine 2 failure, how long does the Yellow electric pump stay running?",
+"a": "Until engine shutdown."
+},
+{
+"q": "Besides Engine 2 failure, when does the Yellow electric pump turn on automatically?",
+"a": "During cargo door operation (Blue ON light illuminates automatically)."
+},
+{
+"q": "Which valve also turns on during cargo door operation?",
+"a": "The Yellow Leak Measurement Valve."
+},
+{
+"q": "What does the Ram Air Turbine provide?",
+"a": "Redundancy to Green, backup hydraulic power to the flight controls and/or the emergency generator."
+},
+{
+"q": "Which engine condition automatically deploys the RAT?",
+"a": "Engines 1 and 2 fail."
+},
+{
+"q": "Which Green and Blue condition automatically deploys the RAT?",
+"a": "Green and Blue Fluid Low Level."
+},
+{
+"q": "Which Green and Yellow condition automatically deploys the RAT?",
+"a": "Green and Yellow Fluid Low Level."
+},
+{
+"q": "Can the RAT be manually deployed?",
+"a": "Yes. The RAT can also be manually deployed."
+},
+{
+"q": "Who can stow the RAT?",
+"a": "Only maintenance, on the ground."
+},
+{
+"q": "What is the minimum RAT speed?",
+"a": "140 kts."
+},
+{
+"q": "What are the Leak Measurement Valves used for?",
+"a": "To isolate the flight controls from hydraulic pressure."
+},
+{
+"q": "When does the yellow Leak Measurement Valve operate automatically?",
+"a": "When the Yellow hydraulic pump activates during cargo door operation."
+}
+],
+"Ice and Rain": [
+{
+"q": "What is the normal mode for PROBE/WINDOW HEAT?",
+"a": "AUTO."
+},
+{
+"q": "When are probes and windows automatically heated?",
+"a": "In flight, and on the ground with at least one engine running."
+},
+{
+"q": "Which probe is not heated on the ground?",
+"a": "The TAT probe."
+},
+{
+"q": "What does selecting the PROBE/WINDOW HEAT Pb to ON do?",
+"a": "Activates Probe/Window heat, except the TAT probes on the ground."
+},
+{
+"q": "How does probe/window heat level differ between ground and flight?",
+"a": "Low heat on the ground, high heat in flight."
+},
+{
+"q": "When is ENG ANTI ICE selected on?",
+"a": "When expecting potential icing. It is used as an anti-ice system."
+},
+{
+"q": "How do the Engine Anti Ice valves fail with an electrical failure?",
+"a": "Open."
+},
+{
+"q": "What limitations apply to the use of Engine Anti Ice?",
+"a": "None."
+},
+{
+"q": "What happens to EPR when Engine Anti Ice is selected on?",
+"a": "The EPR limit is reduced and the EPR idle is increased."
+},
+{
+"q": "Does engine ignition automatically come on when Engine Anti Ice is selected on?",
+"a": "No. Only if there was an EIU failure."
+},
+{
+"q": "Below what SAT is Engine Anti Ice not required in climb or cruise?",
+"a": "Below -40C SAT, due to the cold temperature."
+},
+{
+"q": "When is WING ANTI ICE turned on?",
+"a": "Only when instructed by the ECAM or when there is visible ice buildup. It is a deice system."
+},
+{
+"q": "Which slats are heated by WING ANTI ICE?",
+"a": "Only the outer 4 slats."
+},
+{
+"q": "How do the WING ANTI ICE valves fail with an electrical failure?",
+"a": "Closed, because hot air with no cooling airflow can damage the wing composite."
+},
+{
+"q": "What happens when WING ANTI ICE is activated on the ground?",
+"a": "A 30 second test occurs, then the valves close until after liftoff."
+},
+{
+"q": "What happens to EPR when WING ANTI ICE is selected on?",
+"a": "The EPR limit is reduced and the EPR idle is increased."
+},
+{
+"q": "What does one push of the RAIN RPLNT button do?",
+"a": "Distributes a measured quantity of fluid to the associated side."
+},
+{
+"q": "When must rain repellent not be used?",
+"a": "On a dry windshield."
+},
+{
+"q": "What is the maximum wiper operating speed?",
+"a": "230 kts."
+}
+],
+"ECAM and Displays": [
+{
+"q": "What type of items are Level 3 ECAM Warnings?",
+"a": "Immediate action items."
+},
+{
+"q": "What alerts accompany a Level 3 ECAM Warning?",
+"a": "CRC sounds, Master Warning lights flash, message in red text on the E/WD."
+},
+{
+"q": "What type of items are Level 2 ECAM Cautions?",
+"a": "Crew awareness items not requiring immediate action."
+},
+{
+"q": "What alerts accompany a Level 2 ECAM Caution?",
+"a": "A single chime, Master Caution lights on, message in amber text on the E/WD."
+},
+{
+"q": "What type of items are Level 1 ECAM Cautions?",
+"a": "Crew monitoring items."
+},
+{
+"q": "What alerts accompany a Level 1 Caution for loss of redundancy?",
+"a": "No aural alerts, no Master Caution lights, message in amber text on the E/WD."
+},
+{
+"q": "How does an ECAM Advisory present on the SD?",
+"a": "The relevant system page is called with the affected parameter pulsing green."
+},
+{
+"q": "What could an ECAM Advisory indicate?",
+"a": "An impending failure. The system requires crew monitoring."
+},
+{
+"q": "Which QRH chart is referenced for an ECAM Advisory?",
+"a": "The ECAM Advisory Conditions Chart, QRH 01.01A."
+},
+{
+"q": "What is Groundspeed Mini designed to protect the aircraft from?",
+"a": "Windshear on approach, by maintaining a minimum energy level in variable wind conditions."
+},
+{
+"q": "Which speed mode must be engaged for Groundspeed Mini?",
+"a": "Managed speed."
+},
+{
+"q": "Is Autothrust required for Groundspeed Mini?",
+"a": "No."
+},
+{
+"q": "What do the amber double tick marks on the PFD speed tape represent?",
+"a": "VFE Next."
+},
+{
+"q": "What does a blank tuning letter next to a NAVAID on the ND mean?",
+"a": "The NAVAID is autotuned."
+},
+{
+"q": "What does the letter M next to a NAVAID on the ND mean?",
+"a": "Manually tuned in the RADNAV page of the MCDU."
+},
+{
+"q": "What does the letter R next to a NAVAID on the ND mean?",
+"a": "Physically tuned in the RMP."
+},
+{
+"q": "Does manually tuning a NAVAID affect the autotuning functions?",
+"a": "No."
+},
+{
+"q": "Why does the ECAM inhibit some warnings and cautions during takeoff?",
+"a": "To avoid unnecessary distraction."
+},
+{
+"q": "When does the takeoff ECAM inhibit apply?",
+"a": "From takeoff thrust until 1500 ft or 2 minutes after liftoff."
+},
+{
+"q": "What happens to inhibited alerts once above 1500 ft or 2 minutes after liftoff?",
+"a": "The inhibit is lifted and any inhibited alerts are displayed."
+},
+{
+"q": "Which E/WD message must be displayed for pushback?",
+"a": "N/WS DISC."
+},
+{
+"q": "What if N/WS DISC is not displayed but the ground crew says the pin is in?",
+"a": "Do not start the engine during pushback."
+},
+{
+"q": "What computes the GW and GW CG shown on the SD?",
+"a": "The FCMC, using the input ZFW and the actual position of the fuel."
+},
+{
+"q": "Where are GW and GW CG displayed?",
+"a": "In green on the bottom right of the SD."
+},
+{
+"q": "When is the GW CG displayed in red on the SD?",
+"a": "When the Flight Envelope portion of the FMGEC detects an out of limit CG."
+},
+{
+"q": "What are the white messages under MAINTENANCE on the STATUS page?",
+"a": "Class 2 Maintenance messages, requiring no action by the flight crew."
+},
+{
+"q": "What does the ECAM SWITCHING DMC knob select?",
+"a": "Which DMC supplies data to the E/WD and SD."
+},
+{
+"q": "With ECAM SWITCHING in AUTO, which DMC takes over if DMC 3 fails?",
+"a": "DMC 1."
+},
+{
+"q": "What does the ECAM/ND switch do?",
+"a": "Transfers the SD to either the Captains or First Officers ND."
+},
+{
+"q": "What does the ECAM/ND switch transfer if both the E/WD and SD display units have failed?",
+"a": "The E/WD to the ND."
+},
+{
+"q": "What does the EFIS DMC SWITCHING selector choose?",
+"a": "Which DMC supplies data to the respective PFD and ND."
+},
+{
+"q": "What does the Engine position of the EFIS mode select switch display?",
+"a": "The engine portion of the E/WD on the ND."
+},
+{
+"q": "What does the LS button display?",
+"a": "The localizer and glide slope scales on the PFD."
+},
+{
+"q": "For which approaches is the LS button used?",
+"a": "Only approaches utilizing a localizer: ILS, LOC, LDA."
+},
+{
+"q": "For which approaches must the LS button be off?",
+"a": "Approaches not utilizing a localizer: RNAV, VOR, NDB."
+},
+{
+"q": "What can a Display Unit (DU) failure look like?",
+"a": "Blank screen with amber \"Invalid Display Unit\", blank screen with amber \"F\", or a distorted display."
+},
+{
+"q": "Is a failed Display Unit recoverable?",
+"a": "No. The DU is not recoverable."
+},
+{
+"q": "Which displays does DMC 1 provide data to?",
+"a": "The Captains PFD and ND."
+},
+{
+"q": "Which displays does DMC 2 provide data to?",
+"a": "The First Officers PFD and ND."
+},
+{
+"q": "Which displays does DMC 3 provide data to?",
+"a": "The E/WD and SD."
+},
+{
+"q": "How does a DMC failure appear on the associated DUs?",
+"a": "\"Invalid Data\" in amber. The DUs can be recovered by switching DMC."
+},
+{
+"q": "What happens if the E/WD DU fails?",
+"a": "The data automatically switches to the SD."
+},
+{
+"q": "Does the SD automatically switch locations if its DU fails?",
+"a": "No."
+},
+{
+"q": "How can SD data be displayed after the SD DU fails?",
+"a": "ECAM/ND XFR to the Captains or FOs ND, or press and hold a systems button over the E/WD."
+},
+{
+"q": "Which DMCs can ECAM SWITCHING manually select as source for the E/WD and SD?",
+"a": "DMC 1 or 2."
+},
+{
+"q": "What does the TO CONFIG Pb simulate?",
+"a": "The application of takeoff power, to test if the aircraft is configured for takeoff."
+},
+{
+"q": "Which items does the TO CONFIG test check?",
+"a": "Slats/Flaps, Pitch Trim, Rudder Trim, Speed Brakes, Brake Temperatures, Doors."
+},
+{
+"q": "Which two monitored items are not checked by the TO CONFIG test?",
+"a": "Parking Brake and Thrust not set."
+},
+{
+"q": "What does EMER CANC do to a Warning?",
+"a": "Silences it while the failure continues and extinguishes Master Warning lights. The ECAM message remains."
+},
+{
+"q": "What does EMER CANC do to a Caution?",
+"a": "Cancels it for the remainder of the flight and brings up the Status page showing \"Cancelled Caution\"."
+},
+{
+"q": "How is a cancelled Caution restored?",
+"a": "Hold RCL for more than 3 seconds."
+},
+{
+"q": "In which cases would EMER CANC be used?",
+"a": "To move a MEL item ECAM off the Status page, or to cancel nuisance repeating on/off Cautions."
+},
+{
+"q": "Which ECAM control panel keys are hardwired and still function if the panel fails?",
+"a": "CLR, STS, RCL, EMER CNCL, ALL."
+},
+{
+"q": "When do the recorders start automatically?",
+"a": "On the ground for 5 minutes after power up, on the ground after first engine start, and in flight."
+},
+{
+"q": "How long do the recorders run automatically after power up on the ground?",
+"a": "5 minutes."
+},
+{
+"q": "What does the RCDR GND CTL Pb do?",
+"a": "Energizes the recorders during the preflight."
+},
+{
+"q": "Why is the CHRONO started at the beginning of the takeoff roll?",
+"a": "To allow monitoring of engine thrust limitations."
+},
+{
+"q": "What is the engine thrust time limit at 900° in normal operations?",
+"a": "5 minutes."
+},
+{
+"q": "What is the engine thrust time limit at 900° if an engine has failed?",
+"a": "10 minutes."
+}
+],
+"Landing Gear": [
+{
+"q": "How is the landing gear normally controlled and operated?",
+"a": "Electrically controlled and hydraulically operated using the green hydraulic system."
+},
+{
+"q": "How is the gear controlled and operated during gravity extension?",
+"a": "Electrically controlled and mechanically operated."
+},
+{
+"q": "Can the gear be retracted normally after gravity extension if green pressure is available?",
+"a": "Yes. Retract by normal methods after resetting the gravity extension switch."
+},
+{
+"q": "What must be done with the gravity extension switch before a normal retraction?",
+"a": "Move it to RESET, then to OFF."
+},
+{
+"q": "How many Landing Gear Control and Interface Units (LGCIUs) control the gear system?",
+"a": "Two."
+},
+{
+"q": "Which LGCIU powers the Landing Gear Indicator Panel next to the gear handle?",
+"a": "LGCIU 1."
+},
+{
+"q": "What does red UNLK on the Landing Gear Indicator Panel mean?",
+"a": "The gear is not in the selected position."
+},
+{
+"q": "What does a green triangle on the Landing Gear Indicator Panel mean?",
+"a": "The gear is down and locked."
+},
+{
+"q": "Which LGCIUs power the two triangles per gear on the SD WHEEL page?",
+"a": "Left triangle LGCIU 1, right triangle LGCIU 2."
+},
+{
+"q": "How many SD WHEEL page triangles per gear are needed to show down and locked?",
+"a": "Only one."
+},
+{
+"q": "When does the Red Arrow next to the landing gear handle come on?",
+"a": "At 750 ft RA if the gear is not downlocked with Flaps 2, 3, or FULL."
+},
+{
+"q": "What activates automatic braking?",
+"a": "Ground spoiler deployment."
+},
+{
+"q": "Below what speed will the autobrakes not engage during an RTO?",
+"a": "Below 72 kts, because the ground spoilers do not deploy until 72 kts."
+},
+{
+"q": "When do the autobrakes activate in LOW?",
+"a": "1 second after the ground spoilers deploy, following gear touchdown with Thrust Levers IDLE."
+},
+{
+"q": "When do the autobrakes activate in MED?",
+"a": "When the ground spoilers deploy, following gear touchdown with Thrust Levers IDLE."
+},
+{
+"q": "When during taxi may the autobrakes be armed to MAX?",
+"a": "Only after the flight control check."
+},
+{
+"q": "Why not arm autobrakes MAX before the flight control check?",
+"a": "The rising spoilers during the check could activate the autobrakes."
+},
+{
+"q": "What does the DECEL light on the autobrake Pbs mean?",
+"a": "Only that the aircraft is slowing at the programmed rate, not that the brakes are slowing it."
+},
+{
+"q": "What is the normal landing autobrake setting?",
+"a": "LOW."
+},
+{
+"q": "When should autobrakes MED be used?",
+"a": "For short or contaminated runways."
+},
+{
+"q": "When are autobrakes MAX used?",
+"a": "Only for takeoff."
+},
+{
+"q": "What is the normal position of the A/SKID and N/W STRG switch?",
+"a": "ON for normal operations."
+},
+{
+"q": "Which hydraulic system powers the brakes when A/SKID and N/W STRG is switched OFF?",
+"a": "The Blue system, switched over from the Green system."
+},
+{
+"q": "Is antiskid available with A/SKID and N/W STRG switched OFF?",
+"a": "No. Antiskid is deactivated."
+},
+{
+"q": "What happens to nosewheel steering when A/SKID and N/W STRG is switched OFF?",
+"a": "Nosewheel steering is lost."
+},
+{
+"q": "Where is braking pressure displayed when A/SKID and N/W STRG is switched OFF?",
+"a": "On the triple indicator."
+},
+{
+"q": "What second function does the A/SKID and N/W STRG switch serve?",
+"a": "A computer reset. Check the QRH reset table on 02.02E."
+},
+{
+"q": "How many different methods of braking does the aircraft have?",
+"a": "Four."
+},
+{
+"q": "Which hydraulic system powers normal brakes?",
+"a": "The Green system."
+},
+{
+"q": "Which hydraulic system powers alternate brakes, with or without A/SKID?",
+"a": "The Blue system."
+},
+{
+"q": "What powers the Parking Brake?",
+"a": "The Blue system and the Accumulator."
+},
+{
+"q": "What holds the aircraft when it is parked with the engines off?",
+"a": "Accumulator pressure."
+},
+{
+"q": "Why is Engine 1 normally started first?",
+"a": "The Blue hydraulic pump is on Engine 1. It recharges the accumulator and pressurizes the parking brake."
+},
+{
+"q": "What does the top scale of the triple indicator display?",
+"a": "Accumulator pressure."
+},
+{
+"q": "What does the amber scale on the top of the triple indicator indicate?",
+"a": "The forbidden range. Recharge the accumulator using the blue hydraulic system."
+},
+{
+"q": "Where must accumulator pressure read during preflight to ensure the Parking Brake holds the aircraft?",
+"a": "In the green band."
+},
+{
+"q": "What does the bottom scale of the triple indicator display?",
+"a": "Blue system pressure delivered to the brakes."
+},
+{
+"q": "What does the green band on the bottom scale of the triple indicator indicate?",
+"a": "The normal braking range."
+},
+{
+"q": "What positions can the Parking Brake valve take?",
+"a": "Open or closed only, there is no in between."
+},
+{
+"q": "Is brake pedal pressure required to set the Parking Brake?",
+"a": "No. No pressure on the brake pedals is required."
+},
+{
+"q": "How long can the accumulator hold the Parking Brake?",
+"a": "12 hours."
+},
+{
+"q": "What braking technique does the LOSS OF BRAKING memory item procedure call for?",
+"a": "Short and successive applications to stop the aircraft."
+},
+{
+"q": "How many full brake applications will the accumulator provide at least?",
+"a": "At least 7 full brake applications."
+},
+{
+"q": "Why delay braking to as low a speed as possible during a LOSS OF BRAKING?",
+"a": "To avoid tire burst."
+}
+],
+"Navigation": [
+{
+"q": "What does the ATT HDG switch allow?",
+"a": "IR 3 to replace IR 1 or IR 2."
+},
+{
+"q": "What is lost when an IR fails?",
+"a": "Attitude and heading information as well as the map."
+},
+{
+"q": "What does the AIR DATA switch allow?",
+"a": "ADR 3 to replace ADR 1 or ADR 2."
+},
+{
+"q": "What data is lost when an ADR fails?",
+"a": "Airspeed and altitude data."
+},
+{
+"q": "What does the FM switch allow?",
+"a": "Switching to the healthy FM in the event of FM failure."
+},
+{
+"q": "How can NAVAIDS be tuned in Back up Navigation after both FMs fail?",
+"a": "Using the Nav function on the RMPs."
+},
+{
+"q": "Which MCDU keys still function in Back up Navigation?",
+"a": "Only the corner keys (DIR, PROG, FPLN)."
+},
+{
+"q": "How must the crew navigate in Back up Navigation?",
+"a": "Use HDG/TRACK. NAV mode is inoperative."
+},
+{
+"q": "Does the MCDU retain the flight plan after both FMs fail?",
+"a": "Yes. The MCDU continuously memorizes the flight plan."
+},
+{
+"q": "Do the radios still function in Back up Navigation?",
+"a": "Yes. Radios still function normally."
+},
+{
+"q": "What does the AUDIO switch allow?",
+"a": "The Captain or FO to utilize ACP 3 in case of ACP 1 or 2 failure."
+},
+{
+"q": "Which ADIRS rotary switch position is used for normal operations?",
+"a": "NAV."
+},
+{
+"q": "What does the ADIRS rotary switch ATT position provide?",
+"a": "Only attitude and heading information."
+},
+{
+"q": "How often must the heading be updated through the MCDU in ATT mode?",
+"a": "Every 10 minutes."
+},
+{
+"q": "What does the ADIRS rotary switch OFF position do?",
+"a": "Shuts off the entire ADIRU (both IR and ADR)."
+},
+{
+"q": "How can the IR and ADR be turned off separately?",
+"a": "Using their associated Pb's."
+},
+{
+"q": "What does a flashing IR fault indicate?",
+"a": "Attitude and heading information can be recovered in ATT mode."
+},
+{
+"q": "What does a solid IR fault indicate?",
+"a": "The IR has failed."
+},
+{
+"q": "How many types of ADIRS alignment are there?",
+"a": "Two, Quick Alignment and Full Alignment."
+},
+{
+"q": "What does a Quick Alignment clear?",
+"a": "Only the groundspeed."
+},
+{
+"q": "How long does a Quick Alignment take?",
+"a": "30 seconds."
+},
+{
+"q": "When is a Quick Alignment used?",
+"a": "When a full alignment is not required."
+},
+{
+"q": "What does a Full Alignment clear?",
+"a": "Groundspeed and drift. It also captures present position."
+},
+{
+"q": "How long does a Full Alignment take?",
+"a": "7 to 10 minutes."
+},
+{
+"q": "Why are the ADIRS left on when leaving the aircraft?",
+"a": "They provide fuel system information to calculate fuel density during fueling."
+},
+{
+"q": "Is an ADIRS alignment during preflight acceptable while fueling?",
+"a": "Yes. It is the normal procedure."
+},
+{
+"q": "With IRS only navigation in RNP 10 airspace, what is the time limit from the IRS ground alignment?",
+"a": "Less than 6.2 hours outside radio navaid coverage."
+},
+{
+"q": "With IRS only navigation in RNP 10 airspace, what is the time limit from the last FM position update?",
+"a": "Less than 5.7 hours outside radio navaid coverage."
+},
+{
+"q": "Why does the ON BAT light illuminate momentarily when turning the ADIRS on?",
+"a": "It is an internal power check using the aircraft batteries."
+},
+{
+"q": "What indicates the ADIRS are using the aircraft batteries for power?",
+"a": "A horn sounds in the nose wheel well, the same horn as the APU fire horn."
+},
+{
+"q": "What is the Mix IRS position?",
+"a": "Each FMGEC's average of the 3 IRS provided positions."
+},
+{
+"q": "How does the Mix IRS treat one IRS position with a dramatic difference?",
+"a": "It is factored in less than the other two."
+},
+{
+"q": "What is the bias in the GPIRS position computation?",
+"a": "The difference between the MIX IRS position and the GPIRS position, compared by each FMGEC."
+},
+{
+"q": "How does the system handle the bias?",
+"a": "It is constantly memorized by the system."
+},
+{
+"q": "What does the system do if radio or GPIRS data is lost?",
+"a": "Adjusts the MIX IRS position using the bias and navigates on it until data is restored."
+},
+{
+"q": "Which IR can replace IR 1 or IR 2 using the ATT HDG switch?",
+"a": "IR 3."
+},
+{
+"q": "Which ADR can replace ADR 1 or ADR 2 using the AIR DATA switch?",
+"a": "ADR 3."
+},
+{
+"q": "Is NAV mode available in Back up Navigation after both FMs fail?",
+"a": "No. NAV mode is inoperative, use HDG/TRACK to navigate."
+},
+{
+"q": "Which ACP does the AUDIO switch give the Captain or FO?",
+"a": "ACP 3, in case of ACP 1 or 2 failure."
+},
+{
+"q": "What does GPWS SYS Off inhibit?",
+"a": "Basic GPWS Modes 1-5. It does not affect the terrain function."
+},
+{
+"q": "What information does the GPWS TERR function use?",
+"a": "Database terrain information, operating independently of the Basic modes 1-5."
+},
+{
+"q": "When would TERR be selected off?",
+"a": "Due to NOTAM, or runway/airport not in the database."
+},
+{
+"q": "When should GPWS G/S Mode be turned off?",
+"a": "Only due to a failure, glideslope signal unreliable."
+},
+{
+"q": "When should GPWS Flap Mode be turned off?",
+"a": "Only during failures requiring landing with Flaps 0-2."
+},
+{
+"q": "Why is Flap Mode off not required for a single engine landing?",
+"a": "FLAPS 3 can be selected on the MCDU."
+},
+{
+"q": "What does the PULL UP/GPWS Pb on the forward panel do?",
+"a": "Temporarily inhibits the glideslope MODE 5 alert."
+}
+],
+"APU": [
+{
+"q": "What action is required if LOW OIL LEVEL is displayed on the APU SD page before a ground start?",
+"a": "Advise Maintenance."
+},
+{
+"q": "How long can the APU operate after LOW OIL LEVEL is displayed?",
+"a": "15 hours."
+},
+{
+"q": "What is the APU starter limit?",
+"a": "3 starts then a 60-minute cooldown."
+},
+{
+"q": "Can APU bleed be used for Wing Anti-Ice?",
+"a": "No. It is not permitted."
+},
+{
+"q": "What is the APU start limit altitude?",
+"a": "41450 ft."
+},
+{
+"q": "What is the maximum altitude for APU electrical use?",
+"a": "41450 ft."
+},
+{
+"q": "What is the maximum altitude for an APU start using batteries?",
+"a": "25000 ft."
+},
+{
+"q": "What is the maximum altitude for APU electrical use plus APU bleed for 1 pack?",
+"a": "22500 ft."
+},
+{
+"q": "What is the maximum altitude for engine start using APU bleed?",
+"a": "20000 ft."
+},
+{
+"q": "What is the maximum altitude for APU electrical use plus APU bleed for 2 packs?",
+"a": "17500 ft."
+},
+{
+"q": "From where can the APU be shut down outside the aircraft?",
+"a": "Two locations, the Refueling Panel and the External Power Panel."
+},
+{
+"q": "What controls all the APU logic?",
+"a": "The Electronic Control Box (ECB)."
+},
+{
+"q": "What does an APU MASTER Switch Fault mean?",
+"a": "An automatic shutdown has occurred."
+},
+{
+"q": "What does resetting the APU MASTER Switch reset?",
+"a": "The ECB."
+},
+{
+"q": "What happens when the APU MASTER Switch is selected ON?",
+"a": "The APU page is called on the SD and the APU intake flap opens."
+},
+{
+"q": "When does the APU START switch engage the starter?",
+"a": "When the air intake is fully open with the Master Switch ON."
+},
+{
+"q": "What does the APU AVAIL light mean?",
+"a": "The APU is available for Electric and/or Air."
+},
+{
+"q": "From which 3 places is the APU supplied fuel through the trim tank transfer line?",
+"a": "Left Inner Collector Tank, Trim Pipe, Trim Tank, depending on phase of flight."
+},
+{
+"q": "What must be maintained in the trim tank transfer line for the APU to function?",
+"a": "Fuel."
+},
+{
+"q": "How is the APU shut down from the cockpit panel?",
+"a": "Turn the MASTER Switch off."
+},
+{
+"q": "What does the AVAIL light do during APU cool down?",
+"a": "It remains on."
+},
+{
+"q": "How long can APU cool down take after the MASTER Switch is turned off?",
+"a": "Up to 2 minutes."
+},
+{
+"q": "When does the ECB command an automatic APU shutdown in the air?",
+"a": "Overspeed and certain critical ECB failures."
+},
+{
+"q": "In the air, what causes the ECB to command an automatic APU shutdown?",
+"a": "Overspeed and certain critical ECB failures."
+}
+],
+"Power Plant": [
+{
+"q": "What is the active range of the Autothrust in normal operations?",
+"a": "From IDLE to CLIMB detents."
+},
+{
+"q": "What is the active range of the Autothrust in single engine operations?",
+"a": "From IDLE to MCT detents."
+},
+{
+"q": "What does MAN START provide?",
+"a": "An alternate method of engine start."
+},
+{
+"q": "What should pilots follow when a Manual Start is required?",
+"a": "The Supplementary Procedures."
+},
+{
+"q": "Are Start Fault protections available during a Manual Start?",
+"a": "No. The pilots must manually abort a start if there is an issue."
+},
+{
+"q": "When is N1 Rated or N1 Degraded mode triggered?",
+"a": "When EPR cannot be computed by the FADEC."
+},
+{
+"q": "What determines whether N1 Rated or N1 Degraded mode is triggered?",
+"a": "Which inputs to the FADEC have failed."
+},
+{
+"q": "What do the N1 Mode Pb's allow if only one engine is affected?",
+"a": "Both engines selected to N1 mode to maintain similar thrust settings."
+},
+{
+"q": "What parameter controls the engine when N1 Mode is active?",
+"a": "N1, not EPR."
+},
+{
+"q": "Is A/THR available when N1 Mode is active?",
+"a": "No. It is lost but can be regained if only one engine is in degraded mode."
+},
+{
+"q": "When is Alpha Floor lost in N1 Mode?",
+"a": "When both engines are in degraded mode."
+},
+{
+"q": "Are Flex takeoffs allowed when dispatched in N1 mode?",
+"a": "No. Flex takeoffs are prohibited."
+},
+{
+"q": "How many levels of N1 mode are there?",
+"a": "Two, N1 Rated Mode and N1 Degraded Mode."
+},
+{
+"q": "What does the FADEC display in N1 Rated Mode?",
+"a": "N1 limits on the upper right of the E/WD. Normal engine protections still provided."
+},
+{
+"q": "What limits are provided in N1 Degraded Mode?",
+"a": "None on the E/WD. The FADEC computes a N1 red line."
+},
+{
+"q": "What does the N1 Degraded Mode red line represent?",
+"a": "The full forward position of the Thrust Lever."
+},
+{
+"q": "Is the N1 Degraded Mode red line within the actual N1 limit?",
+"a": "No. It is beyond the actual N1 limit and can also exceed EGT limits."
+},
+{
+"q": "With one engine in degraded mode, what does selecting the other engine's N1 Mode Pb do?",
+"a": "Puts it in rated mode. The displayed rated mode limits can be used for both engines."
+},
+{
+"q": "Which chart is used when operating in N1 Degraded Mode?",
+"a": "The N1 Mode Thrust Control chart in the FCOM (PER-THR-N1)."
+},
+{
+"q": "What does the Engine Master Switch initiate with the ENG START selector at IGN/START?",
+"a": "The automatic start sequence."
+},
+{
+"q": "What must be set before the Engine Master Switch initiates a manual start sequence?",
+"a": "ENG START selector at IGN/START and ENG MAN START Pb selected ON."
+},
+{
+"q": "What three effects does selecting IGN/START on the ENG START selector have?",
+"a": "Brings up the Engine page on the SD, powers the FADEC, closes the Pack Flow Control Valves."
+},
+{
+"q": "What happens to the Pack Flow Control Valves when IGN/START is selected?",
+"a": "They close."
+},
+{
+"q": "What does FADEC stand for?",
+"a": "Full Authority Digital Engine Control."
+},
+{
+"q": "How many Pbs on the Maintenance Panel provide power to the FADECs on the ground?",
+"a": "2."
+},
+{
+"q": "Besides the Maintenance Panel Pbs, what else powers the FADECs?",
+"a": "Selecting IGN/START on the ENG START selector."
+},
+{
+"q": "What happens to the Pack valves when FADECs are powered by IGN/START?",
+"a": "They close, then reopen when selected back to NORM."
+},
+{
+"q": "Why are the FADECs energized during preflight?",
+"a": "To check the Engine oil level."
+},
+{
+"q": "What is the minimum engine oil quantity required?",
+"a": "15 qts, or 6 qts plus estimated consumption (0.7 qt/h), whichever is higher."
+},
+{
+"q": "What engine oil consumption rate is used for the estimate?",
+"a": "0.7 qt/h."
+},
+{
+"q": "Do the FADECs rely on aircraft power to continue operating?",
+"a": "No. They have their own magnetic alternators."
+}
+]
+}
