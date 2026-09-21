@@ -700,7 +700,7 @@ function buildFullList(){
     items.forEach((it, i)=>{
       const gh = grpHeader(items, i);
       if(gh){ const gl = document.createElement("li"); gl.style.listStyle = "none"; gl.style.marginLeft = "-22px"; gl.innerHTML = gh; ol.appendChild(gl); }
-      const li = document.createElement("li");
+      const li = document.createElement("li"); li.value = i+1;
       const head = document.createElement("div");
       head.className = "fl-item" + (it.g ? " gitem" : "");
       if(it.gc) head.style.setProperty("--gc", it.gc);
@@ -778,7 +778,7 @@ render();
 Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
 }).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 2.2</div></footer>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 2.3</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

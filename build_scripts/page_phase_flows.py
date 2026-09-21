@@ -132,6 +132,15 @@ def transform(t):
     # ---- (d) approach-type toggle: A330 FCOM set, same markup and CSS
     t = t.replace('<button data-a="IAN">IAN</button>', '<button data-a="RNP">RNP&nbsp;APCH</button>', 1)
     t = t.replace('<button data-a="RNPAR">RNP&nbsp;AR</button>', '<button data-a="NPA">NPA</button>', 1)
+
+    # ---- (e) memorization sections (2026-09-21): a section with mem:true (resection_cockpit_prep.py)
+    #      paints its card header in the section color instead of only the left stripe
+    a = 'sections:p.sections.map(s=>S(s.h,s.c,s.items.map(__mk),s.cite,s.appr))}));'
+    assert t.count(a) == 1, 'phase_flows: sections map anchor missing'
+    t = t.replace(a, 'sections:p.sections.map(s=>Object.assign(S(s.h,s.c,s.items.map(__mk),s.cite,s.appr),s.mem?{mem:true}:{}))}));')
+    a = '<div class="ch" style="--ec:${sec.c}">'
+    assert t.count(a) == 2, 'phase_flows: card header anchor count'
+    t = t.replace(a, '<div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}">')
     return t
 
 if __name__ == '__main__':

@@ -6,6 +6,9 @@ EDITS={
  'ioe.html':[
   ('"ioe.html","ioe_questions.json","A330_OE_Workbook_Answered.pdf"','"ioe.html","data/oe.json","A330_OE_Workbook_Answered.pdf"'),
   ('ioe_questions.json is missing from the repo root.','data/oe.json is missing from the repo.'),
+  # Original (unanswered) workbook beside the answered PDF (Ryan, 2026-09-21); opens the Drive copy, the PDF stays out of the public repo
+  ('<a class="btn" id="pdfLink" href="view.html?f=A330_OE_Workbook_Answered.pdf">Full Workbook PDF</a>',
+   '<span style="display:flex;gap:8px;flex-wrap:wrap;"><a class="btn" id="pdfLink" href="view.html?f=A330_OE_Workbook_Answered.pdf">Full Workbook PDF</a><a class="btn" id="origLink" href="https://drive.google.com/file/d/1BLAJs8MJVA_zCMZk-utQj4FKVf1985Et/view" target="_blank" rel="noopener" title="787/A321/A330 Fleets OE Workbook, Version 2, January 2026 (unanswered original, Drive)">Original OE Workbook</a></span>'),
   ('from the company manuals (FOM, FCOM, QRH, FCTM, MEL) or, where those are silent, FAA and Jeppesen material.','from the company manuals (FOM, FCOM, QRH, FCTM, PRC).'),
  ],
  'triggers.html':[
@@ -15,6 +18,8 @@ EDITS={
  ],
  'flows_quiz.html':[
   ('let seat = "CA"','let seat = "FO"'),   # Ryan flies the FO seat; the first flow is CM2-only
+  # "How to memorize" button in the header bar, linking the memorization plan page (Ryan, 2026-09-18)
+  ('A330 FLOWS TRAINER</span></div>','A330 FLOWS TRAINER</span><a href="flow_memorization.html" style="margin-left:auto;background:#463C8F;color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:6px;border:1px solid #CE0C88;white-space:nowrap;">How to memorize</a></div>'),
   # Audit 2026-09-16: the checklist-named flow title is longer than the B787 one and ran under the
   # prev / end / restart buttons on a phone. Reserve their width beside the title.
   ('  .tag{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;}',
@@ -120,8 +125,7 @@ EDITS={
   ('Open 1-page handout (PDF)','Open 2-page handout (PDF)'),
  ],
  'index.html':[
-    # Systems Quiz hidden until its bank is approved (Ryan, 2026-09-16). Podcast unhidden 2026-09-16 with episodes 1-3.
-  ('  <a href="systems_quiz.html"><span>Systems Quiz','  <a hidden href="systems_quiz.html"><span>Systems Quiz'),
+    # Systems Quiz was hidden until its bank was approved (Ryan, 2026-09-16); unhidden 2026-09-21 with the REV1 bank.
   ('  .menu a.podcast{background:#FDF1F8;}','  .menu a.podcast{background:#FDF1F8;}\n  .menu a[hidden]{display:none;}'),
   # One login only (Ryan, 2026-09-16): Cloudflare Access already checked the company email at the site
   # gate, so the home page reads the identity Access holds (same-origin /cdn-cgi/access/get-identity),

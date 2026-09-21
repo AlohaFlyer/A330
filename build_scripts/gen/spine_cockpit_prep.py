@@ -45,7 +45,7 @@ def tag(it, g):
 items = []
 # ---- Turn it OFF (4)
 eng = pick(prelim, 'ENG 1, 2 MASTERS LEVERS'); eng['item'] = 'ENG 1, 2 MASTERS LEVERS · ENG START selector'; eng['act'] = 'OFF · NORM'
-eng['d'] += '\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector ...... NORM CM2'
+eng['d'] += '\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector......NORM CM2'
 items.append(tag(eng, 'OFF'))
 items.append(tag(pick(prelim, 'WXR/PWS sw'), 'OFF'))
 items.append(tag(pick(prelim, 'L/G lever'), 'OFF'))
@@ -55,7 +55,7 @@ bat = pick(prelim, 'BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw'); bat['item'] = 
 items.append(tag(bat, 'ON'))
 items.append(tag(pick(prelim, 'RMP 1 and 2'), 'ON'))
 fire = pick(prelim, 'APU FIRE TEST pb'); fire['item'] = 'APU FIRE pb-sw · TEST'; fire['act'] = 'CHECK IN and GUARDED · PRESS and MAINTAIN'
-fire['d'] = '[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw ...... CHECK IN and GUARDED CM2\n' + fire['d']
+fire['d'] = '[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw......CHECK IN and GUARDED CM2\n' + fire['d']
 items.append(tag(fire, 'ON'))
 apu = pick(prelim, 'APU START pb-sw'); bleed = pick(prelim, 'APU BLEED pb-sw')
 apu['item'] = 'APU START · APU BLEED'; apu['act'] = 'ON · ON when AVAIL'; apu['d'] = apu['d'] + '\n' + bleed['d']

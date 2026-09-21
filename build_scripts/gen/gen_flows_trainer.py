@@ -524,3 +524,7 @@ print('flows', len(FLOWS), 'items', n_items, 'xrefs', len(XREFS), 'checklists', 
 print('xref tokens found', len(found), 'resolved', len([t for t in found if t in XREFS]), 'unresolved', unresolved)
 for k, x in XREFS.items(): print(f"  {k:32s} -> {x['title']} (PDF p. {x['page']}, {len(x['body'])} chars)")
 for g in gaps: print('GAP:', g)
+
+# 2026-09-21: apply Ryan's memorization re-cut on top of the generated shapes (idempotent)
+import subprocess
+subprocess.run([sys.executable, os.path.join(HERE, 'spine_cockpit_prep.py')], check=True)

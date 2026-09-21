@@ -1142,3 +1142,7 @@ json.dump(OUT, open(os.path.join(WORK, 'data', 'phase_flows.json'), 'w', encodin
 n = sum(len(s['items']) for p in PH for s in p['sections'])
 print('phases', len(PH), 'items', n, 'checklists', len(CHECKLISTS), 'notes', len(NOTES))
 print('limitations without a literal quote (answer only):', len(LIM_DROPPED), LIM_DROPPED)
+
+# 2026-09-21: apply Ryan's memorization re-cut on top of the generated shapes (idempotent)
+import subprocess
+subprocess.run([sys.executable, os.path.join(HERE, 'resection_cockpit_prep.py')], check=True)

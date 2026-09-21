@@ -113,3 +113,9 @@ Hidden-until-built tiles and buttons (Ryan, 2026-09-16): Systems Quiz (no bank),
 
 - .menu a[hidden]
 - .navbtn[hidden]
+
+Memorization groups (Ryan, 2026-09-21): flows_quiz.html renders g / gc / gb item fields and a flow's `groups` (legend, colored group headers, per-group step counter); phase_flows.html paints a section header in its color when the section carries mem:true. Data re-cut by build_scripts/gen/spine_cockpit_prep.py and resection_cockpit_prep.py, chained after the generators.
+
+- .grp, .grpq, .grplegend, .step.gstep, .fl-item.gitem
+- grpInfo / grpHeader / grpLegend
+- ioe.html #origLink (Original OE Workbook, Drive link)

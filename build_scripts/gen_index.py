@@ -8,19 +8,20 @@ def n(p):
         j=json.load(open(p,encoding='utf-8')); return len(j) if isinstance(j,list) else len(j.get('docs') or j.get('phases') or j)
     except Exception: return 0
 M=json.load(open('manuals.json')); fr=M['A330P_FCOM']['revision']
-lim=json.load(open('data/limitations_drill.json')); mem=[x for x in lim if x['mem']]
+lim=[x for x in json.load(open('data/limitations_drill.json')) if x.get('fleet') in ('pax','both')]; mem=[x for x in lim if x['mem']]  # PAX counts; freighter limits sit behind a toggle
 mi=n('data/memory_items_drill.json'); fl=n('data/flows.json')
+ft=len(json.load(open('data/flows_trainer.json'))['FLOWS']) if os.path.exists('data/flows_trainer.json') else fl
 sysq=n('data/systems.json') if os.path.exists('data/systems.json') else 0
 eps=n('data/episodes.json') if os.path.exists('data/episodes.json') else 0
 SUB={
  'phase_flows.html':'Interactive flows, callouts, checklists, memory items &amp; limitations',
  'ioe.html':'Fleets OE Workbook, A330 sections - short cards, answer on tap, citation and verbatim quote behind Source',
- 'flows_quiz.html':f'Gate to gate, {fl} flows, sequence drill and poster',
+ 'flows_quiz.html':f'Gate to gate, {ft} flows, the CM2 cockpit prep spine in 10 colored groups, sequence drill and poster',
  'mcdu_preflight.html':f'FCOM {fr} PRO-NOR-SOP page-flow spine + 1-page PDF handout',
  'triggers.html':'Event &rarr; flow &rarr; checklist: gate-to-gate trigger drill, approach setup, go-around brief, checklist order',
  'limitations.html':f'FCOM {fr} LIM - {len(mem)} know-cold limitations drill, {len(lim)} in the bank',
  'memory-items.html':f'FCOM {fr} [MEM] procedures - all {mi}, verbatim recall',
- 'systems_quiz.html':(f'{sysq:,} questions, vetted against current manuals' if sysq else 'Engine live - question bank lands when the training bank is supplied'),
+ 'systems_quiz.html':(f'{sysq:,} questions from the A330 System Operational Knowledge Guide Rev 1, 14 ATA systems, guide wording and DSC reference behind Source, Jeopardy game inside' if sysq else 'Engine live - question bank lands when the training bank is supplied'),
  'fom_quiz.html':'Flight Operations Manual, chapter by chapter, each question with its FOM source citation',
  'weather.html':'FOM weather and alternate planning, vetted, with 1-page PDF handout',
  'podcast.html':(f'Learn-by-banter A330 podcast with Pualani, Chester &amp; Otto - all {eps} episodes' if eps else 'Learn-by-banter A330 podcast with Pualani, Chester &amp; Otto - first episodes coming'),
@@ -35,6 +36,9 @@ import base64
 _logo='data:image/png;base64,'+base64.b64encode(open('assets/hawaiian_logo.png','rb').read()).decode()
 t=re.sub(r'<img src="data:image/png;base64,[A-Za-z0-9+/=]+" alt="Hawaiian Airlines">', lambda m: '<img src="'+_logo+'" alt="Hawaiian Airlines">', t)
 t=t.replace('href="/favicon.ico"','href="/assets/icons/favicon.ico"').replace('href="/favicon-32x32.png"','href="/assets/icons/icon-32.png"').replace('href="/favicon-16x16.png"','href="/assets/icons/icon-16.png"').replace('href="/apple-touch-icon.png"','href="/assets/icons/icon-180.png"')
+# Flow Memorization Plan tile directly under the Flows Trainer (Ryan, 2026-09-18)
+if 'href="flow_memorization.html"' not in t:
+    t=re.sub(r'(  <a href="flows_quiz.html">.*?</a>\n)', lambda m: m.group(1)+'  <a href="flow_memorization.html"><span>Flow Memorization Plan<small>How to actually learn the big ground flows - gates, the spiral, A-DIFSRIPP, and the practice protocol</small></span><span class="arrow">&#9654;</span></a>\n', t, count=1)
 # Manuals tile, directly above the ALPA tile, same tint class (no new CSS)
 if 'href="manuals/"' not in t:
     t=t.replace('  <a class="alpa" href="pwa.html">', '  <a class="alpa" href="manuals/"><span>Manuals<small>FCOM, QRH, FCTM, FOM, MEL, AFM, PRC - search every manual at once, ask Pualani, company email login</small></span><span class="arrow">&#9654;</span></a>\n  <a class="alpa" href="pwa.html">',1)

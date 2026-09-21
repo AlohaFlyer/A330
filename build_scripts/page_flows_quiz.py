@@ -123,5 +123,47 @@ t, _n = re.subn(r'<img src="data:image/png;base64,[A-Za-z0-9+/=]+" alt="Hawaiian
 assert _n == 1, 'banner logo miss'
 
 assert 'B787' not in t and '787' not in t.replace('assets/A330_hero.svg', ''), 'Boeing string survived'
+
+# 8. memorization groups (2026-09-21): items may carry g (group label), gc (color) and gb (branch), and a
+#    flow may carry `groups`. The drill shows a group legend under the who line, a colored header where a
+#    group starts in the done list and in the full list, and "GROUP · k of n" above the step question.
+#    Data comes from build_scripts/gen/spine_cockpit_prep.py; flows without g render exactly as before.
+sub1('  .strgbadge{display:block;color:#d9534f;font-weight:700;font-size:12px;margin:3px 0 6px;}',
+     '  .strgbadge{display:block;color:#d9534f;font-weight:700;font-size:12px;margin:3px 0 6px;}\n'
+     '  .grp{display:block;margin:10px 0 4px;padding:3px 10px;border-radius:12px;color:#fff;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;width:max-content;max-width:100%;box-sizing:border-box;}\n'
+     '  .grp small{font-weight:600;letter-spacing:0;text-transform:none;opacity:.9;margin-left:6px;}\n'
+     '  .grpq{display:block;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}\n'
+     '  .done .step.gstep{border-left:4px solid var(--gc,#ccc);padding-left:8px;margin-left:0;}\n'
+     '  .fl-item.gitem{border-left:4px solid var(--gc,#ccc);padding-left:8px;}\n'
+     '  .grplegend{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px;} .grplegend span{font-size:10.5px;font-weight:700;color:#fff;padding:2px 9px;border-radius:10px;letter-spacing:.5px;}')
+sub1('function render(){\n  syncPhaseUI();', r"""function grpInfo(items, i){
+  // position of item i inside its group, counting only the items active for this seat/duty
+  const g = items[i].g; if(!g) return null;
+  let n=0, k=0;
+  for(let j=0;j<items.length;j++){ if(items[j].g===g){ n++; if(j===i) k=n; } }
+  return {g:g, gc:items[i].gc||"#463C8F", gb:items[i].gb||"", k:k, n:n};
+}
+function grpHeader(items, i, cls){
+  const gi = grpInfo(items, i); if(!gi) return "";
+  if(i>0 && items[i-1].g===gi.g) return "";
+  return "<span class=\"" + (cls||"grp") + "\" style=\"background:" + gi.gc + "\">" + (gi.gb ? gi.gb + " · " : "") + gi.g + " <small>" + gi.n + "</small></span>";
+}
+function grpLegend(f){
+  if(!f.groups) return "";
+  const items = activeItems(f);
+  return "<div class=\"grplegend\">" + f.groups.map(g=>{ const n = items.filter(it=>it.g===g.g).length; return n ? "<span style=\"background:"+g.gc+"\">"+(g.gb?g.gb+" · ":"")+g.g+" "+n+"</span>" : ""; }).join("") + "</div>";
+}
+function render(){
+  syncPhaseUI();""")
+sub1('(f.trig ? "<div class=\\"trigbadge\\">\\ud83d\\udd36 Triggered by: " + f.trig + "</div>" : "");\n  \n  if(items.length===0){',
+     '(f.trig ? "<div class=\\"trigbadge\\">\\ud83d\\udd36 Triggered by: " + f.trig + "</div>" : "") + grpLegend(f);\n  \n  if(items.length===0){')
+sub1('    const s = document.createElement("span");\n    s.className = "step";\n    s.style.cursor = "pointer";\n    s.title = "Tap to view FCOM detail";\n    s.innerHTML = (i+1) + ". " +',
+     '    const gh = grpHeader(items, i); if(gh){ const g = document.createElement("span"); g.innerHTML = gh; doneDiv.appendChild(g.firstChild); }\n    const s = document.createElement("span");\n    s.className = "step" + (items[i].g ? " gstep" : "");\n    if(items[i].gc) s.style.setProperty("--gc", items[i].gc);\n    s.style.cursor = "pointer";\n    s.title = "Tap to view FCOM detail";\n    s.innerHTML = (i+1) + ". " +')
+sub1('    document.getElementById("q").textContent = "Step " + (stepIdx+1) + " of " + items.length + "... ?";\n    document.getElementById("a").innerHTML = (items[stepIdx].lt',
+     '    const gi = grpInfo(items, stepIdx);\n    document.getElementById("q").innerHTML = (gi ? "<span class=\\"grpq\\" style=\\"color:" + gi.gc + "\\">" + (gi.gb ? gi.gb + " · " : "") + gi.g + " · " + gi.k + " of " + gi.n + "</span>" : "") + "Step " + (stepIdx+1) + " of " + items.length + "... ?";\n    document.getElementById("a").innerHTML = (items[stepIdx].lt')
+sub1('    items.forEach(it=>{\n      const li = document.createElement("li");\n      const head = document.createElement("div");\n      head.className = "fl-item";',
+     '    items.forEach((it, i)=>{\n      const gh = grpHeader(items, i);\n      if(gh){ const gl = document.createElement("li"); gl.style.listStyle = "none"; gl.style.marginLeft = "-22px"; gl.innerHTML = gh; ol.appendChild(gl); }\n      const li = document.createElement("li"); li.value = i+1;\n      const head = document.createElement("div");\n      head.className = "fl-item" + (it.g ? " gitem" : "");\n      if(it.gc) head.style.setProperty("--gc", it.gc);')
+sub1('Object.assign(window,{activeItems,', 'Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend,')
+
 open(PAGE, 'w', encoding='utf-8').write(t)
 print('page_flows_quiz: wrote', PAGE, len(t), 'bytes; window exports:', ', '.join(funcs))

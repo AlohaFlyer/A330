@@ -54,7 +54,7 @@
 "role": "FO",
 "x": 149.8,
 "y": 362.9,
-"d": "[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG 1, 2 MASTERS LEVERS......OFF CM2\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector ...... NORM CM2",
+"d": "[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG 1, 2 MASTERS LEVERS......OFF CM2\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector......NORM CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
 "gb": ""
@@ -120,7 +120,7 @@
 "role": "FO",
 "x": 108.1,
 "y": 109.4,
-"d": "[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw ...... CHECK IN and GUARDED CM2\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE TEST pb ......PRESS and MAINTAIN CM2\nCheck that the APU fire detection and extinguishing system is operative:\n‐ APU FIRE warning on (if AC power available):\n‐ ECAM\n‐ CRC\n‐ MASTER WARN light.\n‐ APU FIRE pb-sw lighted red (lighted partially if AC power not available)\n‐ SQUIB light and DISCH light on.",
+"d": "[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw......CHECK IN and GUARDED CM2\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE TEST pb ......PRESS and MAINTAIN CM2\nCheck that the APU fire detection and extinguishing system is operative:\n‐ APU FIRE warning on (if AC power available):\n‐ ECAM\n‐ CRC\n‐ MASTER WARN light.\n‐ APU FIRE pb-sw lighted red (lighted partially if AC power not available)\n‐ SQUIB light and DISCH light on.",
 "g": "Turn it ON",
 "gc": "#00805E",
 "gb": ""
