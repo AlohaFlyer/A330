@@ -29,9 +29,9 @@ setup = [take('EFB start'), take('LOGBOOK'), take('OEB'), take('Jeppesen'), take
 box = [take('ACARS'), take('Preliminary takeoff perf')]
 for it in box: it['r'] = 'PF'
 pre['sections'] = [pre['sections'][0],
-    S('TURN IT OFF · 4', C['OFF'], [note] + off),
-    S('TURN IT ON · 7', C['ON'], on),
-    S('SET IT UP · 4', C['SET'], setup),
+    S('CM2 · TURN IT OFF · 4', C['OFF'], [note] + off),
+    S('CM2 · TURN IT ON · 7', C['ON'], on),
+    S('CM2 · SET IT UP · 4', C['SET'], setup),
     S('PF · BOX START · 2', C['BOX'], box)]
 # ---- Before Walkaround: split the merged boxes into the ten card items
 w = walk['items']
@@ -62,7 +62,7 @@ prep['sections'] = [S('PF · PANELS · 3', C['PAN'], panels, cite6),
     S('BOX BUILD AND CHECK · 4', C['BUILD'], build, cite6),
     S('PF · 2 CHECKS', C['PF2'], pf2, cite6),
     S('PM · 3 CHECKS', C['PM3'], pm3, cite6),
-    S('LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + prep['sections'][1:]
+    S('LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + [x for x in prep['sections'][1:] if not x['h'].startswith('EXTERIOR LIGHTS')]  # lights card dropped from Cockpit Prep (Ryan, 2026-09-21)
 D['meta']['resectioned'] = '2026-09-21 cockpit prep memorization groups (spine_cockpit_prep.py colors)'
 json.dump(D, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('re-sectioned:', [(s['h'], len(s['items'])) for s in pre['sections'] + prep['sections']])

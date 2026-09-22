@@ -57,7 +57,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG 1, 2 MASTERS LEVERS......OFF CM2\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector......NORM CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "WXR/PWS sw",
@@ -68,7 +68,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-A-00011881.0009001 · WEATHER RADAR:]\n• * WXR/PWS sw......OFF CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "L/G lever",
@@ -79,7 +79,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-A-00010898.0001001 · L/G:]\n• L/G lever...... DOWN CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "Both WIPER selectors",
@@ -90,7 +90,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-A-00010899.0001001 · WIPERS:]\n• Both WIPER selectors......OFF CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "BATTERIES check / ELEC",
@@ -101,7 +101,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00010900.0002001:]\n• BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw......AUTO CM2\n[Card vs FCOM:] the quick reference card prints 'ELEC, Bat ON'; the FCOM step is the line quoted above.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "RMP 1 and 2",
@@ -112,7 +112,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-C-00025222.0001001 · RMP:]\n• RMP 1 and 2...... CHECK ON CM2",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "APU FIRE pb-sw · TEST",
@@ -123,7 +123,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw......CHECK IN and GUARDED CM2\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE TEST pb ......PRESS and MAINTAIN CM2\nCheck that the APU fire detection and extinguishing system is operative:\n‐ APU FIRE warning on (if AC power available):\n‐ ECAM\n‐ CRC\n‐ MASTER WARN light.\n‐ APU FIRE pb-sw lighted red (lighted partially if AC power not available)\n‐ SQUIB light and DISCH light on.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "APU START · APU BLEED",
@@ -134,7 +134,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU START pb-sw...... ON CM2\nNote: In cold weather conditions (below approximately 10 °C), the flight crew may observe a bleed pressure up to 12 PSI with possible fluctuations on the APU SD page and the BLEED SD page.\nFor more information on APU starter limitations and APU operations during refueling:\n‐ Refer to LIM-APU APU Start\n‐ Refer to LIM-APU APU Start/Shutdown during Refueling/Defueling.\n[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU BLEED pb-sw...... ON CM2\nDo not use APU BLEED, if the ground personnel confirms that a LP or HP ground air unit is connected to the aircraft. To determine if a HP ground air unit is connected, the flight crew should also check on the BLEED SD page, if there is pressure in the bleed air system.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "ALL IR MODE selector",
@@ -145,7 +145,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00011860.0004001 · ADIRS:]\n• * ALL IR MODE selector......NAV CM2\nAlign or realign IRS as appropriate. Refer to FCTM/PR-NP-SOP-40 ADIRS Operations. A complete IRS alignment must be performed in the following cases:\n‐ Before the first flight of the day, or\n‐ When there is a crew change, or\n‐ When the departure airport is located between latitudes 2 ° north and 2 ° south, or\n‐ When the GPS is not available and the NAVAID coverage is poor on the expected route, or\n‐ When the GPS is not available and the expected flight time is more than 3 h. A fast IRS alignment must be performed if a complete IRS alignment is not necessary. To perform an alignment, the aircraft must be stopped on ground. Do not align IRS during engine start, or while the engines are running. In the case of aircraft movement during the IRS alignment, the flight crew must perform a new full alignment.\n[Card vs FCOM:] the quick reference card prints 'ADIRS ON'; the FCOM step is the line quoted above.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "COCKPIT LIGHTS",
@@ -156,7 +156,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "COCKPIT LIGHTS",
@@ -167,7 +167,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "ATIS",
@@ -178,7 +178,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ATIS...... OBTAIN CM2-CM3\nThe CM2 (CM3) should attain the ATIS. Obtain data needed for initializing the system, preparing the cockpit and for preliminary takeoff performance computation. The airfield data should include: RUNWAY IN USE, ALTIMETER SETTING, and WEATHER DATA.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "ALL EFB",
@@ -199,7 +199,7 @@
 },
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "LOGBOOK AND MEL/CDL ITEMS",
@@ -210,7 +210,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * LOGBOOK AND MEL/CDL ITEMS......CHECK ALL\n‐ Check the deferred items list\n‐ Crosscheck with ECAM recall. All flight crewmembers:\n‐ Check and discuss the technical condition of the aircraft (deferred items list)\n‐ Check and discuss the MEL items (including the associated operational procedures, if any) and the CDL items. This includes the acceptability of the MEL and CDL items and the influence on the flight plan\n‐ In icing conditions with OAT at or below +1 °C (34 °F), check the taxi-in time in freezing fog of the previous flight recorded in the logbook. This time will be used to determine the remaining taxi-out time before the next engine acceleration for ice shedding (Refer to PRO-NOR-SUP-ADVWXR Engine Ice Shedding on Ground ).",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "OEB",
@@ -231,7 +231,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021759.0002001 · OEB:]\nAll flight crewmembers review and discuss together all OEBs and associated procedures applicable to the aircraft.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "JEPPESEN CHARTS",
@@ -242,7 +242,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "JEPPESEN CHARTS",
@@ -253,7 +253,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "MCDU",
@@ -264,7 +264,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-90000080.9000329 · CHECK THE MCDU:]\n• MCDU...... ON CM1\nShort press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "RCL pb",
@@ -275,7 +275,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * RCL pb...... PRESS 3 s CM1\nThis action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "AIRCRAFT ACCEPTANCE",
@@ -286,7 +286,7 @@
 "d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * AIRCRAFT ACCEPTANCE......PERFORM CM1\nNote: The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "item": "ACARS",
@@ -626,17 +626,17 @@
 {
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": ""
+"gb": "CM2"
 },
 {
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": ""
+"gb": "CM2"
 },
 {
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": ""
+"gb": "CM2"
 },
 {
 "g": "Box start",

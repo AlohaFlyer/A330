@@ -370,7 +370,9 @@ function secVisible(sec){
 function secHead(sec){
   const v = secVisible(sec);
   if(!sec.mem || !v.vis) return sec.h;
-  return sec.h.replace(/(·\s*)(\d+)\s*$/, (m,a)=>a+v.n);
+  let h = sec.h.replace(/(·\s*)(\d+)\s*$/, (m,a)=>a+v.n);
+  if(state.seat==='C') h = h.replace(/^CM2 · /, 'CM1 · '); // the seat-indexed groups read as the seat being viewed
+  return h;
 }
 function sectionInner(sec,cite,ctx,pid){
   if(!sec.items.some(it=>it.k==='sub')) return sec.items.map(it=>renderItem(it,cite,ctx,pid)).join('');

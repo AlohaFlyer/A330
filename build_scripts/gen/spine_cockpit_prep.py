@@ -28,9 +28,9 @@ def pick(flow, item, role=None):
     raise KeyError(item)
 
 G = {
- 'OFF':  ('Turn it OFF', '#b03a2e', ''),
- 'ON':   ('Turn it ON', '#00805E', ''),
- 'SET':  ('Set it up', '#463C8F', ''),
+ 'OFF':  ('Turn it OFF', '#b03a2e', 'CM2'),
+ 'ON':   ('Turn it ON', '#00805E', 'CM2'),
+ 'SET':  ('Set it up', '#463C8F', 'CM2'),
  'BOX':  ('Box start', '#CE0C88', 'PF'),
  'PAN':  ('Panels', '#B8860B', 'PF'),
  'WALK': ('Before Walkaround', '#0F6E8C', 'PM'),

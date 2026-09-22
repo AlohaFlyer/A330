@@ -78,7 +78,7 @@
 "appr": "all"
 },
 {
-"h": "TURN IT OFF · 4",
+"h": "CM2 · TURN IT OFF · 4",
 "c": "#b03a2e",
 "items": [
 {
@@ -146,7 +146,7 @@
 "mem": true
 },
 {
-"h": "TURN IT ON · 7",
+"h": "CM2 · TURN IT ON · 7",
 "c": "#00805E",
 "items": [
 {
@@ -246,7 +246,7 @@
 "mem": true
 },
 {
-"h": "SET IT UP · 4",
+"h": "CM2 · SET IT UP · 4",
 "c": "#463C8F",
 "items": [
 {
@@ -785,29 +785,6 @@
 "cite": "FCOM PRO-NOR-SOP-06",
 "appr": "all",
 "mem": true
-},
-{
-"h": "EXTERIOR LIGHTS · COCKPIT PREP",
-"c": "#CE0C88",
-"items": [
-{
-"k": "book",
-"t": "PF sets",
-"s": "Strobes AUTO · Nav 1 · All others OFF",
-"fleet": "pax",
-"src": "sop",
-"provenance": "sop"
-},
-{
-"k": "note",
-"t": "Lights table per the A330 quick reference (technique); switch states are the FCOM SOP lines quoted in each phase.",
-"fleet": "pax",
-"src": "sop",
-"provenance": "sop"
-}
-],
-"cite": "quickref (technique)",
-"appr": "all"
 }
 ],
 "fleet": "pax",
