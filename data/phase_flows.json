@@ -15,7 +15,7 @@
 "label": "Preflight",
 "kind": "n",
 "title": "PREFLIGHT",
-"src": "FCOM PRO-NOR-SOP-03 / SOP-04",
+"src": "FCOM PRO-NOR-SOP-03",
 "sections": [
 {
 "h": "SAFETY EXTERIOR INSPECTION (CM2)",
@@ -76,7 +76,18 @@
 ],
 "cite": "FCOM PRO-NOR-SOP-03",
 "appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
 },
+{
+"id": "cockpit-prep",
+"label": "Cockpit Prep",
+"kind": "n",
+"title": "COCKPIT PREPARATION",
+"src": "FCOM PRO-NOR-SOP-04 / SOP-06",
+"sections": [
 {
 "h": "CM2 · TURN IT OFF · 4",
 "c": "#b03a2e",
@@ -250,6 +261,18 @@
 "c": "#463C8F",
 "items": [
 {
+"k": "fmc",
+"t": "MCDU ON (pre-initialization)",
+"s": "Short press of BRT switches ON the MCDU",
+"r": "C",
+"quote": "Short press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
+"ref": "PRO-NOR-SOP-04-90000080.9000329",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
 "k": "box",
 "t": "EFB start (Flysmart)",
 "s": "ALL EFB ... START · EFB/eQRH VERSION ... CHECK · * EFB STATUS page ... INSERT/CHECK",
@@ -257,6 +280,32 @@
 "call": false,
 "quote": "On the EFB STATUS page, each flight crewmember inserts and checks: - ACFT TYPE and ACFT REG - FLT NBR and FROM/TO (in agreement with the FMS ACTIVE/INIT page).",
 "ref": "PRO-NOR-SOP-04-00021766.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "RCL pb * PRESS 3 s",
+"s": "recalls warnings cleared or cancelled during the last flight",
+"r": "C",
+"call": false,
+"quote": "This action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
+"ref": "PRO-NOR-SOP-04-00021759.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AIRCRAFT ACCEPTANCE * PERFORM",
+"s": "may be performed later, must be complete by end of Cockpit Preparation",
+"r": "C",
+"call": false,
+"quote": "The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
+"ref": "PRO-NOR-SOP-04-00021759.0002001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -296,44 +345,6 @@
 "call": false,
 "quote": "* JEPPESEN CHARTS ... PREPARE ALL",
 "ref": "PRO-NOR-SOP-04-00021760.0001001",
-"ext": "FCOM PRO-NOR",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "fmc",
-"t": "MCDU ON (pre-initialization)",
-"s": "Short press of BRT switches ON the MCDU",
-"r": "C",
-"quote": "Short press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
-"ref": "PRO-NOR-SOP-04-90000080.9000329",
-"ext": "FCOM PRO-NOR",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "box",
-"t": "RCL pb * PRESS 3 s",
-"s": "recalls warnings cleared or cancelled during the last flight",
-"r": "C",
-"call": false,
-"quote": "This action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
-"ref": "PRO-NOR-SOP-04-00021759.0002001",
-"ext": "FCOM PRO-NOR",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "box",
-"t": "AIRCRAFT ACCEPTANCE * PERFORM",
-"s": "may be performed later, must be complete by end of Cockpit Preparation",
-"r": "C",
-"call": false,
-"quote": "The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
-"ref": "PRO-NOR-SOP-04-00021759.0002001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -378,18 +389,7 @@
 "cite": "FCOM PRO-NOR-SOP-04",
 "appr": "all",
 "mem": true
-}
-],
-"fleet": "pax",
-"provenance": "manual"
 },
-{
-"id": "cockpit-prep",
-"label": "Cockpit Prep",
-"kind": "n",
-"title": "COCKPIT PREPARATION",
-"src": "FCOM PRO-NOR-SOP-06",
-"sections": [
 {
 "h": "PF · PANELS · 3",
 "c": "#B8860B",

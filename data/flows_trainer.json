@@ -181,6 +181,17 @@
 "gb": "CM2"
 },
 {
+"item": "MCDU",
+"act": "ON",
+"role": "CA",
+"x": 120.2,
+"y": 304.2,
+"d": "[FCOM PRO-NOR-SOP-04-90000080.9000329 · CHECK THE MCDU:]\n• MCDU...... ON CM1\nShort press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
+"g": "Set it up",
+"gc": "#463C8F",
+"gb": "CM2"
+},
+{
 "item": "ALL EFB",
 "act": "START",
 "role": "BOTH",
@@ -197,6 +208,28 @@
 245.0
 ]
 },
+"g": "Set it up",
+"gc": "#463C8F",
+"gb": "CM2"
+},
+{
+"item": "RCL pb",
+"act": "PRESS 3 s",
+"role": "CA",
+"x": 150.9,
+"y": 308.3,
+"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * RCL pb...... PRESS 3 s CM1\nThis action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
+"g": "Set it up",
+"gc": "#463C8F",
+"gb": "CM2"
+},
+{
+"item": "AIRCRAFT ACCEPTANCE",
+"act": "PERFORM",
+"role": "CA",
+"x": 9.0,
+"y": 277.9,
+"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * AIRCRAFT ACCEPTANCE......PERFORM CM1\nNote: The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
 "g": "Set it up",
 "gc": "#463C8F",
 "gb": "CM2"
@@ -251,39 +284,6 @@
 "x": 21.0,
 "y": 262.6,
 "d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
-"g": "Set it up",
-"gc": "#463C8F",
-"gb": "CM2"
-},
-{
-"item": "MCDU",
-"act": "ON",
-"role": "CA",
-"x": 120.2,
-"y": 304.2,
-"d": "[FCOM PRO-NOR-SOP-04-90000080.9000329 · CHECK THE MCDU:]\n• MCDU...... ON CM1\nShort press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
-"g": "Set it up",
-"gc": "#463C8F",
-"gb": "CM2"
-},
-{
-"item": "RCL pb",
-"act": "PRESS 3 s",
-"role": "CA",
-"x": 150.9,
-"y": 308.3,
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * RCL pb...... PRESS 3 s CM1\nThis action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
-"g": "Set it up",
-"gc": "#463C8F",
-"gb": "CM2"
-},
-{
-"item": "AIRCRAFT ACCEPTANCE",
-"act": "PERFORM",
-"role": "CA",
-"x": 9.0,
-"y": 277.9,
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * AIRCRAFT ACCEPTANCE......PERFORM CM1\nNote: The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
 "g": "Set it up",
 "gc": "#463C8F",
 "gb": "CM2"

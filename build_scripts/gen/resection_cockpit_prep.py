@@ -25,14 +25,16 @@ def S(h, c, items, cite='FCOM PRO-NOR-SOP-04'):
 note = take('Items marked')
 off = [take('ENG masters'), take('Weather radar'), take('L/G lever'), take('Wipers')]
 on = [take('Batteries'), take('RMP 1 and 2'), take('APU FIRE'), take('APU start'), take('ADIRS'), take('Cockpit lights'), take('ATIS')]
-setup = [take('EFB start'), take('LOGBOOK'), take('OEB'), take('Jeppesen'), take('MCDU ON'), take('RCL pb'), take('AIRCRAFT ACCEPTANCE')]
+setup = [take('MCDU ON'), take('EFB start'), take('RCL pb'), take('AIRCRAFT ACCEPTANCE'), take('LOGBOOK'), take('OEB'), take('Jeppesen')]  # card order for both seats: CM1 MCDU, EFB, RCL, acceptance; CM2 logbook, OEB, Jeppesen
 box = [take('ACARS'), take('Preliminary takeoff perf')]
 for it in box: it['r'] = 'PF'
-pre['sections'] = [pre['sections'][0],
-    S('CM2 · TURN IT OFF · 4', C['OFF'], [note] + off),
+# Preflight keeps only the Safety Exterior Inspection (Ryan, 2026-09-22); the preliminary prep groups open the Cockpit Prep phase
+prelim_groups = [S('CM2 · TURN IT OFF · 4', C['OFF'], [note] + off),
     S('CM2 · TURN IT ON · 7', C['ON'], on),
     S('CM2 · SET IT UP · 4', C['SET'], setup),
     S('PF · BOX START · 2', C['BOX'], box)]
+pre['sections'] = [pre['sections'][0]]
+pre['src'] = 'FCOM PRO-NOR-SOP-03'
 # ---- Before Walkaround: split the merged boxes into the ten card items
 w = walk['items']
 def clone(src, t, s=None):
@@ -57,12 +59,13 @@ pm3[1]['r'] = 'PM'
 legs = [tk('DEPARTURE LEGS'), tk('DEPARTURE BRIEFING'), [it for it in cp if it['k'] == 'cl'][0]]
 legs[1]['t'] = 'DEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation checklist)'
 cite6 = 'FCOM PRO-NOR-SOP-06'
-prep['sections'] = [S('PF · PANELS · 3', C['PAN'], panels, cite6),
+prep['sections'] = prelim_groups + [S('PF · PANELS · 3', C['PAN'], panels, cite6),
     S('PM · BEFORE WALKAROUND · 10', C['WALK'], walk10, 'FCOM PRO-NOR-SOP-04'),
     S('BOX BUILD AND CHECK · 4', C['BUILD'], build, cite6),
     S('PF · 2 CHECKS', C['PF2'], pf2, cite6),
     S('PM · 3 CHECKS', C['PM3'], pm3, cite6),
     S('LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + [x for x in prep['sections'][1:] if not x['h'].startswith('EXTERIOR LIGHTS')]  # lights card dropped from Cockpit Prep (Ryan, 2026-09-21)
+prep['src'] = 'FCOM PRO-NOR-SOP-04 / SOP-06'
 D['meta']['resectioned'] = '2026-09-21 cockpit prep memorization groups (spine_cockpit_prep.py colors)'
 json.dump(D, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('re-sectioned:', [(s['h'], len(s['items'])) for s in pre['sections'] + prep['sections']])

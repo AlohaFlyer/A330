@@ -17,10 +17,13 @@
   --limbg:#fff1c4;--limink:#7a5600;--qbg:#F4F1F9;
 }
 body.dark{
-  --bg:#15131C;--card:#211D2E;--ink:#EDE9F3;--muted:#A29DB0;--line:#453F58;
-  --head:#2A2440;--nav:#1A1630;--navbtn:#2A2440;--navink:#EAE5F4;--accent:#E26DB8;
-  --limbg:#46380e;--limink:#ffd86b;--qbg:#1A1630;
+  /* Jeppesen FD Pro dark palette, sampled from the airport moving map (Ryan, 2026-09-22):
+     chrome #21232a, buttons #41434d, active blue #3579c1, map ground #0a1117, slate #35434d, labels yellow */
+  --bg:#0a1117;--card:#1b232b;--ink:#f2f4f6;--muted:#9aa8b3;--line:#35434d;
+  --head:#21232a;--nav:#0a1117;--navbtn:#21232a;--navink:#e6e9ec;--accent:#3579c1;
+  --limbg:#3a3418;--limink:#f2d24c;--qbg:#14234c;--blue:#f2d24c;
 }
+body.dark .rtag.C{background:#41434d;}body.dark .it.fmc .stepn{background:#41434d;color:#f2d24c;}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html,body{margin:0;height:100%;}
 body{font-family:'Helvetica Neue',-apple-system,Arial,sans-serif;color:var(--ink);background:var(--bg);
@@ -112,7 +115,7 @@ padding:8px 10px;margin:6px 0;font-size:.92em;}
 .note{font-size:.78em;color:var(--muted);font-style:italic;margin:3px 0;padding-left:2px;}
 .tech{background:rgba(10,143,176,.14);border:1px solid rgba(10,143,176,.42);border-left:5px solid #CE0C88;
 color:#831A57;border-radius:6px;padding:5px 9px;margin:4px 0;font-weight:800;font-size:1.02em;break-inside:avoid;}
-body.dark .tech{color:#E26DB8;}
+body.dark .tech{color:#f2d24c;}
 .tech .tl{display:block;font-size:.72em;letter-spacing:.6px;opacity:.75;margin-bottom:1px;}
 ul.bl li.techli{padding-left:0;}
 ul.bl li.techli::before{content:none;}
@@ -399,7 +402,7 @@ function render(){
     { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; }
     const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    CARDS.push(`<div class="card${sec.mem&&sec.items.length<=8?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    CARDS.push(`<div class="card${sec.mem&&sec.items.length<=5?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   const pc=phaseColor(ph.id);
   main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
@@ -425,7 +428,7 @@ function cardsFor(pid){
   const ctx={n:1}; const out=[];
   ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; } const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    out.push(`<div class="card${sec.mem&&sec.items.length<=8?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    out.push(`<div class="card${sec.mem&&sec.items.length<=5?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   return out;
 }

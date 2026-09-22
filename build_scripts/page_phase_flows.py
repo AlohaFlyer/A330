@@ -165,13 +165,20 @@ def transform(t):
     t = t.replace(a, ".it,.trig,.cl,.clwrap,.book,.sub,.note{break-inside:avoid;-webkit-column-break-inside:avoid;}\n.card.mem{break-inside:avoid;-webkit-column-break-inside:avoid;}")
     a = "CARDS.push(`<div class=\"card\"><div class=\"ch\""
     assert t.count(a) == 1, 'phase_flows (g): anchor missing: ' + a[:50]
-    t = t.replace(a, "CARDS.push(`<div class=\"card${sec.mem&&sec.items.length<=8?' mem':''}\"><div class=\"ch\"")
+    t = t.replace(a, "CARDS.push(`<div class=\"card${sec.mem&&sec.items.length<=5?' mem':''}\"><div class=\"ch\"")
     a = "out.push(`<div class=\"card\"><div class=\"ch\""
     assert t.count(a) == 1, 'phase_flows (g): anchor missing: ' + a[:50]
-    t = t.replace(a, "out.push(`<div class=\"card${sec.mem&&sec.items.length<=8?' mem':''}\"><div class=\"ch\"")
+    t = t.replace(a, "out.push(`<div class=\"card${sec.mem&&sec.items.length<=5?' mem':''}\"><div class=\"ch\"")
     a = "  applyCols(grid,CARDS,ncol,GFONT);\n  requestAnimationFrame(positionCues);"
     assert t.count(a) == 1, 'phase_flows (g): fit anchor missing'
     t = t.replace(a, "  { let f=GFONT, h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // a page with unsplittable cards may need its own shrink (2026-09-21)\n  requestAnimationFrame(positionCues);")
+    # ---- (h) Jeppesen dark palette (Ryan, 2026-09-22)
+    a = "body.dark{\n  --bg:#15131C;--card:#211D2E;--ink:#EDE9F3;--muted:#A29DB0;--line:#453F58;\n  --head:#2A2440;--nav:#1A1630;--navbtn:#2A2440;--navink:#EAE5F4;--accent:#E26DB8;\n  --limbg:#46380e;--limink:#ffd86b;--qbg:#1A1630;\n}"
+    assert t.count(a) == 1, 'phase_flows (h): anchor missing'
+    t = t.replace(a, "body.dark{\n  /* Jeppesen FD Pro dark palette, sampled from the airport moving map (Ryan, 2026-09-22):\n     chrome #21232a, buttons #41434d, active blue #3579c1, map ground #0a1117, slate #35434d, labels yellow */\n  --bg:#0a1117;--card:#1b232b;--ink:#f2f4f6;--muted:#9aa8b3;--line:#35434d;\n  --head:#21232a;--nav:#0a1117;--navbtn:#21232a;--navink:#e6e9ec;--accent:#3579c1;\n  --limbg:#3a3418;--limink:#f2d24c;--qbg:#14234c;--blue:#f2d24c;\n}\nbody.dark .rtag.C{background:#41434d;}body.dark .it.fmc .stepn{background:#41434d;color:#f2d24c;}")
+    a = "body.dark .tech{color:#E26DB8;}"
+    assert t.count(a) == 1, 'phase_flows (h): anchor missing'
+    t = t.replace(a, "body.dark .tech{color:#f2d24c;}")
     return t
 
 if __name__ == '__main__':
