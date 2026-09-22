@@ -1173,15 +1173,7 @@ NOTES = [
      'No later than 18 000 ft: <b>“[Flight Attendants], please prepare the cabin for arrival and be seated for landing.”</b>',
      'Seat belt sign OFF first time after takeoff: Seat Belt Advisory PA (FOM)'],
    'ref': 'FCOM PRO-NOR-SOP-10 / SOP-17', 'ext': 'FCOM PRO-NOR', 'quote': '"[Flight Attendants], please prepare the cabin for arrival and be seated for landing."', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'c', 'h': 'TAKEOFF CALLOUTS', 'ec': RED, 'items': ['PF <b>“TAKEOFF”</b>', 'PM <b>“THRUST SET”</b> before 80 kt', 'PM <b>“ONE HUNDRED KNOTS”</b> · PF <b>“CHECKED”</b>', 'PM <b>“V1”</b> · <b>“ROTATE”</b>', 'PM <b>“POSITIVE RATE”</b> · PF <b>“GEAR UP”</b> · PM <b>“GEAR UP”</b>', 'PF <b>“AP 1(2) ON”</b>'],
-   'ref': 'FCOM PRO-NOR-SCO-D-00011846.0001001', 'ext': 'FCOM PRO-NOR', 'quote': 'Before passing 80 kt THRUST SET At 100 kt ONE HUNDRED KNOTS CHECKED At V1 V1 (1) At VR ROTATE', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'c', 'h': 'APPROACH GATES', 'ec': GREEN, 'items': ['FAF: PM fix, altitude, altimeter <b>“CHECKED”</b> · PF <b>“CHECKED”</b>', '1 000 ft AFE: PF <b>“STABLE”</b> · PM <b>“CHECKED”</b>', '500 ft AFE: PM <b>“STABLE”</b> · PF <b>“CHECKED”</b>', 'Not met: <b>“UNSTABLE, GO AROUND”</b> · PF <b>“GO AROUND - FLAPS”</b>', 'PM <b>“ONE HUNDRED ABOVE”</b> · <b>“MINIMUM”</b> · PF <b>“CONTINUE”</b>'],
-   'ref': 'FCOM PRO-NOR-SCO-D-00011849.0005001', 'ext': 'FCOM PRO-NOR', 'quote': '500 ft AFE (Go-Around Gate)(6) If 500 ft criteria are met: STABLE', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'c', 'h': 'LANDING CALLOUTS (PM)', 'ec': BLUE, 'items': ['<b>“SPOILERS”</b> (or NO SPOILERS)', '<b>“REVERSE GREEN”</b> (or NO REVERSE)', '<b>“DECEL”</b> (or NO DECEL)', '<b>“AUTOBRAKE OFF”</b> / PF <b>“MANUAL BRAKING”</b>', '<b>“SEVENTY KNOTS”</b> · PF <b>“CHECKED”</b>'],
-   'ref': 'FCOM PRO-NOR-SCO-D-00011849.0005001', 'ext': 'FCOM PRO-NOR', 'quote': 'At 70 kt SEVENTY KNOTS CHECKED', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'tg', 't': 'Go around: <b>“GO AROUND - FLAPS”</b> · <b>“POSITIVE CLIMB”</b> · <b>“GEAR UP”</b>', 'ref': 'FCOM PRO-NOR-SCO-D-00011850.0001001', 'ext': 'FCOM PRO-NOR', 'quote': 'GO AROUND decision GO AROUND - FLAPS', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'tg', 't': 'Discontinued approach: <b>“CANCEL APPROACH”</b>', 'ref': 'FCOM PRO-NOR-SCO-D-00015191.0001001', 'ext': 'FCOM PRO-NOR', 'quote': 'DISCONTINUED APPROACH CANCEL APPROACH decision', 'fleet': 'pax', 'src': 'manual'},
-  {'k': 'tg', 't': 'Reject: Captain <b>“STOP”</b> · continue: <b>“GO”</b>', 'ref': 'FCTM PR-AEP-MISC-C-00020263.0002001', 'ext': 'FCTM', 'quote': 'If a decision is made to reject the takeoff, the Captain calls "STOP".', 'fleet': 'pax', 'src': 'manual'},
+  # TAKEOFF CALLOUTS, APPROACH GATES, LANDING CALLOUTS and the go-around / cancel approach / reject trigger lines were dropped from NOTES (Ryan, 2026-09-22); the callouts live in their phases
 ]
 
 # ============================================================ fleet/src on every record, then write
