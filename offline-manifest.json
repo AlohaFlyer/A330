@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-21",
-"coreBytes": 21928456,
+"coreBytes": 21898350,
 "audioBytes": 47209110,
 "core": [
 {
@@ -198,7 +198,7 @@
 },
 {
 "u": "/data/phase_flows.json",
-"b": 272026
+"b": 241845
 },
 {
 "u": "/data/systems.json",
@@ -338,7 +338,7 @@
 },
 {
 "u": "/phase_flows.html",
-"b": 47756
+"b": 47831
 },
 {
 "u": "/podcast.html",

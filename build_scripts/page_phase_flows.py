@@ -254,6 +254,10 @@ def transform(t):
     a = "|10,000 ft|18,000|FL180|FL100|"
     assert t.count(a) == 1, 'phase_flows (p): LIM anchor missing'
     t = t.replace(a, "|10,000 ft|10 000 ft(?: MSL| AAL)?|18,000|18 000 ft(?: MSL)?|FL180|FL100|")
+    # a height token inside a bigger number (12 500 ft, 9 200 ft, 17 500 ft) is not a gate: no digit or digit-space before it
+    a = "|300 ft|500 ft|400 ft|200 ft|75 ft|"
+    assert t.count(a) == 1, 'phase_flows (p): height tokens anchor missing'
+    t = t.replace(a, "|(?<!\\d)(?<!\\d )300 ft|(?<!\\d)(?<!\\d )500 ft|(?<!\\d)(?<!\\d )400 ft|(?<!\\d)(?<!\\d )200 ft|(?<!\\d)(?<!\\d )75 ft|")
     # ---- (q) whole row light blue when the item changes an exterior light (Ryan, 2026-09-22)
     a = "    const cls='it'+(it.call?' say':'')+(it.fmc?' fmc':'')+(q?' has-q':'')+dim;"
     assert t.count(a) == 1, 'phase_flows (q): cls anchor missing'

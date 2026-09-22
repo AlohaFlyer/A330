@@ -340,7 +340,7 @@ function apprVisible(a){
 }
 const RTAG={C:'CA',F:'FO',PF:'PF',PM:'PM'};
 function rtagHtml(r){ return RTAG[r]?`<span class="rtag ${r}">${RTAG[r]}</span>`:''; }
-const LIM=/(40°C|FL\d{3}|VREF\d*|RNP ?[0-9.]+|V1|VR|V2|MORA|MOCA|10,000 ft|10 000 ft(?: MSL| AAL)?|18,000|18 000 ft(?: MSL)?|FL180|FL100|300 ft|500 ft|400 ft|200 ft|75 ft|80 KIAS|60 KIAS|7700|121\.5|123\.45|5 nm|2 nm|1 × RNP|0\.10|30°)/g;
+const LIM=/(40°C|FL\d{3}|VREF\d*|RNP ?[0-9.]+|V1|VR|V2|MORA|MOCA|10,000 ft|10 000 ft(?: MSL| AAL)?|18,000|18 000 ft(?: MSL)?|FL180|FL100|(?<!\d)(?<!\d )300 ft|(?<!\d)(?<!\d )500 ft|(?<!\d)(?<!\d )400 ft|(?<!\d)(?<!\d )200 ft|(?<!\d)(?<!\d )75 ft|80 KIAS|60 KIAS|7700|121\.5|123\.45|5 nm|2 nm|1 × RNP|0\.10|30°)/g;
 function hl(s){ return s? s.replace(LIM,'<span class="lim">$1</span>') : ''; }
 function boldCO(s){ return s.replace(/[“"]([^”"]*)[”"]/g,'<b class="co">“$1”</b>'); }
 const STATES=/\b(ON|OFF|AUTO|SET|UP|DN|DOWN|CUTOFF|RUN|ARM|ARMED|RTO|STBY|STANDBY|XPDR|TA\/RA|NORM|CLOSED|OPEN)\b/g;

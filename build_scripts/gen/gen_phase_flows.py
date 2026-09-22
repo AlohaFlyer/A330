@@ -1171,9 +1171,117 @@ for x in LIM:
     if not quotable: LIM_DROPPED.append((x['id'], x['ref']))
     lim_secs[sec].append(box(x['q'].rstrip('?'), x['a'], 'B', False, q if quotable else '', (ident or x['ref']) if quotable else '', 'FCOM'))
 LIM_COLORS = [RED, TEAL, NAVY, GREEN, PURP, GOLD, PLUM, BLUE, CYAN, FOREST, VIOLET, AMBER, BROWN, OCEAN, SLATE, RED, TEAL, NAVY]
-PH.append(P('limits', 'Limitations', 'a', 'LIMITATIONS (memorize set)', 'FCOM LIM · AFM', [
-  S(sec.upper(), LIM_COLORS[i % len(LIM_COLORS)], lim_secs[sec], 'FCOM LIM') for i, sec in enumerate(order)
-]))
+# Ryan's memorization set (HAL A330 Limitations Summary Rev 13, his notes, 2026-09-22): the structure and the short
+# wording are his; every value is the FCOM R17 figure in pounds for the 238 t (-200 PAX) weight variant, and each line
+# keeps the FCOM quote of the drill card it maps to. Four lines corrected to the FCOM (MZFW variant note, fuel
+# imbalance, F-G/S 200 ft, autoland envelope); seven Rev 13 lines that are not FCOM limitations were dropped with his
+# approval (gear extension FL210, -0.26 psi, hydraulic 3 000 psi, APU 41 450 ft, speedbrakes, dimensions, approach
+# category). The full FCOM card set stays in limitations.html and data/limitations_drill.json.
+LIMBY = {x['id']: x for x in LIM}
+def L(cid, title, value, note=''):
+    x = LIMBY[cid]; q, ident = lim_quote(x['src'])
+    quotable = x['ref'].startswith('FCOM') and 'AFM' not in x['ref'] and not q.startswith('[') and V.norm(q) in V.extract('FCOM')
+    return box(title, value + (' · ' + note if note else ''), 'B', False, q if quotable else '', (ident or x['ref']) if quotable else '', 'FCOM')
+def LQ(title, value, q, ident, note=''):
+    return box(title, value + (' · ' + note if note else ''), 'B', False, q, ident, 'FCOM')
+LIM_LINK = 'https://drive.google.com/file/d/1pZA4z9jN4xrqZ8zRsfyJsOKVL0fZLKZM/view'  # Ryan's HAL A330 Limitations Summary Rev 13 on Drive (training/); the PDF stays out of the public repo
+LIM_PDF = ''
+ryan_lim = [
+  S('WEIGHTS · LOAD · ENVELOPE', RED, [
+    note("<a href='" + (LIM_PDF or LIM_LINK) + "' target='_blank' rel='noopener' style='font-weight:800;color:var(--accent);text-decoration:none;border:1.4px solid var(--accent);border-radius:6px;padding:2px 9px;'>Limitations Summary Rev 13 (PDF) &#9656;</a>"),  # single quotes: the page's boldCO turns double quotes into callouts
+    L('lim-wght-01', 'Max taxi weight (MTW)', '526.7 klbs'),
+    L('lim-wght-02', 'Max takeoff weight (MTOW)', '524.7 klbs'),
+    L('lim-wght-03', 'Max landing weight (MLW)', '401.2 klbs'),
+    L('lim-wght-04', 'Max zero fuel weight (MZFW)', '370.4 klbs', 'FCOM: 374.8 klbs on the 236 t tails'),
+    L('lim-fctl-01', 'Load factor, clean', '-1.0 g to +2.5 g'),
+    L('lim-fctl-02', 'Load factor, other configurations', '0 g to +2.0 g'),
+    L('lim-afm-03', 'Max altitude', '41 450 ft'),
+    L('lim-add-01', 'Max runway altitude', '12 500 ft'),
+  ], 'FCOM LIM-AG'),
+  S('AIRPORT OPERATIONS', TEAL, [
+    L('lim-acgen-02', 'Max runway slope', '±2 %'),
+    L('lim-acgen-04', 'Max takeoff crosswind', '32 kt (gust included)'),
+    L('lim-acgen-06', 'Max takeoff tailwind', '15 kt'),
+    L('lim-acgen-05', 'Max landing crosswind', '45 kt (gust included)'),
+    L('lim-acgen-07', 'Max landing tailwind', '10 kt'),
+    L('lim-acgen-08', 'Max wind to operate passenger / cargo doors', '40 kt (50 kt nose into wind)'),
+    L('lim-acgen-10', 'Max wind with passenger / cargo doors open', '60 kt'),
+  ], 'FCOM LIM-AG-OPS'),
+  S('SPEEDS', NAVY, [
+    L('lim-afm-01', 'VMO / MMO', '330 kt / M 0.86'),
+    L('lim-spd-03', 'VFE flap 1 (1+F)', '240 kt (215 kt)'),
+    L('lim-spd-06', 'VFE flap 2 (1*)', '196 kt (205 kt)'),
+    L('lim-spd-07', 'VFE flap 3', '186 kt'),
+    L('lim-spd-08', 'VFE flap FULL', '180 kt'),
+    L('lim-fctl-03', 'Max altitude with flaps / slats extended', 'FL 200'),
+    L('lim-spd-10', 'VLE / VLO', '250 kt / M 0.55'),
+    L('lim-spd-12', 'VLE gravity gear extension', '200 kt'),
+    L('lim-spd-16', 'Max windshield wiper speed', '230 kt'),
+    L('lim-spd-01', 'Max cockpit window open speed', '230 kt'),
+  ], 'FCOM LIM-AG-SPD'),
+  S('CABIN PRESSURE · AIR', GREEN, [
+    L('lim-air-03', 'Max positive differential', '9.25 psi'),
+    L('lim-air-04', 'Max negative differential', '-0.73 psi'),
+    L('lim-air-05', 'Safety relief valve setting', '8.85 psi'),
+    L('lim-air-08', 'Air conditioning with LP ground unit', 'do not use packs'),
+    L('lim-air-02', 'Air conditioning with HP ground unit', 'do not use APU bleed'),
+  ], 'FCOM LIM-AIR'),
+  S('AUTO FLIGHT', PURP, [
+    L('lim-afs-02', 'AP minimum height: takeoff', '100 ft AGL (and 5 s after liftoff)'),
+    L('lim-afs-04', 'AP minimum height: approach, not ILS (FINAL APP, V/S, FPA)', '250 ft AGL'),
+    L('lim-afs-03', 'AP minimum height: approach with F-G/S', '200 ft AGL', 'FCOM line not on the Rev 13 card'),
+    L('lim-afs-06', 'AP minimum height: ILS when CAT 2 or CAT 3 not displayed', '160 ft AGL'),
+    L('lim-afs-10', 'AP minimum height: go-around', '100 ft AGL'),
+    L('lim-afs-11', 'AP minimum height: all other phases', '500 ft AGL'),
+    L('lim-afs-27', 'Max autoland headwind', '35 kt'),
+    L('lim-afs-28', 'Max autoland tailwind', '10 kt'),
+    L('lim-afs-29', 'Max autoland crosswind', '15 kt'),
+    L('lim-afs-30', 'Autoland configuration', 'CONF 3 or CONF FULL'),
+    L('lim-afs-31', 'Autoland demonstrated envelope', 'glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 255.7 klbs', 'FCOM lines not on the Rev 13 card'),
+  ], 'FCOM LIM-AFS'),
+  S('FUEL', GOLD, [
+    L('lim-fuel-07', 'Max fuel imbalance, outer tanks (inner balanced)', '3 261 lbs at full'),
+    L('lim-fuel-06', 'Max fuel imbalance, inner tanks (outer balanced)', '6 393 lbs at full', 'FCOM: rises to 10 582 lbs at 37 478 lbs per tank; the Rev 13 card listed only the outer figure'),
+    L('lim-fuel-02', 'Max fuel temperature, JET A / A1', '+55 °C'),
+    L('lim-fuel-04', 'Min fuel temperature, inner tank', '-44 °C below 30 000 ft · -54 °C above'),
+    L('lim-fuel-09', 'Min fuel quantity for takeoff', '11 461 lbs'),
+  ], 'FCOM LIM-FUEL'),
+  S('LANDING GEAR · IRS · OXYGEN', PLUM, [
+    L('lim-lg-02', 'Max brake temperature for takeoff', '300 °C'),
+    LQ('Nosewheel steering angle', '72°', 'The steering handwheels control the nosewheel steering angle up to ±72 ° in either direction.', 'DSC-32-50 (system description)'),
+    L('lim-lg-03', 'Braked pivot turns (one main gear fully stopped)', 'not allowed'),
+    L('lim-lg-06', 'Max taxi speed, one tire deflated per gear', '7 kt'),
+    L('lim-lg-07', 'Max taxi speed, two tires deflated on one gear', '3 kt'),
+    L('lim-add-02', 'IRS navigation without GPS (RNP-10)', '6.2 h from alignment'),
+    LQ('Min oxygen pressure, 2 crew + 2 observers at 50 °C', '1 000 psi', '2 Crewmembers + 2 OBS 810 850 880 910 940 970 1 000', 'LIM-OXY-00020209.0004001', '2 crew alone: 520 to 640 psi over -10 to 50 °C'),
+  ], 'FCOM LIM-LG · LIM-NAV · LIM-OXY'),
+  S('APU', BLUE, [
+    LQ('LOW OIL LEVEL advisory', 'may start and operate for 15 h', 'The APU may be started and operated for 15 h, if there is no', 'FCOM APU LOW OIL LEVEL'),
+    L('lim-apu-01', 'Starter: after 3 consecutive start attempts', 'wait 60 min'),
+    L('lim-add-04', 'Max altitude for battery-only start (in flight)', '25 000 ft'),
+    L('lim-apu-08', 'Max altitude, one pack bleed and electrics', '22 500 ft'),
+    L('lim-apu-07', 'Max altitude, bleed for engine start', '20 000 ft'),
+    L('lim-apu-09', 'Max altitude, two pack bleed and electrics', '17 500 ft'),
+    L('lim-apu-10', 'Bleed for wing anti-ice', 'not permitted'),
+  ], 'FCOM LIM-APU'),
+  S('POWER PLANT', CYAN, [
+    L('lim-eng-01', 'EGT takeoff and go-around', '920 °C for 20 s · 900 °C for 5 min (10 min with an engine failure)'),
+    L('lim-eng-02', 'EGT MCT', '850 °C'),
+    L('lim-eng-03', 'EGT starting, ground', '700 °C'),
+    L('lim-eng-04', 'EGT starting, in flight', '850 °C'),
+    L('lim-eng-10', 'Min oil quantity', '15 qt, or 6 qt + estimated consumption (highest of)'),
+    L('lim-eng-12', 'Starter max continuous operation', '5 min'),
+    L('lim-eng-14', 'Starter cooling after 5 min continuous or three cycles', '30 min'),
+    L('lim-eng-15', 'No running starter engagement above', '10 % N3 ground · 30 % N3 in flight'),
+    L('lim-eng-16', 'Reverse selection in flight', 'prohibited'),
+    L('lim-eng-17', 'Backing the aircraft with reverse', 'prohibited'),
+    L('lim-eng-18', 'Max reverse below 70 kt', 'should not be used'),
+    L('lim-eng-19', 'FLEX max temperature', 'ISA + 60 °C'),
+    LQ('FLEX min temperature', 'flat rating temperature (TREF) or OAT', 'Lower than the flat rating temperature (TREF).', 'FCOM PRO-NOR-SRP FLEX'),
+    L('lim-eng-20', 'FLEX on contaminated runways', 'not permitted'),
+  ], 'FCOM LIM-ENG'),
+]
+PH.append(P('limits', 'Limitations', 'a', 'LIMITATIONS (recite cold)', 'Ryan\'s Rev 13 summary · FCOM LIM R17 · 238 t / -200 PAX · pounds', ryan_lim))
 
 # ============================================================ CHECKLISTS (flows.json, roles PF/PM/BOTH -> PF/PM/B)
 CL_TRIG = {
