@@ -226,6 +226,21 @@ def transform(t):
     a = "const body=items.filter(ci=>!(state.hideOther&&!roleMatch(ci[2]))).map(ci=>`<div class=\"cli${roleMatch(ci[2])?'':' dim'}\"><span class=\"cii\">${ci[0]}</span><span class=\"civ\">${deco(ci[1])}</span>${rtagHtml(ci[2])}</div>`).join('')||'<div class=\"cli\">(reference)</div>';"
     assert t.count(a) == 1, 'phase_flows (l): checklist row anchor missing'
     t = t.replace(a, "const clTag=r=>r==='B'?rtagHtml('PF')+rtagHtml('PM'):rtagHtml(r); // BOTH rows: both responders shown\n    const body=items.map(ci=>`<div class=\"cli${roleMatch(ci[2])?'':' dim'}\"><span class=\"cii\">${ci[0]}</span><span class=\"civ\">${deco(ci[1])}</span>${clTag(ci[2])}</div>`).join('')||'<div class=\"cli\">(reference)</div>';")
+    # ---- (n) phase bar (Ryan, 2026-09-22): 44 px buttons, 15 px text, snap on touch, wheel scrolls sideways on a Mac,
+    #      pagers 52 px wide jumping a full bar width; the active phase is already centred by scrollActive()
+    a = "nav button{flex:none;border:1.5px solid transparent;background:var(--navbtn);color:var(--navink);font-weight:800;\nfont-size:13px;padding:9px 14px;border-radius:18px;cursor:pointer;letter-spacing:.2px;}"
+    assert t.count(a) == 1, 'phase_flows (n): nav button css anchor missing'
+    t = t.replace(a, "nav button{flex:none;border:1.5px solid transparent;background:var(--navbtn);color:var(--navink);font-weight:800;\nfont-size:15px;padding:0 16px;min-height:44px;border-radius:22px;cursor:pointer;letter-spacing:.2px;scroll-snap-align:center;}")
+    a = "scroll-behavior:smooth;touch-action:pan-x;scrollbar-width:none;}"
+    assert t.count(a) == 1, 'phase_flows (n): nav css anchor missing'
+    t = t.replace(a, "scroll-behavior:smooth;touch-action:pan-x;scrollbar-width:none;scroll-snap-type:x proximity;gap:12px;}")
+    a = ".npag{position:sticky;flex:none;align-self:stretch;width:38px;min-width:38px;"
+    assert t.count(a) == 1, 'phase_flows (n): pager css anchor missing'
+    t = t.replace(a, ".npag{position:sticky;flex:none;align-self:stretch;width:52px;min-width:52px;")
+    a = "function navPage(dir){ navEl.scrollBy({left:dir*Math.max(170,navEl.clientWidth*0.72),behavior:'smooth'}); }\n"
+    assert t.count(a) == 1, 'phase_flows (n): navPage anchor missing'
+    t = t.replace(a, "function navPage(dir){ navEl.scrollBy({left:dir*Math.max(170,navEl.clientWidth-120),behavior:'smooth'}); } // a full bar width less the pagers\n"
+        "navEl.addEventListener('wheel',e=>{ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ navEl.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false}); // Mac: vertical wheel or trackpad over the bar scrolls it sideways\n")
     return t
 
 if __name__ == '__main__':
