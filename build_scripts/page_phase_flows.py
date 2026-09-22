@@ -197,15 +197,15 @@ def transform(t):
     # and never see the FIT button; wider screens default to FIT on, choice persisted like the theme.
     a = '    <button class="themebtn filt" id="filt" title="Show or hide the other crew member\'s steps">BOTH</button>\n'
     assert t.count(a) == 1, 'phase_flows (k): filt button anchor missing'
-    t = t.replace(a, a + '    <button class="themebtn filt" id="fit" title="Fit the page to the screen, or scroll it at reading size">FIT</button>\n')
+    t = t.replace(a, a + '    <button class="themebtn filt" id="fit" title="Fit the page to the screen, or scroll it at reading size"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/><path d="M4 4h6M4 4v6M20 4h-6M20 4v6M4 20h6M4 20v-6M20 20h-6M20 20v-6"/></svg></button>\n')  # X with arrows on the corners (Ryan, 2026-09-22)
     a = "@media (max-width:600px){.arrow{display:none;}}"
     assert t.count(a) == 1, 'phase_flows (k): media anchor missing'
-    t = t.replace(a, a + "\n@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control */")
+    t = t.replace(a, a + "\n@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control */\n#fit{min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;}")
     a = "function colsForWidth(W){ return W>=1100?4 : W>=820?3 : W>=600?2 : 1; }\n"
     assert t.count(a) == 1, 'phase_flows (k): colsForWidth anchor missing'
     t = t.replace(a, a + "function readMode(W){ return !state.fit || colsForWidth(W)===1; }\n"
         "function applyRead(grid,cards,W){ const ncol=Math.min(colsForWidth(W),2,Math.max(1,cards.length)); grid.style.flex='0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=''; grid.style.margin=''; applyCols(grid,cards,ncol,16); }\n"
-        "function unRead(grid){ grid.style.flex=''; }\n")
+        "function unRead(grid){ grid.style.flex='0 0 auto'; } // fit mode too lets the grid grow: multicol balances its columns and only the font shrinks to fit, never extra columns off to the right (Ryan, 2026-09-22)\n")
     a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));"
     assert t.count(a) == 1, 'phase_flows (k): fit anchor missing'
     t = t.replace(a, "  const W=grid.clientWidth||main.clientWidth;\n  if(readMode(W)){ applyRead(grid,CARDS,W); requestAnimationFrame(positionCues); return; } unRead(grid);\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));")
