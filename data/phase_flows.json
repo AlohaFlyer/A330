@@ -1138,7 +1138,7 @@
 {
 "k": "box",
 "t": "ENG IDLE PARAMETERS CHECK (AVAIL displayed)",
-"s": "ISA sea level: EPR about 1.015 · N1 about 22.6 % · N2 about 47 % · N3 about 63 % · EGT about 380 °C · FF about 820 kg/h (1 800 lb/h)",
+"s": "ISA sea level: EPR about 1.015 · N1 about 22.6 % · N2 about 47 % · N3 about 63 % · EGT about 380 °C · FF about 1 800 lb/h",
 "r": "PF",
 "call": false,
 "quote": "ENG IDLE PARAMETERS ... CHECK PF",
@@ -6522,7 +6522,7 @@
 {
 "k": "box",
 "t": "Max taxi weight (MTW)",
-"s": "526.7 klbs",
+"s": "527k lb",
 "r": "B",
 "call": false,
 "quote": "Maximum taxi weight....................................................................................... 238 900 kg (526 684 lb)",
@@ -6535,7 +6535,7 @@
 {
 "k": "box",
 "t": "Max takeoff weight (MTOW)",
-"s": "524.7 klbs",
+"s": "525k lb",
 "r": "B",
 "call": false,
 "quote": "Maximum takeoff weight (brake release)......................................................... 238 000 kg (524 700 lb)",
@@ -6548,7 +6548,7 @@
 {
 "k": "box",
 "t": "Max landing weight (MLW)",
-"s": "401.2 klbs",
+"s": "401k lb",
 "r": "B",
 "call": false,
 "quote": "Maximum landing weight................................................................................. 182 000 kg (401 241 lb)",
@@ -6561,7 +6561,7 @@
 {
 "k": "box",
 "t": "Max zero fuel weight (MZFW)",
-"s": "370.4 klbs · FCOM: 374.8 klbs on the 236 t tails",
+"s": "370k lb · FCOM: 375k lb on the 236 t tails",
 "r": "B",
 "call": false,
 "quote": "Maximum zero fuel weight................... from 168 000 kg (370 376 lb) to 170 000 kg (374 785 lb) See * Minimum weight...............................................................................................116 000 kg (255 737 lb) * Maximum Zero Fuel Weight (MZFW) can be increased provided Actual Takeoff Weight is decreased as shown in the following graph.",
@@ -7074,7 +7074,7 @@
 {
 "k": "box",
 "t": "Autoland demonstrated envelope",
-"s": "glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 255.7 klbs · FCOM lines not on the Rev 13 card",
+"s": "glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 256k lb · FCOM lines not on the Rev 13 card",
 "r": "B",
 "call": false,
 "quote": "- With a glide slope angle between -2.5 ° and -3.25 °",
@@ -7095,7 +7095,7 @@
 {
 "k": "box",
 "t": "Max fuel imbalance, outer tanks (inner balanced)",
-"s": "3 261 lbs at full",
+"s": "3k lb at full",
 "r": "B",
 "call": false,
 "quote": "INNER TANKS (OUTER BALANCED) OUTER TANKS (INNER BALANCED) Tank Fuel Quantity Tank Fuel Quantity Maximum Asymmetry Maximum Asymmetry (Heavier Tank) (Heavier Tank) 2 900 kg 1 480 kg Full Full (6 393 lb) (3 261 lb) 17 000 kg 4 800 kg 2 400 kg 1 580 kg (37 478 lb) (10 582 lb) (5 290 lb) (3 482 lb) 7 500 kg 7 500 kg 1 730 kg 1 730 kg (16 534 lb) (16 534 lb) (3 812 lb) (3 812 lb)",
@@ -7108,7 +7108,7 @@
 {
 "k": "box",
 "t": "Max fuel imbalance, inner tanks (outer balanced)",
-"s": "6 393 lbs at full · FCOM: rises to 10 582 lbs at 37 478 lbs per tank; the Rev 13 card listed only the outer figure",
+"s": "6k lb at full · FCOM: rises to 11k lb at 37k lb per tank; the Rev 13 card listed only the outer figure",
 "r": "B",
 "call": false,
 "quote": "INNER TANKS (OUTER BALANCED) OUTER TANKS (INNER BALANCED) Tank Fuel Quantity Tank Fuel Quantity Maximum Asymmetry Maximum Asymmetry (Heavier Tank) (Heavier Tank) 2 900 kg 1 480 kg Full Full (6 393 lb) (3 261 lb) 17 000 kg 4 800 kg 2 400 kg 1 580 kg (37 478 lb) (10 582 lb) (5 290 lb) (3 482 lb) 7 500 kg 7 500 kg 1 730 kg 1 730 kg (16 534 lb) (16 534 lb) (3 812 lb) (3 812 lb)",
@@ -7147,7 +7147,7 @@
 {
 "k": "box",
 "t": "Min fuel quantity for takeoff",
-"s": "11 461 lbs",
+"s": "11k lb",
 "r": "B",
 "call": false,
 "quote": "Minimum fuel quantity for takeoff...........................................................................5 200 kg (11 461 lb) The ECAM alerts that are related to fuel low level in the wing tanks (FUEL WING TK LO LVL, etc.) must not appear for takeoff.",

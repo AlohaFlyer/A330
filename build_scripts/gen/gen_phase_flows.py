@@ -235,7 +235,7 @@ PH.append(P('before-start', 'Before Start', 'n', 'BEFORE START', 'FCOM PRO-NOR-S
         'ENG START selector ... IGN START PF', 'PRO-NOR-SOP-08-00011042.0019001'),
     box('PF: “ENGINE 1 START” · ENG 1 MASTER lever ON', 'engine 1 first: powers the blue hydraulic system (parking brake) · after all amber crosses and messages have disappeared on the engine parameters', 'PF', True,
         'Engine 1 is usually started first. It powers the blue hydraulic system, which pressurizes the parking brake.', 'PRO-NOR-SOP-08-00011042.0019001'),
-    box('ENG IDLE PARAMETERS CHECK (AVAIL displayed)', 'ISA sea level: EPR about 1.015 · N1 about 22.6 % · N2 about 47 % · N3 about 63 % · EGT about 380 °C · FF about 820 kg/h (1 800 lb/h)', 'PF', False,
+    box('ENG IDLE PARAMETERS CHECK (AVAIL displayed)', 'ISA sea level: EPR about 1.015 · N1 about 22.6 % · N2 about 47 % · N3 about 63 % · EGT about 380 °C · FF about 1 800 lb/h', 'PF', False,
         'ENG IDLE PARAMETERS ... CHECK PF', 'PRO-NOR-SOP-08-00011042.0019001'),
     box('All engine taxi · PF: “ENGINE 2 START” · ENG 2 MASTER lever ON', 'same procedure as engine 1', 'PF', True,
         'Apply the same procedure as indicated for engine 1.', 'PRO-NOR-SOP-08-00011042.0019001'),
@@ -1195,10 +1195,10 @@ LIM_PDF = ''
 ryan_lim = [
   S('WEIGHTS · LOAD · ENVELOPE', RED, [
     note("<a href='" + (LIM_PDF or LIM_LINK) + "' target='_blank' rel='noopener' style='font-weight:800;color:var(--accent);text-decoration:none;border:1.4px solid var(--accent);border-radius:6px;padding:2px 9px;'>Limitations Summary Rev 13 (PDF) &#9656;</a>"),  # single quotes: the page's boldCO turns double quotes into callouts
-    L('lim-wght-01', 'Max taxi weight (MTW)', '526.7 klbs'),
-    L('lim-wght-02', 'Max takeoff weight (MTOW)', '524.7 klbs'),
-    L('lim-wght-03', 'Max landing weight (MLW)', '401.2 klbs'),
-    L('lim-wght-04', 'Max zero fuel weight (MZFW)', '370.4 klbs', 'FCOM: 374.8 klbs on the 236 t tails'),
+    L('lim-wght-01', 'Max taxi weight (MTW)', '527k lb'),
+    L('lim-wght-02', 'Max takeoff weight (MTOW)', '525k lb'),
+    L('lim-wght-03', 'Max landing weight (MLW)', '401k lb'),
+    L('lim-wght-04', 'Max zero fuel weight (MZFW)', '370k lb', 'FCOM: 375k lb on the 236 t tails'),
     L('lim-fctl-01', 'Load factor, clean', '-1.0 g to +2.5 g'),
     L('lim-fctl-02', 'Load factor, other configurations', '0 g to +2.0 g'),
     L('lim-afm-03', 'Max altitude', '41 450 ft'),
@@ -1243,14 +1243,14 @@ ryan_lim = [
     L('lim-afs-28', 'Max autoland tailwind', '10 kt'),
     L('lim-afs-29', 'Max autoland crosswind', '15 kt'),
     L('lim-afs-30', 'Autoland configuration', 'CONF 3 or CONF FULL'),
-    L('lim-afs-31', 'Autoland demonstrated envelope', 'glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 255.7 klbs', 'FCOM lines not on the Rev 13 card'),
+    L('lim-afs-31', 'Autoland demonstrated envelope', 'glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 256k lb', 'FCOM lines not on the Rev 13 card'),
   ], 'FCOM LIM-AFS'),
   S('FUEL', GOLD, [
-    L('lim-fuel-07', 'Max fuel imbalance, outer tanks (inner balanced)', '3 261 lbs at full'),
-    L('lim-fuel-06', 'Max fuel imbalance, inner tanks (outer balanced)', '6 393 lbs at full', 'FCOM: rises to 10 582 lbs at 37 478 lbs per tank; the Rev 13 card listed only the outer figure'),
+    L('lim-fuel-07', 'Max fuel imbalance, outer tanks (inner balanced)', '3k lb at full'),
+    L('lim-fuel-06', 'Max fuel imbalance, inner tanks (outer balanced)', '6k lb at full', 'FCOM: rises to 11k lb at 37k lb per tank; the Rev 13 card listed only the outer figure'),
     L('lim-fuel-02', 'Max fuel temperature, JET A / A1', '+55 °C'),
     L('lim-fuel-04', 'Min fuel temperature, inner tank', '-44 °C below 30 000 ft · -54 °C above'),
-    L('lim-fuel-09', 'Min fuel quantity for takeoff', '11 461 lbs'),
+    L('lim-fuel-09', 'Min fuel quantity for takeoff', '11k lb'),
   ], 'FCOM LIM-FUEL'),
   S('LANDING GEAR · IRS · OXYGEN', PLUM, [
     L('lim-lg-02', 'Max brake temperature for takeoff', '300 °C'),

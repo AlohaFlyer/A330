@@ -1266,23 +1266,23 @@
 },
 {
 "q": "What is the approximate capacity of each outer tank?",
-"a": "Approximately 6,300 lbs each."
+"a": "Approximately 6k lb each."
 },
 {
 "q": "What is the approximate capacity of each inner tank?",
-"a": "Approximately 72,000 lbs each."
+"a": "Approximately 72k lb each."
 },
 {
 "q": "What is the approximate capacity of the tail tank?",
-"a": "Approximately 11,000 lbs."
+"a": "Approximately 11k lb."
 },
 {
 "q": "What is the approximate capacity of the center tank?",
-"a": "Approximately 72,000 lbs."
+"a": "Approximately 72k lb."
 },
 {
 "q": "What is the approximate total fuel capacity?",
-"a": "Approximately 240,000 lbs."
+"a": "Approximately 240k lb."
 },
 {
 "q": "Which tanks fill first during refueling?",
@@ -1290,11 +1290,11 @@
 },
 {
 "q": "At around what total fuel load should fuel start going into the Trim tank?",
-"a": "Around 80,500 lbs."
+"a": "Around 81k lb."
 },
 {
 "q": "At around what total fuel load should fuel start going into the Center tank?",
-"a": "Around 163,000 lbs."
+"a": "Around 163k lb."
 },
 {
 "q": "From where do the engines draw their fuel?",
@@ -1362,10 +1362,10 @@
 },
 {
 "q": "How much fuel is unusable if the Center tank pumps are inoperative?",
-"a": "33,000 lbs."
+"a": "33k lb."
 },
 {
-"q": "Why is 33,000 lbs of center tank fuel unusable with the Center tank pumps inoperative?",
+"q": "Why is 33k lb of center tank fuel unusable with the Center tank pumps inoperative?",
 "a": "Due to gravity and wing dihedral."
 },
 {
@@ -1390,11 +1390,11 @@
 },
 {
 "q": "At around what fuel imbalance should you start checking the limitations chart?",
-"a": "Around 3,200 lbs imbalance."
+"a": "Around 3k lb imbalance."
 },
 {
 "q": "At what fuel imbalance does the advisory come on?",
-"a": "6,600 lbs imbalance."
+"a": "7k lb imbalance."
 },
 {
 "q": "Can the aircraft be flown and landed in any fuel imbalance scenario?",
@@ -1474,7 +1474,7 @@
 },
 {
 "q": "At what combined Inner tank fuel quantity does jettison stop?",
-"a": "22,000 lbs combined Inner tank fuel quantity."
+"a": "22k lb combined Inner tank fuel quantity."
 },
 {
 "q": "Which low level sensor condition stops the jettison?",
@@ -1482,7 +1482,7 @@
 },
 {
 "q": "How many conditions stop a fuel jettison?",
-"a": "Four: crew QRH stop, MCDU FUEL PRED level reached, combined Inner 22,000 lbs, one side's low level sensors dry."
+"a": "Four: crew QRH stop, MCDU FUEL PRED level reached, combined Inner 22k lb, one side's low level sensors dry."
 }
 ],
 "Hydraulics": [

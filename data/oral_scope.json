@@ -186,7 +186,7 @@
       "objectives": [
         "The jettison rate is 2200 lbs/min plus fuel burn.",
         "When the QRH procedures have been accomplished: all fuel pumps turn on, the crossfeed valve opens, the jettison valves open, fuel transfers from trim tank to center tank and outer tanks to inner tanks, and fuel is jettisoned from both the inner tanks and center tank simultaneously.",
-        "Jettison stops when: the crew stops it using the QRH procedure, the fuel level entered on the MCDU FUEL PRED page is reached, the combined inner tank quantity reaches 22,000 lbs, or both inner tank low level sensors on one side go dry."
+        "Jettison stops when: the crew stops it using the QRH procedure, the fuel level entered on the MCDU FUEL PRED page is reached, the combined inner tank quantity reaches 22k lb, or both inner tank low level sensors on one side go dry."
       ],
       "numeric_claims": [
         {
@@ -195,7 +195,7 @@
           "note": "Cross-check L25: rate not found in QRH 19.02A or AFM text; DSC-28 not in local slice"
         },
         {
-          "claim": "Jettison auto-stops at 22,000 lbs combined inner tank fuel",
+          "claim": "Jettison auto-stops at 22k lb combined inner tank fuel",
           "status": "UNVERIFIED",
           "note": "Cross-check L26: not in local sources"
         }
@@ -623,12 +623,12 @@
         "Trim tank transfers (DSC-28-10-90): the tail trim tank is used for CG control; in cruise CG moves aft for optimum performance (aft CG on takeoff reduces stability); in climb the FCMCs start an aft transfer passing FL 255; in cruise fuel transfers forward as needed to maintain inner tank levels and optimum CG; in descent the FCMCs begin a forward transfer of remaining fuel passing FL 245 or 35 minutes or less from destination.",
         "TTANK MODE: selecting FWD manually transfers fuel from trim to center tank; it is the only transfer Pb with a direction.",
         "TTANK Feed switch: AUTO transfers fuel automatically, with the final forward transfer stopped with a small amount left in the trim tank to keep the trim tank transfer line fueled for APU operation; OPEN gravity feeds to the center tank and drains the transfer line (the APU will not operate if drained); ISOL stops all transfers.",
-        "CTR TANK XFR performs a manual center-to-inner transfer; if the center tank pumps are inoperative, 33,000 lbs of fuel are unusable due to gravity and wing dihedral (PRO-ABN-FUEL).",
+        "CTR TANK XFR performs a manual center-to-inner transfer; if the center tank pumps are inoperative, 33k lb of fuel are unusable due to gravity and wing dihedral (PRO-ABN-FUEL).",
         "OUTR TK XFR opens valves for a gravity transfer from outer to inner tanks.",
         "The engines can suction feed fuel from the collector tanks.",
         "For all manual transfers use ECAM/QRH procedures: overfill protections are lost, tanks could overfill and fuel could be lost overboard.",
         "WING XFEED opens automatically during a fuel jettison and during EMER ELEC CONFIG.",
-        "Fuel balance limitations: start checking the limitations chart around a 3,200 lbs imbalance; an advisory comes on at 6,600 lbs; in exceptional conditions the aircraft can be flown and landed in any fuel imbalance scenario."
+        "Fuel balance limitations: start checking the limitations chart around a 3k lb imbalance; an advisory comes on at 7k lb; in exceptional conditions the aircraft can be flown and landed in any fuel imbalance scenario."
       ],
       "numeric_claims": [
         {
@@ -637,7 +637,7 @@
           "note": "Cross-check L28: DSC-28-10-20 not in local slice"
         },
         {
-          "claim": "Filling: trim begins around 80,500 lbs total, center around 166,500 lbs",
+          "claim": "Filling: trim begins around 81k lb total, center around 167k lb",
           "status": "UNVERIFIED",
           "note": "Cross-check L29: DSC-28-10-110 not in local slice"
         },
@@ -652,20 +652,20 @@
           "note": "Cross-check L30: DSC-28-10-90 not in local slice"
         },
         {
-          "claim": "Center tank pumps inoperative: 33,000 lbs unusable",
+          "claim": "Center tank pumps inoperative: 33k lb unusable",
           "status": "UNVERIFIED",
-          "note": "Cross-check L27: not found locally; QRH gravity-feed summary shows a different figure (4,400 lbs unusable per inner tank) - flag for FCOM PRO-ABN-FUEL check",
-          "conflict": "The current QRH gravity-feed summary shows a different figure, 4,400 lb unusable per inner tank. Trust the QRH until the next FCOM pass resolves it."
+          "note": "Cross-check L27: not found locally; QRH gravity-feed summary shows a different figure (4k lb unusable per inner tank) - flag for FCOM PRO-ABN-FUEL check",
+          "conflict": "The current QRH gravity-feed summary shows a different figure, 4k lb unusable per inner tank. Trust the QRH until the next FCOM pass resolves it."
         },
         {
-          "claim": "Start checking the imbalance chart around 3,200 lbs",
+          "claim": "Start checking the imbalance chart around 3k lb",
           "status": "VERIFIED-CURRENT",
-          "note": "Cross-check L17: rule of thumb keyed to the outer-tank full limit 1,480 kg (3,261 lb), consistent with limitations_v3 item 108"
+          "note": "Cross-check L17: rule of thumb keyed to the outer-tank full limit 3k lb, consistent with limitations_v3 item 108"
         },
         {
-          "claim": "Fuel imbalance advisory at 6,600 lbs",
+          "claim": "Fuel imbalance advisory at 7k lb",
           "status": "VERIFIED-CURRENT",
-          "note": "Cross-check L16: QRH 01.01A advisory at 3,000 kg (6,614 lb); the doc's 6,600 is a rounding"
+          "note": "Cross-check L16: QRH 01.01A advisory at 7k lb; the doc's 6,600 is a rounding"
         }
       ],
       "maps_to": "systems_quiz"

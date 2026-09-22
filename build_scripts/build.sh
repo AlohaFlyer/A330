@@ -16,6 +16,7 @@ python3 build_scripts/project_data.py
 python3 build_scripts/build_triggers.py
 python3 build_scripts/build_weather_bank.py
 python3 build_scripts/build_fom_bank.py
+python3 build_scripts/lb_only.py >/dev/null   # weights in whole thousands of pounds, no kg (2026-09-22)
 python3 build_scripts/externalize.py limitations.html DATA data/limitations_drill.json
 python3 build_scripts/externalize.py memory-items.html DATA data/memory_items_drill.json
 python3 build_scripts/externalize.py hot-seat.html DATA data/memory_items_drill.json SCN data/hot_seat_scenarios.json
@@ -34,6 +35,7 @@ python3 build_scripts/gen_index.py
 python3 build_scripts/build_stubs.py
 python3 build_scripts/stamp_versions.py
 python3 build_scripts/build_corpus.py
+python3 build_scripts/lb_only.py --check >/dev/null || { echo 'VERIFY FAIL: kg left in the data banks (lb_only)'; exit 1; }
 if [ -d "${A330_SRC:-../src}" ]; then python3 build_scripts/build_manuals_index.py >/dev/null && { python3 build_scripts/verify_manuals.py >/dev/null || { echo 'VERIFY FAIL: manuals'; exit 1; }; }; else echo 'manuals index skipped: extracts not present (A330_SRC)'; fi
 python3 build_scripts/build_handouts.py
 python3 build_scripts/build_weather_handout.py

@@ -154,12 +154,12 @@
   "chapter": "14",
   "chapterName": "14 HAZMAT",
   "q": "What is the dry ice limit that does not require a NOTOC entry for a passenger, and does it change internationally?",
-  "a": "Dry ice may not exceed 2.5 kg (5.5 pounds) per person on domestic flights only. International flights require a NOTOC.",
+  "a": "Dry ice may not exceed 5.5 lb per person on domestic flights only. International flights require a NOTOC.",
   "ref": "FOM 14.1.11",
   "src": {
    "ref": "FOM 14.1.11, NOTOC Entry Not Required",
    "quote": "Dry ice (carbon dioxide, solid) may not exceed 2.5 kg (5.5 pounds) per person (domestic flights only, international flights require a NOTOC)",
-   "note": "For cargo, the same 2.5 kg (5.5 lb) applies per package under UN1845, domestic only."
+   "note": "For cargo, the same 5.5 lb applies per package under UN1845, domestic only."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -349,7 +349,7 @@
   "chapter": "14",
   "chapterName": "14 HAZMAT",
   "q": "A passenger boards with dry ice in a cooler on a domestic segment. When does it become a NOTOC item?",
-  "a": "Above 2.5 kg (5.5 pounds) per person, or on any international flight.",
+  "a": "Above 5.5 lb per person, or on any international flight.",
   "ref": "FOM 14.1.11",
   "src": {
    "ref": "FOM 14.1.11, NOTOC Entry Not Required",

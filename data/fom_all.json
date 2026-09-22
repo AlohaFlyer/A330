@@ -2404,7 +2404,7 @@
   "chapter": "6",
   "chapterName": "6 ETOPS",
   "q": "For the A330, what one-engine-inoperative reference speed, reference weight, and reference flight level are used to derive ETOPS speeds?",
-  "a": "A330: .82M/290 KIAS, a reference weight of 470,000 lb, and reference FL350.",
+  "a": "A330: .82M/290 KIAS, a reference weight of 470k lb, and reference FL350.",
   "ref": "FOM 6.2.8",
   "src": {
    "ref": "FOM 6.2.8, One-Engine-Inoperative Cruise Speed",
@@ -2689,7 +2689,7 @@
   "chapter": "7",
   "chapterName": "7 Communications and Reports",
   "q": "For operations outside the US, to which aircraft does the word \"Heavy\" apply and when must it be used?",
-  "a": "Aircraft capable of takeoff with weights of 300,000 lbs or more; required only upon initial contact with the tower and approach/departure control (and on each new frequency initial contact over Canadian airspace).",
+  "a": "Aircraft capable of takeoff with weights of 300k lb or more; required only upon initial contact with the tower and approach/departure control (and on each new frequency initial contact over Canadian airspace).",
   "ref": "FOM 7.1.2.5",
   "src": {
    "ref": "FOM 7.1.2.5, Radio Communications – Professionalism",
@@ -2839,7 +2839,7 @@
   "chapter": "7",
   "chapterName": "7 Communications and Reports",
   "q": "By how much must actual fuel remaining differ from planned before contacting Dispatch on the A330?",
-  "a": "By plus or minus 3000 lbs on the A330 (and 787). The 717, 737 and A321 threshold is plus or minus 2000 lbs.",
+  "a": "By plus or minus 3k lb on the A330 (and 787). The 717, 737 and A321 threshold is plus or minus 2k lb.",
   "ref": "FOM 7.1.12",
   "src": {
    "ref": "FOM 7.1.12, Reports to Dispatch",
@@ -2994,7 +2994,7 @@
   "src": {
    "ref": "FOM 7.1.2.5, Call Sign",
    "quote": "The 787 and A330 aircraft must add the word “Heavy” to the aircraft’s call sign (e.g., “Alaska Twenty-one Heavy”) in all air/ground communications in the terminal area. The term “Heavy” is not required during enroute communications.",
-   "note": "Outside the US, Heavy applies to aircraft with takeoff weights of 300,000 lbs or more and is only required on initial contact with tower and approach/departure control."
+   "note": "Outside the US, Heavy applies to aircraft with takeoff weights of 300k lb or more and is only required on initial contact with tower and approach/departure control."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -3454,12 +3454,12 @@
   "chapter": "8",
   "chapterName": "8 Dispatch",
   "q": "On an HA international A330 release, how much may the actual takeoff weight exceed the PTOW before the Flight Plan is no longer valid?",
-  "a": "The Flight Plan is still valid as long as the ATOW is no more than 3000 lbs greater than the PTOW. More than 3000 lbs over requires a revised Dispatch Release.",
+  "a": "The Flight Plan is still valid as long as the ATOW is no more than 3k lb greater than the PTOW. More than 3k lb over requires a revised Dispatch Release.",
   "ref": "FOM 8.5.7.1",
   "src": {
    "ref": "FOM 8.5.7.1, International Dispatch Release",
    "quote": "The Flight Plan is still considered valid as long as the ATOW is no more than 3000 lbs greater than the PTOW.",
-   "note": "Between PTOW and 3000 lbs over, adjust MIN T/O and MIN RLS by the per-1000-lb figure printed on the release. The legend was rebuilt in Rev 125 on an A330 example."
+   "note": "Between PTOW and 3k lb over, adjust MIN T/O and MIN RLS by the per-1000-lb figure printed on the release. The legend was rebuilt in Rev 125 on an A330 example."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -5419,12 +5419,12 @@
   "chapter": "14",
   "chapterName": "14 HAZMAT",
   "q": "What is the dry ice limit that does not require a NOTOC entry for a passenger, and does it change internationally?",
-  "a": "Dry ice may not exceed 2.5 kg (5.5 pounds) per person on domestic flights only. International flights require a NOTOC.",
+  "a": "Dry ice may not exceed 5.5 lb per person on domestic flights only. International flights require a NOTOC.",
   "ref": "FOM 14.1.11",
   "src": {
    "ref": "FOM 14.1.11, NOTOC Entry Not Required",
    "quote": "Dry ice (carbon dioxide, solid) may not exceed 2.5 kg (5.5 pounds) per person (domestic flights only, international flights require a NOTOC)",
-   "note": "For cargo, the same 2.5 kg (5.5 lb) applies per package under UN1845, domestic only."
+   "note": "For cargo, the same 5.5 lb applies per package under UN1845, domestic only."
   },
   "fleet": "both",
   "srcKind": "manual"
@@ -5614,7 +5614,7 @@
   "chapter": "14",
   "chapterName": "14 HAZMAT",
   "q": "CHECK-AIRMAN SCENARIO: A passenger boards your A330 with dry ice packing a cooler of fresh fish. On a domestic segment no NOTOC is needed within limits, but when does that dry ice become a NOTOC item?",
-  "a": "For passenger items, dry ice (carbon dioxide, solid) may not exceed 2.5 kg (5.5 pounds) per person, and that no-NOTOC allowance is domestic flights only; any international flight requires a NOTOC. For cargo, the same 2.5 kg (5.5 lb) limit applies per package under UN1845, domestic shipments only, international requires a NOTOC.",
+  "a": "For passenger items, dry ice (carbon dioxide, solid) may not exceed 5.5 lb per person, and that no-NOTOC allowance is domestic flights only; any international flight requires a NOTOC. For cargo, the same 5.5 lb limit applies per package under UN1845, domestic shipments only, international requires a NOTOC.",
   "ref": "FOM 14.1.11",
   "src": {
    "ref": "FOM 14.1.11, NOTOC Entry Not Required",
