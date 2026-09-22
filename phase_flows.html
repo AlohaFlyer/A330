@@ -66,6 +66,7 @@ break-inside:auto;-webkit-column-break-inside:auto;}
 .card .ch{border-radius:8px 8px 0 0;break-inside:avoid;break-after:avoid;}
 .cb{break-before:avoid;}
 .it,.trig,.cl,.clwrap,.book,.sub,.note{break-inside:avoid;-webkit-column-break-inside:avoid;}
+.card.mem{break-inside:avoid;-webkit-column-break-inside:avoid;}
 .card .ch{background:var(--head);color:#fff;font-weight:800;font-size:.85em;letter-spacing:.3px;
 display:flex;justify-content:space-between;align-items:center;gap:8px;border-left:6px solid var(--ec,#888);}
 .card .ch .hn{padding:6px 0 6px 9px;}
@@ -360,6 +361,17 @@ function gateFor(ph){
   ph.sections.forEach(s=>{ if(apprVisible(s.appr)) s.items.forEach(it=>{ if(it.k==='cl') names.push(it.t+' Checklist'); }); });
   return [...new Set(names)];
 }
+function secVisible(sec){
+  // role-carrying items of a section that match the current seat/duty (2026-09-21, MINE fix)
+  const roled = sec.items.filter(it=>['box','fmc','trig','cl','book'].includes(it.k) && it.r);
+  const steps = sec.items.filter(it=>['box','fmc','book'].includes(it.k) ? roleMatch(it.r) : it.k==='cl');
+  return {roled: roled.length, vis: roled.filter(it=>roleMatch(it.r)).length, n: steps.length};
+}
+function secHead(sec){
+  const v = secVisible(sec);
+  if(!sec.mem || !v.vis) return sec.h;
+  return sec.h.replace(/(·\s*)(\d+)\s*$/, (m,a)=>a+v.n);
+}
 function sectionInner(sec,cite,ctx,pid){
   if(!sec.items.some(it=>it.k==='sub')) return sec.items.map(it=>renderItem(it,cite,ctx,pid)).join('');
   let out='',open=false;
@@ -382,9 +394,10 @@ function render(){
   CARDS=[];
   ph.sections.forEach(sec=>{
     if(!apprVisible(sec.appr))return;
+    { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; }
     const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    CARDS.push(`<div class="card"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    CARDS.push(`<div class="card${sec.mem&&sec.items.length<=8?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   const pc=phaseColor(ph.id);
   main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
@@ -408,9 +421,9 @@ let GFONT=0, lastW=0, lastH=0, lastHide=null;
 function cardsFor(pid){
   const ph=PHASES.find(p=>p.id===pid); if(!ph)return [];
   const ctx={n:1}; const out=[];
-  ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; const cite=sec.cite||ph.src;
+  ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; } const cite=sec.cite||ph.src;
     const inner=sectionInner(sec,cite,ctx,ph.id);
-    out.push(`<div class="card"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${sec.h}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
+    out.push(`<div class="card${sec.mem&&sec.items.length<=8?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   return out;
 }
@@ -477,7 +490,7 @@ function fitToScreen(){
   const W=grid.clientWidth||main.clientWidth;
   const ncol=colsForWidth(W);
   if(!GFONT || Math.abs(W-lastW)>6 || Math.abs(avail-lastH)>6 || lastHide!==state.hideOther){ GFONT=computeGFont(ncol,avail,grid); lastW=W; lastH=avail; lastHide=state.hideOther; }
-  applyCols(grid,CARDS,ncol,GFONT);
+  { let f=GFONT, h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // a page with unsplittable cards may need its own shrink (2026-09-21)
   requestAnimationFrame(positionCues);
 }
 function positionCues(){

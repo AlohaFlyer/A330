@@ -31,7 +31,7 @@ for it in box: it['r'] = 'PF'
 pre['sections'] = [pre['sections'][0],
     S('TURN IT OFF · 4', C['OFF'], [note] + off),
     S('TURN IT ON · 7', C['ON'], on),
-    S('SET IT UP · 4 (CM2) · CM1 adds MCDU, RCL, acceptance', C['SET'], setup),
+    S('SET IT UP · 4', C['SET'], setup),
     S('PF · BOX START · 2', C['BOX'], box)]
 # ---- Before Walkaround: split the merged boxes into the ten card items
 w = walk['items']

@@ -141,6 +141,37 @@ def transform(t):
     a = '<div class="ch" style="--ec:${sec.c}">'
     assert t.count(a) == 2, 'phase_flows: card header anchor count'
     t = t.replace(a, '<div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}">')
+
+    # ---- (f) MINE hides a section whose role-carrying items are all the other pilot's, and a memorization
+    #      header's count follows the current seat/duty (2026-09-21)
+    a = "function sectionInner(sec,cite,ctx,pid){"
+    assert t.count(a) == 1, 'phase_flows (f): anchor missing: ' + a[:50]
+    t = t.replace(a, "function secVisible(sec){\n  // role-carrying items of a section that match the current seat/duty (2026-09-21, MINE fix)\n  const roled = sec.items.filter(it=>['box','fmc','trig','cl','book'].includes(it.k) && it.r);\n  const steps = sec.items.filter(it=>['box','fmc','book'].includes(it.k) ? roleMatch(it.r) : it.k==='cl');\n  return {roled: roled.length, vis: roled.filter(it=>roleMatch(it.r)).length, n: steps.length};\n}\nfunction secHead(sec){\n  const v = secVisible(sec);\n  if(!sec.mem || !v.vis) return sec.h;\n  return sec.h.replace(/(·\\s*)(\\d+)\\s*$/, (m,a)=>a+v.n);\n}\nfunction sectionInner(sec,cite,ctx,pid){")
+    a = "CARDS.push(`<div class=\"card\"><div class=\"ch\" style=\"--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}\"><span class=\"hn\">${sec.h}</span><span class=\"cardcite\">${cite}</span></div><div class=\"cb\">${inner}</div></div>`);"
+    assert t.count(a) == 1, 'phase_flows (f): anchor missing: ' + a[:50]
+    t = t.replace(a, "CARDS.push(`<div class=\"card\"><div class=\"ch\" style=\"--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}\"><span class=\"hn\">${secHead(sec)}</span><span class=\"cardcite\">${cite}</span></div><div class=\"cb\">${inner}</div></div>`);")
+    a = "out.push(`<div class=\"card\"><div class=\"ch\" style=\"--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}\"><span class=\"hn\">${sec.h}</span><span class=\"cardcite\">${cite}</span></div><div class=\"cb\">${inner}</div></div>`);"
+    assert t.count(a) == 1, 'phase_flows (f): anchor missing: ' + a[:50]
+    t = t.replace(a, "out.push(`<div class=\"card\"><div class=\"ch\" style=\"--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}\"><span class=\"hn\">${secHead(sec)}</span><span class=\"cardcite\">${cite}</span></div><div class=\"cb\">${inner}</div></div>`);")
+    a = "  ph.sections.forEach(sec=>{\n    if(!apprVisible(sec.appr))return;\n    const cite=sec.cite||ph.src;\n    const inner=sectionInner(sec,cite,ctx,ph.id);\n    CARDS.push("
+    assert t.count(a) == 1, 'phase_flows (f): anchor missing: ' + a[:50]
+    t = t.replace(a, "  ph.sections.forEach(sec=>{\n    if(!apprVisible(sec.appr))return;\n    { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; }\n    const cite=sec.cite||ph.src;\n    const inner=sectionInner(sec,cite,ctx,ph.id);\n    CARDS.push(")
+    a = "  ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; const cite=sec.cite||ph.src;\n    const inner=sectionInner(sec,cite,ctx,ph.id);\n    out.push("
+    assert t.count(a) == 1, 'phase_flows (f): anchor missing: ' + a[:50]
+    t = t.replace(a, "  ph.sections.forEach(sec=>{ if(!apprVisible(sec.appr))return; { const v=secVisible(sec); if(state.hideOther && v.roled && !v.vis) return; } const cite=sec.cite||ph.src;\n    const inner=sectionInner(sec,cite,ctx,ph.id);\n    out.push(")
+    # ---- (g) a memorization card never splits across columns, so its colored header stays with its items
+    a = ".it,.trig,.cl,.clwrap,.book,.sub,.note{break-inside:avoid;-webkit-column-break-inside:avoid;}"
+    assert t.count(a) == 1, 'phase_flows (g): anchor missing: ' + a[:50]
+    t = t.replace(a, ".it,.trig,.cl,.clwrap,.book,.sub,.note{break-inside:avoid;-webkit-column-break-inside:avoid;}\n.card.mem{break-inside:avoid;-webkit-column-break-inside:avoid;}")
+    a = "CARDS.push(`<div class=\"card\"><div class=\"ch\""
+    assert t.count(a) == 1, 'phase_flows (g): anchor missing: ' + a[:50]
+    t = t.replace(a, "CARDS.push(`<div class=\"card${sec.mem&&sec.items.length<=8?' mem':''}\"><div class=\"ch\"")
+    a = "out.push(`<div class=\"card\"><div class=\"ch\""
+    assert t.count(a) == 1, 'phase_flows (g): anchor missing: ' + a[:50]
+    t = t.replace(a, "out.push(`<div class=\"card${sec.mem&&sec.items.length<=8?' mem':''}\"><div class=\"ch\"")
+    a = "  applyCols(grid,CARDS,ncol,GFONT);\n  requestAnimationFrame(positionCues);"
+    assert t.count(a) == 1, 'phase_flows (g): fit anchor missing'
+    t = t.replace(a, "  { let f=GFONT, h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // a page with unsplittable cards may need its own shrink (2026-09-21)\n  requestAnimationFrame(positionCues);")
     return t
 
 if __name__ == '__main__':
