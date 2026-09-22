@@ -62,6 +62,21 @@ EDITS={
   # group-colored markers (2026-09-21), after the seatPt edit above so both anchors hold
   ("    if(it.trg){ cls += \" trigpt\"; }\n    const q=seatPt(it);\n    s += `<circle class=\"${cls}\" data-i=\"${i}\" cx=\"${q[0]}\" cy=\"${q[1]}\" r=\"8\"/>`;",
    "    if(it.trg){ cls += \" trigpt\"; }\n    const q=seatPt(it);\n    let gstyle = \"\";\n    if(it.gc){ cls += \" grp\"; lightNum = true; gstyle = ` style=\"fill:${it.gc}${(!showAll && i===upto) ? \";stroke:#1A1630;stroke-width:2.5\" : (i===0||i===last||it.trg) ? \"\" : \";stroke:#fff;stroke-width:1.5\"}\"`; }\n    s += `<circle class=\"${cls}\" data-i=\"${i}\" cx=\"${q[0]}\" cy=\"${q[1]}\" r=\"8\"${gstyle}/>`;"),
+  # v3.8 (Ryan, 2026-09-22): Step button between back and FF; Reveal / Next step fixed bottom-right on wide screens;
+  # tap a group chip to show only that group (map + done list); flows without a map are centred
+  ('<button id="prevBtn" title="Previous step">&#9664;</button><button id="endBtn"',
+   '<button id="prevBtn" title="Previous step">&#9664;</button><button id="stepBtn" title="Reveal, then next step">Step</button><button id="endBtn"'),
+  ('  .layout.noflow .mapbox{display:none;}',
+   '  .layout.noflow .mapbox{display:none;}\n  .layout.noflow{justify-items:center;}\n  .layout.noflow .card{width:100%;max-width:560px;}\n  @media (min-width:741px){ .actions{position:fixed;right:20px;bottom:84px;width:230px;margin:0;z-index:50;box-shadow:0 6px 18px rgba(0,0,0,.25);} .card{padding-bottom:70px;} }\n  .grplegend span{cursor:pointer;} .grplegend.filt span:not(.sel){opacity:.35;} .grplegend span.all{background:#334e68;}'),
+  ('function grpLegend(f){\n  if(!f.groups) return "";\n  const items = activeItems(f);\n  return "<div class=\\"grplegend\\">" + f.groups.map(g=>{ const n = items.filter(it=>it.g===g.g).length; return n ? "<span style=\\"background:"+g.gc+"\\">"+(g.gb?g.gb+" · ":"")+g.g+" "+n+"</span>" : ""; }).join("") + "</div>";\n}',
+   'let grpFilter = null;\nwindow.setGrpFilter=function(g){ grpFilter = (grpFilter===g) ? null : g; render(); }; // on window: the engine runs inside the data-fetch callback\n'
+   'function grpLegend(f){\n  if(!f.groups) return "";\n  const items = activeItems(f);\n  const esc = s=>s.replace(/\'/g,"\\\\\'");\n  return "<div class=\\"grplegend" + (grpFilter?" filt":"") + "\\" title=\\"Tap a group to show only that group\\">" + f.groups.map(g=>{ const n = items.filter(it=>it.g===g.g).length; return n ? "<span class=\\""+(grpFilter===g.g?"sel":"")+"\\" style=\\"background:"+g.gc+"\\" onclick=\\"setGrpFilter(\'"+esc(g.g)+"\')\\">"+(g.gb?g.gb+" · ":"")+g.g+" "+n+"</span>" : ""; }).join("") + (grpFilter ? "<span class=\\"all\\" onclick=\\"setGrpFilter(null)\\">All</span>" : "") + "</div>";\n}'),
+  ('  svgEl.innerHTML = s;\n}',
+   '  svgEl.innerHTML = s;\n  if(grpFilter && flow.groups){ const gc = (flow.groups.find(g=>g.g===grpFilter)||{}).gc; seq.forEach((it,i)=>{ if(it.g!==grpFilter) svgEl.querySelectorAll(\'[data-i="\'+i+\'"]\').forEach(el=>el.style.display="none"); }); const cn=c=>{ const d=document.createElement(\'i\'); d.style.color=c||\'\'; return d.style.color; }; const want=cn(gc); svgEl.querySelectorAll(\'.trace\').forEach(pth=>{ if(cn(pth.style.stroke)!==want) pth.style.display="none"; }); svgEl.querySelectorAll(\'.ghost, .dot.inactive\').forEach(el=>el.style.display="none"); }\n}'),
+  ('  for(let i=0;i<stepIdx;i++){\n    const gh = grpHeader(items, i);',
+   '  for(let i=0;i<stepIdx;i++){\n    if(grpFilter && items[i].g!==grpFilter) continue;\n    const gh = grpHeader(items, i);'),
+  ('document.getElementById("reveal").onclick = ()=>{',
+   'document.getElementById("stepBtn").onclick = ()=>document.getElementById("reveal").onclick();\ndocument.getElementById("reveal").onclick = ()=>{'),
  ],
  'assist.js':[
   ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),

@@ -249,7 +249,7 @@ def transform(t):
         "function deco(s){ return s? hl(boldST(boldCO(lights(s)))) : ''; }")
     a = "body.dark .tech{color:#f2d24c;}"
     assert t.count(a) == 1, 'phase_flows (o): css anchor missing'
-    t = t.replace(a, a + "\n.lt,.lt b{color:#00805E;}body.dark .lt,body.dark .lt b{color:#73d0b0;}")
+    t = t.replace(a, a + "\n.lt{background:#E0F2FE;color:#075985;font-weight:800;border-radius:3px;padding:0 3px;}.lt b{color:#075985;}body.dark .lt{background:#0c3a55;color:#7dd3fc;}body.dark .lt b{color:#7dd3fc;}  /* sky-blue chip: light switches (Ryan, 2026-09-22) */")
     # ---- (p) altitude gates written the FCOM way with a space (18 000 ft, 10 000 ft) get the same highlight as 18,000 (Ryan, 2026-09-22)
     a = "|10,000 ft|18,000|FL180|FL100|"
     assert t.count(a) == 1, 'phase_flows (p): LIM anchor missing'
