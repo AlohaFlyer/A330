@@ -116,6 +116,13 @@ padding:8px 10px;margin:6px 0;font-size:.92em;}
 .tech{background:rgba(10,143,176,.14);border:1px solid rgba(10,143,176,.42);border-left:5px solid #CE0C88;
 color:#831A57;border-radius:6px;padding:5px 9px;margin:4px 0;font-weight:800;font-size:1.02em;break-inside:avoid;}
 body.dark .tech{color:#f2d24c;}
+body.dark nav button[data-pc]:not(.on),body.dark .rail button[data-pc]:not(.on){color:var(--pcl);border-color:var(--pcl);}
+body.dark .phasehead.tinted{color:var(--pcl);border-left-color:var(--pcl);}
+body.dark .cl{color:#f2d24c;border-left-color:#f2d24c;background:rgba(242,210,76,.10);border-color:rgba(242,210,76,.4);}
+body.dark .cl.cc{color:#8fe3b0;border-left-color:#8fe3b0;}
+body.dark .clcc{color:#8fe3b0;}
+body.dark .it.fmc .t{color:#f2d24c;}
+body.dark .exp{color:#f2d24c;border-color:#f2d24c;}
 .tech .tl{display:block;font-size:.72em;letter-spacing:.6px;opacity:.75;margin-bottom:1px;}
 ul.bl li.techli{padding-left:0;}
 ul.bl li.techli::before{content:none;}
@@ -148,8 +155,8 @@ background:var(--head);color:#fff;font-size:26px;font-weight:800;z-index:30;opac
 box-shadow:0 2px 7px rgba(0,0,0,.3);}
 .arrow.prev{left:env(safe-area-inset-left);border-radius:0 10px 10px 0;}.arrow.next{right:env(safe-area-inset-right);border-radius:10px 0 0 10px;}
 @media (max-width:600px){.arrow{display:none;}}
-@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control */
-#fit{min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;}  /* fixed side arrows covered a quarter of the phone column */
+#fit{min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;}
+@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control (the media rule must come after the base rule) */  /* fixed side arrows covered a quarter of the phone column */
 .morecue{position:fixed;z-index:24;width:42px;pointer-events:none;display:none;}
 .morecue.show{display:none;}
 .morecue.r{background:linear-gradient(to right,rgba(127,127,127,0),rgba(127,127,127,.22));}
@@ -409,9 +416,9 @@ function render(){
     CARDS.push(`<div class="card${sec.mem&&sec.items.length<=5?' mem':''}"><div class="ch" style="--ec:${sec.c}${sec.mem?`;background:${sec.c}`:``}"><span class="hn">${secHead(sec)}</span><span class="cardcite">${cite}</span></div><div class="cb">${inner}</div></div>`);
   });
   const pc=phaseColor(ph.id);
-  main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="--pc:${pc}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
+  main.innerHTML=`<div class="phasehead${pc?` tinted`:``}"${pc?` style="${pcStyle(pc)}"`:``}>${ph.title}<span class="src">${ph.src}</span></div><div class="grid" id="grid"></div>`;
   const g=document.getElementById('gate'); const gn=gateFor(ph);
-  if(pc) g.style.setProperty('--pc',pc); else g.style.removeProperty('--pc');
+  if(pc){ g.style.setProperty('--pc',pc); g.style.setProperty('--pcl',lighten(pc)); } else { g.style.removeProperty('--pc'); g.style.removeProperty('--pcl'); }
   if(gn.length){ g.className='gate'+(pc?' tinted':''); g.innerHTML=`<span class="lbl">GATE</span><span class="nm">&#10003; ${gn.join('  ·  ')}</span>`; }
   else g.className='gate none';
   const showAppr=ph.id==='landing';
@@ -453,7 +460,7 @@ function fitNotesToScreen(){
   const main=document.getElementById('main'); const phh=document.querySelector('.phasehead'); if(!phh)return;
   const avail=main.clientHeight - phh.offsetHeight - 12; if(avail<=4)return;
   const W=grid.clientWidth||main.clientWidth;
-  if(readMode(W)){ applyRead(grid,CARDS,W); requestAnimationFrame(positionCues); return; } unRead(grid);
+  if(readMode(W)){ applyRead(grid,CARDS,W,avail); requestAnimationFrame(positionCues); return; } unRead(grid);
   const ncol=colsForWidth(W);
   const f=bestFontFor(CARDS,ncol,avail,grid);
   applyCols(grid,CARDS,ncol,f);
@@ -495,14 +502,14 @@ function computeGFont(ncol,avail,grid){
 // 366px main, and the auto-sizer then floored body text at 8.6px.
 function colsForWidth(W){ return W>=1100?4 : W>=820?3 : W>=600?2 : 1; }
 function readMode(W){ return !state.fit || colsForWidth(W)===1; }
-function applyRead(grid,cards,W){ const ncol=Math.min(colsForWidth(W),2,Math.max(1,cards.length)); grid.style.flex='0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=''; grid.style.margin=''; applyCols(grid,cards,ncol,16); }
-function unRead(grid){ grid.style.flex='0 0 auto'; } // fit mode too lets the grid grow: multicol balances its columns and only the font shrinks to fit, never extra columns off to the right (Ryan, 2026-09-22)
+function applyRead(grid,cards,W,avail){ const phone=colsForWidth(W)===1; const ncol=phone?1:Math.min(colsForWidth(W),Math.max(1,cards.length)); grid.style.flex=phone?'0 0 auto':''; grid.style.height=phone?'':avail+'px'; grid.style.columnFill=phone?'':'auto'; grid.style.minHeight=''; grid.style.maxWidth=''; grid.style.margin=''; applyCols(grid,cards,ncol,16); } // FIT off: phone scrolls down; Mac/iPad keep 16 px, the height lock and the columns continuing to the right (Ryan, 2026-09-22)
+function unRead(grid){ grid.style.flex='0 0 auto'; grid.style.height=''; grid.style.columnFill=''; } // fit mode too lets the grid grow: multicol balances its columns and only the font shrinks to fit, never extra columns off to the right (Ryan, 2026-09-22)
 function fitToScreen(){
   const grid=document.getElementById('grid'); if(!grid||!CARDS.length)return;
   const main=document.getElementById('main'); const phh=document.querySelector('.phasehead'); if(!phh)return;
   const avail=main.clientHeight - phh.offsetHeight - 12; if(avail<=4)return;
   const W=grid.clientWidth||main.clientWidth;
-  if(readMode(W)){ applyRead(grid,CARDS,W); requestAnimationFrame(positionCues); return; } unRead(grid);
+  if(readMode(W)){ applyRead(grid,CARDS,W,avail); requestAnimationFrame(positionCues); return; } unRead(grid);
   const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length)); // never more columns than cards (Ryan, 2026-09-22)
   if(!GFONT || Math.abs(W-lastW)>6 || Math.abs(avail-lastH)>6 || lastHide!==state.hideOther){ GFONT=computeGFont(ncol,avail,grid); lastW=W; lastH=avail; lastHide=state.hideOther; }
   const sparse = CARDS.length < colsForWidth(W); grid.style.maxWidth = sparse ? (ncol*640)+'px' : ''; grid.style.margin = sparse ? '0 auto' : '';
@@ -527,11 +534,13 @@ const NORMAL=PHASES.filter(p=>p.kind==='n'), ABN=PHASES.filter(p=>p.kind==='a');
 const CL_COLORS={'Cockpit Prep':'#463C8F','Before Start':'#00568F','After Start':'#CE0C88','Taxi':'#2E90D0','Line-Up':'#E0A100','Climb':'#EAA52A','Cruise':'#D98A00','Descent':'#E2761A','Approach':'#D8650C','Landing':'#00805E','Go-Around':'#B85000','After Landing':'#2E9B7C','Parking':'#5CB89A'};
 const PHASE_CL={'preflight':'Cockpit Prep','cockpit-prep':'Cockpit Prep','before-push':'Before Start','before-start':'Before Start','after-start':'After Start','taxi':'Taxi','before-takeoff':'Line-Up','after-takeoff':'Climb','cruise':'Cruise','descent':'Descent','approach':'Approach','landing':'Landing','go-around':'Go-Around','after-landing':'After Landing','parking':'Parking'};
 function phaseColor(id){ const c=PHASE_CL[id]; return c ? CL_COLORS[c] : ''; }
+function lighten(h,f){ f=f===undefined?0.45:f; const n=parseInt(h.slice(1),16); const r=n>>16, g=(n>>8)&255, b=n&255; const m=x=>Math.round(x+(255-x)*f).toString(16).padStart(2,'0'); return '#'+m(r)+m(g)+m(b); }
+function pcStyle(pc){ return `--pc:${pc};--pcl:${lighten(pc)}`; }
 (function(){
   let html='<span class="navlabel">NORMAL</span>';
-  NORMAL.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });
+  NORMAL.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button data-p="${p.id}"${pc?` data-pc="1" style="${pcStyle(pc)}"`:``}>${p.label}</button>`; });
   html+='<div class="divider"></div><span class="navlabel">NON-NORMAL</span>';
-  ABN.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>${p.label}</button>`; });
+  ABN.forEach(p=>{ const pc=phaseColor(p.id); html+=`<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="${pcStyle(pc)}"`:``}>${p.label}</button>`; });
   document.getElementById('nav').innerHTML=html;
   document.getElementById('rail').innerHTML=html;
   document.querySelectorAll('#nav button[data-p], #rail button[data-p]').forEach(b=>b.addEventListener('click',()=>{

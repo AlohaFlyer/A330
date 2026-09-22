@@ -123,6 +123,16 @@ EDITS={
    "qrefTheme.addEventListener('click',()=>setQrefTheme(!qref.classList.contains('dark')));\n"
    "window.addEventListener('popstate',()=>closeQref(true));\n"
    "document.addEventListener('keydown',e=>{ if(e.key==='Escape' && !qref.hidden) closeQref(); });"),
+  # Dark mode contrast (Ryan, 2026-09-22): a phase colour used as TEXT or OUTLINE on the dark ground is lightened
+  # 45 % toward white (computed from CL_COLORS, --pcl); headers keep the full colour with white text; checklist
+  # rows and FMC titles use the Jeppesen label yellow.
+  ("function phaseColor(id){ const c=PHASE_CL[id]; return c ? CL_COLORS[c] : ''; }",
+   "function phaseColor(id){ const c=PHASE_CL[id]; return c ? CL_COLORS[c] : ''; }\nfunction lighten(h,f){ f=f===undefined?0.45:f; const n=parseInt(h.slice(1),16); const r=n>>16, g=(n>>8)&255, b=n&255; const m=x=>Math.round(x+(255-x)*f).toString(16).padStart(2,'0'); return '#'+m(r)+m(g)+m(b); }\nfunction pcStyle(pc){ return `--pc:${pc};--pcl:${lighten(pc)}`; }"),
+  ('<button data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>', '<button data-p="${p.id}"${pc?` data-pc="1" style="${pcStyle(pc)}"`:``}>'),
+  ('<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="--pc:${pc}"`:``}>', '<button class="ab" data-p="${p.id}"${pc?` data-pc="1" style="${pcStyle(pc)}"`:``}>'),
+  ('style="--pc:${pc}"`:``}>${ph.title}', 'style="${pcStyle(pc)}"`:``}>${ph.title}'),
+  ("if(pc) g.style.setProperty('--pc',pc); else g.style.removeProperty('--pc');", "if(pc){ g.style.setProperty('--pc',pc); g.style.setProperty('--pcl',lighten(pc)); } else { g.style.removeProperty('--pc'); g.style.removeProperty('--pcl'); }"),
+  ('body.dark .tech{color:#f2d24c;}', 'body.dark .tech{color:#f2d24c;}\nbody.dark nav button[data-pc]:not(.on),body.dark .rail button[data-pc]:not(.on){color:var(--pcl);border-color:var(--pcl);}\nbody.dark .phasehead.tinted{color:var(--pcl);border-left-color:var(--pcl);}\nbody.dark .cl{color:#f2d24c;border-left-color:#f2d24c;background:rgba(242,210,76,.10);border-color:rgba(242,210,76,.4);}\nbody.dark .cl.cc{color:#8fe3b0;border-left-color:#8fe3b0;}\nbody.dark .clcc{color:#8fe3b0;}\nbody.dark .it.fmc .t{color:#f2d24c;}\nbody.dark .exp{color:#f2d24c;border-color:#f2d24c;}'),
  ],
  'weather.html':[
   ('Open 1-page handout (PDF)','Open 2-page handout (PDF)'),
