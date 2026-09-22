@@ -59,10 +59,10 @@ legs[1]['t'] = 'DEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation check
 cite6 = 'FCOM PRO-NOR-SOP-06'
 prep['sections'] = [S('PF · PANELS · 3', C['PAN'], panels, cite6),
     S('PM · BEFORE WALKAROUND · 10', C['WALK'], walk10, 'FCOM PRO-NOR-SOP-04'),
-    S('BOTH · BOX BUILD AND CHECK · 4', C['BUILD'], build, cite6),
+    S('BOX BUILD AND CHECK · 4', C['BUILD'], build, cite6),
     S('PF · 2 CHECKS', C['PF2'], pf2, cite6),
     S('PM · 3 CHECKS', C['PM3'], pm3, cite6),
-    S('BOTH · LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + prep['sections'][1:]
+    S('LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + prep['sections'][1:]
 D['meta']['resectioned'] = '2026-09-21 cockpit prep memorization groups (spine_cockpit_prep.py colors)'
 json.dump(D, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('re-sectioned:', [(s['h'], len(s['items'])) for s in pre['sections'] + prep['sections']])

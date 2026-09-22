@@ -34,10 +34,10 @@ G = {
  'BOX':  ('Box start', '#CE0C88', 'PF'),
  'PAN':  ('Panels', '#B8860B', 'PF'),
  'WALK': ('Before Walkaround', '#0F6E8C', 'PM'),
- 'BUILD':('Box build and check', '#5f3dc4', 'BOTH'),
+ 'BUILD':('Box build and check', '#5f3dc4', ''),
  'PF2':  ('2 Checks', '#9c5800', 'PF'),
  'PM3':  ('3 Checks', '#7a3b8f', 'PM'),
- 'LEGS': ('Legs, Brief, Checklist', '#831A57', 'BOTH'),
+ 'LEGS': ('Legs, Brief, Checklist', '#831A57', ''),
 }
 def tag(it, g):
     it['g'], it['gc'], it['gb'] = G[g]; return it
