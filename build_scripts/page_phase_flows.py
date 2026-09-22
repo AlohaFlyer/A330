@@ -254,6 +254,13 @@ def transform(t):
     a = "|10,000 ft|18,000|FL180|FL100|"
     assert t.count(a) == 1, 'phase_flows (p): LIM anchor missing'
     t = t.replace(a, "|10,000 ft|10 000 ft(?: MSL| AAL)?|18,000|18 000 ft(?: MSL)?|FL180|FL100|")
+    # ---- (q) whole row light blue when the item changes an exterior light (Ryan, 2026-09-22)
+    a = "    const cls='it'+(it.call?' say':'')+(it.fmc?' fmc':'')+(q?' has-q':'')+dim;"
+    assert t.count(a) == 1, 'phase_flows (q): cls anchor missing'
+    t = t.replace(a, "    const cls='it'+(it.call?' say':'')+(it.fmc?' fmc':'')+(q?' has-q':'')+dim+(LIGHTS.test(it.t+' '+(it.s||''))?' lights':''); LIGHTS.lastIndex=0;")
+    a = "body.dark .tech{color:#f2d24c;}"
+    assert t.count(a) == 1, 'phase_flows (q): css anchor missing'
+    t = t.replace(a, a + "\n.it.lights{background:#EAF6FF;border-radius:6px;margin-left:-4px;padding-left:4px;margin-right:-4px;padding-right:4px;}body.dark .it.lights{background:#0f2a3f;}")
     return t
 
 if __name__ == '__main__':

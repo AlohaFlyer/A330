@@ -16,8 +16,36 @@ HERE = os.path.dirname(os.path.abspath(__file__)); WORK = os.path.abspath(os.pat
 P = os.path.join(WORK, 'data', 'flows_trainer.json')
 D = json.load(open(P, encoding='utf-8'))
 F = D['FLOWS']
+def sync_from_phase_flows(D):
+    """Source of truth is data/phase_flows.json (Ryan, 2026-09-22): every spine item's detail opens with the matching
+    Cockpit Prep card item (title + bullets), paired in order; the trainer's two seat-split items (cockpit lights,
+    Jeppesen charts) share one phase item. Re-run safe: the block is replaced each time."""
+    PF = json.load(open(os.path.join(WORK, 'data', 'phase_flows.json'), encoding='utf-8'))
+    cp = next(p for p in PF['phases'] if p['id'] == 'cockpit-prep')
+    pitems = [(sec['h'], it) for sec in cp['sections'] for it in sec['items'] if it['k'] in ('box', 'fmc', 'cl')]
+    sp = next(f for f in D['FLOWS'] if f.get('spine'))
+    pi = 0; prev = None; pairs = []
+    for it in sp['items']:
+        if prev is not None and it['item'] == prev['item']:
+            pairs.append(pairs[-1])
+        else:
+            pairs.append(pitems[pi]); pi += 1
+        prev = it
+    assert pi == len(pitems), (pi, len(pitems))
+    for it, (h, pit) in zip(sp['items'], pairs):
+        d = it['d']
+        if d.startswith('[Phase flows'):
+            d = d.split('\n\n', 1)[1] if '\n\n' in d else ''
+        sub = pit.get('s') or ''
+        bullets = [x.strip() for x in (sub if isinstance(sub, list) else sub.split(' · ')) if x.strip()]
+        block = '[Phase flows · ' + h + ':]\n' + pit['t'] + ''.join('\n• ' + b for b in bullets)
+        it['d'] = block + ('\n\n' + d if d else '')
+        it['pf_t'] = pit['t']
+    return len(pairs)
 if any(f.get('spine') for f in F):
-    print('spine already present, nothing to do'); raise SystemExit
+    n = sync_from_phase_flows(D)
+    json.dump(D, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+    print('spine already present; details re-synced from phase_flows.json:', n); raise SystemExit
 prelim, walk, prep = F[1], F[2], F[3]
 assert prelim['n'].startswith('2. Preliminary') and walk['n'].startswith('3. Before Walkaround') and prep['n'].startswith('4. Cockpit Preparation'), [f['n'] for f in F[1:4]]
 
@@ -131,5 +159,6 @@ new = [F[0], spine] + F[4:]
 for i, f in enumerate(new, 1):
     f['n'] = str(i) + '.' + f['n'].split('.', 1)[1]
 D['FLOWS'] = new
+sync_from_phase_flows(D)
 json.dump(D, open(P, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 print('spine written:', len(items), 'items; PF', count('PF'), 'PM', count('PM'), '; flows now', len(new))

@@ -1197,3 +1197,4 @@ print('limitations without a literal quote (answer only):', len(LIM_DROPPED), LI
 # 2026-09-21: apply Ryan's memorization re-cut on top of the generated shapes (idempotent)
 import subprocess
 subprocess.run([sys.executable, os.path.join(HERE, 'resection_cockpit_prep.py')], check=True)
+subprocess.run([sys.executable, os.path.join(HERE, 'gen_flow_memorization.py')], check=True)  # plan page + md from the phase flows (2026-09-22)

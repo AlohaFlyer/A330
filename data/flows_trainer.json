@@ -54,10 +54,11 @@
 "role": "FO",
 "x": 149.8,
 "y": 362.9,
-"d": "[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG 1, 2 MASTERS LEVERS......OFF CM2\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector......NORM CM2",
+"d": "[Phase flows · CM2 · TURN IT OFF · 4:]\nENG masters OFF · ENG START NORM\n• ENG 1, 2 MASTERS LEVERS ... OFF\n• ENG START selector ... NORM\n\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG 1, 2 MASTERS LEVERS......OFF CM2\n[FCOM PRO-NOR-SOP-04-A-00010897.0001001 · ENG:]\n• ENG START selector......NORM CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "ENG masters OFF · ENG START NORM"
 },
 {
 "item": "WXR/PWS sw",
@@ -65,10 +66,11 @@
 "role": "FO",
 "x": 119.5,
 "y": 365.0,
-"d": "[FCOM PRO-NOR-SOP-04-A-00011881.0009001 · WEATHER RADAR:]\n• * WXR/PWS sw......OFF CM2",
+"d": "[Phase flows · CM2 · TURN IT OFF · 4:]\nWeather radar OFF *\n• WXR/PWS sw ... OFF\n• CAPT and F/O DISPLAY mode selectors ... OFF\n• GAIN ... AUTO\n• TURB ... AUTO\n\n[FCOM PRO-NOR-SOP-04-A-00011881.0009001 · WEATHER RADAR:]\n• * WXR/PWS sw......OFF CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Weather radar OFF *"
 },
 {
 "item": "L/G lever",
@@ -76,10 +78,11 @@
 "role": "FO",
 "x": 174.0,
 "y": 246.1,
-"d": "[FCOM PRO-NOR-SOP-04-A-00010898.0001001 · L/G:]\n• L/G lever...... DOWN CM2",
+"d": "[Phase flows · CM2 · TURN IT OFF · 4:]\nL/G lever DOWN\n• L/G lever ... DOWN\n\n[FCOM PRO-NOR-SOP-04-A-00010898.0001001 · L/G:]\n• L/G lever...... DOWN CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "L/G lever DOWN"
 },
 {
 "item": "Both WIPER selectors",
@@ -87,10 +90,11 @@
 "role": "FO",
 "x": 178.9,
 "y": 166.4,
-"d": "[FCOM PRO-NOR-SOP-04-A-00010899.0001001 · WIPERS:]\n• Both WIPER selectors......OFF CM2",
+"d": "[Phase flows · CM2 · TURN IT OFF · 4:]\nWipers OFF\n• Both WIPER selectors ... OFF\n\n[FCOM PRO-NOR-SOP-04-A-00010899.0001001 · WIPERS:]\n• Both WIPER selectors......OFF CM2",
 "g": "Turn it OFF",
 "gc": "#b03a2e",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Wipers OFF"
 },
 {
 "item": "BATTERIES check / ELEC",
@@ -98,10 +102,11 @@
 "role": "FO",
 "x": 144.7,
 "y": 128.4,
-"d": "[FCOM PRO-NOR-SOP-04-00010900.0002001:]\n• BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw......AUTO CM2\n[Card vs FCOM:] the quick reference card prints 'ELEC, Bat ON'; the FCOM step is the line quoted above.",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nBatteries check / ELEC\n• Not supplied 6 h or more: BAT 1, BAT 2, APU BAT ... CHECK OFF\n• VOLTAGE ... CHECK ABOVE 25.5 V\n• BAT 1, BAT 2, APU BAT pb-sw ... AUTO\n• EXT PWR pb ... ON\n• already supplied: BAT pb-sw ... AUTO\n• voltage ... CHECK ABOVE 23.5 V\n• EXT PWR pb ... ON\n\n[FCOM PRO-NOR-SOP-04-00010900.0002001:]\n• BAT 1 pb-sw, BAT 2 pb-sw and APU BAT pb-sw......AUTO CM2\n[Card vs FCOM:] the quick reference card prints 'ELEC, Bat ON'; the FCOM step is the line quoted above.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Batteries check / ELEC"
 },
 {
 "item": "RMP 1 and 2",
@@ -109,10 +114,11 @@
 "role": "FO",
 "x": 120.2,
 "y": 331.5,
-"d": "[FCOM PRO-NOR-SOP-04-C-00025222.0001001 · RMP:]\n• RMP 1 and 2...... CHECK ON CM2",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nRMP 1 and 2 CHECK ON\n• Green NAV light ... CHECK OFF\n• COM FREQUENCIES ... TUNE\n• ACP: INT knob ... PRESS OUT/VOLUME CHECK\n• VHF ... CHECK\n\n[FCOM PRO-NOR-SOP-04-C-00025222.0001001 · RMP:]\n• RMP 1 and 2...... CHECK ON CM2",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "RMP 1 and 2 CHECK ON"
 },
 {
 "item": "APU FIRE pb-sw · TEST",
@@ -120,10 +126,11 @@
 "role": "FO",
 "x": 108.1,
 "y": 109.4,
-"d": "[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw......CHECK IN and GUARDED CM2\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE TEST pb ......PRESS and MAINTAIN CM2\nCheck that the APU fire detection and extinguishing system is operative:\n‐ APU FIRE warning on (if AC power available):\n‐ ECAM\n‐ CRC\n‐ MASTER WARN light.\n‐ APU FIRE pb-sw lighted red (lighted partially if AC power not available)\n‐ SQUIB light and DISCH light on.",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nAPU FIRE pb-sw\n• APU FIRE pb-sw ... CHECK IN and GUARDED\n• APU AGENT light ... CHECK OFF\n• APU FIRE TEST pb ... PRESS and MAINTAIN\n\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE pb-sw......CHECK IN and GUARDED CM2\n[FCOM PRO-NOR-SOP-04-C-00010902.0001001 · APU FIRE:]\n• APU FIRE TEST pb ......PRESS and MAINTAIN CM2\nCheck that the APU fire detection and extinguishing system is operative:\n‐ APU FIRE warning on (if AC power available):\n‐ ECAM\n‐ CRC\n‐ MASTER WARN light.\n‐ APU FIRE pb-sw lighted red (lighted partially if AC power not available)\n‐ SQUIB light and DISCH light on.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "APU FIRE pb-sw"
 },
 {
 "item": "APU START · APU BLEED",
@@ -131,10 +138,11 @@
 "role": "FO",
 "x": 149.2,
 "y": 175.0,
-"d": "[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU START pb-sw...... ON CM2\nNote: In cold weather conditions (below approximately 10 °C), the flight crew may observe a bleed pressure up to 12 PSI with possible fluctuations on the APU SD page and the BLEED SD page.\nFor more information on APU starter limitations and APU operations during refueling:\n‐ Refer to LIM-APU APU Start\n‐ Refer to LIM-APU APU Start/Shutdown during Refueling/Defueling.\n[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU BLEED pb-sw...... ON CM2\nDo not use APU BLEED, if the ground personnel confirms that a LP or HP ground air unit is connected to the aircraft. To determine if a HP ground air unit is connected, the flight crew should also check on the BLEED SD page, if there is pressure in the bleed air system.",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nAPU start · bleed\n• APU MASTER SW pb-sw ... ON\n• APU pb (ECAM control panel) ... PRESS\n• APU START pb-sw ... ON\n• when AVAIL: APU BLEED pb-sw ... ON\n• X-BLEED ... AUTO\n• COCKPIT / CABIN TEMP ... AS RQRD\n• * EXT PWR pb ... AS RQRD\n\n[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU START pb-sw...... ON CM2\nNote: In cold weather conditions (below approximately 10 °C), the flight crew may observe a bleed pressure up to 12 PSI with possible fluctuations on the APU SD page and the BLEED SD page.\nFor more information on APU starter limitations and APU operations during refueling:\n‐ Refer to LIM-APU APU Start\n‐ Refer to LIM-APU APU Start/Shutdown during Refueling/Defueling.\n[FCOM PRO-NOR-SOP-04-C-00010903.0002001 · APU START:]\n• APU BLEED pb-sw...... ON CM2\nDo not use APU BLEED, if the ground personnel confirms that a LP or HP ground air unit is connected to the aircraft. To determine if a HP ground air unit is connected, the flight crew should also check on the BLEED SD page, if there is pressure in the bleed air system.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "APU start · bleed"
 },
 {
 "item": "ALL IR MODE selector",
@@ -142,10 +150,11 @@
 "role": "FO",
 "x": 115.0,
 "y": 91.7,
-"d": "[FCOM PRO-NOR-SOP-04-00011860.0004001 · ADIRS:]\n• * ALL IR MODE selector......NAV CM2\nAlign or realign IRS as appropriate. Refer to FCTM/PR-NP-SOP-40 ADIRS Operations. A complete IRS alignment must be performed in the following cases:\n‐ Before the first flight of the day, or\n‐ When there is a crew change, or\n‐ When the departure airport is located between latitudes 2 ° north and 2 ° south, or\n‐ When the GPS is not available and the NAVAID coverage is poor on the expected route, or\n‐ When the GPS is not available and the expected flight time is more than 3 h. A fast IRS alignment must be performed if a complete IRS alignment is not necessary. To perform an alignment, the aircraft must be stopped on ground. Do not align IRS during engine start, or while the engines are running. In the case of aircraft movement during the IRS alignment, the flight crew must perform a new full alignment.\n[Card vs FCOM:] the quick reference card prints 'ADIRS ON'; the FCOM step is the line quoted above.",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nADIRS * ALL IR MODE selector NAV\n• Complete alignment: first flight of the day\n• crew change\n• departure between 2° N and 2° S\n• GPS not available and poor NAVAID coverage\n• GPS not available and flight time more than 3 h\n\n[FCOM PRO-NOR-SOP-04-00011860.0004001 · ADIRS:]\n• * ALL IR MODE selector......NAV CM2\nAlign or realign IRS as appropriate. Refer to FCTM/PR-NP-SOP-40 ADIRS Operations. A complete IRS alignment must be performed in the following cases:\n‐ Before the first flight of the day, or\n‐ When there is a crew change, or\n‐ When the departure airport is located between latitudes 2 ° north and 2 ° south, or\n‐ When the GPS is not available and the NAVAID coverage is poor on the expected route, or\n‐ When the GPS is not available and the expected flight time is more than 3 h. A fast IRS alignment must be performed if a complete IRS alignment is not necessary. To perform an alignment, the aircraft must be stopped on ground. Do not align IRS during engine start, or while the engines are running. In the case of aircraft movement during the IRS alignment, the flight crew must perform a new full alignment.\n[Card vs FCOM:] the quick reference card prints 'ADIRS ON'; the FCOM step is the line quoted above.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "ADIRS * ALL IR MODE selector NAV"
 },
 {
 "item": "COCKPIT LIGHTS",
@@ -153,10 +162,11 @@
 "role": "FO",
 "x": 180.2,
 "y": 356.1,
-"d": "[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nCockpit lights * AS RQRD\n• Set INT LT, FLOOD LT, INTEG LT (glareshield and FCU)\n\n[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Cockpit lights * AS RQRD"
 },
 {
 "item": "COCKPIT LIGHTS",
@@ -164,10 +174,11 @@
 "role": "CA",
 "x": 159.9,
 "y": 172.1,
-"d": "[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nCockpit lights * AS RQRD\n• Set INT LT, FLOOD LT, INTEG LT (glareshield and FCU)\n\n[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Cockpit lights * AS RQRD"
 },
 {
 "item": "ATIS",
@@ -175,10 +186,11 @@
 "role": "FO",
 "x": 150.0,
 "y": 389.0,
-"d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ATIS...... OBTAIN CM2-CM3\nThe CM2 (CM3) should attain the ATIS. Obtain data needed for initializing the system, preparing the cockpit and for preliminary takeoff performance computation. The airfield data should include: RUNWAY IN USE, ALTIMETER SETTING, and WEATHER DATA.",
+"d": "[Phase flows · CM2 · TURN IT ON · 7:]\nATIS * OBTAIN\n• ATIS ... OBTAIN\n\n[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ATIS...... OBTAIN CM2-CM3\nThe CM2 (CM3) should attain the ATIS. Obtain data needed for initializing the system, preparing the cockpit and for preliminary takeoff performance computation. The airfield data should include: RUNWAY IN USE, ALTIMETER SETTING, and WEATHER DATA.",
 "g": "Turn it ON",
 "gc": "#00805E",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "ATIS * OBTAIN"
 },
 {
 "item": "MCDU",
@@ -186,10 +198,11 @@
 "role": "CA",
 "x": 120.2,
 "y": 304.2,
-"d": "[FCOM PRO-NOR-SOP-04-90000080.9000329 · CHECK THE MCDU:]\n• MCDU...... ON CM1\nShort press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nMCDU ON (pre-initialization)\n• MCDU ... ON (short press of BRT)\n• MCDU ANNUNCIATOR LIGHTS ... OFF\n• A/C STATUS ... CHECK\n• ACTIVE NAV DATABASE ... CYCLE\n• FMS DATABASE VALIDITY ... CHECK\n• NAVAID DESELECTION ... AS RQRD\n• FLIGHT PLAN UPLINK ... REQUEST\n\n[FCOM PRO-NOR-SOP-04-90000080.9000329 · CHECK THE MCDU:]\n• MCDU...... ON CM1\nShort press of the BRT button will switch ON the MCDU, if it is OFF. Use the brightness buttons (BRT and DIM) to adjust the brightness as required.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "MCDU ON (pre-initialization)"
 },
 {
 "item": "ALL EFB",
@@ -197,7 +210,7 @@
 "role": "BOTH",
 "x": 21.0,
 "y": 254.3,
-"d": "[FCOM PRO-NOR-SOP-04-00021766.0001001 · EFB START:]\n• ALL EFB......START ALL",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nEFB start (Flysmart)\n• ALL EFB ... START\n• EFB/eQRH VERSION ... CHECK\n• * EFB STATUS page ... INSERT/CHECK\n\n[FCOM PRO-NOR-SOP-04-00021766.0001001 · EFB START:]\n• ALL EFB......START ALL",
 "pos": {
 "CA": [
 32.0,
@@ -210,7 +223,8 @@
 },
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "EFB start (Flysmart)"
 },
 {
 "item": "RCL pb",
@@ -218,10 +232,11 @@
 "role": "CA",
 "x": 150.9,
 "y": 308.3,
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * RCL pb...... PRESS 3 s CM1\nThis action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nRCL pb * PRESS 3 s\n• recalls warnings cleared or cancelled during the last flight\n\n[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * RCL pb...... PRESS 3 s CM1\nThis action recalls all the warnings that the flight crew cleared or cancelled during the last flight.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "RCL pb * PRESS 3 s"
 },
 {
 "item": "AIRCRAFT ACCEPTANCE",
@@ -229,10 +244,11 @@
 "role": "CA",
 "x": 9.0,
 "y": 277.9,
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * AIRCRAFT ACCEPTANCE......PERFORM CM1\nNote: The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nAIRCRAFT ACCEPTANCE * PERFORM\n• may be performed later, must be complete by end of Cockpit Preparation\n\n[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * AIRCRAFT ACCEPTANCE......PERFORM CM1\nNote: The aircraft acceptance can be performed later, but must be completed at the end of the Cockpit Preparation.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "AIRCRAFT ACCEPTANCE * PERFORM"
 },
 {
 "item": "LOGBOOK AND MEL/CDL ITEMS",
@@ -240,10 +256,11 @@
 "role": "FO",
 "x": 291.0,
 "y": 277.9,
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * LOGBOOK AND MEL/CDL ITEMS......CHECK ALL\n‐ Check the deferred items list\n‐ Crosscheck with ECAM recall. All flight crewmembers:\n‐ Check and discuss the technical condition of the aircraft (deferred items list)\n‐ Check and discuss the MEL items (including the associated operational procedures, if any) and the CDL items. This includes the acceptability of the MEL and CDL items and the influence on the flight plan\n‐ In icing conditions with OAT at or below +1 °C (34 °F), check the taxi-in time in freezing fog of the previous flight recorded in the logbook. This time will be used to determine the remaining taxi-out time before the next engine acceleration for ice shedding (Refer to PRO-NOR-SUP-ADVWXR Engine Ice Shedding on Ground ).",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nLOGBOOK and MEL/CDL items * CHECK\n• deferred items list\n• crosscheck with ECAM recall\n• MEL / CDL acceptability and influence on the flight plan\n• AIRCRAFT CONFIGURATION SUMMARY ... CHECK (QRH OPS.01A)\n\n[FCOM PRO-NOR-SOP-04-00021759.0002001:]\n• * LOGBOOK AND MEL/CDL ITEMS......CHECK ALL\n‐ Check the deferred items list\n‐ Crosscheck with ECAM recall. All flight crewmembers:\n‐ Check and discuss the technical condition of the aircraft (deferred items list)\n‐ Check and discuss the MEL items (including the associated operational procedures, if any) and the CDL items. This includes the acceptability of the MEL and CDL items and the influence on the flight plan\n‐ In icing conditions with OAT at or below +1 °C (34 °F), check the taxi-in time in freezing fog of the previous flight recorded in the logbook. This time will be used to determine the remaining taxi-out time before the next engine acceleration for ice shedding (Refer to PRO-NOR-SUP-ADVWXR Engine Ice Shedding on Ground ).",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "LOGBOOK and MEL/CDL items * CHECK"
 },
 {
 "item": "OEB",
@@ -261,10 +278,11 @@
 250.0
 ]
 },
-"d": "[FCOM PRO-NOR-SOP-04-00021759.0002001 · OEB:]\nAll flight crewmembers review and discuss together all OEBs and associated procedures applicable to the aircraft.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nOEB * CHECK\n• all crewmembers review and discuss applicable OEBs\n\n[FCOM PRO-NOR-SOP-04-00021759.0002001 · OEB:]\nAll flight crewmembers review and discuss together all OEBs and associated procedures applicable to the aircraft.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "OEB * CHECK"
 },
 {
 "item": "JEPPESEN CHARTS",
@@ -272,10 +290,11 @@
 "role": "FO",
 "x": 281.2,
 "y": 262.6,
-"d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nJeppesen charts * PREPARE\n\n[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Jeppesen charts * PREPARE"
 },
 {
 "item": "JEPPESEN CHARTS",
@@ -283,10 +302,11 @@
 "role": "CA",
 "x": 21.0,
 "y": 262.6,
-"d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
+"d": "[Phase flows · CM2 · SET IT UP · 4:]\nJeppesen charts * PREPARE\n\n[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * JEPPESEN CHARTS...... PREPARE ALL\nPrepare the necessary charts for the flight. Ensure the flight plan routing and ETPs are input in the\nJeppesen FD Pro application.",
 "g": "Set it up",
 "gc": "#463C8F",
-"gb": "CM2"
+"gb": "CM2",
+"pf_t": "Jeppesen charts * PREPARE"
 },
 {
 "item": "ACARS",
@@ -294,7 +314,7 @@
 "role": "PF",
 "x": 120.2,
 "y": 316.5,
-"d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ACARS...... INITIALIZE PF\nInitialize and check the ACARS. On the ACARS INIT page input/check the departure airport,\ndestination airport, flight number and date.",
+"d": "[Phase flows · PF · BOX START · 2:]\nACARS * INITIALIZE\n\n[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * ACARS...... INITIALIZE PF\nInitialize and check the ACARS. On the ACARS INIT page input/check the departure airport,\ndestination airport, flight number and date.",
 "pos": {
 "CA": [
 120.2,
@@ -307,7 +327,8 @@
 },
 "g": "Box start",
 "gc": "#CE0C88",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "ACARS * INITIALIZE"
 },
 {
 "item": "PRELIMINARY TAKEOFF PERF DATA (TPR)",
@@ -315,10 +336,11 @@
 "role": "PF",
 "x": 171.4,
 "y": 403.8,
-"d": "[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * PRELIMINARY TAKEOFF PERF DATA...... OBTAIN PF\nFrom the AeroData TPR (or TLR) the PF reviews the following:\n‐ RWY to be used\n‐ RWY intersection\n‐ Flaps setting\n‐ Use of anti-ice\n‐ Use of packs\n‐ Takeoff thrust setting options (FLEX, TOGA).",
+"d": "[Phase flows · PF · BOX START · 2:]\nPreliminary takeoff perf data * OBTAIN\n• per technical condition, NOTAM, runway condition, configuration\n\n[FCOM PRO-NOR-SOP-04-00021760.0001001:]\n• * PRELIMINARY TAKEOFF PERF DATA...... OBTAIN PF\nFrom the AeroData TPR (or TLR) the PF reviews the following:\n‐ RWY to be used\n‐ RWY intersection\n‐ Flaps setting\n‐ Use of anti-ice\n‐ Use of packs\n‐ Takeoff thrust setting options (FLEX, TOGA).",
 "g": "Box start",
 "gc": "#CE0C88",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "Preliminary takeoff perf data * OBTAIN"
 },
 {
 "item": "Overhead Panels scan",
@@ -326,10 +348,11 @@
 "role": "PF",
 "x": 149.8,
 "y": 106.9,
-"d": "[FCOM PRO-NOR-SOP-06-A-00011857.0001001 · WHITE LIGHTS ON THE OVERHEAD PANEL:]\n• * ALL WHITE LIGHTS...... OFF PF\nNote:\n‐ Check with maintenance if a light is left illuminated on the maintenance panel.\n‐ During the scan of the overhead panel, check also that the only amber lights are the GEN FAULT lights.\n[Exterior lights, quick reference (technique):] PF: Strobes AUTO · Nav 1 · All others OFF",
+"d": "[Phase flows · PF · PANELS · 3:]\nOverhead panel scan\n• * ALL WHITE LIGHTS ... OFF\n• * RCDR GND CTL pb-sw ... ON\n• CAPT & PURS/CAPT sw ... CAPT\n• * STARLINK ... AS RQRD\n• * RESET BUTTONS (left side) ... CHECK\n• EXT LT: STROBE ... AUTO\n• BEACON ... OFF\n• WING ... OFF\n• NAV & LOGO ... 1\n• NOSE ... OFF\n• LAND ... OFF\n• RWY TURN OFF ... OFF\n• * SIGNS panel ... SET\n• PROBE/WINDOW HEAT pb-sw ... AUTO\n• LDG ELEV knob ... AUTO\n• MAN VALVE SEL ... BOTH\n• * PACK FLOW ... AUTO\n• EL/DC pb (ECAM) ... PRESS\n• BAT 1, BAT 2, APU BAT pb-sw ... OFF then AUTO\n• T TANK MODE pb-sw ... CHECK AUTO\n• T TANK FEED selector ... CHECK AUTO\n• ENG 1 and ENG 2 FIRE pb-sw ... CHECK IN and GUARDED\n• AGENT 1 and 2 lights ... CHECK OFF\n• ENG TEST pb ... PRESS and MAINTAIN\n• ALL LIGHTS ... CHECK\n• TEMPERATURE selectors ... AS RQRD\n• FWD COOLING selector ... AS RQRD\n• PA (3rd occupant) ... RECEPT\n• CVR TEST pb ... PRESS and MAINTAIN\n• * RESET BUTTONS (right side) ... CHECK\n• DATA LOADER ... CHECK OFF\n\n[FCOM PRO-NOR-SOP-06-A-00011857.0001001 · WHITE LIGHTS ON THE OVERHEAD PANEL:]\n• * ALL WHITE LIGHTS...... OFF PF\nNote:\n‐ Check with maintenance if a light is left illuminated on the maintenance panel.\n‐ During the scan of the overhead panel, check also that the only amber lights are the GEN FAULT lights.\n[Exterior lights, quick reference (technique):] PF: Strobes AUTO · Nav 1 · All others OFF",
 "g": "Panels",
 "gc": "#B8860B",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "Overhead panel scan"
 },
 {
 "item": "Front Instr Panels scan",
@@ -337,10 +360,11 @@
 "role": "PF",
 "x": 127.8,
 "y": 225.3,
-"d": "[FCOM PRO-NOR-SOP-06-B-00011875.0001001 · ISIS:]\n• * ISIS...... CHECK PF\n‐ Adjust brightness.\n‐ Check IAS, altimeter readings, altimeter settings and attitude display.\n‐ Check no flags - Reset attitude, if necessary. Note: Use of ISIS bugs function is not recommended (Refer to DSC-34-10-20 ISIS).",
+"d": "[Phase flows · PF · PANELS · 3:]\nFront instrument panels\n• * ISIS ... CHECK (brightness, IAS, altimeter, attitude, no flags)\n• * NORTH REF ... CHECK (TRUE blue light off)\n• DMC selector ... CHECK AUTO\n• ECAM/ND selector ... CHECK NORM\n• * CLOCK ... CHECK/SET\n• LDG GEAR GRVTY EXTN selector ... OFF\n• * A/SKID & N/W STRG sw ... ON\n\n[FCOM PRO-NOR-SOP-06-B-00011875.0001001 · ISIS:]\n• * ISIS...... CHECK PF\n‐ Adjust brightness.\n‐ Check IAS, altimeter readings, altimeter settings and attitude display.\n‐ Check no flags - Reset attitude, if necessary. Note: Use of ISIS bugs function is not recommended (Refer to DSC-34-10-20 ISIS).",
 "g": "Panels",
 "gc": "#B8860B",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "Front instrument panels"
 },
 {
 "item": "Center Pedestal scan",
@@ -348,11 +372,12 @@
 "role": "PF",
 "x": 120.2,
 "y": 331.5,
-"d": "[FCOM PRO-NOR-SOP-06-C-00011889.0001001 · RMP:]\n• RMP 1 and 2 ......CHECK ON PF",
+"d": "[Phase flows · PF · PANELS · 3:]\nCenter pedestal\n• RMP 1 and 2 ... CHECK ON\n• Green NAV light ... CHECK OFF\n• COM FREQUENCIES ... TUNE\n• ACP: INT knob ... PRESS OUT/VOLUME CHECK\n• VHF ... CHECK\n• HF (if required) ... CHECK\n• * ACCU PRESS indicator ... CHECK\n• * PARK BRK handle ... CHECK ON\n• * BRAKE PRESS indicator ... CHECK\n• ANN LT selector ... TEST then BRT\n• COCKPIT DOOR ... CHECK CORRECT OPERATION\n• MECHANICAL OVERRIDE ... CHECK\n• * COCKPIT DOOR sw ... NORM\n• ECAM control panel: All selectors ... CHECK NORM\n• * THRUST levers ... IDLE\n• * THRUST REVERSER levers ... STOWED\n• * ENG MASTER levers ... CHECK OFF\n• * ENG START selector ... NORM\n• * ATC ... STBY\n• * TCAS ... STBY\n• ALT RPTG ... ON\n• * ATC SYS ... SELECT\n• ACARS: * MSG ... ERASE\n• * ADS ... CHECK ARMED\n\n[FCOM PRO-NOR-SOP-06-C-00011889.0001001 · RMP:]\n• RMP 1 and 2 ......CHECK ON PF",
 "mir": true,
 "g": "Panels",
 "gc": "#B8860B",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "Center pedestal"
 },
 {
 "item": "OXY · HYD · ENG OIL (3)",
@@ -360,10 +385,11 @@
 "role": "PM",
 "x": 150.8,
 "y": 256.6,
-"d": "[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• * ECAM OXY PRESS/HYD QTY/ENG OIL QTY...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00021790.0002001 · ECAM PAGES - PAX:]\n• On the DOOR SD page:\n• * OXY......CHECK PRESSURE PM\n• If the OXY pressure is half boxed in amber:\n• MIN FLT CREW OXY CHART...... CHECK PRESSURE PM\n• On the HYD SD page:\n• * RESERVOIR FLUID LEVEL...... CHECK WITHIN NORMAL RANGE PM\n• On the ENG SD page:\n• * ENG OIL QUANTITY......CHECK PM\n• Check that the oil quantity is above the minimum. Refer to LIM-ENG Oil.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nOXY · HYD · ENG OIL (3)\n• DOOR SD: OXY ... CHECK PRESSURE\n• MIN FLT CREW OXY CHART ... CHECK PRESSURE\n• HYD SD: RESERVOIR FLUID LEVEL ... CHECK WITHIN NORMAL RANGE\n• ENG SD: ENG OIL QUANTITY ... CHECK\n\n[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• * ECAM OXY PRESS/HYD QTY/ENG OIL QTY...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00021790.0002001 · ECAM PAGES - PAX:]\n• On the DOOR SD page:\n• * OXY......CHECK PRESSURE PM\n• If the OXY pressure is half boxed in amber:\n• MIN FLT CREW OXY CHART...... CHECK PRESSURE PM\n• On the HYD SD page:\n• * RESERVOIR FLUID LEVEL...... CHECK WITHIN NORMAL RANGE PM\n• On the ENG SD page:\n• * ENG OIL QUANTITY......CHECK PM\n• Check that the oil quantity is above the minimum. Refer to LIM-ENG Oil.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "OXY · HYD · ENG OIL (3)"
 },
 {
 "item": "FLAPS",
@@ -371,10 +397,11 @@
 "role": "PM",
 "x": 168.6,
 "y": 380.6,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010909.0001001 · F/CTL:]\n• FLAPS......CHECK POSITION PM\nCheck the upper ECAM display to confirm that the FLAPS position agrees with the handle position.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nFLAPS CHECK POSITION\n\n[FCOM PRO-NOR-SOP-04-D-00010909.0001001 · F/CTL:]\n• FLAPS......CHECK POSITION PM\nCheck the upper ECAM display to confirm that the FLAPS position agrees with the handle position.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "FLAPS CHECK POSITION"
 },
 {
 "item": "SPEED BRAKE lever",
@@ -382,10 +409,11 @@
 "role": "PM",
 "x": 133.8,
 "y": 380.6,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010909.0001001 · F/CTL:]\n• * SPEED BRAKE lever...... CHECK RETRACTED and DISARMED PM\nWARNING If flight control surface positions do not agree with the control handle positions, check with the maintenance crew before applying hydraulic power.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nSPEED BRAKE * CHECK RETRACTED and DISARMED\n\n[FCOM PRO-NOR-SOP-04-D-00010909.0001001 · F/CTL:]\n• * SPEED BRAKE lever...... CHECK RETRACTED and DISARMED PM\nWARNING If flight control surface positions do not agree with the control handle positions, check with the maintenance crew before applying hydraulic power.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "SPEED BRAKE * CHECK RETRACTED and DISARMED"
 },
 {
 "item": "ACCU PRESS indicator",
@@ -393,10 +421,11 @@
 "role": "PM",
 "x": 181.5,
 "y": 248.3,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * ACCU PRESS indicator...... CHECK PM\nThe ACCU PRESS indication must be in the green band. If required use the electric pump on blue hydraulic system to recharge the brake accumulator.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nACCU PRESS * CHECK\n• in the green band; blue electric pump to recharge if required\n\n[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * ACCU PRESS indicator...... CHECK PM\nThe ACCU PRESS indication must be in the green band. If required use the electric pump on blue hydraulic system to recharge the brake accumulator.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "ACCU PRESS * CHECK"
 },
 {
 "item": "PARK BRK handle",
@@ -404,10 +433,11 @@
 "role": "PM",
 "x": 122.2,
 "y": 394.3,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * PARK BRK handle...... ON PM\nWhen one brake temperature is above 500 °C (or above 350 °C with the brake fans  ON), avoid applying the parking brake, unless operationally necessary.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nPARK BRK * ON\n\n[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * PARK BRK handle...... ON PM\nWhen one brake temperature is above 500 °C (or above 350 °C with the brake fans  ON), avoid applying the parking brake, unless operationally necessary.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "PARK BRK * ON"
 },
 {
 "item": "BRAKES PRESS indicator",
@@ -415,10 +445,11 @@
 "role": "PM",
 "x": 186.8,
 "y": 253.6,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * BRAKES PRESS indicator......CHECK PM\nCheck for normal indications.\nWARNING The blue electric pump pressurizes the blue hydraulic system. If 'Maintenance in Progress' placard is displayed, get ground crew clearance before energizing the electric pump. In the absence of the placard, flight crew may energize the electric pump without notifying the ground crew.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nBRAKES PRESS * CHECK\n\n[FCOM PRO-NOR-SOP-04-D-00010910.0001001 · PARKING BRAKE:]\n• * BRAKES PRESS indicator......CHECK PM\nCheck for normal indications.\nWARNING The blue electric pump pressurizes the blue hydraulic system. If 'Maintenance in Progress' placard is displayed, get ground crew clearance before energizing the electric pump. In the absence of the placard, flight crew may energize the electric pump without notifying the ground crew.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "BRAKES PRESS * CHECK"
 },
 {
 "item": "ALTN BRAKING",
@@ -426,10 +457,11 @@
 "role": "PM",
 "x": 125.0,
 "y": 387.5,
-"d": "[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• ALTN BRAKING...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00010911.0001001 · ALTERNATE BRAKING SYSTEM:]\n• The purpose of this check is to verify, before the first flight of the day, the efficiency of the alternate braking system (absence of “spongy pedals”).\n• CHOCKS...... CHECK IN PLACE PM\n• PARK BRK handle...... OFF PM\n• BRAKE PEDALS...... PRESS PM\n• Apply maximum pressure on both pedals.\n• BRAKE PRESSURE...... CHECK PM\n• Check on BRAKE PRESS indicator:\n• ‐ The pressure builds up without delay symmetrically on left and right sides for the same application simultaneously applied on left and right pedals.\n• ‐ With full pedal deflection, the pressure is between 2 200 PSI and 2 700 PSI.\n• BRAKE PEDALS...... RELEASE PM\n• PARK BRK handle...... ON PM",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nALTN BRAKING CHECK\n• first flight of the day: CHOCKS ... CHECK IN PLACE\n• PARK BRK handle ... OFF\n• BRAKE PEDALS ... PRESS\n• BRAKE PRESSURE ... CHECK\n• BRAKE PEDALS ... RELEASE\n• PARK BRK handle ... ON\n\n[FCOM PRO-NOR-TSK P 4/26 · BEFORE WALKAROUND:]\n• ALTN BRAKING...... CHECK\n[FCOM PRO-NOR-SOP-04-D-00010911.0001001 · ALTERNATE BRAKING SYSTEM:]\n• The purpose of this check is to verify, before the first flight of the day, the efficiency of the alternate braking system (absence of “spongy pedals”).\n• CHOCKS...... CHECK IN PLACE PM\n• PARK BRK handle...... OFF PM\n• BRAKE PEDALS...... PRESS PM\n• Apply maximum pressure on both pedals.\n• BRAKE PRESSURE...... CHECK PM\n• Check on BRAKE PRESS indicator:\n• ‐ The pressure builds up without delay symmetrically on left and right sides for the same application simultaneously applied on left and right pedals.\n• ‐ With full pedal deflection, the pressure is between 2 200 PSI and 2 700 PSI.\n• BRAKE PEDALS...... RELEASE PM\n• PARK BRK handle...... ON PM",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "ALTN BRAKING CHECK"
 },
 {
 "item": "EMER EQPT",
@@ -437,10 +469,11 @@
 "role": "PM",
 "x": 291.0,
 "y": 277.9,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010919.0001001 · EMERGENCY EQUIPMENT:]\n• EMER EQPT...... CHECK PM-CM3\nCheck that:\n‐ Life vests are stowed\n‐ Crash axe is stowed\n‐ Smoke hoods  and/or portable oxygen equipment and full-face masks  is stowed and ready for use\n‐ Portable fire extinguisher is lockwired and the pressure gauge indicator is in the green area\n‐ Oxygen masks are stowed\n‐ Flashlights are stowed\n‐ Escape ropes are stowed\n‐ PED Fire Containment Bag is stowed\n‐ Fire gloves are stowed",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nEMER EQPT CHECK\n• Life vests\n• Crash axe\n• Smoke hoods / portable oxygen and full-face masks\n• Portable fire extinguisher lockwired, gauge green\n• Oxygen masks\n• Flashlights\n• Escape ropes\n• PED Fire Containment Bag\n• Fire gloves\n\n[FCOM PRO-NOR-SOP-04-D-00010919.0001001 · EMERGENCY EQUIPMENT:]\n• EMER EQPT...... CHECK PM-CM3\nCheck that:\n‐ Life vests are stowed\n‐ Crash axe is stowed\n‐ Smoke hoods  and/or portable oxygen equipment and full-face masks  is stowed and ready for use\n‐ Portable fire extinguisher is lockwired and the pressure gauge indicator is in the green area\n‐ Oxygen masks are stowed\n‐ Flashlights are stowed\n‐ Escape ropes are stowed\n‐ PED Fire Containment Bag is stowed\n‐ Fire gloves are stowed",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "EMER EQPT CHECK"
 },
 {
 "item": "RAIN RPLNT indicators",
@@ -448,10 +481,11 @@
 "role": "PM",
 "x": 189.0,
 "y": 166.4,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010920.0001001:]\n• RAIN RPLNT indicators...... CHECK PRESSURE and QUANTITY PM-CM3\nCAUTION Never use rain repellent to wash the windshield and never use it on a dry windshield.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nRAIN RPLNT CHECK PRESSURE and QUANTITY\n\n[FCOM PRO-NOR-SOP-04-D-00010920.0001001:]\n• RAIN RPLNT indicators...... CHECK PRESSURE and QUANTITY PM-CM3\nCAUTION Never use rain repellent to wash the windshield and never use it on a dry windshield.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "RAIN RPLNT CHECK PRESSURE and QUANTITY"
 },
 {
 "item": "GEAR PINS (3)",
@@ -459,11 +493,12 @@
 "role": "PM",
 "x": 174.0,
 "y": 246.1,
-"d": "[FCOM PRO-NOR-SOP-04-D-00010921.0002001 · LANDING GEAR PINS:]\n• * GEAR PINS...... CHECK ONBOARD and STOWED PM-CM3\nCheck that the three gear pins are onboard and stowed.",
+"d": "[Phase flows · PM · BEFORE WALKAROUND · 10:]\nGEAR PINS (3) * CHECK ONBOARD and STOWED\n• three gear pins\n\n[FCOM PRO-NOR-SOP-04-D-00010921.0002001 · LANDING GEAR PINS:]\n• * GEAR PINS...... CHECK ONBOARD and STOWED PM-CM3\nCheck that the three gear pins are onboard and stowed.",
 "g": "Before Walkaround",
 "gc": "#0F6E8C",
 "gb": "PM",
-"trg": "PM: Exterior Walkaround (PRO-NOR-SOP-05) · PF: continue Cockpit Preparation"
+"trg": "PM: Exterior Walkaround (PRO-NOR-SOP-05) · PF: continue Cockpit Preparation",
+"pf_t": "GEAR PINS (3) * CHECK ONBOARD and STOWED"
 },
 {
 "item": "A-DIFSRIPP scan",
@@ -471,11 +506,12 @@
 "role": "PF",
 "x": 120.2,
 "y": 304.2,
-"d": "[FCOM PRO-NOR-SOP-06-D-90000090.9000245 · INIT A PAGE (PART 2):]\n• TO/FROM...... CHECK PF\nPress the INIT button on the MCDU to display the INIT A page. Check the TO/FROM field [1R] to confirm the correct flight plan uplink occurred. If the TO/FROM field is incorrect, the flight plan can be deleted by cycling the FMS NAV Database (Refer to PRO-NOR-SOP-04 DATA page).",
+"d": "[Phase flows · BOX BUILD AND CHECK · 4:]\nA-DIFSRIPP · FMS preparation (PF)\n• * IDLE / PERF FACTOR ... CHECK (DATA A/C STATUS)\n• INIT A: TO/FROM ... CHECK\n• ALTN ... ENTER\n• FLT NBR ... CHECK\n• COST INDEX ... CHECK\n• CRZ FL/TEMP ... CHECK\n• TROPO ... AS RQRD\n• WINDS ... CHECK\n• F-PLN: DEPARTURE RWY and SID ... ENTER\n• ENROUTE WAYPOINTS and AIRWAYS ... CHECK\n• STEP ALTS ... ENTER\n• ARRIVAL RWY/APPR and STAR ... ENTER\n• ETP WAYPOINT(S) ... CREATE\n• FIX INFO REFERENCE POINT(S) ... ENTER\n• EQUITIME POINT ... ADJUST\n• SECONDARY FLIGHT PLAN ... AS APPROPRIATE\n• RADIO NAV ... CHECK\n• INIT B: TAXI ... CHECK\n• RTE RSV / % ... ZERO\n• ALTN/TIME ... ENTER\n• FINAL/TIME ... CHECK\n• ZFW/ZFWCG ... ENTER (if not auto-populated)\n• BLOCK ... ENTER\n• EXTRA/TIME ... CHECK\n• PERF TAKE OFF: SHIFT ... INSERT AS RQRD\n• THR RED/ACC altitude ... SET or CHECK\n• ENG OUT ACC altitude ... SET or CHECK\n• PERF CLB and PERF CRZ: PRESEL speed ... AS RQRD\n• PERF DES: PRESEL speed ... SET\n• PROG: BRG / DIST TO ... ENTER\n• * RNP ... SET or CHECK\n• * DERATED CLIMB ... AS RQRD\n• * PRESET SPEEDS ... AS RQRD\n\n[FCOM PRO-NOR-SOP-06-D-90000090.9000245 · INIT A PAGE (PART 2):]\n• TO/FROM...... CHECK PF\nPress the INIT button on the MCDU to display the INIT A page. Check the TO/FROM field [1R] to confirm the correct flight plan uplink occurred. If the TO/FROM field is incorrect, the flight plan can be deleted by cycling the FMS NAV Database (Refer to PRO-NOR-SOP-04 DATA page).",
 "mir": true,
 "g": "Box build and check",
 "gc": "#5f3dc4",
-"gb": ""
+"gb": "",
+"pf_t": "A-DIFSRIPP · FMS preparation (PF)"
 },
 {
 "item": "FMS PREPARATION (check DIFSRIPP)",
@@ -483,11 +519,12 @@
 "role": "PM",
 "x": 120.2,
 "y": 304.2,
-"d": "[FCOM PRO-NOR-SOP-06-D-00015238.0001001:]\n• * FMS PREPARATION...... CROSSCHECK PM\nAfter the PF prepares the FMS, the PM checks all the data entered in the FMS. This check includes a crosscheck between:\n‐ Waypoints of the expected departure route that include constraints\n‐ Waypoints of the flight plan and the computerized flight plan\n‐ Initial cruise altitude and the computerized flight plan\n‐ Total track miles and the computerized flight plan\n‐ Fuel remaining at destination and the computerized flight plan\n‐ Performance data including modifications of the THR RED/ACCEL/EO ACCEL settings, if applicable\n‐ TRANS ALT in the ACTIVE/PERF page\n‐ Setup of the SEC flight plan. The PM should have the same mental image of the intended departure procedure, trajectory, and constraints as the PF. The PM should check with the PF if anything is not clear. For more information, Refer to FCTM/PR-NP-SOP-60 Check of Departure Preparation.\n💡 Technique (Ryan's quick reference): the PM checks DIFSRIPP after the PF's A-DIFSRIPP scan.",
+"d": "[Phase flows · BOX BUILD AND CHECK · 4:]\nA-DIFSRIPP check · FMS PREPARATION * CROSSCHECK (PM)\n• departure route waypoints and constraints\n• flight plan vs computerized flight plan\n• initial cruise altitude\n• total track miles\n• fuel at destination\n• performance data\n• TRANS ALT\n• SEC F-PLN\n\n[FCOM PRO-NOR-SOP-06-D-00015238.0001001:]\n• * FMS PREPARATION...... CROSSCHECK PM\nAfter the PF prepares the FMS, the PM checks all the data entered in the FMS. This check includes a crosscheck between:\n‐ Waypoints of the expected departure route that include constraints\n‐ Waypoints of the flight plan and the computerized flight plan\n‐ Initial cruise altitude and the computerized flight plan\n‐ Total track miles and the computerized flight plan\n‐ Fuel remaining at destination and the computerized flight plan\n‐ Performance data including modifications of the THR RED/ACCEL/EO ACCEL settings, if applicable\n‐ TRANS ALT in the ACTIVE/PERF page\n‐ Setup of the SEC flight plan. The PM should have the same mental image of the intended departure procedure, trajectory, and constraints as the PF. The PM should check with the PF if anything is not clear. For more information, Refer to FCTM/PR-NP-SOP-60 Check of Departure Preparation.\n💡 Technique (Ryan's quick reference): the PM checks DIFSRIPP after the PF's A-DIFSRIPP scan.",
 "mir": true,
 "g": "Box build and check",
 "gc": "#5f3dc4",
-"gb": ""
+"gb": "",
+"pf_t": "A-DIFSRIPP check · FMS PREPARATION * CROSSCHECK (PM)"
 },
 {
 "item": "GLARESHIELD · EFIS control panel",
@@ -495,10 +532,11 @@
 "role": "BOTH",
 "x": 150.0,
 "y": 201.0,
-"d": "[FCOM PRO-NOR-SOP-06-E-00020728.0001001 · EFIS CONTROL PANEL:]\n• * BAROMETRIC REFERENCE......SET/CROSSCHECK BOTH\n‐ Set QNH on the EFIS control panel and on the standby altimeter\n‐ Check the barometric reference and altitude indications on the PFDs and on the standby altimeter. The maximum difference is: ±20 ft between both PFDs ±60 ft between ISIS and PFDs, 75 ft between PFDs and airport elevation (Refer to PRO-SPO-50 RVSM for more information).",
+"d": "[Phase flows · BOX BUILD AND CHECK · 4:]\nGlareshield · EFIS control panel\n• * LOUDSPEAKER knob ... SET\n• * BAROMETRIC REFERENCE ... SET/CROSSCHECK\n• * FD ... CHECK ON\n• * LS ... AS RQRD\n• * ND MODE and RANGE ... AS RQRD\n• * ADF/VOR sw ... AS RQRD\n• FCU: * SPD/MACH window ... DASHED\n• * HDG-V/S / TRK-FPA pb ... HDG-V/S\n• * ALT window ... INITIAL EXPECTED CLEARANCE ALTITUDE\n\n[FCOM PRO-NOR-SOP-06-E-00020728.0001001 · EFIS CONTROL PANEL:]\n• * BAROMETRIC REFERENCE......SET/CROSSCHECK BOTH\n‐ Set QNH on the EFIS control panel and on the standby altimeter\n‐ Check the barometric reference and altitude indications on the PFDs and on the standby altimeter. The maximum difference is: ±20 ft between both PFDs ±60 ft between ISIS and PFDs, 75 ft between PFDs and airport elevation (Refer to PRO-SPO-50 RVSM for more information).",
 "g": "Box build and check",
 "gc": "#5f3dc4",
-"gb": ""
+"gb": "",
+"pf_t": "Glareshield · EFIS control panel"
 },
 {
 "item": "LATERAL CONSOLES · OXYGEN MASK TEST",
@@ -506,11 +544,12 @@
 "role": "BOTH",
 "x": 9.0,
 "y": 277.9,
-"d": "[FCOM PRO-NOR-SOP-06-00011910.0001001:]\n• OXYGEN MASK TEST...... PERFORM PF-PM\nFor a detailed test of the mask, Refer to DSC-35-20-30 How to Test the Mask.",
+"d": "[Phase flows · BOX BUILD AND CHECK · 4:]\nLateral consoles · OXYGEN MASK TEST PERFORM\n• ECAM DOOR/OXY SD: REGUL LO PR indication ... CHECK NOT DISPLAYED\n\n[FCOM PRO-NOR-SOP-06-00011910.0001001:]\n• OXYGEN MASK TEST...... PERFORM PF-PM\nFor a detailed test of the mask, Refer to DSC-35-20-30 How to Test the Mask.",
 "mir": true,
 "g": "Box build and check",
 "gc": "#5f3dc4",
-"gb": ""
+"gb": "",
+"pf_t": "Lateral consoles · OXYGEN MASK TEST PERFORM"
 },
 {
 "item": "PFD and ND",
@@ -518,11 +557,12 @@
 "role": "BOTH",
 "x": 62.2,
 "y": 230.3,
-"d": "[FCOM PRO-NOR-SOP-06-00011911.0002001:]\n• * PFD......CHECK PF-PM\n‐ Check PFD/ND not transferred\n‐ Check for correct display, when ATT and HDG are available\n‐ Check IAS, FMA, initial target ALT, altimeter readings, VSI, altimeter settings, heading and attitude display.\n• * ND......CHECK PF-PM\n‐ Check for correct display\n‐ Check heading, initial waypoint, VOR/ADF  indications.",
+"d": "[Phase flows · BOX BUILD AND CHECK · 4:]\nPFD and ND * CHECK\n• EFIS DMC selector ... CHECK NORM\n• PFD and ND brightness knob ... AS RQRD\n• PFD/ND not transferred\n• IAS, FMA, initial target ALT, altimeter, VSI, heading, attitude\n• ND heading, initial waypoint, VOR/ADF\n\n[FCOM PRO-NOR-SOP-06-00011911.0002001:]\n• * PFD......CHECK PF-PM\n‐ Check PFD/ND not transferred\n‐ Check for correct display, when ATT and HDG are available\n‐ Check IAS, FMA, initial target ALT, altimeter readings, VSI, altimeter settings, heading and attitude display.\n• * ND......CHECK PF-PM\n‐ Check for correct display\n‐ Check heading, initial waypoint, VOR/ADF  indications.",
 "mir": true,
 "g": "Box build and check",
 "gc": "#5f3dc4",
-"gb": ""
+"gb": "",
+"pf_t": "PFD and ND * CHECK"
 },
 {
 "item": "PRESS, STS, FUEL pb",
@@ -530,10 +570,11 @@
 "role": "PF",
 "x": 149.5,
 "y": 304.9,
-"d": "[FCOM PRO-NOR-SOP-06-00011885.0001001 · ECAM CONTROL PANEL:]\n• * PRESS pb......PRESS PF\nCheck that the CAB PRESS SD page displays LDG ELEV AUTO to confirm correct position of the LDG ELEV knob.\n• * STS pb......PRESS PF\nCheck that INOP SYS display is compatible with MEL.\n[FCOM PRO-NOR-SOP-06-00024946.0001001 · FUEL ON BOARD:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
+"d": "[Phase flows · PF · 2 CHECKS:]\nPRESS · STS · FUEL pb PRESS (ECAM control panel)\n• * PRESS pb ... PRESS (CAB PRESS SD shows LDG ELEV AUTO)\n• * STS pb ... PRESS (INOP SYS compatible with MEL)\n• FUEL pb is the quick reference flow (FUEL SD for the FOB check); FCOM SOP-06 lists PRESS and STS\n\n[FCOM PRO-NOR-SOP-06-00011885.0001001 · ECAM CONTROL PANEL:]\n• * PRESS pb......PRESS PF\nCheck that the CAB PRESS SD page displays LDG ELEV AUTO to confirm correct position of the LDG ELEV knob.\n• * STS pb......PRESS PF\nCheck that INOP SYS display is compatible with MEL.\n[FCOM PRO-NOR-SOP-06-00024946.0001001 · FUEL ON BOARD:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
 "g": "2 Checks",
 "gc": "#9c5800",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "PRESS · STS · FUEL pb PRESS (ECAM control panel)"
 },
 {
 "item": "RLS VERSION / FITNESS / FOB / PDSC",
@@ -541,11 +582,12 @@
 "role": "PF",
 "x": 120.2,
 "y": 316.5,
-"d": "[FCOM PRO-NOR-SOP-06-90000100.9000254:]\n• RELEASE VERSION #__/ FITNESS/ FOB/ PDSC...... SENT PF\nElectronically accept latest flight release version fitness for duty, Fuel on Board and PDSC time via OPS CTRL MSG page in ACARS.",
+"d": "[Phase flows · PF · 2 CHECKS:]\nRLS VERSION / FITNESS / FOB / PDSC ... SENT\n• via OPS CTRL MSG page in ACARS\n\n[FCOM PRO-NOR-SOP-06-90000100.9000254:]\n• RELEASE VERSION #__/ FITNESS/ FOB/ PDSC...... SENT PF\nElectronically accept latest flight release version fitness for duty, Fuel on Board and PDSC time via OPS CTRL MSG page in ACARS.",
 "mir": true,
 "g": "2 Checks",
 "gc": "#9c5800",
-"gb": "PF"
+"gb": "PF",
+"pf_t": "RLS VERSION / FITNESS / FOB / PDSC ... SENT"
 },
 {
 "item": "IRS ALIGN",
@@ -553,11 +595,12 @@
 "role": "PM",
 "x": 120.2,
 "y": 316.5,
-"d": "[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs.",
+"d": "[Phase flows · PM · 3 CHECKS:]\nIRS ALIGN * CHECK\n• POSITION MONITOR: IRS in NAV, each IRS within 5 NM of FMS position\n• ND ROSE-NAV or ARC consistent with airport, SID, NAVAIDs\n\n[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs.",
 "mir": true,
 "g": "3 Checks",
 "gc": "#7a3b8f",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "IRS ALIGN * CHECK"
 },
 {
 "item": "FUEL ON BOARD",
@@ -565,10 +608,11 @@
 "role": "PM",
 "x": 150.8,
 "y": 256.6,
-"d": "[FCOM PRO-NOR-SOP-06-00024946.0001001:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
+"d": "[Phase flows · PM · 3 CHECKS:]\nFUEL ON BOARD * CHECK\n• ECAM FOB = block fuel of the computerized flight plan\n• FUEL SD: balanced, CG within limits\n\n[FCOM PRO-NOR-SOP-06-00024946.0001001:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
 "g": "3 Checks",
 "gc": "#7a3b8f",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "FUEL ON BOARD * CHECK"
 },
 {
 "item": "ATC clearance",
@@ -576,11 +620,12 @@
 "role": "PM",
 "x": 123.0,
 "y": 270.1,
-"d": "[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC.",
+"d": "[Phase flows · PM · 3 CHECKS:]\nATC clearance CONFIRM\n• VHF, ACARS (PDC) or CPDLC (DCL)\n\n[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC.",
 "mir": true,
 "g": "3 Checks",
 "gc": "#7a3b8f",
-"gb": "PM"
+"gb": "PM",
+"pf_t": "ATC clearance CONFIRM"
 },
 {
 "item": "DEPARTURE LEGS VERIFICATION",
@@ -588,11 +633,12 @@
 "role": "BOTH",
 "x": 93.8,
 "y": 228.0,
-"d": "[FCOM PRO-NOR-SOP-06-90000102.9000255:]\n• DEPARTURE LEGS VERIFICATION...... PERFORM BOTH\nThe PF reads from the “glass” (ND), and the PM verifies against the “paper” (Flight Plan/ Navigation Log, Jeppesen Charts and ATC Clearance).\n‐ Select PLAN mode on EFIS Control Panel.\n‐ Select CSTR pb ON, on EFIS Control Panel, to display speed/altitude constraints.\n‐ Select F-PLN on MCDU.\n‐ Read aloud each Departure and Enroute waypoint and corresponding speed/altitude constraint (if any) off the ND.\n‐ After each waypoint, select the ‘UP’ arrow key on the MCDU to display the next waypoint.\n‐ Check all “non-defined” waypoints (waypoints that are not in Jeppesen FD Pro Charts or the FMS database, or waypoints in an expired Nav database) and all “user-defined” waypoints (waypoints entered via LAT/LONG inputs). This check is achieved by doing the following: • Select the left LSK next to the non-defined waypoint to display the LAT REV page. • Read aloud the full Latitude and Longitude located at the top of the LAT REV page. • Select the left LSK next to < RETURN. …\n‐ Follow along with the PF by checking each waypoint and constraint against the Jeppesen SID, Dispatch release, and current ATC clearance.\n‐ Resolve any discrepancy.\nThe final step is to confirm that the total F-PLN distance (DIST) and the Estimated Fuel On Board (EFOB) at the destination agree with the Dispatch Release. Resolve any large discrepancies.",
+"d": "[Phase flows · LEGS, BRIEF, CHECKLIST · 3:]\nDEPARTURE LEGS VERIFICATION PERFORM\n• FMS waypoints vs Dispatch Release, Jeppesen Charts, ATC clearance\n\n[FCOM PRO-NOR-SOP-06-90000102.9000255:]\n• DEPARTURE LEGS VERIFICATION...... PERFORM BOTH\nThe PF reads from the “glass” (ND), and the PM verifies against the “paper” (Flight Plan/ Navigation Log, Jeppesen Charts and ATC Clearance).\n‐ Select PLAN mode on EFIS Control Panel.\n‐ Select CSTR pb ON, on EFIS Control Panel, to display speed/altitude constraints.\n‐ Select F-PLN on MCDU.\n‐ Read aloud each Departure and Enroute waypoint and corresponding speed/altitude constraint (if any) off the ND.\n‐ After each waypoint, select the ‘UP’ arrow key on the MCDU to display the next waypoint.\n‐ Check all “non-defined” waypoints (waypoints that are not in Jeppesen FD Pro Charts or the FMS database, or waypoints in an expired Nav database) and all “user-defined” waypoints (waypoints entered via LAT/LONG inputs). This check is achieved by doing the following: • Select the left LSK next to the non-defined waypoint to display the LAT REV page. • Read aloud the full Latitude and Longitude located at the top of the LAT REV page. • Select the left LSK next to < RETURN. …\n‐ Follow along with the PF by checking each waypoint and constraint against the Jeppesen SID, Dispatch release, and current ATC clearance.\n‐ Resolve any discrepancy.\nThe final step is to confirm that the total F-PLN distance (DIST) and the Estimated Fuel On Board (EFOB) at the destination agree with the Dispatch Release. Resolve any large discrepancies.",
 "mir": true,
 "g": "Legs, Brief, Checklist",
 "gc": "#831A57",
-"gb": ""
+"gb": "",
+"pf_t": "DEPARTURE LEGS VERIFICATION PERFORM"
 },
 {
 "item": "DEPARTURE BRIEFING",
@@ -600,12 +646,13 @@
 "role": "BOTH",
 "x": 100.0,
 "y": 246.0,
-"d": "[FCOM PRO-NOR-SOP-06-00011915.0001001:]\n• * DEPARTURE BRIEFING...... PERFORM BOTH\nPerform a Threat Based Departure Briefing. For more information, refer to FOM \"Threat Based Departure Briefing/ TPC\".\n[FCTM PR-NP-CL-00024935.0001001 · COCKPIT PREPARATION:]\nChecklist trigger: Departure briefing completed.\n✅ COCKPIT PREPARATION CHECKLIST: PF requests it, PM reads the challenge, PF responds after checking the aircraft. Card trigger: Departure Briefing complete. (FCTM PR-NP-CL-00024935.0001001)",
+"d": "[Phase flows · LEGS, BRIEF, CHECKLIST · 3:]\nDEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation checklist)\n• Threat Based Departure Briefing (FOM Threat Based Departure Briefing/TPC)\n\n[FCOM PRO-NOR-SOP-06-00011915.0001001:]\n• * DEPARTURE BRIEFING...... PERFORM BOTH\nPerform a Threat Based Departure Briefing. For more information, refer to FOM \"Threat Based Departure Briefing/ TPC\".\n[FCTM PR-NP-CL-00024935.0001001 · COCKPIT PREPARATION:]\nChecklist trigger: Departure briefing completed.\n✅ COCKPIT PREPARATION CHECKLIST: PF requests it, PM reads the challenge, PF responds after checking the aircraft. Card trigger: Departure Briefing complete. (FCTM PR-NP-CL-00024935.0001001)",
 "mir": true,
 "trg": "Cockpit Preparation Checklist",
 "g": "Legs, Brief, Checklist",
 "gc": "#831A57",
-"gb": ""
+"gb": "",
+"pf_t": "DEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation checklist)"
 },
 {
 "item": "COCKPIT PREPARATION CHECKLIST",
@@ -616,10 +663,11 @@
 "mir": true,
 "cl": "COCKPIT PREPARATION CHECKLIST",
 "clWho": "PF requests · PM reads · PF responds",
-"d": "[FCTM PR-NP-CL-00024935.0001001 · COCKPIT PREPARATION:]\nChecklist trigger: Departure briefing completed.",
+"d": "[Phase flows · LEGS, BRIEF, CHECKLIST · 3:]\nCockpit Preparation\n\n[FCTM PR-NP-CL-00024935.0001001 · COCKPIT PREPARATION:]\nChecklist trigger: Departure briefing completed.",
 "g": "Legs, Brief, Checklist",
 "gc": "#831A57",
-"gb": ""
+"gb": "",
+"pf_t": "Cockpit Preparation"
 }
 ],
 "groups": [
