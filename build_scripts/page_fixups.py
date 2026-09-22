@@ -77,6 +77,21 @@ EDITS={
    '  for(let i=0;i<stepIdx;i++){\n    if(grpFilter && items[i].g!==grpFilter) continue;\n    const gh = grpHeader(items, i);'),
   ('document.getElementById("reveal").onclick = ()=>{',
    'document.getElementById("stepBtn").onclick = ()=>document.getElementById("reveal").onclick();\ndocument.getElementById("reveal").onclick = ()=>{'),
+  # v4.2 (Ryan, 2026-09-22): poster zoom + / 100% / - ; the image scales by width inside a scrolling frame, pinch still works on the phone
+  ('<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div>',
+   '<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;">'
+   '<div class="pzbar" style="display:flex;gap:8px;justify-content:center;margin:0 0 8px;"><button id="pzOut" title="Zoom out">&minus;</button><button id="pzReset" title="Reset zoom">100%</button><button id="pzIn" title="Zoom in">+</button></div>'
+   '<div id="pzWrap" style="overflow:auto;max-height:82vh;-webkit-overflow-scrolling:touch;border-radius:6px;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div></div>'),
+  ('  .miniBtns button:hover{background:var(--midnight);color:#fff;}',
+   '  .miniBtns button:hover{background:var(--midnight);color:#fff;}\n  .pzbar button{min-width:52px;min-height:40px;font-size:18px;font-weight:800;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:6px;cursor:pointer;} .pzbar #pzReset{font-size:13px;min-width:70px;}'),
+  ('const posterBtn = document.getElementById("posterBtn");',
+   'let pz = 1;\nfunction setPz(z){ pz = Math.min(4, Math.max(1, z)); const img = document.getElementById("posterImg"); img.style.width = (100*pz)+"%"; img.style.maxWidth = (680*pz)+"px"; document.getElementById("pzReset").textContent = Math.round(pz*100)+"%"; }\n'
+   'document.getElementById("pzIn").onclick = ()=>setPz(pz*1.25);\ndocument.getElementById("pzOut").onclick = ()=>setPz(pz/1.25);\ndocument.getElementById("pzReset").onclick = ()=>{ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); };\n'
+   'const posterBtn = document.getElementById("posterBtn");'),
+  # v4.2: an item whose title already carries the action has act '' (spine synced to the phase flows); render without the dash
+  ('"<b>" + items[i].item + "</b> - " + items[i].act + " <small>("', '"<b>" + items[i].item + "</b>" + (items[i].act ? " - " + items[i].act : "") + " <small>("'),
+  ('(items[stepIdx].item + " - " + items[stepIdx].act + "  (" + items[stepIdx].role + ")")', '(items[stepIdx].item + (items[stepIdx].act ? " - " + items[stepIdx].act : "") + "  (" + items[stepIdx].role + ")")'),
+  ('"<b>"+it.item+"</b> — "+it.act+" <small>("+it.role+")</small>"', '"<b>"+it.item+"</b>"+(it.act ? " — "+it.act : "")+" <small>("+it.role+")</small>"'),
  ],
  'assist.js':[
   ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),

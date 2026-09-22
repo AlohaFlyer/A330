@@ -182,6 +182,7 @@
   .miniBtns{position:absolute;top:10px;right:12px;display:flex;gap:6px;}
   .miniBtns button{font-size:14px;padding:6px 12px;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:4px;cursor:pointer;}
   .miniBtns button:hover{background:var(--midnight);color:#fff;}
+  .pzbar button{min-width:52px;min-height:40px;font-size:18px;font-weight:800;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:6px;cursor:pointer;} .pzbar #pzReset{font-size:13px;min-width:70px;}
   svg .numlight{font-size:9px;fill:#fff;font-weight:700;}
   svg .dot, svg .num, svg .numlight{cursor:pointer;}
 </style>
@@ -252,7 +253,7 @@
 
 <div class="fulllist hidden" id="fullList"></div>
 
-<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div>
+<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><div class="pzbar" style="display:flex;gap:8px;justify-content:center;margin:0 0 8px;"><button id="pzOut" title="Zoom out">&minus;</button><button id="pzReset" title="Reset zoom">100%</button><button id="pzIn" title="Zoom in">+</button></div><div id="pzWrap" style="overflow:auto;max-height:82vh;-webkit-overflow-scrolling:touch;border-radius:6px;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div></div>
 
 <script>
 /* FLOWS, XREFS and NORMAL_CHECKLISTS live in data/flows_trainer.json, loaded here; engine below is unchanged */
@@ -559,7 +560,7 @@ function render(){
     if(items[i].gc) s.style.setProperty("--gc", items[i].gc);
     s.style.cursor = "pointer";
     s.title = "Tap to view FCOM detail";
-    s.innerHTML = (i+1) + ". " + (items[i].lt ? "\ud83d\udca1 " : "") + "<b>" + items[i].item + "</b> - " + items[i].act + " <small>(" + items[i].role + ")</small>" + (items[i].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[i].cl + "')\">✅ " + items[i].cl + "</span>" : "") + (items[i].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[i].brief + "</span>" : "") + (items[i].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[i].trg + "</span>" : "");
+    s.innerHTML = (i+1) + ". " + (items[i].lt ? "\ud83d\udca1 " : "") + "<b>" + items[i].item + "</b>" + (items[i].act ? " - " + items[i].act : "") + " <small>(" + items[i].role + ")</small>" + (items[i].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[i].cl + "')\">✅ " + items[i].cl + "</span>" : "") + (items[i].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[i].brief + "</span>" : "") + (items[i].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[i].trg + "</span>" : "");
     (function(d){ s.onclick = ()=>{ (function(){
   const existing2 = document.getElementById("xrefBox"); if(existing2) existing2.remove();
   const html = d.split("\n").map(fmtLine).join("\n");
@@ -570,7 +571,7 @@ function render(){
   if(stepIdx < items.length){
     const gi = grpInfo(items, stepIdx);
     document.getElementById("q").innerHTML = (gi ? "<span class=\"grpq\" style=\"color:" + gi.gc + "\">" + (gi.gb ? gi.gb + " · " : "") + gi.g + " · " + gi.k + " of " + gi.n + "</span>" : "") + "Step " + (stepIdx+1) + " of " + items.length + "... ?";
-    document.getElementById("a").innerHTML = (items[stepIdx].lt ? "\ud83d\udca1 " : "") + (items[stepIdx].item + " - " + items[stepIdx].act + "  (" + items[stepIdx].role + ")").replace(/</g,"&lt;") + (items[stepIdx].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[stepIdx].cl + "')\">✅ Call: " + items[stepIdx].cl + " <small style='color:#5a8a5a;font-weight:600;'>(" + (items[stepIdx].clWho||"") + ")</small></span>" : "") + (items[stepIdx].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[stepIdx].brief + " <small style='color:#8C7EB8;font-weight:600;'>(" + (items[stepIdx].briefWho||"") + ")</small></span>" : "") + (items[stepIdx].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[stepIdx].trg + "</span>" : "");
+    document.getElementById("a").innerHTML = (items[stepIdx].lt ? "\ud83d\udca1 " : "") + (items[stepIdx].item + (items[stepIdx].act ? " - " + items[stepIdx].act : "") + "  (" + items[stepIdx].role + ")").replace(/</g,"&lt;") + (items[stepIdx].cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + items[stepIdx].cl + "')\">✅ Call: " + items[stepIdx].cl + " <small style='color:#5a8a5a;font-weight:600;'>(" + (items[stepIdx].clWho||"") + ")</small></span>" : "") + (items[stepIdx].brief ? "<span class=\"brbadge\">\ud83d\udde3\ufe0f " + items[stepIdx].brief + " <small style='color:#8C7EB8;font-weight:600;'>(" + (items[stepIdx].briefWho||"") + ")</small></span>" : "") + (items[stepIdx].trg ? "<span class=\"strgbadge\">\ud83d\udd3b TRIGGER → " + items[stepIdx].trg + "</span>" : "");
     (function(){
   const raw = items[stepIdx].d || "No additional amplified detail for this item.";
   const existing = document.getElementById("xrefBox"); if(existing) existing.remove();
@@ -630,6 +631,11 @@ shapeBtn.onclick = ()=>{
   shapeBtn.classList.toggle("active", showShape);
   render();
 };
+let pz = 1;
+function setPz(z){ pz = Math.min(4, Math.max(1, z)); const img = document.getElementById("posterImg"); img.style.width = (100*pz)+"%"; img.style.maxWidth = (680*pz)+"px"; document.getElementById("pzReset").textContent = Math.round(pz*100)+"%"; }
+document.getElementById("pzIn").onclick = ()=>setPz(pz*1.25);
+document.getElementById("pzOut").onclick = ()=>setPz(pz/1.25);
+document.getElementById("pzReset").onclick = ()=>{ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); };
 const posterBtn = document.getElementById("posterBtn");
 const posterView = document.getElementById("posterView");
 function hidePoster(){
@@ -727,7 +733,7 @@ function buildFullList(){
       const head = document.createElement("div");
       head.className = "fl-item" + (it.g ? " gitem" : "");
       if(it.gc) head.style.setProperty("--gc", it.gc);
-      head.innerHTML = (it.lt ? "\ud83d\udca1 " : "") + "<b>"+it.item+"</b> — "+it.act+" <small>("+it.role+")</small>";
+      head.innerHTML = (it.lt ? "\ud83d\udca1 " : "") + "<b>"+it.item+"</b>"+(it.act ? " — "+it.act : "")+" <small>("+it.role+")</small>";
       const det = document.createElement("div");
       det.className = "fl-detail";
       det.innerHTML = (it.d && it.d.trim() ? it.d : "No amplified FCOM note for this step. Ref: "+f.ref).split("\n").map(fmtLine).join("\n");
@@ -801,7 +807,7 @@ render();
 Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
 }).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
-<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 3.9</div></footer>
+<footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 4.2</div></footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
 </body>

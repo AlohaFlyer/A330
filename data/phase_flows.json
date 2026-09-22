@@ -6423,7 +6423,7 @@
 {
 "k": "box",
 "t": "TCAS WARNING (RA)",
-"s": "“TCAS, I have control” · “Hawaiian 50, TCAS RA” · AP ... OFF · FD ... OFF (both) · “Hawaiian 50, clear of conflict” · FCOM: the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear",
+"s": "“TCAS, I have control” · “Hawaiian 50, TCAS RA” · AP ... OFF · FD ... OFF (both) · Vertical speed ... ADJUST or MAINTAIN (fly the green band) · CLIMB RA in CONF 3 or FULL ... GO-AROUND · “Hawaiian 50, clear of conflict” · FCOM: the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear",
 "r": "B",
 "call": true,
 "quote": "All RA, except any CLIMB RA during approach in CONF 3 or FULL: AP (if engaged) ... OFF BOTH FDs ... OFF Respond promptly and smoothly. VERTICAL SPEED ... ADJUST or MAINTAIN",
@@ -6436,7 +6436,7 @@
 {
 "k": "box",
 "t": "WINDSHEAR",
-"s": "Takeoff before V1 ... REJECT · After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS” · “WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA” · FCOM: airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear",
+"s": "Takeoff before V1 ... REJECT · After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS · Airborne or landing: TOGA (set or confirm) · AP (if engaged) KEEP ON · FOLLOW SRS · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS” · “WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA” · FCOM: airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear",
 "r": "B",
 "call": true,
 "quote": "After V1: THR LEVERS ... TOGA REACHING VR ... ROTATE SRS ORDERS ... FOLLOW",

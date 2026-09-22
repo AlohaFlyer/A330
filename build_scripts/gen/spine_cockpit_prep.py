@@ -41,6 +41,9 @@ def sync_from_phase_flows(D):
         block = '[Phase flows · ' + h + ':]\n' + pit['t'] + ''.join('\n• ' + b for b in bullets)
         it['d'] = block + ('\n\n' + d if d else '')
         it['pf_t'] = pit['t']
+        # the drill prompt is the phase flows title (2026-09-22); the action stays unless the title already says it
+        it['item'] = pit['t']
+        if it.get('act') and it['act'].split(' · ')[0].lower() in pit['t'].lower(): it['act'] = ''
     return len(pairs)
 if any(f.get('spine') for f in F):
     n = sync_from_phase_flows(D)

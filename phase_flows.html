@@ -123,6 +123,7 @@ body.dark .cl.cc{color:#8fe3b0;border-left-color:#8fe3b0;}
 body.dark .clcc{color:#8fe3b0;}
 body.dark .it.fmc .t{color:#f2d24c;}
 body.dark .exp{color:#f2d24c;border-color:#f2d24c;}
+.it.long{cursor:pointer;}.it.long:not(.open) ul.bl li:nth-child(n+6){display:none;}.it.long:not(.open) ul.bl::after{content:'… tap for the full list';display:block;font-size:.7em;font-weight:700;color:var(--accent);padding-left:13px;margin-top:2px;}
 .it.lights{background:#EAF6FF;border-radius:6px;margin-left:-4px;padding-left:4px;margin-right:-4px;padding-right:4px;}body.dark .it.lights{background:#0f2a3f;}
 .lt{background:#E0F2FE;color:#075985;font-weight:800;border-radius:3px;padding:0 3px;}.lt b{color:#075985;}body.dark .lt{background:#0c3a55;color:#7dd3fc;}body.dark .lt b{color:#7dd3fc;}  /* sky-blue chip: light switches (Ryan, 2026-09-22) */
 .tech .tl{display:block;font-size:.72em;letter-spacing:.6px;opacity:.75;margin-bottom:1px;}
@@ -365,7 +366,7 @@ function renderItem(it,cite,ctx,pid){
     return `<div class="clwrap"><div class="cl${it.bold?' bold':''}${it.cc?' cc':''} has-cl"><span class="ic">&#10003;</span><span class="cln">${it.t} Checklist${w}</span>${EXP}</div><div class="clbody">${body}${it.cc?'<div class="clcc">PM: __ CHECKLIST COMPLETE</div>':''}</div></div>`; }
   if(it.k==='box'){ const match=roleMatch(it.r); if(!match&&state.hideOther)return ''; const dim=match?'':' dim'; const n=ctx.n++;
     const q=it.q || (typeof QUOTES!=='undefined' ? (QUOTES[pid+'|'+it.t]||'') : '');
-    const cls='it'+(it.call?' say':'')+(it.fmc?' fmc':'')+(q?' has-q':'')+dim+(LIGHTS.test(it.t+' '+(it.s||''))?' lights':''); LIGHTS.lastIndex=0;
+    const cls='it'+(it.call?' say':'')+(it.fmc?' fmc':'')+(q?' has-q':'')+dim+(LIGHTS.test(it.t+' '+(it.s||''))?' lights':'')+(((it.s||'').split(' · ').length>6)?' long':''); LIGHTS.lastIndex=0;
     const sayb=it.call?'<span class="sayb">&#10078;</span>':'';
     const stag=((cite||'').trim().split(/[\s·\/]+/).filter(Boolean)[0]||'ref').replace(/[^A-Za-z0-9.]/g,'');
     const badge=q?`<span class="exp">${stag} &#9656;</span>`:'';
@@ -593,6 +594,7 @@ document.getElementById('notesBtn').addEventListener('click',()=>{ if(state.note
 document.getElementById('main').addEventListener('click',e=>{
   if(window.getSelection().toString().length>0){ return; }
   if(state.notesOpen){ closeNotes(); return; }
+  const lg=e.target.closest('.it.long'); if(lg){ lg.classList.toggle('open'); return; }
   const q=e.target.closest('.it.has-q'); if(q){ q.classList.toggle('open'); return; }
   const sg=e.target.closest('.sub.has-sub'); if(sg){ sg.parentNode.classList.toggle('open'); return; }
   const c=e.target.closest('.cl.has-cl'); if(c){ c.parentNode.classList.toggle('open'); }

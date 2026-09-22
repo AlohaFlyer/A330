@@ -265,6 +265,17 @@ def transform(t):
     a = "body.dark .tech{color:#f2d24c;}"
     assert t.count(a) == 1, 'phase_flows (q): css anchor missing'
     t = t.replace(a, a + "\n.it.lights{background:#EAF6FF;border-radius:6px;margin-left:-4px;padding-left:4px;margin-right:-4px;padding-right:4px;}body.dark .it.lights{background:#0f2a3f;}")
+    # ---- (r) long bullet lists fold to a cue (first 5) until tapped (Ryan, 2026-09-22): the card stays a memorization cue,
+    #      the full FCOM list is one tap away, and the phone page stops being a wall of text
+    a = "(LIGHTS.test(it.t+' '+(it.s||''))?' lights':''); LIGHTS.lastIndex=0;"
+    assert t.count(a) == 1, 'phase_flows (r): cls anchor missing'
+    t = t.replace(a, "(LIGHTS.test(it.t+' '+(it.s||''))?' lights':'')+(((it.s||'').split(' · ').length>6)?' long':''); LIGHTS.lastIndex=0;")
+    a = "  const q=e.target.closest('.it.has-q'); if(q){ q.classList.toggle('open'); return; }"
+    assert t.count(a) == 1, 'phase_flows (r): click anchor missing'
+    t = t.replace(a, "  const lg=e.target.closest('.it.long'); if(lg){ lg.classList.toggle('open'); return; }\n" + a)
+    a = "body.dark .tech{color:#f2d24c;}"
+    assert t.count(a) == 1, 'phase_flows (r): css anchor missing'
+    t = t.replace(a, a + "\n.it.long{cursor:pointer;}.it.long:not(.open) ul.bl li:nth-child(n+6){display:none;}.it.long:not(.open) ul.bl::after{content:'… tap for the full list';display:block;font-size:.7em;font-weight:700;color:var(--accent);padding-left:13px;margin-top:2px;}")
     return t
 
 if __name__ == '__main__':

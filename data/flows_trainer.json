@@ -49,8 +49,8 @@
 "spine": true,
 "items": [
 {
-"item": "ENG 1, 2 MASTERS LEVERS · ENG START selector",
-"act": "OFF · NORM",
+"item": "ENG masters OFF · ENG START NORM",
+"act": "",
 "role": "FO",
 "x": 149.8,
 "y": 362.9,
@@ -61,8 +61,8 @@
 "pf_t": "ENG masters OFF · ENG START NORM"
 },
 {
-"item": "WXR/PWS sw",
-"act": "OFF",
+"item": "Weather radar OFF *",
+"act": "",
 "role": "FO",
 "x": 119.5,
 "y": 365.0,
@@ -73,8 +73,8 @@
 "pf_t": "Weather radar OFF *"
 },
 {
-"item": "L/G lever",
-"act": "DOWN",
+"item": "L/G lever DOWN",
+"act": "",
 "role": "FO",
 "x": 174.0,
 "y": 246.1,
@@ -85,8 +85,8 @@
 "pf_t": "L/G lever DOWN"
 },
 {
-"item": "Both WIPER selectors",
-"act": "OFF",
+"item": "Wipers OFF",
+"act": "",
 "role": "FO",
 "x": 178.9,
 "y": 166.4,
@@ -97,7 +97,7 @@
 "pf_t": "Wipers OFF"
 },
 {
-"item": "BATTERIES check / ELEC",
+"item": "Batteries check / ELEC",
 "act": "CHECK (BAT 1, BAT 2, APU BAT AUTO)",
 "role": "FO",
 "x": 144.7,
@@ -109,8 +109,8 @@
 "pf_t": "Batteries check / ELEC"
 },
 {
-"item": "RMP 1 and 2",
-"act": "CHECK ON",
+"item": "RMP 1 and 2 CHECK ON",
+"act": "",
 "role": "FO",
 "x": 120.2,
 "y": 331.5,
@@ -121,7 +121,7 @@
 "pf_t": "RMP 1 and 2 CHECK ON"
 },
 {
-"item": "APU FIRE pb-sw · TEST",
+"item": "APU FIRE pb-sw",
 "act": "CHECK IN and GUARDED · PRESS and MAINTAIN",
 "role": "FO",
 "x": 108.1,
@@ -133,7 +133,7 @@
 "pf_t": "APU FIRE pb-sw"
 },
 {
-"item": "APU START · APU BLEED",
+"item": "APU start · bleed",
 "act": "ON · ON when AVAIL",
 "role": "FO",
 "x": 149.2,
@@ -145,8 +145,8 @@
 "pf_t": "APU start · bleed"
 },
 {
-"item": "ALL IR MODE selector",
-"act": "NAV",
+"item": "ADIRS * ALL IR MODE selector NAV",
+"act": "",
 "role": "FO",
 "x": 115.0,
 "y": 91.7,
@@ -157,8 +157,8 @@
 "pf_t": "ADIRS * ALL IR MODE selector NAV"
 },
 {
-"item": "COCKPIT LIGHTS",
-"act": "AS RQRD",
+"item": "Cockpit lights * AS RQRD",
+"act": "",
 "role": "FO",
 "x": 180.2,
 "y": 356.1,
@@ -169,8 +169,8 @@
 "pf_t": "Cockpit lights * AS RQRD"
 },
 {
-"item": "COCKPIT LIGHTS",
-"act": "AS RQRD",
+"item": "Cockpit lights * AS RQRD",
+"act": "",
 "role": "CA",
 "x": 159.9,
 "y": 172.1,
@@ -181,8 +181,8 @@
 "pf_t": "Cockpit lights * AS RQRD"
 },
 {
-"item": "ATIS",
-"act": "OBTAIN",
+"item": "ATIS * OBTAIN",
+"act": "",
 "role": "FO",
 "x": 150.0,
 "y": 389.0,
@@ -193,8 +193,8 @@
 "pf_t": "ATIS * OBTAIN"
 },
 {
-"item": "MCDU",
-"act": "ON",
+"item": "MCDU ON (pre-initialization)",
+"act": "",
 "role": "CA",
 "x": 120.2,
 "y": 304.2,
@@ -205,8 +205,8 @@
 "pf_t": "MCDU ON (pre-initialization)"
 },
 {
-"item": "ALL EFB",
-"act": "START",
+"item": "EFB start (Flysmart)",
+"act": "",
 "role": "BOTH",
 "x": 21.0,
 "y": 254.3,
@@ -227,8 +227,8 @@
 "pf_t": "EFB start (Flysmart)"
 },
 {
-"item": "RCL pb",
-"act": "PRESS 3 s",
+"item": "RCL pb * PRESS 3 s",
+"act": "",
 "role": "CA",
 "x": 150.9,
 "y": 308.3,
@@ -239,8 +239,8 @@
 "pf_t": "RCL pb * PRESS 3 s"
 },
 {
-"item": "AIRCRAFT ACCEPTANCE",
-"act": "PERFORM",
+"item": "AIRCRAFT ACCEPTANCE * PERFORM",
+"act": "",
 "role": "CA",
 "x": 9.0,
 "y": 277.9,
@@ -251,8 +251,8 @@
 "pf_t": "AIRCRAFT ACCEPTANCE * PERFORM"
 },
 {
-"item": "LOGBOOK AND MEL/CDL ITEMS",
-"act": "CHECK",
+"item": "LOGBOOK and MEL/CDL items * CHECK",
+"act": "",
 "role": "FO",
 "x": 291.0,
 "y": 277.9,
@@ -263,8 +263,8 @@
 "pf_t": "LOGBOOK and MEL/CDL items * CHECK"
 },
 {
-"item": "OEB",
-"act": "CHECK",
+"item": "OEB * CHECK",
+"act": "",
 "role": "BOTH",
 "x": 21.0,
 "y": 258.0,
@@ -285,8 +285,8 @@
 "pf_t": "OEB * CHECK"
 },
 {
-"item": "JEPPESEN CHARTS",
-"act": "PREPARE",
+"item": "Jeppesen charts * PREPARE",
+"act": "",
 "role": "FO",
 "x": 281.2,
 "y": 262.6,
@@ -297,8 +297,8 @@
 "pf_t": "Jeppesen charts * PREPARE"
 },
 {
-"item": "JEPPESEN CHARTS",
-"act": "PREPARE",
+"item": "Jeppesen charts * PREPARE",
+"act": "",
 "role": "CA",
 "x": 21.0,
 "y": 262.6,
@@ -309,8 +309,8 @@
 "pf_t": "Jeppesen charts * PREPARE"
 },
 {
-"item": "ACARS",
-"act": "INITIALIZE",
+"item": "ACARS * INITIALIZE",
+"act": "",
 "role": "PF",
 "x": 120.2,
 "y": 316.5,
@@ -331,8 +331,8 @@
 "pf_t": "ACARS * INITIALIZE"
 },
 {
-"item": "PRELIMINARY TAKEOFF PERF DATA (TPR)",
-"act": "OBTAIN",
+"item": "Preliminary takeoff perf data * OBTAIN",
+"act": "",
 "role": "PF",
 "x": 171.4,
 "y": 403.8,
@@ -343,7 +343,7 @@
 "pf_t": "Preliminary takeoff perf data * OBTAIN"
 },
 {
-"item": "Overhead Panels scan",
+"item": "Overhead panel scan",
 "act": "ALL WHITE LIGHTS OFF",
 "role": "PF",
 "x": 149.8,
@@ -355,7 +355,7 @@
 "pf_t": "Overhead panel scan"
 },
 {
-"item": "Front Instr Panels scan",
+"item": "Front instrument panels",
 "act": "ISIS CHECK",
 "role": "PF",
 "x": 127.8,
@@ -367,7 +367,7 @@
 "pf_t": "Front instrument panels"
 },
 {
-"item": "Center Pedestal scan",
+"item": "Center pedestal",
 "act": "RMP 1 and 2 CHECK ON",
 "role": "PF",
 "x": 120.2,
@@ -392,8 +392,8 @@
 "pf_t": "OXY · HYD · ENG OIL (3)"
 },
 {
-"item": "FLAPS",
-"act": "CHECK POSITION",
+"item": "FLAPS CHECK POSITION",
+"act": "",
 "role": "PM",
 "x": 168.6,
 "y": 380.6,
@@ -404,8 +404,8 @@
 "pf_t": "FLAPS CHECK POSITION"
 },
 {
-"item": "SPEED BRAKE lever",
-"act": "CHECK RETRACTED and DISARMED",
+"item": "SPEED BRAKE * CHECK RETRACTED and DISARMED",
+"act": "",
 "role": "PM",
 "x": 133.8,
 "y": 380.6,
@@ -416,8 +416,8 @@
 "pf_t": "SPEED BRAKE * CHECK RETRACTED and DISARMED"
 },
 {
-"item": "ACCU PRESS indicator",
-"act": "CHECK",
+"item": "ACCU PRESS * CHECK",
+"act": "",
 "role": "PM",
 "x": 181.5,
 "y": 248.3,
@@ -428,8 +428,8 @@
 "pf_t": "ACCU PRESS * CHECK"
 },
 {
-"item": "PARK BRK handle",
-"act": "ON",
+"item": "PARK BRK * ON",
+"act": "",
 "role": "PM",
 "x": 122.2,
 "y": 394.3,
@@ -440,8 +440,8 @@
 "pf_t": "PARK BRK * ON"
 },
 {
-"item": "BRAKES PRESS indicator",
-"act": "CHECK",
+"item": "BRAKES PRESS * CHECK",
+"act": "",
 "role": "PM",
 "x": 186.8,
 "y": 253.6,
@@ -452,8 +452,8 @@
 "pf_t": "BRAKES PRESS * CHECK"
 },
 {
-"item": "ALTN BRAKING",
-"act": "CHECK",
+"item": "ALTN BRAKING CHECK",
+"act": "",
 "role": "PM",
 "x": 125.0,
 "y": 387.5,
@@ -464,8 +464,8 @@
 "pf_t": "ALTN BRAKING CHECK"
 },
 {
-"item": "EMER EQPT",
-"act": "CHECK",
+"item": "EMER EQPT CHECK",
+"act": "",
 "role": "PM",
 "x": 291.0,
 "y": 277.9,
@@ -476,8 +476,8 @@
 "pf_t": "EMER EQPT CHECK"
 },
 {
-"item": "RAIN RPLNT indicators",
-"act": "CHECK PRESSURE and QUANTITY",
+"item": "RAIN RPLNT CHECK PRESSURE and QUANTITY",
+"act": "",
 "role": "PM",
 "x": 189.0,
 "y": 166.4,
@@ -488,8 +488,8 @@
 "pf_t": "RAIN RPLNT CHECK PRESSURE and QUANTITY"
 },
 {
-"item": "GEAR PINS (3)",
-"act": "CHECK ONBOARD and STOWED",
+"item": "GEAR PINS (3) * CHECK ONBOARD and STOWED",
+"act": "",
 "role": "PM",
 "x": 174.0,
 "y": 246.1,
@@ -501,7 +501,7 @@
 "pf_t": "GEAR PINS (3) * CHECK ONBOARD and STOWED"
 },
 {
-"item": "A-DIFSRIPP scan",
+"item": "A-DIFSRIPP · FMS preparation (PF)",
 "act": "TO/FROM CHECK",
 "role": "PF",
 "x": 120.2,
@@ -514,8 +514,8 @@
 "pf_t": "A-DIFSRIPP · FMS preparation (PF)"
 },
 {
-"item": "FMS PREPARATION (check DIFSRIPP)",
-"act": "CROSSCHECK",
+"item": "A-DIFSRIPP check · FMS PREPARATION * CROSSCHECK (PM)",
+"act": "",
 "role": "PM",
 "x": 120.2,
 "y": 304.2,
@@ -527,7 +527,7 @@
 "pf_t": "A-DIFSRIPP check · FMS PREPARATION * CROSSCHECK (PM)"
 },
 {
-"item": "GLARESHIELD · EFIS control panel",
+"item": "Glareshield · EFIS control panel",
 "act": "BARO REF SET/CROSSCHECK · FD ON · LS as rqrd",
 "role": "BOTH",
 "x": 150.0,
@@ -539,8 +539,8 @@
 "pf_t": "Glareshield · EFIS control panel"
 },
 {
-"item": "LATERAL CONSOLES · OXYGEN MASK TEST",
-"act": "PERFORM",
+"item": "Lateral consoles · OXYGEN MASK TEST PERFORM",
+"act": "",
 "role": "BOTH",
 "x": 9.0,
 "y": 277.9,
@@ -552,8 +552,8 @@
 "pf_t": "Lateral consoles · OXYGEN MASK TEST PERFORM"
 },
 {
-"item": "PFD and ND",
-"act": "CHECK",
+"item": "PFD and ND * CHECK",
+"act": "",
 "role": "BOTH",
 "x": 62.2,
 "y": 230.3,
@@ -565,8 +565,8 @@
 "pf_t": "PFD and ND * CHECK"
 },
 {
-"item": "PRESS, STS, FUEL pb",
-"act": "PRESS",
+"item": "PRESS · STS · FUEL pb PRESS (ECAM control panel)",
+"act": "",
 "role": "PF",
 "x": 149.5,
 "y": 304.9,
@@ -577,8 +577,8 @@
 "pf_t": "PRESS · STS · FUEL pb PRESS (ECAM control panel)"
 },
 {
-"item": "RLS VERSION / FITNESS / FOB / PDSC",
-"act": "SENT",
+"item": "RLS VERSION / FITNESS / FOB / PDSC ... SENT",
+"act": "",
 "role": "PF",
 "x": 120.2,
 "y": 316.5,
@@ -590,8 +590,8 @@
 "pf_t": "RLS VERSION / FITNESS / FOB / PDSC ... SENT"
 },
 {
-"item": "IRS ALIGN",
-"act": "CHECK",
+"item": "IRS ALIGN * CHECK",
+"act": "",
 "role": "PM",
 "x": 120.2,
 "y": 316.5,
@@ -603,8 +603,8 @@
 "pf_t": "IRS ALIGN * CHECK"
 },
 {
-"item": "FUEL ON BOARD",
-"act": "CHECK",
+"item": "FUEL ON BOARD * CHECK",
+"act": "",
 "role": "PM",
 "x": 150.8,
 "y": 256.6,
@@ -615,8 +615,8 @@
 "pf_t": "FUEL ON BOARD * CHECK"
 },
 {
-"item": "ATC clearance",
-"act": "CONFIRM",
+"item": "ATC clearance CONFIRM",
+"act": "",
 "role": "PM",
 "x": 123.0,
 "y": 270.1,
@@ -628,8 +628,8 @@
 "pf_t": "ATC clearance CONFIRM"
 },
 {
-"item": "DEPARTURE LEGS VERIFICATION",
-"act": "PERFORM",
+"item": "DEPARTURE LEGS VERIFICATION PERFORM",
+"act": "",
 "role": "BOTH",
 "x": 93.8,
 "y": 228.0,
@@ -641,8 +641,8 @@
 "pf_t": "DEPARTURE LEGS VERIFICATION PERFORM"
 },
 {
-"item": "DEPARTURE BRIEFING",
-"act": "PERFORM",
+"item": "DEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation checklist)",
+"act": "",
 "role": "BOTH",
 "x": 100.0,
 "y": 246.0,
@@ -655,7 +655,7 @@
 "pf_t": "DEPARTURE BRIEFING * PERFORM (TRIGGER: Cockpit Preparation checklist)"
 },
 {
-"item": "COCKPIT PREPARATION CHECKLIST",
+"item": "Cockpit Preparation",
 "act": "PF requests · PM reads · PF responds",
 "role": "BOTH",
 "x": 100.0,
