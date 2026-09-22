@@ -203,8 +203,9 @@ def transform(t):
     t = t.replace(a, a + "\n#fit{min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center;}\n@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control (the media rule must come after the base rule) */")
     a = "function colsForWidth(W){ return W>=1100?4 : W>=820?3 : W>=600?2 : 1; }\n"
     assert t.count(a) == 1, 'phase_flows (k): colsForWidth anchor missing'
-    t = t.replace(a, a + "function readMode(W){ return !state.fit || colsForWidth(W)===1; }\n"
-        "function applyRead(grid,cards,W,avail){ const phone=colsForWidth(W)===1; const ncol=phone?1:Math.min(colsForWidth(W),Math.max(1,cards.length)); grid.style.flex=phone?'0 0 auto':''; const sparse=!phone && cards.length<colsForWidth(W); const lock=!phone && !sparse; grid.style.height=lock?avail+'px':''; grid.style.columnFill=lock?'auto':''; grid.style.flex=lock?'':'0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=sparse?(ncol*640)+'px':''; grid.style.margin=sparse?'0':''; applyCols(grid,cards,ncol,16); } // sparse pages (fewer cards than columns) are column-width, left-justified and scroll down instead of sideways // FIT off: phone scrolls down; Mac/iPad keep 16 px, the height lock and the columns continuing to the right (Ryan, 2026-09-22)\n"
+    t = t.replace(a, a + "function landscapePhone(){ return window.innerHeight<=500 && window.innerWidth<=1000; } // iPhone on its side (Ryan, 2026-09-22): reads like a phone, compact chrome\n"
+        "function readMode(W){ return !state.fit || colsForWidth(W)===1 || landscapePhone(); }\n"
+        "function applyRead(grid,cards,W,avail){ const phone=colsForWidth(W)===1 || landscapePhone(); const ncol=phone?1:Math.min(colsForWidth(W),Math.max(1,cards.length)); grid.style.flex=phone?'0 0 auto':''; const sparse=!phone && cards.length<colsForWidth(W); const lock=!phone && !sparse; grid.style.height=lock?avail+'px':''; grid.style.columnFill=lock?'auto':''; grid.style.flex=lock?'':'0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=sparse?(ncol*640)+'px':''; grid.style.margin=sparse?'0':''; applyCols(grid,cards,ncol,16); } // sparse pages (fewer cards than columns) are column-width, left-justified and scroll down instead of sideways // FIT off: phone scrolls down; Mac/iPad keep 16 px, the height lock and the columns continuing to the right (Ryan, 2026-09-22)\n"
         "function unRead(grid){ grid.style.flex='0 0 auto'; grid.style.height=''; grid.style.columnFill=''; } // fit mode too lets the grid grow: multicol balances its columns and only the font shrinks to fit, never extra columns off to the right (Ryan, 2026-09-22)\n")
     a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));"
     assert t.count(a) == 1, 'phase_flows (k): fit anchor missing'
@@ -276,6 +277,11 @@ def transform(t):
     a = "body.dark .tech{color:#f2d24c;}"
     assert t.count(a) == 1, 'phase_flows (r): css anchor missing'
     t = t.replace(a, a + "\n.it.long{cursor:pointer;}.it.long:not(.open) ul.bl li:nth-child(n+6){display:none;}.it.long:not(.open) ul.bl::after{content:'… tap for the full list';display:block;font-size:.7em;font-weight:700;color:var(--accent);padding-left:13px;margin-top:2px;}")
+    # ---- (s) iPhone landscape (Ryan, 2026-09-22): height 500 px or less and width 1000 px or less -> compact header, one row of
+    #      smaller controls, no versions line, no home bar, 36 px phase buttons, FIT hidden; content reads down in one column at 16 px
+    a = "@media (max-width:600px){#fit{display:none;}}"
+    assert t.count(a) == 1, 'phase_flows (s): media anchor missing'
+    t = t.replace(a, a + "\n@media (max-height:500px) and (max-width:1000px) and (orientation:landscape){ header{padding:3px calc(10px + env(safe-area-inset-right)) 3px calc(10px + env(safe-area-inset-left));gap:3px 6px;} header .ttl{font-size:14px;} header .sub{display:none;} .ps-homebar{display:none;} .toggle{padding:2px;} .toggle button{padding:5px 10px;font-size:12.5px;} .notesbtn,.themebtn,.filt{height:32px;font-size:11px;} .themebtn{width:32px;} .filt{min-width:44px;padding:0 8px;} #fit{display:none;} .gate{padding:3px 12px;font-size:12px;} .phasehead{font-size:1em;margin:0 2px 4px;} main{padding:6px 10px 4px;} nav{padding-top:4px;padding-bottom:calc(4px + env(safe-area-inset-bottom));gap:8px;} nav button{min-height:36px;font-size:13px;padding:0 12px;border-radius:18px;} .npag{width:40px;min-width:40px;} .arrow{display:none;} }")
     return t
 
 if __name__ == '__main__':
