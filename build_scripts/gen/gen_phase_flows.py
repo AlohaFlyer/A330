@@ -1106,8 +1106,49 @@ for m in MEM:
         else: steps.append(h)
     ext, q = MEM_QUOTE[m['ident']]
     mem_items.append(box(m['name'], ' · '.join(steps), 'B', True, q, m['ident'], ext))
-PH.append(P('memory-items', 'Memory Items', 'a', 'MEMORY ITEMS (recite cold)', 'FCOM PRO-ABN · QRH R35 · [MEM]', [
-  S('MEMORY ITEMS · FCOM PRO-ABN / QRH', RED, mem_items, 'FCOM PRO-ABN · QRH'),
+# Ryan's memorization set (his notes, 2026-09-22): the recite-cold wording is his; every card carries the FCOM/QRH ident it
+# comes from, and a "FCOM:" bullet wherever his wording drops or changes something the manual says. The full verbatim
+# set stays in memory-items.html (the drill page) and data/memory_items_drill.json.
+def rmi(name, steps, ident, ext, q, fcom=None):
+    sub = ' · '.join(steps) + (' · FCOM: ' + fcom if fcom else '')
+    return box(name, sub, 'B', True, q, ident, ext)
+ryan_mem = [
+  rmi('LOSS OF BRAKING', ['Reverse ... MAX', 'Brake pedals ... RELEASE', 'A/SKID & N/W STEERING ... ORDER OFF', 'Brakes ... PRESS (max 1 000 PSI)', 'Parking brake ... USE'],
+      'PRO-ABN-BRAKES-00010803.0001001', 'FCOM', 'If no braking: REV ... MAX'),
+  rmi('EMER DESCENT', ['Crew oxygen masks ... USE', 'Signs ... ON', 'Emer descent ... INITIATE: turn and pull (ALT 10 000 or MEA/MORA, HDG, SPD 300)', 'Thrust levers ... IDLE if no A/THR', 'Speed brake ... FULL', 'Confirm FMA'],
+      'PRO-ABN-MISC-00012261.0001001', 'FCOM', 'CREW OXY MASKS ... USE SIGNS ... ON EMER DESCENT ... INITIATE If A/THR not active: THR LEVERS ... IDLE SPD BRK ... FULL',
+      'the five memory items end at SPD BRK FULL; SPD 300 is your technique, the FCOM line once established is SPEED ... MAX/APPROPRIATE, and MAX FL 100 / MEA-MORA'),
+  rmi('STALL RECOVERY', ['Nose down pitch ... APPLY', 'Bank ... WINGS LEVEL', 'Thrust ... INCREASE', 'Speedbrakes ... CHECK RETRACTED', 'Flight path ... RECOVER', 'Below FL 200 ... FLAPS 1'],
+      'PRO-ABN-MISC-00013664.0002001', 'FCOM', 'NOSE DOWN PITCH CONTROL ... APPLY This will reduce angle of attack',
+      'THRUST ... INCREASE SMOOTHLY AS NEEDED and FLIGHT PATH ... RECOVER SMOOTHLY (the word smoothly is in both lines)'),
+  rmi('STALL WARNING AT LIFTOFF', ['Thrust ... TOGA', 'Pitch ... 15°', 'Bank ... WINGS LEVEL'],
+      'PRO-ABN-MISC-00013665.0002001', 'FCOM', 'If stall warnings trigger at liftoff, apply the following immediate actions: THRUST ... TOGA At the same time: PITCH ATTITUDE ... 15 ° BANK ... WINGS LEVEL'),
+  rmi('UNRELIABLE SPEED INDICATION', ['AP ... OFF', 'A/THR ... OFF', 'FD ... OFF', 'PITCH / THRUST: below THRUST RED ALT ... 15° / TOGA', 'between THRUST RED ALT and FL 100 ... 10° / CLB', 'above FL 100 ... 5° / CLB', 'FLAPS (CONF 0, 1, 2, 3) ... MAINTAIN CONF', 'FLAPS (CONF FULL) ... CONF 3', 'Speed brakes ... CHECK RETRACTED', 'Landing gear ... UP'],
+      'ABN-23-A-00017854.0001001', 'QRH', 'If the safe conduct of the flight is impacted AP ... OFF A/THR ... OFF FD ... OFF',
+      'the QRH condition is "if the safe conduct of the flight is impacted"; when at or above MSA or circuit altitude, level off for troubleshooting'),
+  rmi('SMOKE / FUMES / AVNCS SMOKE', ['Crew oxygen masks ... USE / 100 % / EMERG'],
+      'ABN-24-A-00010507.0001001', 'QRH', 'CREW OXY MASKS (if required)..... USE/100%/EMERG',
+      'listed as [MEM] SMOKE / FUMES / AVNCS / MD SMOKE (refer to QRH); the QRH line reads CREW OXY MASKS (if required)'),
+  rmi('EGPWS (TAWS WARNING)', ['“PULL UP, TOGA”', 'AP ... OFF', 'Pitch ... PULL UP', 'Thrust levers ... TOGA', 'Speed brake ... CHECK RETRACTED', 'Bank ... WINGS LEVEL', 'DO NOT CHANGE CONFIGURATION UNTIL CLEAR'],
+      'PRO-ABN-SURV-00026799.0001001', 'FCOM', 'Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST',
+      'BANK ... WINGS LEVEL or ADJUST; the same five items are the TAWS CAUTION response at night or in IMC'),
+  rmi('TCAS WARNING (RA)', ['“TCAS, I have control”', '“Hawaiian 50, TCAS RA”', 'AP ... OFF', 'FD ... OFF (both)', '“Hawaiian 50, clear of conflict”'],
+      'PRO-ABN-SURV-00011464.0005001', 'FCOM', 'All RA, except any CLIMB RA during approach in CONF 3 or FULL: AP (if engaged) ... OFF BOTH FDs ... OFF Respond promptly and smoothly. VERTICAL SPEED ... ADJUST or MAINTAIN',
+      'the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear'),
+  rmi('WINDSHEAR', ['Takeoff before V1 ... REJECT', 'After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS', 'DO NOT CHANGE CONFIGURATION UNTIL CLEAR', 'Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS”', '“WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA”'],
+      'PRO-ABN-SURV-00012300.0001001', 'FCOM', 'After V1: THR LEVERS ... TOGA REACHING VR ... ROTATE SRS ORDERS ... FOLLOW',
+      'airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear'),
+  rmi('OCEANIC ENGINE OUT (PRC, not a [MEM] item)', ['Set MCT, disconnect A/THR', 'Pull speed ... 0.80 / 270', 'Pull HDG 30° away from traffic, parallel course 5 NM', 'Pull FL 200', 'Start APU', 'PRC back page to fine tune'],
+      'PRC Engine Failure During Cruise', 'PRC', 'SIMULTANEOUSLY, SET MCT AND DISCONNECT AUTOTHRUST',
+      'the PRC says PULL SPEED - GREEN DOT initially, then ADJUST SPEED 300 kt / M0.78 for ETOPS and standard strategy (not 0.80 / 270); turn at least 30° for the 5 NM offset; PULL FL 200; START APU; declare MAYDAY'),
+]
+PH.append(P('memory-items', 'Memory Items', 'a', 'MEMORY ITEMS (recite cold)', 'Ryan\'s notes · FCOM PRO-ABN · QRH R35 · [MEM]', [
+  S('MEMORY ITEMS · YOUR NOTES (FCOM differences flagged)', RED, ryan_mem, 'FCOM PRO-ABN · QRH · PRC'),
+  S('[MEM] ITEMS NOT IN YOUR NOTES', SLATE, [
+    box('TAWS CAUTION', 'night or IMC: same five actions as the warning · day VMC with terrain in sight: FLIGHT PATH ... ADJUST · SINK RATE, DON’T SINK, TOO LOW GEAR/FLAPS, GLIDESLOPE: adjust flight path, go-around when below 1 000 ft AAL IMC / 500 ft AAL VMC or when configuration is wrong', 'B', False,
+        'During night or IMC conditions: Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST', 'PRO-ABN-SURV-AA-00026795.0001001', 'FCOM'),
+    box('TCAS CAUTION (TA)', 'no maneuver on a TA alone', 'B', False, 'Do not perform a maneuver based on a TA alone.', 'PRO-ABN-SURV-00025042.0001001', 'FCOM'),
+  ], 'FCOM PRO-ABN-SURV'),
 ]))
 
 # ---------------------------------------------------------------- LIMITATIONS (mem set from limitations_drill.json)
@@ -1175,6 +1216,48 @@ NOTES = [
    'ref': 'FCOM PRO-NOR-SOP-10 / SOP-17', 'ext': 'FCOM PRO-NOR', 'quote': '"[Flight Attendants], please prepare the cabin for arrival and be seated for landing."', 'fleet': 'pax', 'src': 'manual'},
   # TAKEOFF CALLOUTS, APPROACH GATES, LANDING CALLOUTS and the go-around / cancel approach / reject trigger lines were dropped from NOTES (Ryan, 2026-09-22); the callouts live in their phases
 ]
+
+# ---------------------------------------------------------------- SIM NOTES (Ryan's own notes, 2026-09-22; technique, not manual text)
+def sn(t, steps, r='B', call=False): return box(t, ' · '.join(steps), r, call, '', '', 'FCOM', 'technique')
+PH.append(P('sim-notes', 'SIM Notes', 'a', 'SIM NOTES (technique)', 'Ryan\'s sim notes · not manual text', [
+  S('V1 CUT', RED, [
+    sn('Call “ENGINE FAILURE”', ['stay on the runway: focus on the centerline, straighten, lock the rudders'], 'PF', True),
+    sn('Rotate smooth, elbow and arm not wrist', ['rotate to 12.5°', 'wait for SRS guidance', 'count to 5, then slowly release pressure on the stick']),
+    sn('Positive rate, gear up', ['trim the rudder toward the good engine: count to 8', 'control heading with bank, use rudder to center the beta target']),
+    sn('Autopilot ON', ['pull heading (“259 on LAS 26”) or RW track', 'fly the special EO procedure']),
+    sn('“MAYDAY MAYDAY MAYDAY, Hawaiian 50, engine failure, turning right heading 010”', [], 'PM', True),
+    sn('1 000 ft above field: MCDU engine-out acceleration altitude', ['clean up', 'at green dot PULL ALT', 'thrust lever back, then forward to MCT']),
+    sn('ECAM sequence', ['ECAM actions', 'STATUS, “STOP ECAM”', 'OEBs', 'QRH summaries', 'computer resets', 'diamond checks', '“CONTINUE ECAM”', 'remove status', '“ECAM ACTIONS COMPLETE”']),
+    sn('Landing performance', ['get weather, decide where to go', 'the reference speed the sim asks for (V-REF) is the CONF FULL VLS number']),
+    sn('Declare the emergency', ['souls on board, fuel on board', 'talk to your five: ATC, FAs, company, PAX, other pilot', 'TEST: Type of situation, Evacuation likely, Signal to remain seated or evacuate, Time to landing']),
+    sn('Fly the single engine arrival and land', []),
+  ], 'sim notes'),
+  S('GO-AROUND', AMBER, [
+    sn('“GO AROUND, FLAPS”', ['TOGA, pitch up', 'read the FMA slowly (huge power change)', 'positive rate, GEAR UP, set the missed approach altitude'], 'PF', True),
+    sn('400 ft: manage NAV or pull HDG', ['AP ON', '1 000 ft: push ALT', 'clean up', 'diamond checks', 'PULL SPEED 200, flaps 1', 'exit the GA phase: activate the approach or change destination']),
+    sn('Bounced landing', ['“GO AROUND, FLAPS” (no bounce TOGA any more)'], 'PF', True),
+  ], 'sim notes'),
+  S('HOLDING · SLOPE · APPROACH', GOLD, [
+    sn('Hold speeds, international (works domestic too)', ['below 6 000 ft: 200 kt', '6 000 to 14 000 ft: 220 kt', 'above 14 000 ft: 240 kt']),
+    sn('Runway slope', ['(difference between end elevations / runway length) x 100']),
+    sn('Cleared for the approach: set the FAF altitude immediately', []),
+    sn('NPA LOC FPA', ['cleared: set the FAF altitude and descend in the safe area', 'do not set the MDA in the window', 'V/S -700 if needed, FPA -3.0 to get down']),
+    sn('Specials', ['simple special: a turn below 1 000 ft (hard tune the VOR if it is based on it, or the DME drops out at 1 000 ft)', 'complex special: cannot be printed on the TLR, see the HAL Jepp supplement (example PDX)']),
+  ], 'sim notes'),
+  S('GLIDE INTERCEPTION FROM ABOVE', TEAL, [
+    sn('LOC ... CHECK ENGAGED', ['slow down: flaps 1, then 2', 'APPR mode: arm when finally cleared', 'FCU altitude: spin to above the current altitude', 'V/S mode: 1 500 to 2 000 fpm down', 'gear down, flaps 3, then FULL', 'capture the G/S', 'never select -2 000 at or below 2 000 ft; then the max is -1 500']),
+  ], 'sim notes'),
+  S('TCAS · STALL', PLUM, [
+    sn('“TCAS, I have control”', ['TA/RA: “Hawaiian 50, TCAS RA”', 'AP and FD OFF, follow the commands', '“Hawaiian 50, clear of conflict”'], 'PF', True),
+    sn('“STALL, I have control”', ['lower the nose to the horizon: 5° below 10 000 ft, 10° higher', 'roll wings level', 'check the speed brake retracted', 'increase thrust smoothly', 'below FL 200: flaps 1', 'help with trim if deep in the stall, to 5', 'stall on takeoff: “STALL, TOGA, 15 DEGREES”'], 'PF', True),
+  ], 'sim notes'),
+  S('FUEL JETTISON · EMERGENCIES · ECAM', VIOLET, [
+    sn('Fuel jettison', ['can we land overweight on the available runway?', 'permission and start/stop times to ATC', 'consider a hold with legs longer than 10 NM', 'stay away from thunderstorms', 'descend in the hold if forced to short legs', 'follow the QRH checklist', 'climb above 5 000 ft']),
+    sn('Emergencies, in order', ['OEBs first', 'run the memory items', 'after ECAM actions: computer resets and checklists', 'QRH summaries, then FCOM Vol 3 for anything else pertinent']),
+    sn('Slats or flaps jammed', ['PULL SPEED']),
+    sn('ECAM (Standard Callouts 3.03.90)', ['ECAM title', 'SOS', 'OEBs, memory items', '“I have control, ECAM actions”', 'complete the ECAM top portion', '“X procedure, APPLY” (do it now when on ECAM)', 'STATUS, “STOP ECAM”', 'QRH, computer resets, FCOM 3', 'situational assessment, decision making', 'do not fly too far from a good airport, slow down', '“CONTINUE ECAM”', 'read STATUS', '“X procedure, APPLY”: landing distance, flap setting, noted and done in prep for landing', '“ECAM ACTIONS COMPLETE”']),
+  ], 'sim notes'),
+]))
 
 # ============================================================ fleet/src on every record, then write
 for ph in PH:

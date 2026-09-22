@@ -6323,16 +6323,29 @@
 "label": "Memory Items",
 "kind": "a",
 "title": "MEMORY ITEMS (recite cold)",
-"src": "FCOM PRO-ABN · QRH R35 · [MEM]",
+"src": "Ryan's notes · FCOM PRO-ABN · QRH R35 · [MEM]",
 "sections": [
 {
-"h": "MEMORY ITEMS · FCOM PRO-ABN / QRH",
+"h": "MEMORY ITEMS · YOUR NOTES (FCOM differences flagged)",
 "c": "#b03a2e",
 "items": [
 {
 "k": "box",
+"t": "LOSS OF BRAKING",
+"s": "Reverse ... MAX · Brake pedals ... RELEASE · A/SKID & N/W STEERING ... ORDER OFF · Brakes ... PRESS (max 1 000 PSI) · Parking brake ... USE",
+"r": "B",
+"call": true,
+"quote": "If no braking: REV ... MAX",
+"ref": "PRO-ABN-BRAKES-00010803.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
 "t": "EMER DESCENT",
-"s": "1 CREW OXY MASKS ... USE · 2 SIGNS ... ON · 3 EMER DESCENT ... INITIATE · 4 THR LEVERS ... IDLE · 5 SPD BRK ... FULL",
+"s": "Crew oxygen masks ... USE · Signs ... ON · Emer descent ... INITIATE: turn and pull (ALT 10 000 or MEA/MORA, HDG, SPD 300) · Thrust levers ... IDLE if no A/THR · Speed brake ... FULL · Confirm FMA · FCOM: the five memory items end at SPD BRK FULL; SPD 300 is your technique, the FCOM line once established is SPEED ... MAX/APPROPRIATE, and MAX FL 100 / MEA-MORA",
 "r": "B",
 "call": true,
 "quote": "CREW OXY MASKS ... USE SIGNS ... ON EMER DESCENT ... INITIATE If A/THR not active: THR LEVERS ... IDLE SPD BRK ... FULL",
@@ -6345,7 +6358,7 @@
 {
 "k": "box",
 "t": "STALL RECOVERY",
-"s": "1 NOSE DOWN PITCH CONTROL ... APPLY · 2 BANK ... WINGS LEVEL · 3 THRUST ... INCREASE SMOOTHLY AS NEEDED · 4 SPEEDBRAKES ... CHECK RETRACTED · 5 FLIGHT PATH ... RECOVER SMOOTHLY · 6 FLAPS 1 ... SELECT",
+"s": "Nose down pitch ... APPLY · Bank ... WINGS LEVEL · Thrust ... INCREASE · Speedbrakes ... CHECK RETRACTED · Flight path ... RECOVER · Below FL 200 ... FLAPS 1 · FCOM: THRUST ... INCREASE SMOOTHLY AS NEEDED and FLIGHT PATH ... RECOVER SMOOTHLY (the word smoothly is in both lines)",
 "r": "B",
 "call": true,
 "quote": "NOSE DOWN PITCH CONTROL ... APPLY This will reduce angle of attack",
@@ -6358,7 +6371,7 @@
 {
 "k": "box",
 "t": "STALL WARNING AT LIFTOFF",
-"s": "1 THRUST ... TOGA · 2 PITCH ATTITUDE ... 15 ° · 3 BANK ... WINGS LEVEL",
+"s": "Thrust ... TOGA · Pitch ... 15° · Bank ... WINGS LEVEL",
 "r": "B",
 "call": true,
 "quote": "If stall warnings trigger at liftoff, apply the following immediate actions: THRUST ... TOGA At the same time: PITCH ATTITUDE ... 15 ° BANK ... WINGS LEVEL",
@@ -6371,10 +6384,10 @@
 {
 "k": "box",
 "t": "UNRELIABLE SPEED INDICATION",
-"s": "If the safe conduct of the flight is impacted · 1 AP ... OFF · 2 A/THR ... OFF · 3 FD ... OFF · PITCH/THRUST · 4 Below THRUST RED ALT ... 15° / TOGA · 5 Above THRUST RED ALT and Below FL 100 ... 10° / CLB · 6 Above THRUST RED ALT and Above FL 100 ... 5° / CLB · 7 FLAPS (if CONF 0(1)(2)(3)) ... MAINTAIN CURRENT CONF · 8 FLAPS (if CONF FULL) ... SELECT CONF 3 AND MAINTAIN · 9 SPEEDBRAKES ... CHECK RETRACTED · 10 L/G ... UP · When at or above MSA or Circuit Altitude: Level off for troubleshooting",
+"s": "AP ... OFF · A/THR ... OFF · FD ... OFF · PITCH / THRUST: below THRUST RED ALT ... 15° / TOGA · between THRUST RED ALT and FL 100 ... 10° / CLB · above FL 100 ... 5° / CLB · FLAPS (CONF 0, 1, 2, 3) ... MAINTAIN CONF · FLAPS (CONF FULL) ... CONF 3 · Speed brakes ... CHECK RETRACTED · Landing gear ... UP · FCOM: the QRH condition is \"if the safe conduct of the flight is impacted\"; when at or above MSA or circuit altitude, level off for troubleshooting",
 "r": "B",
 "call": true,
-"quote": "If the safe conduct of the flight is impacted AP ... OFF A/THR ... OFF FD ... OFF PITCH/THRUST Below THRUST RED ALT ... 15° / TOGA Above THRUST RED ALT and Below FL 100 ... 10° / CLB Above THRUST RED ALT and Above FL 100 ... 5° / CLB",
+"quote": "If the safe conduct of the flight is impacted AP ... OFF A/THR ... OFF FD ... OFF",
 "ref": "ABN-23-A-00017854.0001001",
 "ext": "QRH",
 "fleet": "pax",
@@ -6383,34 +6396,21 @@
 },
 {
 "k": "box",
-"t": "LOSS OF BRAKING",
-"s": "If no braking: · 1 REV ... MAX · 2 BRAKE PEDALS ... RELEASE · 3 A/SKID OFF ... ORDER · 4 A/SKID & N/W STRG ... OFF · 5 BRAKE PEDALS ... PRESS · 6 MAX BRK PR ... 1000 PSI · If still no braking: · 7 PARK BRAKE ... USE",
+"t": "SMOKE / FUMES / AVNCS SMOKE",
+"s": "Crew oxygen masks ... USE / 100 % / EMERG · FCOM: listed as [MEM] SMOKE / FUMES / AVNCS / MD SMOKE (refer to QRH); the QRH line reads CREW OXY MASKS (if required)",
 "r": "B",
 "call": true,
-"quote": "If no braking: REV ... MAX",
-"ref": "PRO-ABN-BRAKES-00010803.0001001",
-"ext": "FCOM",
+"quote": "CREW OXY MASKS (if required)..... USE/100%/EMERG",
+"ref": "ABN-24-A-00010507.0001001",
+"ext": "QRH",
 "fleet": "pax",
 "src": "manual",
 "provenance": "manual"
 },
 {
 "k": "box",
-"t": "TAWS CAUTION",
-"s": "\"TERRAIN TERRAIN\" - \"TOO LOW TERRAIN\" - \"TERRAIN AHEAD\" - \"CAUTION TERRAIN\" - \"OBSTACLE AHEAD\" - \"CAUTION OBSTACLE\" · During night or IMC conditions: · Simultaneously: · 1 AP ... OFF · 2 PITCH ... PULL UP · 3 THRUST LEVERS ... TOGA · 4 SPEED BRAKE LEVER ... CHECK RETRACTED · 5 BANK ... WINGS LEVEL or ADJUST · DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE. · During daylight and VMC conditions, with terrain and obstacles clearly in sight: · 6 FLIGHT PATH ... ADJUST · \"SINK RATE\" · Above 1 000 ft AAL IMC or above 500 ft AAL VMC: · 7 FLIGHT PATH ... ADJUST · Below 1 000 ft AAL IMC or below 500 ft AAL VMC: · 8 GO-AROUND ... CONSIDER · \"DON’T SINK\" · 9 FLIGHT PATH ... ADJUST · \"TOO LOW GEAR\" or \"TOO LOW FLAPS\" · 10 GO-AROUND ... PERFORM · \"GLIDESLOPE\" · Above 1 000 ft AAL IMC or above 500 ft AAL VMC: · 11 FLIGHT PATH ... ADJUST · When conditions require a deliberate approach below glideslope: · 12 G/S MODE ... OFF · Below 1 000 ft AAL IMC or below 500 ft AAL VMC: · 13 GO-AROUND ... CONSIDER",
-"r": "B",
-"call": true,
-"quote": "During night or IMC conditions: Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST",
-"ref": "PRO-ABN-SURV-AA-00026795.0001001",
-"ext": "FCOM",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "box",
-"t": "TAWS WARNING",
-"s": "If the TAWS triggers one of the PULL UP alerts: · Simultaneously: · 1 AP ... OFF · 2 PITCH ... PULL UP · 3 THRUST LEVERS ... TOGA · 4 SPEED BRAKE LEVER ... CHECK RETRACTED · 5 BANK ... WINGS LEVEL or ADJUST · DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL CLEAR OF OBSTACLE.",
+"t": "EGPWS (TAWS WARNING)",
+"s": "“PULL UP, TOGA” · AP ... OFF · Pitch ... PULL UP · Thrust levers ... TOGA · Speed brake ... CHECK RETRACTED · Bank ... WINGS LEVEL · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · FCOM: BANK ... WINGS LEVEL or ADJUST; the same five items are the TAWS CAUTION response at night or in IMC",
 "r": "B",
 "call": true,
 "quote": "Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST",
@@ -6422,21 +6422,8 @@
 },
 {
 "k": "box",
-"t": "TCAS CAUTION - TRAFFIC ADVISORY",
-"s": "Do not perform a maneuver based on a TA alone.",
-"r": "B",
-"call": true,
-"quote": "Do not perform a maneuver based on a TA alone.",
-"ref": "PRO-ABN-SURV-00025042.0001001",
-"ext": "FCOM",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "box",
-"t": "TCAS WARNING - RESOLUTION ADVISORY",
-"s": "All RA, except any CLIMB RA during approach in CONF 3 or FULL: · 1 AP (if engaged) ... OFF · 2 BOTH FDs ... OFF · 3 VERTICAL SPEED ... ADJUST or MAINTAIN · Any CLIMB RA during approach in CONF 3 or FULL: · 4 GO-AROUND ... PERFORM · 5 VERTICAL SPEED ... MONITOR · 6 ATC ... NOTIFY · When the “CLEAR OF CONFLICT” aural alert sounds: · 7 ATC ... NOTIFY · 8 LATERAL AND VERTICAL GUIDANCE ... ADJUST · 9 AP/FD ... AS RQRD",
+"t": "TCAS WARNING (RA)",
+"s": "“TCAS, I have control” · “Hawaiian 50, TCAS RA” · AP ... OFF · FD ... OFF (both) · “Hawaiian 50, clear of conflict” · FCOM: the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear",
 "r": "B",
 "call": true,
 "quote": "All RA, except any CLIMB RA during approach in CONF 3 or FULL: AP (if engaged) ... OFF BOTH FDs ... OFF Respond promptly and smoothly. VERTICAL SPEED ... ADJUST or MAINTAIN",
@@ -6448,8 +6435,8 @@
 },
 {
 "k": "box",
-"t": "WINDSHEAR WARNING - REACTIVE WINDSHEAR",
-"s": "At Takeoff: · Before V1: · If there are significant variations in airspeed, and in airspeed trend below the indicated V1, reject the takeoff. · After V1: · 1 THR LEVERS ... TOGA · 2 REACHING VR ... ROTATE · 3 SRS ORDERS ... FOLLOW · When airborne, during initial climb, or at landing: · 4 THR LEVERS AT TOGA ... SET OR CONFIRM · 5 AP (if engaged) ... KEEP ON · 6 SRS ORDERS ... FOLLOW · DO NOT CHANGE CONFIGURATION (SLATS/FLAPS, GEAR) UNTIL OUT OF WINDSHEAR. · CAREFULLY MONITOR FLIGHT PATH AND SPEED. · WHEN OUT OF WINDSHEAR, SMOOTHLY RECOVER NORMAL CLIMB.",
+"t": "WINDSHEAR",
+"s": "Takeoff before V1 ... REJECT · After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS” · “WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA” · FCOM: airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear",
 "r": "B",
 "call": true,
 "quote": "After V1: THR LEVERS ... TOGA REACHING VR ... ROTATE SRS ORDERS ... FOLLOW",
@@ -6458,9 +6445,56 @@
 "fleet": "pax",
 "src": "manual",
 "provenance": "manual"
+},
+{
+"k": "box",
+"t": "OCEANIC ENGINE OUT (PRC, not a [MEM] item)",
+"s": "Set MCT, disconnect A/THR · Pull speed ... 0.80 / 270 · Pull HDG 30° away from traffic, parallel course 5 NM · Pull FL 200 · Start APU · PRC back page to fine tune · FCOM: the PRC says PULL SPEED - GREEN DOT initially, then ADJUST SPEED 300 kt / M0.78 for ETOPS and standard strategy (not 0.80 / 270); turn at least 30° for the 5 NM offset; PULL FL 200; START APU; declare MAYDAY",
+"r": "B",
+"call": true,
+"quote": "SIMULTANEOUSLY, SET MCT AND DISCONNECT AUTOTHRUST",
+"ref": "PRC Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
 }
 ],
-"cite": "FCOM PRO-ABN · QRH",
+"cite": "FCOM PRO-ABN · QRH · PRC",
+"appr": "all"
+},
+{
+"h": "[MEM] ITEMS NOT IN YOUR NOTES",
+"c": "#334e68",
+"items": [
+{
+"k": "box",
+"t": "TAWS CAUTION",
+"s": "night or IMC: same five actions as the warning · day VMC with terrain in sight: FLIGHT PATH ... ADJUST · SINK RATE, DON’T SINK, TOO LOW GEAR/FLAPS, GLIDESLOPE: adjust flight path, go-around when below 1 000 ft AAL IMC / 500 ft AAL VMC or when configuration is wrong",
+"r": "B",
+"call": false,
+"quote": "During night or IMC conditions: Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST",
+"ref": "PRO-ABN-SURV-AA-00026795.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "TCAS CAUTION (TA)",
+"s": "no maneuver on a TA alone",
+"r": "B",
+"call": false,
+"quote": "Do not perform a maneuver based on a TA alone.",
+"ref": "PRO-ABN-SURV-00025042.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-ABN-SURV",
 "appr": "all"
 }
 ],
@@ -8319,6 +8353,390 @@
 }
 ],
 "cite": "FCOM LIM",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "sim-notes",
+"label": "SIM Notes",
+"kind": "a",
+"title": "SIM NOTES (technique)",
+"src": "Ryan's sim notes · not manual text",
+"sections": [
+{
+"h": "V1 CUT",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "Call “ENGINE FAILURE”",
+"s": "stay on the runway: focus on the centerline, straighten, lock the rudders",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Rotate smooth, elbow and arm not wrist",
+"s": "rotate to 12.5° · wait for SRS guidance · count to 5, then slowly release pressure on the stick",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Positive rate, gear up",
+"s": "trim the rudder toward the good engine: count to 8 · control heading with bank, use rudder to center the beta target",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Autopilot ON",
+"s": "pull heading (“259 on LAS 26”) or RW track · fly the special EO procedure",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "“MAYDAY MAYDAY MAYDAY, Hawaiian 50, engine failure, turning right heading 010”",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "1 000 ft above field: MCDU engine-out acceleration altitude",
+"s": "clean up · at green dot PULL ALT · thrust lever back, then forward to MCT",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "ECAM sequence",
+"s": "ECAM actions · STATUS, “STOP ECAM” · OEBs · QRH summaries · computer resets · diamond checks · “CONTINUE ECAM” · remove status · “ECAM ACTIONS COMPLETE”",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Landing performance",
+"s": "get weather, decide where to go · the reference speed the sim asks for (V-REF) is the CONF FULL VLS number",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Declare the emergency",
+"s": "souls on board, fuel on board · talk to your five: ATC, FAs, company, PAX, other pilot · TEST: Type of situation, Evacuation likely, Signal to remain seated or evacuate, Time to landing",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Fly the single engine arrival and land",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "GO-AROUND",
+"c": "#E0A100",
+"items": [
+{
+"k": "box",
+"t": "“GO AROUND, FLAPS”",
+"s": "TOGA, pitch up · read the FMA slowly (huge power change) · positive rate, GEAR UP, set the missed approach altitude",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "400 ft: manage NAV or pull HDG",
+"s": "AP ON · 1 000 ft: push ALT · clean up · diamond checks · PULL SPEED 200, flaps 1 · exit the GA phase: activate the approach or change destination",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Bounced landing",
+"s": "“GO AROUND, FLAPS” (no bounce TOGA any more)",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "HOLDING · SLOPE · APPROACH",
+"c": "#b8860b",
+"items": [
+{
+"k": "box",
+"t": "Hold speeds, international (works domestic too)",
+"s": "below 6 000 ft: 200 kt · 6 000 to 14 000 ft: 220 kt · above 14 000 ft: 240 kt",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Runway slope",
+"s": "(difference between end elevations / runway length) x 100",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Cleared for the approach: set the FAF altitude immediately",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "NPA LOC FPA",
+"s": "cleared: set the FAF altitude and descend in the safe area · do not set the MDA in the window · V/S -700 if needed, FPA -3.0 to get down",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Specials",
+"s": "simple special: a turn below 1 000 ft (hard tune the VOR if it is based on it, or the DME drops out at 1 000 ft) · complex special: cannot be printed on the TLR, see the HAL Jepp supplement (example PDX)",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "GLIDE INTERCEPTION FROM ABOVE",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "LOC ... CHECK ENGAGED",
+"s": "slow down: flaps 1, then 2 · APPR mode: arm when finally cleared · FCU altitude: spin to above the current altitude · V/S mode: 1 500 to 2 000 fpm down · gear down, flaps 3, then FULL · capture the G/S · never select -2 000 at or below 2 000 ft; then the max is -1 500",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "TCAS · STALL",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "“TCAS, I have control”",
+"s": "TA/RA: “Hawaiian 50, TCAS RA” · AP and FD OFF, follow the commands · “Hawaiian 50, clear of conflict”",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "“STALL, I have control”",
+"s": "lower the nose to the horizon: 5° below 10 000 ft, 10° higher · roll wings level · check the speed brake retracted · increase thrust smoothly · below FL 200: flaps 1 · help with trim if deep in the stall, to 5 · stall on takeoff: “STALL, TOGA, 15 DEGREES”",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "FUEL JETTISON · EMERGENCIES · ECAM",
+"c": "#5f3dc4",
+"items": [
+{
+"k": "box",
+"t": "Fuel jettison",
+"s": "can we land overweight on the available runway? · permission and start/stop times to ATC · consider a hold with legs longer than 10 NM · stay away from thunderstorms · descend in the hold if forced to short legs · follow the QRH checklist · climb above 5 000 ft",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Emergencies, in order",
+"s": "OEBs first · run the memory items · after ECAM actions: computer resets and checklists · QRH summaries, then FCOM Vol 3 for anything else pertinent",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Slats or flaps jammed",
+"s": "PULL SPEED",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "ECAM (Standard Callouts 3.03.90)",
+"s": "ECAM title · SOS · OEBs, memory items · “I have control, ECAM actions” · complete the ECAM top portion · “X procedure, APPLY” (do it now when on ECAM) · STATUS, “STOP ECAM” · QRH, computer resets, FCOM 3 · situational assessment, decision making · do not fly too far from a good airport, slow down · “CONTINUE ECAM” · read STATUS · “X procedure, APPLY”: landing distance, flap setting, noted and done in prep for landing · “ECAM ACTIONS COMPLETE”",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
 "appr": "all"
 }
 ],
