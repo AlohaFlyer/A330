@@ -221,6 +221,11 @@ def transform(t):
         "function setFit(on){ state.fit=on; fitBtn.classList.toggle('on',on); fitBtn.title=on?'Fit to screen is on. Tap to scroll at reading size':'Reading size. Tap to fit the page to the screen'; try{localStorage.setItem('a330fit',on?'1':'0');}catch(e){} }\n"
         "fitBtn.addEventListener('click',()=>{ setFit(!state.fit); GFONT=0; fitCurrent(); });\n"
         "{ let f=true; try{f=localStorage.getItem('a330fit')!=='0';}catch(e){} setFit(f); }\n")
+    # ---- (l) a checklist is read complete (Ryan, 2026-09-22): every card row shows under BOTH and MINE;
+    #      rows where this pilot does not respond are dimmed, never dropped; BOTH rows carry PF and PM chips side by side
+    a = "const body=items.filter(ci=>!(state.hideOther&&!roleMatch(ci[2]))).map(ci=>`<div class=\"cli${roleMatch(ci[2])?'':' dim'}\"><span class=\"cii\">${ci[0]}</span><span class=\"civ\">${deco(ci[1])}</span>${rtagHtml(ci[2])}</div>`).join('')||'<div class=\"cli\">(reference)</div>';"
+    assert t.count(a) == 1, 'phase_flows (l): checklist row anchor missing'
+    t = t.replace(a, "const clTag=r=>r==='B'?rtagHtml('PF')+rtagHtml('PM'):rtagHtml(r); // BOTH rows: both responders shown\n    const body=items.map(ci=>`<div class=\"cli${roleMatch(ci[2])?'':' dim'}\"><span class=\"cii\">${ci[0]}</span><span class=\"civ\">${deco(ci[1])}</span>${clTag(ci[2])}</div>`).join('')||'<div class=\"cli\">(reference)</div>';")
     return t
 
 if __name__ == '__main__':

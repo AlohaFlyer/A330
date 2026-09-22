@@ -348,7 +348,8 @@ function renderItem(it,cite,ctx,pid){
     return `<div class="trig${dim}"><span class="ic">&#9654;</span><span>${deco(it.t)}</span></div>`; }
   if(it.k==='cl'){ const items=CHECKLISTS[it.t]||[];
     const w=it.w?`<span class="w">when: ${deco(it.w)}</span>`:'';
-    const body=items.filter(ci=>!(state.hideOther&&!roleMatch(ci[2]))).map(ci=>`<div class="cli${roleMatch(ci[2])?'':' dim'}"><span class="cii">${ci[0]}</span><span class="civ">${deco(ci[1])}</span>${rtagHtml(ci[2])}</div>`).join('')||'<div class="cli">(reference)</div>';
+    const clTag=r=>r==='B'?rtagHtml('PF')+rtagHtml('PM'):rtagHtml(r); // BOTH rows: both responders shown
+    const body=items.map(ci=>`<div class="cli${roleMatch(ci[2])?'':' dim'}"><span class="cii">${ci[0]}</span><span class="civ">${deco(ci[1])}</span>${clTag(ci[2])}</div>`).join('')||'<div class="cli">(reference)</div>';
     return `<div class="clwrap"><div class="cl${it.bold?' bold':''}${it.cc?' cc':''} has-cl"><span class="ic">&#10003;</span><span class="cln">${it.t} Checklist${w}</span>${EXP}</div><div class="clbody">${body}${it.cc?'<div class="clcc">PM: __ CHECKLIST COMPLETE</div>':''}</div></div>`; }
   if(it.k==='box'){ const match=roleMatch(it.r); if(!match&&state.hideOther)return ''; const dim=match?'':' dim'; const n=ctx.n++;
     const q=it.q || (typeof QUOTES!=='undefined' ? (QUOTES[pid+'|'+it.t]||'') : '');
