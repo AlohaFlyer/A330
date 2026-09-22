@@ -1,0 +1,419 @@
+[
+{
+"id": "rm-loss-of-braking",
+"name": "LOSS OF BRAKING",
+"ref": "FCOM PRO-ABN-BRAKES-00010803.0001001",
+"ident": "PRO-ABN-BRAKES-00010803.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Reverse ... MAX"
+},
+{
+"t": "n",
+"n": "2",
+"h": "Brake pedals ... RELEASE"
+},
+{
+"t": "n",
+"n": "3",
+"h": "A/SKID &amp; N/W STEERING ... ORDER OFF"
+},
+{
+"t": "n",
+"n": "4",
+"h": "Brakes ... PRESS (max 1 000 PSI)"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Parking brake ... USE"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-emer-descent",
+"name": "EMER DESCENT",
+"ref": "FCOM PRO-ABN-MISC-00012261.0001001",
+"ident": "PRO-ABN-MISC-00012261.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Crew oxygen masks ... USE"
+},
+{
+"t": "n",
+"n": "2",
+"h": "Signs ... ON"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Emer descent ... INITIATE: turn and pull (ALT 10 000 or MEA/MORA, HDG, SPD 300)"
+},
+{
+"t": "n",
+"n": "4",
+"h": "Thrust levers ... IDLE if no A/THR"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Speed brake ... FULL"
+},
+{
+"t": "n",
+"n": "6",
+"h": "Confirm FMA"
+},
+{
+"t": "b",
+"h": "FCOM: the five memory items end at SPD BRK FULL; SPD 300 is your technique, the FCOM line once established is SPEED ... MAX/APPROPRIATE, and MAX FL 100 / MEA-MORA"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-stall-recovery",
+"name": "STALL RECOVERY",
+"ref": "FCOM PRO-ABN-MISC-00013664.0002001",
+"ident": "PRO-ABN-MISC-00013664.0002001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Nose down pitch ... APPLY"
+},
+{
+"t": "n",
+"n": "2",
+"h": "Bank ... WINGS LEVEL"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Thrust ... INCREASE"
+},
+{
+"t": "n",
+"n": "4",
+"h": "Speedbrakes ... CHECK RETRACTED"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Flight path ... RECOVER"
+},
+{
+"t": "n",
+"n": "6",
+"h": "Below FL 200 ... FLAPS 1"
+},
+{
+"t": "b",
+"h": "FCOM: THRUST ... INCREASE SMOOTHLY AS NEEDED and FLIGHT PATH ... RECOVER SMOOTHLY (the word smoothly is in both lines)"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-stall-warning-at-liftoff",
+"name": "STALL WARNING AT LIFTOFF",
+"ref": "FCOM PRO-ABN-MISC-00013665.0002001",
+"ident": "PRO-ABN-MISC-00013665.0002001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Thrust ... TOGA"
+},
+{
+"t": "n",
+"n": "2",
+"h": "Pitch ... 15°"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Bank ... WINGS LEVEL"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-unreliable-speed-indication",
+"name": "UNRELIABLE SPEED INDICATION",
+"ref": "QRH ABN-23-A-00017854.0001001",
+"ident": "ABN-23-A-00017854.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "AP ... OFF"
+},
+{
+"t": "n",
+"n": "2",
+"h": "A/THR ... OFF"
+},
+{
+"t": "n",
+"n": "3",
+"h": "FD ... OFF"
+},
+{
+"t": "n",
+"n": "4",
+"h": "PITCH / THRUST: below THRUST RED ALT ... 15° / TOGA"
+},
+{
+"t": "n",
+"n": "5",
+"h": "between THRUST RED ALT and FL 100 ... 10° / CLB"
+},
+{
+"t": "n",
+"n": "6",
+"h": "above FL 100 ... 5° / CLB"
+},
+{
+"t": "n",
+"n": "7",
+"h": "FLAPS (CONF 0, 1, 2, 3) ... MAINTAIN CONF"
+},
+{
+"t": "n",
+"n": "8",
+"h": "FLAPS (CONF FULL) ... CONF 3"
+},
+{
+"t": "n",
+"n": "9",
+"h": "Speed brakes ... CHECK RETRACTED"
+},
+{
+"t": "n",
+"n": "10",
+"h": "Landing gear ... UP"
+},
+{
+"t": "b",
+"h": "FCOM: the QRH condition is &quot;if the safe conduct of the flight is impacted&quot;; when at or above MSA or circuit altitude, level off for troubleshooting"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-smoke-fumes-avncs-smoke",
+"name": "SMOKE / FUMES / AVNCS SMOKE",
+"ref": "QRH ABN-24-A-00010507.0001001",
+"ident": "ABN-24-A-00010507.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Crew oxygen masks ... USE / 100 % / EMERG"
+},
+{
+"t": "b",
+"h": "FCOM: listed as [MEM] SMOKE / FUMES / AVNCS / MD SMOKE (refer to QRH); the QRH line reads CREW OXY MASKS (if required)"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-egpws-taws-warning",
+"name": "EGPWS (TAWS WARNING)",
+"ref": "FCOM PRO-ABN-SURV-00026799.0001001",
+"ident": "PRO-ABN-SURV-00026799.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "“PULL UP, TOGA”"
+},
+{
+"t": "n",
+"n": "2",
+"h": "AP ... OFF"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Pitch ... PULL UP"
+},
+{
+"t": "n",
+"n": "4",
+"h": "Thrust levers ... TOGA"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Speed brake ... CHECK RETRACTED"
+},
+{
+"t": "n",
+"n": "6",
+"h": "Bank ... WINGS LEVEL"
+},
+{
+"t": "n",
+"n": "7",
+"h": "DO NOT CHANGE CONFIGURATION UNTIL CLEAR"
+},
+{
+"t": "b",
+"h": "FCOM: BANK ... WINGS LEVEL or ADJUST; the same five items are the TAWS CAUTION response at night or in IMC"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-tcas-warning-ra",
+"name": "TCAS WARNING (RA)",
+"ref": "FCOM PRO-ABN-SURV-00011464.0005001",
+"ident": "PRO-ABN-SURV-00011464.0005001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "“TCAS, I have control”"
+},
+{
+"t": "n",
+"n": "2",
+"h": "“Hawaiian 50, TCAS RA”"
+},
+{
+"t": "n",
+"n": "3",
+"h": "AP ... OFF"
+},
+{
+"t": "n",
+"n": "4",
+"h": "FD ... OFF (both)"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Vertical speed ... ADJUST or MAINTAIN (fly the green band)"
+},
+{
+"t": "n",
+"n": "6",
+"h": "CLIMB RA in CONF 3 or FULL ... GO-AROUND"
+},
+{
+"t": "n",
+"n": "7",
+"h": "“Hawaiian 50, clear of conflict”"
+},
+{
+"t": "b",
+"h": "FCOM: the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-windshear",
+"name": "WINDSHEAR",
+"ref": "FCOM PRO-ABN-SURV-00012300.0001001",
+"ident": "PRO-ABN-SURV-00012300.0001001",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Takeoff before V1 ... REJECT"
+},
+{
+"t": "n",
+"n": "2",
+"h": "After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Airborne or landing: TOGA (set or confirm) · AP (if engaged) KEEP ON · FOLLOW SRS"
+},
+{
+"t": "n",
+"n": "4",
+"h": "DO NOT CHANGE CONFIGURATION UNTIL CLEAR"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS”"
+},
+{
+"t": "n",
+"n": "6",
+"h": "“WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA”"
+},
+{
+"t": "b",
+"h": "FCOM: airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+},
+{
+"id": "rm-oceanic-engine-out-prc-not-a-mem-item",
+"name": "OCEANIC ENGINE OUT (PRC, not a [MEM] item)",
+"ref": "PRC PRC Engine Failure During Cruise",
+"ident": "PRC Engine Failure During Cruise",
+"cond": "",
+"steps": [
+{
+"t": "n",
+"n": "1",
+"h": "Set MCT, disconnect A/THR"
+},
+{
+"t": "n",
+"n": "2",
+"h": "Pull speed ... 0.80 / 270"
+},
+{
+"t": "n",
+"n": "3",
+"h": "Pull HDG 30° away from traffic, parallel course 5 NM"
+},
+{
+"t": "n",
+"n": "4",
+"h": "Pull FL 200"
+},
+{
+"t": "n",
+"n": "5",
+"h": "Start APU"
+},
+{
+"t": "n",
+"n": "6",
+"h": "PRC back page to fine tune"
+},
+{
+"t": "b",
+"h": "FCOM: the PRC says PULL SPEED - GREEN DOT initially, then ADJUST SPEED 300 kt / M0.78 for ETOPS and standard strategy (not 0.80 / 270); turn at least 30° for the 5 NM offset; PULL FL 200; START APU; declare MAYDAY"
+}
+],
+"fctm": "Ryan's wording (2026-09-22); the FCOM verbatim item is on the FCOM set."
+}
+]

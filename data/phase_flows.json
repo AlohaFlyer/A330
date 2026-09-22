@@ -7731,7 +7731,7 @@
 {
 "k": "box",
 "t": "Bounced landing",
-"s": "“GO AROUND, FLAPS” (no bounce TOGA any more)",
+"s": "“GO AROUND, FLAPS” (no bounce TOGA any more) · FCTM PR-NP-SOP-250: light bounce, keep the pitch and land with thrust idle · high bounce, keep the pitch and go around; retract flaps one step and the gear only when established · never pitch up to soften the second touchdown",
 "r": "PF",
 "call": true,
 "quote": "",
@@ -7752,7 +7752,7 @@
 {
 "k": "box",
 "t": "Hold speeds, international (works domestic too)",
-"s": "below 6 000 ft: 200 kt · 6 000 to 14 000 ft: 220 kt · above 14 000 ft: 240 kt",
+"s": "below 6 000 ft: 200 kt · 6 000 to 14 000 ft: 220 kt · above 14 000 ft: 240 kt · FOM 5.5.15 (US): maximums 200 / 230 (210 where charted) / 265 KIAS; your 220 and 240 sit inside them",
 "r": "B",
 "call": false,
 "quote": "",
@@ -7825,7 +7825,7 @@
 {
 "k": "box",
 "t": "LOC ... CHECK ENGAGED",
-"s": "slow down: flaps 1, then 2 · APPR mode: arm when finally cleared · FCU altitude: spin to above the current altitude · V/S mode: 1 500 to 2 000 fpm down · gear down, flaps 3, then FULL · capture the G/S · never select -2 000 at or below 2 000 ft; then the max is -1 500",
+"s": "slow down: flaps 1, then 2 · APPR mode: arm when finally cleared · FCU altitude: spin to above the current altitude · V/S mode: 1 500 to 2 000 fpm down · gear down, flaps 3, then FULL · capture the G/S · never select -2 000 at or below 2 000 ft; then the max is -1 500 · FCTM PR-NP-SOP-190: only when established on the LOC · gear down and at least CONF 2 before · APPR pb, confirm G/S armed and LOC engaged · FCU altitude above the aircraft · V/S 1 500 initially, above 2 000 the speed runs toward VFE · go-around altitude set at G/S*",
 "r": "B",
 "call": false,
 "quote": "",
@@ -7859,7 +7859,7 @@
 {
 "k": "box",
 "t": "“STALL, I have control”",
-"s": "lower the nose to the horizon: 5° below 10 000 ft, 10° higher · roll wings level · check the speed brake retracted · increase thrust smoothly · below FL 200: flaps 1 · help with trim if deep in the stall, to 5 · stall on takeoff: “STALL, TOGA, 15 DEGREES”",
+"s": "lower the nose to the horizon: 5° below 10 000 ft, 10° higher · roll wings level · check the speed brake retracted · increase thrust smoothly · below FL 200: flaps 1 · help with trim if deep in the stall, to 5 · stall on takeoff: “STALL, TOGA, 15 DEGREES” · FCOM PRO-ABN-MISC: the memory item is NOSE DOWN PITCH CONTROL ... APPLY with no target attitude; the 5° / 10° figures are your technique",
 "r": "PF",
 "call": true,
 "quote": "",
@@ -7880,7 +7880,7 @@
 {
 "k": "box",
 "t": "Fuel jettison",
-"s": "can we land overweight on the available runway? · permission and start/stop times to ATC · consider a hold with legs longer than 10 NM · stay away from thunderstorms · descend in the hold if forced to short legs · follow the QRH checklist · climb above 5 000 ft",
+"s": "can we land overweight on the available runway? · permission and start/stop times to ATC · consider a hold with legs longer than 10 NM · stay away from thunderstorms · descend in the hold if forced to short legs · follow the QRH checklist · climb above 5 000 ft · QRH 19.02A: FMS FUEL PRED page SELECT · JETGW FINAL GW ENTER · T TANK MODE CHECK AUTO · JETTISON ARM ON · JETTISON ACTIVE ON · when complete ACTIVE OFF, ARM OFF",
 "r": "B",
 "call": false,
 "quote": "",

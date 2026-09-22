@@ -119,3 +119,21 @@ Memorization groups (Ryan, 2026-09-21): flows_quiz.html renders g / gc / gb item
 - .grp, .grpq, .grplegend, .step.gstep, .fl-item.gitem
 - grpInfo / grpHeader / grpLegend
 - ioe.html #origLink (Original OE Workbook, Drive link)
+
+## 2026-09-22 additions (v3.0 to v4.3)
+
+phase_flows.html transforms (build_scripts/page_phase_flows.py):
+- (k) phone reads vertically at 16 px, FIT toggle on wider screens (X-with-arrows SVG, persisted a330fit); FIT off on Mac/iPad locks the height and continues columns to the right; sparse pages column-width, left-justified
+- (l) checklist popup shows every row under MINE, BOTH rows carry PF and PM chips
+- (n) phase bar 44 px buttons, scroll-snap, wheel scrolls sideways, 52 px pagers
+- (o) exterior light switch actions as sky-blue chips (.lt); (q) whole row light blue (.it.lights)
+- (p) 18 000 ft / 10 000 ft highlight; height tokens do not match inside larger numbers
+- (r) items with more than 6 bullets fold to 5 with a tap-for-full-list cue
+
+page_fixups.py additions:
+- phase_flows.html: dark mode lightens phase colours used as text (--pcl from CL_COLORS), checklist rows and FMC titles in Jeppesen yellow
+- flows_quiz.html: Step button, fixed Reveal slot (wide screens), group filter chips, centred no-map flows, poster zoom, item rendering without a dangling dash
+- limitations.html: Passenger/Freighter toggle (was hand-edited 2026-09-17) and Rev 13 set toggle (data/limitations_myset.json)
+- memory-items.html: My notes / FCOM verbatim toggle (data/memory_items_myset.json)
+
+Generators: gen/spine_cockpit_prep.py syncs trainer spine prompts and details from data/phase_flows.json (verify_spine_sync.py); gen/gen_flow_memorization.py builds flow_memorization.html and docs/A330_FLOW_MEMORIZATION_PLAN.md from phase_flows.json; gen_phase_flows.py emits limitations_myset.json and memory_items_myset.json. Memory items, limitations and SIM Notes phases are Ryan's sets with FCOM/QRH/PRC chips (docs/PHASE_FLOWS_FCOM_AUDIT_2026-09-22.md for the SOP audit).

@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-21",
-"coreBytes": 21900193,
+"coreBytes": 21912071,
 "audioBytes": 47209110,
 "core": [
 {
@@ -173,6 +173,10 @@
 "b": 174498
 },
 {
+"u": "/data/limitations_myset.json",
+"b": 1104
+},
+{
 "u": "/data/mcdu.json",
 "b": 22379
 },
@@ -183,6 +187,10 @@
 {
 "u": "/data/memory_items_drill.json",
 "b": 12017
+},
+{
+"u": "/data/memory_items_myset.json",
+"b": 7676
 },
 {
 "u": "/data/memory_items_visual.json",
@@ -198,7 +206,7 @@
 },
 {
 "u": "/data/phase_flows.json",
-"b": 242038
+"b": 242957
 },
 {
 "u": "/data/systems.json",
@@ -326,7 +334,7 @@
 },
 {
 "u": "/limitations.html",
-"b": 15635
+"b": 16441
 },
 {
 "u": "/mcdu_preflight.html",
@@ -334,7 +342,7 @@
 },
 {
 "u": "/memory-items.html",
-"b": 13408
+"b": 14749
 },
 {
 "u": "/phase_flows.html",
@@ -386,7 +394,7 @@
 },
 {
 "u": "/versions.json",
-"b": 426
+"b": 458
 },
 {
 "u": "/view.html",

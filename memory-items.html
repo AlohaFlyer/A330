@@ -60,7 +60,11 @@
   .rev:hover{background:rgba(242,166,90,.12)}
   .foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--muted)}
   .foot button{padding:6px 12px;font-size:12px}
-  .hint{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:.03em}
+  .fleetbar{display:flex;align-items:center;gap:0;margin:0 0 14px;border:1px solid var(--line);border-radius:6px;overflow:hidden;width:fit-content}
+.fleetbar button{border:0;border-radius:0;padding:7px 16px;font-size:12.5px;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--muted)}
+.fleetbar button.on{background:var(--atlas);color:#fff}
+.fleetbar button:not(.on):hover{background:var(--panel2);color:var(--ink)}
+.hint{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:18px;letter-spacing:.03em}
   .summary{text-align:center;padding:38px 20px}
   .summary .big{font-family:var(--mono);font-size:46px;color:var(--green);font-weight:700}
   .summary .lbl{color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
@@ -106,14 +110,19 @@
     <span class="src">FCOM R17 [MEM]</span>
   </header>
   <div class="handrow"><a class="handout" href="view.html?f=A330_QRH_Memory_Items.pdf" target="_blank" rel="noopener">&#128196; Open 1-page handout (PDF)</a><a class="gamelink" href="hot-seat.html">&#127918; GAME</a></div>
+  <div class="fleetbar" id="setbar"><button id="sb-mine" onclick="setSet('mine')">My notes</button><button id="sb-fcom" onclick="setSet('fcom')">FCOM verbatim</button></div>
   <div id="app"></div>
   <div class="hint">Recite aloud, then reveal to check &nbsp;·&nbsp; Space / Enter = reveal then advance &nbsp;·&nbsp; K = got it &nbsp;·&nbsp; R = review</div>
 </div>
 
 <script>
 /* bank(s) DATA live in data/, loaded here; engine below is unchanged */
-Promise.all([fetch('data/memory_items_drill.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
-const [DATA]=__b;
+Promise.all([fetch('data/memory_items_drill.json',{cache:'no-store'}).then(r=>r.json()),fetch('data/memory_items_myset.json',{cache:'no-store'}).then(r=>r.json())]).then(function(__b){
+const [FCOMSET,MYSET]=__b;
+let SETMODE=(localStorage.getItem('a330_mi_set')==='fcom')?'fcom':'mine';
+let DATA=SETMODE==='fcom'?FCOMSET:MYSET;
+function paintSet(){ var sl=document.querySelector('header .src'); if(sl) sl.textContent=SETMODE==='fcom'?'FCOM R17 [MEM]':'My notes · FCOM R17 [MEM]'; var m=document.getElementById('sb-mine'),f=document.getElementById('sb-fcom'); if(m&&f){m.className=SETMODE==='mine'?'on':'';f.className=SETMODE==='fcom'?'on':'';} }
+window.setSet=function(m){ if(m===SETMODE)return; SETMODE=m; localStorage.setItem('a330_mi_set',m); DATA=(m==='fcom')?FCOMSET:MYSET; paintSet(); start(false); };
 if(!(Array.isArray(DATA)?DATA.length:Object.keys(DATA).length)){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank not loaded yet</div><div class="srcsub">This bank is built in a later step. The engine is live.</div></div></div>';return;}
 
 let order=[], idx=0, revealed=false, known=new Set(), review=new Set(), reviewMode=false, srcOpen=false;
@@ -191,13 +200,13 @@ document.addEventListener("keydown",e=>{
   else if(e.key==="k"||e.key==="K"){if(revealed)grade(true)}
   else if(e.key==="r"||e.key==="R"){if(revealed)grade(false)}
 });
-start(false);
-Object.assign(window,{grade, render, reveal, shuffle, start, stepsHTML, summary, toggleSrc});
+paintSet();start(false);
+Object.assign(window,{grade, render, reveal, shuffle, start, stepsHTML, summary, toggleSrc, paintSet});
 }).catch(function(e){(document.getElementById('main')||document.getElementById('app')||document.getElementById('list')||document.getElementById('board')||document.body).innerHTML='<div class="card"><div class="summary"><div class="lbl">Bank failed to load</div><div class="srcsub">'+e.message+'</div></div></div>';});
 </script>
 <footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin:28px auto 0;">
 <img src="assets/A330_hero.jpg" alt="Airbus A330" style="width:380px;max-width:60%;height:auto;border-radius:6px;">
-<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 1.6</div>
+<div style="width:100%;text-align:right;font-size:11px;color:#FF9080;font-family:inherit;">Ver 2.0</div>
 </footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>

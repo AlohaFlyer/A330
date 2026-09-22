@@ -1109,8 +1109,12 @@ for m in MEM:
 # Ryan's memorization set (his notes, 2026-09-22): the recite-cold wording is his; every card carries the FCOM/QRH ident it
 # comes from, and a "FCOM:" bullet wherever his wording drops or changes something the manual says. The full verbatim
 # set stays in memory-items.html (the drill page) and data/memory_items_drill.json.
+RYAN_MEM_SET = []   # drill-schema copy of the cards for memory-items.html "My notes" mode (data/memory_items_myset.json)
 def rmi(name, steps, ident, ext, q, fcom=None):
     sub = ' · '.join(steps) + (' · FCOM: ' + fcom if fcom else '')
+    RYAN_MEM_SET.append({'id': 'rm-' + re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-'), 'name': name, 'ref': ext + ' ' + ident, 'ident': ident, 'cond': '',
+        'steps': [{'t': 'n', 'n': str(i + 1), 'h': _html.escape(x)} for i, x in enumerate(steps)] + ([{'t': 'b', 'h': 'FCOM: ' + _html.escape(fcom)}] if fcom else []),
+        'fctm': 'Ryan\'s wording (2026-09-22); the FCOM verbatim item is on the FCOM set.'})
     return box(name, sub, 'B', True, q, ident, ext)
 ryan_mem = [
   rmi('LOSS OF BRAKING', ['Reverse ... MAX', 'Brake pedals ... RELEASE', 'A/SKID & N/W STEERING ... ORDER OFF', 'Brakes ... PRESS (max 1 000 PSI)', 'Parking brake ... USE'],
@@ -1178,7 +1182,9 @@ LIM_COLORS = [RED, TEAL, NAVY, GREEN, PURP, GOLD, PLUM, BLUE, CYAN, FOREST, VIOL
 # approval (gear extension FL210, -0.26 psi, hydraulic 3 000 psi, APU 41 450 ft, speedbrakes, dimensions, approach
 # category). The full FCOM card set stays in limitations.html and data/limitations_drill.json.
 LIMBY = {x['id']: x for x in LIM}
+RYAN_LIM_IDS = []   # drill cards that make up the Rev 13 set (data/limitations_myset.json)
 def L(cid, title, value, note=''):
+    RYAN_LIM_IDS.append(cid)
     x = LIMBY[cid]; q, ident = lim_quote(x['src'])
     quotable = x['ref'].startswith('FCOM') and 'AFM' not in x['ref'] and not q.startswith('[') and V.norm(q) in V.extract('FCOM')
     return box(title, value + (' · ' + note if note else ''), 'B', False, q if quotable else '', (ident or x['ref']) if quotable else '', 'FCOM')
@@ -1343,29 +1349,32 @@ PH.append(P('sim-notes', 'SIM Notes', 'a', 'SIM NOTES (technique)', 'Ryan\'s sim
   S('GO-AROUND', AMBER, [
     sn('“GO AROUND, FLAPS”', ['TOGA, pitch up', 'read the FMA slowly (huge power change)', 'positive rate, GEAR UP, set the missed approach altitude'], 'PF', True),
     sn('400 ft: manage NAV or pull HDG', ['AP ON', '1 000 ft: push ALT', 'clean up', 'diamond checks', 'PULL SPEED 200, flaps 1', 'exit the GA phase: activate the approach or change destination']),
-    sn('Bounced landing', ['“GO AROUND, FLAPS” (no bounce TOGA any more)'], 'PF', True),
+    sn('Bounced landing', ['“GO AROUND, FLAPS” (no bounce TOGA any more)', 'FCTM PR-NP-SOP-250: light bounce, keep the pitch and land with thrust idle · high bounce, keep the pitch and go around; retract flaps one step and the gear only when established · never pitch up to soften the second touchdown'], 'PF', True),
   ], 'sim notes'),
   S('HOLDING · SLOPE · APPROACH', GOLD, [
-    sn('Hold speeds, international (works domestic too)', ['below 6 000 ft: 200 kt', '6 000 to 14 000 ft: 220 kt', 'above 14 000 ft: 240 kt']),
+    sn('Hold speeds, international (works domestic too)', ['below 6 000 ft: 200 kt', '6 000 to 14 000 ft: 220 kt', 'above 14 000 ft: 240 kt', 'FOM 5.5.15 (US): maximums 200 / 230 (210 where charted) / 265 KIAS; your 220 and 240 sit inside them']),
     sn('Runway slope', ['(difference between end elevations / runway length) x 100']),
     sn('Cleared for the approach: set the FAF altitude immediately', []),
     sn('NPA LOC FPA', ['cleared: set the FAF altitude and descend in the safe area', 'do not set the MDA in the window', 'V/S -700 if needed, FPA -3.0 to get down']),
     sn('Specials', ['simple special: a turn below 1 000 ft (hard tune the VOR if it is based on it, or the DME drops out at 1 000 ft)', 'complex special: cannot be printed on the TLR, see the HAL Jepp supplement (example PDX)']),
   ], 'sim notes'),
   S('GLIDE INTERCEPTION FROM ABOVE', TEAL, [
-    sn('LOC ... CHECK ENGAGED', ['slow down: flaps 1, then 2', 'APPR mode: arm when finally cleared', 'FCU altitude: spin to above the current altitude', 'V/S mode: 1 500 to 2 000 fpm down', 'gear down, flaps 3, then FULL', 'capture the G/S', 'never select -2 000 at or below 2 000 ft; then the max is -1 500']),
+    sn('LOC ... CHECK ENGAGED', ['slow down: flaps 1, then 2', 'APPR mode: arm when finally cleared', 'FCU altitude: spin to above the current altitude', 'V/S mode: 1 500 to 2 000 fpm down', 'gear down, flaps 3, then FULL', 'capture the G/S', 'never select -2 000 at or below 2 000 ft; then the max is -1 500', 'FCTM PR-NP-SOP-190: only when established on the LOC · gear down and at least CONF 2 before · APPR pb, confirm G/S armed and LOC engaged · FCU altitude above the aircraft · V/S 1 500 initially, above 2 000 the speed runs toward VFE · go-around altitude set at G/S*']),
   ], 'sim notes'),
   S('TCAS · STALL', PLUM, [
     sn('“TCAS, I have control”', ['TA/RA: “Hawaiian 50, TCAS RA”', 'AP and FD OFF, follow the commands', '“Hawaiian 50, clear of conflict”'], 'PF', True),
-    sn('“STALL, I have control”', ['lower the nose to the horizon: 5° below 10 000 ft, 10° higher', 'roll wings level', 'check the speed brake retracted', 'increase thrust smoothly', 'below FL 200: flaps 1', 'help with trim if deep in the stall, to 5', 'stall on takeoff: “STALL, TOGA, 15 DEGREES”'], 'PF', True),
+    sn('“STALL, I have control”', ['lower the nose to the horizon: 5° below 10 000 ft, 10° higher', 'roll wings level', 'check the speed brake retracted', 'increase thrust smoothly', 'below FL 200: flaps 1', 'help with trim if deep in the stall, to 5', 'stall on takeoff: “STALL, TOGA, 15 DEGREES”', 'FCOM PRO-ABN-MISC: the memory item is NOSE DOWN PITCH CONTROL ... APPLY with no target attitude; the 5° / 10° figures are your technique'], 'PF', True),
   ], 'sim notes'),
   S('FUEL JETTISON · EMERGENCIES · ECAM', VIOLET, [
-    sn('Fuel jettison', ['can we land overweight on the available runway?', 'permission and start/stop times to ATC', 'consider a hold with legs longer than 10 NM', 'stay away from thunderstorms', 'descend in the hold if forced to short legs', 'follow the QRH checklist', 'climb above 5 000 ft']),
+    sn('Fuel jettison', ['can we land overweight on the available runway?', 'permission and start/stop times to ATC', 'consider a hold with legs longer than 10 NM', 'stay away from thunderstorms', 'descend in the hold if forced to short legs', 'follow the QRH checklist', 'climb above 5 000 ft', 'QRH 19.02A: FMS FUEL PRED page SELECT · JETGW FINAL GW ENTER · T TANK MODE CHECK AUTO · JETTISON ARM ON · JETTISON ACTIVE ON · when complete ACTIVE OFF, ARM OFF']),
     sn('Emergencies, in order', ['OEBs first', 'run the memory items', 'after ECAM actions: computer resets and checklists', 'QRH summaries, then FCOM Vol 3 for anything else pertinent']),
     sn('Slats or flaps jammed', ['PULL SPEED']),
     sn('ECAM (Standard Callouts 3.03.90)', ['ECAM title', 'SOS', 'OEBs, memory items', '“I have control, ECAM actions”', 'complete the ECAM top portion', '“X procedure, APPLY” (do it now when on ECAM)', 'STATUS, “STOP ECAM”', 'QRH, computer resets, FCOM 3', 'situational assessment, decision making', 'do not fly too far from a good airport, slow down', '“CONTINUE ECAM”', 'read STATUS', '“X procedure, APPLY”: landing distance, flap setting, noted and done in prep for landing', '“ECAM ACTIONS COMPLETE”']),
   ], 'sim notes'),
 ]))
+
+json.dump({'ids': RYAN_LIM_IDS, 'label': 'Rev 13 set', 'source': 'HAL A330 Limitations Summary Rev 13, values FCOM R17'}, open(os.path.join(WORK, 'data', 'limitations_myset.json'), 'w', encoding='utf-8'), indent=0)
+json.dump(RYAN_MEM_SET, open(os.path.join(WORK, 'data', 'memory_items_myset.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
 
 # ============================================================ fleet/src on every record, then write
 for ph in PH:
