@@ -171,7 +171,7 @@ def transform(t):
     t = t.replace(a, "out.push(`<div class=\"card${sec.mem&&sec.items.length<=5?' mem':''}\"><div class=\"ch\"")
     a = "  applyCols(grid,CARDS,ncol,GFONT);\n  requestAnimationFrame(positionCues);"
     assert t.count(a) == 1, 'phase_flows (g): fit anchor missing'
-    t = t.replace(a, "  const sparse = CARDS.length < colsForWidth(W); grid.style.maxWidth = sparse ? (ncol*640)+'px' : ''; grid.style.margin = sparse ? '0 auto' : '';\n  { let f = sparse ? bestFontFor(CARDS,ncol,avail,grid) : GFONT; let h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // sparse pages (fewer cards than columns) narrow the grid and use their own best font; a page with unsplittable cards may need its own shrink\n  requestAnimationFrame(positionCues);")
+    t = t.replace(a, "  const sparse = CARDS.length < colsForWidth(W); grid.style.maxWidth = sparse ? (ncol*640)+'px' : ''; grid.style.margin = sparse ? '0' : ''; // sparse pages: column-width cards, left-justified (Ryan, 2026-09-22)\n  { let f = sparse ? bestFontFor(CARDS,ncol,avail,grid) : GFONT; let h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // sparse pages (fewer cards than columns) narrow the grid and use their own best font; a page with unsplittable cards may need its own shrink\n  requestAnimationFrame(positionCues);")
     # ---- (h) Jeppesen dark palette (Ryan, 2026-09-22)
     a = "body.dark{\n  --bg:#15131C;--card:#211D2E;--ink:#EDE9F3;--muted:#A29DB0;--line:#453F58;\n  --head:#2A2440;--nav:#1A1630;--navbtn:#2A2440;--navink:#EAE5F4;--accent:#E26DB8;\n  --limbg:#46380e;--limink:#ffd86b;--qbg:#1A1630;\n}"
     assert t.count(a) == 1, 'phase_flows (h): anchor missing'
@@ -204,7 +204,7 @@ def transform(t):
     a = "function colsForWidth(W){ return W>=1100?4 : W>=820?3 : W>=600?2 : 1; }\n"
     assert t.count(a) == 1, 'phase_flows (k): colsForWidth anchor missing'
     t = t.replace(a, a + "function readMode(W){ return !state.fit || colsForWidth(W)===1; }\n"
-        "function applyRead(grid,cards,W,avail){ const phone=colsForWidth(W)===1; const ncol=phone?1:Math.min(colsForWidth(W),Math.max(1,cards.length)); grid.style.flex=phone?'0 0 auto':''; grid.style.height=phone?'':avail+'px'; grid.style.columnFill=phone?'':'auto'; grid.style.minHeight=''; grid.style.maxWidth=''; grid.style.margin=''; applyCols(grid,cards,ncol,16); } // FIT off: phone scrolls down; Mac/iPad keep 16 px, the height lock and the columns continuing to the right (Ryan, 2026-09-22)\n"
+        "function applyRead(grid,cards,W,avail){ const phone=colsForWidth(W)===1; const ncol=phone?1:Math.min(colsForWidth(W),Math.max(1,cards.length)); grid.style.flex=phone?'0 0 auto':''; const sparse=!phone && cards.length<colsForWidth(W); const lock=!phone && !sparse; grid.style.height=lock?avail+'px':''; grid.style.columnFill=lock?'auto':''; grid.style.flex=lock?'':'0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=sparse?(ncol*640)+'px':''; grid.style.margin=sparse?'0':''; applyCols(grid,cards,ncol,16); } // sparse pages (fewer cards than columns) are column-width, left-justified and scroll down instead of sideways // FIT off: phone scrolls down; Mac/iPad keep 16 px, the height lock and the columns continuing to the right (Ryan, 2026-09-22)\n"
         "function unRead(grid){ grid.style.flex='0 0 auto'; grid.style.height=''; grid.style.columnFill=''; } // fit mode too lets the grid grow: multicol balances its columns and only the font shrinks to fit, never extra columns off to the right (Ryan, 2026-09-22)\n")
     a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));"
     assert t.count(a) == 1, 'phase_flows (k): fit anchor missing'
@@ -241,6 +241,19 @@ def transform(t):
     assert t.count(a) == 1, 'phase_flows (n): navPage anchor missing'
     t = t.replace(a, "function navPage(dir){ navEl.scrollBy({left:dir*Math.max(170,navEl.clientWidth-120),behavior:'smooth'}); } // a full bar width less the pagers\n"
         "navEl.addEventListener('wheel',e=>{ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ navEl.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false}); // Mac: vertical wheel or trackpad over the bar scrolls it sideways\n")
+    # ---- (o) exterior light switch actions in green (Ryan, 2026-09-22): NOSE / RWY TURN OFF / STROBE / LAND / WING / BEACON / NAV & LOGO
+    a = "function deco(s){ return s? hl(boldST(boldCO(s))) : ''; }"
+    assert t.count(a) == 1, 'phase_flows (o): deco anchor missing'
+    t = t.replace(a, "const LIGHTS=/((?:NOSE|STROBE|BEACON|WING|LAND(?: LIGHT)?|RWY TURN OFF|NAV & LOGO|Rwy Turnoff|Strobes|Nose|Land|Nav|Beacon|Wing)(?: sw)?(?: \\.\\.\\. | )(?:ON|OFF|TAXI|T\\.O\\.?|AUTO|1|AS RQRD))(?![\\w])/g;\n"
+        "function lights(s){ return s.replace(LIGHTS,\"<span class='lt'>$1</span>\"); } // single quotes: boldCO turns double quotes into callouts\n"
+        "function deco(s){ return s? hl(boldST(boldCO(lights(s)))) : ''; }")
+    a = "body.dark .tech{color:#f2d24c;}"
+    assert t.count(a) == 1, 'phase_flows (o): css anchor missing'
+    t = t.replace(a, a + "\n.lt,.lt b{color:#00805E;}body.dark .lt,body.dark .lt b{color:#73d0b0;}")
+    # ---- (p) altitude gates written the FCOM way with a space (18 000 ft, 10 000 ft) get the same highlight as 18,000 (Ryan, 2026-09-22)
+    a = "|10,000 ft|18,000|FL180|FL100|"
+    assert t.count(a) == 1, 'phase_flows (p): LIM anchor missing'
+    t = t.replace(a, "|10,000 ft|10 000 ft(?: MSL| AAL)?|18,000|18 000 ft(?: MSL)?|FL180|FL100|")
     return t
 
 if __name__ == '__main__':

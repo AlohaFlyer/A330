@@ -1,9 +1,9 @@
 {
-  "build": "v3.6",
+  "build": "v3.7",
   "default": "1.6",
   "pages": {
     "flows_quiz.html": "2.8",
-    "phase_flows.html": "3.6",
+    "phase_flows.html": "3.7",
     "manuals/index.html": "1.6",
     "index.html": "2.3",
     "podcast.html": "2.0",
