@@ -190,6 +190,37 @@ def transform(t):
     a = "  document.querySelectorAll('#nav button, #rail button').forEach(b=>b.classList.toggle('on',b.dataset.p===state.phase));\n  saveState();"
     assert t.count(a) == 1, 'phase_flows (j): anchor missing'
     t = t.replace(a, "  document.querySelectorAll('#nav button, #rail button').forEach(b=>b.classList.toggle('on',b.dataset.p===state.phase));\n  { const pi=PHASES.findIndex(p=>p.id===state.phase); document.getElementById('prev').style.visibility=pi>0?'':'hidden'; document.getElementById('next').style.visibility=pi<PHASES.length-1?'':'hidden'; } // arrows only where a phase exists that way\n  saveState();")
+    # ---- (k) phone reads vertically; wider screens get a FIT toggle (Ryan, 2026-09-22)
+    # Fit mode (the old behaviour) constrains the grid height so multicol overflows into extra columns to
+    # the RIGHT (horizontal scroll, shrinking font). Read mode lets the grid grow, 16 px, one column on a
+    # phone / two on wider screens, so the page scrolls vertically only. Phones are always in read mode
+    # and never see the FIT button; wider screens default to FIT on, choice persisted like the theme.
+    a = '    <button class="themebtn filt" id="filt" title="Show or hide the other crew member\'s steps">BOTH</button>\n'
+    assert t.count(a) == 1, 'phase_flows (k): filt button anchor missing'
+    t = t.replace(a, a + '    <button class="themebtn filt" id="fit" title="Fit the page to the screen, or scroll it at reading size">FIT</button>\n')
+    a = "@media (max-width:600px){.arrow{display:none;}}"
+    assert t.count(a) == 1, 'phase_flows (k): media anchor missing'
+    t = t.replace(a, a + "\n@media (max-width:600px){#fit{display:none;}}  /* a phone always reads vertically; FIT is a Mac/iPad control */")
+    a = "function colsForWidth(W){ return W>=1100?4 : W>=820?3 : W>=600?2 : 1; }\n"
+    assert t.count(a) == 1, 'phase_flows (k): colsForWidth anchor missing'
+    t = t.replace(a, a + "function readMode(W){ return !state.fit || colsForWidth(W)===1; }\n"
+        "function applyRead(grid,cards,W){ const ncol=Math.min(colsForWidth(W),2,Math.max(1,cards.length)); grid.style.flex='0 0 auto'; grid.style.minHeight=''; grid.style.maxWidth=''; grid.style.margin=''; applyCols(grid,cards,ncol,16); }\n"
+        "function unRead(grid){ grid.style.flex=''; }\n")
+    a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));"
+    assert t.count(a) == 1, 'phase_flows (k): fit anchor missing'
+    t = t.replace(a, "  const W=grid.clientWidth||main.clientWidth;\n  if(readMode(W)){ applyRead(grid,CARDS,W); requestAnimationFrame(positionCues); return; } unRead(grid);\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length));")
+    a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=colsForWidth(W);\n  const f=bestFontFor(CARDS,ncol,avail,grid);"
+    assert t.count(a) == 1, 'phase_flows (k): notes fit anchor missing'
+    t = t.replace(a, "  const W=grid.clientWidth||main.clientWidth;\n  if(readMode(W)){ applyRead(grid,CARDS,W); requestAnimationFrame(positionCues); return; } unRead(grid);\n  const ncol=colsForWidth(W);\n  const f=bestFontFor(CARDS,ncol,avail,grid);")
+    a = "appr:'ILS',cat:1,hideOther:false,notesOpen:false};"
+    assert t.count(a) == 1, 'phase_flows (k): state anchor missing'
+    t = t.replace(a, "appr:'ILS',cat:1,hideOther:false,notesOpen:false,fit:true};")
+    a = "themeBtn.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));\n"
+    assert t.count(a) == 1, 'phase_flows (k): theme anchor missing'
+    t = t.replace(a, a + "const fitBtn=document.getElementById('fit');\n"
+        "function setFit(on){ state.fit=on; fitBtn.classList.toggle('on',on); fitBtn.title=on?'Fit to screen is on. Tap to scroll at reading size':'Reading size. Tap to fit the page to the screen'; try{localStorage.setItem('a330fit',on?'1':'0');}catch(e){} }\n"
+        "fitBtn.addEventListener('click',()=>{ setFit(!state.fit); GFONT=0; fitCurrent(); });\n"
+        "{ let f=true; try{f=localStorage.getItem('a330fit')!=='0';}catch(e){} setFit(f); }\n")
     return t
 
 if __name__ == '__main__':
