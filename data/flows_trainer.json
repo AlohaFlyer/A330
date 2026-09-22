@@ -160,7 +160,7 @@
 "item": "Cockpit lights * AS RQRD",
 "act": "",
 "role": "FO",
-"x": 180.2,
+"x": 120.2,
 "y": 356.1,
 "d": "[Phase flows · CM2 · TURN IT ON · 7:]\nCockpit lights * AS RQRD\n• Set INT LT, FLOOD LT, INTEG LT (glareshield and FCU)\n\n[FCOM PRO-NOR-SOP-04-00010908.0001001 · COCKPIT LIGHTS:]\n• * COCKPIT LIGHTS...... AS RQRD CM1-CM2\nSet INT LT, FLOOD LT, INTEG LT (included glareshield and FCU).",
 "g": "Turn it ON",

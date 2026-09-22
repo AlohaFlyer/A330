@@ -32,6 +32,8 @@ def sync_from_phase_flows(D):
             pairs.append(pitems[pi]); pi += 1
         prev = it
     assert pi == len(pitems), (pi, len(pitems))
+    for it in sp['items']:
+        if it['item'].startswith('Cockpit lights') and it['role'] == 'FO': it['x'], it['y'] = 120.2, 356.1   # left side of the pedestal (Ryan, 2026-09-22)
     for it, (h, pit) in zip(sp['items'], pairs):
         d = it['d']
         if d.startswith('[Phase flows'):
@@ -92,7 +94,8 @@ apu = pick(prelim, 'APU START pb-sw'); bleed = pick(prelim, 'APU BLEED pb-sw')
 apu['item'] = 'APU START · APU BLEED'; apu['act'] = 'ON · ON when AVAIL'; apu['d'] = apu['d'] + '\n' + bleed['d']
 items.append(tag(apu, 'ON'))
 items.append(tag(pick(prelim, 'ALL IR MODE selector'), 'ON'))
-items.append(tag(pick(prelim, 'COCKPIT LIGHTS', 'FO'), 'ON'))
+cl_fo = pick(prelim, 'COCKPIT LIGHTS', 'FO'); cl_fo['x'], cl_fo['y'] = 120.2, 356.1   # FO lighting panel: left side of the pedestal, below the RMP (Ryan, 2026-09-22)
+items.append(tag(cl_fo, 'ON'))
 items.append(tag(pick(prelim, 'COCKPIT LIGHTS', 'CA'), 'ON'))
 items.append(tag(pick(prelim, 'ATIS'), 'ON'))
 # ---- Set it up (4 for CM2; CM1 extras tagged CA)
