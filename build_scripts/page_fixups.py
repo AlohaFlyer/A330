@@ -115,7 +115,7 @@ EDITS={
   ("themeBtn.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));",
    "themeBtn.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));\n"
    "const qref=document.getElementById('qref'), qrefTheme=document.getElementById('qrefTheme');\n"
-   "function setQrefTheme(dark){ qref.classList.toggle('dark',dark); qrefTheme.innerHTML=dark?'&#9728;':'&#9790;'; try{localStorage.setItem('a330qrefdark',dark?'1':'0');}catch(e){} }\n"
+   "function setQrefTheme(dark){ qref.classList.toggle('dark',dark); qrefTheme.innerHTML=dark?'&#9790;':'&#9728;'; try{localStorage.setItem('a330qrefdark',dark?'1':'0');}catch(e){} }\n"
    "function openQref(){ let d=document.body.classList.contains('dark'); try{const v=localStorage.getItem('a330qrefdark'); if(v!==null) d=(v==='1');}catch(e){} setQrefTheme(d); qref.hidden=false; document.getElementById('qrefBtn').classList.add('on'); try{history.pushState({qref:1},'');}catch(e){} }\n"
    "function closeQref(fromPop){ if(qref.hidden) return; qref.hidden=true; document.getElementById('qrefBtn').classList.remove('on'); if(!fromPop && history.state && history.state.qref){ try{history.back();}catch(e){} } }\n"
    "document.getElementById('qrefBtn').addEventListener('click',()=>{ if(qref.hidden) openQref(); else closeQref(); });\n"

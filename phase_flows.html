@@ -414,6 +414,7 @@ function render(){
   document.getElementById('apprwrap').style.display=showAppr?'flex':'none';
   document.getElementById('cat').style.display=(showAppr&&state.appr==='ILS')?'flex':'none';
   document.querySelectorAll('#nav button, #rail button').forEach(b=>b.classList.toggle('on',b.dataset.p===state.phase));
+  { const pi=PHASES.findIndex(p=>p.id===state.phase); document.getElementById('prev').style.visibility=pi>0?'':'hidden'; document.getElementById('next').style.visibility=pi<PHASES.length-1?'':'hidden'; } // arrows only where a phase exists that way
   saveState();
   fitToScreen();
 }
@@ -493,9 +494,10 @@ function fitToScreen(){
   const main=document.getElementById('main'); const phh=document.querySelector('.phasehead'); if(!phh)return;
   const avail=main.clientHeight - phh.offsetHeight - 12; if(avail<=4)return;
   const W=grid.clientWidth||main.clientWidth;
-  const ncol=colsForWidth(W);
+  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length)); // never more columns than cards (Ryan, 2026-09-22)
   if(!GFONT || Math.abs(W-lastW)>6 || Math.abs(avail-lastH)>6 || lastHide!==state.hideOther){ GFONT=computeGFont(ncol,avail,grid); lastW=W; lastH=avail; lastHide=state.hideOther; }
-  { let f=GFONT, h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // a page with unsplittable cards may need its own shrink (2026-09-21)
+  const sparse = CARDS.length < colsForWidth(W); grid.style.maxWidth = sparse ? (ncol*640)+'px' : ''; grid.style.margin = sparse ? '0 auto' : '';
+  { let f = sparse ? bestFontFor(CARDS,ncol,avail,grid) : GFONT; let h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // sparse pages (fewer cards than columns) narrow the grid and use their own best font; a page with unsplittable cards may need its own shrink
   requestAnimationFrame(positionCues);
 }
 function positionCues(){
@@ -573,11 +575,11 @@ document.getElementById('main').addEventListener('click',e=>{
   const c=e.target.closest('.cl.has-cl'); if(c){ c.parentNode.classList.toggle('open'); }
 });
 const themeBtn=document.getElementById('theme');
-function setTheme(dark){ document.body.classList.toggle('dark',dark); themeBtn.innerHTML=dark?'&#9728;':'&#9790;';
+function setTheme(dark){ document.body.classList.toggle('dark',dark); themeBtn.innerHTML=dark?'&#9790;':'&#9728;'; // moon while dark, sun while light (Ryan, 2026-09-22)
   try{localStorage.setItem('a330dark',dark?'1':'0');}catch(e){} }
 themeBtn.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));
 const qref=document.getElementById('qref'), qrefTheme=document.getElementById('qrefTheme');
-function setQrefTheme(dark){ qref.classList.toggle('dark',dark); qrefTheme.innerHTML=dark?'&#9728;':'&#9790;'; try{localStorage.setItem('a330qrefdark',dark?'1':'0');}catch(e){} }
+function setQrefTheme(dark){ qref.classList.toggle('dark',dark); qrefTheme.innerHTML=dark?'&#9790;':'&#9728;'; try{localStorage.setItem('a330qrefdark',dark?'1':'0');}catch(e){} }
 function openQref(){ let d=document.body.classList.contains('dark'); try{const v=localStorage.getItem('a330qrefdark'); if(v!==null) d=(v==='1');}catch(e){} setQrefTheme(d); qref.hidden=false; document.getElementById('qrefBtn').classList.add('on'); try{history.pushState({qref:1},'');}catch(e){} }
 function closeQref(fromPop){ if(qref.hidden) return; qref.hidden=true; document.getElementById('qrefBtn').classList.remove('on'); if(!fromPop && history.state && history.state.qref){ try{history.back();}catch(e){} } }
 document.getElementById('qrefBtn').addEventListener('click',()=>{ if(qref.hidden) openQref(); else closeQref(); });

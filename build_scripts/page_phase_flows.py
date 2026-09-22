@@ -171,7 +171,7 @@ def transform(t):
     t = t.replace(a, "out.push(`<div class=\"card${sec.mem&&sec.items.length<=5?' mem':''}\"><div class=\"ch\"")
     a = "  applyCols(grid,CARDS,ncol,GFONT);\n  requestAnimationFrame(positionCues);"
     assert t.count(a) == 1, 'phase_flows (g): fit anchor missing'
-    t = t.replace(a, "  { let f=GFONT, h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // a page with unsplittable cards may need its own shrink (2026-09-21)\n  requestAnimationFrame(positionCues);")
+    t = t.replace(a, "  const sparse = CARDS.length < colsForWidth(W); grid.style.maxWidth = sparse ? (ncol*640)+'px' : ''; grid.style.margin = sparse ? '0 auto' : '';\n  { let f = sparse ? bestFontFor(CARDS,ncol,avail,grid) : GFONT; let h=applyCols(grid,CARDS,ncol,f); while(h>avail && f>FLOOR){ f-=0.5; h=applyCols(grid,CARDS,ncol,f); } } // sparse pages (fewer cards than columns) narrow the grid and use their own best font; a page with unsplittable cards may need its own shrink\n  requestAnimationFrame(positionCues);")
     # ---- (h) Jeppesen dark palette (Ryan, 2026-09-22)
     a = "body.dark{\n  --bg:#15131C;--card:#211D2E;--ink:#EDE9F3;--muted:#A29DB0;--line:#453F58;\n  --head:#2A2440;--nav:#1A1630;--navbtn:#2A2440;--navink:#EAE5F4;--accent:#E26DB8;\n  --limbg:#46380e;--limink:#ffd86b;--qbg:#1A1630;\n}"
     assert t.count(a) == 1, 'phase_flows (h): anchor missing'
@@ -179,6 +179,17 @@ def transform(t):
     a = "body.dark .tech{color:#E26DB8;}"
     assert t.count(a) == 1, 'phase_flows (h): anchor missing'
     t = t.replace(a, "body.dark .tech{color:#f2d24c;}")
+    # ---- (i) never more columns than cards
+    a = "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=colsForWidth(W);\n  if(!GFONT"
+    assert t.count(a) == 1, 'phase_flows (i): anchor missing'
+    t = t.replace(a, "  const W=grid.clientWidth||main.clientWidth;\n  const ncol=Math.min(colsForWidth(W), Math.max(1, CARDS.length)); // never more columns than cards (Ryan, 2026-09-22)\n  if(!GFONT")
+    # ---- (j) theme icons show the current state; phase arrows only where a phase exists that way
+    a = "function setTheme(dark){ document.body.classList.toggle('dark',dark); themeBtn.innerHTML=dark?'&#9728;':'&#9790;';"
+    assert t.count(a) == 1, 'phase_flows (j): anchor missing'
+    t = t.replace(a, "function setTheme(dark){ document.body.classList.toggle('dark',dark); themeBtn.innerHTML=dark?'&#9790;':'&#9728;'; // moon while dark, sun while light (Ryan, 2026-09-22)")
+    a = "  document.querySelectorAll('#nav button, #rail button').forEach(b=>b.classList.toggle('on',b.dataset.p===state.phase));\n  saveState();"
+    assert t.count(a) == 1, 'phase_flows (j): anchor missing'
+    t = t.replace(a, "  document.querySelectorAll('#nav button, #rail button').forEach(b=>b.classList.toggle('on',b.dataset.p===state.phase));\n  { const pi=PHASES.findIndex(p=>p.id===state.phase); document.getElementById('prev').style.visibility=pi>0?'':'hidden'; document.getElementById('next').style.visibility=pi<PHASES.length-1?'':'hidden'; } // arrows only where a phase exists that way\n  saveState();")
     return t
 
 if __name__ == '__main__':
