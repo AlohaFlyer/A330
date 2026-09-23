@@ -1,7 +1,7 @@
 /* AS330 Study Portal service worker - offline support
    Two tiers: core (pages, quizzes, data, PDFs) and audio (podcast mp3s).
    Nothing is downloaded until the user asks for it from the menu page. */
-const VERSION = 'v6';
+const VERSION = 'v7';
 const CORE  = 'ha330-core-'  + VERSION;
 const AUDIO = 'ha330-audio-' + VERSION;
 const MANIFEST = '/offline-manifest.json';
@@ -70,8 +70,10 @@ self.addEventListener('fetch', event => {
         if (req.mode === 'navigate') {
           // Navigations keep the original Request (redirect mode 'manual'): the site sits
           // behind Cloudflare Access, and a followed 302 to the login page handed back to a
-          // navigation makes the browser show "This site can't be reached".
-          fresh = await fetch(req);
+          // navigation makes the browser show "This site can't be reached". cache:'no-store'
+          // on the SAME Request object preserves that mode/redirect while still bypassing
+          // the browser HTTP cache, which is what let a shipped fix sit unseen on reload.
+          fresh = await fetch(req, { cache: 'no-store' });
         } else {
           try {
             fresh = await fetch(req.url, { cache: 'no-store', credentials: 'same-origin' });
