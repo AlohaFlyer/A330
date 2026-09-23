@@ -1,7 +1,7 @@
 /* AS330 Study Portal service worker - offline support
    Two tiers: core (pages, quizzes, data, PDFs) and audio (podcast mp3s).
    Nothing is downloaded until the user asks for it from the menu page. */
-const VERSION = 'v5';
+const VERSION = 'v6';
 const CORE  = 'ha330-core-'  + VERSION;
 const AUDIO = 'ha330-audio-' + VERSION;
 const MANIFEST = '/offline-manifest.json';
