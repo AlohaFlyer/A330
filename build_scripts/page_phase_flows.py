@@ -63,7 +63,7 @@ def cut_decl(body, name):
 
 RECON = """/* phase records, checklists, quotes and NOTES live in data/phase_flows.json and are rebuilt
    here through the builders above; nothing else in this script changes (see build_scripts/page_phase_flows.py) */
-const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref+']':''):'';
+const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref.replace(/-C?\d{7,8}\.\d{7}/,'')+']':''):'';
   switch(it.k){
     case 'box': return box(it.t,it.s,it.r,it.call,q);
     case 'fmc': return fmc(it.t,it.s,it.r,q);
