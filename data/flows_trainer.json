@@ -360,7 +360,7 @@
 "role": "PF",
 "x": 127.8,
 "y": 225.3,
-"d": "[Phase flows · PF · PANELS · 3:]\nFront instrument panels\n• * ISIS ... CHECK (brightness, IAS, altimeter, attitude, no flags)\n• * NORTH REF ... CHECK (TRUE blue light off)\n• DMC selector ... CHECK AUTO\n• ECAM/ND selector ... CHECK NORM\n• * CLOCK ... CHECK/SET\n• LDG GEAR GRVTY EXTN selector ... OFF\n• * A/SKID & N/W STRG sw ... ON\n\n[FCOM PRO-NOR-SOP-06-B-00011875.0001001 · ISIS:]\n• * ISIS...... CHECK PF\n‐ Adjust brightness.\n‐ Check IAS, altimeter readings, altimeter settings and attitude display.\n‐ Check no flags - Reset attitude, if necessary. Note: Use of ISIS bugs function is not recommended (Refer to DSC-34-10-20 ISIS).",
+"d": "[Phase flows · PF · PANELS · 3:]\nFront instrument panels\n• * ISIS ... CHECK (brightness, IAS, altimeter, attitude, no flags)\n• * NORTH REF ... CHECK (TRUE blue light off)\n• DMC selector ... CHECK AUTO\n• ECAM/ND selector ... CHECK NORM\n• * CLOCK ... CHECK GPS TIME/SET\n• LDG GEAR GRVTY EXTN selector ... OFF\n• * A/SKID & N/W STRG sw ... ON\n\n[FCOM PRO-NOR-SOP-06-B-00011875.0001001 · ISIS:]\n• * ISIS...... CHECK PF\n‐ Adjust brightness.\n‐ Check IAS, altimeter readings, altimeter settings and attitude display.\n‐ Check no flags - Reset attitude, if necessary. Note: Use of ISIS bugs function is not recommended (Refer to DSC-34-10-20 ISIS).",
 "g": "Panels",
 "gc": "#B8860B",
 "gb": "PF",
