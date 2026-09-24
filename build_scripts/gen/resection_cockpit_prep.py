@@ -63,7 +63,7 @@ prep['sections'] = prelim_groups + [S('PF · PANELS · 3', C['PAN'], panels, cit
     S('PM · BEFORE WALKAROUND · 10', C['WALK'], walk10, 'FCOM PRO-NOR-SOP-04'),
     S('BOX BUILD AND CHECK · 4', C['BUILD'], build, cite6),
     S('PF · 2 CHECKS', C['PF2'], pf2, cite6),
-    S('PM · 3 CHECKS', C['PM3'], pm3, cite6),
+    S('PM · 3 CHECKS "CFI"', C['PM3'], pm3, cite6),
     S('LEGS, BRIEF, CHECKLIST · 3', C['LEGS'], legs, cite6)] + [x for x in prep['sections'][1:] if not x['h'].startswith('EXTERIOR LIGHTS')]  # lights card dropped from Cockpit Prep (Ryan, 2026-09-21)
 prep['src'] = 'FCOM PRO-NOR-SOP-04 / SOP-06'
 D['meta']['resectioned'] = '2026-09-21 cockpit prep memorization groups (spine_cockpit_prep.py colors)'

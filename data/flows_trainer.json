@@ -595,9 +595,9 @@
 "role": "PM",
 "x": 120.2,
 "y": 316.5,
-"d": "[Phase flows · PM · 3 CHECKS:]\nIRS ALIGN * CHECK\n• POSITION MONITOR: IRS in NAV, each IRS within 5 NM of FMS position\n• ND ROSE-NAV or ARC consistent with airport, SID, NAVAIDs\n\n[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs.",
+"d": "[Phase flows · PM · 3 CHECKS \"CFI\":]\nIRS ALIGN * CHECK\n• POSITION MONITOR: IRS in NAV, each IRS within 5 NM of FMS position\n• ND ROSE-NAV or ARC consistent with airport, SID, NAVAIDs\n\n[FCOM PRO-NOR-SOP-06-00011912.0001001:]\n• * IRS ALIGN......CHECK PM\nOn the POSITION MONITOR page, check that the IRS are in NAV mode, and check that the distance between each IRS and the FMS position is lower than 5 NM. Select ND in ROSE-NAV or ARC mode, and confirm that the aircraft position is consistent with the position of the airport, the SID and the surrounding NAVAIDs.",
 "mir": true,
-"g": "3 Checks",
+"g": "3 Checks \"CFI\"",
 "gc": "#7a3b8f",
 "gb": "PM",
 "pf_t": "IRS ALIGN * CHECK"
@@ -608,8 +608,8 @@
 "role": "PM",
 "x": 150.8,
 "y": 256.6,
-"d": "[Phase flows · PM · 3 CHECKS:]\nFUEL ON BOARD * CHECK\n• ECAM FOB = block fuel of the computerized flight plan\n• FUEL SD: balanced, CG within limits\n\n[FCOM PRO-NOR-SOP-06-00024946.0001001:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
-"g": "3 Checks",
+"d": "[Phase flows · PM · 3 CHECKS \"CFI\":]\nFUEL ON BOARD * CHECK\n• ECAM FOB = block fuel of the computerized flight plan\n• FUEL SD: balanced, CG within limits\n\n[FCOM PRO-NOR-SOP-06-00024946.0001001:]\n• * FUEL ON BOARD......CHECK PF-PM\n‐ Check that ECAM FOB corresponds to the block fuel of the computerized flight plan\n‐ On FUEL SD page, check that the fuel is correctly balanced and CG is within operational limits.",
+"g": "3 Checks \"CFI\"",
 "gc": "#7a3b8f",
 "gb": "PM",
 "pf_t": "FUEL ON BOARD * CHECK"
@@ -620,9 +620,9 @@
 "role": "PM",
 "x": 123.0,
 "y": 270.1,
-"d": "[Phase flows · PM · 3 CHECKS:]\nATC clearance CONFIRM\n• VHF, ACARS (PDC) or CPDLC (DCL)\n\n[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC.",
+"d": "[Phase flows · PM · 3 CHECKS \"CFI\":]\nATC clearance CONFIRM\n• VHF, ACARS (PDC) or CPDLC (DCL)\n\n[FCOM PRO-NOR-SOP-06-90000101.9000253 · ATC CLEARANCE:]\n• ATC clearance...... CONFIRM PM\nObtain ATC clearance via VHF, ACARS (PDC) or via CPDLC (DCL), Refer to PRO-SUP-46 Departure Clearance via CPDLC.",
 "mir": true,
-"g": "3 Checks",
+"g": "3 Checks \"CFI\"",
 "gc": "#7a3b8f",
 "gb": "PM",
 "pf_t": "ATC clearance CONFIRM"
@@ -712,7 +712,7 @@
 "gb": "PF"
 },
 {
-"g": "3 Checks",
+"g": "3 Checks \"CFI\"",
 "gc": "#7a3b8f",
 "gb": "PM"
 },

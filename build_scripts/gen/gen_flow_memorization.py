@@ -27,7 +27,7 @@ HOOKS = {
  'BEFORE WALKAROUND': 'Three fluids, then the brakes, then the safety gear: OXY HYD OIL, flaps and speed brake, ACCU PARK BRAKES, alternate braking, emergency equipment, rain repellent, gear pins. Ten, then the PM leaves.',
  'BOX BUILD AND CHECK': 'A-DIFSRIPP built by the PF, crosschecked by the PM, then glareshield, lateral consoles, PFD and ND. The airplane is configured for the departure here.',
  '2 CHECKS': 'PF: PRESS and STS on the ECAM, then the release sent. Two.',
- '3 CHECKS': 'PM: IRS aligned, fuel on board, ATC clearance. Three.',
+ '3 CHECKS "CFI"': 'PM: IRS aligned, fuel on board, ATC clearance. Three.',
  'LEGS, BRIEF, CHECKLIST': 'Legs verified, briefing performed, checklist read. The flow ends in a reported state, never a remembered one.',
 }
 def key(h):

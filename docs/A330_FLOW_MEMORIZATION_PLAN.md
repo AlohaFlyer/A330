@@ -19,14 +19,14 @@ So the goal is not "know the flow." The goal is know the flow, survive being sto
 | Group | Who | Items |
 |---|---|---|
 | TURN IT OFF | CM2 | 4 |
-| TURN IT ON | CM2 | 7 |
-| SET IT UP | CM2 | 7 |
+| TURN IT ON | CM2 | 6 |
+| SET IT UP | CM2 | 8 |
 | BOX START | PF | 2 |
 | PANELS | PF | 3 |
 | BEFORE WALKAROUND | PM | 10 |
 | BOX BUILD AND CHECK | PF and PM | 5 |
 | 2 CHECKS | PF | 2 |
-| 3 CHECKS | PM | 3 |
+| 3 CHECKS "CFI" | PM | 3 |
 | LEGS, BRIEF, CHECKLIST | PF and PM | 3 |
 
 
@@ -45,7 +45,7 @@ Four things that must be dead before anything else: engines, radar, gear lever p
 3. L/G lever DOWN
 4. Wipers OFF
 
-### CM2 · TURN IT ON · 7
+### CM2 · TURN IT ON · 6
 
 Power, talk, fire, air, nav, light, weather: batteries and external power, radios, the APU fire test, APU start and bleed, IRS to NAV, cockpit lights, ATIS. Seven, in the order the airplane comes alive.
 
@@ -55,9 +55,8 @@ Power, talk, fire, air, nav, light, weather: batteries and external power, radio
 4. APU start · bleed
 5. ADIRS * ALL IR MODE selector NAV
 6. Cockpit lights * AS RQRD
-7. ATIS * OBTAIN
 
-### CM2 · SET IT UP · 4
+### CM2 · SET IT UP · 5
 
 The paperwork gate. MCDU pre-init and RCL and acceptance are CM1; EFB, logbook and MEL, OEB, Jeppesen are everyone. Four for CM2.
 
@@ -67,7 +66,8 @@ The paperwork gate. MCDU pre-init and RCL and acceptance are CM1; EFB, logbook a
 4. AIRCRAFT ACCEPTANCE * PERFORM
 5. LOGBOOK and MEL/CDL items * CHECK
 6. OEB * CHECK
-7. Jeppesen charts * PREPARE
+7. ATIS * OBTAIN
+8. Jeppesen charts * PREPARE
 
 ### PF · BOX START · 2
 
@@ -116,7 +116,7 @@ PF: PRESS and STS on the ECAM, then the release sent. Two.
 1. PRESS · STS · FUEL pb PRESS (ECAM control panel)
 2. RLS VERSION / FITNESS / FOB / PDSC ... SENT
 
-### PM · 3 CHECKS
+### PM · 3 CHECKS "CFI"
 
 PM: IRS aligned, fuel on board, ATC clearance. Three.
 

@@ -6,7 +6,7 @@ so every `d` block stays the verified text. Idempotent: skips if the spine is al
 
 Groups (label, color, branch, CM2 count):
   Turn it OFF 4 | Turn it ON 7 | Set it up 4 | PF Box start 2 | PF Panels 3 | PM Before Walkaround 10
-  | BOTH Box build and check 4 | PF 2 Checks | PM 3 Checks | BOTH Legs, Brief, Checklist 3
+  | BOTH Box build and check 4 | PF 2 Checks | PM 3 Checks "CFI" | BOTH Legs, Brief, Checklist 3
 CM2 as PF drills 29 items, CM2 as PM drills 35. CM1-only items (MCDU ON, RCL, Aircraft Acceptance,
 the CA copies of lights and Jeppesen) stay tagged CA so the CM1 seat view is still complete.
 Item fields added: g (group label), gc (group color), gb (branch: '', 'PF', 'PM', 'BOTH').
@@ -69,7 +69,7 @@ G = {
  'WALK': ('Before Walkaround', '#0F6E8C', 'PM'),
  'BUILD':('Box build and check', '#5f3dc4', ''),
  'PF2':  ('2 Checks', '#9c5800', 'PF'),
- 'PM3':  ('3 Checks', '#7a3b8f', 'PM'),
+ 'PM3':  ('3 Checks "CFI"', '#7a3b8f', 'PM'),
  'LEGS': ('Legs, Brief, Checklist', '#831A57', ''),
 }
 def tag(it, g):
@@ -135,7 +135,7 @@ items.append(tag(pick(prep, 'PFD and ND'), 'BUILD'))
 items.append(tag(pick(prep, 'PRESS, STS, FUEL pb'), 'PF2'))
 rls = pick(prep, 'RELEASE VERSION #__/ FITNESS/ FOB/ PDSC'); rls['item'] = 'RLS VERSION / FITNESS / FOB / PDSC'
 items.append(tag(rls, 'PF2'))
-# ---- PM 3 Checks
+# ---- PM 3 Checks "CFI"
 items.append(tag(pick(prep, 'IRS ALIGN'), 'PM3'))
 items.append(tag(pick(prep, 'FUEL ON BOARD'), 'PM3'))
 items.append(tag(pick(prep, 'ATC clearance'), 'PM3'))
