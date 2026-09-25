@@ -8,6 +8,14 @@ Every quoted line in `d`, every XREF body line and every checklist row is taken 
 extract (whitespace and dot leaders normalized) so verify_flows_trainer.py can prove it.
 """
 import json, re, os, sys
+
+# RETIRED 2026-09-25 (v5.0): the committed data file is the source of truth. Hand edits since
+# v4.x (mir/pos dots, CM2 spine, FCOM reconciliation of flows 3-13, phase restores) are NOT in this
+# script's inputs, so a rerun silently reverts them. On a manual revision, run the verifiers against
+# the new extracts and fix the flagged quotes in the data file instead. See build_scripts/gen/README.md.
+if '--force-regenerate' not in sys.argv:
+    sys.exit(__file__.rsplit('/', 1)[-1] + ': retired, would overwrite the canonical data file. '
+             'Use the verifiers + hand fixes (build_scripts/gen/README.md), or pass --force-regenerate.')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(HERE, '..', '..'))  # repo root
 SRC = os.environ.get('A330_SRC', os.path.join(WORK, '..', 'src'))  # manual extracts, never in the repo

@@ -4,7 +4,15 @@ memorization groups (2026-09-21), the same groups and colors as spine_cockpit_pr
 Flows Trainer. Items are moved and relabelled only; every quote/ref stays as generated. Run AFTER
 gen_phase_flows.py. Idempotent (skips when the TURN IT OFF section already exists).
 """
-import json, os, copy
+import json, os, copy, sys
+
+# RETIRED 2026-09-25 (v5.0): the committed data file is the source of truth. Hand edits since
+# v4.x (mir/pos dots, CM2 spine, FCOM reconciliation of flows 3-13, phase restores) are NOT in this
+# script's inputs, so a rerun silently reverts them. On a manual revision, run the verifiers against
+# the new extracts and fix the flagged quotes in the data file instead. See build_scripts/gen/README.md.
+if '--force-regenerate' not in sys.argv:
+    sys.exit(__file__.rsplit('/', 1)[-1] + ': retired, would overwrite the canonical data file. '
+             'Use the verifiers + hand fixes (build_scripts/gen/README.md), or pass --force-regenerate.')
 HERE = os.path.dirname(os.path.abspath(__file__)); WORK = os.path.abspath(os.path.join(HERE, '..', '..'))
 P = os.path.join(WORK, 'data', 'phase_flows.json')
 D = json.load(open(P, encoding='utf-8'))

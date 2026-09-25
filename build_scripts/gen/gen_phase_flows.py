@@ -2,6 +2,14 @@
 """Generate WORK/data/phase_flows.json (A330 PAX phase flows) for phase_flows.html.
 Scratch generator: every quote is typed from the extract and proven by verify_phase_flows.py."""
 import json, os, sys
+
+# RETIRED 2026-09-25 (v5.0): the committed data file is the source of truth. Hand edits since
+# v4.x (mir/pos dots, CM2 spine, FCOM reconciliation of flows 3-13, phase restores) are NOT in this
+# script's inputs, so a rerun silently reverts them. On a manual revision, run the verifiers against
+# the new extracts and fix the flagged quotes in the data file instead. See build_scripts/gen/README.md.
+if '--force-regenerate' not in sys.argv:
+    sys.exit(__file__.rsplit('/', 1)[-1] + ': retired, would overwrite the canonical data file. '
+             'Use the verifiers + hand fixes (build_scripts/gen/README.md), or pass --force-regenerate.')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(HERE, '..', '..'))  # repo root
 FLOWS = json.load(open(os.path.join(WORK, 'data', 'flows.json'), encoding='utf-8'))

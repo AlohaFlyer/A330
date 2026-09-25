@@ -11,7 +11,15 @@ CM2 as PF drills 29 items, CM2 as PM drills 35. CM1-only items (MCDU ON, RCL, Ai
 the CA copies of lights and Jeppesen) stay tagged CA so the CM1 seat view is still complete.
 Item fields added: g (group label), gc (group color), gb (branch: '', 'PF', 'PM', 'BOTH').
 """
-import json, os, copy
+import json, os, copy, sys
+
+# RETIRED 2026-09-25 (v5.0): the committed data file is the source of truth. Hand edits since
+# v4.x (mir/pos dots, CM2 spine, FCOM reconciliation of flows 3-13, phase restores) are NOT in this
+# script's inputs, so a rerun silently reverts them. On a manual revision, run the verifiers against
+# the new extracts and fix the flagged quotes in the data file instead. See build_scripts/gen/README.md.
+if '--force-regenerate' not in sys.argv:
+    sys.exit(__file__.rsplit('/', 1)[-1] + ': retired, would overwrite the canonical data file. '
+             'Use the verifiers + hand fixes (build_scripts/gen/README.md), or pass --force-regenerate.')
 HERE = os.path.dirname(os.path.abspath(__file__)); WORK = os.path.abspath(os.path.join(HERE, '..', '..'))
 P = os.path.join(WORK, 'data', 'flows_trainer.json')
 D = json.load(open(P, encoding='utf-8'))
