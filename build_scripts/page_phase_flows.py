@@ -282,6 +282,93 @@ def transform(t):
     a = "@media (max-width:600px){#fit{display:none;}}"
     assert t.count(a) == 1, 'phase_flows (s): media anchor missing'
     t = t.replace(a, a + "\n@media (max-height:500px) and (max-width:1000px) and (orientation:landscape){ header{padding:3px calc(10px + env(safe-area-inset-right)) 3px calc(10px + env(safe-area-inset-left));gap:3px 6px;} header .ttl{font-size:14px;} header .sub{display:none;} .ps-homebar{display:none;} .toggle{padding:2px;} .toggle button{padding:5px 10px;font-size:12.5px;} .notesbtn,.themebtn,.filt{height:32px;font-size:11px;} .themebtn{width:32px;} .filt{min-width:44px;padding:0 8px;} #fit{display:none;} .gate{padding:3px 12px;font-size:12px;} .phasehead{font-size:1em;margin:0 2px 4px;} main{padding:6px 10px 4px;} nav{padding-top:4px;padding-bottom:calc(4px + env(safe-area-inset-bottom));gap:8px;} nav button{min-height:36px;font-size:13px;padding:0 12px;border-radius:18px;} .npag{width:40px;min-width:40px;} .arrow{display:none;} }")
+    # ---- (t) bottom-nav slider + phase picker (Ryan, 2026-09-25): a thin drag slider under the phase
+    #      row (mirrors and drives nav's scrollLeft), plus a grid button that opens all 26 phases in
+    #      three groups (Normal / Non-normal / Reference) for one-tap jumps.
+    a = '<nav id="rail" class="rail"></nav>\n'
+    assert t.count(a) == 1, 'phase_flows (t): html anchor missing'
+    t = t.replace(a, a +
+        '<div class="navslide" id="navslide" role="slider" aria-label="Scroll phases" '
+        'aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="navslide-thumb" id="navslideThumb"></div></div>\n'
+        '<button class="navpicker" id="navpickerBtn" type="button" aria-label="Browse all phases" title="Browse all phases">'
+        '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" '
+        'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+        '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>'
+        '<rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>\n'
+        '<div class="pkroot" id="pkroot" hidden><div class="pkcard"><div class="pkhead"><span>All Phases</span>'
+        '<button id="pkClose" type="button" aria-label="Close">&#10005;</button></div>'
+        '<div class="pkbody" id="pkbody"></div></div></div>\n')
+    a = 'body.dark .tech{color:#f2d24c;}'
+    assert t.count(a) == 1, 'phase_flows (t): css anchor missing'
+    t = t.replace(a, a +
+        "\n.navslide{position:relative;height:14px;background:var(--nav);border-top:1px solid var(--line);"
+        "touch-action:none;cursor:pointer;}\n"
+        ".navslide-thumb{position:absolute;top:2px;height:10px;min-width:24px;border-radius:5px;background:var(--accent);}\n"
+        ".navpicker{position:fixed;left:calc(4px + env(safe-area-inset-left));"
+        "bottom:calc(18px + env(safe-area-inset-bottom));width:38px;height:38px;border-radius:10px;border:0;"
+        "background:var(--head);color:#fff;display:flex;align-items:center;justify-content:center;z-index:31;"
+        "box-shadow:0 2px 7px rgba(0,0,0,.35);cursor:pointer;}\n"
+        ".pkroot{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:60;display:flex;align-items:center;"
+        "justify-content:center;padding:16px;}\n"
+        ".pkroot[hidden]{display:none;}\n"
+        ".pkcard{background:var(--card);color:var(--ink);border-radius:12px;max-width:520px;width:100%;"
+        "max-height:80vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.5);}\n"
+        ".pkhead{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;font-weight:800;"
+        "font-size:15px;border-bottom:1px solid var(--line);background:var(--head);color:#fff;}\n"
+        ".pkhead button{background:transparent;border:0;color:#fff;font-size:18px;cursor:pointer;padding:2px 8px;}\n"
+        ".pkbody{overflow-y:auto;padding:12px 14px 16px;}\n"
+        ".pklabel{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.4px;margin:12px 0 6px;}\n"
+        ".pklabel:first-child{margin-top:0;}\n"
+        ".pkgrid{display:flex;flex-wrap:wrap;gap:8px;}\n"
+        ".pkgrid button{flex:none;border:1.5px solid transparent;background:var(--navbtn);color:var(--navink);"
+        "font-weight:800;font-size:14px;padding:9px 14px;border-radius:18px;cursor:pointer;}\n"
+        ".pkgrid button.ab{color:var(--say);}\n"
+        ".pkgrid button.on{background:var(--head);color:#fff;}\n"
+        ".pkgrid button.ab.on{background:var(--say);color:#fff;}\n"
+        "@media (max-height:500px) and (max-width:1000px) and (orientation:landscape){"
+        ".navpicker{width:32px;height:32px;bottom:calc(4px + env(safe-area-inset-bottom));}.navslide{height:10px;}}")
+    a = ("navEl.addEventListener('scroll',updPagers,{passive:true});\n"
+         "window.addEventListener('resize',updPagers);\n")
+    assert t.count(a) == 1, 'phase_flows (t): js anchor missing'
+    t = t.replace(a, a +
+        "const REF_IDS=['memory-items','limits','sim-notes'];\n"
+        "const REF=ABN.filter(p=>REF_IDS.includes(p.id)), NONNORM=ABN.filter(p=>!REF_IDS.includes(p.id));\n"
+        "(function(){\n"
+        "  const slide=document.getElementById('navslide'), thumb=document.getElementById('navslideThumb');\n"
+        "  function syncThumb(){\n"
+        "    const max=navEl.scrollWidth-navEl.clientWidth;\n"
+        "    const w=slide.clientWidth, tw=Math.max(24,w*(navEl.clientWidth/navEl.scrollWidth));\n"
+        "    const left=max>0?(navEl.scrollLeft/max)*(w-tw):0;\n"
+        "    thumb.style.width=tw+'px'; thumb.style.left=left+'px';\n"
+        "    slide.setAttribute('aria-valuenow',max>0?Math.round((navEl.scrollLeft/max)*100):0);\n"
+        "  }\n"
+        "  function seek(clientX){\n"
+        "    const r=slide.getBoundingClientRect(), tw=thumb.offsetWidth;\n"
+        "    const frac=Math.min(1,Math.max(0,(clientX-r.left-tw/2)/(r.width-tw)));\n"
+        "    navEl.scrollLeft=frac*(navEl.scrollWidth-navEl.clientWidth);\n"
+        "  }\n"
+        "  let dragging=false;\n"
+        "  slide.addEventListener('pointerdown',e=>{ dragging=true; slide.setPointerCapture(e.pointerId); seek(e.clientX); });\n"
+        "  slide.addEventListener('pointermove',e=>{ if(dragging) seek(e.clientX); });\n"
+        "  slide.addEventListener('pointerup',()=>{ dragging=false; });\n"
+        "  slide.addEventListener('pointercancel',()=>{ dragging=false; });\n"
+        "  navEl.addEventListener('scroll',syncThumb,{passive:true});\n"
+        "  window.addEventListener('resize',syncThumb);\n"
+        "  syncThumb();\n"
+        "})();\n"
+        "(function(){\n"
+        "  const btn=document.getElementById('navpickerBtn'), root=document.getElementById('pkroot'), "
+        "body=document.getElementById('pkbody'), close=document.getElementById('pkClose');\n"
+        "  function grp(label,list,cls){ if(!list.length) return ''; let h=`<div class=\"pklabel\">${label}</div><div class=\"pkgrid\">`; "
+        "list.forEach(p=>{ const pc=phaseColor(p.id); h+=`<button data-p=\"${p.id}\"${cls?` class=\"${cls}\"`:''}"
+        "${pc?` data-pc=\"1\" style=\"${pcStyle(pc)}\"`:''}>${p.label}</button>`; }); return h+'</div>'; }\n"
+        "  function open(){ body.innerHTML=grp('NORMAL',NORMAL)+grp('NON-NORMAL',NONNORM,'ab')+grp('REFERENCE',REF,'ab'); "
+        "body.querySelectorAll('button[data-p]').forEach(b=>{ b.classList.toggle('on',b.dataset.p===state.phase); "
+        "b.addEventListener('click',()=>{ state.phase=b.dataset.p; render(); scrollActive(); root.hidden=true; }); }); root.hidden=false; }\n"
+        "  btn.addEventListener('click',open);\n"
+        "  close.addEventListener('click',()=>{ root.hidden=true; });\n"
+        "  root.addEventListener('click',e=>{ if(e.target===root) root.hidden=true; });\n"
+        "})();\n")
     return t
 
 if __name__ == '__main__':

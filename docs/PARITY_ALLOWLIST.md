@@ -137,3 +137,13 @@ page_fixups.py additions:
 - memory-items.html: My notes / FCOM verbatim toggle (data/memory_items_myset.json)
 
 Generators: gen/spine_cockpit_prep.py syncs trainer spine prompts and details from data/phase_flows.json (verify_spine_sync.py); gen/gen_flow_memorization.py builds flow_memorization.html and docs/A330_FLOW_MEMORIZATION_PLAN.md from phase_flows.json; gen_phase_flows.py emits limitations_myset.json and memory_items_myset.json. Memory items, limitations and SIM Notes phases are Ryan's sets with FCOM/QRH/PRC chips (docs/PHASE_FLOWS_FCOM_AUDIT_2026-09-22.md for the SOP audit).
+
+## 2026-09-25 addition (v5.0 to v5.1)
+
+phase_flows.html transform (build_scripts/page_phase_flows.py):
+- (t) bottom-nav slider + phase picker: a thin drag slider under the phase row mirrors and drives
+  nav's scrollLeft (touch-and-mouse pointer events, follows swipes of the row too); a grid button
+  at the left of the row opens all 26 phases (id="pkroot"/"pkbody") in three groups, NORMAL /
+  NON-NORMAL / REFERENCE (memory-items, limits, sim-notes split out of the existing ABN set just
+  for this grouping), current phase highlighted, one tap jumps and closes. Same button/data-p
+  pattern as #nav/#rail so styling and phase colors match.
