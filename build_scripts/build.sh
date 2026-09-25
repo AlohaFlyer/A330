@@ -41,6 +41,7 @@ python3 build_scripts/build_handouts.py
 python3 build_scripts/build_weather_handout.py
 python3 build_scripts/build_mcdu_handout.py
 python3 build_scripts/build_oe_pdf.py
+python3 build_scripts/check_data_integrity.py >/dev/null || { echo "VERIFY FAIL: data integrity"; exit 1; }
 for v in triggers weather mcdu oe fom phase_flows flows_trainer; do python3 build_scripts/verify_$v.py >/dev/null || { echo "VERIFY FAIL: $v"; exit 1; }; done
 python3 build_scripts/build_offline_manifest.py
 echo BUILD OK
