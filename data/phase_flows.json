@@ -1047,8 +1047,21 @@
 },
 {
 "k": "box",
+"t": "ACCU PRESS indicator CHECK",
+"s": "green band · blue electric pump recharges the brake accumulator (ground crew clearance first)",
+"r": "PF",
+"call": false,
+"quote": "The ACCU PRESS indication must be in the green band.",
+"ref": "PRO-NOR-SOP-07-B-00017116.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
 "t": "PARK BRK handle ON (if pushback not required)",
-"s": "ACCU PRESS indicator ... CHECK · BRAKES PRESS indicator ... CHECK",
+"s": "BRAKES PRESS indicator ... CHECK · BEFORE START C/L ... COMPLETE",
 "r": "PF",
 "call": false,
 "quote": "When one brake temperature is above 300 °C , avoid applying the parking brake, unless operationally necessary.",
@@ -1495,12 +1508,12 @@
 },
 {
 "k": "box",
-"t": "TERR ON ND AS RQRD",
-"s": "radar on the PF side, TERR ON ND on the PM side",
-"r": "B",
+"t": "AUTO BRK MAX pb-sw ON",
+"s": "",
+"r": "PM",
 "call": false,
-"quote": "Consider selecting the radar display on the PF side, and TERR ON ND on the PM side only.",
-"ref": "PRO-NOR-SOP-10-A-00011953.0001001",
+"quote": "AUTO BRK MAX pb-sw ... ON PM",
+"ref": "PRO-NOR-SOP-10-A-00011954.0001001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -1508,12 +1521,12 @@
 },
 {
 "k": "box",
-"t": "AUTO BRK MAX pb-sw ON",
-"s": "",
-"r": "PM",
+"t": "TERR ON ND AS RQRD",
+"s": "radar on the PF side, TERR ON ND on the PM side",
+"r": "B",
 "call": false,
-"quote": "AUTO BRK MAX pb-sw ... ON PM",
-"ref": "PRO-NOR-SOP-10-A-00011954.0001001",
+"quote": "Consider selecting the radar display on the PF side, and TERR ON ND on the PM side only.",
+"ref": "PRO-NOR-SOP-10-A-00011953.0001001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -1746,12 +1759,12 @@
 },
 {
 "k": "box",
-"t": "TAKEOFF RUNWAY CONFIRM",
-"s": "runway markings · runway lights · ILS signal (LOC centered after line up) · runway symbol on the ND · RAAS",
-"r": "B",
+"t": "TCAS Mode selector TA or TA/RA",
+"s": "TA/RA is the default; TA ONLY only at airports/procedures identified by Jeppesen 10-7 pages",
+"r": "PM",
 "call": false,
-"quote": "Confirm that the line up is performed on the intended runway and from the intended intersection.",
-"ref": "PRO-NOR-SOP-11-A-00012077.0001001",
+"quote": "The flight crew should use the TA/RA mode as the default mode of the TCAS.",
+"ref": "PRO-NOR-SOP-11-A-00012069.0001001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -1759,12 +1772,12 @@
 },
 {
 "k": "box",
-"t": "TCAS Mode selector TA or TA/RA",
-"s": "TA/RA is the default; TA ONLY only at airports/procedures identified by Jeppesen 10-7 pages",
-"r": "PM",
+"t": "TAKEOFF RUNWAY CONFIRM",
+"s": "runway markings · runway lights · ILS signal (LOC centered after line up) · runway symbol on the ND · RAAS",
+"r": "B",
 "call": false,
-"quote": "The flight crew should use the TA/RA mode as the default mode of the TCAS.",
-"ref": "PRO-NOR-SOP-11-A-00012069.0001001",
+"quote": "Confirm that the line up is performed on the intended runway and from the intended intersection.",
+"ref": "PRO-NOR-SOP-11-A-00012077.0001001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -2260,19 +2273,6 @@
 },
 {
 "k": "box",
-"t": "EFIS option: PF CSTR · PM ARPT",
-"s": "",
-"r": "B",
-"call": false,
-"quote": "EFIS Option: The PF will select CSTR The PM will select ARPT",
-"ref": "PRO-NOR-SOP-14-A-00019949.0001001",
-"ext": "FCOM PRO-NOR",
-"fleet": "pax",
-"src": "manual",
-"provenance": "manual"
-},
-{
-"k": "box",
 "t": "LAND sw OFF",
 "s": "",
 "r": "PM",
@@ -2292,6 +2292,19 @@
 "call": false,
 "quote": "Cycle the NO SMOKING sw ON, wait three seconds, then back to AUTO to inform any additional aircraft occupants of leaving sterile, if required.",
 "ref": "PRO-NOR-SOP-14-A-00012135.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EFIS option: PF CSTR · PM ARPT",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "EFIS Option: The PF will select CSTR The PM will select ARPT",
+"ref": "PRO-NOR-SOP-14-A-00019949.0001001",
 "ext": "FCOM PRO-NOR",
 "fleet": "pax",
 "src": "manual",
@@ -3275,7 +3288,5096 @@
 ],
 "fleet": "pax",
 "provenance": "manual"
+},
+{
+"id": "landing",
+"label": "Final / Landing",
+"kind": "n",
+"title": "FINAL APPROACH / LANDING",
+"src": "FCOM PRO-NOR-SOP-18-C / SOP-19 · SCO",
+"sections": [
+{
+"h": "ILS · LOC G/S GUIDANCE",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "APPR pb on FCU PRESS · PF: “ARM APPROACH”",
+"s": "when cleared, on the intercept trajectory, LOC deviation available · arms LOC and G/S · capture no sooner than 3 s after arming",
+"r": "PF",
+"call": true,
+"quote": "- Press the APPR pb when all of the following is applicable: • The aircraft is cleared for the approach • The aircraft is on the intercept trajectory for the final approach course • LOC deviation is available on the PFD.",
+"ref": "PRO-NOR-SOP-18-C-A-00014488.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "BOTH APs ENGAGE",
+"s": "above 5 000 ft AGL FMA shows CAT 1 · below 5 000 ft AGL the actual capability",
+"r": "PF",
+"call": false,
+"quote": "- When APPR mode is selected, AP1 and AP2 should be engaged - Above 5 000 ft AGL, the FMA displays CAT 1 - Below 5 000 ft AGL, the FMA displays the correct approach capability for the intended approach.",
+"ref": "PRO-NOR-SOP-18-C-A-00014488.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "LOC CHECK ARMED · G/S CHECK ARMED · LOC CAPTURE MONITOR · G/S CAPTURE MONITOR",
+"s": "PF announces FMA: “LOC blue”, “G/S blue”, “LOC*”, “G/S*”",
+"r": "PF",
+"call": true,
+"quote": "LOC ... CHECK ARMED PF G/S ... CHECK ARMED PF LOC CAPTURE ... MONITOR PF G/S CAPTURE ... MONITOR PF",
+"ref": "PRO-NOR-SOP-18-C-A-00014488.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "GO-AROUND ALTITUDE SET · PF: “SET GA ALTITUDE __ FT” · PM: “GA ALTITUDE SET”",
+"s": "at G/S*, or PF sets: “GA ALTITUDE SET” · PM: “CHECKED”",
+"r": "B",
+"call": true,
+"quote": "GO-AROUND ALTITUDE ... SET BOTH",
+"ref": "PRO-NOR-SOP-18-C-A-00014488.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Glide interception from above",
+"s": "established on the LOC · gear down, at least CONF 2 · APPR ARM/CHECK ARMED · LOC CHECK ENGAGED · FCU ALTITUDE SET ABOVE A/C ALTITUDE · V/S MODE SELECT (1 500 ft/min initially)",
+"r": "PF",
+"call": false,
+"quote": "Select V/S 1 500 ft/min initially. V/S in excess of 2 000 ft/min will result in the speed increasing towards VFE.",
+"ref": "PRO-NOR-SOP-18-C-A-00014489.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLIGHT PARAMETERS MONITOR · PM: “LOC” / “GLIDESLOPE” at 1/2 dot",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "The PM calls out if excessive deviation occurs: - LOC: ½ dot - G/S: ½ dot.",
+"ref": "PRO-NOR-SOP-18-C-A-00014490.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 350 ft RA · LAND mode CHECK ENGAGED/ANNOUNCE",
+"s": "no LAND mode: autoland not authorized",
+"r": "PF",
+"call": true,
+"quote": "If no LAND mode, autoland is not authorized.",
+"ref": "PRO-NOR-SOP-18-C-A-00014490.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Entered minimum +100 ft · PM: “ONE HUNDRED ABOVE” · PF: “CHECKED”",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "AT ENTERED MINIMUM +100 ft ONE HUNDRED ABOVE ... MONITOR OR ANNOUNCE PM",
+"ref": "PRO-NOR-SOP-18-C-A-00014490.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At minimum · PM: “MINIMUM” · PF: “CONTINUE” (AP AS RQRD) or “GO-AROUND”",
+"s": "below minimum visual references are the primary reference until landing",
+"r": "B",
+"call": true,
+"quote": "Below minimum, the visual references must be the primary reference until landing.",
+"ref": "PRO-NOR-SOP-18-C-A-00014490.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
 }
 ],
-"checklists": {}
+"cite": "FCOM PRO-NOR-SOP-18-C-A",
+"appr": "ILS"
+},
+{
+"h": "CAT II / CAT III",
+"c": "#5f3dc4",
+"items": [
+{
+"k": "box",
+"t": "APPROACH MINIMUM DETERMINE",
+"s": "lowest achievable minimum: crew qualification · Operating Manual · aircraft status · airport status · CAT III no DH: enter NO in the DH field",
+"r": "PF",
+"call": false,
+"quote": "- For CAT III with no DH, the flight crew should enter NO in the DH field of the MCDU to avoid false \"HUNDRED ABOVE\" or \"MINIMUM\" auto callouts which would not be applicable.",
+"ref": "PRO-NOR-SOP-18-C-A-00020760.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APPROACH BRIEFING PERFORM",
+"s": "task sharing and callouts · management of degraded guidance · low visibility procedures at the airport",
+"r": "B",
+"call": false,
+"quote": "For CAT II, CAT III, approaches, review the following items on top of the usual briefing: - Task sharing and callouts - Management of degraded guidance - Low visibility procedures at the airport.",
+"ref": "PRO-NOR-SOP-18-C-A-00020760.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "LAND on FMA (350 ft RA) · PF: “LAND” · PM: “CHECKED”",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "LAND on FMA (350’ RA) \"LAND\" \"CHECKED\"",
+"ref": "PRO-NOR-SCO-D-00011849.0005001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "CAT II · DA(H) +100 ft · PM: “100 ABOVE” · PF: “CHECKED”",
+"s": "DA(H): PM “MINIMUM” · PF “CONTINUE” or “GO AROUND, FLAPS”",
+"r": "B",
+"call": true,
+"quote": "DA(H) + 100’ “CHECKED” \"100 ABOVE\"(1) DA(H) “CONTINUE”, or \"MINIMUM\"(1) “GO AROUND, FLAPS”",
+"ref": "PRO-NOR-SCO-D-00011849.0005001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "CAT III · 200 ft RA (alert height) · PM: “ALERT” · PF: “CONTINUE” or “GO AROUND, FLAPS”",
+"s": "no failure at 200 ft",
+"r": "B",
+"call": true,
+"quote": "At 200 ft (Alert Height) if no failure ALERT ... ANNOUNCE PM CONTINUE ... ANNOUNCE PF",
+"ref": "PRO-NOR-SOP-18-C-A-00014490.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "40 ft RA · PM: “FLARE” or “NO FLARE” · Rollout · PM: “ROLLOUT”",
+"s": "no FLARE on the FMA: go-around, or manual landing if visual references are sufficient",
+"r": "PM",
+"call": true,
+"quote": "If the FMA does not display FLARE, perform a go-around, or a manual landing if visual references are sufficient.",
+"ref": "PRO-NOR-SOP-19-B-00020777.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Degraded guidance above 1 000 ft AGL",
+"s": "ECAM/QRH PROCEDURE COMPLETE · APPROACH AND LANDING CAPABILITY CHECK · REQUIRED EQUIPMENT CHECK · RVR CHECK, DH ADJUST, briefing UPDATE · not complete at 1 000 ft: GO-AROUND",
+"r": "B",
+"call": false,
+"quote": "If the flight crew does not complete all the above actions at 1 000 ft: GO-AROUND ... PERFORM PF",
+"ref": "PRO-NOR-SOP-18-C-A-00020959.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Degraded guidance below 1 000 ft AGL · GO-AROUND PERFORM",
+"s": "below 200 ft CAT3 DUAL: continue unless AUTOLAND warning · AUTOLAND warning: GO-AROUND",
+"r": "PF",
+"call": false,
+"quote": "Below 200 ft (Alert Height) for CAT3 DUAL : The automatic approach may be continued unless the AUTOLAND warning is triggered.",
+"ref": "PRO-NOR-SOP-18-C-A-00020959.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-18-C-A · SCO-D",
+"appr": "ILScat"
+},
+{
+"h": "AUTOLAND",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "At 350 ft RA · LAND on FMA CHECK/ANNOUNCE · ILS COURSE on PFD CHECK",
+"s": "course pointer vs runway track more than 5°: go-around or manual landing",
+"r": "PF",
+"call": true,
+"quote": "If the ILS course pointer and the runway track differ by more than 5 °, perform a go-around, or a manual landing if visual references are sufficient.",
+"ref": "PRO-NOR-SOP-19-B-00020776.9000364",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 40 ft RA · FLARE on FMA CHECK/ANNOUNCE · FLARE MONITOR",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "AT 40 FT RA FLARE ON FMA ... CHECK/ANNOUNCE PM",
+"ref": "PRO-NOR-SOP-19-B-00020777.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 30 ft RA · THR IDLE on FMA CHECK · THRUST IDLE CHECK",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "AT 30 FT RA THR IDLE ON FMA ... CHECK PM THRUST IDLE ... CHECK PM",
+"ref": "PRO-NOR-SOP-19-B-00020786.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 10 ft RA · automatic “RETARD” · ALL THRUST LEVERS IDLE",
+"s": "autothrust disconnects · monitor lateral guidance with external references",
+"r": "PF",
+"call": false,
+"quote": "Monitor the lateral guidance by using external references.",
+"ref": "PRO-NOR-SOP-19-B-00020778.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At touchdown · ROLL OUT on FMA CHECK/ANNOUNCE · reversers · GND SPLRS · DECEL",
+"s": "NWS or anti-skid failure: AP OFF at touchdown",
+"r": "PM",
+"call": true,
+"quote": "In the case of NWS or Anti-Skid failure, set the AP OFF at touchdown.",
+"ref": "PRO-NOR-SOP-19-B-00020779.0015001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "End of roll out · ALL REVERSER LEVERS STOW · AP OFF",
+"s": "before leaving the runway at the latest",
+"r": "PF",
+"call": false,
+"quote": "Disengage the APs at the end of the roll out (before leaving the runway at the latest).",
+"ref": "PRO-NOR-SOP-19-B-00020784.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-19-B",
+"appr": "ILS"
+},
+{
+"h": "RNP APCH · FLS (F-LOC F-G/S) GUIDANCE",
+"c": "#9c5800",
+"items": [
+{
+"k": "note",
+"t": "RNAV(GNSS) with LNAV or LNAV/VNAV minima, VOR/NDB overlay, LOC only, ILS G/S OUT, LOC B/C. FLS is the recommended mode; RNP AR uses FINAL APP.",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+},
+{
+"k": "fmc",
+"t": "PERF APPR page CHECK/SELECT FLS · FLS DATA CHECK",
+"s": "anchor point · F-LOC course · F-G/S slope vs chart · F-PLN: 0.1° vertical, 1° lateral tolerance",
+"r": "B",
+"quote": "- 0.1 degree of difference between the MCDU and the charted final vertical path is acceptable - 1 degree of difference between the MCDU and the charted final lateral track is acceptable",
+"ref": "PRO-NOR-SOP-18-C-B-00014495.0003001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 10 000 ft AAL · FLS CAPABILITY CHECK (F-APP for RNAV(GNSS)) · BARO SET/CROSSCHECK",
+"s": "maximum altimeter difference 100 ft",
+"r": "B",
+"call": false,
+"quote": "The vertical guidance requires a precise BARO setting. The maximum acceptable difference between altimeters is 100 ft.",
+"ref": "PRO-NOR-SOP-18-C-B-00014496.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APPR pb on FCU PRESS · PF: “ARM APPROACH”",
+"s": "cleared and on the intercept trajectory · arms F-LOC and F-G/S · F-LOC CHECK ARMED · F-G/S CHECK ARMED · capture MONITOR",
+"r": "PF",
+"call": true,
+"quote": "Press the APPR pb when all of the following is applicable: - The aircraft is cleared for approach - The aircraft is on the intercept trajectory for the final approach course. This arms the F-LOC and F-G/S modes.",
+"ref": "PRO-NOR-SOP-18-C-B-00014497.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "GO-AROUND ALTITUDE SET",
+"s": "on the FCU",
+"r": "B",
+"call": true,
+"quote": "Set the go-around altitude on the FCU.",
+"ref": "PRO-NOR-SOP-18-C-B-00014497.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLIGHT PARAMETERS MONITOR",
+"s": "altitude at FAF vs chart · F-APP + RAW: monitor raw data · PM calls F-LOC or F-G/S 1/2 dot",
+"r": "PM",
+"call": false,
+"quote": "- Check altitude crossing at FAF as published on the chart",
+"ref": "PRO-NOR-SOP-18-C-B-00014499.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At minimum · PM: “MINIMUM” · PF: “CONTINUE” · AP OFF when appropriate · FD AS RQRD",
+"s": "below 150 ft RA with AP engaged: DISCONNECT AP FOR LDG pulses",
+"r": "B",
+"call": true,
+"quote": "- Below 150 ft RA, if the AP is still engaged, the message DISCONNECT AP FOR LDG pulses on the FMA to remind the flight crew that automatic landing is not available.",
+"ref": "PRO-NOR-SOP-18-C-B-00014500.0005001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Degraded navigation (LNAV / LNAV-VNAV)",
+"s": "discontinue if F-APP lost · F-LOC more than 1 dot · NAV FM/GPS POS DISAGREE · LNAV/VNAV: F-G/S more than 1/2 dot below the beam",
+"r": "B",
+"call": false,
+"quote": "- Discontinue the approach if the F-G/S deviation exceeds ½ dot below the F-G/S beam.",
+"ref": "PRO-NOR-SOP-18-C-B-00014501.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-18-C-B",
+"appr": "RNP"
+},
+{
+"h": "RNP APCH · FINAL APP GUIDANCE (incl. RNP AR)",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "fmc",
+"t": "PERF APPR page SELECT FINAL APP · PROG page RNP (RNP AR)",
+"s": "not when OAT below chart minimum · remote QNH prohibited · TOO STEEP PATH after the FDP: do not use FINAL APP",
+"r": "B",
+"quote": "- If a TOO STEEP PATH is displayed after the FDP, do not use FINAL APP guidance for approach. Use NAV FPA, TRK FPA or FLS for approach",
+"ref": "PRO-NOR-SOP-18-C-C-00014514.0005001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 10 000 ft AAL · NAV ACCURACY CHECK · GPS PRIMARY CHECK · BARO SET/CROSSCHECK",
+"s": "RNP AR: GPS PRIMARY on both FMS, both GPS in NAV or SBAS, TERR ON ND both sides",
+"r": "B",
+"call": false,
+"quote": "- Both GPS and both FMS must be available, before the IAF. Therefore, if one FMS is inoperative or if one GPS is not in NAV or SBAS before the IAF, RNAV(RNP) is not permitted.",
+"ref": "PRO-NOR-SOP-18-C-D-00014547.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APPR pb on FCU PRESS · APP NAV CHECK ARMED or ENGAGED · FINAL CHECK ARMED",
+"s": "cleared and TO waypoint is the FDP · VDEV scale on the PFD · blue arrow on the ND at the FDP",
+"r": "PF",
+"call": true,
+"quote": "Press the APPR pb when all of the following conditions are satisfied: - The aircraft is cleared for approach - TO waypoint is the FDP.",
+"ref": "PRO-NOR-SOP-18-C-C-00014516.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At the FDP · FINAL APP CHECK ENGAGED · GO-AROUND ALTITUDE SET",
+"s": "RNP below 0.3 NM: one AP engaged",
+"r": "B",
+"call": true,
+"quote": "At Final Descent Point: FINAL APP ... CHECK ENGAGED PF GO-AROUND ALTITUDE ... SET BOTH",
+"ref": "PRO-NOR-SOP-18-C-C-00014516.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLIGHT PARAMETERS MONITOR · PM: “TRACK” XTK more than 0.1 NM · “V DEV” 1/2 dot (50 ft)",
+"s": "RNP AR: “LAT DEV” at 1/2 dot · go-around at XTK 1 RNP or V/DEV 3/4 dot below (75 ft)",
+"r": "PM",
+"call": true,
+"quote": "- Go-around must be initiated if excessive deviation occurs: • XTK reaches 1 RNP • V/DEV reaches ¾ dot below the vertical profile.",
+"ref": "PRO-NOR-SOP-18-C-D-00014548.0006001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At minimum · PM: “MINIMUM” · PF: “CONTINUE” · AP OFF at the MAP or AP minimum use height (whichever first) · FD AS RQRD",
+"s": "after the MAP disregard the FD (reverts to HDG V/S)",
+"r": "B",
+"call": true,
+"quote": "- After the MAP, disregard the FD as it reverts to HDG V/S.",
+"ref": "PRO-NOR-SOP-18-C-C-00014517.0013001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Degraded navigation (LNAV / LNAV-VNAV)",
+"s": "discontinue: GPS PRIMARY LOST both NDs · XTK more than 0.3 NM · NAV FM/GPS POS DISAGREE · NAV ACCUR DOWNGRAD both · LNAV/VNAV: 75 ft below path (V/DEV more than 3/4 dot)",
+"r": "B",
+"call": false,
+"quote": "- Discontinue the approach in the case of deviation of 75 ft below the vertical path (V/DEV > ¾ dot).",
+"ref": "PRO-NOR-SOP-18-C-C-00014518.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-18-C-C / 18-C-D",
+"appr": "RNP"
+},
+{
+"h": "NON-PRECISION · FPA GUIDANCE",
+"c": "#0b7285",
+"items": [
+{
+"k": "note",
+"t": "RNAV(GNSS) LNAV with NAV FPA, LP with LOC FPA, VOR/NDB with TRK FPA or NAV FPA, LOC only, ILS G/S OUT, LOC B/C. TRK FPA when not in the database or NAV accuracy LOW.",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+},
+{
+"k": "box",
+"t": "At 10 000 ft AAL · NAV ACCURACY CHECK · GPS PRIMARY CHECK · BARO SET/CROSSCHECK",
+"s": "NAV accuracy LOW: TRK mode for the approach",
+"r": "B",
+"call": false,
+"quote": "If NAV accuracy is LOW, use TRK mode for approach.",
+"ref": "PRO-NOR-SOP-18-C-E-00014530.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "LATERAL GUIDANCE MODE SET FOR APPROACH",
+"s": "arm NAV, LOC or LOC B/C · LOC only / G/S OUT / B/C / LP: LOC pb-sw PRESS when cleared, on intercept, LOC deviation available · LATERAL PATH INTERCEPT",
+"r": "PF",
+"call": false,
+"quote": "Press the LOC pb-sw when: - Cleared for the approach - On the intercept trajectory for the final approach course - LOC deviation is available.",
+"ref": "PRO-NOR-SOP-18-C-E-00014531.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "TRK-FPA pb (Bird) SELECT · FPA FOR FINAL APPROACH SET",
+"s": "PF: “BIRD ON” · “FPA MINUS 3° PULL” at 0.3 NM before the FDP",
+"r": "PF",
+"call": true,
+"quote": "At 0.3 NM from the Final Descent Point: FPA selector ... PULL PF",
+"ref": "PRO-NOR-SOP-18-C-E-00014531.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "POSITION/FLIGHT PATH MONITOR/ADJUST · GO-AROUND ALTITUDE SET (when below it)",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "Set when below the go-around altitude to avoid not expected altitude capture.",
+"ref": "PRO-NOR-SOP-18-C-E-00014531.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLIGHT PARAMETERS MONITOR",
+"s": "distance vs altitude per chart · raw data on conventional NAVAIDs · PM calls: NAV XTK more than 0.1 NM · LOC 1/2 dot · TRK VOR 1/2 dot or 2.5° · NDB 5°",
+"r": "PM",
+"call": false,
+"quote": "• Approach using TRK mode: ▪ VOR: ½ dot or 2.5 ° ▪ NDB: 5 °.",
+"ref": "PRO-NOR-SOP-18-C-E-00014531.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At minimum · PM: “MINIMUM” · PF: “CONTINUE” · AP OFF · FD OFF · RUNWAY TRACK CHECK/SET",
+"s": "PF orders the PM to set both FDs off and the runway track",
+"r": "B",
+"call": true,
+"quote": "The PF orders the PM to set both FDs off.",
+"ref": "PRO-NOR-SOP-18-C-E-00014532.0007001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-18-C-E",
+"appr": "NPA"
+},
+{
+"h": "DISCONTINUED APPROACH",
+"c": "#334e68",
+"items": [
+{
+"k": "box",
+"t": "PF: “CANCEL APPROACH” (at or above the FCU altitude)",
+"s": "press APPR pb or LOC pb to disarm · lateral mode NAV or HDG · vertical mode · SPEED · below the FCU altitude: GO AROUND procedure",
+"r": "PF",
+"call": true,
+"quote": "When the aircraft is below the FCU altitude, the flight crew must apply the GO AROUND procedure.",
+"ref": "PRO-NOR-SOP-18-A-00015153.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-18-A",
+"appr": "all"
+},
+{
+"h": "LANDING · MANUAL",
+"c": "#00805E",
+"items": [
+{
+"k": "box",
+"t": "AP OFF (manual landing)",
+"s": "",
+"r": "PF",
+"call": false,
+"quote": "FOR MANUAL LANDING AP ... OFF PF",
+"ref": "PRO-NOR-SOP-19-A-00024894.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Around 40 ft RA · FLARE PERFORM · ALL THRUST LEVERS IDLE",
+"s": "PM: ATTITUDE MONITOR · automatic “RETARD” at 20 ft is a reminder · ground spoilers inhibited with a lever above IDLE",
+"r": "PF",
+"call": false,
+"quote": "Move the thrust levers to the IDLE detent, and begin a gentle progressive flare to enable the aircraft to touch down without a prolonged float.",
+"ref": "PRO-NOR-SOP-19-A-00012003.0022001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At touchdown · DEROTATION INITIATE · ALL REVERSER LEVERS REV MAX or REV IDLE",
+"s": "reverse immediately after main gear touchdown = full-stop landing · REV MAX: emergency, decel not as expected, failure, long flare, tailwind",
+"r": "PF",
+"call": false,
+"quote": "The flight crew must select reverse thrust immediately after main landing gear touchdown.",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “SPOILERS” (or “NO SPOILERS”)",
+"s": "no spoilers: thrust levers IDLE detent, both reversers MAX REV, brake pedals fully pressed",
+"r": "PM",
+"call": true,
+"quote": "- If no ground spoilers are extended: • Check that all thrust levers are set to IDLE detent • Set both thrust reverser levers to MAX REV, and fully press the brake pedals.",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “REVERSE GREEN” (or “NO REVERSE ENGINE _” / “NO REVERSE”)",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "- If reverser(s) do not deploy as expected, one of the main deceleration means is lost. The flight crew should consider adapting the available deceleration means to stop the aircraft.",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "DIRECTIONAL CONTROL ENSURE",
+"s": "rudder pedals · no sidestick inputs · directional problem: REV IDLE · no tiller before taxi speed",
+"r": "PF",
+"call": false,
+"quote": "- During rollout, avoid sidestick inputs (either lateral or longitudinal)",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AUTO BRK CHECK/ANNOUNCE · AUTOBRAKE MONITOR",
+"s": "BRK LO or BRK MED on the FMA · PM: “AUTOBRAKE OFF” if it disengages · PF: “MANUAL BRAKING”",
+"r": "PM",
+"call": true,
+"quote": "During all the rollout, the PM monitors that the FMA displays BRK LO or BRK MED and calls out if the autobrake mode disengages.",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “DECEL” (or “NO DECEL”)",
+"s": "felt, and confirmed by the speed trend on the PFD",
+"r": "PM",
+"call": true,
+"quote": "The flight crew feels the deceleration. The flight crew checks the speed trend on the PFD to confirm the deceleration.",
+"ref": "PRO-NOR-SOP-19-A-00012004.0014001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At 70 kt · PM: “SEVENTY KNOTS” · PF: “CHECKED” · ALL REVERSER LEVERS IDLE",
+"s": "high reverse at low speed only in an emergency",
+"r": "B",
+"call": true,
+"quote": "It is recommended to reduce reverse thrust when passing 70 kt . However high levels of reverse thrust may be used in order to control aircraft speed in case of an emergency.",
+"ref": "PRO-NOR-SOP-19-A-00012007.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At taxi speed · ALL REVERSER LEVERS STOW",
+"s": "before leaving the runway · no reverse on taxiways except emergency",
+"r": "PF",
+"call": false,
+"quote": "When the aircraft reaches the taxi speed, and before it leaves the runway, stow the reversers.",
+"ref": "PRO-NOR-SOP-19-A-00012008.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Before 20 kt · AUTO BRK DISENGAGE",
+"s": "use the brake pedals to disengage",
+"r": "PF",
+"call": false,
+"quote": "Disengage the autobrake to avoid some brake jerks at low speed. The flight crew should use brake pedals to disengage the autobrake.",
+"ref": "PRO-NOR-SOP-19-A-00012010.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-19-A · SCO-D",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "after-landing",
+"label": "After Landing",
+"kind": "n",
+"title": "AFTER LANDING",
+"src": "FCOM PRO-NOR-SOP-21",
+"sections": [
+{
+"h": "AFTER LANDING FLOW",
+"c": "#0b7285",
+"items": [
+{
+"k": "trig",
+"t": "Runway vacated · PF disarms GND SPLRS",
+"r": "PF",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+},
+{
+"k": "box",
+"t": "GND SPLRS DISARM",
+"s": "when the runway is vacated",
+"r": "PF",
+"call": false,
+"quote": "When the runway is vacated: GND SPLRS ... DISARM PF",
+"ref": "PRO-NOR-SOP-21-A-00011014.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "LAND LIGHT sw OFF · WING sw OFF · STROBE sw AUTO · NOSE sw TAXI",
+"s": "PF may request the PM to set the exterior lights",
+"r": "PF",
+"call": false,
+"quote": "When leaving the runway: LAND LIGHT sw ... OFF PF WING sw ... OFF PF STROBE sw ... AUTO PF NOSE sw ... TAXI PF",
+"ref": "PRO-NOR-SOP-21-A-00011013.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "WXR/PWS sw OFF · CAPT and F/O DISPLAY OFF",
+"s": "avoids radiating persons at the gate",
+"r": "PM",
+"call": false,
+"quote": "Switching the radar and radar display to OFF after landing avoids risk of radiating persons at the gate area.",
+"ref": "PRO-NOR-SOP-21-A-00012821.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ENG START selector NORM",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "ENG START selector ... NORM PM",
+"ref": "PRO-NOR-SOP-21-A-00011020.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLAPS RETRACT",
+"s": "icing approach or slush/snow: do not retract until after shutdown and ground crew confirms clear · OAT above 40 °C: consider CONF 1 during transit",
+"r": "PM",
+"call": false,
+"quote": "- If the approach was performed in icing conditions, or if the runway was contaminated with slush or snow, do not retract the flaps until after engine shutdown, and after the ground crew confirmed that flaps and slats are clear of obstruction due to ice.",
+"ref": "PRO-NOR-SOP-21-A-00011021.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "TCAS STBY",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "TCAS ... STBY PM",
+"ref": "PRO-NOR-SOP-21-A-00011022.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APU AS RQRD",
+"s": "start fails: wait 3 min · three consecutive attempts: wait 60 min · may delay start until before shutdown, check AVAIL first",
+"r": "PM",
+"call": false,
+"quote": "If the start attempt fails, wait for 3 min, then set the APU START pb-sw to ON again. This ensures that the fuel feed line of the APU is sufficiently pressurized. After three consecutive start attempts, the flight crew must wait 60 min before they perform a new start attempt.",
+"ref": "PRO-NOR-SOP-21-A-00011027.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ATC AS RQRD",
+"s": "per airport requirements",
+"r": "PM",
+"call": false,
+"quote": "ATC is set in accordance with airport requirements.",
+"ref": "PRO-NOR-SOP-21-A-00011023.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ENG ANTI ICE AS RQRD",
+"s": "ground idle is increased: control taxi speed",
+"r": "PM",
+"call": false,
+"quote": "If engine anti-ice is used, carefully control taxi speed, particularly on wet or slippery surfaces because ground idle is increased.",
+"ref": "PRO-NOR-SOP-21-A-00011024.0004001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "BRAKE TEMPERATURE MONITOR · BRAKE FAN pb-sw AS RQRD",
+"s": "WHEEL SD: discrepancies and high temperature · maintenance if two brakes of a gear differ by more than 150 °C with one at or above 600 °C, or one at or below 60 °C",
+"r": "PM",
+"call": false,
+"quote": "Check the brake temperature for discrepancies and high temperature on the WHEEL SD page",
+"ref": "PRO-NOR-SOP-21-A-00011025.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "cl",
+"t": "After Landing",
+"w": "After Landing flow complete",
+"bold": false,
+"cc": true,
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-21",
+"appr": "all"
+},
+{
+"h": "ENGINE 2 SHUTDOWN DURING TAXI-IN (one engine taxi)",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "No less than 1 min after high thrust · PM: “COOLING TIME ELAPSED”",
+"s": "idle reverse and normal taxi thrust are not high thrust: cooling starts at the flare · MAX reverse: cooling starts at idle reverse in the rollout",
+"r": "PM",
+"call": true,
+"quote": "The flight crew should operate the engines at or near idle thrust for a cooling period of 1 min before engine shutdown, in order to thermally stabilize the engines.",
+"ref": "PRO-NOR-SOP-21B-00026759.0004001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Taxiing in a straight line · PF: ENG 2 SHUTDOWN ORDER",
+"s": "slight jerk forward if the brakes are applied while moving",
+"r": "PF",
+"call": true,
+"quote": "During engine shutdown, a slight jerk forward may occur if the brakes are applied while the aircraft is moving.",
+"ref": "PRO-NOR-SOP-21B-00026759.0004001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APU START pb CHECK AVAIL (if started before shutdown) · ENG 2 ANTI ICE pb-sw OFF · ENG 2 MASTER lever OFF · ENG 2 PARAMETERS CHECK",
+"s": "engine 2 parameters decrease",
+"r": "PM",
+"call": false,
+"quote": "Check that the engine 2 parameters decrease.",
+"ref": "PRO-NOR-SOP-21B-00026759.0004001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-21B",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "parking",
+"label": "Parking",
+"kind": "n",
+"title": "PARKING / SECURING",
+"src": "FCOM PRO-NOR-SOP-22 · PRO-NOR-SUP-SEC",
+"sections": [
+{
+"h": "PARKING FLOW",
+"c": "#5f3dc4",
+"items": [
+{
+"k": "box",
+"t": "ACCU PRESS indicator CHECK · PARK BRK handle ON · BRAKES PRESS indicator CHECK",
+"s": "low accumulator pressure: chocks before shutdown · brake above 300 °C: release after chocks · keep the brake pedals pressed until both brake pressure needles are above the green area",
+"r": "PF",
+"call": false,
+"quote": "The ACCU PRESS indication must be in the green band. In case of low accumulator pressure, chocks are required before engine shutdown.",
+"ref": "PRO-NOR-SOP-22-A-00012189.0005001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ANTI ICE OFF",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "ANTI ICE ... OFF PM",
+"ref": "PRO-NOR-SOP-22-A-00012190.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "APU BLEED pb-sw AS RQRD",
+"s": "ON and wait for the APU BLEED memo, then shut down the engines immediately",
+"r": "PM",
+"call": false,
+"quote": "- Shut down the engines immediately after the display of the APU BLEED memo to prevent engine exhaust fumes from entering the air conditioning.",
+"ref": "PRO-NOR-SOP-22-A-00012191.0002001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "All ENG MASTER levers OFF · ENGINE PARAMETERS CHECK",
+"s": "no less than 1 min after high thrust · APU START CHECK AVAIL or EXT A(B) ON first",
+"r": "PF",
+"call": false,
+"quote": "No less than 1 min after high thrust operations: All ENG MASTER levers ... OFF PF",
+"ref": "PRO-NOR-SOP-22-A-00012192.0004001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FUEL PUMPS OFF",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "FUEL PUMPS ... OFF PM",
+"ref": "PRO-NOR-SOP-22-A-00012198.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "WING sw OFF · BEACON sw OFF · other exterior lights AS RQRD (NAV & LOGO 1)",
+"s": "beacon off when all engines spooled down · wing lights off with the jetway on",
+"r": "PF",
+"call": false,
+"quote": "Turn off the beacon lights when all engines spooled down.",
+"ref": "PRO-NOR-SOP-22-A-00012195.0003001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ATC STBY",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "ATC ... STBY PM",
+"ref": "PRO-NOR-SOP-22-A-00012199.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "SEAT BELTS sw OFF",
+"s": "",
+"r": "PF",
+"call": false,
+"quote": "SEAT BELTS sw ... OFF PF",
+"ref": "PRO-NOR-SOP-22-A-00012196.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "IRS PERFORMANCE CHECK",
+"s": "FMS POSITION/MONITOR deviation",
+"r": "PM",
+"call": false,
+"quote": "On the FMS POSITION/MONITOR page, check that the deviation does not exceed the following:",
+"ref": "PRO-NOR-SOP-22-A-00012200.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "SLIDES CHECK DISARMED",
+"s": "warn the cabin crew if any slide is not disarmed",
+"r": "PF",
+"call": false,
+"quote": "Check that the slides are disarmed on the DOOR/OXY SD page. Warn the cabin crew, if any slide is not disarmed.",
+"ref": "PRO-NOR-SOP-22-A-00012194.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FUEL QUANTITY CHECK",
+"s": "FOB + fuel used = departure FOB; unusual discrepancy = maintenance",
+"r": "PM",
+"call": false,
+"quote": "Check that the sum of the fuel on board and the fuel used is consistent with the fuel on board at departure. If the flight crew detects a discrepancy that is not usual, maintenance action is due.",
+"ref": "PRO-NOR-SOP-22-A-00012201.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "GROUND CONTACT ESTABLISH · PARK BRK handle ON",
+"s": "“chocks in” hand signal · release after chocks if a brake is above 300 °C (150 °C with fans)",
+"r": "PF",
+"call": false,
+"quote": "The parking brake should be set. If one brake temperature is above 300 °C (or above 150 °C with brake fans ON), the parking brake should be released after chocks are in place.",
+"ref": "PRO-NOR-SOP-22-A-00012204.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "cl",
+"t": "Parking",
+"w": "Parking flow complete",
+"bold": false,
+"cc": true,
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "STATUS page CHECK · LOGBOOK COMPLETE",
+"s": "per the STATUS page",
+"r": "C",
+"call": false,
+"quote": "Complete the logbook according to the STATUS page.",
+"ref": "PRO-NOR-SOP-22-A-00012206.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "DUs DIM",
+"s": "EFIS, ECAM and MCDU",
+"r": "B",
+"call": false,
+"quote": "Dim EFIS, ECAM and MCDU display units.",
+"ref": "PRO-NOR-SOP-22-A-00012205.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-22",
+"appr": "all"
+},
+{
+"h": "SECURING THE AIRCRAFT",
+"c": "#334e68",
+"items": [
+{
+"k": "box",
+"t": "PARK BRK handle CHECK ON",
+"s": "reduces accumulator leak rate",
+"r": "B",
+"call": false,
+"quote": "Keep the parking brake on to reduce hydraulic leak rate in the brake accumulator.",
+"ref": "PRO-NOR-SUP-SEC-A-00011029.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "OXYGEN CREW SUPPLY pb OFF",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "OXYGEN CREW SUPPLY pb ... OFF",
+"ref": "PRO-NOR-SUP-SEC-A-00011030.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "All IR MODE selectors OFF",
+"s": "wait at least 10 s before removing electrical supply · not above 82° N/S during transits",
+"r": "B",
+"call": false,
+"quote": "After turning off the ADIRS, wait at least 10 s before turning off the electrical supply, in order to ensure that the ADIRS memorize the latest data.",
+"ref": "PRO-NOR-SUP-SEC-A-00011031.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EXTERIOR LIGHTS OFF · GND SELECT CTL sw AS RQRD · APU BLEED OFF · EXT PWR AS RQRD · APU MASTER SW OFF",
+"s": "APU off after all passengers disembarked",
+"r": "B",
+"call": false,
+"quote": "Turn off the APU after all passengers disembarked.",
+"ref": "PRO-NOR-SUP-SEC-A-00024902.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EMER EXIT LT sw OFF · SIGNS sw OFF",
+"s": "",
+"r": "F",
+"call": false,
+"quote": "EMER EXIT LT sw ... OFF CM2 SIGNS sw ... OFF CM2",
+"ref": "PRO-NOR-SUP-SEC-A-00011036.0002001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "BAT 1, BAT 2 and APU BAT pb-sw OFF",
+"s": "wait for the APU flap to close (about 2 min after AVAIL out)",
+"r": "B",
+"call": false,
+"quote": "Wait until the APU flap is fully closed (about 2 min after APU AVAIL light goes out) before switching off the APU battery. Switching the batteries off before the APU flap is closed may cause smoke in the cabin during the next flight.",
+"ref": "PRO-NOR-SUP-SEC-A-00011037.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "WINDOWS CHECK CLOSED · EFB APPLICATIONS CLOSE",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "WINDOWS ... CHECK CLOSED CM1-CM2",
+"ref": "PRO-NOR-SUP-SEC-A-00026014.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "cl",
+"t": "Securing the Aircraft",
+"w": "aircraft left unattended",
+"bold": false,
+"cc": true,
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SUP-SEC",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "go-around",
+"label": "Go-Around",
+"kind": "a",
+"title": "GO-AROUND",
+"src": "FCOM PRO-NOR-SOP-20 · SCO-D",
+"sections": [
+{
+"h": "GO-AROUND · SIMULTANEOUSLY",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "THRUST LEVERS TOGA",
+"s": "set TOGA detent even if TOGA thrust is not required, then retard as required (CL for A/THR) · not briefly TOGA: no GO AROUND phase, destination sequences within 7 NM",
+"r": "PF",
+"call": false,
+"quote": "If TOGA thrust is not required, set the thrust levers to TOGA detent then retard the thrust levers as required. This enables to engage the GO-AROUND phase, with associated AP/FD modes.",
+"ref": "PRO-NOR-SOP-20-A-00011082.0008001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ROTATION PERFORM",
+"s": "toward 15° (about 12.5° one engine out) then follow SRS · near the ground avoid excessive rotation rate (tail strike)",
+"r": "PF",
+"call": false,
+"quote": "Initiate rotation towards 15 ° of pitch with all engines operative (approximately 12.5 ° if one engine is out) to get a positive rate of climb then follow SRS Flight Director pitch orders.",
+"ref": "PRO-NOR-SOP-20-A-00011082.0008001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PF: “GO AROUND - FLAPS” · PM: FLAPS RETRACT ONE STEP · “FLAPS __”",
+"s": "PM: FLIGHT PARAMETERS MONITOR",
+"r": "B",
+"call": true,
+"quote": "GO AROUND ... ANNOUNCE PF FLIGHT PARAMETERS ... MONITOR PM FLAPS ... RETRACT ONE STEP PM",
+"ref": "PRO-NOR-SOP-20-A-00011082.0008001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FMA CHECK/ANNOUNCE",
+"s": "MAN TOGA / SRS / GA TRK or NAV / A/THR · RNP AR: NAV engages immediately (minimum 100 ft)",
+"r": "PF",
+"call": true,
+"quote": "The following modes are displayed: MAN TOGA / SRS / GA TRK or NAV / A/THR.",
+"ref": "PRO-NOR-SOP-20-A-00011082.0008001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “POSITIVE CLIMB” · PF: “GEAR UP” · PM: L/G UP · “GEAR UP”",
+"s": "NAV or HDG mode AS RQRD (PF) · GO AROUND ALTITUDE CHECK (PM)",
+"r": "B",
+"call": true,
+"quote": "POSITIVE RATE ... ANNOUNCE PM L/G UP ... ORDER PF L/G ... UP PM NAV or HDG mode ... AS RQRD PF GO AROUND ALTITUDE ... CHECK PM",
+"ref": "PRO-NOR-SOP-20-A-00011082.0008001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At go-around thrust reduction altitude · THRUST LEVERS CL",
+"s": "LVR CLB flashing",
+"r": "PF",
+"call": false,
+"quote": "AT GO-AROUND THRUST REDUCTION ALTITUDE THRUST LEVERS ... CL PF",
+"ref": "PRO-NOR-SOP-20-A-00011084.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At go-around acceleration altitude · SPEED MONITOR",
+"s": "target increases to green dot · if not: FCU ALT CHECK, ALT knob PULL",
+"r": "PF",
+"call": false,
+"quote": "Monitor that the target speed increases to Green Dot.",
+"ref": "PRO-NOR-SOP-20-A-00011085.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Acceleration flow · F speed “FLAPS 1” · S speed “FLAPS 0”",
+"s": "PM: GND SPLRS DISARM · L/G CHECK UP · NOSE OFF · RWY TURN OFF OFF · other lights AS RQRD (LAND may stay ON)",
+"r": "B",
+"call": true,
+"quote": "The flight crew can maintain the LAND sw set to ON, according to airline policy or regulatory recommendations.",
+"ref": "PRO-NOR-SOP-20-A-00011085.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "cl",
+"t": "Approach",
+"w": "after the revised approach briefing (Air Turn Back, pattern or go-around)",
+"bold": false,
+"cc": true,
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SOP-20",
+"appr": "all"
+},
+{
+"h": "GO-AROUND DEVIATION CALLOUTS (PM) · PF: “CORRECTING”",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "“BANK ANGLE” approaching 7° · “PITCH” above 20° or below 10° nose up · “SINK RATE” no climb rate",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "GO AROUND decision GO AROUND - FLAPS Flaps retraction FLAPS__ Gear retraction POSITIVE CLIMB GEAR UP GEAR UP",
+"ref": "PRO-NOR-SCO-D-00011850.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Discontinued approach · PF: “CANCEL APPROACH”",
+"s": "at or above the FCU altitude only",
+"r": "PF",
+"call": true,
+"quote": "DISCONTINUED APPROACH CANCEL APPROACH decision",
+"ref": "PRO-NOR-SCO-D-00015191.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-NOR-SCO-C / SCO-D",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "diversion",
+"label": "Diversion",
+"kind": "a",
+"title": "DIVERSION",
+"src": "PRC Diversion Guidance · FOM 6.4 / 11.2.7.1",
+"sections": [
+{
+"h": "DIVERSION GUIDANCE (PRC)",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "1 · Complete the non-normal procedure (ECAM / QRH)",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Failure cases requiring a diversion to the nearest airport (cases leading to a LAND ASAP message on the ECAM and/or in the QRH)",
+"ref": "FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "2 · Does the failure require diversion? YES: DIVERT (coordinate with SOCC)",
+"s": "failures requiring diversion: LAND ASAP, FIRE, engine failure · insufficient fuel after a component failure · one GEN remaining",
+"r": "B",
+"call": true,
+"quote": "Failure cases resulting in increased fuel consumption, exceeding the available fuel reserves ‐ Electrical generation. Diversion is required in the case of: • Only one generator (either one IDG, APU GEN or EMER GEN) remaining available following a multiple failure",
+"ref": "FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "3 · If not required: are the risks of continuing higher than the risks of diverting?",
+"s": "continue to destination, or DIVERT (coordinate with SOCC)",
+"r": "B",
+"call": false,
+"quote": "The technical criteria governing a re-routing or diversion decision can be classified into five categories",
+"ref": "FCOM PRO-SPO-40A-00023707.0001001 (PRC p2 Diversion Guidance)",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "No impact on ETOPS operations for amber or green ECAM messages / memos or any single failure other than an engine failure (PRC p2).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "PRC p2 Diversion Guidance · FCOM PRO-SPO-40A",
+"appr": "all"
+},
+{
+"h": "DIVERSION DECISION (FOM)",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "One engine inoperative · land at the NEAREST SUITABLE airport",
+"s": "14 CFR 121.565 · Captain judgment after considering all relevant factors · assign PF/PM per TEM",
+"r": "C",
+"call": false,
+"quote": "14 CFR 121.565 requires the Captain of a two-engine aircraft with one engine inoperative to land at the nearest suitable airport where, in the Captain’s judgment after considering all relevant factors, a safe landing can be made.",
+"ref": "FOM 6.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Flight crews will",
+"s": "maintain awareness of suitable airports · current diversion plan in mind · weather and NOTAMs at the diversion airport · coordinate with Dispatch · include the diversion plan in the brief after a rest period",
+"r": "B",
+"call": false,
+"quote": "Flight Crews will: • Maintain awareness of suitable airports • Have a current diversion plan in mind • Keep track of weather and NOTAMs at diversion airport • Be prepared to coordinate with Dispatch in the event of an actual diversion",
+"ref": "FOM 6.4.1",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "180 turn near a fuel-critical ETP",
+"s": "turn time is not in the flight planning fuel or time",
+"r": "B",
+"call": false,
+"quote": "If a 180 turn is necessary near a fuel-critical ETP, the Flight Crew should be aware that the time to complete the turn is not factored in the fuel or time calculations by the flight planning system.",
+"ref": "FOM 6.4.1",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Nearest suitable: factors",
+"s": "configuration, weight, systems, fuel · enroute wind and weather at diversion altitude · minimum altitudes · fuel burn · terrain, weather, wind · runways and surface · navaids and lighting · RFFS · disembarkation facilities · PIC familiarity · geo-political",
+"r": "C",
+"call": false,
+"quote": "• Approach navigation aids and lighting available • Rescue and fire fighting services (RFFS) at the diversion airport • Facilities for passenger and crewmember disembarkation and accommodations • PIC’s familiarity with the airport",
+"ref": "FOM 11.2.7.1",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Never sufficient to fly beyond the nearest suitable (one engine inop)",
+"s": "fuel to fly beyond · passenger accommodation other than safety · maintenance or repair resources",
+"r": "C",
+"call": false,
+"quote": "When operating a two-engine aircraft with one engine inoperative, none of the following factors should be considered sufficient justification to fly beyond the nearest suitable airport: • The fuel supply is sufficient to fly beyond the nearest suitable airport • Passenger accommodation other than passenger safety • Availability of maintenance and/or repair resources",
+"ref": "FOM 11.2.7.1",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Decision to continue after a system failure",
+"s": "coordinate with Dispatch: re-evaluate capabilities, new Flight Plan/Release before the EEP if required",
+"r": "B",
+"call": false,
+"quote": "If an updated Flight Plan/Dispatch Release is required and the flight has not passed the EEP, then the new Flight Plan/Dispatch Release must be received prior to the EEP.",
+"ref": "FOM 6.4.4",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ATC · advise as soon as practicable, remind of the aircraft type, request expeditious handling",
+"s": "",
+"r": "C",
+"call": true,
+"quote": "If contingency procedures are employed as a result of an engine shutdown or system failure, the Captain should advise ATC as soon as practicable of the situation, reminding ATC of the type of aircraft involved, and make a request for expeditious handling.",
+"ref": "FOM 6.4.6",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 6.4 · 11.2.7.1",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "etops",
+"label": "ETOPS Divert",
+"kind": "a",
+"title": "ETOPS DIVERSION",
+"src": "FOM 6.3 / 6.4 · PRC p1",
+"sections": [
+{
+"h": "ENGINE FAILURE DURING CRUISE (PRC)",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "Simultaneously: SET MCT and DISCONNECT AUTOTHRUST",
+"s": "instinctive disconnect pb · do not delay the descent · do not decelerate below green dot",
+"r": "PF",
+"call": false,
+"quote": "At high flight levels, close to the weight limits, the aircraft speed quickly reduces. Thus, the flight crew should not delay descent. The crew must not decelerate below green dot.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PULL SPEED - GREEN DOT",
+"s": "initially green dot to minimize the rate of descent",
+"r": "PF",
+"call": false,
+"quote": "PULL SPEED - GREEN DOT",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Oceanic: ESTABLISH 5 NM OFFSET",
+"s": "turn at least 30° L/R to a parallel same-direction track offset 5 NM · pull heading and/or 5 NM offset on the F-PLN · below FL290 (or when cleared) maneuver as required",
+"r": "PF",
+"call": false,
+"quote": "Leave the cleared route/track by turning at least 30º to the L/R to establish a parallel same direction track offset by 5NM. Pull heading and/or insert a 5NM L/R offset on MCDU FPLN page.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PULL FL 200 · START APU",
+"s": "FL200 until the final drift down altitude is determined",
+"r": "PF",
+"call": false,
+"quote": "Initially set FL200 until the final Drift Down Altitude is determined.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Exterior lights ON · monitor TCAS · declare MAYDAY on VHF or 121.5 · CPDLC EMERG ADS-C ON",
+"s": "non-radar: keep transmitting position and intentions on 121.5 (backup 123.45) until clear of all traffic · consider squawking 7700",
+"r": "PM",
+"call": true,
+"quote": "Declare an Emergency (MAYDAY). Transmit position and intentions on current VHF ATC frequency or 121.5.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ACCOMPLISH ECAM ACTIONS · ATC route clearance when workload permits",
+"s": "load the new route and MANAGE NAV",
+"r": "B",
+"call": false,
+"quote": "When ATC clearance is received, load the new route into FMS and MANAGE NAV.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "RESET DRIFT DOWN ALTITUDE IN FCU",
+"s": "REC MAX EO (PROG 1R) · V/S below 500 ft/min: select V/S -500 and A/THR ON",
+"r": "PF",
+"call": false,
+"quote": "When the V/S becomes less than 500 ft/min, select V/S -500 ft/min and A/THR ON.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ADJUST SPEED · ETOPS and standard strategy: 300 kt / M 0.78",
+"s": "obstacle strategy green dot until clear of obstacles",
+"r": "PF",
+"call": false,
+"quote": "For ETOPS & Standard Strategy: set 300 kt / M0.78",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Contact company · position report every 80 min or 10° · monitor fuel predictions · landing weight and performance",
+"s": "amended release, landing performance, weather, special assistance · overweight: QRH Overweight Landing",
+"r": "B",
+"call": false,
+"quote": "Report position every 80 minutes or less / 10º or less, as required by ATC or company.",
+"ref": "PRC p1 Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "PRC p1",
+"appr": "all"
+},
+{
+"h": "ETOPS DIVERSION (FOM)",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "Diversion speed · approved One-Engine-Inoperative Cruise Speed",
+"s": "Captain may deviate after assessing the emergency and fuel remaining",
+"r": "C",
+"call": false,
+"quote": "The Captain has the authority to deviate from this planned speed profile after assessing the emergency and considering fuel remaining.",
+"ref": "FOM 6.4.5",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Pick the field · least time at or near cruise altitude",
+"s": "ETPs use planning-time lower-altitude winds · a closer non-ETOPS airport may be better",
+"r": "B",
+"call": false,
+"quote": "Since the vast majority of diversions are not due to a mechanical issue requiring a descent well below cruise altitude, the Flight Crew should be continuously aware of the airport that would take the least amount of time to fly to at or near cruise altitude.",
+"ref": "FOM 6.3.7",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Fuel · CP/ETP critical fuel is a dispatch requirement only",
+"s": "no requirement to divert before the CP if destination fuel is above arrival requirements; Dispatcher adjusts altitude, speed, alternate, routing",
+"r": "B",
+"call": false,
+"quote": "Arriving at the CP/ETP with Fuel On Board (FOB) equal to or greater than the fuel required by the critical fuel scenario is only a dispatch requirement.",
+"ref": "FOM 6.3.6",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 6.3 / 6.4",
+"appr": "all"
+},
+{
+"h": "DECOMPRESSION IN ETOPS SEGMENT",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "1 · Turn to offset from the route",
+"s": "Special Procedures for In-Flight Contingencies",
+"r": "B",
+"call": false,
+"quote": "• Turn to offset from the route utilizing the Special Procedures for In-Flight Contingencies.",
+"ref": "FOM 6.4.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "2 · Emergency descent to 10,000 ft or MOCA/Grid MORA, whichever is higher",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "• Perform an Emergency Descent to 10,000 ft or MOCA/Grid MORA, whichever is higher.",
+"ref": "FOM 6.4.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "3 · Below FL290 (or sooner if cleared) proceed directly to the nearest suitable airport",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "• Below FL290, or sooner if cleared by ATC, proceed directly to the nearest suitable airport.",
+"ref": "FOM 6.4.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "4 · When level · Flight Plan one-engine diversion speed, or LRC for a two-engine decompression",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "• When level, use the Flight Plan one-engine diversion speed or (AS) Long Range Cruise (LRC) for two-engine decompression.",
+"ref": "FOM 6.4.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 6.4.3",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "oceanic",
+"label": "Oceanic Contingency",
+"kind": "a",
+"title": "OCEANIC IN-FLIGHT CONTINGENCY",
+"src": "FOM 5.7.4 · PRC p3",
+"sections": [
+{
+"h": "NO ATC CLEARANCE · CONTINGENCY",
+"c": "#01426A",
+"items": [
+{
+"k": "box",
+"t": "Get a revised clearance first, whenever possible",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "If an aircraft is unable to continue the flight in accordance with its ATC clearance, a revised clearance shall be obtained, whenever possible, prior to initiating any action.",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "1 · Turn at least 30° left or right · parallel same-direction track offset 5 nm",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "Specifically, the pilot shall leave the cleared track or ATS route by initially turning at least 30° to the right or to the left, in order to establish and maintain a parallel, same direction track or ATS route offset 5 nm.",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Choose the turn direction",
+"s": "position vs the track system · adjacent track flight levels · direction to an alternate · any SLOP · terrain",
+"r": "B",
+"call": false,
+"quote": "• Aircraft position relative to any organized track or ATS route system • Direction of flights and flight levels allocated on adjacent tracks • Direction to an alternate airport • Any strategic lateral offset being flown • Terrain clearance",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "2 · Below FL290 before diverting (unless cleared) · once on the parallel route, 500 ft vertical offset",
+"s": "maintain the flight level until 5 nm offset if possible; minimize the rate of descent",
+"r": "B",
+"call": true,
+"quote": "Once established on a parallel route, establish a 500-ft vertical offset and proceed as required by the situation, or if an ATC clearance has been obtained, proceed in accordance with the clearance.",
+"ref": "FOM 5.7.4.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "3 · TCAS TA/RA · all exterior lights ON · squawk 7700 when able",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "Turn on all aircraft exterior lights (commensurate with appropriate operating limitations). Keep the transponder on at all times and, when able, squawk 7700, as appropriate.",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "4 · Broadcast on the frequency in use and 121.5 (backup 123.45)",
+"s": "identification · nature of distress · intentions · position with route or track · flight level · MAYDAY or PAN-PAN three times",
+"r": "B",
+"call": true,
+"quote": "Establish communications with and alert nearby aircraft by broadcasting on the frequencies in use and at suitable intervals on 121.5 MHz (or, as a backup, on the inter-pilot air-to-air frequency 123.45 MHz): aircraft identification, the nature of the distress condition, intention of the pilot, position (including the ATS route designator or the track code, as appropriate), and flight level.",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ETOPS · engine shutdown or ETOPS-critical failure",
+"s": "advise ATC as soon as practical, remind of type, request expeditious handling",
+"r": "C",
+"call": false,
+"quote": "ETOPS – If these contingency procedures are employed as a result of an engine shutdown or failure of an ETOPS-critical system, advise ATC of the situation as soon as practical, remind ATC of the type of aircraft, and request expeditious handling.",
+"ref": "FOM 5.7.4.2",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 5.7.4.2 / 5.7.4.3",
+"appr": "all"
+},
+{
+"h": "WEATHER DEVIATION · OCEANIC",
+"c": "#0a8fb0",
+"items": [
+{
+"k": "box",
+"t": "Request first · “WEATHER DEVIATION REQUIRED” or CPDLC lateral downlink",
+"s": "urgency: “PAN-PAN” three times or CPDLC urgency downlink",
+"r": "B",
+"call": true,
+"quote": "• Stating “WEATHER DEVIATION REQUIRED” to indicate that priority is desired on the frequency and for ATC response; or • Requesting a weather deviation using a CPDLC lateral downlink message.",
+"ref": "FOM 5.7.4.4",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "No clearance · Captain exercises emergency authority",
+"s": "deviate away from the track system · broadcast on the frequency in use and 121.5 / 123.45 · watch TCAS · exterior lights ON",
+"r": "C",
+"call": false,
+"quote": "• If possible, deviate away from an organized track or route system.",
+"ref": "FOM 5.7.4.6",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Less than 5 nm · maintain the assigned flight level",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "• For deviations less than 5 nm, maintain assigned flight level.",
+"ref": "FOM 5.7.4.6",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "5 nm or more · level change at about 5 nm from track",
+"s": "EAST (0° to 179° magnetic): LEFT descend 300 ft, RIGHT climb 300 ft · WEST (180° to 359°): LEFT climb 300 ft, RIGHT descend 300 ft",
+"r": "B",
+"call": true,
+"quote": "Direction of Flight Deviations ≥5 NM Altitude Change LEFT DESCEND 300 ft EAST (0° to 179° magnetic) RIGHT CLIMB 300 ft LEFT CLIMB 300 ft WEST (180° to 359° magnetic) RIGHT DESCEND 300 ft",
+"ref": "FOM 5.7.4.6 Table",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Returning to track · assigned flight level within about 5 nm of centerline",
+"s": "keep trying for a clearance",
+"r": "B",
+"call": false,
+"quote": "When returning to track or cleared route, be at its assigned flight level when the aircraft is within approximately 5 nm of the centerline, and if contact was not established prior to deviating, continue to attempt to contact ATC to obtain a clearance.",
+"ref": "FOM 5.7.4.6",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 5.7.4.4 / 5.7.4.6",
+"appr": "all"
+},
+{
+"h": "SLOP",
+"c": "#00805E",
+"items": [
+{
+"k": "box",
+"t": "0.0 to 2.0 nm RIGHT of centerline only, 0.1 nm increments",
+"s": "no ATC clearance required, ATC need not be advised · offset at the oceanic entry, centerline by the oceanic exit",
+"r": "B",
+"call": false,
+"quote": "SLOP will be applied in relation to a route or track; the aircraft may fly zero, up to a maximum of 2 nm right of course only, from 0.0 - 2.0 nm, right of centerline (in 0.1 nm increments). SLOP left of course is not authorized.",
+"ref": "FOM 5.7.4.7",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Overtaking · offset to create the least wake for the aircraft overtaken",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Any aircraft overtaking another aircraft is to offset within the confines of this procedure, if capable, so as to create the least amount of wake turbulence for the aircraft being overtaken.",
+"ref": "FOM 5.7.4.7",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 5.7.4.7",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "depress",
+"label": "Depress (Polygons)",
+"kind": "a",
+"title": "DECOMPRESSION POLYGONS",
+"src": "FOM 11.2.8 / 11.2.9",
+"sections": [
+{
+"h": "DECOMPRESSION POLYGON PROCEDURES",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "Polygons · IFR High and Low charts in Jeppesen FD Pro",
+"s": "areas of high terrain where a descent directly to 10,000 ft may not be possible · procedure in the detail drawer (tap the label)",
+"r": "B",
+"call": false,
+"quote": "Polygons are located in the IFR High and IFR Low charts in Jeppesen FD Pro and denote areas of high terrain where a descent directly to 10,000 ft may not be possible.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "A330 initial descent altitude · always 17,000 ft or FL170",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "(737/A330) Initial descent altitude is always 17,000 ft or FL170.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Exit Any Direction · “Exit Any Dir.”",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "1. Exit Any Direction polygons are labeled “Exit Any Dir.” and can be exited in any direction.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Exit Toward Fix · “Exit Twd” + fix",
+"s": "not necessary to fly to the fix",
+"r": "B",
+"call": false,
+"quote": "2. Exit Toward Fix polygons are labeled “Exit Twd” followed by the fix to be flown towards to exit the polygon. It is not necessary to fly to the Exit Towards fix.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "To Fix then Route · fix, then the route",
+"s": "FD Pro shows the escape route and fixes",
+"r": "B",
+"call": false,
+"quote": "3. To Fix then Route polygons are labeled with the fix that should be flown to, and then the route that should be flown subsequently.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Initial turn distance is built in · do not enter another polygon below its altitude unless terrain clearance is assured",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Do not enter another polygon while navigating at less than the altitude indicated in the polygon detail drawer unless terrain clearance is assured.",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "No Ops Area · never",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Dispatchers and pilots will not permit flights to proceed through any areas charted as “No Ops Area.”",
+"ref": "FOM 11.2.9",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "The PIC is expected and encouraged to exercise sound judgment when applying these procedures (FOM 11.2.9).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "FOM 11.2.9",
+"appr": "all"
+},
+{
+"h": "EMERGENCY DESCENT (FOM)",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "Time of useful consciousness is very limited · quick-don masks within 5 seconds, one hand",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Flight Crews have a very limited time of useful consciousness at altitude. Quick-don masks are designed to be donned with one hand within 5 seconds.",
+"ref": "FOM 11.2.8",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "Aircraft procedure: see Emer Descent (QRH 22.02A).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "FOM 11.2.8",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "rto",
+"label": "Rejected T/O",
+"kind": "a",
+"title": "REJECTED TAKEOFF",
+"src": "FCTM PR-AEP-MISC-C",
+"sections": [
+{
+"h": "DECISION (CAPTAIN)",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "Captain decides · hand on the thrust levers until V1, PF or PM",
+"s": "decision and stop action must be made prior to V1",
+"r": "C",
+"call": false,
+"quote": "It is therefore recommended that the Captain keeps the hand on the thrust levers until the aircraft reaches V1, whether the Captain is Pilot Flying (PF) or Pilot Monitoring (PM).",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Captain: “GO” · malfunction before V1 without rejecting",
+"s": "",
+"r": "C",
+"call": true,
+"quote": "- If a malfunction occurs before V1, for which the Captain does not intend to reject the takeoff, the Captain will announce the intention by calling \"GO\".",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Captain: “STOP” · confirms the reject and that the Captain has control",
+"s": "the only hand-over of control without “I have control”",
+"r": "C",
+"call": true,
+"quote": "- If a decision is made to reject the takeoff, the Captain calls \"STOP\". This call both confirms the decision to reject the takeoff and also states that the Captain now has control. It is the only time that hand-over of control is not accompanied by the phrase \"I have control\".",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Below 100 kt · Captain discretion",
+"s": "seriously consider discontinuing for any ECAM alert",
+"r": "C",
+"call": false,
+"quote": "The Captain should seriously consider discontinuing the takeoff, if any ECAM alert is activated.",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Above 100 kt and below V1 · go-minded",
+"s": "1 fire alert or severe damage · 2 sudden loss of engine thrust · 3 unambiguous indications the aircraft will not fly safely · 4 any ECAM alert",
+"r": "C",
+"call": false,
+"quote": "1. Fire alert, or severe damage 2. Sudden loss of engine thrust 3. Malfunctions or conditions that give unambiguous indications that the aircraft will not fly safely 4. Any ECAM alert.",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Not a reject above 100 kt · EGT red line · nose gear vibration · tire failure V1 minus 20 kt to V1",
+"s": "the V1 call has precedence over any other call",
+"r": "C",
+"call": false,
+"quote": "Exceeding the EGT red line or nose gear vibration should not result in the decision to reject takeoff above 100 kt.",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Above V1 · takeoff must be continued",
+"s": "",
+"r": "C",
+"call": false,
+"quote": "Takeoff must be continued, because it may not be possible to stop the aircraft on the remaining runway.",
+"ref": "FCTM PR-AEP-MISC-C-00020263.0002001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "ECAM inhibits non-essential alerts from 80 kt to 1 500 ft (or 2 min after lift-off); any alert in this period is significant (FCTM).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "FCTM PR-AEP-MISC-C",
+"appr": "all"
+},
+{
+"h": "RTO TECHNIQUE",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "Autobrake MAX decelerating · Captain avoids pressing the pedals",
+"s": "inoperative autobrake or reject prior to 72 kt: reduce thrust and apply maximum pressure on both pedals, hold to the stop",
+"r": "C",
+"call": false,
+"quote": "- If the autobrake is inoperative or if the takeoff is rejected prior to 72 kt (autobrake not active and no deployment of spoilers), the captain simultaneously reduces thrust and applies maximum pressure on both pedals.",
+"ref": "FCTM PR-AEP-MISC-C-00020266.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Brake response not appropriate · FULL manual braking · IF IN DOUBT, TAKE OVER MANUALLY",
+"s": "normal braking inoperative: LOSS OF BRAKING memory items",
+"r": "C",
+"call": false,
+"quote": "- If the brake response does not seem appropriate for the runway condition, FULL manual braking should be applied and maintained. If IN DOUBT, TAKE OVER MANUALLY.",
+"ref": "FCTM PR-AEP-MISC-C-00020266.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Full reverse may be used to a complete stop · reduce passing 70 kt if runway permits",
+"s": "",
+"r": "C",
+"call": false,
+"quote": "Full reverse may be used until coming to a complete stop. But, if there is enough runway available at the end of the deceleration, it is preferable to reduce reverse thrust when passing 70 kt.",
+"ref": "FCTM PR-AEP-MISC-C-00020266.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “DECEL” · deceleration felt and confirmed by the speed trend",
+"s": "DECEL light only at 80 % of the selected rate; not proof of autobrake operation",
+"r": "PM",
+"call": true,
+"quote": "- Announcing the deceleration means that the deceleration is felt by the crew, and confirmed by the Vc trend on the PFD.",
+"ref": "FCTM PR-AEP-MISC-C-00020266.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Stopped with autobrake MAX · release the brakes before taxi by disarming the spoilers",
+"s": "do not vacate until it is clear an evacuation is not necessary",
+"r": "C",
+"call": false,
+"quote": "Do not attempt to vacate the runway, until it is absolutely clear that an evacuation is not necessary and that it is safe to do so.",
+"ref": "FCTM PR-AEP-MISC-C-00020266.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Takeoff following RTO · reset both FDs, set FCU · restart SOPs from the AFTER START checklist · DEPARTURE CHANGE SOP and checklist",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "- Restart Standard Operating Procedures from the AFTER START checklist and perform the DEPARTURE CHANGE SOP including the associated checklist.",
+"ref": "FCTM PR-AEP-MISC-C-00020408.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "cl",
+"t": "Departure Change",
+"w": "revised departure briefing completed",
+"bold": false,
+"cc": true,
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCTM PR-AEP-MISC-C",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "eng-fail-to",
+"label": "Eng Fail After V1",
+"kind": "a",
+"title": "ENGINE FAILURE AFTER V1",
+"src": "FCTM PR-AEP-ENG",
+"sections": [
+{
+"h": "CONTINUE THE TAKEOFF",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "After V1 · continue · handling first",
+"s": "stabilize pitch and airspeed, establish the flight path before the ECAM procedure",
+"r": "PF",
+"call": false,
+"quote": "If an engine fails after V1, the flight crew must continue the takeoff. The essential and primary tasks are associated with the aircraft handling.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "On the ground · rudder conventionally to hold the centerline",
+"s": "",
+"r": "PF",
+"call": false,
+"quote": "The flight crew should use the rudder conventionally to maintain the aircraft on the runway centerline.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "At VR · rotate about 3°/s toward 12.5°",
+"s": "high FLEX temperatures and low VR need precise handling; 12.5° ensures the aircraft becomes airborne",
+"r": "PF",
+"call": false,
+"quote": "At VR, the flight crew should rotate the aircraft using a continuous pitch rate of approximately 3 °/s towards an initial pitch attitude of 12.5 °.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Safely airborne · follow SRS · center the blue beta target with rudder",
+"s": "SRS targets the failure speed (V2 to V2+15) · lateral normal law is stable, no rush on the pedals",
+"r": "PF",
+"call": false,
+"quote": "Therefore, laterally, the aircraft is a stable platform and no rush is required to use the rudder pedals.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "PM: “POSITIVE RATE” · PF: “GEAR UP”",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "Gear retraction POSITIVE RATE GEAR UP GEAR UP",
+"ref": "PRO-NOR-SCO-D-00011846.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Rudder trim · relieve pedal pressure with the beta target centered · then engage the AP",
+"s": "AP engaged: rudder trim managed by the AP, release pedal pressure; a maintained pedal deflection may disengage the AP",
+"r": "PF",
+"call": false,
+"quote": "The flight crew should use the rudder trim to gradually relieve the pressure from the rudder pedals while keeping the beta target centered. When the aircraft is properly trimmed, the PF should engage the AP.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Performance short · confirm gear up · consider TOGA",
+"s": "derated takeoff: TOGA below F speed can lead to loss of control · takeoff thrust limited to 10 min",
+"r": "PF",
+"call": false,
+"quote": "If the takeoff is performed at derated takeoff thrust, selecting TOGA at a speed below F can lead to loss of control of the aircraft.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCTM PR-AEP-ENG",
+"appr": "all"
+},
+{
+"h": "SECURE · ACCELERATE · CLEAN UP",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "Trajectory first · delay acceleration only to secure the engine",
+"s": "ENG MASTER OFF (no damage) · AGENT 1 DISCH (damage) · fire out or AGENT 2 DISCH (fire)",
+"r": "B",
+"call": false,
+"quote": "\"Secure the engine\" means that the flight crew should continue the ECAM procedure until: - \"ENG MASTER OFF\" in the case of an engine failure without damage, or - \"AGENT 1 DISCH\" in the case of an engine failure with damage, or - Fire extinguished or \"AGENT 2 DISCH\" in the case of an engine fire.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EO acceleration altitude · ALT pb or push V/S to level off · flaps on schedule",
+"s": "rudder input decreases as speed increases · flap lever at zero: beta target reverts to sideslip · never exceed the EO maximum acceleration altitude",
+"r": "PF",
+"call": false,
+"quote": "At the engine-out (EO) acceleration altitude, the flight crew should press the ALT pb or push the V/S knob to level off and to enable the speed to increase.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Speed trend at green dot · pull ALT for OP CLB · THRUST LEVERS MCT when LVR MCT flashes",
+"s": "already in FLX/MCT: CL then back to MCT",
+"r": "PF",
+"call": false,
+"quote": "When the speed trend arrow reaches the green dot speed, pull the ALT knob to engage OP CLB. Set the thrust levers to MCT when the LVR MCT message flashes on the FMA (this message appears, when the speed index reaches green dot).",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Established on the final takeoff path · continue ECAM to the STATUS page",
+"s": "ensure the Acceleration flow · consider relight if no damage · review STATUS",
+"r": "B",
+"call": false,
+"quote": "When the aircraft is established on the final takeoff flight path, the flight crew should continue the ECAM procedure until the STATUS page appears.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "One engine out flight path · per the departure briefing",
+"s": "EOSID · SID · radar vector",
+"r": "PF",
+"call": false,
+"quote": "The flight crew flies the one engine-out flight path in accordance with the departure briefing performed at the gate: - The EOSID, or - The SID, or - Radar vector, etc.",
+"ref": "FCTM PR-AEP-ENG-00019578.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Failure during initial climb above V2 · maintain the SRS attitude · minimum speed V2",
+"s": "FMGS predictions switch to engine-out; pre-selected speeds deleted",
+"r": "PF",
+"call": false,
+"quote": "If the failure occurs above V2 however, maintain the SRS commanded attitude. In any case, the minimum speed must be V2.",
+"ref": "FCTM PR-AEP-ENG-00019585.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCTM PR-AEP-ENG",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "emer-descent",
+"label": "Emer Descent",
+"kind": "a",
+"title": "EMERGENCY DESCENT (QRH 22.02A)",
+"src": "QRH R35 22.02A · FCOM PRO-ABN-MISC",
+"sections": [
+{
+"h": "EMER DESCENT · MEMORY ITEMS",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "CREW OXY MASKS USE",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "CREW OXY MASKS ... USE",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "SIGNS ON",
+"s": "",
+"r": "B",
+"call": true,
+"quote": "SIGNS ... ON",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EMER DESCENT INITIATE",
+"s": "",
+"r": "PF",
+"call": true,
+"quote": "EMER DESCENT ... INITIATE",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "If A/THR not active: THR LEVERS IDLE",
+"s": "",
+"r": "PF",
+"call": true,
+"quote": "If A/THR not active: THR LEVERS ... IDLE",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "SPD BRK FULL",
+"s": "",
+"r": "PF",
+"call": true,
+"quote": "SPD BRK ... FULL",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "QRH 22.02A",
+"appr": "all"
+},
+{
+"h": "WHEN DESCENT ESTABLISHED",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "SPEED MAX/APPROPRIATE",
+"s": "structural damage suspected: MANEUVER WITH CARE · CONSIDER L/G EXTENSION (speed to VLO/VLE)",
+"r": "PF",
+"call": false,
+"quote": "Landing gear may be extended. In such a case, speed must be reduced to VLO/VLE.",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ENG START SEL IGN",
+"s": "",
+"r": "PM",
+"call": false,
+"quote": "ENG START SEL ... IGN",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ATC NOTIFY",
+"s": "nature of the emergency and intentions; voice, or CPDLC if voice is poor",
+"r": "PM",
+"call": true,
+"quote": "Notify ATC of the nature of the emergency, and state intention. The flight crew can communicate with the ATC using voice, or CPDLC when the voice contact cannot be established or has poor quality.",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EMER DESCENT (PA) ANNOUNCE",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "The flight crew must inform the cabin of emergency descent on the PA system.",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "ATC XPDR 7700 CONSIDER",
+"s": "unless otherwise specified by ATC",
+"r": "PM",
+"call": false,
+"quote": "Squawk 7700 unless otherwise specified by ATC.",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "CREW OXY MASKS DILUTION NORM",
+"s": "100 % may not cover the whole descent profile · avoid continuous interphone use",
+"r": "B",
+"call": false,
+"quote": "- If the oxygen diluter selector remains set to 100 %, oxygen quantity may be insufficient to cover the entire emergency descent profile",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "MAX FL : 100 / MEA-MORA",
+"s": "CAB ALT above 14 000 ft: OXYGEN PAX MASK MAN ON ... PRESS",
+"r": "B",
+"call": true,
+"quote": "MAX FL : 100/MEA-MORA If CAB ALT above 14 000 ft: OXYGEN PAX MASK MAN ON ... PRESS",
+"ref": "QRH 22.02A ABN-22-00010585.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "Notify the cabin crew when the aircraft reaches a safe flight level and cabin oxygen is no more necessary (FCOM PRO-ABN-MISC).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "QRH 22.02A · FCOM PRO-ABN-MISC",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "holding",
+"label": "Holding",
+"kind": "a",
+"title": "HOLDING",
+"src": "FOM 5.5.15 · FCTM PR-NP-SP-20 · FCOM PRO-NOR-SRP-01-60",
+"sections": [
+{
+"h": "US HOLDING SPEED AND TIME (FOM)",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "6000 ft or below · 200 KIAS",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "6000 ft or below 200 KIAS",
+"ref": "FOM 5.5.15 Table",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Above 6000 ft through 14,000 ft · 230 KIAS (210 KIAS where charted) · 1 minute",
+"s": "Alaska or New York with the 210K symbol · military or joint fields expect 230",
+"r": "B",
+"call": false,
+"quote": "Above 6000 ft 230 KIAS 1 minute Through 14,000 ft (210 KIAS)*",
+"ref": "FOM 5.5.15 Table",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Above 14,000 ft · 265 KIAS · 1 1/2 minutes",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Above 14,000 ft 265 KIAS 1 1/2 minutes",
+"ref": "FOM 5.5.15 Table",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Higher speed for turbulence, icing or configuration · advise ATC",
+"s": "pattern protection 280 KIAS / M 0.8 whichever is lower",
+"r": "B",
+"call": false,
+"quote": "If higher airspeed is required for turbulence, icing, or aircraft configuration, advise ATC. Holding pattern protection is based on a maximum of 280 KIAS/Mach 0.8, whichever is lower.",
+"ref": "FOM 5.5.15",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Speed reduction no earlier than 3 minutes before the fix · standard pattern right turns",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Flights anticipating holding at an enroute fix or flights that have not received clearance beyond a fix should begin a speed reduction no earlier than three minutes prior to reaching such fix.",
+"ref": "FOM 5.5.15",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Dispatch notification · holding fix, EFC time, fuel on board · holding fuel every 15 minutes",
+"s": "",
+"r": "C",
+"call": false,
+"quote": "Through ACARS or radio, the Captain will ensure that Dispatch is contacted with the holding fix, Expected Further Clearance (EFC) time, and fuel on board. Diversion plans should be discussed if applicable.",
+"ref": "FOM 5.5.15.1",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Clearance limit reached without further clearance · hold at the last assigned level, standard pattern if none published",
+"s": "except radio failure and NAT HLA",
+"r": "B",
+"call": false,
+"quote": "Except in the event of two-way radio communications failure, and except during NAT HLA operations, if the clearance limit is reached before further instructions have been received, published holding procedures shall be carried out at the last assigned flight level.",
+"ref": "FOM 5.5.15.3",
+"ext": "FOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FOM 5.5.15",
+"appr": "all"
+},
+{
+"h": "CONFIGURATION AND SPEED (FCTM)",
+"c": "#00805E",
+"items": [
+{
+"k": "box",
+"t": "Clean configuration is optimum · CONF 1 when required",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "Clean configuration is the optimum configuration for a holding circuit. When required (holding pattern or speed limitation), the flight crew may consider the selection of CONF 1.",
+"ref": "FCTM PR-NP-SP-20-00020413.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Clean · fly green dot",
+"s": "optimizes lift-to-drag",
+"r": "B",
+"call": false,
+"quote": "In clean configuration, the flight crew should fly at Green Dot speed, in order to optimize the Lift-to-Drag ratio.",
+"ref": "FCTM PR-NP-SP-20-00020413.0001001",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCTM PR-NP-SP-20",
+"appr": "all"
+},
+{
+"h": "FMS HOLD",
+"c": "#01426A",
+"items": [
+{
+"k": "fmc",
+"t": "F-PLN key · LAT REV · HOLD prompt",
+"s": "CHECK the HOLDING data and MODIFY · CHECK the temporary F-PLN and INSERT",
+"r": "PF",
+"quote": "PRESS the F-PLN key. SELECT the lateral revision page. SELECT the HOLD prompt. CHECK the HOLDING data, and MODIFY it if necessary. CHECK the temporary flight plan and INSERT the holding pattern in it.",
+"ref": "PRO-NOR-SRP-01-60-00002499.0001001",
+"ext": "FCOM PRO-NOR",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "note",
+"t": "Holding fix close to DECEL with managed speed: manually activate the approach phase so the target becomes VAPP (FCOM).",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+}
+],
+"cite": "FCOM PRO-NOR-SRP-01-60",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "memory-items",
+"label": "Memory Items",
+"kind": "a",
+"title": "MEMORY ITEMS (recite cold)",
+"src": "Ryan's notes · FCOM PRO-ABN · QRH R35 · [MEM]",
+"sections": [
+{
+"h": "MEMORY ITEMS · YOUR NOTES (FCOM differences flagged)",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "LOSS OF BRAKING",
+"s": "Reverse ... MAX · Brake pedals ... RELEASE · A/SKID & N/W STEERING ... ORDER OFF · Brakes ... PRESS (max 1 000 PSI) · Parking brake ... USE",
+"r": "B",
+"call": true,
+"quote": "If no braking: REV ... MAX",
+"ref": "PRO-ABN-BRAKES-00010803.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EMER DESCENT",
+"s": "Crew oxygen masks ... USE · Signs ... ON · Emer descent ... INITIATE: turn and pull (ALT 10 000 or MEA/MORA, HDG, SPD 300) · Thrust levers ... IDLE if no A/THR · Speed brake ... FULL · Confirm FMA · FCOM: the five memory items end at SPD BRK FULL; SPD 300 is your technique, the FCOM line once established is SPEED ... MAX/APPROPRIATE, and MAX FL 100 / MEA-MORA",
+"r": "B",
+"call": true,
+"quote": "CREW OXY MASKS ... USE SIGNS ... ON EMER DESCENT ... INITIATE If A/THR not active: THR LEVERS ... IDLE SPD BRK ... FULL",
+"ref": "PRO-ABN-MISC-00012261.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "STALL RECOVERY",
+"s": "Nose down pitch ... APPLY · Bank ... WINGS LEVEL · Thrust ... INCREASE · Speedbrakes ... CHECK RETRACTED · Flight path ... RECOVER · Below FL 200 ... FLAPS 1 · FCOM: THRUST ... INCREASE SMOOTHLY AS NEEDED and FLIGHT PATH ... RECOVER SMOOTHLY (the word smoothly is in both lines)",
+"r": "B",
+"call": true,
+"quote": "NOSE DOWN PITCH CONTROL ... APPLY This will reduce angle of attack",
+"ref": "PRO-ABN-MISC-00013664.0002001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "STALL WARNING AT LIFTOFF",
+"s": "Thrust ... TOGA · Pitch ... 15° · Bank ... WINGS LEVEL",
+"r": "B",
+"call": true,
+"quote": "If stall warnings trigger at liftoff, apply the following immediate actions: THRUST ... TOGA At the same time: PITCH ATTITUDE ... 15 ° BANK ... WINGS LEVEL",
+"ref": "PRO-ABN-MISC-00013665.0002001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "UNRELIABLE SPEED INDICATION",
+"s": "AP ... OFF · A/THR ... OFF · FD ... OFF · PITCH / THRUST: below THRUST RED ALT ... 15° / TOGA · between THRUST RED ALT and FL 100 ... 10° / CLB · above FL 100 ... 5° / CLB · FLAPS (CONF 0, 1, 2, 3) ... MAINTAIN CONF · FLAPS (CONF FULL) ... CONF 3 · Speed brakes ... CHECK RETRACTED · Landing gear ... UP · FCOM: the QRH condition is \"if the safe conduct of the flight is impacted\"; when at or above MSA or circuit altitude, level off for troubleshooting",
+"r": "B",
+"call": true,
+"quote": "If the safe conduct of the flight is impacted AP ... OFF A/THR ... OFF FD ... OFF",
+"ref": "ABN-23-A-00017854.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "SMOKE / FUMES / AVNCS SMOKE",
+"s": "Crew oxygen masks ... USE / 100 % / EMERG · FCOM: listed as [MEM] SMOKE / FUMES / AVNCS / MD SMOKE (refer to QRH); the QRH line reads CREW OXY MASKS (if required)",
+"r": "B",
+"call": true,
+"quote": "CREW OXY MASKS (if required)..... USE/100%/EMERG",
+"ref": "ABN-24-A-00010507.0001001",
+"ext": "QRH",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EGPWS (TAWS WARNING)",
+"s": "“PULL UP, TOGA” · AP ... OFF · Pitch ... PULL UP · Thrust levers ... TOGA · Speed brake ... CHECK RETRACTED · Bank ... WINGS LEVEL · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · FCOM: BANK ... WINGS LEVEL or ADJUST; the same five items are the TAWS CAUTION response at night or in IMC",
+"r": "B",
+"call": true,
+"quote": "Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST",
+"ref": "PRO-ABN-SURV-00026799.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "TCAS WARNING (RA)",
+"s": "“TCAS, I have control” · “Hawaiian 50, TCAS RA” · AP ... OFF · FD ... OFF (both) · Vertical speed ... ADJUST or MAINTAIN (fly the green band) · CLIMB RA in CONF 3 or FULL ... GO-AROUND · “Hawaiian 50, clear of conflict” · FCOM: the third memory item is VERTICAL SPEED ... ADJUST or MAINTAIN; a CLIMB RA on approach in CONF 3 or FULL is GO-AROUND ... PERFORM; ATC ... NOTIFY during the RA and again when clear",
+"r": "B",
+"call": true,
+"quote": "All RA, except any CLIMB RA during approach in CONF 3 or FULL: AP (if engaged) ... OFF BOTH FDs ... OFF Respond promptly and smoothly. VERTICAL SPEED ... ADJUST or MAINTAIN",
+"ref": "PRO-ABN-SURV-00011464.0005001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "WINDSHEAR",
+"s": "Takeoff before V1 ... REJECT · After V1: “WINDSHEAR, TOGA” ... TOGA, ROTATE, FOLLOW SRS · Airborne or landing: TOGA (set or confirm) · AP (if engaged) KEEP ON · FOLLOW SRS · DO NOT CHANGE CONFIGURATION UNTIL CLEAR · Landing: “WINDSHEAR AHEAD” (predictive) ... “GO AROUND, FLAPS” · “WINDSHEAR WINDSHEAR” (reactive) ... “WINDSHEAR, TOGA” · FCOM: airborne or at landing the items are THR LEVERS AT TOGA ... SET OR CONFIRM, AP (if engaged) ... KEEP ON, SRS ORDERS ... FOLLOW; carefully monitor flight path and speed, recover the normal climb smoothly when out of windshear",
+"r": "B",
+"call": true,
+"quote": "After V1: THR LEVERS ... TOGA REACHING VR ... ROTATE SRS ORDERS ... FOLLOW",
+"ref": "PRO-ABN-SURV-00012300.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "OCEANIC ENGINE OUT (PRC, not a [MEM] item)",
+"s": "Set MCT, disconnect A/THR · Pull speed ... 0.80 / 270 · Pull HDG 30° away from traffic, parallel course 5 NM · Pull FL 200 · Start APU · PRC back page to fine tune · FCOM: the PRC says PULL SPEED - GREEN DOT initially, then ADJUST SPEED 300 kt / M0.78 for ETOPS and standard strategy (not 0.80 / 270); turn at least 30° for the 5 NM offset; PULL FL 200; START APU; declare MAYDAY",
+"r": "B",
+"call": true,
+"quote": "SIMULTANEOUSLY, SET MCT AND DISCONNECT AUTOTHRUST",
+"ref": "PRC Engine Failure During Cruise",
+"ext": "PRC",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-ABN · QRH · PRC",
+"appr": "all"
+},
+{
+"h": "[MEM] ITEMS NOT IN YOUR NOTES",
+"c": "#334e68",
+"items": [
+{
+"k": "box",
+"t": "TAWS CAUTION",
+"s": "night or IMC: same five actions as the warning · day VMC with terrain in sight: FLIGHT PATH ... ADJUST · SINK RATE, DON’T SINK, TOO LOW GEAR/FLAPS, GLIDESLOPE: adjust flight path, go-around when below 1 000 ft AAL IMC / 500 ft AAL VMC or when configuration is wrong",
+"r": "B",
+"call": false,
+"quote": "During night or IMC conditions: Simultaneously: AP ... OFF PITCH ... PULL UP Pull up to full backstick and maintain in that position. THRUST LEVERS ... TOGA SPEED BRAKE LEVER ... CHECK RETRACTED BANK ... WINGS LEVEL or ADJUST",
+"ref": "PRO-ABN-SURV-AA-00026795.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "TCAS CAUTION (TA)",
+"s": "no maneuver on a TA alone",
+"r": "B",
+"call": false,
+"quote": "Do not perform a maneuver based on a TA alone.",
+"ref": "PRO-ABN-SURV-00025042.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM PRO-ABN-SURV",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "limits",
+"label": "Limitations",
+"kind": "a",
+"title": "LIMITATIONS (recite cold)",
+"src": "Ryan's Rev 13 summary · FCOM LIM R17 · 238 t / -200 PAX · pounds",
+"sections": [
+{
+"h": "WEIGHTS · LOAD · ENVELOPE",
+"c": "#b03a2e",
+"items": [
+{
+"k": "note",
+"t": "<a href='https://drive.google.com/file/d/1pZA4z9jN4xrqZ8zRsfyJsOKVL0fZLKZM/view' target='_blank' rel='noopener' style='font-weight:800;color:var(--accent);text-decoration:none;border:1.4px solid var(--accent);border-radius:6px;padding:2px 9px;'>Limitations Summary Rev 13 (PDF) &#9656;</a>",
+"fleet": "pax",
+"src": "sop",
+"provenance": "sop"
+},
+{
+"k": "box",
+"t": "Max taxi weight (MTW)",
+"s": "527k lb",
+"r": "B",
+"call": false,
+"quote": "Maximum taxi weight....................................................................................... 238 900 kg (526 684 lb)",
+"ref": "LIM-AG-WGHT-00001822.0434001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max takeoff weight (MTOW)",
+"s": "525k lb",
+"r": "B",
+"call": false,
+"quote": "Maximum takeoff weight (brake release)......................................................... 238 000 kg (524 700 lb)",
+"ref": "LIM-AG-WGHT-00001822.0434001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max landing weight (MLW)",
+"s": "401k lb",
+"r": "B",
+"call": false,
+"quote": "Maximum landing weight................................................................................. 182 000 kg (401 241 lb)",
+"ref": "LIM-AG-WGHT-00001822.0434001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max zero fuel weight (MZFW)",
+"s": "370k lb · FCOM: 375k lb on the 236 t tails",
+"r": "B",
+"call": false,
+"quote": "Maximum zero fuel weight................... from 168 000 kg (370 376 lb) to 170 000 kg (374 785 lb) See * Minimum weight...............................................................................................116 000 kg (255 737 lb) * Maximum Zero Fuel Weight (MZFW) can be increased provided Actual Takeoff Weight is decreased as shown in the following graph.",
+"ref": "LIM-AG-WGHT-00001822.0434001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Load factor, clean",
+"s": "-1.0 g to +2.5 g",
+"r": "B",
+"call": false,
+"quote": "Clean configuration...........................................................................................................-1 g to +2.5 g",
+"ref": "LIM-AG-F_CTL-00020995.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Load factor, other configurations",
+"s": "0 g to +2.0 g",
+"r": "B",
+"call": false,
+"quote": "Other configurations............................................................................................................. 0 g to +2 g",
+"ref": "LIM-AG-F_CTL-00020995.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude",
+"s": "41 450 ft",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max runway altitude",
+"s": "12 500 ft",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-AG",
+"appr": "all"
+},
+{
+"h": "AIRPORT OPERATIONS",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "Max runway slope",
+"s": "±2 %",
+"r": "B",
+"call": false,
+"quote": "RUNWAY SLOPE Runway slope (mean)................................................................................................................ ±2 %",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020102.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max takeoff crosswind",
+"s": "32 kt (gust included)",
+"r": "B",
+"call": false,
+"quote": "Maximum certified crosswind for takeoff........................................................... 32 kt (gust included)",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020105.0006001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max takeoff tailwind",
+"s": "15 kt",
+"r": "B",
+"call": false,
+"quote": "TAILWIND TAKEOFF Maximum tailwind for takeoff......................................................................................................15 kt",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020179.0003001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max landing crosswind",
+"s": "45 kt (gust included)",
+"r": "B",
+"call": false,
+"quote": "Maximum demonstrated crosswind for landing................................................. 45 kt (gust included)",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020105.0006001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max landing tailwind",
+"s": "10 kt",
+"r": "B",
+"call": false,
+"quote": "TAILWIND LANDING Maximum tailwind for landing..................................................................................................... 10 kt",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020660.0002001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max wind to operate passenger / cargo doors",
+"s": "40 kt (50 kt nose into wind)",
+"r": "B",
+"call": false,
+"quote": "‐ The maximum wind for passenger door operation is 40 kt (or 50 kt , if the aircraft nose is into the wind).",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020185.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max wind with passenger / cargo doors open",
+"s": "60 kt",
+"r": "B",
+"call": false,
+"quote": "‐ The passenger, FWD and AFT cargo doors must be closed before the wind speed exceeds 60 kt.",
+"ref": "LIM-AG-OPS-ARPT_WIND-00020185.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-AG-OPS",
+"appr": "all"
+},
+{
+"h": "SPEEDS",
+"c": "#01426A",
+"items": [
+{
+"k": "box",
+"t": "VMO / MMO",
+"s": "330 kt / M 0.86",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VFE flap 1 (1+F)",
+"s": "240 kt (215 kt)",
+"r": "B",
+"call": false,
+"quote": "1 240 HOLDING",
+"ref": "LIM-AG-SPD-00019939.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VFE flap 2 (1*)",
+"s": "196 kt (205 kt)",
+"r": "B",
+"call": false,
+"quote": "2 196 TAKEOFF/APPROACH",
+"ref": "LIM-AG-SPD-00019939.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VFE flap 3",
+"s": "186 kt",
+"r": "B",
+"call": false,
+"quote": "3 3 186 TAKEOFF/APPR/LDG",
+"ref": "LIM-AG-SPD-00019939.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VFE flap FULL",
+"s": "180 kt",
+"r": "B",
+"call": false,
+"quote": "FULL FULL 180 LANDING",
+"ref": "LIM-AG-SPD-00019939.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude with flaps / slats extended",
+"s": "FL 200",
+"r": "B",
+"call": false,
+"quote": "Maximum operating altitude with slats and/or flaps extended..................................................20 000 ft",
+"ref": "LIM-F_CTL-00020044.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VLE / VLO",
+"s": "250 kt / M 0.55",
+"r": "B",
+"call": false,
+"quote": "Maximum speed with landing gear extended (VLE).............................................................250 kt/0.55",
+"ref": "LIM-AG-SPD-00019944.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "VLE gravity gear extension",
+"s": "200 kt",
+"r": "B",
+"call": false,
+"quote": "Maximum speed for landing gear gravity extension (VLE/VLO)...................................................200 kt",
+"ref": "LIM-AG-SPD-00019944.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max windshield wiper speed",
+"s": "230 kt",
+"r": "B",
+"call": false,
+"quote": "WIPERS MAXIMUM OPERATING SPEED Ident.: LIM-AG-SPD-00004877.0001001 / 27 DEC 23 Applicable to: ALL Maximum speed............................................................................................................................230 kt",
+"ref": "LIM-AG-SPD-00004877.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max cockpit window open speed",
+"s": "230 kt",
+"r": "B",
+"call": false,
+"quote": "Maximum speed............................................................................................................................230 kt Note: It is not possible to open the cockpit windows, with the packs ON.",
+"ref": "LIM-AG-SPD-00004878.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-AG-SPD",
+"appr": "all"
+},
+{
+"h": "CABIN PRESSURE · AIR",
+"c": "#00805E",
+"items": [
+{
+"k": "box",
+"t": "Max positive differential",
+"s": "9.25 psi",
+"r": "B",
+"call": false,
+"quote": "Maximum positive differential pressure.................................................................................... 9.25 PSI",
+"ref": "LIM-AIR-00019990.0014001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max negative differential",
+"s": "-0.73 psi",
+"r": "B",
+"call": false,
+"quote": "Maximum negative differential pressure..................................................................................-0.73 PSI",
+"ref": "LIM-AIR-00019990.0014001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Safety relief valve setting",
+"s": "8.85 psi",
+"r": "B",
+"call": false,
+"quote": "Safety relief valve setting......................................................................................................... 8.85 PSI",
+"ref": "LIM-AIR-00019990.0014001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Air conditioning with LP ground unit",
+"s": "do not use packs",
+"r": "B",
+"call": false,
+"quote": "The flight crew must not use conditioned air from the packs and from the LP Air Conditioning Unit at the same time, to prevent any adverse effect on the Air Conditioning system.",
+"ref": "LIM-AIR-00019986.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Air conditioning with HP ground unit",
+"s": "do not use APU bleed",
+"r": "B",
+"call": false,
+"quote": "The flight crew must not use bleed air from the APU BLEED and from the HP Air Start Unit at the same time, to prevent any adverse effect on the Bleed Air System.",
+"ref": "LIM-AIR-00019987.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-AIR",
+"appr": "all"
+},
+{
+"h": "AUTO FLIGHT",
+"c": "#5A4AB7",
+"items": [
+{
+"k": "box",
+"t": "AP minimum height: takeoff",
+"s": "100 ft AGL (and 5 s after liftoff)",
+"r": "B",
+"call": false,
+"quote": "At takeoff 100 ft AGL and at least 5 s after liftoff",
+"ref": "LIM-AFS-10-10-00020140.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AP minimum height: approach, not ILS (FINAL APP, V/S, FPA)",
+"s": "250 ft AGL",
+"r": "B",
+"call": false,
+"quote": "In approach with FINAL APP, V/S or FPA mode 250 ft AGL",
+"ref": "LIM-AFS-10-10-00020141.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AP minimum height: approach with F-G/S",
+"s": "200 ft AGL · FCOM line not on the Rev 13 card",
+"r": "B",
+"call": false,
+"quote": "In approach with F-G/S mode 200 ft AGL",
+"ref": "LIM-AFS-10-10-00020141.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AP minimum height: ILS when CAT 2 or CAT 3 not displayed",
+"s": "160 ft AGL",
+"r": "B",
+"call": false,
+"quote": "ILS approach when CAT1 is displayed on the FMA 160 ft AGL",
+"ref": "LIM-AFS-10-10-00020143.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AP minimum height: go-around",
+"s": "100 ft AGL",
+"r": "B",
+"call": false,
+"quote": "After a manual go-around 100 ft AGL",
+"ref": "LIM-AFS-10-10-00020144.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "AP minimum height: all other phases",
+"s": "500 ft AGL",
+"r": "B",
+"call": false,
+"quote": "In all other phases 500 ft AGL",
+"ref": "LIM-AFS-10-10-00020145.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max autoland headwind",
+"s": "35 kt",
+"r": "B",
+"call": false,
+"quote": "Headwind: 35 kt",
+"ref": "LIM-AFS-20-00020178.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max autoland tailwind",
+"s": "10 kt",
+"r": "B",
+"call": false,
+"quote": "Tailwind : 10 kt",
+"ref": "LIM-AFS-20-00020178.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max autoland crosswind",
+"s": "15 kt",
+"r": "B",
+"call": false,
+"quote": "Crosswind: 15 kt Note: HAL Ops Specs C060 limits the crosswind component to 15 kt.",
+"ref": "LIM-AFS-20-00020178.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Autoland configuration",
+"s": "CONF 3 or CONF FULL",
+"r": "B",
+"call": false,
+"quote": "ILS CAT II and CAT III autoland and GLS CAT I autoland are approved in CONF 3 and CONF FULL.",
+"ref": "LIM-AFS-20-10-00020146.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Autoland demonstrated envelope",
+"s": "glideslope -2.5° to -3.25° · airfield below 9 200 ft · weight above 256k lb · FCOM lines not on the Rev 13 card",
+"r": "B",
+"call": false,
+"quote": "- With a glide slope angle between -2.5 ° and -3.25 °",
+"ref": "LIM-AFS-20-10-00020148.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-AFS",
+"appr": "all"
+},
+{
+"h": "FUEL",
+"c": "#b8860b",
+"items": [
+{
+"k": "box",
+"t": "Max fuel imbalance, outer tanks (inner balanced)",
+"s": "3k lb at full",
+"r": "B",
+"call": false,
+"quote": "INNER TANKS (OUTER BALANCED) OUTER TANKS (INNER BALANCED) Tank Fuel Quantity Tank Fuel Quantity Maximum Asymmetry Maximum Asymmetry (Heavier Tank) (Heavier Tank) 2 900 kg 1 480 kg Full Full (6 393 lb) (3 261 lb) 17 000 kg 4 800 kg 2 400 kg 1 580 kg (37 478 lb) (10 582 lb) (5 290 lb) (3 482 lb) 7 500 kg 7 500 kg 1 730 kg 1 730 kg (16 534 lb) (16 534 lb) (3 812 lb) (3 812 lb)",
+"ref": "LIM-FUEL-00019833.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max fuel imbalance, inner tanks (outer balanced)",
+"s": "6k lb at full · FCOM: rises to 11k lb at 37k lb per tank; the Rev 13 card listed only the outer figure",
+"r": "B",
+"call": false,
+"quote": "INNER TANKS (OUTER BALANCED) OUTER TANKS (INNER BALANCED) Tank Fuel Quantity Tank Fuel Quantity Maximum Asymmetry Maximum Asymmetry (Heavier Tank) (Heavier Tank) 2 900 kg 1 480 kg Full Full (6 393 lb) (3 261 lb) 17 000 kg 4 800 kg 2 400 kg 1 580 kg (37 478 lb) (10 582 lb) (5 290 lb) (3 482 lb) 7 500 kg 7 500 kg 1 730 kg 1 730 kg (16 534 lb) (16 534 lb) (3 812 lb) (3 812 lb)",
+"ref": "LIM-FUEL-00019833.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max fuel temperature, JET A / A1",
+"s": "+55 °C",
+"r": "B",
+"call": false,
+"quote": "Maximum fuel temperature : JET A, JET A1, JP5, JP8, N°3 JET, RT, and TS-1: +55 °C",
+"ref": "LIM-FUEL-00019837.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Min fuel temperature, inner tank",
+"s": "-44 °C below 30 000 ft · -54 °C above",
+"r": "B",
+"call": false,
+"quote": "Minimum fuel temperature : The highest of freezing point or -44 °C below 30 000 ft or -54 °C above 30 000 ft, in inner tank. Freezing point in outer or trim tank.",
+"ref": "LIM-FUEL-00019837.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Min fuel quantity for takeoff",
+"s": "11k lb",
+"r": "B",
+"call": false,
+"quote": "Minimum fuel quantity for takeoff...........................................................................5 200 kg (11 461 lb) The ECAM alerts that are related to fuel low level in the wing tanks (FUEL WING TK LO LVL, etc.) must not appear for takeoff.",
+"ref": "LIM-FUEL-00019840.0003001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-FUEL",
+"appr": "all"
+},
+{
+"h": "LANDING GEAR · IRS · OXYGEN",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "Max brake temperature for takeoff",
+"s": "300 °C",
+"r": "B",
+"call": false,
+"quote": "Maximum brake temperature for takeoff (brake fans off).....................................................300 °C",
+"ref": "LIM-LG-00020192.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Nosewheel steering angle",
+"s": "72°",
+"r": "B",
+"call": false,
+"quote": "The steering handwheels control the nosewheel steering angle up to ±72 ° in either direction.",
+"ref": "DSC-32-50 (system description)",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Braked pivot turns (one main gear fully stopped)",
+"s": "not allowed",
+"r": "B",
+"call": false,
+"quote": "Braked pivot turn is prohibited (ie. differential braking cannot be used to fully stop one main gear).",
+"ref": "LIM-LG-10-00020206.0002001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max taxi speed, one tire deflated per gear",
+"s": "7 kt",
+"r": "B",
+"call": false,
+"quote": "To vacate the runway or taxi at low speed with tire(s) deflated (not damaged), all of the following limitations apply: ‐ If maximum one tire per gear is deflated (consider three gears) Maximum taxi speed during turn.................................................................................................. 7 kt",
+"ref": "LIM-LG-00020194.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max taxi speed, two tires deflated on one gear",
+"s": "3 kt",
+"r": "B",
+"call": false,
+"quote": "‐ If two tires are deflated on the same main gear (maximum one main gear) Maximum taxi speed.....................................................................................................................3 kt",
+"ref": "LIM-LG-00020194.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "IRS navigation without GPS (RNP-10)",
+"s": "6.2 h from alignment",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Min oxygen pressure, 2 crew + 2 observers at 50 °C",
+"s": "1 000 psi · 2 crew alone: 520 to 640 psi over -10 to 50 °C",
+"r": "B",
+"call": false,
+"quote": "2 Crewmembers + 2 OBS 810 850 880 910 940 970 1 000",
+"ref": "LIM-OXY-00020209.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-LG · LIM-NAV · LIM-OXY",
+"appr": "all"
+},
+{
+"h": "APU",
+"c": "#1864ab",
+"items": [
+{
+"k": "box",
+"t": "LOW OIL LEVEL advisory",
+"s": "may start and operate for 15 h",
+"r": "B",
+"call": false,
+"quote": "The APU may be started and operated for 15 h, if there is no",
+"ref": "FCOM APU LOW OIL LEVEL",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Starter: after 3 consecutive start attempts",
+"s": "wait 60 min",
+"r": "B",
+"call": false,
+"quote": "APU START After three consecutive APU start attempts, the flight crew must wait 60 min before a new start attempt.",
+"ref": "LIM-APU-10-00020218.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude for battery-only start (in flight)",
+"s": "25 000 ft",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude, one pack bleed and electrics",
+"s": "22 500 ft",
+"r": "B",
+"call": false,
+"quote": "Max altitude for air conditioning and pressurization (single pack operation)........................ 22 500 ft",
+"ref": "LIM-APU-20-00021592.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude, bleed for engine start",
+"s": "20 000 ft",
+"r": "B",
+"call": false,
+"quote": "APU BLEED Max altitude to assist engine start....................................................................................... 20 000 ft",
+"ref": "LIM-APU-20-00021592.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max altitude, two pack bleed and electrics",
+"s": "17 500 ft",
+"r": "B",
+"call": false,
+"quote": "Max altitude for air conditioning and pressurization (dual pack operation)...........................17 500 ft",
+"ref": "LIM-APU-20-00021592.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Bleed for wing anti-ice",
+"s": "not permitted",
+"r": "B",
+"call": false,
+"quote": "Use of APU bleed air for wing anti-ice is not permitted.",
+"ref": "LIM-APU-20-00021592.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-APU",
+"appr": "all"
+},
+{
+"h": "POWER PLANT",
+"c": "#0a8fb0",
+"items": [
+{
+"k": "box",
+"t": "EGT takeoff and go-around",
+"s": "920 °C for 20 s · 900 °C for 5 min (10 min with an engine failure)",
+"r": "B",
+"call": false,
+"quote": "Operating Conditions Time Limit EGT Limit 20 s 920 °C All engines operative Takeoff(1) and Go-around 5 min 900 °C One engine inoperative 10 min Maximum Continuous Thrust (MCT) Not limited 850 °C On ground 700 °C Starting In flight 850 °C (1) Includes TOGA, FLEX, and DERATE thrust modes.",
+"ref": "LIM-ENG-00020225.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EGT MCT",
+"s": "850 °C",
+"r": "B",
+"call": false,
+"quote": "Maximum Continuous Thrust (MCT) Not limited 850 °C",
+"ref": "LIM-ENG-00020225.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EGT starting, ground",
+"s": "700 °C",
+"r": "B",
+"call": false,
+"quote": "On ground 700 °C Starting",
+"ref": "LIM-ENG-00020225.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "EGT starting, in flight",
+"s": "850 °C",
+"r": "B",
+"call": false,
+"quote": "In flight 850 °C",
+"ref": "LIM-ENG-00020225.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Min oil quantity",
+"s": "15 qt, or 6 qt + estimated consumption (highest of)",
+"r": "B",
+"call": false,
+"quote": "OIL QUANTITY The minimum oil quantity is the highest value of: ‐ 15 qt, or ‐ 6 qt + estimated consumption. Average estimated consumption = 0.7 qt/h.",
+"ref": "LIM-ENG-00020226.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Starter max continuous operation",
+"s": "5 min",
+"r": "B",
+"call": false,
+"quote": "‐ Starter maximum continuous operation is 5 min .",
+"ref": "LIM-ENG-00001866.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Starter cooling after 5 min continuous or three cycles",
+"s": "30 min",
+"r": "B",
+"call": false,
+"quote": "‐ After one continuous operation, or the three cycles wait 30 min to allow the starter to cool.",
+"ref": "LIM-ENG-00001866.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "No running starter engagement above",
+"s": "10 % N3 ground · 30 % N3 in flight",
+"r": "B",
+"call": false,
+"quote": "‐ No running engagement of the starter when the N3 is above 10 % on ground, or 30 % in flight.",
+"ref": "LIM-ENG-00001866.0004001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Reverse selection in flight",
+"s": "prohibited",
+"r": "B",
+"call": false,
+"quote": "Selection of the reverse thrust is prohibited in flight.",
+"ref": "LIM-ENG-00020229.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Backing the aircraft with reverse",
+"s": "prohibited",
+"r": "B",
+"call": false,
+"quote": "Backing the aircraft with reverse thrust is not permitted.",
+"ref": "LIM-ENG-00020229.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "Max reverse below 70 kt",
+"s": "should not be used",
+"r": "B",
+"call": false,
+"quote": "Maximum reverse should not be used below 70 kt. Idle reverse is permitted down to aircraft stop.",
+"ref": "LIM-ENG-00020229.0001001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLEX max temperature",
+"s": "ISA + 60 °C",
+"r": "B",
+"call": false,
+"quote": "TFLEX cannot be: ‐ Higher than TMAXFLEX, equal to ISA + 60 °C. ‐ Lower than the flat rating temperature (TREF). ‐ Lower than the actual OAT.",
+"ref": "LIM-ENG-10-00020230.0013001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLEX min temperature",
+"s": "flat rating temperature (TREF) or OAT",
+"r": "B",
+"call": false,
+"quote": "Lower than the flat rating temperature (TREF).",
+"ref": "FCOM PRO-NOR-SRP FLEX",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+},
+{
+"k": "box",
+"t": "FLEX on contaminated runways",
+"s": "not permitted",
+"r": "B",
+"call": false,
+"quote": "FLEX takeoff is not permitted on contaminated runways.",
+"ref": "LIM-ENG-10-00020230.0013001",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "manual",
+"provenance": "manual"
+}
+],
+"cite": "FCOM LIM-ENG",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+},
+{
+"id": "sim-notes",
+"label": "SIM Notes",
+"kind": "a",
+"title": "SIM NOTES (technique)",
+"src": "Ryan's sim notes · not manual text",
+"sections": [
+{
+"h": "V1 CUT",
+"c": "#b03a2e",
+"items": [
+{
+"k": "box",
+"t": "Call “ENGINE FAILURE”",
+"s": "stay on the runway: focus on the centerline, straighten, lock the rudders",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Rotate smooth, elbow and arm not wrist",
+"s": "rotate to 12.5° · wait for SRS guidance · count to 5, then slowly release pressure on the stick",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Positive rate, gear up",
+"s": "trim the rudder toward the good engine: count to 8 · control heading with bank, use rudder to center the beta target",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Autopilot ON",
+"s": "pull heading (“259 on LAS 26”) or RW track · fly the special EO procedure",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "“MAYDAY MAYDAY MAYDAY, Hawaiian 50, engine failure, turning right heading 010”",
+"s": "",
+"r": "PM",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "1 000 ft above field: MCDU engine-out acceleration altitude",
+"s": "clean up · at green dot PULL ALT · thrust lever back, then forward to MCT",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "ECAM sequence",
+"s": "ECAM actions · STATUS, “STOP ECAM” · OEBs · QRH summaries · computer resets · diamond checks · “CONTINUE ECAM” · remove status · “ECAM ACTIONS COMPLETE”",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Landing performance",
+"s": "get weather, decide where to go · the reference speed the sim asks for (V-REF) is the CONF FULL VLS number",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Declare the emergency",
+"s": "souls on board, fuel on board · talk to your five: ATC, FAs, company, PAX, other pilot · TEST: Type of situation, Evacuation likely, Signal to remain seated or evacuate, Time to landing",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Fly the single engine arrival and land",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "GO-AROUND",
+"c": "#E0A100",
+"items": [
+{
+"k": "box",
+"t": "“GO AROUND, FLAPS”",
+"s": "TOGA, pitch up · read the FMA slowly (huge power change) · positive rate, GEAR UP, set the missed approach altitude",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "400 ft: manage NAV or pull HDG",
+"s": "AP ON · 1 000 ft: push ALT · clean up · diamond checks · PULL SPEED 200, flaps 1 · exit the GA phase: activate the approach or change destination",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Bounced landing",
+"s": "“GO AROUND, FLAPS” (no bounce TOGA any more) · FCTM PR-NP-SOP-250: light bounce, keep the pitch and land with thrust idle · high bounce, keep the pitch and go around; retract flaps one step and the gear only when established · never pitch up to soften the second touchdown",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "HOLDING · SLOPE · APPROACH",
+"c": "#b8860b",
+"items": [
+{
+"k": "box",
+"t": "Hold speeds, international (works domestic too)",
+"s": "below 6 000 ft: 200 kt · 6 000 to 14 000 ft: 220 kt · above 14 000 ft: 240 kt · FOM 5.5.15 (US): maximums 200 / 230 (210 where charted) / 265 KIAS; your 220 and 240 sit inside them",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Runway slope",
+"s": "(difference between end elevations / runway length) x 100",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Cleared for the approach: set the FAF altitude immediately",
+"s": "",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "NPA LOC FPA",
+"s": "cleared: set the FAF altitude and descend in the safe area · do not set the MDA in the window · V/S -700 if needed, FPA -3.0 to get down",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Specials",
+"s": "simple special: a turn below 1 000 ft (hard tune the VOR if it is based on it, or the DME drops out at 1 000 ft) · complex special: cannot be printed on the TLR, see the HAL Jepp supplement (example PDX)",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "GLIDE INTERCEPTION FROM ABOVE",
+"c": "#0a6c8f",
+"items": [
+{
+"k": "box",
+"t": "LOC ... CHECK ENGAGED",
+"s": "slow down: flaps 1, then 2 · APPR mode: arm when finally cleared · FCU altitude: spin to above the current altitude · V/S mode: 1 500 to 2 000 fpm down · gear down, flaps 3, then FULL · capture the G/S · never select -2 000 at or below 2 000 ft; then the max is -1 500 · FCTM PR-NP-SOP-190: only when established on the LOC · gear down and at least CONF 2 before · APPR pb, confirm G/S armed and LOC engaged · FCU altitude above the aircraft · V/S 1 500 initially, above 2 000 the speed runs toward VFE · go-around altitude set at G/S*",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "TCAS · STALL",
+"c": "#7a3b8f",
+"items": [
+{
+"k": "box",
+"t": "“TCAS, I have control”",
+"s": "TA/RA: “Hawaiian 50, TCAS RA” · AP and FD OFF, follow the commands · “Hawaiian 50, clear of conflict”",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "“STALL, I have control”",
+"s": "lower the nose to the horizon: 5° below 10 000 ft, 10° higher · roll wings level · check the speed brake retracted · increase thrust smoothly · below FL 200: flaps 1 · help with trim if deep in the stall, to 5 · stall on takeoff: “STALL, TOGA, 15 DEGREES” · FCOM PRO-ABN-MISC: the memory item is NOSE DOWN PITCH CONTROL ... APPLY with no target attitude; the 5° / 10° figures are your technique",
+"r": "PF",
+"call": true,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+},
+{
+"h": "FUEL JETTISON · EMERGENCIES · ECAM",
+"c": "#5f3dc4",
+"items": [
+{
+"k": "box",
+"t": "Fuel jettison",
+"s": "can we land overweight on the available runway? · permission and start/stop times to ATC · consider a hold with legs longer than 10 NM · stay away from thunderstorms · descend in the hold if forced to short legs · follow the QRH checklist · climb above 5 000 ft · QRH 19.02A: FMS FUEL PRED page SELECT · JETGW FINAL GW ENTER · T TANK MODE CHECK AUTO · JETTISON ARM ON · JETTISON ACTIVE ON · when complete ACTIVE OFF, ARM OFF",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Emergencies, in order",
+"s": "OEBs first · run the memory items · after ECAM actions: computer resets and checklists · QRH summaries, then FCOM Vol 3 for anything else pertinent",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "Slats or flaps jammed",
+"s": "PULL SPEED",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+},
+{
+"k": "box",
+"t": "ECAM (Standard Callouts 3.03.90)",
+"s": "ECAM title · SOS · OEBs, memory items · “I have control, ECAM actions” · complete the ECAM top portion · “X procedure, APPLY” (do it now when on ECAM) · STATUS, “STOP ECAM” · QRH, computer resets, FCOM 3 · situational assessment, decision making · do not fly too far from a good airport, slow down · “CONTINUE ECAM” · read STATUS · “X procedure, APPLY”: landing distance, flap setting, noted and done in prep for landing · “ECAM ACTIONS COMPLETE”",
+"r": "B",
+"call": false,
+"quote": "",
+"ref": "",
+"ext": "FCOM",
+"fleet": "pax",
+"src": "technique",
+"provenance": "technique"
+}
+],
+"cite": "sim notes",
+"appr": "all"
+}
+],
+"fleet": "pax",
+"provenance": "manual"
+}
+],
+"checklists": {
+"Cockpit Preparation": {
+"items": [
+[
+"FUEL QUANTITY",
+"______ BALANCED",
+"PF"
+],
+[
+"SEAT BELTS",
+"ON",
+"PF"
+],
+[
+"BARO REF",
+"______",
+"B"
+],
+[
+"OXY MASKS",
+"TESTED/100%",
+"B"
+],
+[
+"LOGBOOK",
+"ONBOARD",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 COCKPIT PREPARATION card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024935.0001001",
+"ref": "FCTM PR-NP-CL-00024935.0001001",
+"quote": "",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Before Start": {
+"items": [
+[
+"PARKING BRAKE",
+"______",
+"PF"
+],
+[
+"T.O SPEEDS & THRUST",
+"______",
+"B"
+],
+[
+"PITOT COVERS",
+"REMOVED",
+"PF"
+],
+[
+"WINDOWS",
+"CLOSED",
+"B"
+],
+[
+"NW/S MEMO",
+"______",
+"PF"
+],
+[
+"BEACON",
+"ON",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 BEFORE START card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024936.0001001",
+"ref": "FCTM PR-NP-CL-00024936.0001001",
+"quote": "Checklist trigger: - Pushback clearance or start clearance received, and - Before Start flow pattern completed.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"After Start": {
+"items": [
+[
+"SALUTE",
+"RECEIVED",
+"PF"
+],
+[
+"ANTI ICE",
+"______",
+"PF"
+],
+[
+"ECAM STATUS",
+"CHECKED",
+"PF"
+],
+[
+"PITCH TRIM",
+"______%",
+"PF"
+],
+[
+"RUDDER TRIM",
+"NEUTRAL",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 AFTER START card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024937.0001001",
+"ref": "FCTM PR-NP-CL-00024937.0001001",
+"quote": "Checklist trigger: On hand signal (salute) from the ground personnel.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Taxi": {
+"items": [
+[
+"FLIGHT CONTROLS",
+"CHECKED",
+"B"
+],
+[
+"FLAPS SETTING",
+"CONF______",
+"B"
+],
+[
+"RADAR & PRED W/S",
+"ON & AUTO",
+"PF"
+],
+[
+"ENG START SEL",
+"______",
+"PF"
+],
+[
+"ECAM MEMO",
+"T.O NO BLUE",
+"PF"
+],
+[
+"CABIN",
+"NA/ADVISED",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 TAXI card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024938.0005001",
+"ref": "FCTM PR-NP-CL-00024938.0005001",
+"quote": "Checklist trigger: - T.O. CONFIG pb pressed, and - Takeoff Advisory PA complete (if applicable).",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Line-Up": {
+"items": [
+[
+"T.O RWY",
+"______",
+"B"
+],
+[
+"TCAS",
+"______",
+"PF"
+],
+[
+"PACKS 1 & 2",
+"______",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 LINE-UP card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024939.0001001",
+"ref": "FCTM PR-NP-CL-00024939.0001001",
+"quote": "Checklist trigger: - Line-up clearance received - Line-Up flow pattern completed.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Departure Change": {
+"items": [
+[
+"RWY & SID",
+"______",
+"PF"
+],
+[
+"FLAP SETTING",
+"CONF______",
+"B"
+],
+[
+"T.O SPEEDS & THRUST",
+"______",
+"B"
+],
+[
+"FCU ALT",
+"______",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 << DEPARTURE CHANGE >> card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024940.0001001",
+"ref": "FCTM PR-NP-CL-00024940.0001001",
+"quote": "Checklist trigger: Revised departure briefing completed.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Approach": {
+"items": [
+[
+"BARO REF",
+"______",
+"B"
+],
+[
+"SEAT BELTS",
+"ON",
+"PF"
+],
+[
+"MINIMUM",
+"______",
+"PF"
+],
+[
+"AUTO BRAKE",
+"______",
+"PF"
+],
+[
+"ENG START SEL",
+"______",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 APPROACH card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024941.0001001",
+"ref": "FCTM PR-NP-CL-00024941.0001001",
+"quote": "Checklist trigger: - Below 10 000 ft AAL and barometric reference set, or - After the approach briefing is completed, for the case when not leaving the terminal area or climbing above 10 000 ft AAL (Case of an Air Turn Back or Traffic Pattern or Go Around)",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Landing": {
+"items": [
+[
+"ECAM MEMO",
+"LDG NO BLUE",
+"PF"
+],
+[
+"- LDG GEAR",
+"DN",
+"PF"
+],
+[
+"- SEAT BELTS",
+"ON",
+"PF"
+],
+[
+"- SPLRS",
+"ARM",
+"PF"
+],
+[
+"- FLAPS",
+"LDG",
+"PF"
+],
+[
+"CABIN",
+"NA/ADVISED",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 LANDING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024942.0002001",
+"ref": "FCTM PR-NP-CL-00024942.0002001",
+"quote": "Checklist trigger: LDG CONF set.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"After Landing": {
+"items": [
+[
+"RADAR & PRED W/S",
+"OFF",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 AFTER LANDING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024943.0002001",
+"ref": "FCTM PR-NP-CL-00024943.0002001",
+"quote": "Checklist trigger: After Landing Flow pattern completed.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Parking": {
+"items": [
+[
+"PARKING BRAKE or CHOCKS",
+"______SET",
+"PF"
+],
+[
+"ENGINES",
+"OFF",
+"PF"
+],
+[
+"WING LIGHTS",
+"OFF",
+"PF"
+],
+[
+"FUEL PUMPS",
+"OFF",
+"PF"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 PARKING card; roles per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024944.0001001",
+"ref": "FCTM PR-NP-CL-00024944.0001001",
+"quote": "Checklist trigger: After Parking flow pattern completed.",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+},
+"Securing the Aircraft": {
+"items": [
+[
+"REFER TO FCOM - SECURING THE AIRCRAFT",
+"[PRO-NOR-SUP]",
+"PM"
+]
+],
+"src_card": "A330P_NPC-CB 2025-08-13 SECURING THE AIRCRAFT card; performed by PM per FCTM PR-NP-CL-00019512.0001001 and PR-NP-CL-00024945.0001001",
+"ref": "FCTM PR-NP-CL-00024945.0001001",
+"quote": "",
+"ext": "FCTM",
+"fleet": "pax",
+"src": "manual"
+}
+},
+"quotes": {},
+"notes": [
+{
+"k": "ol",
+"h": "CHECKLISTS IN ORDER",
+"ec": "#01426A",
+"items": [
+"Cockpit Preparation",
+"Before Start",
+"After Start",
+"Taxi",
+"Line-Up",
+"(Departure Change)",
+"Approach",
+"Landing",
+"After Landing",
+"Parking",
+"Securing the Aircraft"
+],
+"ref": "FCTM PR-NP-CL",
+"ext": "FCTM",
+"quote": "NORMAL CHECKLISTS",
+"fleet": "pax",
+"src": "manual"
+},
+{
+"k": "c",
+"h": "CHECKLIST TRIGGERS",
+"ec": "#5A4AB7",
+"items": [
+"<b>Cockpit Preparation</b>: Departure Briefing complete",
+"<b>Before Start</b>: push/start clearance and flow complete",
+"<b>After Start</b>: salute received",
+"<b>Taxi</b>: T.O CONFIG pb pressed, Takeoff Advisory PA complete",
+"<b>Line-Up</b>: line-up clearance and flow complete",
+"<b>Approach</b>: below 10 000 ft AAL and baro ref set",
+"<b>Landing</b>: LDG CONF set",
+"<b>After Landing</b>: flow complete",
+"<b>Parking</b>: flow complete"
+],
+"ref": "FCTM PR-NP-CL",
+"ext": "FCTM",
+"quote": "Checklist trigger: LDG CONF set.",
+"fleet": "pax",
+"src": "manual"
+},
+{
+"k": "c",
+"h": "EXTERIOR LIGHTS (PF, or PM at PF request)",
+"ec": "#0a8fb0",
+"items": [
+"<b>Cockpit Prep</b>: Strobes AUTO, Nav 1, all others OFF",
+"<b>Before Push</b>: Beacon ON",
+"<b>Taxi</b>: Nose TAXI, Rwy Turnoff ON",
+"<b>Crossing a runway</b>: Strobes ON, Land ON",
+"<b>Line up and wait</b>: Strobes ON",
+"<b>Cleared for takeoff</b>: Nose T.O, Land ON",
+"<b>After takeoff (PM)</b>: Nose OFF, Rwy Turnoff OFF",
+"<b>Climbing 10 000 ft (PM)</b>: Land OFF",
+"<b>Descending 10 000 ft (PM)</b>: Land ON",
+"<b>Cleared for approach (PM)</b>: Nose TAXI, Rwy Turnoff ON",
+"<b>Cleared to land (PM)</b>: Nose T.O",
+"<b>After landing</b>: Land OFF, Strobes AUTO, Nose TAXI",
+"<b>Parking</b>: all OFF except Nav 1"
+],
+"ref": "FCOM PRO-NOR-SOP-21-A-00011013.0001001 · quickref",
+"ext": "FCOM PRO-NOR",
+"quote": "When leaving the runway: LAND LIGHT sw ... OFF PF WING sw ... OFF PF STROBE sw ... AUTO PF NOSE sw ... TAXI PF",
+"fleet": "pax",
+"src": "technique"
+},
+{
+"k": "c",
+"h": "CABIN PAs (PM)",
+"ec": "#c05621",
+"items": [
+"Takeoff, no less than 2 min prior: <b>“[FLIGHT ATTENDANTS SHOULD NOW] BE SEATED FOR TAKEOFF”</b>",
+"No later than 18 000 ft: <b>“[Flight Attendants], please prepare the cabin for arrival and be seated for landing.”</b>",
+"Seat belt sign OFF first time after takeoff: Seat Belt Advisory PA (FOM)"
+],
+"ref": "FCOM PRO-NOR-SOP-10 / SOP-17",
+"ext": "FCOM PRO-NOR",
+"quote": "\"[Flight Attendants], please prepare the cabin for arrival and be seated for landing.\"",
+"fleet": "pax",
+"src": "manual"
+}
+]
 }
