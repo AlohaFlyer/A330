@@ -1045,12 +1045,12 @@
      "d": "[FCOM PRO-NOR-SOP-07-B-00017116.0001001 · ACCU PRESSURE:]\n• ACCU PRESS indicator...... CHECK PF\nThe ACCU PRESS indication must be in the green band. If required, use the electric pump on blue hydraulic system to recharge the brake accumulator.\nWARNING The blue electric pump pressurizes the blue hydraulic system. Get ground crew clearance before using the electric pump."
     },
     {
-     "item": "PARK BRK handle",
+     "item": "PARK BRK handle (pushback required)",
      "act": "ON",
      "role": "PF",
      "x": 122.2,
      "y": 394.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011062.0001001:]\n• PARK BRK handle......ON PF\n[FCOM PRO-NOR-SOP-07-B-00011066.0002001 · PARKING BRAKE AND NOSEWHEEL STEERING (if pushback is not required):]\n• PARK BRK handle ...... ON PF\nWhen one brake temperature is above 300 °C , avoid applying the parking brake, unless operationally necessary.\n• BRAKES PRESS indicator...... CHECK PF\nCheck for normal indications.\n• BEFORE START C/L...... COMPLETE BOTH"
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011062.0001001 · PARKING BRAKE AND NOSEWHEEL STEERING (if pushback is required):]\n• PARK BRK handle......ON PF\n[FCOM PRO-NOR-SOP-07-B-00011066.0002001 · PARKING BRAKE AND NOSEWHEEL STEERING (if pushback is not required):]\n• PARK BRK handle ...... ON PF\nWhen one brake temperature is above 300 °C , avoid applying the parking brake, unless operationally necessary.\n• BRAKES PRESS indicator...... CHECK PF\nCheck for normal indications.\n• BEFORE START C/L...... COMPLETE BOTH"
     },
     {
      "item": "N/WS DISC MEMO",
@@ -1076,7 +1076,7 @@
      "role": "PF",
      "x": 122.2,
      "y": 394.3,
-     "d": "[FCOM PRO-NOR-SOP-07-B-00011062.0001001:]\n• PARK BRK handle......ON PF"
+     "d": "[FCOM PRO-NOR-SOP-07-B-00011062.0001001 · PARKING BRAKE AND NOSEWHEEL STEERING (when pushback is completed):]\n• PARK BRK handle......ON PF"
     },
     {
      "item": "BRAKE PRESS indicator",
