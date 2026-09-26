@@ -52,13 +52,13 @@ def main():
         fails.append(f'Boeing/B787 vocabulary in data: {m.group(0)!r} at offset {m.start()}')
     cls = data['checklists']
     for ph in data['phases']:
-        if ph.get('fleet') not in ('pax', 'both') or ph.get('provenance') not in ('manual', 'sop', 'technique'):
+        if ph.get('fleet') not in ('pax', 'both', 'frtr') or ph.get('provenance') not in ('manual', 'sop', 'technique'):
             fails.append(f"{ph['id']}: phase missing fleet/provenance (phase.src is the engine's display string)")
         for sec in ph['sections']:
             for it in sec['items']:
                 if it['k'] in ('box', 'fmc'):
                     steps += 1
-                    if it.get('fleet') not in ('pax', 'both') or it.get('src') not in ('manual', 'sop', 'technique'):
+                    if it.get('fleet') not in ('pax', 'both', 'frtr') or it.get('src') not in ('manual', 'sop', 'technique'):
                         fails.append(f"{ph['id']} | {it['t'][:40]}: step missing fleet/src")
                 if it['k'] == 'cl' and it['t'] not in cls:
                     fails.append(f"{ph['id']}: checklist {it['t']!r} not in checklists map")

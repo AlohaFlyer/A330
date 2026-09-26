@@ -46,6 +46,9 @@ padding:8px 17px;border-radius:6px;cursor:pointer;letter-spacing:.3px;}
 .toggle.seat button.on{background:#fff;color:#463C8F;}
 .toggle.duty button{color:#9fe0cd;}
 .toggle.duty button.on{background:#37d9a8;color:#053b2c;}
+.toggle.fleet{background:rgba(60,20,70,.45);}
+.toggle.fleet button{color:#f0c6ff;}
+.toggle.fleet button.on{background:#d38cf0;color:#2b0a3a;}
 .themebtn{background:rgba(255,255,255,.14);border:0;color:#fff;font-size:17px;width:40px;height:40px;
 border-radius:8px;cursor:pointer;}
 .filt{width:auto;min-width:56px;padding:0 12px;font-size:12.5px;font-weight:800;letter-spacing:.4px;height:40px;}
@@ -277,6 +280,10 @@ ol.cl-order li:last-child{border-bottom:none;}
       <button data-d="PF" class="on">PF</button>
       <button data-d="PM">PM</button>
     </div>
+    <div class="toggle fleet" id="fleet" title="Passenger or freighter items">
+      <button data-f="PAX" class="on">PAX</button>
+      <button data-f="FRT">FRT</button>
+    </div>
     <div class="apprwrap" id="apprwrap" style="display:none">
       <div class="toggle appr" id="appr">
         <button data-a="ILS" class="on">ILS</button>
@@ -326,7 +333,8 @@ const S=(h,c,items,cite,appr)=>({h,c,items,cite:cite||'',appr:appr||'all'});
 
 /* phase records, checklists, quotes and NOTES live in data/phase_flows.json and are rebuilt
    here through the builders above; nothing else in this script changes (see build_scripts/page_phase_flows.py) */
-const __mk=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref.replace(/-C?\d{7,8}\.\d{7}/,'')+']':''):'';
+const __mk=it=>{ const o=__mk0(it); if(it.fleet==='frtr')o.frt=true; return o; };
+const __mk0=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref.replace(/-C?\d{7,8}\.\d{7}/,'')+']':''):'';
   switch(it.k){
     case 'box': return box(it.t,it.s,it.r,it.call,q);
     case 'fmc': return fmc(it.t,it.s,it.r,q);
@@ -346,7 +354,7 @@ const NOTES=PHASE_FLOWS.notes||[];
 
 
 const CHECKLISTS=Object.fromEntries(Object.entries(PHASE_FLOWS.checklists).map(([k,v])=>[k,v.items]));
-let state={phase:'preflight',seat:'F',duty:'PM',appr:'ILS',cat:1,hideOther:false,notesOpen:false,fit:true};
+let state={phase:'preflight',seat:'F',duty:'PM',appr:'ILS',cat:1,fleet:'PAX',hideOther:false,notesOpen:false,fit:true};
 function roleMatch(r){
   if(!r||r==='B')return true;
   if(r==='C')return state.seat==='C';
@@ -401,7 +409,9 @@ function gateFor(ph){
   ph.sections.forEach(s=>{ if(apprVisible(s.appr)) s.items.forEach(it=>{ if(it.k==='cl') names.push(it.t+' Checklist'); }); });
   return [...new Set(names)];
 }
+const fleetOK=it=>!it.frt||state.fleet==='FRT';
 function secVisible(sec){
+  sec={items:sec.items.filter(fleetOK)};
   // role-carrying items of a section that match the current seat/duty (2026-09-21, MINE fix)
   const roled = sec.items.filter(it=>['box','fmc','trig','cl','book'].includes(it.k) && it.r);
   const steps = sec.items.filter(it=>['box','fmc','book'].includes(it.k) ? roleMatch(it.r) : it.k==='cl');
@@ -415,6 +425,7 @@ function secHead(sec){
   return h;
 }
 function sectionInner(sec,cite,ctx,pid){
+  sec=Object.assign({},sec,{items:sec.items.filter(fleetOK)});
   if(!sec.items.some(it=>it.k==='sub')) return sec.items.map(it=>renderItem(it,cite,ctx,pid)).join('');
   let out='',open=false;
   sec.items.forEach(it=>{
@@ -455,7 +466,7 @@ function render(){
   saveState();
   fitToScreen();
 }
-function saveState(){ try{localStorage.setItem('a330state',JSON.stringify({phase:state.phase,seat:state.seat,duty:state.duty,appr:state.appr,cat:state.cat,hideOther:state.hideOther}));}catch(e){} }
+function saveState(){ try{localStorage.setItem('a330state',JSON.stringify({phase:state.phase,seat:state.seat,duty:state.duty,appr:state.appr,cat:state.cat,fleet:state.fleet,hideOther:state.hideOther}));}catch(e){} }
 // Flowing N-column layout (CSS multicol): content flows column to column to fill white space,
 // breaking only BETWEEN steps (never mid-step). One consistent font for EVERY phase, sized so the
 // busiest page fits; sparse pages use the same font. Recomputed when geometry or the hide-other toggle changes.
@@ -638,6 +649,9 @@ document.querySelectorAll('#duty button').forEach(b=>b.addEventListener('click',
 document.querySelectorAll('#appr button').forEach(b=>b.addEventListener('click',()=>{
   state.appr=b.dataset.a; document.querySelectorAll('#appr button').forEach(x=>x.classList.toggle('on',x===b)); GFONT=0; render();
 }));
+document.querySelectorAll('#fleet button').forEach(b=>b.addEventListener('click',()=>{
+  state.fleet=b.dataset.f; document.querySelectorAll('#fleet button').forEach(x=>x.classList.toggle('on',x===b)); GFONT=0; render();
+}));
 document.querySelectorAll('#cat button').forEach(b=>b.addEventListener('click',()=>{
   state.cat=+b.dataset.c; document.querySelectorAll('#cat button').forEach(x=>x.classList.toggle('on',x===b)); GFONT=0; render();
 }));
@@ -676,7 +690,7 @@ setTheme(dk);
 // restore persisted phase + toggles
 try{const s=JSON.parse(localStorage.getItem('a330state')||'{}');
   if(s.phase&&PHASES.find(p=>p.id===s.phase))state.phase=s.phase;
-  if(s.seat)state.seat=s.seat; if(s.duty)state.duty=s.duty; if(s.appr)state.appr=s.appr; if(s.cat)state.cat=+s.cat;
+  if(s.seat)state.seat=s.seat; if(s.duty)state.duty=s.duty; if(s.appr)state.appr=s.appr; if(s.cat)state.cat=+s.cat; if(s.fleet)state.fleet=s.fleet;
   if(typeof s.hideOther==='boolean')state.hideOther=s.hideOther;
 }catch(e){}
 function syncToggles(){
@@ -684,6 +698,7 @@ function syncToggles(){
   document.querySelectorAll('#duty button').forEach(x=>x.classList.toggle('on',x.dataset.d===state.duty));
   document.querySelectorAll('#appr button').forEach(x=>x.classList.toggle('on',x.dataset.a===state.appr));
   document.querySelectorAll('#cat button').forEach(x=>x.classList.toggle('on',+x.dataset.c===state.cat));
+  document.querySelectorAll('#fleet button').forEach(x=>x.classList.toggle('on',x.dataset.f===state.fleet));
   setFilt();
 }
 syncToggles();

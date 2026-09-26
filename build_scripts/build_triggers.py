@@ -40,8 +40,12 @@ def clean_line(line):
     return re.sub(r'\s+', ' ', line).strip()
 
 
-def flow_from_phase(pid, title=None):
-    """Build the engine's flow object from a verified flows.json phase."""
+def flow_from_phase(pid, title=None, add=(), order=None, rename=None):
+    """Build the engine's flow object from a verified flows.json phase.
+
+    add/order/rename: FCOM PRO-NOR-TSK task-sharing items the QuickRef flows.json omits
+    (audit 2026-09-26, approved item by item). add = (after_label_prefix or None=end, label, roles).
+    """
     p = PHASES[pid]
     items = []
     for s in p['steps']:
@@ -59,6 +63,19 @@ def flow_from_phase(pid, title=None):
                 hit[1].append(role)
             continue
         items.append([label, [role]])
+    for old, new in (rename or {}).items():
+        for it in items:
+            if it[0] == old:
+                it[0] = new
+    for after, label, roles in add:
+        roles = roles if isinstance(roles, list) else [roles]
+        if after is None:
+            items.append([label, roles])
+            continue
+        i = next(k for k, it in enumerate(items) if it[0].startswith(after))
+        items.insert(i + 1, [label, roles])
+    if order:
+        items.sort(key=lambda it: next(k for k, o in enumerate(order) if it[0].startswith(o)))
     n = title or f"{p['title']} ({len(items)} items)"
     return {
         'n': n,
@@ -120,17 +137,20 @@ rec(PT,
     ref='FCTM PR-NP-CL (Before Start)', ident='PR-NP-CL-00024936.0001001',
     src='Checklist trigger: ‐ Pushback clearance or start clearance received, and ‐ Before Start flow pattern completed.',
     ext='FCTM', kind='sop',
-    flow=flow_from_phase('before-start'))
+    flow=flow_from_phase('before-start', add=[
+        ('Thrust Levers', 'Accu Press: ACCU PRESS indicator CHECK', 'PF')]))
 
 
 rec(PT,
     q='Engines started. What event starts the After Start flow?',
     a='PF sets the ENG START selector to NORM',
-    who='PF sets the selector and does the overhead (APU bleed, anti-ice, APU master). PM: ground spoilers, rudder trim, flaps, pitch trim.',
+    who='PF sets the selector and does the overhead (X BLEED, APU bleed, anti-ice, APU master), then the N/WS memo and thrust setting crosscheck. PM: ground spoilers, rudder trim, flaps, pitch trim.',
     ref='FCOM PRO-NOR-SOP-09-A', ident='PRO-NOR-SOP-09-A-00019960.0001001',
     src='The PF sets the ENG START selector to NORM to permit normal pack operation. At this time, the After Start flow pattern begins.',
     ext='FCOM', kind='manual',
-    flow=flow_from_phase('after-start'))
+    flow=flow_from_phase('after-start', add=[
+        ('Eng Start Sel', 'X-Bleed: X BLEED selector AS RQRD', 'PF'),
+        ('NWS DISC', 'Thrust Setting: THRUST SETTING CROSSCHECK', 'PF')]))
 
 rec(PT,
     q='What triggers the After Start Checklist?',
@@ -168,10 +188,13 @@ rec(PT,
 rec(PT,
     q='Line-up clearance received. What does it trigger?',
     a='Line-Up flow, then Line-Up Checklist',
-    who='PM obtains the clearance and sets TCAS and packs. TAKEOFF RUNWAY confirm and approach path clear are both pilots. Strobes ON is PF.',
+    who='PM obtains the clearance and sets TCAS and packs. TAKEOFF RUNWAY confirm, approach path clear, FMA check and sliding table stow are both pilots. Strobes ON is PF.',
     ref='FCTM PR-NP-CL (Line-Up)', ident='PR-NP-CL-00024939.0001001',
     src='Checklist trigger: ‐ Line-up clearance received ‐ Line-Up flow pattern completed.', ext='FCTM', kind='sop',
-    flow=flow_from_phase('line-up'))
+    flow=flow_from_phase('line-up', add=[
+        (None, 'FMA: FMA CHECK', ['PF', 'PM']),
+        (None, 'Sliding Table: SLIDING TABLE STOW', ['PF', 'PM'])],
+        order=['TCAS', 'T/O Rwy', 'Approach Path', 'Strobes', 'Packs', 'FMA', 'Sliding']))
 
 rec(PT,
     q='Takeoff clearance received. The two light switches?',
@@ -194,10 +217,12 @@ rec(PT,
 rec(PT,
     q='Climbing through 10,000 ft MSL. Who selects which EFIS option?',
     a='PF selects CSTR, PM selects ARPT',
-    who='PM does the rest: LAND OFF, NO SMOKING cycle (ON, wait 3 s, AUTO), ECAM memo review, NAVAIDS clear, SEC F-PLN, OPT/REC MAX FL check.',
+    who='PM does the rest: LAND OFF, WING OFF, NO SMOKING cycle (ON, wait 3 s, AUTO), ECAM memo review, NAVAIDS clear, SEC F-PLN, OPT/REC MAX FL check.',
     ref='FCOM PRO-NOR-SOP-14-A', ident='PRO-NOR-SOP-14-A-00019949.0001001',
     src='EFIS Option: The PF will select CSTR The PM will select ARPT', ext='FCOM', kind='manual',
-    flow=flow_from_phase('climb-10000'))
+    flow=flow_from_phase('climb-10000',
+        rename={'LAND Lt OFF, WING Lt OFF: LAND sw OFF': 'LAND Lt OFF: LAND sw OFF'},
+        add=[('LAND Lt OFF', 'WING Lt OFF: WING sw OFF', 'PM')]))
 
 rec(PT,
     q='Cabin preparation PA: who, when, and the words?',
@@ -248,11 +273,12 @@ rec(PT,
 rec(PT,
     q='Runway vacated. First action, and what does it trigger?',
     a='PF disarms GND SPLRS. That starts the After Landing flow, then the After Landing Checklist.',
-    who='PF: ground spoilers, LAND OFF, WING OFF, STROBE AUTO, NOSE TAXI. PM: radar OFF, ENG START NORM, flaps retract, TCAS STBY, ATC, APU, anti-ice, brake temps.',
+    who='PF: ground spoilers, LAND OFF, WING OFF, STROBE AUTO, NOSE TAXI. PM: radar OFF, ENG START NORM, flaps retract, TCAS STBY, ATC, APU, anti-ice, brake temperature monitor.',
     tech='QuickRef technique: Flow Trigger is PF disarms Gnd Splrs.',
     ref='FCOM PRO-NOR-SOP-21-A', ident='PRO-NOR-SOP-21-A-00011014.0001001',
     src='GND SPLRS..............................................................................................DISARM PF', ext='FCOM', kind='manual',
-    flow=flow_from_phase('after-landing'))
+    flow=flow_from_phase('after-landing', add=[
+        (None, 'Brake Temp: BRAKE TEMPERATURE MONITOR', 'PM')]))
 
 
 rec(PT,
@@ -262,7 +288,11 @@ rec(PT,
     ref='FCOM PRO-NOR-SOP-22-A', ident='PRO-NOR-SOP-22-A-00012192.0004001',
     src='The flight crew must operate the engines at or near idle thrust for a cooling period of 1 min before engine shutdown, in order to thermally stabilize the engines.',
     ext='FCOM', kind='manual',
-    flow=flow_from_phase('parking'))
+    flow=flow_from_phase('parking', add=[
+        ('Park Brk', 'Brakes Press: BRAKES PRESS indicator CHECK', 'PF'),
+        ('Fuel Pumps OFF', 'Wing Lt OFF: WING sw OFF', 'PF'),
+        ('Slides', 'Ground Contact: GROUND CONTACT ESTABLISH', 'PF'),
+        (None, 'DUs: DUs DIM', ['PF', 'PM'])]))
 
 rec(PT,
     q='What triggers the Parking Checklist?',

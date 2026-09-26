@@ -41,13 +41,14 @@
   "ref": "FCTM PR-NP-CL (Before Start)",
   "src": "Checklist trigger: ‐ Pushback clearance or start clearance received, and ‐ Before Start flow pattern completed.",
   "flow": {
-   "n": "Before Start Flow (6 items)",
+   "n": "Before Start Flow (7 items)",
    "i": [
     "Beacon ON: BEACON sw ON <span class='role'>PF</span>",
     "ATC: ATC SET FOR OPERATION <span class='role'>PM</span>",
     "Windows: WINDOWS and DOORS CHECK CLOSED <span class='role'>PF · PM</span>",
     "Doors/Slides: SLIDES CHECK ARMED <span class='role'>PF · PM</span>",
     "Thrust Levers: THRUST LEVERS IDLE <span class='role'>PF</span>",
+    "Accu Press: ACCU PRESS indicator CHECK <span class='role'>PF</span>",
     "Park BRK: PARK BRK handle ON <span class='role'>PF</span>"
    ]
   },
@@ -60,13 +61,14 @@
   "s": "Phase Triggers",
   "q": "Engines started. What event starts the After Start flow?",
   "a": "PF sets the ENG START selector to NORM",
-  "who": "PF sets the selector and does the overhead (APU bleed, anti-ice, APU master). PM: ground spoilers, rudder trim, flaps, pitch trim.",
+  "who": "PF sets the selector and does the overhead (X BLEED, APU bleed, anti-ice, APU master), then the N/WS memo and thrust setting crosscheck. PM: ground spoilers, rudder trim, flaps, pitch trim.",
   "ref": "FCOM PRO-NOR-SOP-09-A",
   "src": "The PF sets the ENG START selector to NORM to permit normal pack operation. At this time, the After Start flow pattern begins.",
   "flow": {
-   "n": "After Start Flow (11 items)",
+   "n": "After Start Flow (13 items)",
    "i": [
     "Eng Start Sel: ENG START selector NORM <span class='role'>PF</span>",
+    "X-Bleed: X BLEED selector AS RQRD <span class='role'>PF</span>",
     "GND Splrs: GND SPLRS ARM <span class='role'>PM</span>",
     "APU Bleed: APU BLEED pb-sw OFF <span class='role'>PF</span>",
     "Rudder Trim: RUD TRIM RESET pb PRESS <span class='role'>PM</span>",
@@ -76,6 +78,7 @@
     "Pitch Trim: PITCH TRIM wheel CHECK <span class='role'>PM</span>",
     "ECAM STS: ECAM STATUS CHECK <span class='role'>PF · PM</span>",
     "NWS DISC: N/WS DISC MEMO CHECK NOT DISPLAYED <span class='role'>PF</span>",
+    "Thrust Setting: THRUST SETTING CROSSCHECK <span class='role'>PF</span>",
     "NWS Fault Lt: NWS TOWING FAULT LIGHT CHECK OFF <span class='role'>PF</span>"
    ]
   },
@@ -150,17 +153,19 @@
   "s": "Phase Triggers",
   "q": "Line-up clearance received. What does it trigger?",
   "a": "Line-Up flow, then Line-Up Checklist",
-  "who": "PM obtains the clearance and sets TCAS and packs. TAKEOFF RUNWAY confirm and approach path clear are both pilots. Strobes ON is PF.",
+  "who": "PM obtains the clearance and sets TCAS and packs. TAKEOFF RUNWAY confirm, approach path clear, FMA check and sliding table stow are both pilots. Strobes ON is PF.",
   "ref": "FCTM PR-NP-CL (Line-Up)",
   "src": "Checklist trigger: ‐ Line-up clearance received ‐ Line-Up flow pattern completed.",
   "flow": {
-   "n": "Line-Up Flow (5 items)",
+   "n": "Line-Up Flow (7 items)",
    "i": [
-    "T/O Rwy: TAKEOFF RUNWAY CONFIRM <span class='role'>PF · PM</span>",
     "TCAS: TCAS Mode selector TA or TA/RA <span class='role'>PM</span>",
+    "T/O Rwy: TAKEOFF RUNWAY CONFIRM <span class='role'>PF · PM</span>",
     "Approach Path: APPROACH PATH CLEAR OF TRAFFIC <span class='role'>PF · PM</span>",
     "Strobes ON: STROBE sw ON <span class='role'>PF</span>",
-    "Packs 1 & 2: PACK 1 pb-sw and PACK 2 pb-sw AS RQRD <span class='role'>PM</span>"
+    "Packs 1 & 2: PACK 1 pb-sw and PACK 2 pb-sw AS RQRD <span class='role'>PM</span>",
+    "FMA: FMA CHECK <span class='role'>PF · PM</span>",
+    "Sliding Table: SLIDING TABLE STOW <span class='role'>PF · PM</span>"
    ]
   },
   "fleet": "pax",
@@ -206,14 +211,15 @@
   "s": "Phase Triggers",
   "q": "Climbing through 10,000 ft MSL. Who selects which EFIS option?",
   "a": "PF selects CSTR, PM selects ARPT",
-  "who": "PM does the rest: LAND OFF, NO SMOKING cycle (ON, wait 3 s, AUTO), ECAM memo review, NAVAIDS clear, SEC F-PLN, OPT/REC MAX FL check.",
+  "who": "PM does the rest: LAND OFF, WING OFF, NO SMOKING cycle (ON, wait 3 s, AUTO), ECAM memo review, NAVAIDS clear, SEC F-PLN, OPT/REC MAX FL check.",
   "ref": "FCOM PRO-NOR-SOP-14-A",
   "src": "EFIS Option: The PF will select CSTR The PM will select ARPT",
   "flow": {
-   "n": "Climbing 10,000' Flow (6 items)",
+   "n": "Climbing 10,000' Flow (7 items)",
    "i": [
     "EFIS: CSTR: EFIS OPTIONS AS RQRD <span class='role'>PF</span>",
-    "LAND Lt OFF, WING Lt OFF: LAND sw OFF <span class='role'>PM</span>",
+    "LAND Lt OFF: LAND sw OFF <span class='role'>PM</span>",
+    "WING Lt OFF: WING sw OFF <span class='role'>PM</span>",
     "No Smoking: NO SMOKING sw ON, wait 3 s, AUTO <span class='role'>PM</span>",
     "EFIS: ARPT: EFIS OPTIONS AS RQRD <span class='role'>PM</span>",
     "ECAM Memo: ECAM MEMO REVIEW <span class='role'>PM</span>",
@@ -312,12 +318,12 @@
   "s": "Phase Triggers",
   "q": "Runway vacated. First action, and what does it trigger?",
   "a": "PF disarms GND SPLRS. That starts the After Landing flow, then the After Landing Checklist.",
-  "who": "PF: ground spoilers, LAND OFF, WING OFF, STROBE AUTO, NOSE TAXI. PM: radar OFF, ENG START NORM, flaps retract, TCAS STBY, ATC, APU, anti-ice, brake temps.",
+  "who": "PF: ground spoilers, LAND OFF, WING OFF, STROBE AUTO, NOSE TAXI. PM: radar OFF, ENG START NORM, flaps retract, TCAS STBY, ATC, APU, anti-ice, brake temperature monitor.",
   "tech": "QuickRef technique: Flow Trigger is PF disarms Gnd Splrs.",
   "ref": "FCOM PRO-NOR-SOP-21-A",
   "src": "GND SPLRS............<wbr>............<wbr>............<wbr>............<wbr>............<wbr>............<wbr>............<wbr>..........DISARM PF",
   "flow": {
-   "n": "After Landing (10 items)",
+   "n": "After Landing (11 items)",
    "i": [
     "Gnd Splrs OFF: GND SPLRS DISARM <span class='role'>PF</span>",
     "Radar: WXR/PWS sw OFF <span class='role'>PM</span>",
@@ -328,7 +334,8 @@
     "Nose Lt TAXI: NOSE sw TAXI <span class='role'>PF</span>",
     "TCAS/ATC: TCAS STBY <span class='role'>PM</span>",
     "APU: APU AS RQRD <span class='role'>PM</span>",
-    "Anti-Ice: ENG ANTI ICE AS RQRD <span class='role'>PM</span>"
+    "Anti-Ice: ENG ANTI ICE AS RQRD <span class='role'>PM</span>",
+    "Brake Temp: BRAKE TEMPERATURE MONITOR <span class='role'>PM</span>"
    ]
   },
   "fleet": "pax",
@@ -344,20 +351,24 @@
   "ref": "FCOM PRO-NOR-SOP-22-A",
   "src": "The flight crew must operate the engines at or near idle thrust for a cooling period of 1 min before engine shutdown, in order to thermally stabilize the engines.",
   "flow": {
-   "n": "Parking (12 items)",
+   "n": "Parking (16 items)",
    "i": [
     "Accu Press: ACCU PRESS indicator CHECK <span class='role'>PF</span>",
     "Anti-ice: ANTI ICE OFF <span class='role'>PM</span>",
     "Park Brk: PARK BRK handle ON <span class='role'>PF</span>",
+    "Brakes Press: BRAKES PRESS indicator CHECK <span class='role'>PF</span>",
     "APU Bleed: APU BLEED pb-sw AS RQRD <span class='role'>PM</span>",
     "ENG Masters OFF: All ENG MASTER levers OFF <span class='role'>PF</span>",
     "Fuel Pumps OFF: FUEL PUMPS OFF <span class='role'>PM</span>",
+    "Wing Lt OFF: WING sw OFF <span class='role'>PF</span>",
     "Ext Lights OFF (Nav 1): BEACON sw OFF <span class='role'>PF</span>",
     "ATC OFF: ATC STBY <span class='role'>PM</span>",
     "Seatbelts OFF: SEAT BELTS sw OFF <span class='role'>PF</span>",
     "IRS Perf <5: IRS PERFORMANCE CHECK <span class='role'>PM</span>",
     "Slides: SLIDES CHECK DISARMED <span class='role'>PF</span>",
-    "Fuel Qty per Plan: FUEL QUANTITY CHECK <span class='role'>PM</span>"
+    "Ground Contact: GROUND CONTACT ESTABLISH <span class='role'>PF</span>",
+    "Fuel Qty per Plan: FUEL QUANTITY CHECK <span class='role'>PM</span>",
+    "DUs: DUs DIM <span class='role'>PF · PM</span>"
    ]
   },
   "fleet": "pax",
