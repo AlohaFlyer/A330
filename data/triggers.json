@@ -159,6 +159,7 @@
   "flow": {
    "n": "Line-Up Flow (7 items)",
    "i": [
+    "Brake Fan: BRAKE FAN pb OFF (if ON and all brakes below 150 °C) <span class='frtr'>A330F</span> <span class='role'>PM</span>",
     "TCAS: TCAS Mode selector TA or TA/RA <span class='role'>PM</span>",
     "T/O Rwy: TAKEOFF RUNWAY CONFIRM <span class='role'>PF · PM</span>",
     "Approach Path: APPROACH PATH CLEAR OF TRAFFIC <span class='role'>PF · PM</span>",
@@ -335,7 +336,8 @@
     "TCAS/ATC: TCAS STBY <span class='role'>PM</span>",
     "APU: APU AS RQRD <span class='role'>PM</span>",
     "Anti-Ice: ENG ANTI ICE AS RQRD <span class='role'>PM</span>",
-    "Brake Temp: BRAKE TEMPERATURE MONITOR <span class='role'>PM</span>"
+    "Brake Temp: BRAKE TEMPERATURE MONITOR <span class='role'>PM</span>",
+    "Brake Fan: BRAKE FAN pb-sw AS RQRD <span class='frtr'>A330F</span> <span class='role'>PM</span>"
    ]
   },
   "fleet": "pax",

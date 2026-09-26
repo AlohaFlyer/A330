@@ -1314,7 +1314,8 @@
      "role": "PM",
      "x": 174.0,
      "y": 241.0,
-     "d": "[FCOM PRO-NOR-SOP-10-A-00011946.0002001 · BRAKES:]\n• BRAKE FAN pb  ......AS RQRD PM\nIf an arc is displayed above the brake temperature on the WHEEL SD page, set to ON the BRAKE FAN pb."
+     "d": "[FCOM PRO-NOR-SOP-10-A-00011946.0002001 · BRAKES:]\n• BRAKE FAN pb  ......AS RQRD PM\nIf an arc is displayed above the brake temperature on the WHEEL SD page, set to ON the BRAKE FAN pb.",
+     "fleet": "frtr"
     },
     {
      "item": "BRAKES PRESSURE",
@@ -1949,7 +1950,8 @@
      "y": 241.0,
      "d": "[FCOM PRO-NOR-SOP-21-A-00011025.0002001 · BRAKE:]\n• BRAKE FAN  pb-sw...... AS RQRD PM\nWhen the turnaround time is short or if the temperature of any brake is likely to exceed 500 °C, use the brake fans without delay. In other cases, the flight crew would delay brake fans selection to 5 min after landing, or approaching the gate, whichever occurs first. For more information, Refer to FCTM/PR-NP-SOP-270 Use Of Brake Fans.\n[FCTM PR-NP-CL-00024943.0002001 · AFTER LANDING:]\nChecklist trigger: After Landing Flow pattern completed.\n✅ AFTER LANDING CHECKLIST: PF requests it, PM reads the challenge, PF responds after checking the aircraft. Card trigger: After Landing flow complete. (FCTM PR-NP-CL-00024943.0002001)",
      "cl": "AFTER LANDING CHECKLIST",
-     "clWho": "PF requests · PM reads · PF responds"
+     "clWho": "PF requests · PM reads · PF responds",
+     "fleet": "frtr"
     }
    ],
    "trig": "PF disarms Gnd Splrs"

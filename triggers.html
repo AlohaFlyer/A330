@@ -73,6 +73,9 @@
   .answer{font-family:var(--mono);font-size:20px;line-height:1.45;color:var(--green);font-weight:700}
   .techline{font-family:var(--mono);font-size:12.5px;line-height:1.45;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px dashed #4A4460}
   .wholine{font-family:var(--mono);font-size:12.5px;line-height:1.45;color:var(--amber);margin-top:10px;padding-top:8px;border-top:1px dashed #4A4460}
+  .frtr{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:10px;font-size:10px;background:#d38cf0;color:#2b0a3a;font-weight:700;vertical-align:middle}
+  body:not(.frt) li:has(.frtr){display:none}
+  .topnav .navbtn.fleet.on{background:#d38cf0;color:#2b0a3a;border-color:#d38cf0}
   .role{display:inline-block;margin-left:8px;padding:1px 7px;border:1px solid var(--line);border-radius:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--amber);vertical-align:middle}
   .catrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
   .catbtn{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
@@ -113,6 +116,7 @@
   </header>
   <div class="topnav">
     <button class="navbtn game" onclick="enterGame()">&#9654; Game (timed)</button>
+    <button class="navbtn fleet" id="fleetBtn" onclick="toggleFleet()" title="Show A330F-only items (brake fans)">PAX</button>
     <a class="navbtn pod" href="podcast.html">&#127911; Podcast: Triggers Gate-to-Gate</a>
   </div>
   <div class="catrow" id="cats"></div>
@@ -283,5 +287,11 @@ Object.assign(window,{enterGame, exitGame, gGrade, gOver, gReveal, gRound, grade
 </footer>
 <script src="/portal-settings.js" defer></script>
 <script src="/assist.js" defer></script>
+<script>
+function syncFleet(){var f=document.body.classList.contains('frt'),b=document.getElementById('fleetBtn');if(b){b.textContent=f?'FRT':'PAX';b.classList.toggle('on',f);}}
+function toggleFleet(){document.body.classList.toggle('frt');try{localStorage.setItem('a330fleet',document.body.classList.contains('frt')?'FRT':'PAX')}catch(e){}syncFleet();}
+try{if(localStorage.getItem('a330fleet')==='FRT')document.body.classList.add('frt')}catch(e){}
+syncFleet();
+</script>
 </body>
 </html>

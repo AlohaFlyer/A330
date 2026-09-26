@@ -76,7 +76,7 @@ def flow_from_phase(pid, title=None, add=(), order=None, rename=None):
         items.insert(i + 1, [label, roles])
     if order:
         items.sort(key=lambda it: next(k for k, o in enumerate(order) if it[0].startswith(o)))
-    n = title or f"{p['title']} ({len(items)} items)"
+    n = title or f"{p['title']} ({sum(FRTR not in it[0] for it in items)} items)"
     return {
         'n': n,
         'i': [f"{lab} <span class='role'>{' · '.join(roles)}</span>" for lab, roles in items],
@@ -87,6 +87,9 @@ def flow_manual(title, items):
     """Hand-authored flow: items are (text, role)."""
     return {'n': title, 'i': [f"{t} <span class='role'>{r}</span>" for t, r in items]}
 
+
+# A330F-only items (e.g. brake fans, PAX not equipped): hidden unless the page's FRT toggle is on
+FRTR = "<span class='frtr'>A330F</span>"
 
 R = []
 
@@ -193,8 +196,9 @@ rec(PT,
     src='Checklist trigger: ‐ Line-up clearance received ‐ Line-Up flow pattern completed.', ext='FCTM', kind='sop',
     flow=flow_from_phase('line-up', add=[
         (None, 'FMA: FMA CHECK', ['PF', 'PM']),
-        (None, 'Sliding Table: SLIDING TABLE STOW', ['PF', 'PM'])],
-        order=['TCAS', 'T/O Rwy', 'Approach Path', 'Strobes', 'Packs', 'FMA', 'Sliding']))
+        (None, 'Sliding Table: SLIDING TABLE STOW', ['PF', 'PM']),
+        (None, 'Brake Fan: BRAKE FAN pb OFF (if ON and all brakes below 150 °C) ' + FRTR, 'PM')],
+        order=['Brake Fan', 'TCAS', 'T/O Rwy', 'Approach Path', 'Strobes', 'Packs', 'FMA', 'Sliding']))
 
 rec(PT,
     q='Takeoff clearance received. The two light switches?',
@@ -278,7 +282,8 @@ rec(PT,
     ref='FCOM PRO-NOR-SOP-21-A', ident='PRO-NOR-SOP-21-A-00011014.0001001',
     src='GND SPLRS..............................................................................................DISARM PF', ext='FCOM', kind='manual',
     flow=flow_from_phase('after-landing', add=[
-        (None, 'Brake Temp: BRAKE TEMPERATURE MONITOR', 'PM')]))
+        (None, 'Brake Temp: BRAKE TEMPERATURE MONITOR', 'PM'),
+        (None, 'Brake Fan: BRAKE FAN pb-sw AS RQRD ' + FRTR, 'PM')]))
 
 
 rec(PT,

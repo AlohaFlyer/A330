@@ -227,6 +227,10 @@
     <button id="dutyPF" class="active">PF</button>
     <button id="dutyPM">PM</button>
   </div>
+  <div class="seat" id="fleetGroup" title="Passenger or freighter items">
+    <button id="fleetPAX" class="active">PAX</button>
+    <button id="fleetFRT">FRT</button>
+  </div>
 </div>
 
 <div class="phasebar" id="phaseBar"></div>
@@ -326,6 +330,10 @@ let revealed = false;
 let showShape = false;
 let seat = "FO"; // CA | FO
 let duty = "PF"; // PF | PM
+let fleet = "PAX"; // PAX | FRT: items tagged fleet "frtr" (A330F only, e.g. brake fans) show only in FRT
+const __ALLITEMS = FLOWS.map(f=>f.items.slice());
+function applyFleet(){ FLOWS.forEach((f,i)=>{ f.items = __ALLITEMS[i].filter(it=>it.fleet!=="frtr" || fleet==="FRT"); }); }
+applyFleet();
 
 function activeItems(f){
   // sequence items only (drilled); inactive ones are drawn greyed on the map
@@ -697,6 +705,18 @@ function setDuty(d, btn){
 }
 document.getElementById("dutyPF").onclick = e=>setDuty("PF", e.target);
 document.getElementById("dutyPM").onclick = e=>setDuty("PM", e.target);
+
+function setFleet(v, btn){
+  fleet = v; stepIdx = -1;
+  document.querySelectorAll("#fleetGroup button").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  applyFleet();
+  buildFlowBtns();
+  buildFullList();
+  render();
+}
+document.getElementById("fleetPAX").onclick = e=>setFleet("PAX", e.target);
+document.getElementById("fleetFRT").onclick = e=>setFleet("FRT", e.target);
 
 // Full Flows mode
 const listDiv = document.getElementById("fullList");
