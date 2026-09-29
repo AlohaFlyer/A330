@@ -49,7 +49,7 @@ A[10] = dict(topic="Security and Doors", q="Where is the cockpit door described,
   detail="DSC-52-30-10 describes the door: forward-opening hinged, electrically locked latch controlled by the flight crew, cabin keypad with a two to seven digit code, a mechanical override to open it from the cockpit side, and an evacuation and decompression panel the crew kicks out if the door jams. DSC-52-30-20 covers the Cockpit Door Locking System controls and indications.",
   ref="FCOM DSC-52-30-10 P 1/2 Cockpit Door Description",
   quote="A forward-opening hinge door separates the cockpit from the passenger or courier compartment. It has an electric-locking latch, controlled by the flight crew. In normal conditions, when the door is closed, it remains locked.",
-  note="Two failure behaviours to know: rapid cockpit decompression unlocks the door automatically, and an electrical supply failure unlocks it but leaves it closed.", src="fcom")
+  note="Two failure behaviors to know: rapid cockpit decompression unlocks the door automatically, and an electrical supply failure unlocks it but leaves it closed.", src="fcom")
 
 # FD Pro workflow items: not in any published company manual
 for i, qq in [(13, "FD Pro: turn on AUTO UPDATE for every weather layer"), (14, "FD Pro: select the weather layers you want"),

@@ -2395,7 +2395,7 @@
       "phase": "all phases",
       "trigger": "Any FMA change",
       "pm": "CHECKED",
-      "pf": "Announce armed modes with colour (e.g. G/S blue, LOC blue) and active modes without colour (e.g. NAV, ALT)",
+      "pf": "Announce armed modes with color (e.g. G/S blue, LOC blue) and active modes without color (e.g. NAV, ALT)",
       "src": "FCOM PRO-NOR-SCO-00011832.0001001",
       "status": "VERIFIED"
     },

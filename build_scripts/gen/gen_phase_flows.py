@@ -458,7 +458,7 @@ PH.append(P('cruise', 'Cruise', 'n', 'CRUISE', 'FCOM PRO-NOR-SOP-15', [
         'Check that the oxygen mask has been properly stowed (Refer to DSC-35-10 Description).', 'PRO-NOR-SOP-15-A-00011076.0001001'),
   ], 'FCOM PRO-NOR-SOP-15'),
   S('CALLOUTS · ALL PHASES', NAVY, [
-    box('Any FMA change · PF announces · PM: “CHECKED”', 'armed modes with colour (G/S blue, LOC blue), active modes without colour (NAV, ALT)', 'B', True,
+    box('Any FMA change · PF announces · PM: “CHECKED”', 'armed modes with color (G/S blue, LOC blue), active modes without color (NAV, ALT)', 'B', True,
         'The PM should check and respond, "CHECKED" to all FMA changes called out by the PF.', 'PRO-NOR-SCO-00011832.0001001'),
     box('Flap selection · PF: “FLAPS ONE” · PM: “SPEED CHECKED, FLAPS ONE”', 'PM checks the blue number on the ECAM flaps indicator', 'B', True,
         'PM selects the FLAPS lever position and replies after checking the blue number on the ECAM flaps indicator to confirm the correct selection has been made.', 'PRO-NOR-SCO-B-00011834.0001001'),

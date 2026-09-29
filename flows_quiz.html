@@ -157,6 +157,9 @@
   .flowblock ol{padding:0 6px 4px 30px;font-size:13px;line-height:1.65;flex:1;}
   .flowblock svg{flex-shrink:0;}
   .hidden{display:none !important;}
+  .fl-item.dim,.done .dim{opacity:.32;} /* the other crew member's items in BOTH view, as on Phase Flows */
+  li.offrow{list-style:none;}
+  @media (max-width:480px){ .flowblock .body{flex-wrap:wrap;justify-content:center;} .flowblock ol{flex-basis:100%;min-width:0;} } /* Full Flows is the default now: map under the list on a phone, no sideways scroll */
   svg .zone{fill:var(--ice);stroke:var(--atlas);stroke-width:1;}
   svg .zonelabel{font-size:9px;fill:var(--atlas);font-weight:700;letter-spacing:1px;}
   svg .trace{fill:none;stroke:#F9423A;stroke-width:4;stroke-linejoin:round;stroke-linecap:round;}
@@ -214,8 +217,8 @@
 
 <div class="topbar">
   <div class="modes">
-    <button id="modeDrill" class="active">Sequence Drill</button>
-    <button id="modeList">Full Flows</button>
+    <button id="modeDrill">Sequence Drill</button>
+    <button id="modeList" class="active">Full Flows</button>
     <button id="posterBtn" title="View clean full-resolution cockpit poster">Poster</button>
   </div>
   <div class="seat" id="seatGroup">
@@ -227,6 +230,10 @@
     <button id="dutyPF" class="active">PF</button>
     <button id="dutyPM">PM</button>
   </div>
+  <div class="seat" id="viewGroup" title="Show only my steps, or both crew members with the other pilot's steps greyed">
+    <button id="viewMine" class="active" title="Showing only my steps">MINE</button>
+    <button id="viewBoth" title="Show both crew members, the other pilot's steps greyed">BOTH</button>
+  </div>
   <div class="seat" id="fleetGroup" title="Passenger or freighter items">
     <button id="fleetPAX" class="active">PAX</button>
     <button id="fleetFRT">FRT</button>
@@ -236,7 +243,7 @@
 <div class="phasebar" id="phaseBar"></div>
 <div class="controls" id="filters"></div>
 
-<div class="layout" id="drillLayout">
+<div class="layout hidden" id="drillLayout">
   <div class="mapbox">
 <button id="shapeBtn" title="Toggle full flow shape">Shape</button>
 <svg id="cockpitMap" viewBox="0 0 300 437" style="width:100%;height:auto;display:block;"></svg>
@@ -253,9 +260,9 @@
     <div class="actions"><div style="display:flex;gap:8px;width:100%;"><button id="reveal" style="flex:1;">Reveal</button></div></div>
   </div>
 </div>
-<div class="count" id="count"></div>
+<div class="count hidden" id="count"></div>
 
-<div class="fulllist hidden" id="fullList"></div>
+<div class="fulllist" id="fullList"></div>
 
 <div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><div class="pzbar" style="display:flex;gap:8px;justify-content:center;margin:0 0 8px;"><button id="pzOut" title="Zoom out">&minus;</button><button id="pzReset" title="Reset zoom">100%</button><button id="pzIn" title="Zoom in">+</button></div><div id="pzWrap" style="overflow:auto;max-height:82vh;-webkit-overflow-scrolling:touch;border-radius:6px;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div></div>
 
@@ -263,7 +270,7 @@
 /* FLOWS, XREFS and NORMAL_CHECKLISTS live in data/flows_trainer.json, loaded here; engine below is unchanged */
 fetch('data/flows_trainer.json',{cache:'no-store'}).then(r=>r.json()).then(function(__d){
 const FLOWS=__d.FLOWS, XREFS=__d.XREFS, NORMAL_CHECKLISTS=__d.NORMAL_CHECKLISTS;
-if(!FLOWS.length){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank not loaded yet</div><div class="who">This bank is built in a later step. The engine is live.</div></div>';return;}
+if(!FLOWS.length){document.getElementById('drillLayout').classList.remove('hidden');document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank not loaded yet</div><div class="who">This bank is built in a later step. The engine is live.</div></div>';return;}
 // role: CA | FO | BOTH | PF | PM. Seat filter CA hides pure-FO items; FO hides pure-CA. PF/PM shown to both seats.
 // Mnemonics: first letters bold-capped via <b> markup, matching the items in order (for the seat=Both view).
 
@@ -330,9 +337,15 @@ let revealed = false;
 let showShape = false;
 let seat = "FO"; // CA | FO
 let duty = "PF"; // PF | PM
+let fqView = "mine"; // mine | both: both greys in the other crew member's items (Phase Flows MINE / BOTH)
+try{ if(localStorage.getItem("a330_fq_view")==="both") fqView = "both"; }catch(e){}
 let fleet = "PAX"; // PAX | FRT: items tagged fleet "frtr" (A330F only, e.g. brake fans) show only in FRT
 const __ALLITEMS = FLOWS.map(f=>f.items.slice());
-function applyFleet(){ FLOWS.forEach((f,i)=>{ f.items = __ALLITEMS[i].filter(it=>it.fleet!=="frtr" || fleet==="FRT"); }); }
+function applyFleet(){ FLOWS.forEach((f,i)=>{ const out = []; __ALLITEMS[i].forEach(it=>{
+  if(it.fleet!=="frtr" || fleet==="FRT"){ out.push(it); return; }
+  // a hidden A330F item that carries the checklist call (After Landing BRAKE FAN) hands the call to the item before it
+  if(it.cl && out.length && !out[out.length-1].cl) out[out.length-1] = Object.assign({}, out[out.length-1], {cl:it.cl, clWho:it.clWho});
+}); f.items = out; }); }
 applyFleet();
 
 function activeItems(f){
@@ -464,7 +477,8 @@ function smoothPath(P){
 
 function getViewBox(flow){
   if(flow.vb) return flow.vb;
-  const all = flow.items;
+  const act = flow.items.filter(it=>!isOff(it));
+  const all = (fqView==="mine" && act.length) ? act : flow.items;
   if(!all.length) return "0 0 300 437";
   const xs = all.map(i=>seatPt(i)[0]), ys = all.map(i=>seatPt(i)[1]);
   const pad = 30;
@@ -491,7 +505,7 @@ function drawMap(svgEl, flow, upto, showAll){
     if(flow.groups){ flowSegs(PD).forEach((sg,k)=>{ const gc = seq[k+1] && seq[k+1].gc; s += `<path class="trace" d="${sg}"${gc?` style="stroke:${gc}"`:""}/>`; }); }
     else s += `<path class="trace" d="${flowPath(PD)}"/>`;
   }
-  off.forEach(it=>{ const q=seatPt(it); s += `<circle class="dot inactive" cx="${q[0]}" cy="${q[1]}" r="6"/>`; });
+  if(fqView==="both") off.forEach(it=>{ const q=seatPt(it); s += `<circle class="dot inactive" cx="${q[0]}" cy="${q[1]}" r="6"/>`; });
   const last = seq.length-1;
   seq.forEach((it,i)=>{
     let cls = "dot role"+it.role;
@@ -517,6 +531,7 @@ function legendFor(f){
   document.getElementById("legend").innerHTML = LEGEND + '<div style="flex-basis:100%;height:2px"></div>' + f.groups.filter(g=>items.some(it=>it.g===g.g)).map(g=>`<span><i style="background:${g.gc};border-color:${g.gc}"></i>${g.gb?g.gb+" · ":""}${g.g}</span>`).join("");
 }
 
+function whoFor(f){ return (f.who||"").replace("PF / PM", duty==="BOTH" ? "PF / PM" : duty); } // header shows only the selected duty
 function grpInfo(items, i){
   // position of item i inside its group, counting only the items active for this seat/duty
   const g = items[i].g; if(!g) return null;
@@ -537,6 +552,25 @@ function grpLegend(f){
   const esc = s=>s.replace(/'/g,"\\'");
   return "<div class=\"grplegend" + (grpFilter?" filt":"") + "\" title=\"Tap a group to show only that group\">" + f.groups.map(g=>{ const n = items.filter(it=>it.g===g.g).length; return n ? "<span class=\""+(grpFilter===g.g?"sel":"")+"\" style=\"background:"+g.gc+"\" onclick=\"setGrpFilter('"+esc(g.g)+"')\">"+(g.gb?g.gb+" · ":"")+g.g+" "+n+"</span>" : ""; }).join("") + (grpFilter ? "<span class=\"all\" onclick=\"setGrpFilter(null)\">All</span>" : "") + "</div>";
 }
+function offRuns(f){
+  // the other crew member's items, keyed by the index of my next active item (items.length: after my last)
+  const runs = {}; let ai = 0;
+  f.items.forEach(it=>{ if(isOff(it)) (runs[ai] = runs[ai] || []).push(it); else ai++; });
+  return runs;
+}
+function offRows(el, run){
+  // BOTH: the other crew member's items greyed and unnumbered between mine. MINE: only a shared checklist or trigger call shows.
+  (run || []).forEach(it=>{
+    if(grpFilter && it.g!==grpFilter) return;
+    const badges = (it.cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + it.cl + "')\">✅ " + it.cl + (it.clWho ? " <small style='color:#5a8a5a;font-weight:600;'>(" + it.clWho + ")</small>" : "") + "</span>" : "")
+                 + (it.trg ? "<span class=\"strgbadge\">🔻 TRIGGER → " + it.trg + "</span>" : "");
+    if(fqView!=="both" && !badges) return;
+    const s = document.createElement("span");
+    s.className = "step";
+    s.innerHTML = (fqView==="both" ? "<span class=\"dim\">" + (it.lt ? "💡 " : "") + "<b>" + it.item + "</b>" + (it.act ? " - " + it.act : "") + " <small>(" + it.role + ")</small></span>" : "") + badges;
+    el.appendChild(s);
+  });
+}
 function render(){
   syncPhaseUI();
   const f = FLOWS[flowIdx];
@@ -544,11 +578,12 @@ function render(){
   legendFor(f);
   const items = activeItems(f);
   document.getElementById("tag").textContent = (f.phase ? f.phase + "  ▸  " : "") + f.n + "  [" + f.ref + "]";
-  document.getElementById("who").innerHTML = (f.who + " · viewing: " + (seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat)) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "") + grpLegend(f);
+  document.getElementById("who").innerHTML = (whoFor(f) + " · viewing: " + (seat==="BOTH"?"both seats":({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat)) + " / " + (duty==="BOTH"?"PF+PM":duty)).replace(/</g,"&lt;") + (f.trig ? "<div class=\"trigbadge\">\ud83d\udd36 Triggered by: " + f.trig + "</div>" : "") + grpLegend(f);
   
   if(items.length===0){
     document.getElementById("q").textContent = "No " + ({CA:"CM1 (CA)",FO:"CM2 (FO)",IRO:"CM3 (IRO)"}[seat]||seat) + " items in this flow. Switch seat or flow.";
     document.getElementById("done").innerHTML = "";
+    offRows(document.getElementById("done"), f.items.filter(isOff));
     document.getElementById("a").textContent = "";
     drawMap(document.getElementById("cockpitMap"), f, 0, true);
     return;
@@ -561,7 +596,9 @@ function render(){
   const doneDiv = document.getElementById("done");
   doneDiv.innerHTML = "";
   let gk = 0;
+  const runs = offRuns(f);
   for(let i=0;i<stepIdx;i++){
+    offRows(doneDiv, runs[i]);
     if(grpFilter && items[i].g!==grpFilter) continue;
     gk++;
     const gh = grpHeader(items, i); if(gh){ const g = document.createElement("span"); g.innerHTML = gh; doneDiv.appendChild(g.firstChild); }
@@ -578,6 +615,7 @@ function render(){
 })(); document.getElementById("detail").classList.toggle("shown"); }; })(items[i].d || "");
     doneDiv.appendChild(s);
   }
+  offRows(doneDiv, runs[stepIdx]);
   if(stepIdx < items.length){
     const gi = grpInfo(items, stepIdx);
     document.getElementById("q").innerHTML = (gi ? "<span class=\"grpq\" style=\"color:" + gi.gc + "\">" + (gi.gb ? gi.gb + " · " : "") + gi.g + " · " + gi.k + " of " + gi.n + "</span>" : "") + "Step " + (stepIdx+1) + " of " + items.length + "... ?";
@@ -642,7 +680,7 @@ shapeBtn.onclick = ()=>{
   render();
 };
 let pz = 1;
-function setPz(z){ pz = Math.min(4, Math.max(1, z)); const img = document.getElementById("posterImg"); img.style.width = (100*pz)+"%"; img.style.maxWidth = (680*pz)+"px"; document.getElementById("pzReset").textContent = Math.round(pz*100)+"%"; }
+function setPz(z){ pz = Math.min(6, Math.max(1, z)); const img = document.getElementById("posterImg"); img.style.width = (100*pz)+"%"; img.style.maxWidth = (680*pz)+"px"; document.getElementById("pzReset").textContent = Math.round(pz*100)+"%"; }
 document.getElementById("pzIn").onclick = ()=>setPz(pz*1.25);
 document.getElementById("pzOut").onclick = ()=>setPz(pz/1.25);
 document.getElementById("pzReset").onclick = ()=>{ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); };
@@ -656,7 +694,7 @@ function hidePoster(){
 }
 posterBtn.onclick = ()=>{
   const img = document.getElementById("posterImg");
-  if(!img.src) img.src = BG;
+  if(!img.src) img.src = "assets/a330_cockpit_hi.jpg";
   posterBtn.classList.add("active");
   document.getElementById("modeDrill").classList.remove("active");
   document.getElementById("modeList").classList.remove("active");
@@ -706,6 +744,18 @@ function setDuty(d, btn){
 document.getElementById("dutyPF").onclick = e=>setDuty("PF", e.target);
 document.getElementById("dutyPM").onclick = e=>setDuty("PM", e.target);
 
+function paintView(){
+  document.getElementById("viewMine").classList.toggle("active", fqView==="mine");
+  document.getElementById("viewBoth").classList.toggle("active", fqView==="both");
+}
+function setView(v){
+  fqView = v; try{ localStorage.setItem("a330_fq_view", v); }catch(e){}
+  paintView(); buildFullList(); render();
+}
+document.getElementById("viewMine").onclick = ()=>setView("mine");
+document.getElementById("viewBoth").onclick = ()=>setView("both");
+paintView();
+
 function setFleet(v, btn){
   fleet = v; stepIdx = -1;
   document.querySelectorAll("#fleetGroup button").forEach(x=>x.classList.remove("active"));
@@ -725,7 +775,7 @@ function buildFullList(){
   let lastPh = null;
   FLOWS.forEach(f=>{
     const items = activeItems(f);
-    if(items.length===0) return;
+    if(items.length===0 && (fqView==="mine" || !f.items.length)) return;
     if(f.phase && f.phase !== lastPh){
       const ph = document.createElement("div");
       ph.className = "phasehdr";
@@ -736,7 +786,7 @@ function buildFullList(){
     const block = document.createElement("div");
     block.className = "flowblock";
     const h = document.createElement("header");
-    h.innerHTML = "<span>"+f.n+"</span><span>"+f.who+" · "+f.ref+"</span>";
+    h.innerHTML = "<span>"+f.n+"</span><span>"+whoFor(f)+" · "+f.ref+"</span>";
     block.appendChild(h);
     if(f.trig){
       const tb = document.createElement("div");
@@ -748,20 +798,23 @@ function buildFullList(){
     const body = document.createElement("div");
     body.className = "body";
     const ol = document.createElement("ol");
-    items.forEach((it, i)=>{
-      const gh = grpHeader(items, i);
+    let ai = -1;
+    f.items.forEach(it=>{
+      const off = isOff(it); // the other crew member's item: greyed in BOTH; in MINE only its shared checklist or trigger call shows
+      if(off && fqView==="mine" && !(it.cl || it.trg)) return;
+      const i = off ? -1 : ++ai;
+      const gh = off ? "" : grpHeader(items, i);
       if(gh){ const gl = document.createElement("li"); gl.style.listStyle = "none"; gl.style.marginLeft = "-22px"; gl.innerHTML = gh; ol.appendChild(gl); }
-      const li = document.createElement("li"); li.value = i+1;
+      const li = document.createElement("li"); if(off) li.className = "offrow"; else li.value = i+1;
       const head = document.createElement("div");
-      head.className = "fl-item" + (it.g ? " gitem" : "");
+      head.className = "fl-item" + (it.g ? " gitem" : "") + (off ? " dim" : "");
       if(it.gc) head.style.setProperty("--gc", it.gc);
       head.innerHTML = (it.lt ? "\ud83d\udca1 " : "") + "<b>"+it.item+"</b>"+(it.act ? " — "+it.act : "")+" <small>("+it.role+")</small>";
       const det = document.createElement("div");
       det.className = "fl-detail";
       det.innerHTML = (it.d && it.d.trim() ? it.d : "No amplified FCOM note for this step. Ref: "+f.ref).split("\n").map(fmtLine).join("\n");
       head.onclick = ()=>{ det.classList.toggle("shown"); head.classList.toggle("open"); };
-      li.appendChild(head);
-      li.appendChild(det);
+      if(!(off && fqView==="mine")){ li.appendChild(head); li.appendChild(det); }
       if(it.cl){
         const cb = document.createElement("span");
         cb.className = "clbadge";
@@ -789,8 +842,8 @@ function buildFullList(){
     svg.setAttribute("width","170");
     svg.setAttribute("height","170");
     drawMap(svg, f, items.length, true);
-    const dets = Array.from(ol.querySelectorAll(".fl-detail"));
-    const heads = Array.from(ol.querySelectorAll(".fl-item"));
+    const dets = Array.from(ol.querySelectorAll("li:not(.offrow) > .fl-detail"));
+    const heads = Array.from(ol.querySelectorAll("li:not(.offrow) > .fl-item"));
     svg.addEventListener("click", e=>{
       const t = e.target.closest("[data-i]");
       if(!t) return;
@@ -826,8 +879,8 @@ document.getElementById("modeList").onclick = ()=>{
 };
 
 render();
-Object.assign(window,{activeItems, grpInfo, grpHeader, grpLegend, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
-}).catch(function(e){document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
+Object.assign(window,{whoFor, activeItems, offRuns, offRows, paintView, setView, grpInfo, grpHeader, grpLegend, buildFlowBtns, buildFullList, buildPhaseBar, drawMap, flowHidden, flowPath, fmtLine, getViewBox, hidePoster, isOff, linkRefs, mapPt, nextStep, phaseColor, render, setDuty, setSeat, showChecklist, showXref, smoothPath, syncPhaseUI, tintColor, zoneSvg});
+}).catch(function(e){document.getElementById('drillLayout').classList.remove('hidden');document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank failed to load</div><div class="who">'+e.message+'</div></div>';});
 </script>
 <footer style="width:100%;max-width:980px;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:28px;"><img src="assets/A330_hero.jpg" alt="" style="width:380px;max-width:60%;height:auto;border-radius:6px;"><div style="width:100%;text-align:right;font-size:11px;color:#463C8F;font-family:inherit;">Ver 4.5</div></footer>
 <script src="/portal-settings.js" defer></script>

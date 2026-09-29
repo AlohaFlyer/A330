@@ -375,7 +375,7 @@
 {
 "id": "rm-oceanic-engine-out-prc-not-a-mem-item",
 "name": "OCEANIC ENGINE OUT (PRC, not a [MEM] item)",
-"ref": "PRC PRC Engine Failure During Cruise",
+"ref": "PRC Engine Failure During Cruise",
 "ident": "PRC Engine Failure During Cruise",
 "cond": "",
 "steps": [

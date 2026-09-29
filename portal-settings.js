@@ -2,6 +2,56 @@
    Mounts into #gearSlot only. That slot exists on the portal home page footer,
    so subpages carry no gear and inherit the same saved settings.
    Exposes window.PortalSettings for other scripts (assist.js). */
+
+/* Display-time cleaner for Airbus data-module ids. Data files keep the full
+   ident (build scripts, verifiers and /manuals/?s= links depend on it); what
+   the reader sees drops the section letters and the DU tail:
+   PRO-NOR-SOP-03-A-00010462.0001001 -> PRO-NOR-SOP-03,
+   PR-NP-CL-00024935.0001001 -> PR-NP-CL, PRO-NOR-SOP-14-A-C0000114.9001001 -> PRO-NOR-SOP-14.
+   Only text nodes and title attributes are rewritten; href and data-* are left alone. */
+(function () {
+  'use strict';
+  if (window.cleanRef) return;
+  var RE = /\b([A-Z][A-Z_]*(?:-[A-Z0-9_]+)*?)(?:-[A-Z])*-(?:\d{8}|[A-Z]\d{7})(?:\.\d{7})?(?!\d)/g;
+  var TEST = /(?:\d{8}|[A-Z]\d{7})(?:\.\d{7})?/;
+  function cleanRef(s) { return (s == null) ? s : String(s).replace(RE, '$1'); }
+  window.cleanRef = cleanRef;
+  var SKIP = { SCRIPT: 1, STYLE: 1, TEXTAREA: 1, NOSCRIPT: 1 };
+  function fixText(n) {
+    var v = n.nodeValue;
+    if (v && TEST.test(v)) { var c = cleanRef(v); if (c !== v) n.nodeValue = c; }
+  }
+  function fixEl(el) {
+    var t = el.getAttribute && el.getAttribute('title');
+    if (t && TEST.test(t)) { var c = cleanRef(t); if (c !== t) el.setAttribute('title', c); }
+  }
+  function sweep(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { if (!(root.parentNode && SKIP[root.parentNode.nodeName])) fixText(root); return; }
+    if (root.nodeType !== 1 && root.nodeType !== 9 && root.nodeType !== 11) return;
+    if (root.nodeType === 1) { if (SKIP[root.nodeName]) return; fixEl(root); }
+    var w = document.createTreeWalker(root, 5 /* SHOW_ELEMENT | SHOW_TEXT */, {
+      acceptNode: function (n) { return SKIP[n.nodeName] ? 2 /* REJECT */ : 1; }
+    });
+    var n;
+    while ((n = w.nextNode())) { if (n.nodeType === 3) fixText(n); else fixEl(n); }
+  }
+  function start() {
+    sweep(document.body);
+    if (document.title && TEST.test(document.title)) document.title = cleanRef(document.title);
+    if (!window.MutationObserver) return;
+    new MutationObserver(function (muts) {
+      for (var i = 0; i < muts.length; i++) {
+        var m = muts[i];
+        if (m.type === 'characterData') { if (!(m.target.parentNode && SKIP[m.target.parentNode.nodeName])) fixText(m.target); }
+        else if (m.type === 'attributes') fixEl(m.target);
+        else for (var j = 0; j < m.addedNodes.length; j++) sweep(m.addedNodes[j]);
+      }
+    }).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['title'] });
+  }
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
+})();
+
 (function () {
   'use strict';
   if (window.PortalSettings) return;
@@ -9,7 +59,7 @@
   var TAX_SRC = 'Tax Foundation, top marginal rates effective 1 Jan 2026';
   // Bump this every deploy. It is the only way to tell from inside the browser
   // whether you are looking at current code or a cached copy.
-  var BUILD = 'v4.6';
+  var BUILD = 'v4.7';
 
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
@@ -213,10 +263,10 @@
     '<p class="ps-note">Questions, corrections, requests: <a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal" style="color:#CE0C88;font-weight:700;text-decoration:none">ryan.pettit@alaskaair.com</a></p>' +
     '<div class="ps-h3">Offline</div>' +
     '<label class="ps-ck" id="psLblCore"><input type="checkbox" id="psCore"><span>Make Available Offline' +
-      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 21 MB.</small></span></label>' +
+      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 23 MB.</small></span></label>' +
     '<div class="ps-bar" id="psBarCore"><i id="psFillCore"></i></div>' +
     '<label class="ps-ck off" id="psLblAudio"><input type="checkbox" id="psAudio" disabled><span>Include podcast audio' +
-      '<small>All 7 episodes of Flight Deck Notes. About 45 MB. Do this on wifi.</small></span></label>' +
+      '<small>All 8 episodes of Flight Deck Notes. About 53 MB. Do this on wifi.</small></span></label>' +
     '<div class="ps-bar" id="psBarAudio"><i id="psFillAudio"></i></div>' +
     '<div class="ps-msg" id="psMsg"></div>' +
     '<div id="psLogWrap" style="display:none">' +

@@ -1,8 +1,8 @@
 {
 "version": 1,
-"built": "2026-09-21",
-"coreBytes": 22202815,
-"audioBytes": 47209110,
+"built": "2026-09-29",
+"coreBytes": 24247901,
+"audioBytes": 55143065,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -39,6 +39,10 @@
 {
 "u": "/assets/a330_cockpit.jpg",
 "b": 162612
+},
+{
+"u": "/assets/a330_cockpit_hi.jpg",
+"b": 1973885
 },
 {
 "u": "/assets/hawaiian_logo.png",
@@ -110,7 +114,7 @@
 },
 {
 "u": "/corpus/memory.json",
-"b": 5683
+"b": 5513
 },
 {
 "u": "/corpus/systems.json",
@@ -126,15 +130,15 @@
 },
 {
 "u": "/data/episodes.json",
-"b": 2646
+"b": 3152
 },
 {
 "u": "/data/flows.json",
-"b": 99089
+"b": 99087
 },
 {
 "u": "/data/flows_trainer.json",
-"b": 100606
+"b": 135086
 },
 {
 "u": "/data/fom_all.json",
@@ -174,7 +178,7 @@
 },
 {
 "u": "/data/limitations_myset.json",
-"b": 1104
+"b": 11488
 },
 {
 "u": "/data/mcdu.json",
@@ -190,7 +194,7 @@
 },
 {
 "u": "/data/memory_items_myset.json",
-"b": 7676
+"b": 7672
 },
 {
 "u": "/data/memory_items_visual.json",
@@ -198,7 +202,7 @@
 },
 {
 "u": "/data/oe.json",
-"b": 408503
+"b": 408501
 },
 {
 "u": "/data/oral_scope.json",
@@ -206,7 +210,7 @@
 },
 {
 "u": "/data/phase_flows.json",
-"b": 242908
+"b": 253203
 },
 {
 "u": "/data/systems.json",
@@ -222,7 +226,7 @@
 },
 {
 "u": "/data/triggers.json",
-"b": 35731
+"b": 36831
 },
 {
 "u": "/data/weather.json",
@@ -230,11 +234,11 @@
 },
 {
 "u": "/flow_memorization.html",
-"b": 25008
+"b": 25039
 },
 {
 "u": "/flows_quiz.html",
-"b": 66661
+"b": 71277
 },
 {
 "u": "/fom_q/ch01.json",
@@ -346,7 +350,7 @@
 },
 {
 "u": "/phase_flows.html",
-"b": 49243
+"b": 55523
 },
 {
 "u": "/podcast.html",
@@ -354,7 +358,7 @@
 },
 {
 "u": "/portal-settings.js",
-"b": 47435
+"b": 50008
 },
 {
 "u": "/pwa.html",
@@ -382,7 +386,7 @@
 },
 {
 "u": "/sw.js",
-"b": 7970
+"b": 8192
 },
 {
 "u": "/systems_quiz.html",
@@ -390,7 +394,7 @@
 },
 {
 "u": "/triggers.html",
-"b": 19074
+"b": 19966
 },
 {
 "u": "/versions.json",
@@ -412,7 +416,7 @@
 "audio": [
 {
 "u": "flight-deck-notes-ep1.mp3",
-"b": 4746597
+"b": 4641899
 },
 {
 "u": "flight-deck-notes-ep2.mp3",
@@ -437,6 +441,10 @@
 {
 "u": "flight-deck-notes-ep7.mp3",
 "b": 10319769
+},
+{
+"u": "flight-deck-notes-ep9.mp3",
+"b": 8038653
 }
 ]
 }

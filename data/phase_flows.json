@@ -2517,7 +2517,7 @@
 {
 "k": "box",
 "t": "Any FMA change · PF announces · PM: “CHECKED”",
-"s": "armed modes with colour (G/S blue, LOC blue), active modes without colour (NAV, ALT)",
+"s": "armed modes with color (G/S blue, LOC blue), active modes without color (NAV, ALT)",
 "r": "B",
 "call": true,
 "quote": "The PM should check and respond, \"CHECKED\" to all FMA changes called out by the PF.",

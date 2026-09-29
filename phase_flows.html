@@ -334,7 +334,7 @@ const S=(h,c,items,cite,appr)=>({h,c,items,cite:cite||'',appr:appr||'all'});
 /* phase records, checklists, quotes and NOTES live in data/phase_flows.json and are rebuilt
    here through the builders above; nothing else in this script changes (see build_scripts/page_phase_flows.py) */
 const __mk=it=>{ const o=__mk0(it); if(it.fleet==='frtr')o.frt=true; return o; };
-const __mk0=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref.replace(/-C?\d{7,8}\.\d{7}/,'')+']':''):'';
+const __mk0=it=>{ const q=it.quote?it.quote+(it.ref?' ['+it.ref.replace(/(?:-[A-Z])*-C?\d{7,8}\.\d{7}/,'')+']':''):'';
   switch(it.k){
     case 'box': return box(it.t,it.s,it.r,it.call,q);
     case 'fmc': return fmc(it.t,it.s,it.r,q);

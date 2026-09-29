@@ -93,6 +93,118 @@ EDITS={
   ('"<b>" + items[i].item + "</b> - " + items[i].act + " <small>("', '"<b>" + items[i].item + "</b>" + (items[i].act ? " - " + items[i].act : "") + " <small>("'),
   ('(items[stepIdx].item + " - " + items[stepIdx].act + "  (" + items[stepIdx].role + ")")', '(items[stepIdx].item + (items[stepIdx].act ? " - " + items[stepIdx].act : "") + "  (" + items[stepIdx].role + ")")'),
   ('"<b>"+it.item+"</b> — "+it.act+" <small>("+it.role+")</small>"', '"<b>"+it.item+"</b>"+(it.act ? " — "+it.act : "")+" <small>("+it.role+")</small>"'),
+  # v5.1 (Ryan, 2026-09-29): Full Flows is the default mode, and a MINE / BOTH toggle like Phase Flows.
+  # MINE (default) lists and plots only the items isOff() keeps for the selected seat and duty; the other
+  # crew member's items that carry a shared checklist or trigger call leave just that badge. BOTH adds the
+  # other crew member's items greyed and unnumbered (opacity .32, as on Phase Flows) and their map dots
+  # greyed. The drill always quizzes only my items; BOTH greys the others into the done list. Kept per device.
+  (r'''  .hidden{display:none !important;}''',
+   r'''  .hidden{display:none !important;}
+  .fl-item.dim,.done .dim{opacity:.32;} /* the other crew member's items in BOTH view, as on Phase Flows */
+  li.offrow{list-style:none;}
+  @media (max-width:480px){ .flowblock .body{flex-wrap:wrap;justify-content:center;} .flowblock ol{flex-basis:100%;min-width:0;} } /* Full Flows is the default now: map under the list on a phone, no sideways scroll */'''),
+  (r'''<button id="modeDrill" class="active">Sequence Drill</button>
+    <button id="modeList">Full Flows</button>''',
+   r'''<button id="modeDrill">Sequence Drill</button>
+    <button id="modeList" class="active">Full Flows</button>'''),
+  (r'''<div class="layout" id="drillLayout">''', r'''<div class="layout hidden" id="drillLayout">'''),
+  (r'''<div class="count" id="count"></div>''', r'''<div class="count hidden" id="count"></div>'''),
+  (r'''<div class="fulllist hidden" id="fullList"></div>''', r'''<div class="fulllist" id="fullList"></div>'''),
+  (r'''    <button id="dutyPM">PM</button>
+  </div>''',
+   r'''    <button id="dutyPM">PM</button>
+  </div>
+  <div class="seat" id="viewGroup" title="Show only my steps, or both crew members with the other pilot's steps greyed">
+    <button id="viewMine" class="active" title="Showing only my steps">MINE</button>
+    <button id="viewBoth" title="Show both crew members, the other pilot's steps greyed">BOTH</button>
+  </div>'''),
+  # the bank messages land in the drill layout, which starts hidden now
+  (r'''document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank''',
+   r'''document.getElementById('drillLayout').classList.remove('hidden');document.getElementById('drillLayout').innerHTML='<div class="card"><div class="tag">Bank'''),
+  (r'''let duty = "PF"; // PF | PM''',
+   r'''let duty = "PF"; // PF | PM
+let fqView = "mine"; // mine | both: both greys in the other crew member's items (Phase Flows MINE / BOTH)
+try{ if(localStorage.getItem("a330_fq_view")==="both") fqView = "both"; }catch(e){}'''),
+  (r'''  const all = flow.items;''',
+   r'''  const act = flow.items.filter(it=>!isOff(it));
+  const all = (fqView==="mine" && act.length) ? act : flow.items;'''),
+  (r'''  off.forEach(it=>{ const q=seatPt(it);''', r'''  if(fqView==="both") off.forEach(it=>{ const q=seatPt(it);'''),
+  (r'''function render(){''',
+   r'''function offRuns(f){
+  // the other crew member's items, keyed by the index of my next active item (items.length: after my last)
+  const runs = {}; let ai = 0;
+  f.items.forEach(it=>{ if(isOff(it)) (runs[ai] = runs[ai] || []).push(it); else ai++; });
+  return runs;
+}
+function offRows(el, run){
+  // BOTH: the other crew member's items greyed and unnumbered between mine. MINE: only a shared checklist or trigger call shows.
+  (run || []).forEach(it=>{
+    if(grpFilter && it.g!==grpFilter) return;
+    const badges = (it.cl ? "<span class=\"clbadge\" onclick=\"event.stopPropagation();showChecklist('" + it.cl + "')\">✅ " + it.cl + (it.clWho ? " <small style='color:#5a8a5a;font-weight:600;'>(" + it.clWho + ")</small>" : "") + "</span>" : "")
+                 + (it.trg ? "<span class=\"strgbadge\">🔻 TRIGGER → " + it.trg + "</span>" : "");
+    if(fqView!=="both" && !badges) return;
+    const s = document.createElement("span");
+    s.className = "step";
+    s.innerHTML = (fqView==="both" ? "<span class=\"dim\">" + (it.lt ? "💡 " : "") + "<b>" + it.item + "</b>" + (it.act ? " - " + it.act : "") + " <small>(" + it.role + ")</small></span>" : "") + badges;
+    el.appendChild(s);
+  });
+}
+function render(){'''),
+  (r'''    document.getElementById("done").innerHTML = "";
+    document.getElementById("a").textContent = "";''',
+   r'''    document.getElementById("done").innerHTML = "";
+    offRows(document.getElementById("done"), f.items.filter(isOff));
+    document.getElementById("a").textContent = "";'''),
+  (r'''  for(let i=0;i<stepIdx;i++){''',
+   r'''  const runs = offRuns(f);
+  for(let i=0;i<stepIdx;i++){
+    offRows(doneDiv, runs[i]);'''),
+  (r'''    doneDiv.appendChild(s);
+  }
+  if(stepIdx < items.length){''',
+   r'''    doneDiv.appendChild(s);
+  }
+  offRows(doneDiv, runs[stepIdx]);
+  if(stepIdx < items.length){'''),
+  (r'''    if(items.length===0) return;''', r'''    if(items.length===0 && (fqView==="mine" || !f.items.length)) return;'''),
+  (r'''items.forEach((it, i)=>{
+      const gh = grpHeader(items, i);''',
+   r'''let ai = -1;
+    f.items.forEach(it=>{
+      const off = isOff(it); // the other crew member's item: greyed in BOTH; in MINE only its shared checklist or trigger call shows
+      if(off && fqView==="mine" && !(it.cl || it.trg)) return;
+      const i = off ? -1 : ++ai;
+      const gh = off ? "" : grpHeader(items, i);'''),
+  (r'''const li = document.createElement("li"); li.value = i+1;''', r'''const li = document.createElement("li"); if(off) li.className = "offrow"; else li.value = i+1;'''),
+  (r'''head.className = "fl-item" + (it.g ? " gitem" : "");''', r'''head.className = "fl-item" + (it.g ? " gitem" : "") + (off ? " dim" : "");'''),
+  (r'''      li.appendChild(head);
+      li.appendChild(det);''',
+   r'''      if(!(off && fqView==="mine")){ li.appendChild(head); li.appendChild(det); }'''),
+  (r'''ol.querySelectorAll(".fl-detail")''', r'''ol.querySelectorAll("li:not(.offrow) > .fl-detail")'''),
+  (r'''ol.querySelectorAll(".fl-item")''', r'''ol.querySelectorAll("li:not(.offrow) > .fl-item")'''),
+  (r'''document.getElementById("dutyPM").onclick = e=>setDuty("PM", e.target);''',
+   r'''document.getElementById("dutyPM").onclick = e=>setDuty("PM", e.target);
+
+function paintView(){
+  document.getElementById("viewMine").classList.toggle("active", fqView==="mine");
+  document.getElementById("viewBoth").classList.toggle("active", fqView==="both");
+}
+function setView(v){
+  fqView = v; try{ localStorage.setItem("a330_fq_view", v); }catch(e){}
+  paintView(); buildFullList(); render();
+}
+document.getElementById("viewMine").onclick = ()=>setView("mine");
+document.getElementById("viewBoth").onclick = ()=>setView("both");
+paintView();'''),
+  (r'''Object.assign(window,{activeItems,''', r'''Object.assign(window,{activeItems, offRuns, offRows, paintView, setView,'''),
+  # Poster: 4800 px render of the All Panels PDF (build_scripts/gen/build_cockpit_image_hi.py), zoom to 600% (2026-09-29)
+  ('  if(!img.src) img.src = BG;','  if(!img.src) img.src = "assets/a330_cockpit_hi.jpg";'),
+  ('function setPz(z){ pz = Math.min(4, Math.max(1, z));','function setPz(z){ pz = Math.min(6, Math.max(1, z));'),
+  # Flow card headers show only the selected duty instead of 'PF / PM' (2026-09-29)
+  ('function grpInfo(items, i){','function whoFor(f){ return (f.who||"").replace("PF / PM", duty==="BOTH" ? "PF / PM" : duty); } // header shows only the selected duty\nfunction grpInfo(items, i){'),
+  ('document.getElementById("who").innerHTML = (f.who + " · viewing: "','document.getElementById("who").innerHTML = (whoFor(f) + " · viewing: "'),
+  ('h.innerHTML = "<span>"+f.n+"</span><span>"+f.who+" · "+f.ref+"</span>";','h.innerHTML = "<span>"+f.n+"</span><span>"+whoFor(f)+" · "+f.ref+"</span>";'),
+  ('Object.assign(window,{activeItems,','Object.assign(window,{whoFor, activeItems,'),
  ],
  'assist.js':[
   ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),

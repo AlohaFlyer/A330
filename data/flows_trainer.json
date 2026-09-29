@@ -1087,7 +1087,7 @@
      "d": "[FCOM PRO-NOR-SOP-07-B-00011062.0001001:]\n• BRAKE PRESS indicator...... CHECK PF\nCheck for normal indications."
     },
     {
-     "item": "CLEARED TO DISCONNET",
+     "item": "CLEARED TO DISCONNECT",
      "act": "ANNOUNCE",
      "role": "PF",
      "x": 120.2,

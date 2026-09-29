@@ -47,14 +47,14 @@ for g in groups:
 total = sum(len(items(g)) for g in groups)
 
 GROUPS = f'''<h2 id="groups">1. The ten groups (generated from the phase flows)</h2>
-<p>These are the Cockpit Prep sections of <a href="phase_flows.html" style="color:#FF9080">Phase Flows</a>, in the order you memorize them. The trainer drills the same ten groups in the same colours; the counts in the group headers are the CM2 card items, the lists below are every card item in the group ({total} in all, {len(groups)} groups). Both are generated from data/phase_flows.json, so when the phase flows change after an FCOM revision this page and the trainer change with them.</p>
+<p>These are the Cockpit Prep sections of <a href="phase_flows.html" style="color:#FF9080">Phase Flows</a>, in the order you memorize them. The trainer drills the same ten groups in the same colors; the counts in the group headers are the CM2 card items, the lists below are every card item in the group ({total} in all, {len(groups)} groups). Both are generated from data/phase_flows.json, so when the phase flows change after an FCOM revision this page and the trainer change with them.</p>
 <table><thead><tr><th>Group</th><th>Who</th><th>Items</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
 <h2>2. Why ten, and why these</h2>
 <p>Four gates that read as verbs (OFF, ON, SET UP, START) carry the whole of preliminary prep for CM2 with nothing to count; the verb tells you the state of every switch in the group. The seats split at BOX START: from there the PF works the panels and the box while the PM clears the aircraft to walk. Two short check groups close each branch (2 for PF, 3 for PM), and the flow ends in a triple every crew already says out loud: legs, brief, checklist. Ten names, in one physical direction through the cockpit, is inside the four-to-seven item span working memory can hold, and each name regenerates its own items.</p>
 '''
 HOOKSH = '<h2>3. The groups, item by item, with the hook for each</h2>' + ''.join(lists)
 H1 = f'''<h1>Cockpit Preparation - Flow Memorization Plan</h1>
-<p class="sub">How to commit the Cockpit Preparation flow to memory as ten colored groups, and how to practise it so it survives the thing that actually breaks it. Source of truth: data/phase_flows.json (A330P FCOM R17 PRO-NOR-SOP-03 / 04 / 06, audited against the FCOM 22 Sep 2026). Method is sourced; where a technique is one pilot's opinion rather than documented practice, it says so.</p>
+<p class="sub">How to commit the Cockpit Preparation flow to memory as ten colored groups, and how to practice it so it survives the thing that actually breaks it. Source of truth: data/phase_flows.json (A330P FCOM R17 PRO-NOR-SOP-03 / 04 / 06, audited against the FCOM 22 Sep 2026). Method is sourced; where a technique is one pilot's opinion rather than documented practice, it says so.</p>
 <p>Target: Cockpit Preparation, {total} card items in {len(groups)} groups, CM2 drilling 29 as PF and 35 as PM. The groups, their counts and their item names on this page are generated from the phase flows; the trainer drills the same data.</p>'''
 tpl = open(os.path.join(HERE, 'flow_memorization_template.html'), encoding='utf-8').read()
 page = tpl.replace('{{H1}}', H1).replace('{{GROUPS}}', GROUPS).replace('{{HOOKS}}', HOOKSH)

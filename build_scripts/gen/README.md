@@ -13,6 +13,7 @@ A330_PRC_2026-08-31.md, FOM_125.3.md, OE_Workbook.txt, the panel PDF) and run fr
   `verify_spine_sync.py`, and fix each flagged quote in the data file by hand (the verifiers name the
   item and the missing line). Then `check_data_integrity.py` and push per docs/PUSH_RULES.md.
 - `build_cockpit_image.py` -> assets/a330_cockpit.jpg (from the A330 All Panels poster PDF)
+- `build_cockpit_image_hi.py` -> assets/a330_cockpit_hi.jpg (Poster mode, 4800 px, same PDF)
 - `build_oe.py` + `parse_wb.py` + `ans_part*.py` -> data/oe.json (from the Fleets OE Workbook)
 
 Re-verify after any regeneration: `python3 build_scripts/verify_<bank>.py`.
