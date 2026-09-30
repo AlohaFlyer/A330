@@ -185,7 +185,7 @@
   .miniBtns{position:absolute;top:10px;right:12px;display:flex;gap:6px;}
   .miniBtns button{font-size:14px;padding:6px 12px;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:4px;cursor:pointer;}
   .miniBtns button:hover{background:var(--midnight);color:#fff;}
-  .pzbar button{min-width:52px;min-height:40px;font-size:18px;font-weight:800;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:6px;cursor:pointer;} .pzbar #pzReset{font-size:13px;min-width:70px;}
+  .pzbar button{min-width:52px;min-height:40px;font-size:18px;font-weight:800;background:#fff;color:var(--midnight);border:1.5px solid var(--midnight);border-radius:6px;cursor:pointer;} .pzbar #pzReset{font-size:13px;min-width:70px;} .pzbar #pzFit{font-size:14px;min-width:70px;background:var(--midnight);color:#fff;}
   svg .numlight{font-size:9px;fill:#fff;font-weight:700;}
   svg .dot, svg .num, svg .numlight{cursor:pointer;}
 </style>
@@ -264,7 +264,7 @@
 
 <div class="fulllist" id="fullList"></div>
 
-<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><div class="pzbar" style="display:flex;gap:8px;justify-content:center;margin:0 0 8px;"><button id="pzOut" title="Zoom out">&minus;</button><button id="pzReset" title="Reset zoom">100%</button><button id="pzIn" title="Zoom in">+</button></div><div id="pzWrap" style="overflow:auto;max-height:82vh;-webkit-overflow-scrolling:touch;border-radius:6px;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div></div>
+<div id="posterView" class="hidden" style="width:100%;max-width:980px;margin:0 auto;text-align:center;"><div class="pzbar" style="display:flex;gap:8px;justify-content:center;margin:0 0 8px;position:sticky;top:0;z-index:5;background:var(--ice);padding:6px 0;"><button id="pzOut" title="Zoom out">&minus;</button><button id="pzReset" title="Reset zoom">100%</button><button id="pzIn" title="Zoom in">+</button><button id="pzFit" title="Snap back to fit">&#x2922; Fit</button></div><div id="pzWrap" style="overflow:auto;max-height:82vh;-webkit-overflow-scrolling:touch;border-radius:6px;touch-action:pan-x pan-y;overscroll-behavior:contain;"><img id="posterImg" alt="A330 cockpit poster" style="width:100%;max-width:680px;height:auto;display:inline-block;margin:0 auto;border-radius:6px;"></div></div>
 
 <script>
 /* FLOWS, XREFS and NORMAL_CHECKLISTS live in data/flows_trainer.json, loaded here; engine below is unchanged */
@@ -684,9 +684,37 @@ function setPz(z){ pz = Math.min(6, Math.max(1, z)); const img = document.getEle
 document.getElementById("pzIn").onclick = ()=>setPz(pz*1.25);
 document.getElementById("pzOut").onclick = ()=>setPz(pz/1.25);
 document.getElementById("pzReset").onclick = ()=>{ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); };
+// Poster touch zoom (2026-09-29): Fit button, pinch zooms the poster only (anchored under the fingers), double-tap toggles Fit / 300%
+function pzFit(){ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); }
+document.getElementById("pzFit").onclick = pzFit;
+function setPzAt(z, cx, cy){
+  const w = document.getElementById("pzWrap"), r = w.getBoundingClientRect(), old = pz;
+  const px = w.scrollLeft + (cx - r.left), py = w.scrollTop + (cy - r.top);
+  setPz(z); const k = pz / old;
+  w.scrollLeft = px * k - (cx - r.left); w.scrollTop = py * k - (cy - r.top);
+}
+(function(){
+  const w = document.getElementById("pzWrap"); let d0 = 0, z0 = 1, lastTap = 0, lx = 0, ly = 0, moved = false;
+  const dist = t => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
+  w.addEventListener("touchstart", e => { moved = false; if(e.touches.length === 2){ d0 = dist(e.touches); z0 = pz; e.preventDefault(); } }, {passive:false});
+  w.addEventListener("touchmove", e => { moved = true; if(e.touches.length === 2 && d0){ e.preventDefault(); const t = e.touches;
+    setPzAt(z0 * dist(t) / d0, (t[0].clientX + t[1].clientX) / 2, (t[0].clientY + t[1].clientY) / 2); } }, {passive:false});
+  w.addEventListener("touchend", e => {
+    if(e.touches.length < 2) d0 = 0;
+    if(e.touches.length || e.changedTouches.length !== 1 || moved) return;
+    const t = e.changedTouches[0], now = Date.now();
+    if(now - lastTap < 320 && Math.hypot(t.clientX - lx, t.clientY - ly) < 40){ e.preventDefault(); lastTap = 0;
+      if(pz > 1.05) pzFit(); else setPzAt(3, t.clientX, t.clientY); }
+    else { lastTap = now; lx = t.clientX; ly = t.clientY; }
+  }, {passive:false});
+  ["gesturestart","gesturechange"].forEach(n => w.addEventListener(n, e => e.preventDefault(), {passive:false})); // stop iOS page zoom over the poster
+  w.addEventListener("dblclick", e => { if(pz > 1.05) pzFit(); else setPzAt(3, e.clientX, e.clientY); });
+  w.addEventListener("wheel", e => { if(e.ctrlKey){ e.preventDefault(); setPzAt(pz * Math.exp(-e.deltaY / 200), e.clientX, e.clientY); } }, {passive:false}); // trackpad pinch
+})();
 const posterBtn = document.getElementById("posterBtn");
 const posterView = document.getElementById("posterView");
 function hidePoster(){
+  pzFit();
   posterBtn.classList.remove("active");
   posterView.classList.add("hidden");
   document.getElementById("filters").classList.remove("hidden");
