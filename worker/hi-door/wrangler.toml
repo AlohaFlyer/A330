@@ -1,0 +1,9 @@
+name = "ha330-hi-door"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+routes = [ { pattern = "hi.ha330pilot.app", custom_domain = true } ]
+
+[[r2_buckets]]
+binding = "MANUALS"
+bucket_name = "ha330-manuals"
