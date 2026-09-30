@@ -1,7 +1,7 @@
 {
 "version": 1,
 "built": "2026-09-29",
-"coreBytes": 24250440,
+"coreBytes": 26380570,
 "audioBytes": 55143065,
 "core": [
 {
@@ -43,6 +43,14 @@
 {
 "u": "/assets/a330_cockpit_hi.jpg",
 "b": 1973885
+},
+{
+"u": "/assets/a330_cockpit_hi_pax.jpg",
+"b": 1967419
+},
+{
+"u": "/assets/a330_cockpit_pax.jpg",
+"b": 162386
 },
 {
 "u": "/assets/hawaiian_logo.png",
@@ -238,7 +246,7 @@
 },
 {
 "u": "/flows_quiz.html",
-"b": 73816
+"b": 74141
 },
 {
 "u": "/fom_q/ch01.json",

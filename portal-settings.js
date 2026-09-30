@@ -59,7 +59,7 @@
   var TAX_SRC = 'Tax Foundation, top marginal rates effective 1 Jan 2026';
   // Bump this every deploy. It is the only way to tell from inside the browser
   // whether you are looking at current code or a cached copy.
-  var BUILD = 'v4.8';
+  var BUILD = 'v4.9';
 
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
@@ -263,7 +263,7 @@
     '<p class="ps-note">Questions, corrections, requests: <a href="mailto:ryan.pettit@alaskaair.com?subject=A330%20Study%20Portal" style="color:#CE0C88;font-weight:700;text-decoration:none">ryan.pettit@alaskaair.com</a></p>' +
     '<div class="ps-h3">Offline</div>' +
     '<label class="ps-ck" id="psLblCore"><input type="checkbox" id="psCore"><span>Make Available Offline' +
-      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 23 MB.</small></span></label>' +
+      '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 25 MB.</small></span></label>' +
     '<div class="ps-bar" id="psBarCore"><i id="psFillCore"></i></div>' +
     '<label class="ps-ck off" id="psLblAudio"><input type="checkbox" id="psAudio" disabled><span>Include podcast audio' +
       '<small>All 8 episodes of Flight Deck Notes. About 53 MB. Do this on wifi.</small></span></label>' +

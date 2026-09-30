@@ -198,7 +198,7 @@ document.getElementById("viewBoth").onclick = ()=>setView("both");
 paintView();'''),
   (r'''Object.assign(window,{activeItems,''', r'''Object.assign(window,{activeItems, offRuns, offRows, paintView, setView,'''),
   # Poster: 4800 px render of the All Panels PDF (build_scripts/gen/build_cockpit_image_hi.py), zoom to 600% (2026-09-29)
-  ('  if(!img.src) img.src = BG;','  if(!img.src) img.src = "assets/a330_cockpit_hi.jpg";'),
+  ('  if(!img.src) img.src = BG;','  img.src = bgFor(true);'),
   ('function setPz(z){ pz = Math.min(4, Math.max(1, z));','function setPz(z){ pz = Math.min(6, Math.max(1, z));'),
   # Flow card headers show only the selected duty instead of 'PF / PM' (2026-09-29)
   ('function grpInfo(items, i){','function whoFor(f){ return (f.who||"").replace("PF / PM", duty==="BOTH" ? "PF / PM" : duty); } // header shows only the selected duty\nfunction grpInfo(items, i){'),
@@ -216,6 +216,11 @@ paintView();'''),
    'document.getElementById("pzReset").onclick = ()=>{ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); };\n// Poster touch zoom (2026-09-29): Fit button, pinch zooms the poster only (anchored under the fingers), double-tap toggles Fit / 300%\nfunction pzFit(){ setPz(1); document.getElementById("pzWrap").scrollTo(0,0); }\ndocument.getElementById("pzFit").onclick = pzFit;\nfunction setPzAt(z, cx, cy){\n  const w = document.getElementById("pzWrap"), r = w.getBoundingClientRect(), old = pz;\n  const px = w.scrollLeft + (cx - r.left), py = w.scrollTop + (cy - r.top);\n  setPz(z); const k = pz / old;\n  w.scrollLeft = px * k - (cx - r.left); w.scrollTop = py * k - (cy - r.top);\n}\n(function(){\n  const w = document.getElementById("pzWrap"); let d0 = 0, z0 = 1, lastTap = 0, lx = 0, ly = 0, moved = false;\n  const dist = t => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);\n  w.addEventListener("touchstart", e => { moved = false; if(e.touches.length === 2){ d0 = dist(e.touches); z0 = pz; e.preventDefault(); } }, {passive:false});\n  w.addEventListener("touchmove", e => { moved = true; if(e.touches.length === 2 && d0){ e.preventDefault(); const t = e.touches;\n    setPzAt(z0 * dist(t) / d0, (t[0].clientX + t[1].clientX) / 2, (t[0].clientY + t[1].clientY) / 2); } }, {passive:false});\n  w.addEventListener("touchend", e => {\n    if(e.touches.length < 2) d0 = 0;\n    if(e.touches.length || e.changedTouches.length !== 1 || moved) return;\n    const t = e.changedTouches[0], now = Date.now();\n    if(now - lastTap < 320 && Math.hypot(t.clientX - lx, t.clientY - ly) < 40){ e.preventDefault(); lastTap = 0;\n      if(pz > 1.05) pzFit(); else setPzAt(3, t.clientX, t.clientY); }\n    else { lastTap = now; lx = t.clientX; ly = t.clientY; }\n  }, {passive:false});\n  ["gesturestart","gesturechange"].forEach(n => w.addEventListener(n, e => e.preventDefault(), {passive:false})); // stop iOS page zoom over the poster\n  w.addEventListener("dblclick", e => { if(pz > 1.05) pzFit(); else setPzAt(3, e.clientX, e.clientY); });\n  w.addEventListener("wheel", e => { if(e.ctrlKey){ e.preventDefault(); setPzAt(pz * Math.exp(-e.deltaY / 200), e.clientX, e.clientY); } }, {passive:false}); // trackpad pinch\n})();'),
   ('function hidePoster(){',
    'function hidePoster(){\n  pzFit();'),
+  # BRK FAN pb hidden on PAX art, shown on FRT (2026-09-29)
+  ('const BG = "assets/a330_cockpit.jpg";\nfunction zoneSvg(){\n  return `<image href="${BG}"',
+   'const BG = "assets/a330_cockpit.jpg";\n// PAX art has the A330F-only BRK FAN pb painted out (build_scripts/gen/mask_brk_fan.py); FRT shows the original (2026-09-29)\nfunction bgFor(hi){ return "assets/a330_cockpit" + (hi ? "_hi" : "") + (fleet === "FRT" ? "" : "_pax") + ".jpg"; }\nfunction zoneSvg(){\n  return `<image href="${bgFor(false)}"'),
+  ('  fleet = v; stepIdx = -1;',
+   '  fleet = v; stepIdx = -1;\n  { const pi = document.getElementById("posterImg"); if(pi.getAttribute("src")) pi.src = bgFor(true); }'),
  ],
  'assist.js':[
   ("var hits = search(q, 8);","var broad = /\\b(whole|entire|all|every|section|complete|confirm|summari[sz]e|list)\\b/i.test(q);\n      var hits = search(q, broad ? 30 : 8);"),

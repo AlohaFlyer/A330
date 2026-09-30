@@ -420,8 +420,10 @@ function syncPhaseUI(){
 }
 
 const BG = "assets/a330_cockpit.jpg";
+// PAX art has the A330F-only BRK FAN pb painted out (build_scripts/gen/mask_brk_fan.py); FRT shows the original (2026-09-29)
+function bgFor(hi){ return "assets/a330_cockpit" + (hi ? "_hi" : "") + (fleet === "FRT" ? "" : "_pax") + ".jpg"; }
 function zoneSvg(){
-  return `<image href="${BG}" x="0" y="0" width="300" height="437" opacity="1"/>`;
+  return `<image href="${bgFor(false)}" x="0" y="0" width="300" height="437" opacity="1"/>`;
 }
 // Path builder: straight runs stay direct, but any segment that reverses
 // course (>~100 degree turn) bows out to the side so it never overdraws
@@ -722,7 +724,7 @@ function hidePoster(){
 }
 posterBtn.onclick = ()=>{
   const img = document.getElementById("posterImg");
-  if(!img.src) img.src = "assets/a330_cockpit_hi.jpg";
+  img.src = bgFor(true);
   posterBtn.classList.add("active");
   document.getElementById("modeDrill").classList.remove("active");
   document.getElementById("modeList").classList.remove("active");
@@ -786,6 +788,7 @@ paintView();
 
 function setFleet(v, btn){
   fleet = v; stepIdx = -1;
+  { const pi = document.getElementById("posterImg"); if(pi.getAttribute("src")) pi.src = bgFor(true); }
   document.querySelectorAll("#fleetGroup button").forEach(x=>x.classList.remove("active"));
   btn.classList.add("active");
   applyFleet();
