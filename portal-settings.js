@@ -59,7 +59,7 @@
   var TAX_SRC = 'Tax Foundation, top marginal rates effective 1 Jan 2026';
   // Bump this every deploy. It is the only way to tell from inside the browser
   // whether you are looking at current code or a cached copy.
-  var BUILD = 'v4.9';
+  var BUILD = 'v5.2';
 
   var LS = {
     get: function (k, d) { try { var v = localStorage.getItem(k); return v === null ? d : v; } catch (e) { return d; } },
@@ -266,7 +266,7 @@
       '<small>Every page, quiz, question bank, handout and the full PWA PDF. About 25 MB.</small></span></label>' +
     '<div class="ps-bar" id="psBarCore"><i id="psFillCore"></i></div>' +
     '<label class="ps-ck off" id="psLblAudio"><input type="checkbox" id="psAudio" disabled><span>Include podcast audio' +
-      '<small>All 8 episodes of Flight Deck Notes. About 53 MB. Do this on wifi.</small></span></label>' +
+      '<small>All 19 episodes of Flight Deck Notes. About 106 MB. Do this on wifi.</small></span></label>' +
     '<div class="ps-bar" id="psBarAudio"><i id="psFillAudio"></i></div>' +
     '<div class="ps-msg" id="psMsg"></div>' +
     '<div id="psLogWrap" style="display:none">' +

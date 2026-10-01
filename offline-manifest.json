@@ -1,8 +1,8 @@
 {
 "version": 1,
-"built": "2026-09-29",
-"coreBytes": 26380570,
-"audioBytes": 55143065,
+"built": "2026-09-30",
+"coreBytes": 26392762,
+"audioBytes": 111365848,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -138,7 +138,7 @@
 },
 {
 "u": "/data/episodes.json",
-"b": 3152
+"b": 8094
 },
 {
 "u": "/data/flows.json",
@@ -362,7 +362,7 @@
 },
 {
 "u": "/podcast.html",
-"b": 15558
+"b": 15668
 },
 {
 "u": "/portal-settings.js",
@@ -417,6 +417,14 @@
 "b": 13808
 },
 {
+"u": "/worker/hi-door/worker.js",
+"b": 6909
+},
+{
+"u": "/worker/hi-door/wrangler.toml",
+"b": 231
+},
+{
 "u": "/wx-alternate.html",
 "b": 10951
 }
@@ -453,6 +461,50 @@
 {
 "u": "flight-deck-notes-ep9.mp3",
 "b": 8038653
+},
+{
+"u": "flight-deck-notes-ep10.mp3",
+"b": 4960070
+},
+{
+"u": "flight-deck-notes-ep11.mp3",
+"b": 5573843
+},
+{
+"u": "flight-deck-notes-ep12.mp3",
+"b": 5031854
+},
+{
+"u": "flight-deck-notes-ep13.mp3",
+"b": 4111822
+},
+{
+"u": "flight-deck-notes-ep14.mp3",
+"b": 6518013
+},
+{
+"u": "flight-deck-notes-ep15.mp3",
+"b": 5399867
+},
+{
+"u": "flight-deck-notes-ep16.mp3",
+"b": 4847221
+},
+{
+"u": "flight-deck-notes-ep17.mp3",
+"b": 4498329
+},
+{
+"u": "flight-deck-notes-ep18.mp3",
+"b": 4261660
+},
+{
+"u": "flight-deck-notes-ep19.mp3",
+"b": 5318679
+},
+{
+"u": "flight-deck-notes-ep20.mp3",
+"b": 5701425
 }
 ]
 }
