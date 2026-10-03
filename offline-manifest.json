@@ -2,7 +2,7 @@
 "version": 1,
 "built": "2026-10-03",
 "coreBytes": 26392764,
-"audioBytes": 111489037,
+"audioBytes": 111488410,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -452,7 +452,7 @@
 },
 {
 "u": "flight-deck-notes-ep6.mp3",
-"b": 7489454
+"b": 7488827
 },
 {
 "u": "flight-deck-notes-ep7.mp3",
