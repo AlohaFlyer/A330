@@ -1,8 +1,8 @@
 {
 "version": 1,
-"built": "2026-10-01",
+"built": "2026-10-03",
 "coreBytes": 26392764,
-"audioBytes": 111339828,
+"audioBytes": 111351113,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -444,7 +444,7 @@
 },
 {
 "u": "flight-deck-notes-ep4.mp3",
-"b": 4187995
+"b": 4205549
 },
 {
 "u": "flight-deck-notes-ep5.mp3",
@@ -452,7 +452,7 @@
 },
 {
 "u": "flight-deck-notes-ep6.mp3",
-"b": 7461555
+"b": 7458421
 },
 {
 "u": "flight-deck-notes-ep7.mp3",
@@ -460,7 +460,7 @@
 },
 {
 "u": "flight-deck-notes-ep9.mp3",
-"b": 8038653
+"b": 8035518
 },
 {
 "u": "flight-deck-notes-ep10.mp3",
