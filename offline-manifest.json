@@ -2,7 +2,7 @@
 "version": 1,
 "built": "2026-10-03",
 "coreBytes": 26392764,
-"audioBytes": 111351113,
+"audioBytes": 111489037,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -432,35 +432,35 @@
 "audio": [
 {
 "u": "flight-deck-notes-ep1.mp3",
-"b": 4641899
+"b": 4667603
 },
 {
 "u": "flight-deck-notes-ep2.mp3",
-"b": 5385448
+"b": 5405510
 },
 {
 "u": "flight-deck-notes-ep3.mp3",
-"b": 4854744
+"b": 4881075
 },
 {
 "u": "flight-deck-notes-ep4.mp3",
-"b": 4205549
+"b": 4203041
 },
 {
 "u": "flight-deck-notes-ep5.mp3",
-"b": 10226982
+"b": 10266479
 },
 {
 "u": "flight-deck-notes-ep6.mp3",
-"b": 7458421
+"b": 7489454
 },
 {
 "u": "flight-deck-notes-ep7.mp3",
-"b": 10319769
+"b": 10335129
 },
 {
 "u": "flight-deck-notes-ep9.mp3",
-"b": 8035518
+"b": 8044295
 },
 {
 "u": "flight-deck-notes-ep10.mp3",
@@ -468,7 +468,7 @@
 },
 {
 "u": "flight-deck-notes-ep11.mp3",
-"b": 5573843
+"b": 5583560
 },
 {
 "u": "flight-deck-notes-ep12.mp3",
@@ -500,7 +500,7 @@
 },
 {
 "u": "flight-deck-notes-ep19.mp3",
-"b": 5318679
+"b": 5282630
 },
 {
 "u": "flight-deck-notes-ep20.mp3",
