@@ -3,7 +3,7 @@
 These build the committed data banks from the verified sources. They are NOT part of build.sh
 because they read the manual text extracts, which never enter the repo. Set `A330_SRC` to a folder
 holding the extracts (A330P_FCOM_R17.md, A330P_FCOM_R17_PRO-NOR.md, A330P_QRH_R35.md, A330_FCTM_R6.md,
-A330_PRC_2026-08-31.md, FOM_125.3.md, OE_Workbook.txt, the panel PDF) and run from the repo root:
+A330_PRC_2026-08-31.md, FOM_125.4.md, OE_Workbook.txt, the panel PDF) and run from the repo root:
 
 - `gen_phase_flows.py`, `gen_flows_trainer.py`, `spine_cockpit_prep.py`, `resection_cockpit_prep.py`:
   RETIRED 2026-09-25 (v5.0). data/phase_flows.json and data/flows_trainer.json are now the source of
