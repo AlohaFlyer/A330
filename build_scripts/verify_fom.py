@@ -12,7 +12,7 @@ import json, os, re, sys, glob
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(HERE, '..'))
-DEFAULT_FOM = os.path.abspath(os.path.join(WORK, '..', 'src', 'FOM_125.3.md'))
+DEFAULT_FOM = os.path.abspath(os.path.join(WORK, '..', 'src', 'FOM_125.4.md'))
 
 def norm(s):
     return re.sub(r'\s+', ' ', s).strip()

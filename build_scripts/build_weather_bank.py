@@ -7,7 +7,7 @@ Record shape (engine, frozen): {cat, ref, q, a:[html lines], src, tbl?}
           verify_weather.py checks every fragment as a literal substring.
   tbl   = list of [label, value, highlight] rows (the engine renders Fleet / Max distance).
 Extra fields per the build brief: fleet ("pax"|"both"), srcType ("manual").
-Source: src/FOM_125.3.md only. Run verify_weather.py after any edit.
+Source: src/FOM_125.4.md only. Run verify_weather.py after any edit.
 """
 import json, os
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))

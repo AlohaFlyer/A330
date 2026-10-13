@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the A330 FOM Quizzer bank from the B787 bank.
 
-Input : ../src/fom_q/ch*.json (B787 bank, FOM 125.1), ../src/FOM_125.3.md, WORK/manuals.json
+Input : ../src/fom_q/ch*.json (B787 bank, FOM 125.1), ../src/FOM_125.4.md, WORK/manuals.json
         Rev 125.1 to 125.3 changes: see WORK/docs/FOM_DELTA_125.1_to_125.3.md
 Output: WORK/fom_q/chNN.json, WORK/data/fom_questions.json (manifest), WORK/data/fom_all.json
 
@@ -9,7 +9,7 @@ Method: keep every fleet-common record, drop every 787-only record and every
 record whose source is not the FOM, rewrite records whose FOM paragraph carries
 an A330 banner or value, and add records for Rev 123.1 to 125.1 changes
 (WORK/data/fom_delta.json) and A330-bannered paragraphs. Every src.quote is a
-literal whitespace-normalized substring of FOM_125.3.md (verify_fom.py proves it).
+literal whitespace-normalized substring of FOM_125.4.md (verify_fom.py proves it).
 
 Deterministic: rerunning reproduces the same files.
 """
@@ -82,7 +82,7 @@ DROP = {
 
 # ---------------------------------------------------------------------------
 # EDIT: per-id overrides. Keys: q, a, ref, sref, quote, note, fleet.
-# Quotes are copied from FOM_125.3.md with its own punctuation.
+# Quotes are copied from FOM_125.4.md with its own punctuation.
 # ---------------------------------------------------------------------------
 EDIT = {
     # ---- ch 1

@@ -96,7 +96,7 @@ FILES = {
     'A330_PRC': 'A330_PRC_2026-08-31.md',
     'A330P_PERF': 'A330P_PERF_R26-12.md',
     'A330P_NPC-CB': 'A330P_NPC-CB_2025-08-13.md',
-    'FOM': 'FOM_125.3.md',
+    'FOM': 'FOM_125.4.md',
     'FODM': 'FODM_R0.md',
 }
 # Parts above this many bytes of page text are split into chapter files.

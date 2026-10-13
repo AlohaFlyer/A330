@@ -27,7 +27,7 @@ revision, not the date the file was downloaded. `never` means the sweep in
 | `A330_MEL` | A330 Minimum Equipment List | R59 | 4/1/26 | both | never |
 | `A330_PRC` | A330 Pilot Reference Cards | _none published_ | 3/9/26 | both | never |
 | `FODM` | Flight Operations Data Manual | R0 | 5/20/26 | shared | never |
-| `FOM` | Flight Operations Manual | 125.1 | 8/12/26 | shared | never |
+| `FOM` | Flight Operations Manual | 125.4 | 10/1/26 | shared | 2026-10-13 |
 
 15 manuals tracked: 4 pax, 4 frtr, 5 both, 2 shared.
 

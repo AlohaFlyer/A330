@@ -23,7 +23,7 @@ EXTRACTS = {
     'QRH': 'A330P_QRH_R35.md',
     'FCTM': 'A330_FCTM_R6.md',
     'PRC': 'A330_PRC_2026-08-31.md',
-    'FOM': 'FOM_125.3.md',
+    'FOM': 'FOM_125.4.md',
 }
 
 def norm(s):
