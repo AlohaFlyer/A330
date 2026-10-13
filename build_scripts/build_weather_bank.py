@@ -2,7 +2,7 @@
 """Write data/weather.json, the A330 Weather Requirements bank consumed by weather.html.
 
 Record shape (engine, frozen): {cat, ref, q, a:[html lines], src, tbl?}
-  src   = verbatim FOM 125.3 text. Fragments from one passage that the extract prints
+  src   = verbatim FOM 125.4 text. Fragments from one passage that the extract prints
           non-contiguously (page breaks, two-column tables) are joined with " ... ";
           verify_weather.py checks every fragment as a literal substring.
   tbl   = list of [label, value, highlight] rows (the engine renders Fleet / Max distance).

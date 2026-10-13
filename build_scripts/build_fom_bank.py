@@ -3,6 +3,7 @@
 
 Input : ../src/fom_q/ch*.json (B787 bank, FOM 125.1), ../src/FOM_125.4.md, WORK/manuals.json
         Rev 125.1 to 125.3 changes: see WORK/docs/FOM_DELTA_125.1_to_125.3.md
+        Rev 125.3 to 125.4: 8.1.3 only (LES and RH), fom08-034 added 2026-10-12
 Output: WORK/fom_q/chNN.json, WORK/data/fom_questions.json (manifest), WORK/data/fom_all.json
 
 Method: keep every fleet-common record, drop every 787-only record and every
@@ -82,7 +83,7 @@ DROP = {
 
 # ---------------------------------------------------------------------------
 # EDIT: per-id overrides. Keys: q, a, ref, sref, quote, note, fleet.
-# Quotes are copied from FOM_125.4.md with its own punctuation.
+# Quotes are copied from FOM_125.3.md with its own punctuation.
 # ---------------------------------------------------------------------------
 EDIT = {
     # ---- ch 1
@@ -318,14 +319,14 @@ EDIT = {
                   'note': 'New procedures in Rev 125 (18.1.10). Smoke detectors may detect the aerosol during spraying; see 18.1.10.3 for the spurious-warning window.'},
     'fom18-014': {'quote': 'To use a PBCS filing code, the following items are required: • CPDLC/FANS 1/A+ • RNP-4 • RCP240 • ADS-C • TCAS • RSP180'},
     # ---- ch 19-24
-    'fom1924-002': {'q': 'Under FOM 125.3, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?',
+    'fom1924-002': {'q': 'Under FOM 125.4, where do you find the decompression procedure and initial descent altitude for an A330 over the Canadian Rockies?',
                     'a': 'There is no longer a Rockies regional procedure in Ch 19; Rev 125.1 deleted it. Use the polygon procedures in FOM 11.2.9.1 and the FD Pro polygon detail drawer. On the A330 the initial descent altitude is always 17,000 ft or FL170.',
                     'ref': 'FOM 11.2.9.1 (Ch 11)',
                     'sref': 'FOM 11.2.9.1, Decompression Polygon Procedures (737/787/A330)',
                     'quote': '(737/A330) Initial descent altitude is always 17,000 ft or FL170.',
                     'note': 'Rev 125.1 removed the Decompression Procedure for the Canadian Rockies Mountain Range Region from 19.3 - Navigation; Rev 125.3 renumbered the polygon procedures to 11.2.9.1. The old 18,000 ft Rockies floor is no longer published anywhere in the FOM.'},
     'fom1924-005': {'note': 'The 737/787/A321/A330 are RCP240, RSP180, and RNP4 capable unless an MEL reduces capability.'},
-    'fom1924-017': {'q': 'Under FOM 125.3, what is the published decompression floor for the Greenland Mountain Range region?',
+    'fom1924-017': {'q': 'Under FOM 125.4, what is the published decompression floor for the Greenland Mountain Range region?',
                     'a': 'None. The Greenland regional decompression procedure was deleted from Ch 22 in Rev 125.1. Use the polygon procedures in FOM 11.2.9.1; on the A330 the initial descent altitude is always 17,000 ft or FL170. Flights may not proceed through any charted No Ops Area.',
                     'ref': 'FOM 11.2.9.1 (Ch 11)',
                     'sref': 'FOM 11.2.9.1 (Ch 11) and FOM 22.11 (Ch 22)',
@@ -517,7 +518,7 @@ ADD = [
      'FOM 6.2.1', 'FOM 6.2.1, Adequate Airport',
      'Any regular, provisional, refueling, or alternate airport may be used as an adequate airport provided it is listed in 8.1.3 – Authorized Airports.',
      'Rev 125 re-pointed the definition from OpSpec B342/C070 to the single 8.1.3 table. An adequate airport may still be inappropriate for an actual diversion (RFFS, weather).', 'both'),
-    ('06', 'Under FOM 125.3, where does the FOM send you for oceanic HF frequencies and ARINC communication procedures?',
+    ('06', 'Under FOM 125.4, where does the FOM send you for oceanic HF frequencies and ARINC communication procedures?',
      'Jeppesen FD Pro (ARINC Services). HF frequencies are also in the communications boxes on the Enroute Navigation Charts, and ARINC provides the primary and secondary frequencies predicted for the day.',
      'FOM 20.4.3 / 20.4.3.3', 'FOM 20.4.3, Non-CPDLC Oceanic Communication, and 20.4.3.3, Frequency Selection',
      'All communications are relayed through ARINC (e.g., San Francisco Radio). Communication procedures and frequencies can be found in Jeppesen FD Pro.',
@@ -579,6 +580,11 @@ ADD = [
      'FOM 8.1.3', 'FOM 8.1.3, Authorized Airports',
      'May be used as an ETOPS alternate unless restricted by F&F or Company NOTAM. Adequate Airports Any airport designated in this table as A, F, R, P, or E may be planned as an adequate airport (to define ETOPS entry and exit points) for all Alaska Airlines fleets provided the adequate airport criteria from 6.2.1 – Adequate Airport is met and the airport is within the approved area of operations for the aircraft being operated, unless restricted by F&F or Company NOTAM.',
      'Rev 125 replaced the per-fleet lists with one table carrying 717/737/787/A321/A330 columns.', 'both'),
+    ('08', 'Under FOM 125.4, can Ohakea, New Zealand (OHA) be planned as an adequate airport or ETOPS alternate?',
+     'No.',
+     'FOM 8.1.3', 'FOM RH, Revision Highlights (Rev 125.4), 8.1.3 Authorized Airports',
+     'Changed YEG to regular airport for the 737, effective 10/2/26. Removed Ohakea, New Zealand (OHA) and Palmdale, CA (PMD).',
+     'Rev 125.4 removed OHA and PMD from the 8.1.3 table. Adequate airports and ETOPS alternates must be listed in 8.1.3 (6.2.1, 6.2.2).', 'both'),
     # ch 9
     ('09', 'In what unit do ICAO SNOWTAMs report contaminant depth, and what must the crew do with it?',
      'Millimeters. Convert to inches for AS policy adherence (1/8 in is 3.175 mm, 1/4 in is 6.35 mm, 1/2 in is 12.7 mm, 1 in is 25.4 mm).',
