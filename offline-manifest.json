@@ -1,8 +1,8 @@
 {
 "version": 1,
-"built": "2026-10-03",
-"coreBytes": 26392764,
-"audioBytes": 111488410,
+"built": "2026-10-12",
+"coreBytes": 26419587,
+"audioBytes": 111500949,
 "core": [
 {
 "u": "/2023-pwa.pdf",
@@ -102,11 +102,11 @@
 },
 {
 "u": "/corpus/flows.json",
-"b": 73263
+"b": 96862
 },
 {
 "u": "/corpus/fom.json",
-"b": 288055
+"b": 288429
 },
 {
 "u": "/corpus/ioe.json",
@@ -122,7 +122,7 @@
 },
 {
 "u": "/corpus/memory.json",
-"b": 5513
+"b": 5683
 },
 {
 "u": "/corpus/systems.json",
@@ -138,7 +138,7 @@
 },
 {
 "u": "/data/episodes.json",
-"b": 8094
+"b": 8093
 },
 {
 "u": "/data/flows.json",
@@ -150,11 +150,11 @@
 },
 {
 "u": "/data/fom_all.json",
-"b": 398270
+"b": 398911
 },
 {
 "u": "/data/fom_delta.json",
-"b": 89337
+"b": 90709
 },
 {
 "u": "/data/fom_questions.json",
@@ -278,7 +278,7 @@
 },
 {
 "u": "/fom_q/ch08.json",
-"b": 25207
+"b": 25848
 },
 {
 "u": "/fom_q/ch09.json",
@@ -406,7 +406,7 @@
 },
 {
 "u": "/versions.json",
-"b": 459
+"b": 486
 },
 {
 "u": "/view.html",
