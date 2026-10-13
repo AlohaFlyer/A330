@@ -3,7 +3,7 @@
 "title": "A330 Phase Flows",
 "fleet": "pax",
 "generated": "2026-09-16",
-"sources": "A330P FCOM R17 PRO-NOR / PRO-ABN / PRO-NOR-SUP-SEC; QRH R35 22.02A; FCTM R6 PR-NP-CL, PR-AEP; FOM 125.3 5.5.15, 5.7.4, 6.3, 6.4, 11.2; PRC 8/31/26 p1, p2; FCOM PRO-SPO-40A",
+"sources": "A330P FCOM R17 PRO-NOR / PRO-ABN / PRO-NOR-SUP-SEC; QRH R35 22.02A; FCTM R6 PR-NP-CL, PR-AEP; FOM 125.4 5.5.15, 5.7.4, 6.3, 6.4, 11.2; PRC 8/31/26 p1, p2; FCOM PRO-SPO-40A",
 "builders": "box(t,s,r,call,q) fmc(t,s,r,q) sub(t,c) trig(t,r) cl(t,w,bold,cc) book(t,s) note(t) S(h,c,items,cite,appr); q = quote + [ref]",
 "roles": "C=CM1 (CA seat) F=CM2 (FO seat) PF PM B=both; appr: all | ILS | ILScat (CAT II/III) | RNP | NPA",
 "normal_source": "data/flows.json (quickref order and role) cross-checked to FCOM PRO-NOR idents; quotes are literal extract text",
