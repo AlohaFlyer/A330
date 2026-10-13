@@ -493,5 +493,20 @@
   },
   "fleet": "both",
   "srcKind": "manual"
+ },
+ {
+  "id": "fom08-034",
+  "chapter": "8",
+  "chapterName": "8 Dispatch",
+  "q": "Under FOM 125.4, can Ohakea, New Zealand (OHA) be planned as an adequate airport or ETOPS alternate?",
+  "a": "No.",
+  "ref": "FOM 8.1.3",
+  "src": {
+   "ref": "FOM RH, Revision Highlights (Rev 125.4), 8.1.3 Authorized Airports",
+   "quote": "Changed YEG to regular airport for the 737, effective 10/2/26. Removed Ohakea, New Zealand (OHA) and Palmdale, CA (PMD).",
+   "note": "Rev 125.4 removed OHA and PMD from the 8.1.3 table. Adequate airports and ETOPS alternates must be listed in 8.1.3 (6.2.1, 6.2.2)."
+  },
+  "fleet": "both",
+  "srcKind": "manual"
  }
 ]

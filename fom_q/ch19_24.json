@@ -18,7 +18,7 @@
   "id": "fom19-002",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.3, what decompression procedure applies to an A330 over the Canadian Rockies?",
+  "q": "Under FOM 125.4, what decompression procedure applies to an A330 over the Canadian Rockies?",
   "a": "The polygon procedures in FOM 11.2.9.1; initial descent altitude is always 17,000 ft or FL170.",
   "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
@@ -228,7 +228,7 @@
   "id": "fom19-016",
   "chapter": "19-24",
   "chapterName": "19-24 Theaters",
-  "q": "Under FOM 125.3, what decompression procedure applies to an A330 over the Greenland Mountain Range?",
+  "q": "Under FOM 125.4, what decompression procedure applies to an A330 over the Greenland Mountain Range?",
   "a": "Polygon procedures in FOM 11.2.9.1; initial descent always to 17,000 ft or FL170; no charted No Ops Area transit.",
   "ref": "FOM 11.2.9.1 (Ch 11)",
   "src": {
