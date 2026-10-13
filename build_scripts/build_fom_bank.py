@@ -83,7 +83,7 @@ DROP = {
 
 # ---------------------------------------------------------------------------
 # EDIT: per-id overrides. Keys: q, a, ref, sref, quote, note, fleet.
-# Quotes are copied from FOM_125.3.md with its own punctuation.
+# Quotes are copied from FOM_125.4.md with its own punctuation.
 # ---------------------------------------------------------------------------
 EDIT = {
     # ---- ch 1
