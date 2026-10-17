@@ -69,7 +69,7 @@
     "revision": null,
     "date": "14 OCT 26",
     "fleet": "both",
-    "last_vetted": "16 OCT 26",
+    "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1YVarshNewDlZtveBBOGwXPzIpae-4Dhh/view"
   },
   "A330P_NPC-CB": {
@@ -93,7 +93,7 @@
     "revision": "R26-13",
     "date": "02 OCT 26",
     "fleet": "pax",
-    "last_vetted": "16 OCT 26",
+    "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1y6j1RSkUquoKJQhhgPJyM2unRxHu5Chh/view"
   },
   "A330F_PERF": {
@@ -101,7 +101,7 @@
     "revision": "R26-13",
     "date": "02 OCT 26",
     "fleet": "frtr",
-    "last_vetted": "16 OCT 26",
+    "last_vetted": null,
     "drive_url": "https://drive.google.com/file/d/1oQcAHEGuh3LKVM4_w2_lYPerbjFXuAMe/view"
   },
   "FOM": {
