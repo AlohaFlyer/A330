@@ -23,7 +23,7 @@ revision, not the date the file was downloaded. `never` means the sweep in
 | `A330F_QRH` | A330 Freighter QRH | R5 | 26 JUN 26 | frtr | never |
 | `A330_AFM` | A330 Airplane Flight Manual | _none published_ | 11 AUG 26 | both | never |
 | `A330_AFM-SUPP` | A330 AFM Supplement | _none published_ | 05 AUG 26 | both | never |
-| `A330_FCTM` | A330 Flight Crew Training Manual | R5 | 27 MAR 26 | both | never |
+| `A330_FCTM` | A330 Flight Crew Training Manual | R6 | 14 SEP 26 | both | never |
 | `A330_MEL` | A330 Minimum Equipment List | R59 | 4/1/26 | both | never |
 | `A330_PRC` | A330 Pilot Reference Cards | _none published_ | 14 OCT 26 | both | 16 OCT 26 |
 | `FODM` | Flight Operations Data Manual | R0 | 5/20/26 | shared | never |
