@@ -15,17 +15,17 @@ revision, not the date the file was downloaded. `never` means the sweep in
 | --- | --- | --- | --- | --- | --- |
 | `A330P_FCOM` | A330 Passenger FCOM | R17 | 15 MAY 26 | pax | never |
 | `A330P_NPC-CB` | A330 Passenger Normal Procedures and Checklist Card Book | _none published_ | 8/13/25 | pax | never |
-| `A330P_PERF` | A330 Passenger Performance Manual | R26-13 | 02 OCT 26 | pax | never |
+| `A330P_PERF` | A330 Passenger Performance Manual | R26-13 | 02 OCT 26 | pax | 16 OCT 26 |
 | `A330P_QRH` | A330 Passenger QRH | R35 | 26 JUN 26 | pax | never |
 | `A330F_FCOM` | A330 Freighter FCOM | R10 | 15 MAY 26 | frtr | never |
 | `A330F_NPC-CB` | A330 Freighter Normal Procedures and Checklist Card Book | _none published_ | 8/13/25 | frtr | never |
-| `A330F_PERF` | A330 Freighter Performance Manual | R26-13 | 02 OCT 26 | frtr | never |
+| `A330F_PERF` | A330 Freighter Performance Manual | R26-13 | 02 OCT 26 | frtr | 16 OCT 26 |
 | `A330F_QRH` | A330 Freighter QRH | R5 | 26 JUN 26 | frtr | never |
 | `A330_AFM` | A330 Airplane Flight Manual | _none published_ | 11 AUG 26 | both | never |
 | `A330_AFM-SUPP` | A330 AFM Supplement | _none published_ | 05 AUG 26 | both | never |
-| `A330_FCTM` | A330 Flight Crew Training Manual | R5 | 27 MAR 26 | both | never |
+| `A330_FCTM` | A330 Flight Crew Training Manual | R6 | 14 SEP 26 | both | never |
 | `A330_MEL` | A330 Minimum Equipment List | R59 | 4/1/26 | both | never |
-| `A330_PRC` | A330 Pilot Reference Cards | _none published_ | 14 OCT 26 | both | never |
+| `A330_PRC` | A330 Pilot Reference Cards | _none published_ | 14 OCT 26 | both | 16 OCT 26 |
 | `FODM` | Flight Operations Data Manual | R0 | 5/20/26 | shared | never |
 | `FOM` | Flight Operations Manual | 125.4 | 10/1/26 | shared | 2026-10-13 |
 
