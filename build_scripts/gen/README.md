@@ -1,6 +1,6 @@
 # One-time generators (need the manual extracts)
 
-These build the committed data banks from the verified sources. They are NOT part of build.sh
+These build the committed data banks from the verified sources. They are NOT part of update.sh
 because they read the manual text extracts, which never enter the repo. Set `A330_SRC` to a folder
 holding the extracts (A330P_FCOM_R17.md, A330P_FCOM_R17_PRO-NOR.md, A330P_QRH_R35.md, A330_FCTM_R6.md,
 A330_PRC_2026-08-31.md, FOM_125.4.md, OE_Workbook.txt, the panel PDF) and run from the repo root:

@@ -42,7 +42,7 @@ Deviations from the B787 engine (for the parity allowlist):
 import json, os, re, sys, html
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(HERE, '..'))
-B787 = sys.argv[1] if len(sys.argv) > 1 else os.path.abspath(os.path.join(WORK, '..', 'b787'))
+B787 = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WORK, '_engine', 'b787-v2.40')
 sys.path.insert(0, HERE)
 import apply_palette, apply_strings
 
