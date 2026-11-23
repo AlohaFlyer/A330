@@ -115,7 +115,7 @@ check(manifest['totalBytes'] == sum(mf.values()), 'manifest: totalBytes wrong')
 
 # no manual text outside manuals/
 for dp, dns, fs in os.walk(WORK):
-    if os.path.basename(dp) in ('manuals', '.git', 'build_scripts', 'docs'):
+    if os.path.basename(dp) in ('manuals', '.git', 'build_scripts', 'docs', '_engine'):
         dns[:] = []
         continue
     for f in fs:

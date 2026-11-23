@@ -6,7 +6,7 @@ os.chdir(os.path.join(os.path.dirname(__file__),'..'))
 SKIP={'.git','build_scripts','docs','manuals','.gitignore','README.md','BUILD_NOTES.md','offline-manifest.json','CNAME','robots.txt','manuals.json'}
 core=[]
 for dp,dn,fn in os.walk('.'):
-    dn[:]=[d for d in dn if d not in SKIP and not d.startswith('.')]
+    dn[:]=[d for d in dn if d not in SKIP and not d.startswith(('.', '_'))]
     for f in sorted(fn):
         if f in SKIP or f.endswith(('.md','.py','.sh','.mp3')): continue
         p=os.path.join(dp,f)[1:].replace(os.sep,'/')

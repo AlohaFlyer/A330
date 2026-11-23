@@ -11,7 +11,7 @@ it phonetically in the hidden API text. Clean script files keep proper spelling.
 import json, os, re, sys
 
 ROOT = os.path.expanduser("~/mnt/Claude - Alaska Airlines")
-PLS  = os.path.join(ROOT, "AS - Boeing 787", "flight-deck-notes.pls")
+PLS  = os.path.join(ROOT, "HA - Airbus A330", "flight-deck-notes.pls")
 BUILD= os.path.join(ROOT, "HA - Airbus A330", "A330_podcast_build")
 
 VOICES = {

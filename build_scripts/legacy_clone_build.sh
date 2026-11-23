@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Rebuild the whole ha330pilot.app tree from the B787 source checkout + A330 data.
+# RETIRED 2026-11: the A330 pages are now edited directly; this clone build overwrites those
+# edits and deletes flow_memorization.html. It refuses to run without --force-reclone.
+[ "${1:-}" = "--force-reclone" ] || { echo "legacy_clone_build.sh is retired; use build_scripts/update.sh"; exit 1; }; shift
 # Usage: build.sh <path-to-B787-checkout>   (run from the A330 repo root)
 set -euo pipefail
-B787="${1:?path to B787 checkout}"; cd "$(dirname "$0")/.."
+B787="${1:-_engine/b787-v2.40}"; cd "$(dirname "$0")/.."
 rm -f ./*.html portal-settings.js assist.js sw.js site.webmanifest robots.txt
 cp "$B787"/*.html . && mv cdu_preflight.html mcdu_preflight.html
 cp "$B787"/portal-settings.js "$B787"/assist.js "$B787"/sw.js "$B787"/site.webmanifest "$B787"/robots.txt .

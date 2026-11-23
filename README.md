@@ -1,21 +1,23 @@
 # A330 Study Portal (ha330pilot.app)
 
-Exact clone of the B787 study portal (as787pilot.app, AlohaFlyer/B787) in the Hawaiian palette,
-with A330 data. Plan: `docs/A330_PORTAL_PLAN_v2.0.md`. B787 audit: `docs/B787_AUDIT_v2.40.md`.
+Started as a clone of the B787 study portal (as787pilot.app, being retired) in the Hawaiian
+palette, with A330 data. Plan: `docs/A330_PORTAL_PLAN_v2.0.md`. B787 audit: `docs/B787_AUDIT_v2.40.md`.
 
-## Rebuild
+## Update
+
+The committed pages and `data/` are the source of truth. The pages started as a clone of the
+B787 portal (frozen for provenance in `_engine/b787-v2.40/`, never served), but they are now
+edited directly, so never re-clone over them.
 
 ```
-git clone https://github.com/AlohaFlyer/B787 ../B787
-bash build_scripts/build.sh ../B787
-python3 build_scripts/build_handouts.py
-python3 build_scripts/verify/parity_diff.py ../B787 .      # must print "parity failures: 0"
-python3 build_scripts/verify/smoke.py . ../B787            # screenshots to docs/parity (gitignored)
+bash build_scripts/update.sh                       # banks, stamps, handouts, offline manifest
+A330_SRC=../src bash build_scripts/update.sh       # same, plus the manual-source verifiers
 ```
 
-Pages are generated from the B787 source plus `build_scripts/palette_map.py`, `apply_strings.py`
-and the enumerated edits in `page_fixups.py` (allowlisted in `docs/PARITY_ALLOWLIST.md`).
-Never hand-edit a page; change the map or the data and rebuild.
+`update.sh` needs no B787 checkout. Do not run `project_data.py` on its own: it regenerates the
+`*_drill.json` files from the source banks and drops hand-added drill items.
+`build_scripts/legacy_clone_build.sh` is the old full clone build. It overwrites hand edits and
+refuses to run without `--force-reclone`.
 
 ## Data
 

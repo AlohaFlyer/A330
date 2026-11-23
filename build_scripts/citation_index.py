@@ -562,7 +562,7 @@ def iter_files(root: str):
     data/*.json is walked first and deliberately: the JSON banks hold most of
     the citations, and the predecessor tool missed all of them.
     """
-    skip_dirs = {".git", "node_modules", "extracts", "__pycache__", ".venv"}
+    skip_dirs = {".git", "node_modules", "extracts", "__pycache__", ".venv", "_engine"}
 
     data_dir = os.path.join(root, "data")
     if os.path.isdir(data_dir):
