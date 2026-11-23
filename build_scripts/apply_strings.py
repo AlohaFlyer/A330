@@ -35,7 +35,7 @@ def apply(text, name):
 if __name__=='__main__':
     root=sys.argv[1]
     for dp,_,fs in os.walk(root):
-        if '.git' in dp or 'build_scripts' in dp: continue
+        if '.git' in dp or 'build_scripts' in dp or '_engine' in dp: continue
         for f in fs:
             if f.endswith(('.html','.js','.webmanifest','.txt')):
                 p=os.path.join(dp,f); t=open(p,encoding='utf-8').read(); n=apply(t,f)
